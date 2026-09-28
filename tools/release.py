@@ -1,4 +1,4 @@
-"""release.py - drip-publishes queued news: each run moves a random 3-7 items from queue/ into news/.
+"""release.py - drip-publishes queued news: each run moves up to 7 items (always 7 while more than 20 wait, else a random 3-7) from queue/ into news/.
 
 queue/<date>.json holds every written item of a day; news/<date>.json holds only the released ones, so the
 site grows a few articles at a time like a human newsroom instead of hundreds at once. The daily report
@@ -14,8 +14,18 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 Q, N = os.path.join(ROOT, "queue"), os.path.join(ROOT, "news")
 
 
+def backlog():
+    total = 0
+    for qpath in glob.glob(os.path.join(Q, "????-??-??.json")):
+        npath = os.path.join(N, os.path.basename(qpath))
+        out = {i["symbol"] for i in json.load(open(npath, encoding="utf-8"))["items"]} if os.path.exists(npath) else set()
+        total += sum(1 for i in json.load(open(qpath, encoding="utf-8"))["items"] if i["symbol"] not in out)
+    return total
+
+
 def main():
-    budget = random.randint(3, 7)
+    # at most 7 per run; with more than 20 waiting always the maximum, otherwise a random 3-7
+    budget = 7 if backlog() > 20 else random.randint(3, 7)
     os.makedirs(N, exist_ok=True)
     released = []
     for qpath in sorted(glob.glob(os.path.join(Q, "????-??-??.json"))):  # oldest day first
