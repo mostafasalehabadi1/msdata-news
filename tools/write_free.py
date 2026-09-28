@@ -43,7 +43,7 @@ def post(url, key, model, prompt, extra=None):
     req = urllib.request.Request(url, json.dumps(body).encode(), {
         "Authorization": f"Bearer {key}", "Content-Type": "application/json", "User-Agent": "msdata-news/1.0", **(extra or {})})
     try:
-        with urllib.request.urlopen(req, timeout=120) as r:
+        with urllib.request.urlopen(req, timeout=90) as r:
             raw = r.read().decode("utf-8", "replace")
     except urllib.error.HTTPError as e:
         raise ValueError(f"HTTP {e.code}: {e.read().decode('utf-8', 'replace')[:200]}") from None
@@ -150,12 +150,14 @@ def main():
         prompt = ("فکت‌شیت (فقط همین عددها را به کار ببر):\n" + factsheet.build(r, hist, peers, date_fa) +
                   f"\n\nزاویه‌ی خبرهای قبلی امروز را تکرار نکن. سوتیترهای قبلی: {' | '.join(list(subs)[-5:])}")
         for name, call in provs:
+            t0 = time.time()
+            note(f"  {sym} {name}: start")
             try:
                 d = parse(retry(call, prompt))
                 if d["subtitle"] in subs:
                     raise ValueError("repeated subtitle")
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model
-                note(f"  {sym} {name}: {str(e)[:220]}")
+                note(f"  {sym} {name}: {time.time() - t0:.0f}s {type(e).__name__}: {str(e)[:220]}")
                 time.sleep(2)
                 continue
             doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
@@ -163,7 +165,7 @@ def main():
             subs.add(d["subtitle"])
             json.dump(doc, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             ok += 1
-            note(f"OK {sym} <- {name}")
+            note(f"OK {sym} <- {name} ({time.time() - t0:.0f}s)")
             break
         if os.environ.get("PUSH_EACH"):  # publish progress/errors after every symbol
             subprocess.run('git add -A news-test && git commit -qm "news-test: progress" && git pull -q --rebase && git push -q',
