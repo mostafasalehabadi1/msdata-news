@@ -29,7 +29,7 @@ GH_URL = "https://models.github.ai/inference/chat/completions"
 GH_AZURE_URL = "https://models.inference.ai.azure.com/chat/completions"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
-OR_PREFER = ("deepseek", "gemini", "qwen", "llama", "mistral", "gemma")  # better Persian first
+OR_PREFER = ("qwen3.8", "gemma-4-31b", "nemotron-3-ultra", "deepseek", "qwen", "gemma", "llama")  # better Persian first
 
 STYLE = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read()
 RULES = ("تو خبرنگار «گروه بورس کالای ام‌اس‌دیتا» هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی. "
@@ -140,7 +140,7 @@ def main():
     provs = providers()
     if not provs:
         sys.exit("no model key found (GITHUB_TOKEN / GEMINI_API_KEY / OPENROUTER_API_KEY / GROQ_API_KEY / MISTRAL_API_KEY)")
-    print(f"{len(todo)} symbols to write, {len(provs)} models")
+    note(f"{len(todo)} symbols to write; models: {', '.join(n for n, _ in provs)}")
     ok = 0
     for r in todo:
         sym = r["symbol"]
