@@ -47,7 +47,7 @@ def post(url, key, model, prompt, extra=None):
     body = {"model": model, "temperature": 0.7,
             "messages": [{"role": "system", "content": RULES}, {"role": "user", "content": prompt}]}
     req = urllib.request.Request(url, json.dumps(body).encode(), {
-        "Authorization": f"Bearer {key}", "Content-Type": "application/json", **(extra or {})})
+        "Authorization": f"Bearer {key}", "Content-Type": "application/json", "User-Agent": "msdata-news/1.0", **(extra or {})})
     try:
         with urllib.request.urlopen(req, timeout=120) as r:
             raw = r.read().decode("utf-8", "replace")
