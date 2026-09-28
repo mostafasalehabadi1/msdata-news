@@ -19,6 +19,7 @@ import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from validate import FORBIDDEN, SLUG_BAD, paragraphs, words  # noqa: E402
+import factsheet  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
@@ -29,18 +30,10 @@ GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
 OR_PREFER = ("deepseek", "gemini", "qwen", "llama", "mistral", "gemma")  # better Persian first
 
-RULES = """تو خبرنگار «گروه بورس کالای ام‌اس‌دیتا» هستی. برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی بنویس.
-واحدها: weighted_price و weighted_base_price ریال بر کیلوگرم؛ مقدارها به واحد unit (معمولاً تن)؛
-trade_value و total_value و demand_value و supply_value هزار ریال (برای میلیارد تومان تقسیم بر 10,000,000)؛
-price_change_pct درصد تغییر نسبت به معامله‌ی قبلی همین نماد.
-قواعد سخت:
-- هر عدد فقط از داده‌ی داده‌شده؛ هیچ علت، خبر بیرونی یا پیش‌بینی نساز. توصیه‌ی خرید و فروش ممنوع. لحن خبری و بی‌طرف.
-- text دقیقاً ۱۶۰ تا ۱۹۰ کلمه در ۲ یا ۳ پاراگراف که با یک خط خالی جدا شده‌اند، و با «به گزارش گروه بورس کالای ام‌اس‌دیتا،» شروع شود.
-- زاویه را از خبری‌ترین فکت همین نماد انتخاب کن (رکورد نرخ، تضاد عرضه و تقاضا، بی‌خریدار ماندن، بازگشت پس از غیبت، روند history).
-- title با نام کالا و تولیدکننده؛ subtitle یک جمله‌ی مکمل و مخصوص همین نماد؛ lead یک جمله‌ی خلاصه.
-- slug فارسی با خط تیره، بدون فاصله و علامت.
-- عددها با ارقام فارسی و خوانا (مثل «۱ هزار و ۵۷۱ میلیارد تومان»). لینک و HTML ممنوع.
-فقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text و هیچ متن دیگری."""
+STYLE = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read()
+RULES = ("تو خبرنگار «گروه بورس کالای ام‌اس‌دیتا» هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی. "
+         "این دستورالعمل را دقیق رعایت کن:\n\n" + STYLE +
+         "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text (slug فارسی با خط تیره، بدون فاصله و علامت) و هیچ متن دیگری.")
 
 
 def post(url, key, model, prompt, extra=None):
@@ -86,6 +79,17 @@ def providers():
     return out
 
 
+def retry(call, prompt):
+    """busy / rate-limited models get 3 more tries with growing pauses before we move to the next model."""
+    for wait in (0, 20, 45, 90):
+        time.sleep(wait)
+        try:
+            return call(prompt)
+        except ValueError as e:
+            if not re.search(r"HTTP (429|500|502|503)", str(e)) or wait == 90:
+                raise
+
+
 def parse(raw):
     m = re.search(r"\{.*\}", raw, re.S)
     d = json.loads(m.group(0)) if m else None
@@ -129,12 +133,13 @@ def main():
     for r in todo:
         sym = r["symbol"]
         hist_path = os.path.join(ROOT, "data", date, "symbols", f"{sym}.json")
-        hist = json.load(open(hist_path, encoding="utf-8")).get("history", [])[-12:] if os.path.exists(hist_path) else []
-        prompt = (f"تاریخ معامله: {date_fa}\nداده‌ی امروز:\n{json.dumps(r, ensure_ascii=False)}\n"
-                  f"معامله‌های قبلی همین نماد (قدیمی به جدید):\n{json.dumps(hist, ensure_ascii=False)}")
+        hist = json.load(open(hist_path, encoding="utf-8")).get("history", []) if os.path.exists(hist_path) else []
+        peers = [p for p in rows if p.get("goods_name") == r.get("goods_name")]
+        prompt = ("فکت‌شیت (فقط همین عددها را به کار ببر):\n" + factsheet.build(r, hist, peers, date_fa) +
+                  f"\n\nزاویه‌ی خبرهای قبلی امروز را تکرار نکن. سوتیترهای قبلی: {' | '.join(list(subs)[-5:])}")
         for name, call in provs:
             try:
-                d = parse(call(prompt))
+                d = parse(retry(call, prompt))
                 if d["subtitle"] in subs:
                     raise ValueError("repeated subtitle")
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model
