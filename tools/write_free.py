@@ -12,6 +12,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 import urllib.error
@@ -81,12 +82,12 @@ def providers():
 
 def retry(call, prompt):
     """busy / rate-limited models get 3 more tries with growing pauses before we move to the next model."""
-    for wait in (0, 20, 45, 90):
+    for wait in (0, 15, 30):
         time.sleep(wait)
         try:
             return call(prompt)
         except ValueError as e:
-            if not re.search(r"HTTP (429|500|502|503)", str(e)) or wait == 90:
+            if not re.search(r"HTTP (429|500|502|503)", str(e)) or wait == 30:
                 raise
 
 
@@ -151,7 +152,10 @@ def main():
             subs.add(d["subtitle"])
             json.dump(doc, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             ok += 1
-            print(f"OK {sym} <- {name}")
+            print(f"OK {sym} <- {name}", flush=True)
+            if os.environ.get("PUSH_EACH"):  # in Actions: every finished item is saved to GitHub right away
+                subprocess.run(f'git add "{path}" && git commit -qm "news-test: {sym}" && git pull -q --rebase && git push -q',
+                               shell=True, cwd=ROOT, check=False)
             break
         time.sleep(4)  # stay under free-tier rate limits
     print(f"written {ok}/{len(todo)}; total in file {len(doc['items'])}")

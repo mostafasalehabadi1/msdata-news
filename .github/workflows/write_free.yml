@@ -10,6 +10,9 @@ on:
   push:
     branches: [main]
     paths: ["pilot.txt"]
+concurrency:
+  group: write-free
+  cancel-in-progress: true
 permissions:
   contents: write
   models: read
@@ -29,7 +32,10 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          PUSH_EACH: "1"
         run: |
+          git config user.name msdata-news-bot
+          git config user.email bot@msdata.ir
           LIMIT="${{ inputs.limit }}"
           [ -z "$LIMIT" ] && LIMIT="$(tr -dc 0-9 < pilot.txt)"
           python tools/write_free.py --limit "${LIMIT:-10}" --out news-test | tee pilot-log.txt
