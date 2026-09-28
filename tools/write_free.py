@@ -176,7 +176,7 @@ def main():
             note(f"OK {sym} <- {name} ({time.time() - t0:.0f}s)")
             break
         if os.environ.get("PUSH_EACH"):  # publish progress/errors after every symbol
-            subprocess.run('git add -A news-test && git commit -qm "news-test: progress" && git pull -q --rebase && git push -q',
+            subprocess.run('git add -A news-test queue && git commit -qm "queue: progress" && git pull -q --rebase && git push -q',
                            shell=True, cwd=ROOT, check=False)
         time.sleep(4)  # stay under free-tier rate limits
     print(f"written {ok}/{len(todo)}; total in file {len(doc['items'])}")

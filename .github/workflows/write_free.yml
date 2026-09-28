@@ -38,12 +38,12 @@ jobs:
           git config user.email bot@msdata.ir
           LIMIT="${{ inputs.limit }}"
           [ -z "$LIMIT" ] && LIMIT="$(tr -dc 0-9 < pilot.txt)"
-          python tools/write_free.py --limit "${LIMIT:-10}" --out news-test | tee pilot-log.txt
+          python tools/write_free.py --limit "${LIMIT:-10}" --out queue | tee pilot-log.txt
       - name: commit pilot output
         run: |
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           mkdir -p news-test && mv pilot-log.txt news-test/
-          git add news-test
+          git add queue news-test
           git diff --cached --quiet || git commit -m "pilot: free-model news"
           git pull --rebase -q && git push
