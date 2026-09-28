@@ -1,0 +1,31 @@
+name: write-free (pilot)
+# Manual pilot: writes N symbol news with free models into news-test/ (not published).
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "how many symbols"
+        default: "10"
+permissions:
+  contents: write
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: write news with free models
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python tools/write_free.py --limit "${{ inputs.limit }}" --out news-test
+      - name: commit pilot output
+        run: |
+          git config user.name msdata-news-bot
+          git config user.email bot@msdata.ir
+          git add news-test
+          git diff --cached --quiet || git commit -m "pilot: free-model news (${{ inputs.limit }})"
+          git push
