@@ -24,6 +24,7 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
 OR_URL = "https://openrouter.ai/api/v1/chat/completions"
 GH_URL = "https://models.github.ai/inference/chat/completions"
+GH_AZURE_URL = "https://models.inference.ai.azure.com/chat/completions"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
 OR_PREFER = ("deepseek", "gemini", "qwen", "llama", "mistral", "gemma")  # better Persian first
@@ -62,8 +63,11 @@ def providers():
     """Ordered fallback chain: best free model first; when one fails or runs out, the next one is used."""
     out = []
     if os.environ.get("GITHUB_TOKEN"):  # GitHub Models: free OpenAI models inside Actions, no signup
-        for m in ("openai/gpt-4.1", "openai/gpt-4o", "openai/gpt-4.1-mini"):
-            out.append(("github:" + m, lambda p, m=m: post(GH_URL, os.environ["GITHUB_TOKEN"], m, p)))
+        gh_hdr = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}
+        for m in ("openai/gpt-4.1", "openai/gpt-4o"):
+            out.append(("github:" + m, lambda p, m=m: post(GH_URL, os.environ["GITHUB_TOKEN"], m, p, gh_hdr)))
+        for m in ("gpt-4.1", "gpt-4o"):  # older Azure-hosted endpoint of the same free GitHub Models
+            out.append(("github-azure:" + m, lambda p, m=m: post(GH_AZURE_URL, os.environ["GITHUB_TOKEN"], m, p)))
     if os.environ.get("GEMINI_API_KEY"):
         for m in ("gemini-2.5-flash", "gemini-2.5-flash-lite"):
             out.append(("gemini:" + m, lambda p, m=m: post(GEMINI_URL, os.environ["GEMINI_API_KEY"], m, p)))
