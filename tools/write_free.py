@@ -4,7 +4,8 @@ For each symbol in data/<date>/today.json that has no news yet, ask the provider
 that passes the same checks as tools/validate.py is kept, otherwise the next model is tried. Symbols that fail
 on every model stay in the queue for the next run.
 
-env: GEMINI_API_KEY and/or OPENROUTER_API_KEY (at least one).
+env (any subset): GITHUB_TOKEN (GitHub Models, free in Actions), GEMINI_API_KEY, OPENROUTER_API_KEY,
+GROQ_API_KEY, MISTRAL_API_KEY.
 usage: python tools/write_free.py [--limit N] [--out news]
 """
 import argparse
@@ -21,6 +22,9 @@ from validate import FORBIDDEN, SLUG_BAD, paragraphs, words  # noqa: E402
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
 OR_URL = "https://openrouter.ai/api/v1/chat/completions"
+GH_URL = "https://models.github.ai/inference/chat/completions"
+GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
+MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
 OR_PREFER = ("deepseek", "gemini", "qwen", "llama", "mistral", "gemma")  # better Persian first
 
 RULES = """تو خبرنگار «گروه بورس کالای ام‌اس‌دیتا» هستی. برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی بنویس.
@@ -47,7 +51,11 @@ def post(url, key, model, prompt, extra=None):
 
 
 def providers():
+    """Ordered fallback chain: best free model first; when one fails or runs out, the next one is used."""
     out = []
+    if os.environ.get("GITHUB_TOKEN"):  # GitHub Models: free OpenAI models inside Actions, no signup
+        for m in ("openai/gpt-4.1", "openai/gpt-4o", "openai/gpt-4.1-mini"):
+            out.append(("github:" + m, lambda p, m=m: post(GH_URL, os.environ["GITHUB_TOKEN"], m, p)))
     if os.environ.get("GEMINI_API_KEY"):
         for m in ("gemini-2.5-flash", "gemini-2.5-flash-lite"):
             out.append(("gemini:" + m, lambda p, m=m: post(GEMINI_URL, os.environ["GEMINI_API_KEY"], m, p)))
@@ -58,6 +66,11 @@ def providers():
         free.sort(key=lambda i: next((n for n, w in enumerate(OR_PREFER) if w in i), 99))
         for m in free[:6]:
             out.append(("openrouter:" + m, lambda p, m=m: post(OR_URL, key, m, p, {"X-Title": "msdata-news"})))
+    for env, url, models in (("GROQ_API_KEY", GROQ_URL, ("llama-3.3-70b-versatile",)),
+                             ("MISTRAL_API_KEY", MISTRAL_URL, ("mistral-large-latest",))):
+        if os.environ.get(env):
+            for m in models:
+                out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
     return out
 
 
@@ -98,7 +111,7 @@ def main():
     todo = [r for r in rows if r.get("symbol") not in done][: a.limit or None]
     provs = providers()
     if not provs:
-        sys.exit("no GEMINI_API_KEY / OPENROUTER_API_KEY")
+        sys.exit("no model key found (GITHUB_TOKEN / GEMINI_API_KEY / OPENROUTER_API_KEY / GROQ_API_KEY / MISTRAL_API_KEY)")
     print(f"{len(todo)} symbols to write, {len(provs)} models")
     ok = 0
     for r in todo:

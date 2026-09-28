@@ -1,13 +1,18 @@
 name: write-free (pilot)
-# Manual pilot: writes N symbol news with free models into news-test/ (not published).
+# Pilot: writes N symbol news with free models into news-test/ (not published).
+# Run manually, or push a change to pilot.txt (its content = how many symbols).
 on:
   workflow_dispatch:
     inputs:
       limit:
         description: "how many symbols"
         default: "10"
+  push:
+    branches: [main]
+    paths: ["pilot.txt"]
 permissions:
   contents: write
+  models: read
 jobs:
   write:
     runs-on: ubuntu-latest
@@ -19,13 +24,20 @@ jobs:
           python-version: "3.12"
       - name: write news with free models
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-        run: python tools/write_free.py --limit "${{ inputs.limit }}" --out news-test
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        run: |
+          LIMIT="${{ inputs.limit }}"
+          [ -z "$LIMIT" ] && LIMIT="$(tr -dc 0-9 < pilot.txt)"
+          python tools/write_free.py --limit "${LIMIT:-10}" --out news-test | tee pilot-log.txt
       - name: commit pilot output
         run: |
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
+          mkdir -p news-test && mv pilot-log.txt news-test/
           git add news-test
-          git diff --cached --quiet || git commit -m "pilot: free-model news (${{ inputs.limit }})"
-          git push
+          git diff --cached --quiet || git commit -m "pilot: free-model news"
+          git pull --rebase -q && git push
