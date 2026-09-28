@@ -153,7 +153,15 @@ def main():
             t0 = time.time()
             note(f"  {sym} {name}: start")
             try:
-                d = parse(retry(call, prompt))
+                raw = retry(call, prompt)
+                try:
+                    d = parse(raw)
+                except ValueError as e:
+                    if "words" not in str(e):
+                        raise
+                    fix = (prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایراد: متن text {e}. همان خبر را با text بین ۱۶۰ تا ۱۹۰ کلمه "
+                           "در ۲ یا ۳ پاراگراف بازنویسی کن (فقط با عددهای فکت‌شیت) و فقط JSON برگردان.")
+                    d = parse(retry(call, fix))
                 if d["subtitle"] in subs:
                     raise ValueError("repeated subtitle")
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model
