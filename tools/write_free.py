@@ -14,6 +14,7 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -46,8 +47,15 @@ def post(url, key, model, prompt, extra=None):
             "messages": [{"role": "system", "content": RULES}, {"role": "user", "content": prompt}]}
     req = urllib.request.Request(url, json.dumps(body).encode(), {
         "Authorization": f"Bearer {key}", "Content-Type": "application/json", **(extra or {})})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        return json.load(r)["choices"][0]["message"]["content"]
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            raw = r.read().decode("utf-8", "replace")
+    except urllib.error.HTTPError as e:
+        raise ValueError(f"HTTP {e.code}: {e.read().decode('utf-8', 'replace')[:200]}") from None
+    try:
+        return json.loads(raw)["choices"][0]["message"]["content"]
+    except Exception:  # noqa: BLE001
+        raise ValueError(f"bad response: {raw[:200]!r}") from None
 
 
 def providers():
@@ -126,7 +134,7 @@ def main():
                 if d["subtitle"] in subs:
                     raise ValueError("repeated subtitle")
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model
-                print(f"  {sym} {name}: {str(e)[:80]}")
+                print(f"  {sym} {name}: {str(e)[:220]}")
                 time.sleep(2)
                 continue
             doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
