@@ -19,7 +19,7 @@ permissions:
 jobs:
   write:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -38,7 +38,18 @@ jobs:
           git config user.email bot@msdata.ir
           LIMIT="${{ inputs.limit }}"
           [ -z "$LIMIT" ] && LIMIT="$(tr -dc 0-9 < pilot.txt)"
-          python tools/write_free.py --limit "${LIMIT:-10}" --out queue | tee pilot-log.txt
+          if [ "${LIMIT:-0}" != "0" ]; then
+            python tools/write_free.py --limit "$LIMIT" --out queue | tee pilot-log.txt
+          else
+            # 0 = backlog mode: packages of 2 until every traded symbol of the latest day has a news (max ~5h)
+            end=$(( $(date +%s) + 330*60 ))
+            while [ "$(date +%s)" -lt "$end" ]; do
+              git pull -q --rebase || true
+              out=$(python tools/write_free.py --limit 2 --out queue | tee -a pilot-log.txt | tail -1)
+              case "$out" in *"/0;"*) break ;; esac          # nothing left to write
+              case "$out" in "written 0/"*) sleep 900 ;; *) sleep 60 ;; esac  # all models busy -> wait 15 min
+            done
+          fi
       - name: commit pilot output
         run: |
           git config user.name msdata-news-bot
