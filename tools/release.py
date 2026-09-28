@@ -1,8 +1,8 @@
-"""release.py - drip-publishes queued news: each run moves up to 7 items (always 7 while more than 20 wait, else a random 3-7) from queue/ into news/.
+"""release.py - drip-publishes queued news: each run moves up to 7 items (7 while more than 20 wait, a random 3-7 while 7-20 wait, all when fewer than 7) from queue/ into news/.
 
 queue/<date>.json holds every written item of a day; news/<date>.json holds only the released ones, so the
-site grows a few articles at a time like a human newsroom instead of hundreds at once. The daily report
-(queue/report-<date>.json) is released after all of that day's items are out.
+site grows a few articles at a time like a human newsroom instead of hundreds at once. A daily report
+(queue/report-<date>.json) is released in the first run after it is queued.
 """
 import glob
 import json
@@ -24,10 +24,17 @@ def backlog():
 
 
 def main():
-    # at most 7 per run; with more than 20 waiting always the maximum, otherwise a random 3-7
-    budget = 7 if backlog() > 20 else random.randint(3, 7)
+    # >20 waiting: 7 | 7-20 waiting: random 3-7 | under 7 waiting: all of them
+    waiting = backlog()
+    budget = 7 if waiting > 20 else random.randint(3, 7) if waiting >= 7 else waiting
     os.makedirs(N, exist_ok=True)
     released = []
+    # a daily report goes out in the very first run after it enters the queue (it does not use the budget)
+    for rep in sorted(glob.glob(os.path.join(Q, "report-*.json"))):
+        dst = os.path.join(N, os.path.basename(rep))
+        if not os.path.exists(dst):
+            shutil.copy(rep, dst)
+            released.append(os.path.basename(rep))
     for qpath in sorted(glob.glob(os.path.join(Q, "????-??-??.json"))):  # oldest day first
         name = os.path.basename(qpath)
         q = json.load(open(qpath, encoding="utf-8"))
@@ -41,10 +48,6 @@ def main():
             json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             released += [f"{name}:{i['symbol']}" for i in take]
             budget -= len(take)
-        rep = os.path.join(Q, "report-" + name)
-        if len(pending) == len(take) and os.path.exists(rep) and not os.path.exists(os.path.join(N, "report-" + name)):
-            shutil.copy(rep, os.path.join(N, "report-" + name))
-            released.append("report-" + name)
         if budget <= 0:
             break
     print(f"released {len(released)}: {', '.join(released)}")
