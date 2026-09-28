@@ -80,6 +80,17 @@ def providers():
     return out
 
 
+LOG = []
+
+
+def note(line):
+    print(line, flush=True)
+    LOG.append(line)
+    if os.environ.get("PUSH_EACH"):
+        os.makedirs(os.path.join(ROOT, "news-test"), exist_ok=True)
+        open(os.path.join(ROOT, "news-test", "live-log.txt"), "w", encoding="utf-8").write("\n".join(LOG[-200:]))
+
+
 def retry(call, prompt):
     """busy / rate-limited models get 3 more tries with growing pauses before we move to the next model."""
     for wait in (0, 15, 30):
@@ -144,7 +155,7 @@ def main():
                 if d["subtitle"] in subs:
                     raise ValueError("repeated subtitle")
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model
-                print(f"  {sym} {name}: {str(e)[:220]}")
+                note(f"  {sym} {name}: {str(e)[:220]}")
                 time.sleep(2)
                 continue
             doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
@@ -152,11 +163,11 @@ def main():
             subs.add(d["subtitle"])
             json.dump(doc, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             ok += 1
-            print(f"OK {sym} <- {name}", flush=True)
-            if os.environ.get("PUSH_EACH"):  # in Actions: every finished item is saved to GitHub right away
-                subprocess.run(f'git add "{path}" && git commit -qm "news-test: {sym}" && git pull -q --rebase && git push -q',
-                               shell=True, cwd=ROOT, check=False)
+            note(f"OK {sym} <- {name}")
             break
+        if os.environ.get("PUSH_EACH"):  # publish progress/errors after every symbol
+            subprocess.run('git add -A news-test && git commit -qm "news-test: progress" && git pull -q --rebase && git push -q',
+                           shell=True, cwd=ROOT, check=False)
         time.sleep(4)  # stay under free-tier rate limits
     print(f"written {ok}/{len(todo)}; total in file {len(doc['items'])}")
 
