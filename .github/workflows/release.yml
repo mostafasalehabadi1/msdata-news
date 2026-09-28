@@ -1,0 +1,36 @@
+name: release-news
+# Drip publishing: every ~5 minutes (GitHub adds its own irregular delay) a random 3-7 queued news go live.
+# publish.yml runs after this workflow (workflow_run) and moves the validated commit to the site.
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+concurrency:
+  group: release-news
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: random pause (0-120 s) so releases are not clock-aligned
+        run: sleep $((RANDOM % 121))
+      - name: release a few queued news
+        run: |
+          git pull -q --rebase
+          python tools/release.py
+          python tools/validate.py
+      - name: commit
+        run: |
+          git config user.name msdata-news-bot
+          git config user.email bot@msdata.ir
+          git add news
+          git diff --cached --quiet && exit 0
+          git commit -qm "release: $(date -u +%H:%M)"
+          git pull -q --rebase && git push -q origin HEAD:main
