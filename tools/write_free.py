@@ -62,14 +62,14 @@ def post(url, key, model, prompt, extra=None):
 def providers():
     """Ordered fallback chain: best free model first; when one fails or runs out, the next one is used."""
     out = []
-    if os.environ.get("GITHUB_TOKEN"):  # GitHub Models: free OpenAI models inside Actions, no signup
+    if os.environ.get("USE_GITHUB_MODELS") and os.environ.get("GITHUB_TOKEN"):  # GitHub Models (off: returned "OK" only): free OpenAI models inside Actions, no signup
         gh_hdr = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}
         for m in ("openai/gpt-4.1", "openai/gpt-4o"):
             out.append(("github:" + m, lambda p, m=m: post(GH_URL, os.environ["GITHUB_TOKEN"], m, p, gh_hdr)))
         for m in ("gpt-4.1", "gpt-4o"):  # older Azure-hosted endpoint of the same free GitHub Models
             out.append(("github-azure:" + m, lambda p, m=m: post(GH_AZURE_URL, os.environ["GITHUB_TOKEN"], m, p)))
     if os.environ.get("GEMINI_API_KEY"):
-        for m in ("gemini-2.5-flash", "gemini-2.5-flash-lite"):
+        for m in ("gemini-3.8-flash", "gemini-3.5-flash-lite"):
             out.append(("gemini:" + m, lambda p, m=m: post(GEMINI_URL, os.environ["GEMINI_API_KEY"], m, p)))
     key = os.environ.get("OPENROUTER_API_KEY")
     if key:
