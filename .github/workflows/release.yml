@@ -1,36 +1,50 @@
 name: release-news
-# Drip publishing: every ~5 minutes (GitHub adds its own irregular delay) a random 3-7 queued news go live.
-# publish.yml runs after this workflow (workflow_run) and moves the validated commit to the site.
+# Drip publishing, fully on GitHub. GitHub's own */5 schedule proved unreliable (it never fired), so one run
+# stays alive ~5h50m and releases a few queued news about every 5 minutes, publishing each batch itself;
+# before it ends it starts the next run (workflow_dispatch with GITHUB_TOKEN is allowed to trigger workflows).
+# The hourly schedule is only a safety net to restart the chain; concurrency keeps a single live run.
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
 concurrency:
   group: release-news
   cancel-in-progress: false
 permissions:
   contents: write
+  actions: write
 jobs:
   release:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: random pause (0-120 s) so releases are not clock-aligned
-        run: sleep $((RANDOM % 121))
-      - name: release a few queued news
-        run: |
-          git pull -q --rebase
-          python tools/release.py
-          python tools/validate.py
-      - name: commit
+      - name: release a few queued news every ~5 minutes
         run: |
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
-          git add news
-          git diff --cached --quiet && exit 0
-          git commit -qm "release: $(date -u +%H:%M)"
-          git pull -q --rebase && git push -q origin HEAD:main
+          end=$(( $(date +%s) + 340*60 ))
+          while [ "$(date +%s)" -lt "$end" ]; do
+            git pull -q --rebase || true
+            python tools/release.py
+            if python tools/validate.py; then
+              git add news
+              if ! git diff --cached --quiet; then
+                git commit -qm "release: $(date -u +%H:%M)"
+                git pull -q --rebase && git push -q origin HEAD:main && git push -qf origin HEAD:refs/heads/published
+              fi
+            else
+              git checkout -- news
+            fi
+            sleep $(( 240 + RANDOM % 121 ))  # 4-6 minutes, so releases are not clock-aligned
+          done
+      - name: start the next run
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run release.yml -R "${{ github.repository }}"
