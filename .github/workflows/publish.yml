@@ -1,0 +1,25 @@
+name: validate-and-publish
+# Every push that touches news/ is validated. Only a passing commit is moved to the "published" branch,
+# which is the ONLY thing the msdata.ir host pulls. A failing commit never reaches the site.
+on:
+  push:
+    branches: [main]
+    paths: ["news/**", "tools/validate.py"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: validate
+        run: python3 tools/validate.py
+      - name: move published branch
+        run: git push -f origin HEAD:refs/heads/published

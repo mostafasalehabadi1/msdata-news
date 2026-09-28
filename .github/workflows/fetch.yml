@@ -1,0 +1,28 @@
+name: fetch-data
+# Snapshot of the latest kala trading day into data/ for the Claude news writer.
+# Times: 13:30, 15:30, 18:30 Tehran (UTC+3:30), Saturday-Wednesday.
+on:
+  schedule:
+    - cron: "0 10,12,15 * * 6,0,1,2,3"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: fetch
+        run: python3 tools/fetch.py
+      - name: commit if changed
+        run: |
+          git config user.name "msdata-news-bot"
+          git config user.email "msdata-news-bot@users.noreply.github.com"
+          git add -A data
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git commit -q -m "data: $(python3 -c 'import json;print(json.load(open("data/latest.json"))["date_fa"])')"
+          git push -q
