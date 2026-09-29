@@ -64,7 +64,18 @@ def providers():
         for m in ("gpt-4.1", "gpt-4o"):  # older Azure-hosted endpoint of the same free GitHub Models
             out.append(("github-azure:" + m, lambda p, m=m: post(GH_AZURE_URL, os.environ["GITHUB_TOKEN"], m, p)))
     if os.environ.get("GEMINI_API_KEY"):
-        for m in ("gemini-3.8-flash", "gemini-3.5-flash-lite"):
+        # every Gemini model has its own daily free quota, so use all text models the key can see
+        gem = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
+        try:
+            url = "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200&key=" + os.environ["GEMINI_API_KEY"]
+            with urllib.request.urlopen(url, timeout=60) as r:
+                seen = [m["name"].split("/", 1)[1] for m in json.load(r).get("models", [])
+                        if "generateContent" in m.get("supportedGenerationMethods", [])]
+            seen = [m for m in seen if re.match(r"^gem(ini|ma)-", m) and not re.search(r"embed|image|tts|audio|live|vision|exp|preview", m)]
+            gem += sorted((m for m in seen if m not in gem), key=lambda m: ("pro" not in m and "flash" not in m, "lite" in m, m))
+        except Exception as e:  # noqa: BLE001 - listing is optional; the two known models still work
+            note(f"gemini model list failed: {e}")
+        for m in gem[:10]:
             out.append(("gemini:" + m, lambda p, m=m: post(GEMINI_URL, os.environ["GEMINI_API_KEY"], m, p)))
     key = os.environ.get("OPENROUTER_API_KEY")
     if key:
@@ -73,8 +84,10 @@ def providers():
         free.sort(key=lambda i: next((n for n, w in enumerate(OR_PREFER) if w in i), 99))
         for m in free[:6]:
             out.append(("openrouter:" + m, lambda p, m=m: post(OR_URL, key, m, p, {"X-Title": "msdata-news"})))
-    for env, url, models in (("GROQ_API_KEY", GROQ_URL, ("llama-3.3-70b-versatile",)),
-                             ("MISTRAL_API_KEY", MISTRAL_URL, ("mistral-large-latest",))):
+    for env, url, models in (("GROQ_API_KEY", GROQ_URL, ("llama-3.3-70b-versatile", "qwen/qwen3-32b")),
+                             ("MISTRAL_API_KEY", MISTRAL_URL, ("mistral-large-latest", "mistral-medium-latest")),
+                             ("CEREBRAS_API_KEY", "https://api.cerebras.ai/v1/chat/completions", ("qwen-3-235b-a22b-instruct-2507", "llama-3.3-70b")),
+                             ("SAMBANOVA_API_KEY", "https://api.sambanova.ai/v1/chat/completions", ("DeepSeek-V3.1", "Meta-Llama-3.3-70B-Instruct"))):
         if os.environ.get(env):
             for m in models:
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
