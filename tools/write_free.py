@@ -72,9 +72,15 @@ def providers():
                 seen = [m["name"].split("/", 1)[1] for m in json.load(r).get("models", [])
                         if "generateContent" in m.get("supportedGenerationMethods", [])]
             seen = [m for m in seen if re.match(r"^gem(ini|ma)-", m) and not re.search(r"embed|image|tts|audio|live|vision|exp|preview", m)]
-            gem += sorted((m for m in seen if m not in gem), key=lambda m: ("pro" not in m and "flash" not in m, "lite" in m, m))
+            gem = list(dict.fromkeys(gem + seen))
         except Exception as e:  # noqa: BLE001 - listing is optional; the two known models still work
             note(f"gemini model list failed: {e}")
+
+        def quality(m):  # best Persian prose first: pro > flash > lite, newer version first
+            v = re.search(r"(\d+(?:\.\d+)?)", m)
+            tier = 3 if "lite" in m else 0 if "pro" in m else 1 if "flash" in m else 2
+            return (tier, -(float(v.group(1)) if v else 99.0))
+        gem.sort(key=quality)
         for m in gem[:10]:
             out.append(("gemini:" + m, lambda p, m=m: post(GEMINI_URL, os.environ["GEMINI_API_KEY"], m, p)))
     key = os.environ.get("OPENROUTER_API_KEY")
