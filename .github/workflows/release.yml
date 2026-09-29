@@ -28,12 +28,31 @@ jobs:
         with:
           python-version: "3.12"
       - name: release a few queued news every ~5 minutes
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           end=$(( $(date +%s) + 340*60 ))
           while [ "$(date +%s)" -lt "$end" ]; do
             git pull -q --rebase || true
+            # data fetch lives here too: GitHub's own schedule for fetch.yml silently skipped whole days
+            dow=$(TZ=Asia/Tehran date +%u); h=$(TZ=Asia/Tehran date +%-H); m=$(TZ=Asia/Tehran date +%-M)
+            if [ "$dow" != 4 ] && [ "$dow" != 5 ] && [ "$h" -ge 13 ] && [ "$h" -le 20 ] && [ "$m" -ge 30 ] && [ ! -f "/tmp/fetched-$h" ]; then
+              touch "/tmp/fetched-$h"
+              if python tools/fetch.py; then
+                git add -A data
+                if ! git diff --cached --quiet; then
+                  git commit -qm "data: $(python -c 'import json;print(json.load(open("data/latest.json"))["date_fa"])')"
+                  git pull -q --rebase && git push -q origin HEAD:main
+                fi
+              fi
+            fi
+            # writer is never started by anything else: if the latest day has unwritten symbols and no writer runs, start one
+            left=$(python -c "import json,os;l=json.load(open('data/latest.json'));r={x['symbol'] for x in json.load(open(f\"data/{l['date']}/today.json\"))['rows']};p=f\"queue/{l['date']}.json\";d={x['symbol'] for x in json.load(open(p))['items']} if os.path.exists(p) else set();print(len(r-d))" 2>/dev/null || echo 0)
+            if [ "${left:-0}" -gt 0 ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w write_free.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w write_free.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
+              gh workflow run write_free.yml -R "$GITHUB_REPOSITORY" -f limit=0 && echo "writer started ($left left)"
+            fi
             python tools/release.py
             if python tools/validate.py; then
               git add news
