@@ -93,7 +93,9 @@ def providers():
     for env, url, models in (("GROQ_API_KEY", GROQ_URL, ("llama-3.3-70b-versatile", "qwen/qwen3-32b")),
                              ("MISTRAL_API_KEY", MISTRAL_URL, ("mistral-large-latest", "mistral-medium-latest")),
                              ("CEREBRAS_API_KEY", "https://api.cerebras.ai/v1/chat/completions", ("qwen-3-235b-a22b-instruct-2507", "llama-3.3-70b")),
-                             ("SAMBANOVA_API_KEY", "https://api.sambanova.ai/v1/chat/completions", ("DeepSeek-V3.1", "Meta-Llama-3.3-70B-Instruct"))):
+                             ("NVIDIA_API_KEY", "https://integrate.api.nvidia.com/v1/chat/completions", ("deepseek-ai/deepseek-v3.1", "qwen/qwen3-235b-a22b", "meta/llama-3.3-70b-instruct")),
+                             ("COHERE_API_KEY", "https://api.cohere.ai/compatibility/v1/chat/completions", ("command-a-03-2025",)),
+                             ("SAMBANOVA_API_KEY","https://api.sambanova.ai/v1/chat/completions", ("DeepSeek-V3.1", "Meta-Llama-3.3-70B-Instruct"))):
         if os.environ.get(env):
             for m in models:
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
