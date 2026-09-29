@@ -44,3 +44,37 @@
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
   AAK-CEMENTPOLI-50L-00 gemini:gemini-3.5-flash: start
 OK AAK-CEMENTPOLI-50L-00 <- gemini:gemini-3.5-flash (49s)
+  CMK-CEMENTP-50L-00 github:openai/gpt-4.1: start
+  CMK-CEMENTP-50L-00 github:openai/gpt-4.1: 0s ValueError: bad response: 'OK\r\n'
+  CMK-CEMENTP-50L-00 github:openai/gpt-4o: start
+  CMK-CEMENTP-50L-00 github:openai/gpt-4o: 0s ValueError: bad response: 'OK\r\n'
+  CMK-CEMENTP-50L-00 github-azure:gpt-4.1: start
+  CMK-CEMENTP-50L-00 github-azure:gpt-4.1: 0s URLError: <urlopen error [Errno -2] Name or service not known>
+  CMK-CEMENTP-50L-00 github-azure:gpt-4o: start
+  CMK-CEMENTP-50L-00 github-azure:gpt-4o: 0s URLError: <urlopen error [Errno -2] Name or service not known>
+  CMK-CEMENTP-50L-00 gemini:gemini-2.5-pro: start
+  CMK-CEMENTP-50L-00 gemini:gemini-2.5-pro: 0s ValueError: HTTP 404: [{
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest featu
+  CMK-CEMENTP-50L-00 gemini:gemini-3.5-flash: start
+  gemini:gemini-3.5-flash: quota used up - skipped for the rest of the day
+  CMK-CEMENTP-50L-00 gemini:gemini-3.5-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  CMK-CEMENTP-50L-00 gemini:gemini-2.5-flash: start
+  CMK-CEMENTP-50L-00 gemini:gemini-2.5-flash: 0s ValueError: HTTP 404: [{
+  "error": {
+    "code": 404,
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features 
+  CMK-CEMENTP-50L-00 gemini:gemini-omni-1.1-flash: start
+  gemini:gemini-omni-1.1-flash: quota used up - skipped for the rest of the day
+  CMK-CEMENTP-50L-00 gemini:gemini-omni-1.1-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  CMK-CEMENTP-50L-00 gemini:gemma-4-26b-a4b-it: start
+  CMK-CEMENTP-50L-00 gemini:gemma-4-26b-a4b-it: 90s TimeoutError: The read operation timed out
+  CMK-CEMENTP-50L-00 openrouter:qwen/qwen3.8-27b:free: start
+OK CMK-CEMENTP-50L-00 <- openrouter:qwen/qwen3.8-27b:free (766s)
