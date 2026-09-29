@@ -209,7 +209,7 @@ def main():
                 time.sleep(2)
                 continue
             doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
-                                 "hall": r.get("talar", ""), "producer": r.get("producer_name", ""), **d})
+                                 "hall": r.get("talar", ""), "producer": r.get("producer_name", ""), **d, "model": name})
             subs.add(d["subtitle"])
             json.dump(doc, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             ok += 1
