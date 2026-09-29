@@ -9,6 +9,7 @@ import json
 import os
 import random
 import shutil
+from datetime import datetime, timezone
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 Q, N = os.path.join(ROOT, "queue"), os.path.join(ROOT, "news")
@@ -44,6 +45,8 @@ def main():
         pending = [i for i in q["items"] if i["symbol"] not in out]
         take = pending[:budget]
         if take:
+            now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+            take = [{**i, "published_at": now} for i in take]  # exact release moment, for the site's hot-news ranking
             n["items"].extend(take)
             json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             released += [f"{name}:{i['symbol']}" for i in take]
