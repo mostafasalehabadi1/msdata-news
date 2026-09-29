@@ -14,6 +14,7 @@ import os
 import re
 import subprocess
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.request
@@ -91,13 +92,28 @@ def note(line):
         open(os.path.join(ROOT, "news-test", "live-log.txt"), "w", encoding="utf-8").write("\n".join(LOG[-200:]))
 
 
+class QuotaError(ValueError):
+    pass
+
+
+QUOTA_RE = re.compile(r"quota|exceeded|per day|daily limit|RESOURCE_EXHAUSTED", re.I)
+EXHAUSTED_FILE = os.path.join(tempfile.gettempdir(), f"exhausted-{time.strftime('%Y-%m-%d', time.gmtime())}.txt")
+
+
+def exhausted():
+    return set(open(EXHAUSTED_FILE, encoding="utf-8").read().split()) if os.path.exists(EXHAUSTED_FILE) else set()
+
+
 def retry(call, prompt):
-    """busy / rate-limited models get 3 more tries with growing pauses before we move to the next model."""
+    """busy / rate-limited models get 3 more tries with growing pauses before we move to the next model;
+    a used-up quota is not busy - it fails at once so the model is dropped for the rest of the day."""
     for wait in (0, 15, 30):
         time.sleep(wait)
         try:
             return call(prompt)
         except ValueError as e:
+            if re.search(r"HTTP 429", str(e)) and QUOTA_RE.search(str(e)):
+                raise QuotaError(str(e)) from e
             if not re.search(r"HTTP (429|500|502|503)", str(e)) or wait == 30:
                 raise
 
@@ -150,6 +166,8 @@ def main():
         prompt = ("فکت‌شیت (فقط همین عددها را به کار ببر):\n" + factsheet.build(r, hist, peers, date_fa) +
                   f"\n\nزاویه‌ی خبرهای قبلی امروز را تکرار نکن. سوتیترهای قبلی: {' | '.join(list(subs)[-5:])}")
         for name, call in provs:
+            if name in exhausted():
+                continue
             t0 = time.time()
             note(f"  {sym} {name}: start")
             try:
@@ -165,6 +183,9 @@ def main():
                 if d["subtitle"] in subs:
                     raise ValueError("repeated subtitle")
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model
+                if isinstance(e, QuotaError):
+                    open(EXHAUSTED_FILE, "a", encoding="utf-8").write(name + "\n")
+                    note(f"  {name}: quota used up - skipped for the rest of the day")
                 note(f"  {sym} {name}: {time.time() - t0:.0f}s {type(e).__name__}: {str(e)[:220]}")
                 time.sleep(2)
                 continue
