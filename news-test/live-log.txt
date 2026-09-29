@@ -1,33 +1,26 @@
 2 symbols to write; models: gemini:gemini-pro-latest, gemini:gemini-2.5-pro, gemini:gemini-flash-latest, gemini:gemini-3.8-flash, gemini:gemini-3.7-flash, gemini:gemini-3.6-flash, gemini:gemini-3.5-flash, gemini:gemini-2.5-flash, gemini:gemini-omni-1.1-flash, gemini:gemma-4-26b-a4b-it, openrouter:qwen/qwen3.8-27b:free, openrouter:google/gemma-4-31b-it:free, openrouter:nvidia/nemotron-3-ultra-550b-a55b:free, openrouter:google/gemma-4-26b-a4b-it:free, openrouter:inclusionai/ling-3.0-flash-sante:free, openrouter:dots-studio/dots-3-note-preview:free
-  ILCE-CEMENTPOLI-50L-00 gemini:gemini-pro-latest: start
-  gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
-  ILCE-CEMENTPOLI-50L-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  ILCE-CEMENTPOLI-50L-00 gemini:gemini-2.5-pro: start
-  ILCE-CEMENTPOLI-50L-00 gemini:gemini-2.5-pro: 0s ValueError: HTTP 404: [{
+  CMK-CPCBNG32.5-J-00 gemini:gemini-2.5-pro: start
+  CMK-CPCBNG32.5-J-00 gemini:gemini-2.5-pro: 0s ValueError: HTTP 404: [{
   "error": {
     "code": 404,
     "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest featu
-  ILCE-CEMENTPOLI-50L-00 gemini:gemini-flash-latest: start
-  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
-  ILCE-CEMENTPOLI-50L-00 gemini:gemini-flash-latest: 0s QuotaError: HTTP 429: [{
+  CMK-CPCBNG32.5-J-00 gemini:gemini-3.7-flash: start
+  CMK-CPCBNG32.5-J-00 gemini:gemini-3.7-flash: 50s ValueError: HTTP 503: [{
   "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  ILCE-CEMENTPOLI-50L-00 gemini:gemini-3.8-flash: start
-OK ILCE-CEMENTPOLI-50L-00 <- gemini:gemini-3.8-flash (8s)
-  CMK-PCT5G42.5-J-00 gemini:gemini-2.5-pro: start
-  CMK-PCT5G42.5-J-00 gemini:gemini-2.5-pro: 0s ValueError: HTTP 404: [{
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+  CMK-CPCBNG32.5-J-00 gemini:gemini-3.6-flash: start
+  CMK-CPCBNG32.5-J-00 gemini:gemini-3.6-flash: 75s ValueError: HTTP 503: [{
   "error": {
-    "code": 404,
-    "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest featu
-  CMK-PCT5G42.5-J-00 gemini:gemini-3.8-flash: start
-  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
-  CMK-PCT5G42.5-J-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  CMK-PCT5G42.5-J-00 gemini:gemini-3.7-flash: start
-OK CMK-PCT5G42.5-J-00 <- gemini:gemini-3.7-flash (34s)
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+  CMK-CPCBNG32.5-J-00 gemini:gemini-3.5-flash: start
+OK CMK-CPCBNG32.5-J-00 <- gemini:gemini-3.5-flash (75s)
