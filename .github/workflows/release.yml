@@ -37,8 +37,8 @@ jobs:
           while [ "$(date +%s)" -lt "$end" ]; do
             git pull -q --rebase || true
             # data fetch lives here too: GitHub's own schedule for fetch.yml silently skipped whole days
-            dow=$(TZ=Asia/Tehran date +%u); h=$(TZ=Asia/Tehran date +%-H)
-            if [ "$dow" != 4 ] && [ "$dow" != 5 ] && [ "$h" -ge 12 ] && [ "$h" -le 17 ] &&[ ! -f "/tmp/fetched-$h" ]; then
+            h=$(TZ=Asia/Tehran date +%-H)
+            if [ ! -f "/tmp/fetched-$h" ]; then
               touch "/tmp/fetched-$h"
               if python tools/fetch.py; then
                 git add -A data
