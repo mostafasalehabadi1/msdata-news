@@ -1,154 +1,19 @@
 40 symbols to write; 8 parallel workers: gemini, openrouter, groq, zai, hf, cf, cohere, sambanova
+  ASPC-HDHBM5510WP-00 sambanova:DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
+  SACE-CEMENTSP-50L-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
   gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
-  LPC-LD2102TX00RP-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
+  MAPE-LLD22B02P-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  ZATC-PCT5G32.5-B-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  ASPC-HDHBM5510WP-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
+  SACE-CEMENTSP-50L-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  ZATC-PCT5G32.5-B-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  PAM-HDEX3L-00 sambanova:DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
+  YAS-EA013000-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  KECE-CPCANG32.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 7s ValueError: no JSON
-  LAC-CEMENTW-25L-00 groq:llama-3.3-70b-versatile: 1s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  PAM-HDEX3L-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
+  YAS-EA013000-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  LAC-CEMENTW-25L-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-OK KCC-CEMENTMC-50L-00 <- cohere:command-a-03-2025 (16s)
-  KECE-CPCANG32.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 9s ValueError: no JSON
-  NECO-CEMENTW-20L-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
-  LPC-LD2102TX00RP-00 gemini:gemini-flash-latest: 18s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  NECO-CEMENTW-20L-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
-  LPC-LD2102TX00RP-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  gemini:gemini-3.7-flash: quota used up - skipped for the rest of the day
-  LPC-LD2102TX00RP-00 gemini:gemini-3.7-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  gemini:gemini-3.6-flash: quota used up - skipped for the rest of the day
-  LPC-LD2102TX00RP-00 gemini:gemini-3.6-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  NECO-CEMENTW-20L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s ValueError: no JSON
-OK KECE-CPCANG32.5-L50-00 <- cohere:command-a-03-2025 (11s)
-  NECO-CEMENTW-20L-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 8s ValueError: no JSON
-  NCI-OAMOOX-00 openrouter:qwen/qwen3.8-27b:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"qwen/qwen3.8-27b:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rat
-OK LAC-CEMENTW-25L-00 <- cohere:command-a-03-2025 (10s)
-  ZATC-PCT5G32.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 5s ValueError: no JSON
-  ZATC-PCT5G32.5-B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 9s ValueError: no JSON
-  NECO-CEMENTW-20L-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 359 (char 800)
-  gemini:gemini-3.5-flash: quota used up - skipped for the rest of the day
-  LPC-LD2102TX00RP-00 gemini:gemini-3.5-flash: 49s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-OK ZATC-PCT5G32.5-B-00 <- cohere:command-a-03-2025 (8s)
-  gemini:gemini-omni-1.1-flash: quota used up - skipped for the rest of the day
-  LPC-LD2102TX00RP-00 gemini:gemini-omni-1.1-flash: 2s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  ZATC-PCT5G42.5-B-00 zai:glm-4.5-flash: 90s TimeoutError: The read operation timed out
-  PTC-PETTG645J-00 sambanova:DeepSeek-V3.1: 90s TimeoutError: The read operation timed out
-  PTC-PETTG645J-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  NCI-OAMOOX-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate you
-  TABC-MD3840UAPP-00 sambanova:DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  TABC-MD3840UAPP-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  MPC-HDBL3PP-00 hf:deepseek-ai/DeepSeek-V3.1: 107s ValueError: 142 words / 3 paragraphs
-  SHPC-LLD0209AAPP-00 sambanova:DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-OK SACE-CEMENTSPB-00 <- cohere:command-a-03-2025 (23s)
-  SHPC-LLD0209AAPP-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  SHPC-LLD0209AAPP-00 cohere:command-a-03-2025: 11s JSONDecodeError: Invalid control character at: line 6 column 347 (char 741)
-OK MPC-HDBL3PP-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (19s)
-  TABC-MD3840UAPP-00 cohere:command-a-03-2025: 8s JSONDecodeError: Invalid control character at: line 6 column 337 (char 746)
-OK ZATC-PCT5G42.5-B-00 <- cohere:command-a-03-2025 (9s)
-  EKC-CEMENTWB-25L-00 cohere:command-a-03-2025: 9s JSONDecodeError: Invalid control character at: line 6 column 326 (char 776)
-  LPC-LD2102TX00RP-00 gemini:gemma-4-26b-a4b-it: 90s TimeoutError: The read operation timed out
-OK TCC-CPCANG32.5-L50-00 <- cohere:command-a-03-2025 (9s)
-  PTC-PETTG645J-00 zai:glm-4.5-flash: 90s TimeoutError: The read operation timed out
-  PTC-PETTG645J-00 cohere:command-a-03-2025: 10s JSONDecodeError: Invalid control character at: line 6 column 358 (char 816)
-OK NAC-CEMENTP-50L-00 <- cohere:command-a-03-2025 (9s)
-OK KECE-CEMENTP-50L-00 <- cohere:command-a-03-2025 (9s)
-  TABC-ABSSD0150PP-00 hf:deepseek-ai/DeepSeek-V3.1: 100s ValueError: 110 words / 3 paragraphs
-OK MAS-CPCANG32.5-L50-00 <- cohere:command-a-03-2025 (10s)
-OK TABC-ABSSD0150PP-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (18s)
-OK KACC-PCT5G32.5-L50-00 <- cohere:command-a-03-2025 (8s)
-  LPC-LD2102TX00RP-00 gemini:gemma-4-31b-it: 90s TimeoutError: The read operation timed out
-  LPC-LD2102TX00RP-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-  EKC-CEMENTWB-25L-00 zai:glm-4.5-flash: 90s TimeoutError: The read operation timed out
-  KCC-CPCANG32.5-L50-00 cohere:command-a-03-2025: 18s ValueError: 230 words / 3 paragraphs
-OK LPC-LD2102TX00RP-00 <- cohere:command-a-03-2025 (17s)
-  PTC-PETBG821J-00 hf:deepseek-ai/DeepSeek-V3.1: 57s ValueError: 111 words / 2 paragraphs
-OK BCC-PCT5G32.5-B-00 <- cohere:command-a-03-2025 (9s)
-OK PTC-PETBG821J-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (10s)
-OK NCI-OAMOOX-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (236s)
-OK RSS-EA013000-00 <- cohere:command-a-03-2025 (10s)
-  AAC-CPCBNG42.5-B-00 cohere:command-a-03-2025: 10s JSONDecodeError: Invalid control character at: line 6 column 378 (char 770)
-  ENPC-PSSEF205J-089 gemini:gemma-4-26b-a4b-it: 90s TimeoutError: The read operation timed out
-OK MDC-HDF7000LMPJ-00 <- cohere:command-a-03-2025 (19s)
-OK SACE-CEMENTWB-40L-00 <- cohere:command-a-03-2025 (9s)
-  FICO-CPCANG42.5-L50-00 cohere:command-a-03-2025: 15s ValueError: 149 words / 3 paragraphs
-OK BCC-PCT5G32.5-L50-00 <- cohere:command-a-03-2025 (11s)
-  KABS-EA006000-00 hf:deepseek-ai/DeepSeek-V3.1: 100s ValueError: 107 words / 3 paragraphs
-OK KABS-EA006000-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (16s)
-OK NEYC-CPCBNG32.5-B-00 <- cohere:command-a-03-2025 (21s)
-OK ENPC-PSSEF305J-089 <- cohere:command-a-03-2025 (9s)
-  ENPC-PSSEF205J-089 gemini:gemma-4-31b-it: 105s TimeoutError: The read operation timed out
-  ENPC-PSSEF205J-089 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-  YAS-EA013000-00 cohere:command-a-03-2025: 10s JSONDecodeError: Invalid control character at: line 6 column 354 (char 756)
-  ENPC-PSSEF205J-089 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 362 (char 836)
-OK AAC-CPCANG32.5-L50-00 <- cohere:command-a-03-2025 (12s)
-  SACE-CEMENTSP-50L-00 cohere:command-a-03-2025: 19s ValueError: 218 words / 3 paragraphs
-  LOR-MD3840UAPP-00 hf:deepseek-ai/DeepSeek-V3.1: 108s ValueError: 148 words / 3 paragraphs
-  ECC-CPCANG32.5-L50-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 313 (char 706)
-  DSC-GS00101-00 gemini:gemma-4-26b-a4b-it: 90s TimeoutError: The read operation timed out
-OK LOR-MD3840UAPP-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (12s)
-  DSC-GS00101-00 gemini:gemma-4-31b-it: 90s TimeoutError: The read operation timed out
-  DSC-GS00101-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-OK NECO-CEMENTW-20L-00 <- hf:deepseek-ai/DeepSeek-V3.1 (125s)
-  SHPC-LLD0209AAPP-00 hf:deepseek-ai/DeepSeek-V3.1: 124s ValueError: 127 words / 3 paragraphs
-OK SHPC-LLD0209AAPP-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (16s)
-OK PAM-LD2420DPP-00 <- openrouter:qwen/qwen3.8-27b:free (646s)
-  TABC-MD3840UAPP-00 hf:deepseek-ai/DeepSeek-V3.1: 124s ValueError: 141 words / 3 paragraphs
-  TABC-MD3840UAPP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 8s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  EKC-CEMENTWB-25L-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  EKC-CEMENTWB-25L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  KCC-CPCANG32.5-L50-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  KCC-CPCANG32.5-L50-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  PTC-PETTG645J-00 openrouter:qwen/qwen3.8-27b:free: 406s TypeError: expected string or bytes-like object, got 'NoneType'
-  PTC-PETTG645J-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate you
-OK PTC-PETTG645J-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (136s)
-  AAC-CPCBNG42.5-B-00 openrouter:qwen/qwen3.8-27b:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"qwen/qwen3.8-27b:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rat
-  AAC-CPCBNG42.5-B-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate you
-OK AAC-CPCBNG42.5-B-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (88s)
+OK BCCO-CPCANG42.5-L50-00 <- cohere:command-a-03-2025 (11s)
