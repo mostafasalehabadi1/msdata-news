@@ -59,7 +59,7 @@ def comp(r):
 
 
 def name(r):
-    return f"{r.get('goods_name')} {r.get('producer_name')} [نماد {r.get('symbol')}]"
+    return f"{r.get('goods_name')} {r.get('producer_name')}"
 
 
 def facts(rows, date_fa):
@@ -90,6 +90,9 @@ def facts(rows, date_fa):
         L.append("بیشترین افزایش نرخ نسبت به معامله‌ی قبلی همان نماد: " + "؛ ".join(f"{name(r)}: {fa_num(r['price_change_pct'])} درصد" for r in up))
     if down:
         L.append("بیشترین کاهش نرخ نسبت به معامله‌ی قبلی همان نماد: " + "؛ ".join(f"{name(r)}: {fa_num(abs(r['price_change_pct']))} درصد" for r in down))
+    named = sorted(rows, key=val, reverse=True)[:8] + hot + up + down
+    L.append("\nنماد هر معامله (فقط برای links؛ هرگز در متن ننویس): " +
+             "؛ ".join(f"{name(r)} = {r['symbol']}" for r in {r["symbol"]: r for r in named}.values()))
     return "\n".join(L)
 
 
@@ -135,6 +138,8 @@ def check(d, symbols, urls):
         raise ValueError("bad opening")
     if any(FORBIDDEN.search(d[k]) for k in ("title", "subtitle", "lead", "text")):
         raise ValueError("forbidden content")
+    if re.search(r"[A-Z]{2,}-[A-Z0-9.]+-\d\d", d["text"]):
+        raise ValueError("symbol code in text")
     if MIXED.search(d["text"]):  # a model that slips Latin letters into a Persian word (سولfurیک)
         raise ValueError("mixed-script word")
     d["slug"] = SLUG_BAD.sub("-", d["slug"].strip())
