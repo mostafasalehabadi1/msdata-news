@@ -127,3 +127,13 @@ OK AAC-CPCANG32.5-L50-00 <- cohere:command-a-03-2025 (12s)
   ECC-CPCANG32.5-L50-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 313 (char 706)
   DSC-GS00101-00 gemini:gemma-4-26b-a4b-it: 90s TimeoutError: The read operation timed out
 OK LOR-MD3840UAPP-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (12s)
+  DSC-GS00101-00 gemini:gemma-4-31b-it: 90s TimeoutError: The read operation timed out
+  DSC-GS00101-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "Developer instruction is not enabled for this model",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+]
+OK NECO-CEMENTW-20L-00 <- hf:deepseek-ai/DeepSeek-V3.1 (125s)
