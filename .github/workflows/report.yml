@@ -3,6 +3,10 @@ name: daily-report
 # model that answers (tools/write_report.py) and publishes it in the same run - the report has top priority.
 on:
   workflow_dispatch:
+    inputs:
+      now:
+        description: write the latest day's report now, even outside 18:30 / trading days
+        default: ""
 concurrency:
   group: daily-report
   cancel-in-progress: false
@@ -36,7 +40,7 @@ jobs:
         run: |
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
-          python tools/write_report.py
+          python tools/write_report.py ${{ inputs.now && '--now' || '' }}
           git add queue data
           git diff --cached --quiet && exit 0
           git commit -qm "report: $(python -c 'import json;print(json.load(open("data/latest.json"))["date_fa"])')"
