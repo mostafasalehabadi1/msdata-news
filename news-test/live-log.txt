@@ -140,3 +140,12 @@ OK NECO-CEMENTW-20L-00 <- hf:deepseek-ai/DeepSeek-V3.1 (125s)
   SHPC-LLD0209AAPP-00 hf:deepseek-ai/DeepSeek-V3.1: 124s ValueError: 127 words / 3 paragraphs
 OK SHPC-LLD0209AAPP-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (16s)
 OK PAM-LD2420DPP-00 <- openrouter:qwen/qwen3.8-27b:free (646s)
+  TABC-MD3840UAPP-00 hf:deepseek-ai/DeepSeek-V3.1: 124s ValueError: 141 words / 3 paragraphs
+  TABC-MD3840UAPP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 8s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  EKC-CEMENTWB-25L-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  EKC-CEMENTWB-25L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KCC-CPCANG32.5-L50-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KCC-CPCANG32.5-L50-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  PTC-PETTG645J-00 openrouter:qwen/qwen3.8-27b:free: 406s TypeError: expected string or bytes-like object, got 'NoneType'
+  PTC-PETTG645J-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate you
+OK PTC-PETTG645J-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (136s)
