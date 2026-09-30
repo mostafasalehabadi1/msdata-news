@@ -62,6 +62,9 @@ def post(url, key, model, prompt, extra=None):
 STRONG_GEMINI = ("gemma-4-31b-it",)
 STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "gemini:gemma-4-31b-it",
           "kilo:dots-studio/dots-3-note-preview:free", "hf:deepseek-ai/DeepSeek-V3.1"}
+# ranks 6-8: write the important half too, but only when every strong model is out or a symbol waited 2h
+BACKUP = {"kilo:stepfun/step-3.7-flash:free", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free"}
+BACKUP_WAIT = 2 * 3600
 
 
 def providers():
@@ -185,7 +188,7 @@ def main():
     doc = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {"date_fa": date_fa, "date": date, "items": []}
     done = {i["symbol"] for i in doc["items"]}
     subs = {i["subtitle"] for i in doc["items"]}
-    todo = [r for r in rows if r.get("symbol") not in done][: a.limit or None]
+    todo = [r for r in rows if r.get("symbol") not in done]
     provs = providers()
     if not provs:
         sys.exit("no model key found (GEMINI_API_KEY / OPENROUTER_API_KEY / GROQ_API_KEY / ...)")
@@ -194,13 +197,15 @@ def main():
     # the owner's blind rating (5 best of 12 models, 2026-09-30/10-01) writes the important half; every other model the rest
     groups = {}
     for name, call in provs:
-        groups.setdefault(name.split(":")[0] + ("/strong" if name in STRONG else ""), []).append((name, call))
+        groups.setdefault(name.split(":")[0] + ("/strong" if name in STRONG else "/backup" if name in BACKUP else ""), []).append((name, call))
     # importance tiers come from data/importance.json (tools/importance.py): 0 important (top half by value this year), 1 the rest.
     # A strong-model worker writes only important symbols, every other worker only the rest.
     table = importance.update(date, rows)
     tier = {s: e["tier"] for s, e in table.items()}
     value = {s: e["value"] for s, e in table.items()}
+    seen_t = {s: e.get("seen_t", 0) for s, e in table.items()}
     todo.sort(key=lambda r: (tier.get(r["symbol"], 1), -value.get(r["symbol"], 0)))  # most important first
+    del todo[a.limit or len(todo):]
     note(f"{len(todo)} symbols to write; {len(groups)} parallel workers: {', '.join(groups)}")
     lock = threading.Lock()
     tried = {r["symbol"]: set() for r in todo}
@@ -257,6 +262,11 @@ def main():
             with lock:
                 live = [m for m in models if m[0] not in exhausted()]
                 pick = [r for r in todo if gname not in tried[r["symbol"]] and tier.get(r["symbol"], 1) == lvl]
+                if gname.endswith("/backup"):
+                    strong_out = not any(t.is_alive() for g, t in zip(groups, threads) if g.endswith("/strong"))
+                    late = [r for r in todo if gname not in tried[r["symbol"]] and tier.get(r["symbol"], 1) == 0
+                            and (strong_out or time.time() - seen_t.get(r["symbol"], time.time()) > BACKUP_WAIT)]
+                    pick = late + pick  # a waiting important symbol comes before the rest
                 if not live or not pick:
                     return
                 r = pick[0]
@@ -267,7 +277,7 @@ def main():
             else:
                 fails += 1
                 with lock:
-                    if any(g not in tried[r["symbol"]] and lvl_of(g) == tier.get(r["symbol"], 1) for g in groups):
+                    if any(g not in tried[r["symbol"]] and (lvl_of(g) == tier.get(r["symbol"], 1) or g.endswith("/backup")) for g in groups):
                         todo.append(r)  # another provider may still write it
             time.sleep(4)  # stay under free-tier rate limits
 
