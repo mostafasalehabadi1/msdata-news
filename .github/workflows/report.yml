@@ -7,6 +7,9 @@ on:
       now:
         description: write the latest day's report now, even outside 18:30 / trading days
         default: ""
+  push:  # editing report-now.txt from the manager VPS = a manual "write it now"
+    branches: [main]
+    paths: [report-now.txt]
 concurrency:
   group: daily-report
   cancel-in-progress: false
@@ -40,7 +43,7 @@ jobs:
         run: |
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
-          python tools/write_report.py ${{ inputs.now && '--now' || '' }}
+          python tools/write_report.py ${{ (inputs.now || github.event_name == 'push') && '--now' || '' }}
           git add queue data
           git diff --cached --quiet && exit 0
           git commit -qm "report: $(python -c 'import json;print(json.load(open("data/latest.json"))["date_fa"])')"
