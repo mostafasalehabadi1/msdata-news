@@ -18,3 +18,14 @@
 
   KSO-BSG194X-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
 OK IRIR-DSMCSTIRNPIPE-089 <- cohere:command-a-03-2025 (18s)
+  FZI-BSG194X-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  KSO-BSG194X-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
+  FPCO-ACTACB-00 llm7:minimax-m2.7: 9s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 50 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":50}}
+  SKS-BSG194X-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 51s ValueError: 143 words / 1 paragraphs
+  BPC-HEARB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 19s JSONDecodeError: Invalid control character at: line 6 column 354 (char 689)
+  BPC-HEARB-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 52s ValueError: 129 words / 2 paragraphs
+  KPC-OAPMDIB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 7s JSONDecodeError: Invalid control character at: line 6 column 243 (char 719)
+  PPMZ-PSGPPS1115PP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+OK IPC-XYLENEMIXB-00 <- zai:glm-4.5-flash (186s)
