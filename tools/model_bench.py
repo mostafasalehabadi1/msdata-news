@@ -1,4 +1,4 @@
-"""model_bench.py - one-off (paused) Persian writing test: every configured model writes the same news, results go to news-test/bench.json."""
+"""model_bench.py - one-off (per provider) Persian writing test: every configured model writes the same news, results go to news-test/bench.json."""
 import json
 import os
 import time
