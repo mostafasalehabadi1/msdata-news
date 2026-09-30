@@ -1,159 +1,17 @@
-40 symbols to write; 12 parallel workers: gemini, openrouter, groq, zai, hf, cf, llm7, siliconflow, cohere, sambanova, ovh, kilo
-  SACE-CEMENTSP-50L-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+2 symbols to write; 11 parallel workers: gemini, openrouter, groq, zai, hf, cf, llm7, cohere, sambanova, ovh, kilo
+  REIL-PETBGG5761J-000 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
-  MAPE-LLD22B02P-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
+  REIL-PETBGG5761J-000 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  SADR-PTJOOO000-00 gemini:gemma-4-26b-a4b-it: 44s ValueError: no JSON
+  SADR-PTJOOO000-00 gemini:gemma-4-31b-it: 178s ValueError: no JSON
+  SADR-PTJOOO000-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
   "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  JPC-HDBL3PP-00 siliconflow:deepseek-ai/DeepSeek-V3: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  ASPC-HDHBM5510WP-00 sambanova:DeepSeek-V3.1: 1s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
-  YAS-EA013000-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"cd406b15168b92791c749417f9939034"
+    "code": 400,
+    "message": "Developer instruction is not enabled for this model",
+    "status": "INVALID_ARGUMENT"
+  }
 }
-  SACE-CEMENTSP-50L-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  JPC-HDBL3PP-00 siliconflow:zai-org/GLM-4.5-Air: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  ASPC-HDHBM5510WP-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
-  YAS-EA013000-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"03f08c17218a8c72a7bd6212d911ce0f"
-}
-  JPC-HDBL3PP-00 siliconflow:Qwen/Qwen3-8B: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
-  YAS-EA013000-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"17957a0372372075f119640b05f8d204"
-}
-  JPC-HDBL3PP-00 siliconflow:THUDM/GLM-4-9B-0414: 0s ValueError: HTTP 403: {"code":30003,"message":"Model disabled.","data":null}
-  KHCO-PCT2G42.5-B-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  JPC-HDBL3PP-00 siliconflow:Qwen/Qwen2.5-7B-Instruct: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  PTC-PETSBTG645J-00 sambanova:DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-OK DACO-PCT5G32.5-L50-00 <- cohere:command-a-03-2025 (10s)
-  KHCO-PCT2G42.5-B-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  TORC-GRSUSUJ-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 11s ValueError: no JSON
-  PTC-PETSBTG645J-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  PPMZ-PSGPPS1115PP-00 siliconflow:deepseek-ai/DeepSeek-V3: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  HAK-TISSDLGR14-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  PPMZ-PSGPPS1115PP-00 siliconflow:zai-org/GLM-4.5-Air: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  PTC-PETBG825J-00 sambanova:DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  HAK-TISSDLGR14-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  PPMZ-PSGPPS1115PP-00 siliconflow:Qwen/Qwen3-8B: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  PTC-PETBG825J-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  TORC-GRSUSUJ-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 9s ValueError: no JSON
-  PPMZ-PSGPPS1115PP-00 siliconflow:THUDM/GLM-4-9B-0414: 0s ValueError: HTTP 403: {"code":30003,"message":"Model disabled.","data":null}
-  PPMZ-PSGPPS1115PP-00 siliconflow:Qwen/Qwen2.5-7B-Instruct: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  PACB-BIMC250B-00 cohere:command-a-03-2025: 10s JSONDecodeError: Invalid control character at: line 6 column 300 (char 739)
-  DCC-CEMENTPOLI-50L-00 siliconflow:deepseek-ai/DeepSeek-V3: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  DCC-CEMENTPOLI-50L-00 siliconflow:zai-org/GLM-4.5-Air: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  DCC-CEMENTPOLI-50L-00 siliconflow:Qwen/Qwen3-8B: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  DCC-CEMENTPOLI-50L-00 siliconflow:THUDM/GLM-4-9B-0414: 0s ValueError: HTTP 403: {"code":30003,"message":"Model disabled.","data":null}
-  NAC-PCT5G22.5-B-00 cohere:command-a-03-2025: 7s JSONDecodeError: Invalid control character at: line 6 column 316 (char 666)
-  DCC-CEMENTPOLI-50L-00 siliconflow:Qwen/Qwen2.5-7B-Instruct: 0s ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
-  TCHC-PCT2G42.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 12s ValueError: no JSON
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  BSPC-OAXYLENEB-00 llm7:DeepSeek-V4-Flash-0731: 47s QuotaError: HTTP 429: {"error":{"message":"Upstream provider rate limit exceeded.","type":"upstream_rate_limited","param":null,"code":"upstream_rate_limited"}}
-OK PAM-HDEX3L-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (49s)
-  TCHC-PCT2G42.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 8s ValueError: no JSON
-OK WCO-PCT5G42.5-B-00 <- cohere:command-a-03-2025 (10s)
-  AAC-CPCANG32.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 8s ValueError: no JSON
-  PAM-HDEX3J-00 hf:deepseek-ai/DeepSeek-V3.1: 65s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  PAM-HDEX3J-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  AAC-CPCANG32.5-B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 9s ValueError: no JSON
-OK MAPE-LLD22B02P-00 <- gemini:gemini-flash-latest (73s)
-  HAAL-PS10000-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
-  AHM-BI6070B-00 gemini:gemini-flash-latest: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  PAM-HDEX5PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
-  AHM-BI6070B-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  PAM-HDEX5PP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  gemini:gemini-3.7-flash: quota used up - skipped for the rest of the day
-  AHM-BI6070B-00 gemini:gemini-3.7-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  BSPC-OAXYLENEB-00 llm7:minimax-m2.7: 46s ValueError: HTTP 503: {"error":{"message":"This model is temporarily busy. Please try again shortly or choose another model.","type":"model_temporarily_unavailable","param":null,"code":"model_temporarily_unavailable"}}
-OK TABC-MD3840UAPP-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (100s)
-OK AHM-BI6070B-00 <- gemini:gemini-3.6-flash (27s)
-  BSPC-OAXYLENEB-00 llm7:mistral-Nemo-Instruct-2407: 31s ValueError: no JSON
-OK TABC-HD5030SAPP-00 <- gemini:gemini-3.6-flash (29s)
-  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
-  SFAC-EA007000-00 llm7:minimax-m2.7: 18s QuotaError: HTTP 429: {"error":{"message":"Upstream provider rate limit exceeded.","type":"upstream_rate_limited","param":null,"code":"upstream_rate_limited"}}
-OK BBAD-BI6070B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (100s)
-OK ASPC-LDLFI2047AWP-00 <- gemini:gemini-3.6-flash (29s)
-  gemini:gemini-3.6-flash: quota used up - skipped for the rest of the day
-  TABC-EPS422FCJ-00 gemini:gemini-3.6-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  gemini:gemini-3.5-flash: quota used up - skipped for the rest of the day
-  TABC-EPS422FCJ-00 gemini:gemini-3.5-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  gemini:gemini-omni-1.1-flash: quota used up - skipped for the rest of the day
-  TABC-EPS422FCJ-00 gemini:gemini-omni-1.1-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-OK SFAC-EA007000-00 <- llm7:mistral-Nemo-Instruct-2407 (68s)
-OK TABC-EPS321HSJ-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (80s)
-  ASPC-HDPEHFI5110POWJ-00 llm7:mistral-Nemo-Instruct-2407: 43s ValueError: 138 words / 1 paragraphs
-  PPJT-BIPG6422B-00 zai:glm-4.5-flash: 288s ValueError: 213 words / 3 paragraphs
-  KCC-CPCANG32.5-L50-00 llm7:mistral-Nemo-Instruct-2407: 48s ValueError: 161 words / 1 paragraphs
-  TCC-PCT5G32.5-L50-00 llm7:mistral-Nemo-Instruct-2407: 37s ValueError: 191 words / 1 paragraphs
-  TABC-EPS422FCJ-00 gemini:gemma-4-26b-a4b-it: 180s TimeoutError: The read operation timed out
-OK FICO-CPCANG42.5-L50-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (140s)
-OK DSC-GS00101-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (319s)
-  NYZ-EA009000-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
-OK TABC-EPS422FCJ-00 <- gemini:gemma-4-31b-it (103s)
-OK WCO-PCT5G42.5-L50-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (112s)
-OK SACE-CEMENTSP-50L-00 <- zai:glm-4.5-flash (120s)
-OK ASPC-HDHBM5510WP-00 <- gemini:gemma-4-26b-a4b-it (172s)
-  YAS-EA013000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-OK GAC-CPCANG42.5-L50-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (295s)
-OK YAS-EA013000-00 <- kilo:stepfun/step-3.7-flash:free (68s)
-OK HAK-TISSDLGR14-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (45s)
-OK KHCO-PCT2G42.5-B-00 <- gemini:gemma-4-26b-a4b-it (148s)
-OK PTC-PETSBTG645J-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (131s)
-OK JPC-HDBL3PP-00 <- zai:glm-4.5-flash (258s)
-  TORC-GRSUSUJ-00 gemini:gemma-4-26b-a4b-it: 141s JSONDecodeError: Extra data: line 9 column 5 (char 146)
-  PTC-PETBG825J-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-OK PTC-PETBG825J-00 <- kilo:stepfun/step-3.7-flash:free (53s)
-OK PACB-BIMC250B-00 <- zai:glm-4.5-flash (211s)
-OK NAC-PCT5G22.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (55s)
-OK PPMZ-PSGPPS1115PP-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (247s)
-OK TORC-GRSUSUJ-00 <- gemini:gemma-4-31b-it (210s)
-  DCC-CEMENTPOLI-50L-00 zai:glm-4.5-flash: 139s ValueError: 129 words / 2 paragraphs
-  TCHC-PCT2G42.5-L50-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-OK PAM-HDEX3J-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (192s)
-OK AAC-CPCANG32.5-B-00 <- gemini:gemma-4-26b-a4b-it (168s)
-OK TCHC-PCT2G42.5-L50-00 <- kilo:stepfun/step-3.7-flash:free (47s)
-OK HAAL-PS10000-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (76s)
-  BSPC-OAXYLENEB-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
-OK KCC-CPCANG32.5-L50-00 <- zai:glm-4.5-flash (73s)
-  PAM-HDEX5PP-00 gemini:gemma-4-26b-a4b-it: 180s TimeoutError: The read operation timed out
-OK ASPC-HDPEHFI5110POWJ-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (248s)
-  TCC-PCT5G32.5-L50-00 zai:glm-4.5-flash: 108s ValueError: 149 words / 2 paragraphs
-OK PPJT-BIPG6422B-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (232s)
-OK PAM-HDEX5PP-00 <- gemini:gemma-4-31b-it (160s)
-  NYZ-EA009000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-OK DCC-CEMENTPOLI-50L-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (161s)
-OK NYZ-EA009000-00 <- kilo:stepfun/step-3.7-flash:free (34s)
-OK BSPC-OAXYLENEB-00 <- gemini:gemma-4-26b-a4b-it (142s)
-OK TCC-PCT5G32.5-L50-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (197s)
+]
+  REIL-PETBGG5761J-000 gemini:gemma-4-26b-a4b-it: 44s ValueError: no JSON
+OK REIL-PETBGG5761J-000 <- gemini:gemma-4-31b-it (243s)
