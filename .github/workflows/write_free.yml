@@ -40,7 +40,6 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          USE_GITHUB_MODELS: "1"
           PUSH_EACH: "1"
         run: |
           git config user.name msdata-news-bot
@@ -50,11 +49,11 @@ jobs:
           if [ "${LIMIT:-0}" != "0" ]; then
             python tools/write_free.py --limit "$LIMIT" --out queue | tee pilot-log.txt
           else
-            # 0 = backlog mode: packages of 2 until every traded symbol of the latest day has a news (max ~5h)
+            # 0 = backlog mode: packages of 40 (parallel, one worker per provider) until every traded symbol of the latest day has a news (max ~5h)
             end=$(( $(date +%s) + 330*60 ))
             while [ "$(date +%s)" -lt "$end" ]; do
               git pull -q --rebase || true
-              out=$(python tools/write_free.py --limit 2 --out queue | tee -a pilot-log.txt | tail -1)
+              out=$(python tools/write_free.py --limit 40 --out queue | tee -a pilot-log.txt | tail -1)
               case "$out" in *"/0;"*) break ;; esac          # nothing left to write
               case "$out" in "written 0/"*) sleep 900 ;; *) sleep 60 ;; esac  # all models busy -> wait 15 min
             done
