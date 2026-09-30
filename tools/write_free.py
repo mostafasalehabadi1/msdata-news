@@ -41,7 +41,7 @@ RULES = ("تو خبرنگار «گروه بورس کالای ام‌اس‌دی�
 
 
 def post(url, key, model, prompt, extra=None):
-    body = {"model": model, "temperature": 0.7,
+    body = {"model": model, "temperature": 0.7, "max_tokens": 2048,  # Cloudflare cut answers at its 256-token default
             "messages": [{"role": "system", "content": RULES}, {"role": "user", "content": prompt}]}
     auth = {"Authorization": f"Bearer {key}"} if key else {}  # OVH AI Endpoints works anonymously (2 req/min per model)
     req = urllib.request.Request(url, json.dumps(body).encode(), {
@@ -96,7 +96,6 @@ def providers():
                               ("@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/qwen/qwen2.5-coder-32b-instruct")),
                              ("NVIDIA_API_KEY","https://integrate.api.nvidia.com/v1/chat/completions", ("deepseek-ai/deepseek-v3.1", "qwen/qwen3-235b-a22b", "meta/llama-3.3-70b-instruct")),
                              ("LLM7_API_KEY", "https://api.llm7.io/v1/chat/completions", ("DeepSeek-V4-Flash-0731", "minimax-m2.7", "mistral-Nemo-Instruct-2407")),
-                             ("SILICONFLOW_API_KEY", "https://api.siliconflow.com/v1/chat/completions", ("deepseek-ai/DeepSeek-V3", "zai-org/GLM-4.5-Air", "Qwen/Qwen3-8B", "THUDM/GLM-4-9B-0414", "Qwen/Qwen2.5-7B-Instruct")),
                              ("VERCEL_AI_KEY", "https://ai-gateway.vercel.sh/v1/chat/completions", ("google/gemini-3.8-flash", "deepseek/deepseek-v4-flash-0731")),  # $5/month free credit, no card
                              ("COHERE_API_KEY", "https://api.cohere.ai/compatibility/v1/chat/completions", ("command-a-03-2025",)),
                              ("SAMBANOVA_API_KEY","https://api.sambanova.ai/v1/chat/completions", ("DeepSeek-V3.1", "Meta-Llama-3.3-70B-Instruct"))):
