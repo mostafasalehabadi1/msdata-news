@@ -23,3 +23,15 @@
   NGHS-BSG194X-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 21s TypeError: expected string or bytes-like object, got 'dict'
   AISC-BSG194X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 16s JSONDecodeError: Invalid control character at: line 6 column 309 (char 697)
 OK SIS-BSG324X-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (169s)
+  AISC-BSG194X-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: 153 words / 1 paragraphs
+  KSC-BSG194X-00 zai:glm-4.5-flash: 185s ValueError: 211 words / 2 paragraphs
+  SKS-BSG194X-00 gemini:gemma-4-26b-a4b-it: 195s TimeoutError: The read operation timed out
+  SKS-BSG194X-00 gemini:gemma-4-31b-it: 71s ValueError: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+]
+OK TAA-TS11112-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (108s)
