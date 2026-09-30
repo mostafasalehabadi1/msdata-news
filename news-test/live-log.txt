@@ -107,3 +107,28 @@ OK ARCO-CASOALB-00 <- kilo:stepfun/step-3.7-flash:free (49s)
 OK FPCO-ACTACB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (114s)
   KSO-BSG194X-00 zai:glm-4.5-flash: 282s TimeoutError: The read operation timed out
 OK FZI-BSG194X-00 <- gemini:gemma-4-31b-it (150s)
+  KPC-OAPMDIB-00 gemini:gemma-4-26b-a4b-it: 46s ValueError: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+]
+  SKS-BSG194X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 102s ValueError: bad response: '{"id":"gen-1790781492-gbBnFNwG9zRDY3WQETt5","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  KPC-OAPMDIB-00 gemini:gemma-4-31b-it: 87s ValueError: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+]
+  gemini:gemini-3.5-transcribe: quota used up - skipped for the rest of the day
+  KPC-OAPMDIB-00 gemini:gemini-3.5-transcribe: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  BPC-HEARB-00 zai:glm-4.5-flash: 149s ValueError: 144 words / 2 paragraphs
+  SKS-BSG194X-00 kilo:stepfun/step-3.7-flash:free: 118s ValueError: 279 words / 2 paragraphs
+OK PPCO-OASTYB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (119s)
