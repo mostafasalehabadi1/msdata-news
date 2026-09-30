@@ -23,6 +23,7 @@ import urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from validate import FORBIDDEN, SLUG_BAD, paragraphs, words  # noqa: E402
 import factsheet  # noqa: E402
+import importance  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
@@ -189,17 +190,11 @@ def main():
     groups = {}
     for name, call in provs:
         groups.setdefault(name.split(":")[0], []).append((name, call))
-    # importance = the symbol's average trade value over its recorded trading days (not just today):
-    # top third = 0 (important), middle = 1, rest = 2. Provider level: 0 strong, 1 medium, 2 weak;
-    # a worker only writes symbols of its own level or less important, most important first.
-    def avg_value(r):
-        hp = os.path.join(ROOT, "data", date, "symbols", f"{r['symbol']}.json")
-        h = json.load(open(hp, encoding="utf-8")).get("history", []) if os.path.exists(hp) else []
-        v = [x.get("total_value") or 0 for x in h if x.get("total_value")]
-        return sum(v) / len(v) if v else (r.get("trade_value") or 0)
-    ranked = sorted(rows, key=lambda r: -avg_value(r))
-    tier = {r["symbol"]: min(2, i * 3 // max(1, len(ranked))) for i, r in enumerate(ranked)}
-    todo.sort(key=lambda r: (tier.get(r["symbol"], 2), -avg_value(r)))
+    # importance tiers come from data/importance.json (tools/importance.py): 0 important, 1 medium, 2 low.
+    # Provider level: 0 strong, 1 medium, 2 weak; a worker writes only symbols of its level or less important.
+    tier = importance.update(date, rows)
+    value = {r["symbol"]: r.get("trade_value") or 0 for r in rows}
+    todo.sort(key=lambda r: (tier.get(r["symbol"], 1), -value[r["symbol"]]))
     note(f"{len(todo)} symbols to write; {len(groups)} parallel workers: {', '.join(groups)}")
     lock = threading.Lock()
     tried = {r["symbol"]: set() for r in todo}
@@ -238,7 +233,7 @@ def main():
                     stats["ok"] += 1
                     note(f"OK {sym} <- {name} ({time.time() - t0:.0f}s)")
                     if os.environ.get("PUSH_EACH"):
-                        subprocess.run('git add -A news-test queue && git commit -qm "queue: progress" && git pull -q --rebase && git push -q',
+                        subprocess.run('git add -A news-test queue data/importance.json && git commit -qm "queue: progress" && git pull -q --rebase && git push -q',
                                        shell=True, cwd=ROOT, check=False, capture_output=True)
                 return True
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model of this provider
