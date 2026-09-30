@@ -57,3 +57,21 @@ OK MRV-DEGB-00 <- zai:glm-4.5-flash (147s)
 OK PAGL-DEGB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (165s)
   SHPC-DEGB-00 gemini:gemma-4-26b-a4b-it: 180s TimeoutError: The read operation timed out
 OK ATSC-BSG324X-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (137s)
+  ZYSF-PTGOOO000-00 zai:glm-4.5-flash: 202s ValueError: 201 words / 3 paragraphs
+  SHPC-DEGB-00 gemini:gemma-4-31b-it: 266s ValueError: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+]
+  SHPC-DEGB-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "Developer instruction is not enabled for this model",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+]
+OK MFNI-BSG194X-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (288s)
