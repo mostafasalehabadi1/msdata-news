@@ -116,3 +116,14 @@ OK SKS-BSG194X-00 <- kilo:stepfun/step-3.7-flash:free (42s)
   PSC-BSG324X-00 gemini:gemma-4-26b-a4b-it: 195s TimeoutError: The read operation timed out
 OK ZAJT-BSG194X-00 <- zai:glm-4.5-flash (216s)
 OK FZI-BSG324X-00 <- kilo:stepfun/step-3.7-flash:free (40s)
+  PSC-BSG324X-00 gemini:gemma-4-31b-it: 106s ValueError: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+  PBSC-BSO1720X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  JAST-BSG017OO-00 zai:glm-4.5-flash: 186s ValueError: 220 words / 3 paragraphs
+OK PBSC-BSO1720X-00 <- kilo:stepfun/step-3.7-flash:free (34s)
