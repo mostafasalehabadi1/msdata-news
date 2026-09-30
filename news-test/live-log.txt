@@ -1,11 +1,10 @@
-1 symbols to write; 11 parallel workers: gemini, openrouter, groq, zai, hf, cf, llm7, cohere, sambanova, ovh, kilo
-  SADR-PTJOOO000-00 gemini:gemma-4-26b-a4b-it: 171s ValueError: no JSON
-  SADR-PTJOOO000-00 gemini:gemma-4-31b-it: 92s ValueError: no JSON
-  SADR-PTJOOO000-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
+1 symbols to write; 12 parallel workers: gemini, openrouter, groq, zai, hf, cf, llm7, vercel, cohere, sambanova, ovh, kilo
+  SADR-PTJOOO000-00 gemini:gemini-flash-latest: 64s ValueError: HTTP 503: [{
   "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
   }
 }
 ]
+OK SADR-PTJOOO000-00 <- gemini:gemini-3.8-flash (9s)
