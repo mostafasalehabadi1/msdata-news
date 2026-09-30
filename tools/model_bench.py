@@ -1,4 +1,4 @@
-"""model_bench.py - one-off rerun (per provider, logged) Persian writing test: every configured model writes the same news, results go to news-test/bench.json."""
+"""model_bench.py - one-off (per provider, logged) Persian writing test: every configured model writes the same news, results go to news-test/bench.json."""
 import json
 import os
 import time
@@ -18,7 +18,7 @@ def main():
     prompt = "فکت‌شیت (فقط همین عددها را به کار ببر):\n" + factsheet.build(r, hist, peers, date_fa)
     out = {"symbol": r["symbol"], "prompt": prompt, "results": []}
     only = os.environ.get("BENCH_ONLY", "")
-    for name, call in [x for x in w.providers() if x[0].startswith(only)]:
+    for name, call in [x for x in w.providers() if x[0].startswith(tuple(only.split(",")))]:
         t0, res = time.time(), {"model": name}
         try:
             raw = call(prompt)
