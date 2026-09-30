@@ -17,7 +17,8 @@ def main():
     peers = [p for p in rows if p.get("goods_name") == r.get("goods_name")]
     prompt = "فکت‌شیت (فقط همین عددها را به کار ببر):\n" + factsheet.build(r, hist, peers, date_fa)
     out = {"symbol": r["symbol"], "prompt": prompt, "results": []}
-    for name, call in w.providers():
+    only = os.environ.get("BENCH_ONLY", "")
+    for name, call in [x for x in w.providers() if x[0].startswith(only)]:
         t0, res = time.time(), {"model": name}
         try:
             raw = call(prompt)
