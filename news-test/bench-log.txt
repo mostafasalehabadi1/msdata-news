@@ -1,40 +1,13 @@
-groq:llama-3.3-70b-versatile ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-openrouter:google/gemma-4-26b-a4b-it:free ValueError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
-openrouter:dots-studio/dots-3-note-preview:free ValueError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
-openrouter:nvidia/nemotron-3-ultra-550b-a55b:free ValueError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
-openrouter:liquid/lfm-2.5-2.6b:free ValueError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
-hf:Qwen/Qwen3-235B-A22B-Instruct-2507 ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-openrouter:google/gemma-4-31b-it:free ValueError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
-gemini:gemini-pro-latest ValueError: HTTP 429: [{
+gemini:gemini-3.5-flash ValueError: HTTP 429: [{
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-gemini:gemini-omni-1.1-flash ValueError: HTTP 429: [{
+gemini:gemini-3.8-flash ValueError: HTTP 429: [{
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-openrouter:inclusionai/ling-3.0-flash-sante:free ValueError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
-groq:qwen/qwen3-32b ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-gemini:gemini-3.5-transcribe ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-gemini:gemma-4-31b-it ValueError: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-]
-sambanova:DeepSeek-V3.1 ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-sambanova:Meta-Llama-3.3-70B-Instruct ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
+vercel:google/gemini-3.8-flash ValueError: HTTP 403: {"error":{"message":"AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlo
+vercel:deepseek/deepseek-v4-flash-0731 ValueError: HTTP 403: {"error":{"message":"AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlo
 gemini:gemini-flash-latest ValueError: HTTP 503: [{
   "error": {
     "code": 503,
@@ -43,29 +16,6 @@ gemini:gemini-flash-latest ValueError: HTTP 503: [{
   }
 }
 ]
-ovh:Qwen3.5-397B-A17B ValueError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"2ccb7d795906005d180f9f3c21c91273"
-}
-ovh:Meta-Llama-3_3-70B-Instruct ValueError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"8c977e028a00ec548f932b3a9c1b4d03"
-}
-ovh:gpt-oss-120b ValueError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"ee873b5dc211655cd64d324b2eb75e16"
-}
-gemini:gemini-3.8-flash ValueError: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "status": "UNAVAILABLE"
-  }
-}
-]
-cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast Invalid control character at: line 6 column 172 (char 543)
-cohere:command-a-03-2025 ok
-gemini:gemini-3.6-flash no JSON
 gemini:gemini-3.7-flash ValueError: HTTP 503: [{
   "error": {
     "code": 503,
@@ -74,20 +24,4 @@ gemini:gemini-3.7-flash ValueError: HTTP 503: [{
   }
 }
 ]
-cf:@cf/qwen/qwen2.5-coder-32b-instruct Expecting value: line 3 column 11 (char 108)
-kilo:stepfun/step-3.7-flash:free no JSON
-gemini:gemini-3.5-flash ValueError: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "status": "UNAVAILABLE"
-  }
-}
-]
-gemini:gemma-4-26b-a4b-it no JSON
-hf:deepseek-ai/DeepSeek-V3.1 93 words / 2 paragraphs
-zai:glm-4.5-flash no JSON
-llm7:DeepSeek-V4-Flash-0731 ok
-llm7:minimax-m2.7 ValueError: HTTP 524: error code: 524
-
-kilo:nvidia/nemotron-3-ultra-550b-a55b:free TimeoutError: The read operation timed out
+kilo:nvidia/nemotron-3-ultra-550b-a55b:free no JSON
