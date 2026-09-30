@@ -31,7 +31,7 @@ GH_URL = "https://models.github.ai/inference/chat/completions"
 GH_AZURE_URL = "https://models.inference.ai.azure.com/chat/completions"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
-OR_PREFER = ("qwen3.8", "gemma-4-31b", "nemotron-3-ultra", "deepseek", "qwen", "gemma", "llama")  # better Persian first
+OR_PREFER = ("nemotron-3-ultra", "gemma-4-31b", "nemotron-3-ultra", "deepseek", "qwen", "gemma", "llama")  # better Persian first
 
 STYLE = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read()
 RULES = ("تو خبرنگار «گروه بورس کالای ام‌اس‌دیتا» هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی. "
@@ -81,7 +81,7 @@ def providers():
     key = os.environ.get("OPENROUTER_API_KEY")
     if key:
         with urllib.request.urlopen("https://openrouter.ai/api/v1/models", timeout=60) as r:
-            free = [m["id"] for m in json.load(r)["data"] if m["id"].endswith(":free")]
+            free = [m["id"] for m in json.load(r)["data"] if m["id"].endswith(":free") and "qwen3.8" not in m["id"]]  # qwen3.8 wrote nonsense Persian
         free.sort(key=lambda i: next((n for n, w in enumerate(OR_PREFER) if w in i), 99))
         for m in free[:6]:
             out.append(("openrouter:" + m, lambda p, m=m: post(OR_URL, key, m, p, {"X-Title": "msdata-news"})))
@@ -181,7 +181,17 @@ def main():
     groups = {}
     for name, call in provs:
         groups.setdefault(name.split(":")[0], []).append((name, call))
-    todo.sort(key=lambda r: -(r.get("trade_value") or 0))
+    # importance = the symbol's average trade value over its recorded trading days (not just today):
+    # top third = 0 (important), middle = 1, rest = 2. Provider level: 0 strong, 1 medium, 2 weak;
+    # a worker only writes symbols of its own level or less important, most important first.
+    def avg_value(r):
+        hp = os.path.join(ROOT, "data", date, "symbols", f"{r['symbol']}.json")
+        h = json.load(open(hp, encoding="utf-8")).get("history", []) if os.path.exists(hp) else []
+        v = [x.get("total_value") or 0 for x in h if x.get("total_value")]
+        return sum(v) / len(v) if v else (r.get("trade_value") or 0)
+    ranked = sorted(rows, key=lambda r: -avg_value(r))
+    tier = {r["symbol"]: min(2, i * 3 // max(1, len(ranked))) for i, r in enumerate(ranked)}
+    todo.sort(key=lambda r: (tier.get(r["symbol"], 2), -avg_value(r)))
     note(f"{len(todo)} symbols to write; {len(groups)} parallel workers: {', '.join(groups)}")
     lock = threading.Lock()
     tried = {r["symbol"]: set() for r in todo}
@@ -232,12 +242,12 @@ def main():
                 time.sleep(2)
         return False
 
-    def worker(gname, models, strong):
+    def worker(gname, models, lvl):
         fails = 0
         while fails < 3:  # a provider that fails 3 symbols in a row (quota / broken) stops
             with lock:
                 live = [m for m in models if m[0] not in exhausted()]
-                pick = [r for r in (todo if strong else reversed(todo)) if gname not in tried[r["symbol"]]]
+                pick = [r for r in todo if gname not in tried[r["symbol"]] and tier.get(r["symbol"], 2) >= lvl]
                 if not live or not pick:
                     return
                 r = pick[0]
@@ -248,12 +258,12 @@ def main():
             else:
                 fails += 1
                 with lock:
-                    if len(tried[r["symbol"]]) < len(groups):
+                    if any(g not in tried[r["symbol"]] and level.get(g, 2) <= tier.get(r["symbol"], 2) for g in groups):
                         todo.append(r)  # another provider may still write it
             time.sleep(4)  # stay under free-tier rate limits
 
-    strong = {"gemini", "hf", "sambanova", "openrouter"}
-    threads = [threading.Thread(target=worker, args=(g, m, g in strong)) for g, m in groups.items()]
+    level = {"gemini": 0, "hf": 0, "openrouter": 0, "sambanova": 0, "zai": 1, "groq": 1, "cf": 1}  # the rest (cohere) = 2
+    threads = [threading.Thread(target=worker, args=(g, m, level.get(g, 2))) for g, m in groups.items()]
     for t in threads:
         t.start()
     for t in threads:
