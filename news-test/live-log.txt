@@ -110,3 +110,15 @@ OK BCC-PCT5G32.5-L50-00 <- cohere:command-a-03-2025 (11s)
 OK KABS-EA006000-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (16s)
 OK NEYC-CPCBNG32.5-B-00 <- cohere:command-a-03-2025 (21s)
 OK ENPC-PSSEF305J-089 <- cohere:command-a-03-2025 (9s)
+  ENPC-PSSEF205J-089 gemini:gemma-4-31b-it: 105s TimeoutError: The read operation timed out
+  ENPC-PSSEF205J-089 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "Developer instruction is not enabled for this model",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+]
+  YAS-EA013000-00 cohere:command-a-03-2025: 10s JSONDecodeError: Invalid control character at: line 6 column 354 (char 756)
+  ENPC-PSSEF205J-089 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 362 (char 836)
+OK AAC-CPCANG32.5-L50-00 <- cohere:command-a-03-2025 (12s)
