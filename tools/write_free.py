@@ -41,8 +41,10 @@ RULES = ("تو خبرنگار «گروه بورس کالای ام‌اس‌دی�
 
 
 def post(url, key, model, prompt, extra=None):
-    body = {"model": model, "temperature": 0.7, "max_tokens": 2048,  # Cloudflare cut answers at its 256-token default
+    body = {"model": model, "temperature": 0.7,
             "messages": [{"role": "system", "content": RULES}, {"role": "user", "content": prompt}]}
+    if "cloudflare.com" in url:
+        body["max_tokens"] = 2048  # Cloudflare cuts answers at a 256-token default; a cap elsewhere starves reasoning models
     auth = {"Authorization": f"Bearer {key}"} if key else {}  # OVH AI Endpoints works anonymously (2 req/min per model)
     req = urllib.request.Request(url, json.dumps(body).encode(), {
         **auth, "Content-Type": "application/json", "User-Agent": "msdata-news/1.0", **(extra or {})})
@@ -96,7 +98,6 @@ def providers():
                               ("@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/qwen/qwen2.5-coder-32b-instruct")),
                              ("NVIDIA_API_KEY","https://integrate.api.nvidia.com/v1/chat/completions", ("deepseek-ai/deepseek-v3.1", "qwen/qwen3-235b-a22b", "meta/llama-3.3-70b-instruct")),
                              ("LLM7_API_KEY", "https://api.llm7.io/v1/chat/completions", ("DeepSeek-V4-Flash-0731", "minimax-m2.7")),
-                             ("VERCEL_AI_KEY", "https://ai-gateway.vercel.sh/v1/chat/completions", ("google/gemini-3.8-flash", "deepseek/deepseek-v4-flash-0731")),  # $5/month free credit, no card
                              ("COHERE_API_KEY", "https://api.cohere.ai/compatibility/v1/chat/completions", ("command-a-03-2025",))):
         if os.environ.get(env):
             for m in models:
