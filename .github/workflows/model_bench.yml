@@ -12,7 +12,6 @@ permissions:
   models: read
 jobs:
   write:
-    if: false  # paused by owner 2026-09-30
     runs-on: ubuntu-latest
     timeout-minutes: 350
     steps:
@@ -31,13 +30,14 @@ jobs:
           SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          LLM7_API_KEY: ${{ secrets.LLM7_API_KEY }}
           ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           USE_GITHUB_MODELS: "1"
         run: |
-          python tools/model_bench.py
+          BENCH_ONLY=llm7 python tools/model_bench.py
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           git add news-test/bench.json && git commit -qm "bench: persian writing" && git pull -q --rebase && git push -q
