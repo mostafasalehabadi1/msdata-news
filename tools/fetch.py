@@ -90,8 +90,9 @@ def main():
     for r in rows:
         sym = r["symbol"]
         h, _ = fetch("?symbol=" + urllib.parse.quote(sym))
-        hist = h.get("history", [])[-HISTORY_ROWS:]
-        write(os.path.join(day_dir, "symbols", sym + ".json"), {"symbol": sym, "history": hist})
+        full = h.get("history", [])
+        ytd = sum(x.get("total_value") or 0 for x in full if (x.get("trade_date") or "") >= f"{jy}/01/01")
+        write(os.path.join(day_dir, "symbols", sym + ".json"), {"symbol": sym, "ytd_value": ytd, "history": full[-HISTORY_ROWS:]})
     write(os.path.join(ROOT, "latest.json"), {"date_fa": date_fa, "date": date, "symbols": len(rows)})
     # keep only the latest day in the snapshot
     for d in os.listdir(ROOT):
