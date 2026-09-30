@@ -53,6 +53,12 @@ jobs:
             if [ "${left:-0}" -gt 0 ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w write_free.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w write_free.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
               gh workflow run write_free.yml -R "$GITHUB_REPOSITORY" -f limit=0 && echo "writer started ($left left)"
             fi
+            # daily report: from 18:30 Tehran on a trading day, until it exists (report.yml writes and publishes it)
+            d=$(python -c "import json;print(json.load(open('data/latest.json'))['date'])")
+            if [ "$(TZ=Asia/Tehran date +%H%M)" -ge 1830 ] && [ "$d" = "$(TZ=Asia/Tehran date +%F)" ] && [ ! -f "queue/report-$d.json" ] \
+               && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w report.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w report.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
+              gh workflow run report.yml -R "$GITHUB_REPOSITORY" && echo "daily report started"
+            fi
             python tools/release.py
             if python tools/validate.py; then
               git add news
