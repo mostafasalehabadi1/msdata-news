@@ -94,6 +94,7 @@ def providers():
                               ("@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/qwen/qwen2.5-coder-32b-instruct")),
                              ("NVIDIA_API_KEY","https://integrate.api.nvidia.com/v1/chat/completions", ("deepseek-ai/deepseek-v3.1", "qwen/qwen3-235b-a22b", "meta/llama-3.3-70b-instruct")),
                              ("LLM7_API_KEY", "https://api.llm7.io/v1/chat/completions", ("DeepSeek-V4-Flash-0731", "minimax-m2.7", "mistral-Nemo-Instruct-2407")),
+                             ("SILICONFLOW_API_KEY", "https://api.siliconflow.com/v1/chat/completions", ("deepseek-ai/DeepSeek-V3", "zai-org/GLM-4.5-Air", "Qwen/Qwen3-8B", "THUDM/GLM-4-9B-0414", "Qwen/Qwen2.5-7B-Instruct")),
                              ("COHERE_API_KEY", "https://api.cohere.ai/compatibility/v1/chat/completions", ("command-a-03-2025",)),
                              ("SAMBANOVA_API_KEY","https://api.sambanova.ai/v1/chat/completions", ("DeepSeek-V3.1", "Meta-Llama-3.3-70B-Instruct"))):
         if os.environ.get(env):
@@ -263,7 +264,7 @@ def main():
                         todo.append(r)  # another provider may still write it
             time.sleep(4)  # stay under free-tier rate limits
 
-    level = {"gemini": 0, "hf": 0, "openrouter": 0, "sambanova": 0, "zai": 1, "groq": 1, "cf": 1, "llm7": 1}  # the rest (cohere) = 2
+    level = {"gemini": 0, "hf": 0, "openrouter": 0, "sambanova": 0, "zai": 1, "groq": 1, "cf": 1, "llm7": 1, "siliconflow": 1}  # the rest (cohere) = 2
     threads = [threading.Thread(target=worker, args=(g, m, level.get(g, 2))) for g, m in groups.items()]
     for t in threads:
         t.start()
