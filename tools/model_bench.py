@@ -1,4 +1,5 @@
-"""model_bench.py - one-off (all) (per provider, logged) Persian writing test: every configured model writes the same news, results go to news-test/bench.json."""
+"""model_bench.py - one-off (all, parallel) (per provider, logged) Persian writing test: every configured model writes the same news, results go to news-test/bench.json."""
+import concurrent.futures
 import json
 import os
 import time
@@ -18,7 +19,9 @@ def main():
     prompt = "فکت‌شیت (فقط همین عددها را به کار ببر):\n" + factsheet.build(r, hist, peers, date_fa)
     out = {"symbol": r["symbol"], "prompt": prompt, "results": []}
     only = os.environ.get("BENCH_ONLY", "")
-    for name, call in [x for x in w.providers() if x[0].startswith(tuple(only.split(",")))]:
+    provs = [x for x in w.providers() if x[0].startswith(tuple(only.split(",")))]
+
+    def run(name, call):
         t0, res = time.time(), {"model": name}
         try:
             raw = call(prompt)
@@ -30,9 +33,12 @@ def main():
         except Exception as e:  # noqa: BLE001
             res["error"] = f"{type(e).__name__}: {str(e)[:300]}"
         res["seconds"] = round(time.time() - t0)
-        out["results"].append(res)
-        print(name, "ok" if "parsed" in res else res.get("parse_error") or res.get("error"))
-        time.sleep(3)
+        print(name, "ok" if "parsed" in res else res.get("parse_error") or res.get("error"), flush=True)
+        return res
+
+    # every model at once: each has its own quota, so the test takes as long as the slowest model
+    with concurrent.futures.ThreadPoolExecutor(max_workers=len(provs) or 1) as ex:
+        out["results"] = list(ex.map(lambda x: run(*x), provs))
     os.makedirs(os.path.join(w.ROOT, "news-test"), exist_ok=True)
     json.dump(out, open(os.path.join(w.ROOT, "news-test", "bench.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
