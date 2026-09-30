@@ -15,6 +15,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -57,12 +58,6 @@ def post(url, key, model, prompt, extra=None):
 def providers():
     """Ordered fallback chain: best free model first; when one fails or runs out, the next one is used."""
     out = []
-    if os.environ.get("USE_GITHUB_MODELS") and os.environ.get("GITHUB_TOKEN"):  # GitHub Models (off: returned "OK" only): free OpenAI models inside Actions, no signup
-        gh_hdr = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}
-        for m in ("openai/gpt-4.1", "openai/gpt-4o"):
-            out.append(("github:" + m, lambda p, m=m: post(GH_URL, os.environ["GITHUB_TOKEN"], m, p, gh_hdr)))
-        for m in ("gpt-4.1", "gpt-4o"):  # older Azure-hosted endpoint of the same free GitHub Models
-            out.append(("github-azure:" + m, lambda p, m=m: post(GH_AZURE_URL, os.environ["GITHUB_TOKEN"], m, p)))
     if os.environ.get("GEMINI_API_KEY"):
         # every Gemini model has its own daily free quota, so use all text models the key can see
         gem = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]
@@ -71,7 +66,7 @@ def providers():
             with urllib.request.urlopen(url, timeout=60) as r:
                 seen = [m["name"].split("/", 1)[1] for m in json.load(r).get("models", [])
                         if "generateContent" in m.get("supportedGenerationMethods", [])]
-            seen = [m for m in seen if re.match(r"^gem(ini|ma)-", m) and not re.search(r"embed|image|tts|audio|live|vision|exp|preview", m)]
+            seen = [m for m in seen if re.match(r"^gem(ini|ma)-", m) and not re.search(r"embed|image|tts|audio|live|vision|exp|preview|-2\.5-", m)]
             gem = list(dict.fromkeys(gem + seen))
         except Exception as e:  # noqa: BLE001 - listing is optional; the two known models still work
             note(f"gemini model list failed: {e}")
@@ -180,21 +175,31 @@ def main():
     todo = [r for r in rows if r.get("symbol") not in done][: a.limit or None]
     provs = providers()
     if not provs:
-        sys.exit("no model key found (GITHUB_TOKEN / GEMINI_API_KEY / OPENROUTER_API_KEY / GROQ_API_KEY / MISTRAL_API_KEY)")
-    note(f"{len(todo)} symbols to write; models: {', '.join(n for n, _ in provs)}")
-    ok = 0
-    for r in todo:
+        sys.exit("no model key found (GEMINI_API_KEY / OPENROUTER_API_KEY / GROQ_API_KEY / ...)")
+    # one worker per provider (each has its own free quota) so they write in parallel from one shared list;
+    # the most valuable trades go to the strongest providers, the weaker ones start from the other end
+    groups = {}
+    for name, call in provs:
+        groups.setdefault(name.split(":")[0], []).append((name, call))
+    todo.sort(key=lambda r: -(r.get("trade_value") or 0))
+    note(f"{len(todo)} symbols to write; {len(groups)} parallel workers: {', '.join(groups)}")
+    lock = threading.Lock()
+    tried = {r["symbol"]: set() for r in todo}
+    stats = {"ok": 0}
+
+    def write_one(r, models):
         sym = r["symbol"]
         hist_path = os.path.join(ROOT, "data", date, "symbols", f"{sym}.json")
         hist = json.load(open(hist_path, encoding="utf-8")).get("history", []) if os.path.exists(hist_path) else []
         peers = [p for p in rows if p.get("goods_name") == r.get("goods_name")]
+        with lock:
+            recent = list(subs)[-5:]
         prompt = ("فکت‌شیت (فقط همین عددها را به کار ببر):\n" + factsheet.build(r, hist, peers, date_fa) +
-                  f"\n\nزاویه‌ی خبرهای قبلی امروز را تکرار نکن. سوتیترهای قبلی: {' | '.join(list(subs)[-5:])}")
-        for name, call in provs:
+                  f"\n\nزاویه‌ی خبرهای قبلی امروز را تکرار نکن. سوتیترهای قبلی: {' | '.join(recent)}")
+        for name, call in models:
             if name in exhausted():
                 continue
             t0 = time.time()
-            note(f"  {sym} {name}: start")
             try:
                 raw = retry(call, prompt)
                 try:
@@ -205,27 +210,56 @@ def main():
                     fix = (prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایراد: متن text {e}. همان خبر را با text بین ۱۶۰ تا ۱۹۰ کلمه "
                            "در ۲ یا ۳ پاراگراف بازنویسی کن (فقط با عددهای فکت‌شیت) و فقط JSON برگردان.")
                     d = parse(retry(call, fix))
-                if d["subtitle"] in subs:
-                    raise ValueError("repeated subtitle")
-            except Exception as e:  # noqa: BLE001 - any failure means: try the next model
+                with lock:
+                    if d["subtitle"] in subs:
+                        raise ValueError("repeated subtitle")
+                    doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
+                                         "hall": r.get("talar", ""), "producer": r.get("producer_name", ""), **d, "model": name})
+                    subs.add(d["subtitle"])
+                    json.dump(doc, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+                    stats["ok"] += 1
+                    note(f"OK {sym} <- {name} ({time.time() - t0:.0f}s)")
+                    if os.environ.get("PUSH_EACH"):
+                        subprocess.run('git add -A news-test queue && git commit -qm "queue: progress" && git pull -q --rebase && git push -q',
+                                       shell=True, cwd=ROOT, check=False, capture_output=True)
+                return True
+            except Exception as e:  # noqa: BLE001 - any failure means: try the next model of this provider
                 if isinstance(e, QuotaError):
-                    open(EXHAUSTED_FILE, "a", encoding="utf-8").write(name + "\n")
+                    with lock:
+                        open(EXHAUSTED_FILE, "a", encoding="utf-8").write(name + "\n")
                     note(f"  {name}: quota used up - skipped for the rest of the day")
                 note(f"  {sym} {name}: {time.time() - t0:.0f}s {type(e).__name__}: {str(e)[:220]}")
                 time.sleep(2)
-                continue
-            doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
-                                 "hall": r.get("talar", ""), "producer": r.get("producer_name", ""), **d, "model": name})
-            subs.add(d["subtitle"])
-            json.dump(doc, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-            ok += 1
-            note(f"OK {sym} <- {name} ({time.time() - t0:.0f}s)")
-            break
-        if os.environ.get("PUSH_EACH"):  # publish progress/errors after every symbol
-            subprocess.run('git add -A news-test queue && git commit -qm "queue: progress" && git pull -q --rebase && git push -q',
-                           shell=True, cwd=ROOT, check=False)
-        time.sleep(4)  # stay under free-tier rate limits
-    print(f"written {ok}/{len(todo)}; total in file {len(doc['items'])}")
+        return False
+
+    def worker(gname, models, strong):
+        fails = 0
+        while fails < 3:  # a provider that fails 3 symbols in a row (quota / broken) stops
+            with lock:
+                live = [m for m in models if m[0] not in exhausted()]
+                pick = [r for r in (todo if strong else reversed(todo)) if gname not in tried[r["symbol"]]]
+                if not live or not pick:
+                    return
+                r = pick[0]
+                todo.remove(r)
+                tried[r["symbol"]].add(gname)
+            if write_one(r, live):
+                fails = 0
+            else:
+                fails += 1
+                with lock:
+                    if len(tried[r["symbol"]]) < len(groups):
+                        todo.append(r)  # another provider may still write it
+            time.sleep(4)  # stay under free-tier rate limits
+
+    strong = {"gemini", "hf", "sambanova", "openrouter"}
+    threads = [threading.Thread(target=worker, args=(g, m, g in strong)) for g, m in groups.items()]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    ok = stats["ok"]
+    print(f"written {ok}/{len(tried)}; total in file {len(doc['items'])}")
 
 
 if __name__ == "__main__":
