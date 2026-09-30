@@ -1,44 +1,54 @@
-7 symbols to write; 12 parallel workers: gemini, openrouter, groq, zai, hf, cf, llm7, vercel, cohere, sambanova, ovh, kilo
-  NAC-PCT2G42.5-L50-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+40 symbols to write; 10 parallel workers: gemini, openrouter, groq, zai, hf, cf, llm7, cohere, ovh, kilo
+  SHPC-OAEHB-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
   IAC-AB6063BC-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IALC-ALHYD-00 sambanova:DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  ASPC-LDLFI2047AWP-00 vercel:google/gemini-3.8-flash: 0s ValueError: HTTP 403: {"error":{"message":"AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlo
-  NAC-PCT2G42.5-L50-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
+  HAAL-PS10000-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
+  gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
+  HSR-LUSUACB-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  SHPC-OAVAMB-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"8c443a07d1f7624481c09532f5cf2d47"
+}
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped for the rest of the day
+  HAAL-PS10000-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
+  SHPC-OAEHB-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
   IAC-AB6063BC-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ASPC-LDLFI2047AWP-00 vercel:deepseek/deepseek-v4-flash-0731: 0s ValueError: HTTP 403: {"error":{"message":"AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlo
-  IALC-ALHYD-00 sambanova:Meta-Llama-3.3-70B-Instruct: 1s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  NAC-PCT2G42.5-L50-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IAC-AB6063BC-00 vercel:google/gemini-3.8-flash: 0s ValueError: HTTP 403: {"error":{"message":"AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlo
-  ASPC-LDLFI2047AWP-00 sambanova:DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  NAC-PCT2G42.5-L50-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IAC-AB6063BC-00 vercel:deepseek/deepseek-v4-flash-0731: 0s ValueError: HTTP 403: {"error":{"message":"AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlo
-  ASPC-LDLFI2047AWP-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  IALC-ALHYD-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  NAC-PCT2G42.5-L50-00 vercel:google/gemini-3.8-flash: 0s ValueError: HTTP 403: {"error":{"message":"AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlo
-  IALC-ALHYD-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IAC-AB6063BC-00 sambanova:DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  NAC-PCT2G42.5-L50-00 vercel:deepseek/deepseek-v4-flash-0731: 0s ValueError: HTTP 403: {"error":{"message":"AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlo
-  IAC-AB6063BC-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
-  HSR-LUSUACB-00 gemini:gemma-4-26b-a4b-it: 68s ValueError: no JSON
-  TCHC-PCT2G42.5-L50-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 75s ValueError: no JSON
-  NGC-CEMENTPOLIB-00 zai:glm-4.5-flash: 86s ValueError: no JSON
-  TCHC-PCT2G42.5-L50-00 kilo:stepfun/step-3.7-flash:free: 23s ValueError: no JSON
-  NAC-PCT2G42.5-L50-00 zai:glm-4.5-flash: 68s ValueError: no JSON
-  ASPC-LDLFI2047AWP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 89s ValueError: no JSON
-  ASPC-LDLFI2047AWP-00 kilo:stepfun/step-3.7-flash:free: 16s ValueError: no JSON
-  HSR-LUSUACB-00 gemini:gemma-4-31b-it: 215s ValueError: no JSON
-  IALC-ALHYD-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 105s ValueError: no JSON
-  IAC-AB6063BC-00 gemini:gemma-4-26b-a4b-it: 44s ValueError: no JSON
-  IALC-ALHYD-00 kilo:stepfun/step-3.7-flash:free: 14s ValueError: no JSON
-  IAC-AB6063BC-00 gemini:gemma-4-31b-it: 149s ValueError: no JSON
-  NGC-CEMENTPOLIB-00 gemini:gemma-4-26b-a4b-it: 43s ValueError: no JSON
-  NGC-CEMENTPOLIB-00 gemini:gemma-4-31b-it: 114s ValueError: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
+  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
+  SHPC-OAVAMB-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"59a7e8120e212972bd8ca96014877501"
 }
-]
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped for the rest of the day
+  HAAL-PS10000-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
+  MPC-PPHP525JPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid control character at: line 6 column 186 (char 532)
+  openrouter:inclusionai/ling-3.0-flash-sante:free: quota used up - skipped for the rest of the day
+  HAAL-PS10000-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  SHPC-OAVAMB-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"961e34020e95a61cbb48d3209914922d"
+}
+  RJCO-PPRG1104KRJ-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  IALC-ALHYD-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  openrouter:dots-studio/dots-3-note-preview:free: quota used up - skipped for the rest of the day
+  HAAL-PS10000-00 openrouter:dots-studio/dots-3-note-preview:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
+  RJCO-PPRG1104KRJ-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  openrouter:liquid/lfm-2.5-2.6b:free: quota used up - skipped for the rest of the day
+  HAAL-PS10000-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remain
+  IALC-ALHYD-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  CTRC-BIALAN-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  TCHC-PCT2G42.5-L50-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  CTRC-BIALAN-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  TCHC-PCT2G42.5-L50-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  MPC-PPHP525JPP-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 22s JSONDecodeError: Expecting value: line 3 column 11 (char 103)
+OK DAP-PPHP520HJ-00 <- llm7:DeepSeek-V4-Flash-0731 (37s)
