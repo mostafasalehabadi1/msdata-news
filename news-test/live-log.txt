@@ -1,10 +1,6 @@
-2 symbols to write; 11 parallel workers: gemini, openrouter, groq, zai, hf, cf, llm7, cohere, sambanova, ovh, kilo
-  REIL-PETBGG5761J-000 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  REIL-PETBGG5761J-000 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  SADR-PTJOOO000-00 gemini:gemma-4-26b-a4b-it: 44s ValueError: no JSON
-  SADR-PTJOOO000-00 gemini:gemma-4-31b-it: 178s ValueError: no JSON
+1 symbols to write; 11 parallel workers: gemini, openrouter, groq, zai, hf, cf, llm7, cohere, sambanova, ovh, kilo
+  SADR-PTJOOO000-00 gemini:gemma-4-26b-a4b-it: 171s ValueError: no JSON
+  SADR-PTJOOO000-00 gemini:gemma-4-31b-it: 92s ValueError: no JSON
   SADR-PTJOOO000-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
   "error": {
     "code": 400,
@@ -13,5 +9,3 @@
   }
 }
 ]
-  REIL-PETBGG5761J-000 gemini:gemma-4-26b-a4b-it: 44s ValueError: no JSON
-OK REIL-PETBGG5761J-000 <- gemini:gemma-4-31b-it (243s)
