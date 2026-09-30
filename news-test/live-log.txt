@@ -17,3 +17,24 @@
   YAS-EA013000-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
 OK BCCO-CPCANG42.5-L50-00 <- cohere:command-a-03-2025 (11s)
+  JPC-HDBL3PP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 12s ValueError: no JSON
+  BBAD-BI6070B-00 sambanova:DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
+  KHCO-PCT2G42.5-B-00 groq:llama-3.3-70b-versatile: 1s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  BBAD-BI6070B-00 sambanova:Meta-Llama-3.3-70B-Instruct: 0s ValueError: HTTP 402: {"error":{"balance_units":0,"billing_portal_url":"https://cloud.sambanova.ai/plans/billing","code":"PAYMENT_METHOD_REQUIRED","message":"A payment method is required. Add one at https://cloud.sambanova
+  KHCO-PCT2G42.5-B-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
+  MAPE-LLD22B02P-00 gemini:gemini-flash-latest: 18s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
+  MAPE-LLD22B02P-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  JPC-HDBL3PP-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 9s ValueError: no JSON
+  DACO-PCT5G32.5-L50-00 cohere:command-a-03-2025: 10s JSONDecodeError: Invalid control character at: line 6 column 378 (char 831)
+  PPMZ-PSGPPS1115PP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s ValueError: no JSON
+OK NAC-PCT2G42.5-L50-00 <- cohere:command-a-03-2025 (8s)
