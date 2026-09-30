@@ -59,6 +59,11 @@ def post(url, key, model, prompt, extra=None):
         raise ValueError(f"bad response: {raw[:200]!r}") from None
 
 
+STRONG_GEMINI = ("gemma-4-31b-it",)
+STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "gemini:gemma-4-31b-it",
+          "kilo:dots-studio/dots-3-note-preview:free", "hf:deepseek-ai/DeepSeek-V3.1"}
+
+
 def providers():
     """Ordered fallback chain: best free model first; when one fails or runs out, the next one is used."""
     out = []
@@ -80,7 +85,7 @@ def providers():
             tier = 3 if "lite" in m else 0 if "pro" in m else 1 if "flash" in m else 2
             return (tier, -(float(v.group(1)) if v else 99.0))
         gem.sort(key=quality)
-        for m in gem[:10]:
+        for m in list(dict.fromkeys(gem[:10] + [x for x in gem if x in STRONG_GEMINI])):
             out.append(("gemini:" + m, lambda p, m=m: post(GEMINI_URL, os.environ["GEMINI_API_KEY"], m, p)))
     key = os.environ.get("OPENROUTER_API_KEY")
     if key:
@@ -97,14 +102,14 @@ def providers():
                              ("CF_API_TOKEN", f"https://api.cloudflare.com/client/v4/accounts/{os.environ.get('CF_ACCOUNT_ID', '')}/ai/v1/chat/completions",
                               ("@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/qwen/qwen2.5-coder-32b-instruct")),
                              ("NVIDIA_API_KEY","https://integrate.api.nvidia.com/v1/chat/completions", ("deepseek-ai/deepseek-v3.1", "qwen/qwen3-235b-a22b", "meta/llama-3.3-70b-instruct")),
-                             ("LLM7_API_KEY", "https://api.llm7.io/v1/chat/completions", ("DeepSeek-V4-Flash-0731", "minimax-m2.7")),
+                             ("LLM7_API_KEY", "https://api.llm7.io/v1/chat/completions", ("DeepSeek-V4-Flash-0731", "minimax-m2.7", "mistral-Nemo-Instruct-2407")),
                              ("COHERE_API_KEY", "https://api.cohere.ai/compatibility/v1/chat/completions", ("command-a-03-2025",))):
         if os.environ.get(env):
             for m in models:
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
     for m in ("Qwen3.5-397B-A17B", "gpt-oss-120b", "Meta-Llama-3_3-70B-Instruct"):  # OVH: no signup, no key
         out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
-    for m in ("nvidia/nemotron-3-ultra-550b-a55b:free", "stepfun/step-3.7-flash:free"):  # Kilo gateway: no signup, 200 req/h per IP
+    for m in ("dots-studio/dots-3-note-preview:free", "nvidia/nemotron-3-ultra-550b-a55b:free", "stepfun/step-3.7-flash:free"):  # Kilo gateway: no signup, 200 req/h per IP
         out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
     return out
 
@@ -186,14 +191,16 @@ def main():
         sys.exit("no model key found (GEMINI_API_KEY / OPENROUTER_API_KEY / GROQ_API_KEY / ...)")
     # one worker per provider (each has its own free quota) so they write in parallel from one shared list;
     # the most valuable trades go to the strongest providers, the weaker ones start from the other end
+    # the owner's blind rating (5 best of 12 models, 2026-09-30/10-01) writes the important half; every other model the rest
     groups = {}
     for name, call in provs:
-        groups.setdefault(name.split(":")[0], []).append((name, call))
-    # importance tiers come from data/importance.json (tools/importance.py): 0 important, 1 medium, 2 low.
-    # Provider level: 0 strong, 1 medium, 2 weak; a worker writes only symbols of its level or less important.
-    tier = importance.update(date, rows)
-    value = {r["symbol"]: r.get("trade_value") or 0 for r in rows}
-    todo.sort(key=lambda r: (tier.get(r["symbol"], 1), -value[r["symbol"]]))
+        groups.setdefault(name.split(":")[0] + ("/strong" if name in STRONG else ""), []).append((name, call))
+    # importance tiers come from data/importance.json (tools/importance.py): 0 important (top half by value this year), 1 the rest.
+    # A strong-model worker writes only important symbols, every other worker only the rest.
+    table = importance.update(date, rows)
+    tier = {s: e["tier"] for s, e in table.items()}
+    value = {s: e["value"] for s, e in table.items()}
+    todo.sort(key=lambda r: (tier.get(r["symbol"], 1), -value.get(r["symbol"], 0)))  # most important first
     note(f"{len(todo)} symbols to write; {len(groups)} parallel workers: {', '.join(groups)}")
     lock = threading.Lock()
     tried = {r["symbol"]: set() for r in todo}
@@ -249,7 +256,7 @@ def main():
         while fails < 3:  # a provider that fails 3 symbols in a row (quota / broken) stops
             with lock:
                 live = [m for m in models if m[0] not in exhausted()]
-                pick = [r for r in todo if gname not in tried[r["symbol"]] and tier.get(r["symbol"], 2) >= lvl]
+                pick = [r for r in todo if gname not in tried[r["symbol"]] and tier.get(r["symbol"], 1) == lvl]
                 if not live or not pick:
                     return
                 r = pick[0]
@@ -260,12 +267,14 @@ def main():
             else:
                 fails += 1
                 with lock:
-                    if any(g not in tried[r["symbol"]] and level.get(g, 2) <= tier.get(r["symbol"], 2) for g in groups):
+                    if any(g not in tried[r["symbol"]] and lvl_of(g) == tier.get(r["symbol"], 1) for g in groups):
                         todo.append(r)  # another provider may still write it
             time.sleep(4)  # stay under free-tier rate limits
 
-    level = {"gemini": 0, "hf": 0, "openrouter": 0, "sambanova": 0, "zai": 1, "groq": 1, "cf": 1, "llm7": 1, "siliconflow": 1, "ovh": 1, "kilo": 0, "vercel": 0}  # the rest (cohere) = 2
-    threads = [threading.Thread(target=worker, args=(g, m, level.get(g, 2))) for g, m in groups.items()]
+    def lvl_of(g):
+        return 0 if g.endswith("/strong") else 1
+
+    threads = [threading.Thread(target=worker, args=(g, m, lvl_of(g))) for g, m in groups.items()]
     for t in threads:
         t.start()
     for t in threads:
