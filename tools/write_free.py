@@ -95,7 +95,7 @@ def providers():
                              ("CF_API_TOKEN", f"https://api.cloudflare.com/client/v4/accounts/{os.environ.get('CF_ACCOUNT_ID', '')}/ai/v1/chat/completions",
                               ("@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/qwen/qwen2.5-coder-32b-instruct")),
                              ("NVIDIA_API_KEY","https://integrate.api.nvidia.com/v1/chat/completions", ("deepseek-ai/deepseek-v3.1", "qwen/qwen3-235b-a22b", "meta/llama-3.3-70b-instruct")),
-                             ("LLM7_API_KEY", "https://api.llm7.io/v1/chat/completions", ("DeepSeek-V4-Flash-0731", "minimax-m2.7", "mistral-Nemo-Instruct-2407")),
+                             ("LLM7_API_KEY", "https://api.llm7.io/v1/chat/completions", ("DeepSeek-V4-Flash-0731", "minimax-m2.7")),
                              ("VERCEL_AI_KEY", "https://ai-gateway.vercel.sh/v1/chat/completions", ("google/gemini-3.8-flash", "deepseek/deepseek-v4-flash-0731")),  # $5/month free credit, no card
                              ("COHERE_API_KEY", "https://api.cohere.ai/compatibility/v1/chat/completions", ("command-a-03-2025",)),
                              ("SAMBANOVA_API_KEY","https://api.sambanova.ai/v1/chat/completions", ("DeepSeek-V3.1", "Meta-Llama-3.3-70B-Instruct"))):
