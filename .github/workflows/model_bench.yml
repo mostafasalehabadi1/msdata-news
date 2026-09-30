@@ -38,7 +38,7 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           USE_GITHUB_MODELS: "1"
         run: |
-          BENCH_ONLY=siliconflow python tools/model_bench.py 2>&1 | tee news-test/bench-log.txt || true
+          BENCH_ONLY=zai,cf,ovh,siliconflow,llm7,groq python tools/model_bench.py 2>&1 | tee news-test/bench-log.txt || true
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           git add news-test/bench.json news-test/bench-log.txt && git commit -qm "bench: persian writing" && git pull -q --rebase && git push -q
