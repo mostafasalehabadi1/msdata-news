@@ -1,61 +1,35 @@
 2 symbols to write; models: github:openai/gpt-4.1, github:openai/gpt-4o, github-azure:gpt-4.1, github-azure:gpt-4o, gemini:gemini-pro-latest, gemini:gemini-2.5-pro, gemini:gemini-flash-latest, gemini:gemini-3.8-flash, gemini:gemini-3.7-flash, gemini:gemini-3.6-flash, gemini:gemini-3.5-flash, gemini:gemini-2.5-flash, gemini:gemini-omni-1.1-flash, gemini:gemma-4-26b-a4b-it, openrouter:qwen/qwen3.8-27b:free, openrouter:google/gemma-4-31b-it:free, openrouter:nvidia/nemotron-3-ultra-550b-a55b:free, openrouter:google/gemma-4-26b-a4b-it:free, openrouter:inclusionai/ling-3.0-flash-sante:free, openrouter:dots-studio/dots-3-note-preview:free, groq:llama-3.3-70b-versatile, groq:qwen/qwen3-32b, zai:glm-4.5-flash, hf:deepseek-ai/DeepSeek-V3.1, hf:Qwen/Qwen3-235B-A22B-Instruct-2507, cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast, cf:@cf/qwen/qwen2.5-coder-32b-instruct, cohere:command-a-03-2025, sambanova:DeepSeek-V3.1, sambanova:Meta-Llama-3.3-70B-Instruct
-  KHCE-CEMENTSPB-00 github:openai/gpt-4.1: start
-  KHCE-CEMENTSPB-00 github:openai/gpt-4.1: 0s ValueError: bad response: 'OK\r\n'
-  KHCE-CEMENTSPB-00 github:openai/gpt-4o: start
-  KHCE-CEMENTSPB-00 github:openai/gpt-4o: 0s ValueError: bad response: 'OK\r\n'
-  KHCE-CEMENTSPB-00 github-azure:gpt-4.1: start
-  KHCE-CEMENTSPB-00 github-azure:gpt-4.1: 0s URLError: <urlopen error [Errno -2] Name or service not known>
-  KHCE-CEMENTSPB-00 github-azure:gpt-4o: start
-  KHCE-CEMENTSPB-00 github-azure:gpt-4o: 0s URLError: <urlopen error [Errno -2] Name or service not known>
-  KHCE-CEMENTSPB-00 gemini:gemini-pro-latest: start
-  gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
-  KHCE-CEMENTSPB-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  KHCE-CEMENTSPB-00 gemini:gemini-2.5-pro: start
-  KHCE-CEMENTSPB-00 gemini:gemini-2.5-pro: 0s ValueError: HTTP 404: [{
+  KMC-CEMENTSPB-00 github:openai/gpt-4.1: start
+  KMC-CEMENTSPB-00 github:openai/gpt-4.1: 0s ValueError: bad response: 'OK\r\n'
+  KMC-CEMENTSPB-00 github:openai/gpt-4o: start
+  KMC-CEMENTSPB-00 github:openai/gpt-4o: 0s ValueError: bad response: 'OK\r\n'
+  KMC-CEMENTSPB-00 github-azure:gpt-4.1: start
+  KMC-CEMENTSPB-00 github-azure:gpt-4.1: 0s URLError: <urlopen error [Errno -2] Name or service not known>
+  KMC-CEMENTSPB-00 github-azure:gpt-4o: start
+  KMC-CEMENTSPB-00 github-azure:gpt-4o: 0s URLError: <urlopen error [Errno -2] Name or service not known>
+  KMC-CEMENTSPB-00 gemini:gemini-2.5-pro: start
+  KMC-CEMENTSPB-00 gemini:gemini-2.5-pro: 0s ValueError: HTTP 404: [{
   "error": {
     "code": 404,
     "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest featu
-  KHCE-CEMENTSPB-00 gemini:gemini-flash-latest: start
-  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
-  KHCE-CEMENTSPB-00 gemini:gemini-flash-latest: 0s QuotaError: HTTP 429: [{
+  KMC-CEMENTSPB-00 gemini:gemini-3.5-flash: start
+  gemini:gemini-3.5-flash: quota used up - skipped for the rest of the day
+  KMC-CEMENTSPB-00 gemini:gemini-3.5-flash: 0s QuotaError: HTTP 429: [{
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  KHCE-CEMENTSPB-00 gemini:gemini-3.8-flash: start
-  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
-  KHCE-CEMENTSPB-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  KHCE-CEMENTSPB-00 gemini:gemini-3.7-flash: start
-  gemini:gemini-3.7-flash: quota used up - skipped for the rest of the day
-  KHCE-CEMENTSPB-00 gemini:gemini-3.7-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  KHCE-CEMENTSPB-00 gemini:gemini-3.6-flash: start
-OK KHCE-CEMENTSPB-00 <- gemini:gemini-3.6-flash (24s)
-  KECE-PCT5G42.5-L50-00 github:openai/gpt-4.1: start
-  KECE-PCT5G42.5-L50-00 github:openai/gpt-4.1: 0s ValueError: bad response: 'OK\r\n'
-  KECE-PCT5G42.5-L50-00 github:openai/gpt-4o: start
-  KECE-PCT5G42.5-L50-00 github:openai/gpt-4o: 0s ValueError: bad response: 'OK\r\n'
-  KECE-PCT5G42.5-L50-00 github-azure:gpt-4.1: start
-  KECE-PCT5G42.5-L50-00 github-azure:gpt-4.1: 0s URLError: <urlopen error [Errno -2] Name or service not known>
-  KECE-PCT5G42.5-L50-00 github-azure:gpt-4o: start
-  KECE-PCT5G42.5-L50-00 github-azure:gpt-4o: 0s URLError: <urlopen error [Errno -2] Name or service not known>
-  KECE-PCT5G42.5-L50-00 gemini:gemini-2.5-pro: start
-  KECE-PCT5G42.5-L50-00 gemini:gemini-2.5-pro: 0s ValueError: HTTP 404: [{
+  KMC-CEMENTSPB-00 gemini:gemini-2.5-flash: start
+  KMC-CEMENTSPB-00 gemini:gemini-2.5-flash: 0s ValueError: HTTP 404: [{
   "error": {
     "code": 404,
-    "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest featu
-  KECE-PCT5G42.5-L50-00 gemini:gemini-3.6-flash: start
-  gemini:gemini-3.6-flash: quota used up - skipped for the rest of the day
-  KECE-PCT5G42.5-L50-00 gemini:gemini-3.6-flash: 0s QuotaError: HTTP 429: [{
+    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features 
+  KMC-CEMENTSPB-00 gemini:gemini-omni-1.1-flash: start
+  gemini:gemini-omni-1.1-flash: quota used up - skipped for the rest of the day
+  KMC-CEMENTSPB-00 gemini:gemini-omni-1.1-flash: 0s QuotaError: HTTP 429: [{
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  KECE-PCT5G42.5-L50-00 gemini:gemini-3.5-flash: start
-OK KECE-PCT5G42.5-L50-00 <- gemini:gemini-3.5-flash (34s)
+  KMC-CEMENTSPB-00 gemini:gemma-4-26b-a4b-it: start
+  KMC-CEMENTSPB-00 gemini:gemma-4-26b-a4b-it: 90s TimeoutError: The read operation timed out
+  KMC-CEMENTSPB-00 openrouter:qwen/qwen3.8-27b:free: start
+OK KMC-CEMENTSPB-00 <- openrouter:qwen/qwen3.8-27b:free (686s)
