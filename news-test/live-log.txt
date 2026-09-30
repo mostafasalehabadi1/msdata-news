@@ -93,3 +93,24 @@ OK ASPC-LDLFI2047AWP-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (91s)
   IKRC-GRSUSUB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 150s ValueError: bad response: '{"id":"gen-1790773224-sJjrI5qXl7N7ZJLPqgZG","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
 OK HSR-LUSUACB-00 <- gemini:gemma-4-26b-a4b-it (129s)
 OK IKRC-GRSUSUB-00 <- kilo:stepfun/step-3.7-flash:free (49s)
+  SEFA-CR018OO-00 llm7:minimax-m2.7: 148s ValueError: 119 words / 2 paragraphs
+  SHPC-TEAB-00 zai:glm-4.5-flash: 199s ValueError: 147 words / 1 paragraphs
+  THOR-GRSUSUB-00 gemini:gemma-4-26b-a4b-it: 180s TimeoutError: The read operation timed out
+  SHPC-MEAFG-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  THOR-GRSUSUB-00 gemini:gemma-4-31b-it: 46s ValueError: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+]
+  THOR-GRSUSUB-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "Developer instruction is not enabled for this model",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+]
+OK SHPC-MEAFG-00 <- kilo:stepfun/step-3.7-flash:free (27s)
