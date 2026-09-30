@@ -31,6 +31,7 @@ jobs:
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
           LLM7_API_KEY: ${{ secrets.LLM7_API_KEY }}
+          VERCEL_AI_KEY: ${{ secrets.VERCEL_AI_KEY }}
           SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
           ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -38,7 +39,7 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           USE_GITHUB_MODELS: "1"
         run: |
-          python tools/model_bench.py 2>&1 | tee news-test/bench-log.txt || true
+          BENCH_ONLY=gemini:gemini-3.8,gemini:gemini-3.7,gemini:gemini-3.5-flash,gemini:gemini-flash-latest,vercel,kilo:nvidia python tools/model_bench.py 2>&1 | tee news-test/bench-log.txt || true
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           git add news-test/bench.json news-test/bench-log.txt && git commit -qm "bench: persian writing" && git pull -q --rebase && git push -q
