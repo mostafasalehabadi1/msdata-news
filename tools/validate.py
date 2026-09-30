@@ -2,7 +2,7 @@
 
 news/YYYY-MM-DD.json         {date_fa, date, items:[{symbol, trade_date, commodity, hall, producer,
                                                      title, slug, subtitle, lead, text}]}
-news/report-YYYY-MM-DD.json  {date_fa, date, slug, title, subtitle, lead, text}
+news/report-YYYY-MM-DD.json  {date_fa, date, slug, title, subtitle, lead, text, links?, sources?}
 """
 import glob
 import json
@@ -56,7 +56,10 @@ def main():
             if miss:
                 errs.append(f"{name}: missing {miss}")
                 continue
-            check_text(name, d, errs, 250, 600, 3, 7)
+            check_text(name, d, errs, 250 if d["date"] < "2026-10-03" else 600, 800, 3 if d["date"] < "2026-10-03" else 5, 10)
+            for x in d.get("sources") or []:
+                if not str(x.get("url", "")).startswith(("https://", "http://")) or "mostafasalehabadi" in str(x.get("url")):
+                    errs.append(f"{name}: bad source url {x.get('url')}")
             n += 1
         elif re.fullmatch(r"\d{4}-\d{2}-\d{2}\.json", name):
             if not isinstance(d.get("items"), list) or not d.get("date_fa"):
