@@ -60,10 +60,12 @@ def post(url, key, model, prompt, extra=None):
 
 
 STRONG_GEMINI = ("gemma-4-31b-it",)
-STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "gemini:gemma-4-31b-it",
-          "kilo:dots-studio/dots-3-note-preview:free", "hf:deepseek-ai/DeepSeek-V3.1"}
-# ranks 6-8: write the important half too, but only when every strong model is out or a symbol waited 2h
-BACKUP = {"kilo:stepfun/step-3.7-flash:free", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free"}
+# gemma-4-31b-it is kept for the daily report only (write_report.py) and writes no symbol news
+REPORT_ONLY = {"gemini:gemma-4-31b-it"}
+STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "kilo:dots-studio/dots-3-note-preview:free",
+          "hf:deepseek-ai/DeepSeek-V3.1", "kilo:stepfun/step-3.7-flash:free"}
+# the next three by rating: write the important half too, but only when every strong model is out or a symbol waited 2h
+BACKUP = {"zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast"}
 BACKUP_WAIT = 2 * 3600
 
 
@@ -197,6 +199,8 @@ def main():
     # the owner's blind rating (5 best of 12 models, 2026-09-30/10-01) writes the important half; every other model the rest
     groups = {}
     for name, call in provs:
+        if name in REPORT_ONLY:
+            continue
         groups.setdefault(name.split(":")[0] + ("/strong" if name in STRONG else "/backup" if name in BACKUP else ""), []).append((name, call))
     # importance tiers come from data/importance.json (tools/importance.py): 0 important (top half by value this year), 1 the rest.
     # A strong-model worker writes only important symbols, every other worker only the rest.
