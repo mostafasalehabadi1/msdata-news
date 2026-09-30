@@ -103,6 +103,8 @@ def providers():
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
     for m in ("Qwen3.5-397B-A17B", "gpt-oss-120b", "Meta-Llama-3_3-70B-Instruct"):  # OVH: no signup, no key
         out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
+    for m in ("nvidia/nemotron-3-ultra-550b-a55b:free", "stepfun/step-3.7-flash:free"):  # Kilo gateway: no signup, 200 req/h per IP
+        out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
     return out
 
 
@@ -267,7 +269,7 @@ def main():
                         todo.append(r)  # another provider may still write it
             time.sleep(4)  # stay under free-tier rate limits
 
-    level = {"gemini": 0, "hf": 0, "openrouter": 0, "sambanova": 0, "zai": 1, "groq": 1, "cf": 1, "llm7": 1, "siliconflow": 1, "ovh": 1}  # the rest (cohere) = 2
+    level = {"gemini": 0, "hf": 0, "openrouter": 0, "sambanova": 0, "zai": 1, "groq": 1, "cf": 1, "llm7": 1, "siliconflow": 1, "ovh": 1, "kilo": 0}  # the rest (cohere) = 2
     threads = [threading.Thread(target=worker, args=(g, m, level.get(g, 2))) for g, m in groups.items()]
     for t in threads:
         t.start()
