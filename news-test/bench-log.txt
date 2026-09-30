@@ -1,5 +1,27 @@
+groq:llama-3.3-70b-versatile ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+groq:qwen/qwen3-32b ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+zai:glm-4.5-flash ok
+cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast no JSON
+cf:@cf/qwen/qwen2.5-coder-32b-instruct no JSON
+llm7:DeepSeek-V4-Flash-0731 ok
+llm7:minimax-m2.7 ValueError: HTTP 503: {"error":{"message":"This model is temporarily busy. Please try again shortly or choose another model.","type":"model_temporarily_unavailable","param":null,"code":"model_temporarily_unavailable"}}
+llm7:mistral-Nemo-Instruct-2407 198 words / 1 paragraphs
 siliconflow:deepseek-ai/DeepSeek-V3 ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
 siliconflow:zai-org/GLM-4.5-Air ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
 siliconflow:Qwen/Qwen3-8B ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
 siliconflow:THUDM/GLM-4-9B-0414 ValueError: HTTP 403: {"code":30003,"message":"Model disabled.","data":null}
 siliconflow:Qwen/Qwen2.5-7B-Instruct ValueError: HTTP 402: {"code":30001,"message":"Sorry, your account balance is insufficient","data":null}
+ovh:Qwen3.5-397B-A17B ValueError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"6692163ee5052e6112138230f56faf29"
+}
+ovh:gpt-oss-120b ValueError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"0feb5668653f7f4d262905016f308502"
+}
+ovh:Meta-Llama-3_3-70B-Instruct ValueError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"b2c47a3f9f15752547c4621fec21a665"
+}
