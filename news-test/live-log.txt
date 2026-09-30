@@ -99,3 +99,16 @@ OK NGHS-BSG194X-00 <- kilo:stepfun/step-3.7-flash:free (40s)
   AISC-BSG194X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1790785328-bZQNXgtu9cKcPgTalghI","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
 OK SIS-BSG194X-00 <- gemini:gemma-4-26b-a4b-it (146s)
 OK ASF-CR08AB-000 <- zai:glm-4.5-flash (219s)
+  AISC-BSG194X-00 kilo:stepfun/step-3.7-flash:free: 87s ValueError: 182 words / 1 paragraphs
+  KSC-BSG194X-00 gemini:gemma-4-26b-a4b-it: 180s TimeoutError: The read operation timed out
+  SKS-BSG194X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  KSC-BSG194X-00 gemini:gemma-4-31b-it: 84s ValueError: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+]
+  IMID-BSG194X-616 zai:glm-4.5-flash: 252s ValueError: 209 words / 3 paragraphs
+OK SKS-BSG194X-00 <- kilo:stepfun/step-3.7-flash:free (42s)
