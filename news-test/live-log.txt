@@ -69,3 +69,23 @@ OK WCO-PCT5G42.5-B-00 <- cohere:command-a-03-2025 (10s)
   HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   AAC-CPCANG32.5-B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 9s ValueError: no JSON
 OK MAPE-LLD22B02P-00 <- gemini:gemini-flash-latest (73s)
+  HAAL-PS10000-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
+  AHM-BI6070B-00 gemini:gemini-flash-latest: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  PAM-HDEX5PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
+  AHM-BI6070B-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  PAM-HDEX5PP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  gemini:gemini-3.7-flash: quota used up - skipped for the rest of the day
+  AHM-BI6070B-00 gemini:gemini-3.7-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  BSPC-OAXYLENEB-00 llm7:minimax-m2.7: 46s ValueError: HTTP 503: {"error":{"message":"This model is temporarily busy. Please try again shortly or choose another model.","type":"model_temporarily_unavailable","param":null,"code":"model_temporarily_unavailable"}}
+OK TABC-MD3840UAPP-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (100s)
