@@ -42,10 +42,11 @@ RULES = ("تو خبرنگار «گروه بورس کالای ام‌اس‌دی�
 def post(url, key, model, prompt, extra=None):
     body = {"model": model, "temperature": 0.7,
             "messages": [{"role": "system", "content": RULES}, {"role": "user", "content": prompt}]}
+    auth = {"Authorization": f"Bearer {key}"} if key else {}  # OVH AI Endpoints works anonymously (2 req/min per model)
     req = urllib.request.Request(url, json.dumps(body).encode(), {
-        "Authorization": f"Bearer {key}", "Content-Type": "application/json", "User-Agent": "msdata-news/1.0", **(extra or {})})
+        **auth, "Content-Type": "application/json", "User-Agent": "msdata-news/1.0", **(extra or {})})
     try:
-        with urllib.request.urlopen(req, timeout=90) as r:
+        with urllib.request.urlopen(req, timeout=180) as r:
             raw = r.read().decode("utf-8", "replace")
     except urllib.error.HTTPError as e:
         raise ValueError(f"HTTP {e.code}: {e.read().decode('utf-8', 'replace')[:200]}") from None
@@ -100,6 +101,8 @@ def providers():
         if os.environ.get(env):
             for m in models:
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
+    for m in ("Qwen3.5-397B-A17B", "gpt-oss-120b", "Meta-Llama-3_3-70B-Instruct"):  # OVH: no signup, no key
+        out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
     return out
 
 
@@ -264,7 +267,7 @@ def main():
                         todo.append(r)  # another provider may still write it
             time.sleep(4)  # stay under free-tier rate limits
 
-    level = {"gemini": 0, "hf": 0, "openrouter": 0, "sambanova": 0, "zai": 1, "groq": 1, "cf": 1, "llm7": 1, "siliconflow": 1}  # the rest (cohere) = 2
+    level = {"gemini": 0, "hf": 0, "openrouter": 0, "sambanova": 0, "zai": 1, "groq": 1, "cf": 1, "llm7": 1, "siliconflow": 1, "ovh": 1}  # the rest (cohere) = 2
     threads = [threading.Thread(target=worker, args=(g, m, level.get(g, 2))) for g, m in groups.items()]
     for t in threads:
         t.start()
