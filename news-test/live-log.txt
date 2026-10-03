@@ -22,3 +22,30 @@ OK PPC-UREAGRB-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (9s)
   NPAC-BIPG6422B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 5s JSONDecodeError: Invalid control character at: line 6 column 233 (char 543)
   RPC-UREAGRB-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 21s TypeError: expected string or bytes-like object, got 'dict'
 OK HPCC-AMMONIAB-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (9s)
+  SHPC-HDWAXB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 11s JSONDecodeError: Invalid control character at: line 6 column 308 (char 622)
+  KRPT-UREAGRB-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 11s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
+  KRPT-AMMONIAB-00 ovh:gpt-oss-120b: 40s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"ae1fa71842ada13c5497a6077bdeac64"
+}
+  TIOC-PDATARB-00 hf:deepseek-ai/DeepSeek-V3.1: 45s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  KRPT-AMMONIAB-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"8449ea6ca8c65234626f7143e0f6a177"
+}
+  MSPI-AMMONIAB-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  TJPC-PBR1220WWP-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 17s JSONDecodeError: Expecting value: line 3 column 11 (char 74)
+  SPC-UREAGRJ-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate you
+  KZPC-EREE12WP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  SHPC-PBR1220WWP-00 gemini:gemini-flash-latest: 53s ValueError: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+  NPAC-BIPG6422B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 3 column 11 (char 64)
+OK SHPC-PBR1220WWP-00 <- gemini:gemini-3.8-flash (17s)
