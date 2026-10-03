@@ -1,2 +1,15 @@
-1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-OK MPC-MEGB-00 <- zai:glm-4.5-flash (255s)
+16 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  TJPC-PBR1220WWP-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  SPC-UREAGRJ-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791032877-SmkLS6U5j4o6uHr094uP","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  KRPT-AMMONIAB-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"5ead725e7926906f23d257113c931a10"
+}
+  TJPC-PBR1220WWP-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  KRPT-UREAGRB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 7s JSONDecodeError: Invalid control character at: line 6 column 333 (char 795)
+  MSPI-AMMONIAB-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+OK PPC-UREAGRB-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (9s)
