@@ -40,3 +40,16 @@ OK ESC-HBNNE03E-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (10s)
   ESC-SBEN03EN-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   ASCO-SBNE03E-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 10s JSONDecodeError: Invalid control character at: line 6 column 233 (char 604)
 OK ESC-HBEEE03E-00 <- gemini:gemini-flash-latest (45s)
+  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
+  ASCO-SBEN03E-00 gemini:gemini-flash-latest: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
+  ASCO-SBEN03E-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  ASCO-HBENN03E-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 43s ValueError: 130 words / 1 paragraphs
+  ESC-PTLOOO000-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 19s JSONDecodeError: Expecting value: line 3 column 11 (char 109)
+OK ESC-SBEE03E-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (102s)
