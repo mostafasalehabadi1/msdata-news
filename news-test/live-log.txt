@@ -77,3 +77,23 @@ OK KZPC-EREE12WP-00 <- zai:glm-4.5-flash (86s)
   SHPC-HDWAXB-00 llm7:minimax-m2.7: 219s ValueError: HTTP 502: error code: 502
 
 OK NPAC-BIPG6422B-00 <- gemini:gemini-flash-latest (78s)
+  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
+  MSPI-AMMONIAB-00 gemini:gemini-flash-latest: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
+  MSPI-AMMONIAB-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  SHPC-HDWAXB-00 llm7:mistral-Nemo-Instruct-2407: 51s ValueError: 124 words / 1 paragraphs
+  MSPI-AMMONIAB-00 gemini:gemini-3.7-flash: 76s ValueError: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+OK TIOC-PDATARB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (124s)
