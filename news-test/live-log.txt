@@ -50,3 +50,16 @@ OK HPCC-AMMONIAB-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (9s)
   NPAC-BIPG6422B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 3 column 11 (char 64)
 OK SHPC-PBR1220WWP-00 <- gemini:gemini-3.8-flash (17s)
 OK MSPI-UREAGRB-00 <- zai:glm-4.5-flash (86s)
+  SPC-UREAGRJ-00 openrouter:google/gemma-4-26b-a4b-it:free: 69s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate
+  SPC-AMMONIAB-00 llm7:minimax-m2.7: 125s ValueError: HTTP 524: error code: 524
+
+  RPC-UREAGRB-00 gemini:gemini-flash-latest: 67s ValueError: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+  SPC-AMMONIAB-00 llm7:mistral-Nemo-Instruct-2407: 28s ValueError: no JSON
+OK RPC-UREAGRB-00 <- gemini:gemini-3.8-flash (15s)
