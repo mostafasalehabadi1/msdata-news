@@ -99,3 +99,13 @@ OK ESC-SBEN03EN-00 <- gemini:gemini-3.6-flash (90s)
   KHP-UREANONUFJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
 OK KZPC-EREPIRAN06EXCG-603 <- openrouter:apodex/apodex-1.1-mini:free (63s)
 OK ESC-HBNEN03EN-00 <- zai:glm-4.5-flash (106s)
+  ESC-HBENN03E-00 gemini:gemini-3.7-flash: 203s TimeoutError: The read operation timed out
+  ESC-HBENN03E-00 gemini:gemini-3.6-flash: 87s ValueError: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+OK ESC-HBENN03E-00 <- gemini:gemini-3.5-flash (23s)
