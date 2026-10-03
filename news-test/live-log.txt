@@ -1,1 +1,28 @@
-0 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+20 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
+  ESC-HBEEE03E-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
+  KHP-UREAPL-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  KHP-UREANONUFJ-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"c6ed216c82a39b577b1c6e4f90f82e17"
+}
+  KHP-UREAPL-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
+  KHP-UREANONUFJ-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"3cec3d0aa5d6a27827ba90623954392e"
+}
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  KHP-UREANONUFJ-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"dfeb973db898352f770b7b5f91a8e326"
+}
+  ESC-HBENN03E-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+OK ESC-HBNNE03E-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (10s)
