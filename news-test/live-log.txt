@@ -1,1 +1,34 @@
-0 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+3 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
+  IORC-LUSUGEB-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  IORC-LUSUGEB-00 gemini:gemini-flash-latest: 56s ValueError: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 73s ValueError: empty subtitle
+  IORC-LUSUGEB-00 gemini:gemini-3.8-flash: 82s ValueError: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+  IORC-LUSUGEB-00 gemini:gemini-3.7-flash: 54s ValueError: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+  IORC-LUSUGEB-00 gemini:gemini-3.6-flash: 132s ValueError: markers: عبارت ممنوع «بالاترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|بال)
+  WCO-PCT5G42.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 370s ValueError: 100 words / 3 paragraphs
+OK IORC-LUSUGEB-00 <- gemini:gemini-3.5-flash (80s)
