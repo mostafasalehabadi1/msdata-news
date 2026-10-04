@@ -35,7 +35,25 @@ GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
 OR_PREFER = ("nemotron-3-ultra", "gemma-4-31b", "nemotron-3-ultra", "deepseek", "qwen", "gemma", "llama")  # better Persian first
 
-STYLE = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read()
+STYLE_FULL = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read()
+
+
+def style_for(*templates):
+    """style.md without what the model does not need (section 6 is for the programmer, other templates are unused),
+    so the prompt stays under the free tiers' tokens-per-minute limit (Gemma free tier answered 429 on the full file)."""
+    parts = re.split(r"(?m)^(?=##+ )", STYLE_FULL)
+    keep = []
+    for p in parts:
+        head = p.split("\n", 1)[0]
+        if head.startswith("## بخش ۶") or head.startswith("## بخش ۴"):
+            continue
+        if head.startswith("### قالب ") and not any(head.startswith("### قالب " + t) for t in templates):
+            continue
+        keep.append(p)
+    return "".join(keep)
+
+
+STYLE = style_for("الف")
 RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی. "
          "چارچوب نگارش زیر را مو به مو رعایت کن، در «حالت سبک» (بخش ۲-۱۴) و با «قالب الف»:\n\n" + STYLE +
          "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, scenarios و هیچ متن دیگری. "

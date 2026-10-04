@@ -77,7 +77,7 @@ def rules(long):
     size = "۷۰۰ تا ۹۰۰ کلمه با میان‌تیتر (هر میان‌تیتر یک خط کوتاه جدا، بدون نقطه)" if long else "۲۵۰ تا ۴۵۰ کلمه"
     return ("تو خبرنگار اقتصاد کلان msdata.ir هستی و درباره‌ی یک داده‌ی تازه‌ی اقتصاد کلان خبر فارسی می‌نویسی. "
             "چارچوب نگارش زیر را مو به مو رعایت کن، در «حالت کامل» (بخش ۲-۱۴)، با «قالب ه» (خبر داده‌ی شش‌بندی)"
-            + (" و تحلیل و سناریوی بخش ۲-۱۵" if long else "") + ":\n\n" + w.STYLE + "\n\n"
+            + (" و تحلیل و سناریوی بخش ۲-۱۵" if long else "") + ":\n\n" + w.style_for("ه", "ج") + "\n\n"
             f"- text: {size}؛ پاراگراف‌ها جدا با یک خط خالی. عددها فقط از «داده». لینک، آدرس اینترنتی و HTML ننویس.\n"
             "- table: ۳ تا ۸ ردیف از داده، هر ردیف یک شیء با نام ستون‌ها (بخش ۲-۱۶).\n"
             "- scenarios: " + ("۲ یا ۳ سناریوی قابل‌بررسی به شکل JSON بخش ۲-۱۵.\n" if long else "فهرست خالی، مگر سناریوی روشن و قابل‌بررسی داشته باشی.\n") +
@@ -135,7 +135,7 @@ def write(name, subject, long, key, facts, first_seen):
             w.save_scenarios(d["scenarios"], name, key)
             return item
         except Exception as e:  # noqa: BLE001 - next model
-            print(f"  {name} {model}: {type(e).__name__}: {str(e)[:200]}")
+            print(f"  {name} {model}: {type(e).__name__}: {str(e)[:1500]}")
             if isinstance(e, w.QuotaError):
                 open(w.EXHAUSTED_FILE, "a", encoding="utf-8").write(model + "\n")
     return None
