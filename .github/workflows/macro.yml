@@ -3,6 +3,9 @@ name: macro-news
 # and publishes it at once (news/macro/ on the published branch).
 on:
   workflow_dispatch:
+  push:  # editing macro-now.txt from the manager VPS = write the pending macro news now
+    branches: [main]
+    paths: [macro-now.txt]
 concurrency:
   group: macro-news
   cancel-in-progress: false
