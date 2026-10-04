@@ -1,25 +1,15 @@
-name: daily-report
-# Started by release.yml from 18:30 Tehran on a trading day until the report exists. Writes it with the best-rated
-# model that answers (tools/write_report.py) and publishes it in the same run - the report has top priority.
+name: macro-news
+# «اقتصاد کلان»: started hourly by release.yml; writes one news per new macro / open-market data point (tools/write_macro.py)
+# and publishes it at once (news/macro/ on the published branch).
 on:
   workflow_dispatch:
-    inputs:
-      now:
-        description: write the latest day's report now, even outside 18:30 / trading days
-        default: ""
-      headline:
-        description: optional fixed headline for the report
-        default: ""
-  push:  # editing report-now.txt from the manager VPS = a manual "write it now"
-    branches: [main]
-    paths: [report-now.txt]
 concurrency:
-  group: daily-report
+  group: macro-news
   cancel-in-progress: false
 permissions:
   contents: write
 jobs:
-  report:
+  macro:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
@@ -29,7 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: write and publish the daily report
+      - name: write and publish macro news
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -46,11 +36,9 @@ jobs:
         run: |
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
-          HL="${{ inputs.headline }}"
-          python tools/write_report.py ${{ (inputs.now || github.event_name == 'push') && '--now' || '' }} ${HL:+--headline "$HL"}
-          git add queue data
+          python tools/write_macro.py
+          git add data/macro_seen.json data/scenarios.jsonl news/macro 2>/dev/null || git add data/macro_seen.json
           git diff --cached --quiet && exit 0
-          git commit -qm "report: $(python -c 'import json;print(json.load(open("data/latest.json"))["date_fa"])')"
-          python tools/release.py
-          python tools/validate.py && git add news && git commit -qm "release: daily report" || git checkout -- news
+          python tools/validate.py || { echo "validate failed"; exit 1; }
+          git commit -qm "macro: news"
           git pull -q --rebase && git push -q origin HEAD:main && git push -qf origin HEAD:refs/heads/published

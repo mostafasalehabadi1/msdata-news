@@ -56,7 +56,8 @@ def main():
             if miss:
                 errs.append(f"{name}: missing {miss}")
                 continue
-            check_text(name, d, errs, 250 if d["date"] < "2026-10-03" else 600, 800, 3 if d["date"] < "2026-10-03" else 5, 10)
+            v2 = d["date"] >= "2026-10-04"  # writing framework v2 (style.md): report 400-700 words with sub-headings
+            check_text(name, d, errs, 400 if v2 else 250 if d["date"] < "2026-10-03" else 600, 750 if v2 else 800, 3 if d["date"] < "2026-10-03" else 5, 18 if v2 else 10)
             for x in d.get("sources") or []:
                 if not str(x.get("url", "")).startswith(("https://", "http://")) or "mostafasalehabadi" in str(x.get("url")):
                     errs.append(f"{name}: bad source url {x.get('url')}")
@@ -77,7 +78,8 @@ def main():
                 seen.add(it["symbol"])
                 if it["trade_date"] != d["date_fa"]:
                     errs.append(f"{where}: trade_date != date_fa")
-                check_text(where, it, errs, 150, 200, 2, 3)
+                v2 = d.get("date", "") >= "2026-10-04"  # framework v2: template A, 120-220 words
+                check_text(where, it, errs, 120 if v2 else 150, 220 if v2 else 200, 2, 4 if v2 else 3)
                 subs[it["subtitle"]] = subs.get(it["subtitle"], 0) + 1
                 n += 1
             # template detector: the same subtitle or the same opening sentence on many items = copy-paste news
@@ -86,6 +88,16 @@ def main():
                     errs.append(f"{name}: subtitle repeated {c} times: {s[:60]}")
         elif name != ".keep":
             errs.append(f"{name}: unexpected file name")
+    for path in sorted(glob.glob(os.path.join(ROOT, "macro", "*.json"))):  # «اقتصاد کلان» (tools/write_macro.py)
+        name = "macro/" + os.path.basename(path)
+        try:
+            d = json.load(open(path, encoding="utf-8"))
+        except Exception as e:  # noqa: BLE001
+            errs.append(f"{name}: invalid JSON {e}")
+            continue
+        long = d.get("kind") == "report"
+        check_text(name, d, errs, 650 if long else 230, 950 if long else 470, 3, 30)
+        n += 1
     for e in errs:
         print("ERROR", e)
     print(f"checked {n} articles, {len(errs)} errors")

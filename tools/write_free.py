@@ -23,6 +23,7 @@ import urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from validate import FORBIDDEN, SLUG_BAD, paragraphs, words  # noqa: E402
 import factsheet  # noqa: E402
+import markers  # noqa: E402
 import importance  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -35,9 +36,12 @@ MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
 OR_PREFER = ("nemotron-3-ultra", "gemma-4-31b", "nemotron-3-ultra", "deepseek", "qwen", "gemma", "llama")  # better Persian first
 
 STYLE = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read()
-RULES = ("تو خبرنگار «گروه بورس کالای ام‌اس‌دیتا» هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی. "
-         "این دستورالعمل را دقیق رعایت کن:\n\n" + STYLE +
-         "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text (slug فارسی با خط تیره، بدون فاصله و علامت) و هیچ متن دیگری.")
+RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی. "
+         "چارچوب نگارش زیر را مو به مو رعایت کن، در «حالت سبک» (بخش ۲-۱۴) و با «قالب الف»:\n\n" + STYLE +
+         "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, scenarios و هیچ متن دیگری. "
+         "slug فارسی با خط تیره، بدون فاصله و علامت. text: ۱۲۰ تا ۲۲۰ کلمه در ۲ تا ۴ پاراگراف (جدا با یک خط خالی)، حداکثر ۳ عدد گرد. "
+         "table: ۳ تا ۸ ردیف از فکت‌شیت، هر ردیف یک شیء با کلیدهای «شاخص»، «امروز»، «دیروز یا جلسه‌ی قبل»، «میانگین ۱۰ روزه»، «تغییر»، «منبع و تاریخ» (بخش ۲-۱۶). "
+         "scenarios: فهرست سناریوهای قابل‌بررسی به شکل بخش ۲-۱۵ (اگر سناریویی نداری، فهرست خالی).")
 
 
 def post(url, key, model, prompt, extra=None):
@@ -166,14 +170,27 @@ def parse(raw):
             raise ValueError(f"empty {k}")
     d["text"] = d["text"].replace("\r", "").strip()
     w, p = words(d["text"]), paragraphs(d["text"])
-    if not 150 <= w <= 200 or not 2 <= p <= 3:
+    if not 120 <= w <= 220 or not 2 <= p <= 4:
         raise ValueError(f"{w} words / {p} paragraphs")
-    if not d["text"].startswith("به گزارش گروه بورس کالای ام‌اس‌دیتا"):
-        raise ValueError("bad opening")
     if any(FORBIDDEN.search(d[k]) for k in ("title", "subtitle", "lead", "text")):
         raise ValueError("forbidden content")
+    d["table"] = [x for x in d.get("table") or [] if isinstance(x, dict)][:8]
+    d["scenarios"] = [x for x in d.get("scenarios") or [] if isinstance(x, dict)]
+    probs = markers.check(d["text"], d["title"], d["lead"], table=bool(d["table"]))
+    if len(d["table"]) < 3:
+        probs.append("table باید ۳ تا ۸ ردیف داشته باشد")
+    if probs:
+        raise ValueError("markers: " + " | ".join(probs))
     d["slug"] = SLUG_BAD.sub("-", d["slug"].strip())
     return d
+
+
+def save_scenarios(items, subject, date_fa):
+    """style.md 2-15: every scenario is also kept as one JSON line in data/scenarios.jsonl for the monthly judging."""
+    if items:
+        with open(os.path.join(ROOT, "data", "scenarios.jsonl"), "a", encoding="utf-8") as f:
+            for x in items:
+                f.write(json.dumps({"تاریخ_ثبت": date_fa, "موضوع_نماد": subject, "وضعیت": "باز", **x}, ensure_ascii=False) + "\n")
 
 
 def main():
@@ -230,25 +247,27 @@ def main():
             t0 = time.time()
             try:
                 raw = retry(call, prompt)
-                try:
-                    d = parse(raw)
-                except ValueError as e:
-                    if "words" not in str(e):
-                        raise
-                    fix = (prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایراد: متن text {e}. همان خبر را با text بین ۱۶۰ تا ۱۹۰ کلمه "
-                           "در ۲ یا ۳ پاراگراف بازنویسی کن (فقط با عددهای فکت‌شیت) و فقط JSON برگردان.")
-                    d = parse(retry(call, fix))
+                for attempt in range(3):  # section 6 of style.md: every hit goes back to the model, up to 2 rewrites
+                    try:
+                        d = parse(raw)
+                        break
+                    except ValueError as e:
+                        if attempt == 2 or not re.search(r"words|markers|table", str(e)):
+                            raise
+                        raw = retry(call, prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایرادها: {e}. همان خبر را با رفع همه‌ی این ایرادها "
+                                    "(text بین ۱۳۰ تا ۲۰۰ کلمه در ۲ تا ۴ پاراگراف، فقط با عددهای فکت‌شیت) بازنویسی کن و فقط JSON برگردان.")
                 with lock:
                     if d["subtitle"] in subs:
                         raise ValueError("repeated subtitle")
                     doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
                                          "hall": r.get("talar", ""), "producer": r.get("producer_name", ""), **d, "model": name})
                     subs.add(d["subtitle"])
+                    save_scenarios(d["scenarios"], sym, date_fa)
                     json.dump(doc, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
                     stats["ok"] += 1
                     note(f"OK {sym} <- {name} ({time.time() - t0:.0f}s)")
                     if os.environ.get("PUSH_EACH"):
-                        subprocess.run('git add -A news-test queue data/importance.json && git commit -qm "queue: progress" && git pull -q --rebase && git push -q',
+                        subprocess.run('git add -A news-test queue data/importance.json data/scenarios.jsonl && git commit -qm "queue: progress" && git pull -q --rebase && git push -q',
                                        shell=True, cwd=ROOT, check=False, capture_output=True)
                 return True
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model of this provider

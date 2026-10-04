@@ -20,10 +20,13 @@ from html import unescape
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import write_free as w  # noqa: E402
+import markers  # noqa: E402
 from factsheet import YEAR, fa_date, fa_int, fa_num, toman_billion  # noqa: E402
 from validate import FORBIDDEN, SLUG_BAD, paragraphs, words  # noqa: E402
 
 ROOT = w.ROOT
+# optional fixed headline: --headline "..." or the first line of report-now.txt after "headline:"
+HEADLINE = ""
 MIXED = re.compile(r"[؀-ۿ][A-Za-z]|[A-Za-z][؀-ۿ]")
 TEHRAN = timezone(timedelta(hours=3, minutes=30))
 REPORT_MODEL = "gemini:gemma-4-31b-it"
@@ -34,20 +37,16 @@ RANK = [REPORT_MODEL, "llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025",
         "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
         "cf:@cf/qwen/qwen2.5-coder-32b-instruct", "llm7:mistral-Nemo-Instruct-2407"]
 REPORT_RULES = (
-    "تو سردبیر و تحلیلگر «گروه بورس کالای ام‌اس‌دیتا» هستی و گزارش تحلیلی پایان روز بازار فیزیکی بورس کالا را به فارسی می‌نویسی.\n"
-    "- عددها فقط از «فکت‌شیت». هیچ عددی نساز.\n"
-    "- علت‌ها فقط از «خبرهای امروز در رسانه‌ها»: هر جا علتی یا رویدادی از یکی از آن خبرها آوردی، نام رسانه‌اش را در متن بیاور (مثلاً «به گزارش ایرنا») "
-    "و در sources ثبت کن. علتی که در آن خبرها نیست ننویس؛ اگر خبری نبود، علت را حدس نزن.\n"
-    "- تحلیل خودت: پیوند میان عددها را توضیح بده (تمرکز ارزش، رقابت، شکاف عرضه و تقاضا، جهت نرخ‌ها) و بگو این الگو معمولاً نشانه‌ی چیست؛ "
-    "تحلیل را با «به ارزیابی ام‌اس‌دیتا» یا عبارت مشابه از خبر جدا کن.\n"
-    "- چشم‌انداز: یک پاراگراف احتمالات روزهای آینده، مشروط و با «ممکن است/در صورتی که»، بدون قطعیت و بدون توصیه‌ی خرید و فروش.\n"
-    "- title: تیتر تحلیلی با مهم‌ترین رویداد روز. subtitle: یک جمله‌ی مکمل. lead: یک جمله خلاصه‌ی روز.\n"
-    "- text: ۶۵۰ تا ۷۵۰ کلمه در ۶ تا ۹ پاراگراف (جدا با یک خط خالی). بند اول دقیقاً با «به گزارش گروه بورس کالای ام‌اس‌دیتا،» شروع شود. "
-    "روایت بنویس، نه فهرست؛ داوری کلی بی‌پشتوانه مثل «روند مثبت» ننویس. لینک، آدرس اینترنتی و HTML در متن نگذار.\n"
-    "- links: برای هر معامله‌ای که در متن نام بردی یک مورد {\"title\": عبارت دقیقاً همان‌طور که در متن آمده، \"symbol\": نماد همان معامله از فکت‌شیت}.\n"
-    "- sources: برای هر خبر بیرونی که استفاده کردی {\"title\": نام رسانه دقیقاً همان‌طور که در متن آمده، \"url\": آدرس همان خبر از فهرست}.\n"
+    "تو سردبیر بورس کالای msdata.ir هستی و گزارش پایان روز بازار فیزیکی بورس کالا را به فارسی می‌نویسی. "
+    "چارچوب نگارش زیر را مو به مو رعایت کن، در «حالت کامل» (بخش ۲-۱۴) و با «قالب ب»:\n\n" + w.STYLE + "\n\n"
+    "- عددها فقط از «فکت‌شیت»؛ علت‌ها فقط از «خبرهای رسانه‌ها» با نام رسانه در متن.\n"
+    "- text: ۴۵۰ تا ۶۵۰ کلمه؛ پاراگراف‌ها جدا با یک خط خالی؛ هر میان‌تیتر یک خط کوتاه جدا (بدون نقطه) است. لینک، آدرس اینترنتی و HTML در متن نگذار.\n"
+    "- table: ۳ تا ۸ ردیف عدد مهم روز از فکت‌شیت، هر ردیف یک شیء با نام ستون‌ها (بخش ۲-۱۶).\n"
+    "- scenarios: ۲ یا ۳ سناریوی قابل‌بررسی به شکل JSON بخش ۲-۱۵.\n"
+    "- links: برای هر معامله‌ای که در متن نام بردی {\"title\": عبارت دقیقاً همان‌طور که در متن آمده، \"symbol\": نماد از فکت‌شیت}.\n"
+    "- sources: برای هر خبر بیرونی که استفاده کردی {\"title\": نام رسانه همان‌طور که در متن آمده، \"url\": آدرس همان خبر از فهرست}.\n"
     "- slug: فارسی با خط تیره، بدون فاصله و علامت.\n"
-    "فقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, links, sources و هیچ متن دیگری.")
+    "فقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, scenarios, links, sources و هیچ متن دیگری.")
 
 
 def val(r):
@@ -132,10 +131,8 @@ def check(d, symbols, urls):
             raise ValueError(f"empty {k}")
     d["text"] = d["text"].replace("\r", "").strip()
     n, p = words(d["text"]), paragraphs(d["text"])
-    if not 600 <= n <= 800 or not 5 <= p <= 10:
+    if not 400 <= n <= 750 or not 5 <= p <= 18:
         raise ValueError(f"{n} words / {p} paragraphs")
-    if not d["text"].startswith("به گزارش گروه بورس کالای ام‌اس‌دیتا"):
-        raise ValueError("bad opening")
     if any(FORBIDDEN.search(d[k]) for k in ("title", "subtitle", "lead", "text")):
         raise ValueError("forbidden content")
     if re.search(r"[A-Z]{2,}-[A-Z0-9.]+-\d\d", d["text"]):
@@ -151,12 +148,26 @@ def check(d, symbols, urls):
                     if isinstance(x, dict) and x.get("url") in urls and x.get("title") and x["title"] in d["text"]]
     if not d["links"]:
         raise ValueError("no trade links")
+    d["table"] = [x for x in d.get("table") or [] if isinstance(x, dict)][:8]
+    d["scenarios"] = [x for x in d.get("scenarios") or [] if isinstance(x, dict)]
+    probs = markers.check(d["text"], "" if HEADLINE else d["title"], d["lead"], table=False, full=True)
+    if probs:
+        raise ValueError("markers: " + " | ".join(probs))
+    if HEADLINE:
+        d["title"] = HEADLINE
     return d
 
 
 def main():
     now = datetime.now(TEHRAN)
     force = "--now" in sys.argv
+    global HEADLINE
+    if "--headline" in sys.argv:
+        HEADLINE = sys.argv[sys.argv.index("--headline") + 1].strip()
+    else:
+        hp = os.path.join(ROOT, "report-now.txt")
+        m = re.search(r"^headline:\s*(.+)$", open(hp, encoding="utf-8").read(), re.M) if os.path.exists(hp) else None
+        HEADLINE = m.group(1).strip() if m and force else ""
     if (now.hour, now.minute) < (18, 30) and not force:
         return
     latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
@@ -173,7 +184,7 @@ def main():
     if not rows:
         return
     ctx = news(rows)
-    prompt = ("فکت‌شیت کل بازار امروز (فقط همین عددها را به کار ببر):\n" + facts(rows, date_fa) +
+    prompt = (f"تیتر گزارش از پیش تعیین شده: «{HEADLINE}»؛ متن را با همین تیتر هماهنگ بنویس.\n\n" if HEADLINE else "") + ("فکت‌شیت کل بازار امروز (فقط همین عددها را به کار ببر):\n" + facts(rows, date_fa) +
               "\n\nخبرهای امروز در رسانه‌ها (فقط برای علت‌ها؛ هر کدام را استفاده کردی در sources بیاور):\n" +
               ("\n".join(f"- {x['site']} | {x['title']} | {x['summary']} | {x['url']}" for x in ctx) or "- خبری پیدا نشد."))
     symbols, urls = {r["symbol"] for r in rows}, {x["url"] for x in ctx}
@@ -198,6 +209,7 @@ def main():
                 d = check(json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), symbols, urls)
             os.makedirs(os.path.dirname(out), exist_ok=True)
             json.dump({"date_fa": date_fa, "date": date, **d, "model": model}, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            w.save_scenarios(d["scenarios"], "report", date_fa)
             print(f"report {date_fa} <- {model} ({time.time() - t0:.0f}s, {len(d['links'])} links, {len(d['sources'])} sources)")
             return
         except Exception as e:  # noqa: BLE001 - try the next model
