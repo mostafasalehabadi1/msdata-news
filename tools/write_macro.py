@@ -18,7 +18,8 @@ from datetime import datetime, timedelta, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import markers  # noqa: E402
 import write_free as w  # noqa: E402
-from write_report import RANK  # noqa: E402
+from write_report import RANK, REPORT_MODEL  # noqa: E402
+GEMMA_ONLY = 3600  # same rule as the daily report: only Gemma 4 31B for the first hour, then the owner's rating order
 from validate import FORBIDDEN, SLUG_BAD, paragraphs, words  # noqa: E402
 
 ROOT = w.ROOT
@@ -116,13 +117,15 @@ def check(d, long):
     return d
 
 
-def write(name, subject, long, key, facts):
+def write(name, subject, long, key, facts, first_seen):
     now = datetime.now(TEHRAN)
     prompt = (f"موضوع: {subject}\nتاریخ انتشار: {now.strftime('%Y-%m-%d')} (میلادی؛ در متن تاریخ شمسی داده را بنویس)\n"
               "داده (فقط همین عددها را به کار ببر):\n" + json.dumps(facts, ensure_ascii=False, indent=1))
     w.RULES = rules(long)
     provs = w.providers()
     provs.sort(key=lambda p: RANK.index(p[0]) if p[0] in RANK else len(RANK))
+    if time.time() - first_seen < GEMMA_ONLY:
+        provs = [p for p in provs if p[0] == REPORT_MODEL]
     for model, call in provs:
         if model in w.exhausted():
             continue
@@ -160,15 +163,19 @@ def main():
     if "--dry" in sys.argv:
         return
     os.makedirs(OUT, exist_ok=True)
+    pend = seen.setdefault("_pending", {})
     for name, (subject, long, key, facts) in new.items():
         t0 = time.time()
-        item = write(name, subject, long, key, facts)
+        first = pend.setdefault(f"{name}:{key}", int(t0))
+        json.dump(seen, open(SEEN, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        item = write(name, subject, long, key, facts, first)
         if not item:
             print(f"{name}: no model answered; next round tries again")
             continue
         path = os.path.join(OUT, f"{item['date']}-{name}-{re.sub(r'[^0-9]', '', str(key))}.json")
         json.dump(item, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         seen[name] = key
+        pend.pop(f"{name}:{key}", None)
         json.dump(seen, open(SEEN, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         print(f"macro {name} {key} <- {item['model']} ({time.time() - t0:.0f}s)")
 
