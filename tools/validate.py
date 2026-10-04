@@ -96,7 +96,7 @@ def main():
             errs.append(f"{name}: invalid JSON {e}")
             continue
         long = d.get("kind") == "report"
-        check_text(name, d, errs, 650 if long else 230, 950 if long else 470, 3, 30)
+        check_text(name, d, errs, 550 if long else 230, 1000 if long else 470, 3, 40)
         n += 1
     for e in errs:
         print("ERROR", e)

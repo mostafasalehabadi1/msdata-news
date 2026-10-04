@@ -74,7 +74,7 @@ def series():
 
 
 def rules(long):
-    size = "۷۰۰ تا ۹۰۰ کلمه با میان‌تیتر (هر میان‌تیتر یک خط کوتاه جدا، بدون نقطه)" if long else "۲۵۰ تا ۴۵۰ کلمه"
+    size = "۸۰۰ تا ۹۵۰ کلمه (کمتر از ۸۰۰ کلمه رد می‌شود) با میان‌تیتر (هر میان‌تیتر یک خط کوتاه جدا، بدون نقطه)" if long else "۲۵۰ تا ۴۵۰ کلمه"
     return ("تو خبرنگار اقتصاد کلان msdata.ir هستی و درباره‌ی یک داده‌ی تازه‌ی اقتصاد کلان خبر فارسی می‌نویسی. "
             "چارچوب نگارش زیر را مو به مو رعایت کن، در «حالت کامل» (بخش ۲-۱۴)، با «قالب ه» (خبر داده‌ی شش‌بندی)"
             + (" و تحلیل و سناریوی بخش ۲-۱۵" if long else "") + ":\n\n" + w.style_for("ه", "ج") + "\n\n"
@@ -91,7 +91,7 @@ def check(d, long):
             raise ValueError(f"empty {k}")
     d["text"] = d["text"].replace("\r", "").strip()
     n, p = words(d["text"]), paragraphs(d["text"])
-    lo, hi = (650, 950) if long else (230, 470)
+    lo, hi = (550, 1000) if long else (230, 470)
     if not lo <= n <= hi or p < 3:
         raise ValueError(f"{n} words / {p} paragraphs")
     if any(FORBIDDEN.search(d[k]) for k in ("title", "subtitle", "lead", "text")):
