@@ -1,7 +1,7 @@
 """write_macro.py - automatic «اقتصاد کلان» news: every time a new macro / open-market (bazarbaz) data point appears on
 msdata.ir, one news is written with the free models under the writing framework v2 (tools/style.md, full mode).
 
-Daily series get a short data news (template ه, 250-450 words); series published weekly or less often get a ~800-word
+Every series is weekly or less often and gets a ~800-word
 report. Output: news/macro/<date>-<series>-<key>.json (published at once, like the daily report) with tag «اقتصاد کلان».
 State: data/macro_seen.json (last key of every series). On the first run the state is only initialised, nothing is written,
 so old data never floods the site.
@@ -45,27 +45,17 @@ def series():
     out = {}
     try:
         raw = get("raw-data.json")
-        a = raw.get("auctions") or {}
-        if a:
-            ks = sorted(a, key=jkey)
-            out["auction"] = ("حراج اوراق بدهی بانک مرکزی (عملیات بازار باز)", True, ks[-1],
-                              {"آخرین حراج": a[ks[-1]], "حراج‌های قبلی": [a[k] for k in ks[-6:-1]]})
-        c = raw.get("credit_days") or {}
-        if c:
-            ks = sorted(c, key=jkey)
-            out["credit"] = ("اعتبار و بازپرداخت روزانه‌ی بانک مرکزی به بانک‌ها (گزارش هفتگی)", True, ks[-1],
-                             {"روزهای این گزارش": {k: c[k] for k in ks[-7:]}, "روزهای قبل": {k: c[k] for k in ks[-21:-7]}})
+        # weekly open-market report of the central bank: repo auction + standing (rule-based) credit facility, one report together
+        a, c = raw.get("auctions") or {}, raw.get("credit_days") or {}
+        if a and c:
+            ka, kc = sorted(a, key=jkey), sorted(c, key=jkey)
+            key = max(ka[-1], kc[-1], key=jkey)
+            out["openmarket-week"] = ("گزارش هفتگی بازار باز بانک مرکزی: حراج ریپو و اعتبار قاعده‌مند", True, key,
+                                      {"حراج ریپوی این هفته": a[ka[-1]], "حراج‌های قبلی": [a[k] for k in ka[-6:-1]],
+                                       "اعتبار قاعده‌مند روزهای این گزارش": {k: c[k] for k in kc[-7:]},
+                                       "اعتبار قاعده‌مند روزهای قبل": {k: c[k] for k in kc[-21:-7]}})
     except Exception as e:  # noqa: BLE001
         print(f"raw-data: {e}")
-    try:
-        f = get("forecast.json")
-        days = [d for d in f.get("days") or [] if d.get("stage") == "اصلاح‌شده"]  # only final numbers, not the provisional ones
-        if days:
-            out["openmarket-day"] = ("اعتبار روزانه‌ی بازار باز (برآورد ام‌اس‌دیتا از داده‌ی بورس و فرابورس)", False, days[-1]["date"],
-                                     {"واحد": f.get("unit"), "روز": days[-1], "روزهای قبل": days[-6:-1],
-                                      "آخرین گزارش بانک مرکزی": f.get("cbi_last_report")})
-    except Exception as e:  # noqa: BLE001
-        print(f"forecast: {e}")
     try:
         p = get("cpi-lite.json")
         rows, cols = p.get("rows") or [], p.get("columns") or []
