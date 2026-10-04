@@ -98,7 +98,7 @@ def check(d, long):
         raise ValueError("forbidden content")
     d["table"] = [x for x in d.get("table") or [] if isinstance(x, dict)][:8]
     d["scenarios"] = [x for x in d.get("scenarios") or [] if isinstance(x, dict)]
-    probs = markers.check(d["text"], d["title"], d["lead"], table=bool(d["table"]), full=True)
+    probs = markers.check(d["text"], d["title"], d["lead"], table=not long and bool(d["table"]), full=True)  # long report: cap 8 numbers
     if len(d["table"]) < 3:
         probs.append("table باید ۳ تا ۸ ردیف داشته باشد")
     if probs:
