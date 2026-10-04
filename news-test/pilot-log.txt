@@ -1,68 +1,10 @@
-20 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+3 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
   gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
-  ESC-HBEEE03E-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
+  IORC-LUSUGEB-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
   "error": {
     "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  KHP-UREAPL-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
-  KHP-UREANONUFJ-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"c6ed216c82a39b577b1c6e4f90f82e17"
-}
-  KHP-UREAPL-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
-  KHP-UREANONUFJ-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"3cec3d0aa5d6a27827ba90623954392e"
-}
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
-  KHP-UREANONUFJ-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"dfeb973db898352f770b7b5f91a8e326"
-}
-  ESC-HBENN03E-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-OK ESC-HBNNE03E-00 <- hf:Qwen/Qwen3-235B-A22B-Instruct-2507 (10s)
-  ESC-HBNEN03E-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 10s JSONDecodeError: Invalid control character at: line 6 column 369 (char 740)
-  ESC-HBENN03E-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  KPC-OAPOMDIB-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  ESC-SBNE03E-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 19s TypeError: expected string or bytes-like object, got 'dict'
-  KPC-OAPOMDIB-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  KZPC-ERE1X75LCG-603 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 8s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  KZPC-PGPC1012URZP-603 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 10s JSONDecodeError: Invalid control character at: line 6 column 384 (char 790)
-  ESC-HBNEN03EN-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ESC-SBEN03EN-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ASCO-SBNE03E-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 10s JSONDecodeError: Invalid control character at: line 6 column 233 (char 604)
-OK ESC-HBEEE03E-00 <- gemini:gemini-flash-latest (45s)
-  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
-  ASCO-SBEN03E-00 gemini:gemini-flash-latest: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
-  ASCO-SBEN03E-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-
-  ASCO-HBENN03E-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 43s ValueError: 130 words / 1 paragraphs
-  ESC-PTLOOO000-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 19s JSONDecodeError: Expecting value: line 3 column 11 (char 109)
-OK ESC-SBEE03E-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (102s)
-  KZPC-EREPIRAN06EXCG-603 llm7:minimax-m2.7: 125s ValueError: HTTP 524: error code: 524
-
-OK ESC-SBEN03E-00 <- zai:glm-4.5-flash (138s)
-OK YSC-SBEN03E-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (149s)
-  KZPC-EREPIRAN06EXCG-603 llm7:mistral-Nemo-Instruct-2407: 50s ValueError: no JSON
-OK ESC-HBNEN03E-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (102s)
-  KHP-UREANONUFJ-00 zai:glm-4.5-flash: 207s ValueError: 238 words / 1 paragraphs
-  ESC-HBENN03E-00 llm7:minimax-m2.7: 200s ValueError: HTTP 524: error code: 524
-
-  ASCO-SBEN03E-00 gemini:gemini-3.7-flash: 332s ValueError: HTTP 503: [{
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  IORC-LUSUGEB-00 gemini:gemini-flash-latest: 56s ValueError: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
@@ -70,10 +12,8 @@ OK ESC-HBNEN03E-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (102s)
   }
 }
 ]
-OK KHP-UREAPL-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (288s)
-OK ESC-SBNE03E-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (159s)
-  ESC-HBENN03E-00 llm7:mistral-Nemo-Instruct-2407: 65s ValueError: 181 words / 1 paragraphs
-  ASCO-SBEN03E-00 gemini:gemini-3.6-flash: 71s ValueError: HTTP 503: [{
+  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 73s ValueError: empty subtitle
+  IORC-LUSUGEB-00 gemini:gemini-3.8-flash: 82s ValueError: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
@@ -81,26 +21,7 @@ OK ESC-SBNE03E-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (159s)
   }
 }
 ]
-OK ASCO-SBEN03E-00 <- gemini:gemini-3.5-flash (41s)
-OK KPC-OAPOMDIB-00 <- zai:glm-4.5-flash (172s)
-OK KZPC-PGPC1012URZP-603 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (129s)
-  ESC-HBNEN03EN-00 llm7:minimax-m2.7: 125s ValueError: HTTP 524: error code: 524
-
-OK ASCO-SBNE03E-00 <- zai:glm-4.5-flash (109s)
-  ESC-HBNEN03EN-00 llm7:mistral-Nemo-Instruct-2407: 66s JSONDecodeError: Invalid control character at: line 6 column 657 (char 1174)
-  ESC-SBEN03EN-00 gemini:gemini-3.7-flash: 180s TimeoutError: The read operation timed out
-OK KZPC-ERE1X75LCG-603 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (300s)
-OK ASCO-HBENN03E-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (146s)
-  KZPC-EREPIRAN06EXCG-603 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791034980-OcmIgzxRpC53LrGeuj1e","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  KZPC-EREPIRAN06EXCG-603 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate you
-  ESC-PTLOOO000-00 zai:glm-4.5-flash: 131s ValueError: 134 words / 2 paragraphs
-OK ESC-SBEN03EN-00 <- gemini:gemini-3.6-flash (90s)
-  KZPC-EREPIRAN06EXCG-603 openrouter:google/gemma-4-26b-a4b-it:free: 69s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate
-  KHP-UREANONUFJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-OK KZPC-EREPIRAN06EXCG-603 <- openrouter:apodex/apodex-1.1-mini:free (63s)
-OK ESC-HBNEN03EN-00 <- zai:glm-4.5-flash (106s)
-  ESC-HBENN03E-00 gemini:gemini-3.7-flash: 203s TimeoutError: The read operation timed out
-  ESC-HBENN03E-00 gemini:gemini-3.6-flash: 87s ValueError: HTTP 503: [{
+  IORC-LUSUGEB-00 gemini:gemini-3.7-flash: 54s ValueError: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
@@ -108,9 +29,67 @@ OK ESC-HBNEN03EN-00 <- zai:glm-4.5-flash (106s)
   }
 }
 ]
-OK ESC-HBENN03E-00 <- gemini:gemini-3.5-flash (23s)
-OK KHP-UREANONUFJ-00 <- gemini:gemini-3.7-flash (25s)
-OK ESC-PTLOOO000-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (460s)
-written 20/20; total in file 49
-0 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-written 0/0; total in file 49
+  IORC-LUSUGEB-00 gemini:gemini-3.6-flash: 132s ValueError: markers: عبارت ممنوع «بالاترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|بال)
+  WCO-PCT5G42.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 370s ValueError: 100 words / 3 paragraphs
+OK IORC-LUSUGEB-00 <- gemini:gemini-3.5-flash (80s)
+  WCO-PCT5G42.5-L50-00 openrouter:google/gemma-4-31b-it:free: 67s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  WCO-PCT5G42.5-L50-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK WCO-PCT5G42.5-L50-00 <- openrouter:apodex/apodex-1.1-mini:free (186s)
+written 2/3; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 297s TimeoutError: The read operation timed out
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 279s TimeoutError: The read operation timed out
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 200s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | عبارت ممنوع «محسوب می‌شود» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | عبارت ممنوع «بالاترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|ک
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 230s ValueError: 88 words / 3 paragraphs
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 299s TimeoutError: The read operation timed out
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 349s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | عبارت ممنوع «۱ میلیون» (الگو: (?<![\d۰-۹])[1۱] (?:هزار|میلیون|میلیارد)) | عبارت ممنوع «بالاترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمتری
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 70s JSONDecodeError: Expecting value: line 10 column 16 (char 810)
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 160s ValueError: empty subtitle
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 186s ValueError: 109 words / 4 paragraphs
+written 0/1; total in file 2
+1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAAL-PS10000-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+written 0/1; total in file 2
