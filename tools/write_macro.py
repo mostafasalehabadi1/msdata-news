@@ -112,6 +112,7 @@ def write(name, subject, long, key, facts, first_seen):
     prompt = (f"موضوع: {subject}\nتاریخ انتشار: {now.strftime('%Y-%m-%d')} (میلادی؛ در متن تاریخ شمسی داده را بنویس)\n"
               "داده (فقط همین عددها را به کار ببر):\n" + json.dumps(facts, ensure_ascii=False, indent=1))
     w.RULES = rules(long)
+    w.RULES_GEMMA = w.RULES.replace(w.style_for("ه", "ج"), w.compact_for("ه", "ج"))
     provs = w.providers()
     provs.sort(key=lambda p: RANK.index(p[0]) if p[0] in RANK else len(RANK))
     if time.time() - first_seen < GEMMA_ONLY:

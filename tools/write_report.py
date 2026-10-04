@@ -189,6 +189,7 @@ def main():
               ("\n".join(f"- {x['site']} | {x['title']} | {x['summary']} | {x['url']}" for x in ctx) or "- خبری پیدا نشد."))
     symbols, urls = {r["symbol"] for r in rows}, {x["url"] for x in ctx}
     w.RULES = REPORT_RULES
+    w.RULES_GEMMA = REPORT_RULES.replace(w.style_for("ب"), w.compact_for("ب"))
     provs = w.providers()
     provs.sort(key=lambda p: RANK.index(p[0]) if p[0] in RANK else len(RANK))
     if (now.hour, now.minute) < FALLBACK_FROM and not force:

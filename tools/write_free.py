@@ -54,6 +54,16 @@ def style_for(*templates):
 
 
 STYLE = style_for("الف")
+# Gemma's free tier caps input tokens per minute; it gets the same rules in short form (style_compact.md) + the templates
+STYLE_COMPACT = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_compact.md"), encoding="utf-8").read()
+
+
+def compact_for(*templates):
+    return STYLE_COMPACT + "\n" + "".join(p for p in re.split(r"(?m)^(?=##+ )", STYLE_FULL)
+                                          if any(p.startswith("### قالب " + t) for t in templates))
+
+
+RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (short style)
 RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی. "
          "چارچوب نگارش زیر را مو به مو رعایت کن، در «حالت سبک» (بخش ۲-۱۴) و با «قالب الف»:\n\n" + STYLE +
          "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, scenarios و هیچ متن دیگری. "
@@ -64,7 +74,8 @@ RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای
 
 def post(url, key, model, prompt, extra=None):
     body = {"model": model, "temperature": 0.7,
-            "messages": [{"role": "system", "content": RULES}, {"role": "user", "content": prompt}]}
+            "messages": [{"role": "system", "content": RULES_GEMMA if RULES_GEMMA and model.startswith("gemma") else RULES},
+                         {"role": "user", "content": prompt}]}
     if "cloudflare.com" in url:
         body["max_tokens"] = 2048  # Cloudflare cuts answers at a 256-token default; a cap elsewhere starves reasoning models
     auth = {"Authorization": f"Bearer {key}"} if key else {}  # OVH AI Endpoints works anonymously (2 req/min per model)
