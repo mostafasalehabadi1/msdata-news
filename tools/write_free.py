@@ -82,7 +82,7 @@ def post(url, key, model, prompt, extra=None):
     req = urllib.request.Request(url, json.dumps(body).encode(), {
         **auth, "Content-Type": "application/json", "User-Agent": "msdata-news/1.0", **(extra or {})})
     try:
-        with urllib.request.urlopen(req, timeout=180) as r:
+        with urllib.request.urlopen(req, timeout=600 if model.startswith("gemma") else 180) as r:  # gemma writes a long report slowly
             raw = r.read().decode("utf-8", "replace")
     except urllib.error.HTTPError as e:
         raise ValueError(f"HTTP {e.code}: {e.read().decode('utf-8', 'replace')[:1500]}") from None
