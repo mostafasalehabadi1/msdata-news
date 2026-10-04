@@ -56,7 +56,7 @@ def post(url, key, model, prompt, extra=None):
         with urllib.request.urlopen(req, timeout=180) as r:
             raw = r.read().decode("utf-8", "replace")
     except urllib.error.HTTPError as e:
-        raise ValueError(f"HTTP {e.code}: {e.read().decode('utf-8', 'replace')[:200]}") from None
+        raise ValueError(f"HTTP {e.code}: {e.read().decode('utf-8', 'replace')[:1500]}") from None
     try:
         return json.loads(raw)["choices"][0]["message"]["content"]
     except Exception:  # noqa: BLE001
@@ -154,7 +154,7 @@ def retry(call, prompt):
         try:
             return call(prompt)
         except ValueError as e:
-            if re.search(r"HTTP 429", str(e)) and QUOTA_RE.search(str(e)):
+            if re.search(r"HTTP 429", str(e)) and QUOTA_RE.search(str(e)) and not re.search(r"PerMinute|per minute|PerSecond", str(e), re.I):
                 raise QuotaError(str(e)) from e
             if not re.search(r"HTTP (429|500|502|503)", str(e)) or wait == 30:
                 raise
