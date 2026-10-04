@@ -1,2 +1,94 @@
-1 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  HAAL-PS10000-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  CHMI-OAIOC-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  IORC-OAVBB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
+  BORC-OAVBSB-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  TJPC-DSBR1712MMP-00 llm7:DeepSeek-V4-Flash-0731: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
+  KSC-SSG09XROA-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '\n         \n{"id":"gen-1791126707-57TFkH4VcfGiqpJ6f5gu","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  HSTC-SSG09XROA-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"3a53f32a7e677c66edcc096158032412"
+}
+  BORC-LUBECUTHB-00 groq:llama-3.3-70b-versatile: 2s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  BORC-LUBECUTHB-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
+  HSTC-SSG09XROA-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"81b8ea223f01db4364273f6c6349d845"
+}
+  PPMZ-PSGPPS1115PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  IKRC-OAVBB-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  HSTC-SSG09XROA-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"04a5de51ebdda1175775b836bfd5b009"
+}
+  AJSC-SSG09XROA-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  AJSC-SSG09XROA-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  TORC-OAVBB-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  TJPC-DSBR1712MMP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  SORC-OAVBB-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  IALC-ALHYD-00 cohere:command-a-03-2025: 20s JSONDecodeError: Invalid control character at: line 6 column 183 (char 615)
+  SORC-OAVBB-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  GHZ-PELL-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 22s JSONDecodeError: Invalid control character at: line 6 column 12 (char 373)
+  IORC-OAVBB-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 169 (char 527)
+  EHS-OAIOC-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 16s JSONDecodeError: Invalid control character at: line 6 column 12 (char 395)
+  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
+  BORC-OAVBSB-00 gemini:gemini-flash-latest: 43s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
+  BORC-OAVBSB-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  KSC-SSG09XROA-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  PPMZ-PSGPPS1115PP-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 261 (char 615)
+  SSMI-PELL-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 17s JSONDecodeError: Invalid control character at: line 6 column 12 (char 337)
+  KSC-SSG09XROA-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+  THOR-OAVBB-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 113s ValueError: markers: 11 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله وکیوم باتوم به ۶۴۵ هزار و ۳۲۲ ریال در کیل» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  THOR-LUBECUTHB-00 llm7:minimax-m2.7: 125s ValueError: HTTP 524: error code: 524
+
+  THOR-LUBECUTLB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 165s ValueError: bad response: '{"id":"gen-1791126872-l4U2UGTnO39y5IY8KgME","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  KHCO-PCT2G42.5-B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  NIMI-PELL-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 80s JSONDecodeError: Invalid control character at: line 6 column 398 (char 856)
+  BORC-OAVBSB-00 gemini:gemini-3.7-flash: 161s ValueError: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+  THOR-LUBECUTHB-00 llm7:mistral-Nemo-Instruct-2407: 101s ValueError: 136 words / 1 paragraphs
+  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
+  SSCB-SSG09XROA-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 6258 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":6258}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  SSCB-SSG09XROA-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  HAAL-PS10000-00 zai:glm-4.5-flash: 311s ValueError: 82 words / 1 paragraphs
+  KHCO-PCT2G42.5-B-00 kilo:stepfun/step-3.7-flash:free: 147s ValueError: markers: 8 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «عرضه کامل سیمان پرتلند نوع ۲ رده ۴۲٫۵ فله تولید خوزستان در ت» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  SMO-PELL-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 144s ValueError: 118 words / 3 paragraphs
+  SND-OAIOC-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  KSC-SSG09XROA-00 openrouter:apodex/apodex-1.1-mini:free: 291s TypeError: expected string or bytes-like object, got 'NoneType'
+  BORC-OAVBSB-00 gemini:gemini-3.6-flash: 251s ValueError: markers: عبارت ممنوع «پیشی گرفت» (الگو: روی دست \S+ (?:نماند|ماند)|پرونده(?:‌ی)?)
+  ABRO-OAVBB-00 zai:glm-4.5-flash: 271s ValueError: 71 words / 2 paragraphs
+  KSC-SSG09XROA-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 262s TypeError: expected string or bytes-like object, got 'NoneType'
+  BORC-OAVBSB-00 gemini:gemini-3.5-flash: 226s ValueError: 96 words / 2 paragraphs
+  gemini:gemini-omni-1.1-flash: quota used up - skipped for the rest of the day
+  BORC-OAVBSB-00 gemini:gemini-omni-1.1-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+OK TJPC-DSBR1712MMP-00 <- kilo:dots-studio/dots-3-note-preview:free (426s)
