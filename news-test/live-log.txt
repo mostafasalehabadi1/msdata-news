@@ -168,3 +168,13 @@ OK IORC-OAVBB-00 <- kilo:stepfun/step-3.7-flash:free (33s)
   IALC-ALHYD-00 kilo:dots-studio/dots-3-note-preview:free: 78s TypeError: expected string or bytes-like object, got 'NoneType'
 OK IALC-ALHYD-00 <- kilo:stepfun/step-3.7-flash:free (29s)
 OK SHPC-PPRP210GPP-00 <- gemini:gemma-4-26b-a4b-it (88s)
+  JPPC-PPEP440LPP-00 gemini:gemma-4-26b-a4b-it: 403s RemoteDisconnected: Remote end closed connection without response
+  JPPC-PPEP440LPP-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "Developer instruction is not enabled for this model",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+]
+OK JPPC-PPEP548RPP-00 <- gemini:gemma-4-26b-a4b-it (140s)
