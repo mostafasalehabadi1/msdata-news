@@ -254,13 +254,6 @@ def main():
     a = ap.parse_args()
     latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
     date, date_fa = latest["date"], latest["date_fa"]
-    # the daily report comes first (owner 2026-10-05): from 18:30 Tehran until it is written, symbol news leave the
-    # free quotas to it (the report's own run otherwise found every model used up by the symbol news of the day)
-    now = time.gmtime(time.time() + 3.5 * 3600)
-    if (now.tm_hour, now.tm_min) >= (18, 30) and time.strftime("%Y-%m-%d", now) == date and not any(
-            os.path.exists(os.path.join(ROOT, d, f"report-{date}.json")) for d in ("queue", "news")):
-        print("written 0/1; waiting for the daily report")
-        return
     rows = json.load(open(os.path.join(ROOT, "data", date, "today.json"), encoding="utf-8"))["rows"]
     out_dir = os.path.join(ROOT, a.out)
     os.makedirs(out_dir, exist_ok=True)
