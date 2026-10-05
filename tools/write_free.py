@@ -272,7 +272,7 @@ def main():
     # the owner's blind rating (5 best of 12 models, 2026-09-30/10-01) writes the important half; every other model the rest
     groups = {}
     for name, call in provs:
-        if name in REPORT_ONLY:
+        if name in REPORT_ONLY or name.startswith("gemini:"):  # every Gemini model is kept for the daily report and macro news (owner 2026-10-05)
             continue
         groups.setdefault(name.split(":")[0] + ("/strong" if name in STRONG else "/backup" if name in BACKUP else ""), []).append((name, call))
     # importance tiers come from data/importance.json (tools/importance.py): 0 important (top half by value this year), 1 the rest.
