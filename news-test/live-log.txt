@@ -2,9 +2,13 @@
   SSC-MRNENNA1A-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   OAC-PCT2G42.5-L50-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   AAK-PCT1G42.5-J-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IALC-ALHYD-00 cohere:command-a-03-2025: 22s JSONDecodeError: Invalid control character at: line 6 column 184 (char 541)
-  SSC-MRNENNA1A-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 178 (char 505)
-  OAC-PCT2G42.5-L50-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 173 (char 511)
+  IALC-ALHYD-00 cohere:command-a-03-2025: 57s ValueError: markers: 13 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «در ۵ معامله‌ی اخیر، نرخ بین ۹۰۰ هزار و ۳۱۰ تا ۹۴۸ هزار و ۸۰۶» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  SSC-MRNENNA1A-00 cohere:command-a-03-2025: 11s JSONDecodeError: Invalid control character at: line 6 column 151 (char 475)
+  OAC-PCT2G42.5-L50-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 234 (char 569)
+  gemini:gemini-3.7-flash: quota used up - skipped for the rest of the day
+  NACE-PCT2G42.5-L50-00 gemini:gemini-3.7-flash: 152s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
   KHCO-PCT2G42.5-B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  AAK-PCT2G42.5-J-00 gemini:gemini-3.7-flash: 196s TimeoutError: The read operation timed out
-OK AAK-PCT2G42.5-J-00 <- gemini:gemini-3.5-flash (63s)
+OK NACE-PCT2G42.5-L50-00 <- gemini:gemini-3.5-flash (72s)
