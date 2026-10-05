@@ -1,394 +1,258 @@
 40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  CHMI-OAIOC-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IORC-OAVBB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
-  BORC-OAVBSB-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  NCI-OACCAA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  TJPC-DSBR1712MMP-00 llm7:DeepSeek-V4-Flash-0731: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
-  KSC-SSG09XROA-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '\n         \n{"id":"gen-1791126707-57TFkH4VcfGiqpJ6f5gu","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
-  HSTC-SSG09XROA-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"3a53f32a7e677c66edcc096158032412"
-}
-  BORC-LUBECUTHB-00 groq:llama-3.3-70b-versatile: 2s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  BORC-LUBECUTHB-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
-  HSTC-SSG09XROA-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"81b8ea223f01db4364273f6c6349d845"
-}
-  PPMZ-PSGPPS1115PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IKRC-OAVBB-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
-  HSTC-SSG09XROA-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"04a5de51ebdda1175775b836bfd5b009"
-}
-  AJSC-SSG09XROA-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  AJSC-SSG09XROA-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  TORC-OAVBB-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  TJPC-DSBR1712MMP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SORC-OAVBB-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  IALC-ALHYD-00 cohere:command-a-03-2025: 20s JSONDecodeError: Invalid control character at: line 6 column 183 (char 615)
-  SORC-OAVBB-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  GHZ-PELL-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 22s JSONDecodeError: Invalid control character at: line 6 column 12 (char 373)
-  IORC-OAVBB-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 169 (char 527)
-  EHS-OAIOC-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 16s JSONDecodeError: Invalid control character at: line 6 column 12 (char 395)
-  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
-  BORC-OAVBSB-00 gemini:gemini-flash-latest: 43s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
-  BORC-OAVBSB-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  KSC-SSG09XROA-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
-  PPMZ-PSGPPS1115PP-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 261 (char 615)
-  SSMI-PELL-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 17s JSONDecodeError: Invalid control character at: line 6 column 12 (char 337)
-  KSC-SSG09XROA-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
-  THOR-OAVBB-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 113s ValueError: markers: 11 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله وکیوم باتوم به ۶۴۵ هزار و ۳۲۲ ریال در کیل» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  THOR-LUBECUTHB-00 llm7:minimax-m2.7: 125s ValueError: HTTP 524: error code: 524
-
-  THOR-LUBECUTLB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 165s ValueError: bad response: '{"id":"gen-1791126872-l4U2UGTnO39y5IY8KgME","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  KHCO-PCT2G42.5-B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  NIMI-PELL-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 80s JSONDecodeError: Invalid control character at: line 6 column 398 (char 856)
-  BORC-OAVBSB-00 gemini:gemini-3.7-flash: 161s ValueError: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "status": "UNAVAILABLE"
-  }
-}
-]
-  THOR-LUBECUTHB-00 llm7:mistral-Nemo-Instruct-2407: 101s ValueError: 136 words / 1 paragraphs
-  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
-  SSCB-SSG09XROA-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 6258 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":6258}}
-  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
-  SSCB-SSG09XROA-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
-  HAAL-PS10000-00 zai:glm-4.5-flash: 311s ValueError: 82 words / 1 paragraphs
-  KHCO-PCT2G42.5-B-00 kilo:stepfun/step-3.7-flash:free: 147s ValueError: markers: 8 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «عرضه کامل سیمان پرتلند نوع ۲ رده ۴۲٫۵ فله تولید خوزستان در ت» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  SMO-PELL-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 144s ValueError: 118 words / 3 paragraphs
-  SND-OAIOC-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  KSC-SSG09XROA-00 openrouter:apodex/apodex-1.1-mini:free: 291s TypeError: expected string or bytes-like object, got 'NoneType'
-  BORC-OAVBSB-00 gemini:gemini-3.6-flash: 251s ValueError: markers: عبارت ممنوع «پیشی گرفت» (الگو: روی دست \S+ (?:نماند|ماند)|پرونده(?:‌ی)?)
-  ABRO-OAVBB-00 zai:glm-4.5-flash: 271s ValueError: 71 words / 2 paragraphs
-  KSC-SSG09XROA-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 262s TypeError: expected string or bytes-like object, got 'NoneType'
-  BORC-OAVBSB-00 gemini:gemini-3.5-flash: 226s ValueError: 96 words / 2 paragraphs
-  gemini:gemini-omni-1.1-flash: quota used up - skipped for the rest of the day
-  BORC-OAVBSB-00 gemini:gemini-omni-1.1-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-OK TJPC-DSBR1712MMP-00 <- kilo:dots-studio/dots-3-note-preview:free (426s)
-  BORC-OAVBSB-00 gemini:gemma-4-26b-a4b-it: 118s JSONDecodeError: Extra data: line 1 column 417 (char 416)
-  BORC-OAVBSB-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-  HAAL-PS10000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 470s ValueError: 101 words / 3 paragraphs
-  KAVE-OAIOC-00 zai:glm-4.5-flash: 260s TimeoutError: The read operation timed out
-  TABC-PSHIPS7240PP-00 gemini:gemini-3.7-flash: 84s ValueError: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "status": "UNAVAILABLE"
-  }
-}
-]
-OK TABC-PSHIPS7240PP-00 <- gemini:gemini-3.6-flash (32s)
-  TABC-PSGPPS1540PP-00 gemini:gemini-3.7-flash: 159s ValueError: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "status": "UNAVAILABLE"
-  }
-}
-]
-  KSC-SSG09XROA-00 openrouter:dots-studio/dots-3-note-preview:free: 449s ValueError: 119 words / 2 paragraphs
-  IALC-ALHYD-00 kilo:dots-studio/dots-3-note-preview:free: 349s TimeoutError: The read operation timed out
-OK TABC-PSGPPS1540PP-00 <- gemini:gemini-3.6-flash (109s)
-  gemini:gemini-3.7-flash: quota used up - skipped for the rest of the day
-  ALCO-BSO683X-00 gemini:gemini-3.7-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  IALC-ALHYD-00 kilo:stepfun/step-3.7-flash:free: 171s ValueError: markers: عبارت ممنوع «محسوب می‌شود» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | 4 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله‌ی امروز ۹۴۸ هزار و ۸۰۶ ریال در کیلوگرم بو» | «ام
-  ALCO-BSO683X-00 gemini:gemini-3.6-flash: 72s ValueError: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "status": "UNAVAILABLE"
-  }
-}
-]
-  ALCO-BSO683X-00 gemini:gemini-3.5-flash: 81s ValueError: markers: عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش)
-  EITC-OAIOC-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 288s ValueError: bad response: '\n         \n{"id":"gen-1791128105-LOyjEHs9HEzQJr619Z2P","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  EITC-OAIOC-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
-  IORC-OAVBB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  EITC-OAIOC-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
-  ALCO-BSO683X-00 gemini:gemma-4-26b-a4b-it: 136s JSONDecodeError: Extra data: line 1 column 172 (char 171)
-  ALCO-BSO683X-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-  gemini:gemini-3.6-flash: quota used up - skipped for the rest of the day
-  ACC-PCT2G42.5-L50-00 gemini:gemini-3.6-flash: 24s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-OK EITC-OAIOC-00 <- openrouter:apodex/apodex-1.1-mini:free (56s)
-OK ACC-PCT2G42.5-L50-00 <- gemini:gemini-3.5-flash (27s)
-  IORC-OAVBB-00 kilo:stepfun/step-3.7-flash:free: 153s ValueError: markers: 4 عدد در متن؛ حداکثر 3 (بقیه در جدول)
-OK MAS-PCT2G42.5-L50-00 <- gemini:gemini-3.5-flash (53s)
-OK SND-PELL-00 <- gemini:gemini-3.5-flash (76s)
-  gemini:gemini-3.5-flash: quota used up - skipped for the rest of the day
-  TCC-PCT2G32.5-B-00 gemini:gemini-3.5-flash: 42s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  PPMZ-PSGPPS1115PP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  PPMZ-PSGPPS1115PP-00 kilo:stepfun/step-3.7-flash:free: 184s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | عبارت ممنوع «۱ میلیارد» (الگو: (?<![\d۰-۹])[1۱] (?:هزار|میلیون|میلیارد))
-  TCC-PCT2G32.5-B-00 gemini:gemma-4-26b-a4b-it: 241s JSONDecodeError: Extra data: line 1 column 173 (char 172)
-  TCC-PCT2G32.5-B-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-  PTJP-PSGPPSG1551PPP-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 486s ValueError: markers: 5 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله در تالار پتروشیمی به ۲ میلیون و ۵۷۰ هزار »
-  PTJP-PSGPPSG1551PPP-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
-  PTJP-PSGPPSG1551PPP-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
-  SACE-PCT2G42.5-B-00 gemini:gemma-4-26b-a4b-it: 184s JSONDecodeError: Extra data: line 1 column 392 (char 391)
-  SACE-PCT2G42.5-B-00 gemini:gemini-3.5-transcribe: 45s ValueError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  PTJP-PSGPPSG1551PPP-00 openrouter:apodex/apodex-1.1-mini:free: 214s ValueError: markers: «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  TCC-PCT2G32.5-L50-00 gemini:gemma-4-26b-a4b-it: 106s JSONDecodeError: Extra data: line 1 column 434 (char 433)
-  TCC-PCT2G32.5-L50-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-  PTJP-PSGPPSG1551PPP-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 443s TypeError: expected string or bytes-like object, got 'NoneType'
-  PTJP-PSGPPSG1551PPP-00 openrouter:dots-studio/dots-3-note-preview:free: 798s TypeError: expected string or bytes-like object, got 'NoneType'
-  ISEI-OAIOC-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 663s ValueError: 89 words / 3 paragraphs
-  ISEI-OAIOC-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
-  ISEI-OAIOC-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
-  ISEI-OAIOC-00 openrouter:apodex/apodex-1.1-mini:free: 459s TypeError: expected string or bytes-like object, got 'NoneType'
-  ISEI-OAIOC-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 230s ValueError: markers: 4 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ ۱۳۰ هزار و ۳۱۹ ریال در کیلوگرم بود، دقیقاً هم‌تراز با قی»
-OK ISEI-OAIOC-00 <- openrouter:dots-studio/dots-3-note-preview:free (335s)
-  GOLG-OAIOC-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 442s ValueError: 87 words / 2 paragraphs
-  GOLG-OAIOC-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
-  GOLG-OAIOC-00 openrouter:google/gemma-4-26b-a4b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
-OK GOLG-OAIOC-00 <- openrouter:apodex/apodex-1.1-mini:free (172s)
-  CHMI-OAIOC-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 131s ValueError: bad response: '\n         \n{"id":"gen-1791132951-AojC7QAGrFmCRY2xWo2d","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  CHMI-OAIOC-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
-  CHMI-OAIOC-00 openrouter:google/gemma-4-26b-a4b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
-  CHMI-OAIOC-00 openrouter:apodex/apodex-1.1-mini:free: 362s TypeError: expected string or bytes-like object, got 'NoneType'
-OK CHMI-OAIOC-00 <- openrouter:inclusionai/ling-3.0-flash-sante:free (296s)
-  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
-  BORC-LUBECUTHB-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  openrouter:google/gemma-4-31b-it:free: quota used up - skipped for the rest of the day
-  BORC-LUBECUTHB-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped for the rest of the day
-  BORC-LUBECUTHB-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  openrouter:apodex/apodex-1.1-mini:free: quota used up - skipped for the rest of the day
-  BORC-LUBECUTHB-00 openrouter:apodex/apodex-1.1-mini:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  openrouter:inclusionai/ling-3.0-flash-sante:free: quota used up - skipped for the rest of the day
-  BORC-LUBECUTHB-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  openrouter:dots-studio/dots-3-note-preview:free: quota used up - skipped for the rest of the day
-  BORC-LUBECUTHB-00 openrouter:dots-studio/dots-3-note-preview:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-written 10/40; total in file 12
+  GOLG-PELL-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 50678 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":50678}}
+  KHSS-DRIBRI-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  HSTC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  BORC-LUBECUTHB-00 cohere:command-a-03-2025: 25s ValueError: HTTP 422: {"error_type":"NO_VALID_RESPONSE_GENERATED","id":"a3ac0d58-f5c5-477a-8306-380a8f5fd37a","message":"No valid response generated. Try updating messages"}
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9aec1f98-27a9-44f5-
+  THOR-LUBECUTLB-00 cohere:command-a-03-2025: 26s JSONDecodeError: Invalid control character at: line 6 column 206 (char 577)
+  SSC-MREEEEA3B-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 252 (char 613)
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (0beaadaf-e508-4864-
+  AJSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4f4d48dc-0838-46ef-
+  BORC-OAVBSB-00 zai:glm-4.5-flash: 275s TimeoutError: The read operation timed out
+  THOR-LUBECUTHB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 297s ValueError: markers: عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش)
+  KSO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 320s TimeoutError: The read operation timed out
+  KSO-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 175s ValueError: markers: 8 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نسبت سفارش خریداران به عرضه در این جلسه ۳ برابر بود، در حالی» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  CHMI-PELL-00 zai:glm-4.5-flash: 306s TimeoutError: The read operation timed out
+  AISC-BSO834X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  TORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 428s ValueError: markers: عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش)
+  AISC-BSO834X-00 kilo:stepfun/step-3.7-flash:free: 112s ValueError: markers: عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | 7 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  NIMI-PELL-00 zai:glm-4.5-flash: 385s ValueError: markers: عبارت ممنوع «رکورد تاریخی» (الگو: رکورد (?:تاریخی|بی‌سابقه)|سقف تاریخی|بال) | 13 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «قیمت هر کیلوگرم گندله امروز ۱۴۶ هزار و ۷۳۰ ریال بود که ۲ درص» | «ا
+  SJS-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SND-OAIOC-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 361s ValueError: markers: 4 عدد در متن؛ حداکثر 3 (بقیه در جدول)
+  SJS-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 202s ValueError: 111 words / 3 paragraphs
+written 0/40; total in file 19
 40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
   BORC-OAVBSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  KSC-SSG09XROA-00 cohere:command-a-03-2025: 2s ValueError: HTTP 422: {"error_type":"NO_VALID_RESPONSE_GENERATED","id":"3a5958b4-4b11-4958-a7c6-b6dbc057d712","message":"No valid response generated. Try updating messages"}
-  BORC-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  THOR-OAVBB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  GHZ-PELL-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 182 (char 523)
-  THOR-LUBECUTHB-00 cohere:command-a-03-2025: 11s JSONDecodeError: Invalid control character at: line 6 column 241 (char 567)
-  IORC-OAVBB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  HAAL-PS10000-00 zai:glm-4.5-flash: 221s ValueError: 66 words / 1 paragraphs
-OK IORC-OAVBB-00 <- kilo:stepfun/step-3.7-flash:free (186s)
-  HSTC-SSG09XROA-00 zai:glm-4.5-flash: 279s ValueError: 91 words / 2 paragraphs
-  THOR-LUBECUTLB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  THOR-LUBECUTLB-00 kilo:stepfun/step-3.7-flash:free: 140s ValueError: markers: 5 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  AJSC-SSG09XROA-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  IKRC-OAVBB-00 zai:glm-4.5-flash: 372s ValueError: 67 words / 1 paragraphs
-  AJSC-SSG09XROA-00 kilo:stepfun/step-3.7-flash:free: 193s ValueError: markers: 11 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «البته، سفارش خریداران فقط ۱۳ درصد از عرضه‌ی ۱۱ هزار تن بود، »
-  TORC-OAVBB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  TORC-OAVBB-00 kilo:stepfun/step-3.7-flash:free: 146s ValueError: markers: 6 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «میانگین نرخ معامله‌ی این نماد ۶۴۵ هزار ریال در کیلوگرم بود ک» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-written 1/40; total in file 13
-40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  KSC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  THOR-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791135270-aJOYdHqgqhdCl7Ezbob8","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  ALSU-AP06101-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  GOLG-PELL-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 199 (char 522)
-  HSTC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  THOR-LUBECUTLB-00 cohere:command-a-03-2025: 16s JSONDecodeError: Invalid control character at: line 6 column 196 (char 569)
-  BORC-LUBECUTHB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (874ed4d3-56b3-419d-
-  IKRC-OAVBB-00 cohere:command-a-03-2025: 50s JSONDecodeError: Extra data: line 37 column 1 (char 1767)
-  AJSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (68c20c44-6009-4c50-
-  THOR-LUBECUTHB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 108s ValueError: no JSON
-  SORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791135391-4QTjHAg7vafcfjBqvLRV","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  TORC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5f18b194-c382-4729-
-  BORC-OAVBSB-00 zai:glm-4.5-flash: 152s ValueError: empty subtitle
-  GHZ-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 339s TimeoutError: The read operation timed out
-  EHS-OAIOC-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
-  GHZ-PELL-00 kilo:stepfun/step-3.7-flash:free: 177s ValueError: markers: عبارت ممنوع «محسوب می‌شود» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | 7 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «سفارش خریداران به ۱۶۴ هزار تن رسید و نسبت تقاضا به عرضه ۱۰۶ » | «ام
-  SSMI-PELL-00 zai:glm-4.5-flash: 313s ValueError: 97 words / 2 paragraphs
-  CHMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 311s TimeoutError: The read operation timed out
-  CHMI-PELL-00 kilo:stepfun/step-3.7-flash:free: 140s ValueError: markers: 4 عدد در متن؛ حداکثر 3 (بقیه در جدول)
-  AISC-BSO834X-00 kilo:dots-studio/dots-3-note-preview:free: 311s TimeoutError: The read operation timed out
-  AISC-BSO834X-00 kilo:stepfun/step-3.7-flash:free: 199s ValueError: markers: عبارت ممنوع «محسوب می‌شود» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | 9 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک ج
-written 0/40; total in file 13
-40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  KSC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ALSU-AP06101-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  GOLG-PELL-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 231 (char 587)
-  BORC-LUBECUTHB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (49825541-cb05-45b5-
-  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 46s ValueError: 104 words / 3 paragraphs
-  THOR-LUBECUTLB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (631a1094-b170-4ae7-
-  IKRC-OAVBB-00 cohere:command-a-03-2025: 58s ValueError: markers: عبارت ممنوع «رکورد تاریخی» (الگو: رکورد (?:تاریخی|بی‌سابقه)|سقف تاریخی|بال) | 16 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «وکیوم باتوم شازند در معامله‌ی دوشنبه ۱۲ مهر به ۶۴۳ هزار و ۶۵» | «ا
-  AJSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (dc56f957-b59d-438b-
-  BORC-OAVBSB-00 zai:glm-4.5-flash: 266s TimeoutError: The read operation timed out
-  THOR-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 342s ValueError: markers: 16 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله به ۶۴۵ هزار و ۳۲۲ ریال رسید، ۰٫۳ درصد بال»
-  GHZ-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 351s TimeoutError: The read operation timed out
-  SORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 93s ValueError: bad response: '{"id":"gen-1791138111-7qrBW62MDRG1KcueuEqR","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  GHZ-PELL-00 kilo:stepfun/step-3.7-flash:free: 150s ValueError: markers: 13 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «میانگین نرخ معامله‌ی امروز حدود ۱۶۰ هزار ریال در کیلوگرم بود» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  EHS-OAIOC-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 144s ValueError: bad response: '{"id":"gen-1791138261-cAtdziWBx0tVpWSPygAy","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  TORC-OAVBB-00 zai:glm-4.5-flash: 328s ValueError: 113 words / 3 paragraphs
-  CHMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 208s TimeoutError: The read operation timed out
-  SSMI-PELL-00 zai:glm-4.5-flash: 241s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | عبارت ممنوع «کمترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | عبارت ممنوع «رکورد تاریخی» (الگو: رکورد (?:تاریخی|بی‌سابقه)|سقف تار
-  CHMI-PELL-00 kilo:stepfun/step-3.7-flash:free: 178s ValueError: markers: عبارت ممنوع «محسوب می‌شود» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | 13 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «از دیگر تولیدکنندگان گندله، فولاد بوتیای ایرانیان با نرخ ۱۵۵»
-  AISC-BSO834X-00 kilo:dots-studio/dots-3-note-preview:free: 200s TimeoutError: The read operation timed out
-  AISC-BSO834X-00 kilo:stepfun/step-3.7-flash:free: 132s ValueError: 111 words / 3 paragraphs
-written 0/40; total in file 13
-40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  KSC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ALSU-AP06101-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  GOLG-PELL-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 160 (char 497)
-  BORC-LUBECUTHB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5de7b7e0-4c76-4480-
-  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 39s ValueError: 89 words / 3 paragraphs
-  IKRC-OAVBB-00 cohere:command-a-03-2025: 15s JSONDecodeError: Invalid control character at: line 6 column 225 (char 616)
-  THOR-LUBECUTLB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (a89fbb6d-e2d6-4890-
-  AJSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (57068f15-8a36-404f-
-OK GHZ-PELL-00 <- kilo:dots-studio/dots-3-note-preview:free (167s)
-  BORC-OAVBSB-00 zai:glm-4.5-flash: 322s ValueError: 91 words / 1 paragraphs
-  CHMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  THOR-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 398s ValueError: 117 words / 3 paragraphs
-  CHMI-PELL-00 kilo:stepfun/step-3.7-flash:free: 236s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | 4 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «قیمت پایه این نماد ۱۴۶ هزار و ۷۳۰ ریال در کیلوگرم اعلام شده » | «امروز» ن
-  TORC-OAVBB-00 zai:glm-4.5-flash: 339s TimeoutError: The read operation timed out
-  SORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 330s TimeoutError: The read operation timed out
-  AISC-BSO834X-00 kilo:dots-studio/dots-3-note-preview:free: 419s TimeoutError: The read operation timed out
-  SSMI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 329s ValueError: markers: 7 عدد در متن؛ حداکثر 3 (بقیه در جدول)
-  EHS-OAIOC-00 zai:glm-4.5-flash: 412s TimeoutError: The read operation timed out
-  AISC-BSO834X-00 kilo:stepfun/step-3.7-flash:free: 180s ValueError: markers: 6 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  NIMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 231s ValueError: markers: 16 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله این نماد ۱۴۶ هزار و ۷۳۰ ریال هر کیلوگرم ب» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  NIMI-PELL-00 kilo:stepfun/step-3.7-flash:free: 120s ValueError: markers: 4 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-written 1/40; total in file 14
-40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  KSC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  HSTC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  BORC-LUBECUTHB-00 cohere:command-a-03-2025: 38s ValueError: 112 words / 3 paragraphs
-  GOLG-PELL-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b9d4127a-4385-46df-
-  THOR-LUBECUTLB-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 245 (char 634)
-  AJSC-SSG09XROA-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 158 (char 472)
-  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4ab79f29-2652-4434-
-  CHMI-PELL-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1d72a6e5-7c48-4216-
-  ALSU-AP06101-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  THOR-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  BORC-OAVBSB-00 zai:glm-4.5-flash: 249s TimeoutError: The read operation timed out
-  ALSU-AP06101-00 kilo:stepfun/step-3.7-flash:free: 162s ValueError: markers: «امروز» ننویس؛ نام روز و تاریخ را بنویس
-OK SORC-OAVBB-00 <- kilo:dots-studio/dots-3-note-preview:free (141s)
-  AISC-BSO834X-00 zai:glm-4.5-flash: 326s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | عبارت ممنوع «کمترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | 8 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تا
-  TORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 422s TimeoutError: The read operation timed out
-OK EHS-OAIOC-00 <- kilo:dots-studio/dots-3-note-preview:free (171s)
-  SSMI-PELL-00 zai:glm-4.5-flash: 197s ValueError: markers: عبارت ممنوع «کمترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | 13 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «فولاد سنگان خراسان ۳۰ هزار تن گندله را به میانگین نرخ ۱۵۱ هز»
-  NIMI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 221s ValueError: 68 words / 3 paragraphs
-  SND-OAIOC-00 kilo:dots-studio/dots-3-note-preview:free: 360s TimeoutError: The read operation timed out
-  SND-OAIOC-00 kilo:stepfun/step-3.7-flash:free: 116s ValueError: markers: 8 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «در این جلسه ۲۲ هزار تن کنسانتره صبانور معامله شد که مقدار عر» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  SMO-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 365s TimeoutError: The read operation timed out
-  SMO-PELL-00 kilo:stepfun/step-3.7-flash:free: 186s ValueError: markers: 6 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله‌ی این گندله امروز ۱۴۵ هزار و ۹۵۳ ریال در » | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  IALC-ALOX-00 kilo:dots-studio/dots-3-note-preview:free: 155s ValueError: 109 words / 3 paragraphs
-  IALC-ALOX-00 kilo:stepfun/step-3.7-flash:free: 164s ValueError: markers: 7 عدد در متن؛ حداکثر 3 (بقیه در جدول)
-written 2/40; total in file 16
-40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  NCI-OACCAA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  THOR-OAVBB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  KSO-MREEEEA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  GOLG-PELL-00 cohere:command-a-03-2025: 42s ValueError: 118 words / 3 paragraphs
-  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4cdcb60f-1a85-411b-
-  KHSS-DRIBRI-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 213 (char 547)
-  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 11s JSONDecodeError: Invalid control character at: line 6 column 211 (char 549)
-  THOR-LUBECUTHB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4a854d9d-53fb-4ec3-
-  THOR-LUBECUTLB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d1a71b6f-535f-4f4c-
-  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  BORC-OAVBSB-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
-OK ALSU-AP06101-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (218s)
-  BORC-LUBECUTHB-00 kilo:stepfun/step-3.7-flash:free: 122s ValueError: markers: 5 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله‌ی این کالا امروز ۸۸۹ هزار ریال در کیلوگرم» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  SSC-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  AJSC-SSG09XROA-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 337s ValueError: markers: عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  IKRC-OAVBB-00 zai:glm-4.5-flash: 388s TimeoutError: The read operation timed out
-  SSC-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 129s ValueError: markers: 4 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  TORC-OAVBB-00 zai:glm-4.5-flash: 48s ValueError: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  CHMI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 332s ValueError: 97 words / 3 paragraphs
-  AISC-BSO834X-00 kilo:dots-studio/dots-3-note-preview:free: 453s TimeoutError: The read operation timed out
-  AISC-BSO834X-00 kilo:stepfun/step-3.7-flash:free: 66s JSONDecodeError: Expecting value: line 82 column 17 (char 3447)
-  SSMI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 358s ValueError: 96 words / 3 paragraphs
-written 1/40; total in file 17
-40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  NCI-OACCAA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  KSO-MREEEEA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   KHSS-DRIBRI-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  GOLG-PELL-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 148 (char 477)
-  THOR-LUBECUTHB-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 158 (char 510)
-  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d2454b4e-5f32-4b73-
-  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 15s JSONDecodeError: Invalid control character at: line 6 column 187 (char 505)
-  THOR-LUBECUTLB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (629245c7-d2f9-4876-
-  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e9d79ce9-c77a-46a1-
-OK THOR-OAVBB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (198s)
-  BORC-OAVBSB-00 zai:glm-4.5-flash: 235s TimeoutError: The read operation timed out
-  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 336s TimeoutError: The read operation timed out
-  CHMI-PELL-00 zai:glm-4.5-flash: 209s ValueError: 80 words / 3 paragraphs
-  BORC-LUBECUTHB-00 kilo:stepfun/step-3.7-flash:free: 171s ValueError: markers: «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  AJSC-SSG09XROA-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 347s ValueError: 99 words / 4 paragraphs
-  TORC-OAVBB-00 zai:glm-4.5-flash: 243s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | 11 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «۳ درصد بالاتر از قیمت پایه بود و با ثبت ۶۴۵ هزار ریال، به با» | «امروز» 
-  AISC-BSO834X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 275s ValueError: 104 words / 3 paragraphs
-  SSC-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 344s TimeoutError: The read operation timed out
-  SSC-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 155s ValueError: 117 words / 3 paragraphs
-OK SSMI-PELL-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (342s)
+  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  GOLG-PELL-00 cohere:command-a-03-2025: 14s ValueError: empty subtitle
+  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 129 (char 468)
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b819fcd1-514d-4f04-
+  THOR-LUBECUTLB-00 cohere:command-a-03-2025: 34s ValueError: markers: عبارت ممنوع «۱ هزار» (الگو: (?<![\d۰-۹])[1۱] (?:هزار|میلیون|میلیارد)) | عبارت ممنوع «کمترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | 16 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «
+  SSC-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (7ccbd1cd-aa79-47ee-
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5633d5d6-951b-43fd-
+  NCI-OACCAA-00 zai:glm-4.5-flash: 281s TimeoutError: The read operation timed out
+  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 283s TimeoutError: The read operation timed out
+  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 332s ValueError: 85 words / 3 paragraphs
+  BORC-LUBECUTHB-00 kilo:stepfun/step-3.7-flash:free: 129s ValueError: markers: عبارت ممنوع «محسوب می‌شود» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | 5 عدد در متن؛ حداکثر 3 (بقیه در جدول)
+  TORC-OAVBB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  AJSC-SSG09XROA-00 zai:glm-4.5-flash: 357s TimeoutError: The read operation timed out
+  CHMI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 317s ValueError: 119 words / 3 paragraphs
+  TORC-OAVBB-00 kilo:stepfun/step-3.7-flash:free: 118s ValueError: 100 words / 4 paragraphs
+  AISC-BSO834X-00 zai:glm-4.5-flash: 188s ValueError: 84 words / 1 paragraphs
+  SJS-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 192s ValueError: markers: 6 عدد در متن؛ حداکثر 3 (بقیه در جدول)
+  NIMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 197s TimeoutError: The read operation timed out
+  NIMI-PELL-00 kilo:stepfun/step-3.7-flash:free: 147s ValueError: markers: 15 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «فولاد بوتیای ایرانیان گندله را با نرخ ۱۵۵ هزار ریال و حجم ۸ »
+written 0/40; total in file 19
+40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  BORC-OAVBSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KHSS-DRIBRI-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  GOLG-PELL-00 cohere:command-a-03-2025: 16s JSONDecodeError: Invalid control character at: line 6 column 259 (char 662)
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ec63ccac-f9e6-4643-
+  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 34s ValueError: HTTP 422: {"error_type":"NO_VALID_RESPONSE_GENERATED","id":"5e67f9d0-8944-4680-8f70-f7452868089a","message":"No valid response generated. Try updating messages"}
+  SSC-MREEEEA3B-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 207 (char 545)
+  THOR-LUBECUTLB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (54e3f98d-bc49-4704-
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (fb79a3e1-3ae3-40f7-
+  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 259s ValueError: 75 words / 3 paragraphs
+  NCI-OACCAA-00 zai:glm-4.5-flash: 283s ValueError: markers: عبارت ممنوع «کمترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | عبارت ممنوع «رکورد تاریخی» (الگو: رکورد (?:تاریخی|بی‌سابقه)|سقف تاریخی|بال) | 12 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک ج
+  BORC-LUBECUTHB-00 kilo:stepfun/step-3.7-flash:free: 110s ValueError: markers: 12 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله‌ی لوب کات سنگین بندرعباس امروز برابر با ق» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  AJSC-SSG09XROA-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 287s ValueError: markers: عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش)
+  TORC-OAVBB-00 kilo:dots-studio/dots-3-note-preview:free: 329s TimeoutError: The read operation timed out
+  CHMI-PELL-00 zai:glm-4.5-flash: 377s ValueError: 93 words / 3 paragraphs
+  TORC-OAVBB-00 kilo:stepfun/step-3.7-flash:free: 195s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | 5 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  AISC-BSO834X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 268s ValueError: 111 words / 3 paragraphs
+  SJS-MREEEEA3B-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+  NIMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 199s TimeoutError: The read operation timed out
+  NIMI-PELL-00 kilo:stepfun/step-3.7-flash:free: 108s ValueError: markers: 12 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله‌ی این گندله ۱۴۶٬۷۳۰ ریال در هر کیلوگرم بو» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+written 0/40; total in file 19
+40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  BORC-OAVBSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KHSS-DRIBRI-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  GOLG-PELL-00 cohere:command-a-03-2025: 11s JSONDecodeError: Invalid control character at: line 6 column 254 (char 633)
+  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 194 (char 539)
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9ab6cafc-bd82-4ece-
+  THOR-LUBECUTLB-00 cohere:command-a-03-2025: 10s JSONDecodeError: Invalid control character at: line 6 column 205 (char 543)
+  SSC-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c41dbaec-b279-46ee-
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (619ec809-53bd-4fd9-
+  NCI-OACCAA-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 183s ValueError: markers: عبارت ممنوع «۱ هزار» (الگو: (?<![\d۰-۹])[1۱] (?:هزار|میلیون|میلیارد)) | عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | 9 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «
+  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 321s TimeoutError: The read operation timed out
+OK CHMI-PELL-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (183s)
+  BORC-LUBECUTHB-00 kilo:stepfun/step-3.7-flash:free: 113s ValueError: markers: 8 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «از کل عرضه ۵۰ هزار تن، تنها ۴ هزار تن معامله شد و سفارش خرید» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  AJSC-SSG09XROA-00 zai:glm-4.5-flash: 309s TimeoutError: The read operation timed out
+  AISC-BSO834X-00 kilo:dots-studio/dots-3-note-preview:free: 97s TypeError: expected string or bytes-like object, got 'NoneType'
+  TORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 224s ValueError: markers: 9 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین ۶۴۵ هزار ریال در کیلوگرم تثبیت شد (قیمت پایه ۶۴۳»
+  AISC-BSO834X-00 kilo:stepfun/step-3.7-flash:free: 130s ValueError: 79 words / 3 paragraphs
+  NIMI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 179s ValueError: markers: عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | 9 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله به ۱۴۶ هزار و ۷۳۰ ریال رسید، دو درصد بالا» | «امروز» 
+  SJS-MREEEEA3B-00 zai:glm-4.5-flash: 421s ValueError: 72 words / 1 paragraphs
+  SMO-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 191s ValueError: 105 words / 3 paragraphs
+  SND-OAIOC-00 kilo:dots-studio/dots-3-note-preview:free: 441s TimeoutError: The read operation timed out
+  SND-OAIOC-00 kilo:stepfun/step-3.7-flash:free: 148s ValueError: markers: 6 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «خریداران کنسانتره سنگ آهن تولید توسعه معدنی و صنعتی صبانور د»
+written 1/40; total in file 20
+40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  BORC-OAVBSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KHSS-DRIBRI-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  GOLG-PELL-00 cohere:command-a-03-2025: 37s ValueError: markers: عبارت ممنوع «۱ هزار» (الگو: (?<![\d۰-۹])[1۱] (?:هزار|میلیون|میلیارد)) | عبارت ممنوع «رکورد تاریخی» (الگو: رکورد (?:تاریخی|بی‌سابقه)|سقف تاریخی|بال) | 16 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک ج
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (aa49bb48-a2f6-4e2b-
+  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 164 (char 554)
+  SSC-MREEEEA3B-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 196 (char 523)
+  THOR-LUBECUTLB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (08a1ac98-1d6a-4366-
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (38c6ede2-5276-4113-
+  NCI-OACCAA-00 zai:glm-4.5-flash: 183s ValueError: 69 words / 1 paragraphs
+  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 202s TimeoutError: The read operation timed out
+  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 265s ValueError: 92 words / 3 paragraphs
+  BORC-LUBECUTHB-00 kilo:stepfun/step-3.7-flash:free: 141s ValueError: 114 words / 3 paragraphs
+  AJSC-SSG09XROA-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+  TORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 162s ValueError: 97 words / 2 paragraphs
+  AISC-BSO834X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  AISC-BSO834X-00 kilo:stepfun/step-3.7-flash:free: 135s ValueError: markers: عبارت ممنوع «محسوب می‌شود» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | 5 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  NIMI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 241s ValueError: 107 words / 3 paragraphs
+  SJS-MREEEEA3B-00 zai:glm-4.5-flash: 315s ValueError: markers: عبارت ممنوع «۱ میلیون» (الگو: (?<![\d۰-۹])[1۱] (?:هزار|میلیون|میلیارد)) | عبارت ممنوع «رکورد تاریخی» (الگو: رکورد (?:تاریخی|بی‌سابقه)|سقف تاریخی|بال) | 14 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک
+  SND-OAIOC-00 kilo:dots-studio/dots-3-note-preview:free: 196s TimeoutError: The read operation timed out
+  SND-OAIOC-00 kilo:stepfun/step-3.7-flash:free: 135s ValueError: markers: 6 عدد در متن؛ حداکثر 3 (بقیه در جدول)
+written 0/40; total in file 20
+40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  BORC-OAVBSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KHSS-DRIBRI-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  GOLG-PELL-00 cohere:command-a-03-2025: 44s JSONDecodeError: Invalid control character at: line 6 column 237 (char 617)
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5b7eb9df-4b4c-4e56-
+  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 170 (char 508)
+  SSC-MREEEEA3B-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 200 (char 521)
+  THOR-LUBECUTLB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (42bd549a-d5fd-4421-
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ef64d4ae-f823-4a6a-
+  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 225s ValueError: 72 words / 3 paragraphs
+  BORC-LUBECUTHB-00 kilo:stepfun/step-3.7-flash:free: 142s ValueError: markers: عبارت ممنوع «محسوب می‌شود» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | عبارت ممنوع «رکورد تاریخی» (الگو: رکورد (?:تاریخی|بی‌سابقه)|سقف تاریخی|بال) | 5 عدد در متن؛ حداکثر 3 (بقیه در جدول)
+  NCI-OACCAA-00 zai:glm-4.5-flash: 404s ValueError: 74 words / 2 paragraphs
+  AJSC-SSG09XROA-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 273s ValueError: markers: عبارت ممنوع «بایستد» (الگو: روی دست \S+ (?:نماند|ماند)|پرونده(?:‌ی)?) | 11 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «این نرخ بیشینه‌ی ۳۰ جلسه‌ی اخیر است؛ روند از ۷۲۰ هزار در ۱۵ »
+  TORC-OAVBB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  AISC-BSO834X-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+  SJS-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 161s ValueError: 106 words / 3 paragraphs
+  TORC-OAVBB-00 kilo:stepfun/step-3.7-flash:free: 161s ValueError: 119 words / 3 paragraphs
+  NIMI-PELL-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+  SND-OAIOC-00 kilo:dots-studio/dots-3-note-preview:free: 482s TimeoutError: The read operation timed out
+OK SND-OAIOC-00 <- kilo:stepfun/step-3.7-flash:free (117s)
+  SMO-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 199s TimeoutError: The read operation timed out
+OK SMO-PELL-00 <- kilo:stepfun/step-3.7-flash:free (94s)
+  IALC-ALOX-00 kilo:dots-studio/dots-3-note-preview:free: 208s TimeoutError: The read operation timed out
+OK IALC-ALOX-00 <- kilo:stepfun/step-3.7-flash:free (97s)
+  OSC-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 203s TimeoutError: The read operation timed out
+  OSC-HS00000-00 kilo:stepfun/step-3.7-flash:free: 127s ValueError: 193 words / 1 paragraphs
+  ASC-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 202s TimeoutError: The read operation timed out
+OK ASC-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (173s)
+  KSCO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 272s ValueError: markers: 7 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «تقاضا برای این نماد ۶ هزار و ۲ تن سفارش بود که ۱»
+  KSCO-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 128s ValueError: markers: عبارت ممنوع «رقم زد» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | 15 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله میلگرد ۱۴تا۲۰-A3 امروز ۱٫۰۱۵ میلیون ریال » | «امروز» 
+  IAC-AP15351-00 kilo:dots-studio/dots-3-note-preview:free: 333s TimeoutError: The read operation timed out
+  IAC-AP15351-00 kilo:stepfun/step-3.7-flash:free: 151s ValueError: markers: 9 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  ALM-AP06101-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  ALM-AP06101-00 kilo:stepfun/step-3.7-flash:free: 139s ValueError: markers: عبارت ممنوع «کمترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | اعشار با دو جداکننده‌ی مختلف («٫» و «.»)
+written 4/40; total in file 24
+40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  BORC-OAVBSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  GOLG-PELL-00 llm7:DeepSeek-V4-Flash-0731: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 37409 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":37409}}
+  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  BORC-LUBECUTHB-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 177 (char 460)
+  HSTC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  THOR-LUBECUTLB-00 cohere:command-a-03-2025: 15s ValueError: empty subtitle
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ba1147d8-3ee7-467e-
+  SSC-MREEEEA3B-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 195 (char 580)
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9557723d-06c9-4b31-
+  AJSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (998b7e94-91b4-4cd7-
+  KSO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 173s ValueError: no JSON
+  KHSS-DRIBRI-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 251s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | عبارت ممنوع «ا‌» (الگو: [ادذرزژو]‌(?!گو|جو)) | 10 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «در تالار صنعتی و معدنی بو
+  NCI-OACCAA-00 zai:glm-4.5-flash: 252s ValueError: 89 words / 3 paragraphs
+  KSO-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 138s ValueError: markers: «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  TORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 218s ValueError: 108 words / 3 paragraphs
   SJS-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SJS-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 117s ValueError: 114 words / 3 paragraphs
-  NIMI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 238s ValueError: markers: عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش)
-  SND-OAIOC-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 347s TimeoutError: The read operation timed out
-  SMO-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 342s ValueError: 93 words / 3 paragraphs
-written 2/40; total in file 19
+  AISC-BSO834X-00 zai:glm-4.5-flash: 289s TimeoutError: The read operation timed out
+  SJS-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 126s ValueError: 111 words / 3 paragraphs
+OK NIMI-PELL-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (278s)
+  KSCO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  OSC-HS00000-00 zai:glm-4.5-flash: 298s ValueError: markers: عبارت ممنوع «پیشی گرفت» (الگو: روی دست \S+ (?:نماند|ماند)|پرونده(?:‌ی)?) | عبارت ممنوع «۱ میلیون» (الگو: (?<![\d۰-۹])[1۱] (?:هزار|میلیون|میلیارد)) | عبارت ممنوع «رکورد تاریخی» (الگو: رکورد (?:تاریخی|بی‌سابقه)|سق
+  KSCO-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 127s ValueError: markers: رقم لاتین و فارسی قاطی شده؛ همه فارسی
+  IAC-AP15351-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 242s ValueError: 79 words / 3 paragraphs
+  ALM-AP06101-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 250s ValueError: 109 words / 3 paragraphs
+  SSCB-SSG09XROA-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 384s TimeoutError: The read operation timed out
+written 1/40; total in file 25
+40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  BORC-OAVBSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KHSS-DRIBRI-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  GOLG-PELL-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 202 (char 540)
+  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 231 (char 623)
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c843dca8-0422-4ba7-
+  THOR-LUBECUTLB-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 235 (char 618)
+  SSC-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ad03728e-e55d-462f-
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2effbae1-ec7c-487d-
+  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  NCI-OACCAA-00 zai:glm-4.5-flash: 296s TimeoutError: The read operation timed out
+  BORC-LUBECUTHB-00 kilo:stepfun/step-3.7-flash:free: 200s ValueError: markers: عبارت ممنوع «کمترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | 5 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  AJSC-SSG09XROA-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 206s ValueError: 101 words / 3 paragraphs
+  TORC-OAVBB-00 zai:glm-4.5-flash: 224s ValueError: 113 words / 2 paragraphs
+OK AISC-BSO834X-00 <- kilo:dots-studio/dots-3-note-preview:free (169s)
+  OSC-HS00000-00 zai:glm-4.5-flash: 123s ValueError: empty subtitle
+  SJS-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 360s ValueError: 105 words / 3 paragraphs
+  KSCO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 338s TimeoutError: The read operation timed out
+  KSCO-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 124s ValueError: 119 words / 3 paragraphs
+  IAC-AP15351-00 kilo:dots-studio/dots-3-note-preview:free: 356s TimeoutError: The read operation timed out
+  IAC-AP15351-00 kilo:stepfun/step-3.7-flash:free: 106s ValueError: markers: 16 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «5 آلومینیوم ایران در چهارشنبه ۱۲ مهر به ۷ میلیون و ۴۷ هزار ر» | «امروز» ننویس؛ نام روز و تاریخ را بنویس | اعشار با دو جداکننده‌ی مختلف («٫» و «.
+  ALM-AP06101-00 kilo:dots-studio/dots-3-note-preview:free: 302s TimeoutError: The read operation timed out
+  ALM-AP06101-00 kilo:stepfun/step-3.7-flash:free: 148s ValueError: 107 words / 4 paragraphs
+written 1/40; total in file 26
+40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  BORC-OAVBSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KHSS-DRIBRI-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  GOLG-PELL-00 cohere:command-a-03-2025: 11s JSONDecodeError: Invalid control character at: line 6 column 172 (char 478)
+  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 212 (char 530)
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ce48ddde-f6d8-4ebc-
+  THOR-LUBECUTLB-00 cohere:command-a-03-2025: 11s JSONDecodeError: Invalid control character at: line 6 column 176 (char 540)
+  NCI-OACCAA-00 zai:glm-4.5-flash: 65s ValueError: empty subtitle
+  SSC-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (74250381-ebfd-42ad-
+  AJSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (6cdb17a8-951b-42f0-
+  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 251s ValueError: 119 words / 3 paragraphs
+  IKRC-OAVBB-00 zai:glm-4.5-flash: 266s TimeoutError: The read operation timed out
+  BORC-LUBECUTHB-00 kilo:stepfun/step-3.7-flash:free: 169s ValueError: markers: 8 عدد در متن؛ حداکثر 3 (بقیه در جدول)
+  SJS-MREEEEA3B-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+  OSC-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 203s TimeoutError: The read operation timed out
+  TORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 321s ValueError: 96 words / 4 paragraphs
+  OSC-HS00000-00 kilo:stepfun/step-3.7-flash:free: 161s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | 7 عدد در متن؛ حداکثر 3 (بقیه در جدول)
+  KSCO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 241s ValueError: 80 words / 3 paragraphs
+  IAC-AP15351-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  IAC-AP15351-00 kilo:stepfun/step-3.7-flash:free: 132s ValueError: markers: 16 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله‌ی این نماد امروز ۷٫۵ میلیون ریال در هر کی» | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+written 0/40; total in file 26
+40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  BORC-OAVBSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KHSS-DRIBRI-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  GOLG-PELL-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 204 (char 534)
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (74133fe8-cd4a-4dea-
+  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 29s ValueError: HTTP 422: {"error_type":"NO_VALID_RESPONSE_GENERATED","id":"9d31c487-87ac-4294-827d-85b3027406b1","message":"No valid response generated. Try updating messages"}
+  NCI-OACCAA-00 zai:glm-4.5-flash: 53s ValueError: empty subtitle
+  SSC-MREEEEA3B-00 cohere:command-a-03-2025: 41s ValueError: markers: 9 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس | رقم لاتین و فارسی قاطی شده؛ همه فارسی
+  THOR-LUBECUTLB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9c4f0be8-7c99-4762-
+  AJSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (715d749f-8390-4514-
+  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 223s ValueError: 108 words / 3 paragraphs
+  IKRC-OAVBB-00 zai:glm-4.5-flash: 214s ValueError: empty subtitle
+OK BORC-LUBECUTHB-00 <- kilo:stepfun/step-3.7-flash:free (94s)
+  SJS-MREEEEA3B-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+  TORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 322s ValueError: 105 words / 3 paragraphs
+  OSC-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 379s TimeoutError: The read operation timed out
+  OSC-HS00000-00 kilo:stepfun/step-3.7-flash:free: 182s ValueError: markers: 5 عدد در متن؛ حداکثر 3 (بقیه در جدول)
+  KSCO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 305s ValueError: markers: عبارت ممنوع «محسوب می‌شود» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | 5 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله میلگرد ۱۴ تا ۲۰ تولید سپید فراب کویر در ت» | «ام
+  IAC-AP15351-00 kilo:dots-studio/dots-3-note-preview:free: 337s TimeoutError: The read operation timed out
+  IAC-AP15351-00 kilo:stepfun/step-3.7-flash:free: 138s ValueError: markers: 4 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
+  ALM-AP06101-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  ALM-AP06101-00 kilo:stepfun/step-3.7-flash:free: 190s ValueError: markers: عبارت ممنوع «به خود اختصاص داد» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | 6 عدد در متن؛ حداکثر 3 (بقیه در جدول)
+written 1/40; total in file 27
