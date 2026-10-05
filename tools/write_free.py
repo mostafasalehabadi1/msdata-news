@@ -22,7 +22,7 @@ import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from validate import FORBIDDEN, SLUG_BAD, paragraphs, words  # noqa: E402
-import factsheet  # noqa: E402
+import facts_kala  # noqa: E402
 import markers  # noqa: E402
 import importance  # noqa: E402
 
@@ -64,12 +64,11 @@ def compact_for(*templates):
 
 
 RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (short style)
-RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی. "
-         "چارچوب نگارش زیر را مو به مو رعایت کن، در «حالت سبک» (بخش ۲-۱۴) و با «قالب الف»:\n\n" + STYLE +
-         "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, scenarios و هیچ متن دیگری. "
-         "slug فارسی با خط تیره، بدون فاصله و علامت. text: ۱۲۰ تا ۲۲۰ کلمه در ۲ تا ۴ پاراگراف (جدا با یک خط خالی)، حداکثر ۳ عدد گرد. "
-         "table: ۳ تا ۸ ردیف از فکت‌شیت، هر ردیف یک شیء با کلیدهای «شاخص»، «امروز»، «دیروز یا جلسه‌ی قبل»، «میانگین ۱۰ روزه»، «تغییر»، «منبع و تاریخ» (بخش ۲-۱۶). "
-         "scenarios: فهرست سناریوهای قابل‌بررسی به شکل بخش ۲-۱۵ (اگر سناریویی نداری، فهرست خالی).")
+STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read()
+# symbol news (owner 2026-10-05): the old template without clichés; every fact and table is built in code (facts_kala.py)
+RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
+         "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
+         "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
 
 
 def post(url, key, model, prompt, extra=None):
@@ -189,7 +188,22 @@ def retry(call, prompt):
                 raise
 
 
-def parse(raw):
+# clichés the code fixes by itself (no rewrite needed); the rest of BANNED sends the text back to the model
+FIXES = [(re.compile(r"^به گزارش [^،,]{0,40}(?:ام[‌ ]?اس[‌ ]?دیتا|msdata)[^،,]{0,10}[،,]\s*"), ""),
+         (re.compile(r"به شمار می[‌ ]?رود|محسوب می[‌ ]?شود"), "است"), (re.compile(r"به ثبت رسید|رقم خورد"), "ثبت شد"),
+         (re.compile(r"بالغ شد"), "رسید"), (re.compile(r"شایان ذکر است(?: که)?\s*"), ""), (re.compile(r"در این میان،?\s*"), "")]
+BANNED = re.compile(r"به گزارش|بررسی (?:داده|آمار)\S* نشان|نشان[‌ ]?دهنده|حاکی از|بیانگر|؛ رقمی که|این در حالی است|به خود اختصاص|"
+                    r"در مجموع|روی میز|رکورد تاریخی|سقف تاریخی|فصل ساخت|منتظر|انتظار می‌رود|احتمالاً|شاید|[?؟]\s*$")
+NUM = re.compile(r"[0-9۰-۹]+(?:[٫.][0-9۰-۹]+)?")
+
+
+def clean(t):
+    for rx, rep in FIXES:
+        t = rx.sub(rep, t)
+    return t
+
+
+def parse(raw, facts="", tables=None):
     m = re.search(r"\{.*\}", raw, re.S)
     d = json.loads(m.group(0)) if m else None
     if not isinstance(d, dict):
@@ -197,17 +211,28 @@ def parse(raw):
     for k in ("title", "slug", "subtitle", "lead", "text"):
         if not isinstance(d.get(k), str) or not d[k].strip():
             raise ValueError(f"empty {k}")
-    d["text"] = d["text"].replace("\r", "").strip()
+        d[k] = clean(d[k].replace("\r", "").strip())
     w, p = words(d["text"]), paragraphs(d["text"])
-    if not 120 <= w <= 220 or not 2 <= p <= 4:
+    if not 130 <= w <= 210 or not 2 <= p <= 3:
         raise ValueError(f"{w} words / {p} paragraphs")
     if any(FORBIDDEN.search(d[k]) for k in ("title", "subtitle", "lead", "text")):
         raise ValueError("forbidden content")
-    d["table"] = [x for x in d.get("table") or [] if isinstance(x, dict)][:8]
-    d["scenarios"] = [x for x in d.get("scenarios") or [] if isinstance(x, dict)]
-    probs = markers.check(d["text"], d["title"], d["lead"], table=bool(d["table"]))
-    if len(d["table"]) < 3:
-        probs.append("table باید ۳ تا ۸ ردیف داشته باشد")
+    probs = []
+    for k in ("title", "subtitle", "lead", "text"):
+        probs += [f"«{x.group(0)}» در {k}" for x in BANNED.finditer(d[k])]
+    if tables is not None:
+        tid = str(d.get("table") or "").strip().upper()
+        if tid not in tables:
+            probs.append(f"table باید یکی از {', '.join(tables)} باشد")
+        else:
+            d["table"] = tables[tid]
+        # every number in the news must come from the facts or the tables (the model does no arithmetic)
+        known = set(NUM.findall(facts + json.dumps(tables, ensure_ascii=False))) | set("۰۱۲۳۴۵۶۷۸۹0123456789")
+        bad = sorted({n for k in ("title", "subtitle", "lead", "text") for n in NUM.findall(d[k]) if n not in known})
+        if bad:
+            probs.append("عدد بیرون از حقیقت‌ها: " + "، ".join(bad))
+    if d["lead"] in d["text"]:
+        probs.append("لید عیناً در متن تکرار شده")
     if probs:
         raise ValueError("markers: " + " | ".join(probs))
     d["slug"] = SLUG_BAD.sub("-", d["slug"].strip())
@@ -264,11 +289,14 @@ def main():
     def write_one(r, models):
         sym = r["symbol"]
         hist_path = os.path.join(ROOT, "data", date, "symbols", f"{sym}.json")
-        hist = json.load(open(hist_path, encoding="utf-8")).get("history", []) if os.path.exists(hist_path) else []
+        sd = json.load(open(hist_path, encoding="utf-8")) if os.path.exists(hist_path) else {}
+        hist = sd.get("history", [])
         peers = [p for p in rows if p.get("goods_name") == r.get("goods_name")]
         with lock:
             recent = list(subs)[-5:]
-        prompt = ("فکت‌شیت (فقط همین عددها را به کار ببر):\n" + factsheet.build(r, hist, peers, date_fa) +
+        facts, tables = facts_kala.build(r, hist, peers, date_fa, date, sd.get("ytd_value"))
+        prompt = ("حقیقت‌ها (فقط از این‌ها انتخاب کن؛ عددها را عیناً بنویس):\n" + facts +
+                  "\n\nجدول‌های پیشنهادی (یکی را انتخاب کن):\n" + json.dumps(tables, ensure_ascii=False) +
                   f"\n\nزاویه‌ی خبرهای قبلی امروز را تکرار نکن. سوتیترهای قبلی: {' | '.join(recent)}")
         for name, call in models:
             if name in exhausted():
@@ -278,25 +306,24 @@ def main():
                 raw = retry(call, prompt)
                 for attempt in range(3):  # section 6 of style.md: every hit goes back to the model, up to 2 rewrites
                     try:
-                        d = parse(raw)
+                        d = parse(raw, facts, tables)
                         break
                     except ValueError as e:
                         if attempt == 2 or not re.search(r"words|markers|table", str(e)):
                             raise
                         raw = retry(call, prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایرادها: {e}. همان خبر را با رفع همه‌ی این ایرادها "
-                                    "(text بین ۱۳۰ تا ۲۰۰ کلمه در ۲ تا ۴ پاراگراف، فقط با عددهای فکت‌شیت) بازنویسی کن و فقط JSON برگردان.")
+                                    "(text بین ۱۴۰ تا ۲۰۰ کلمه در ۲ یا ۳ پاراگراف، فقط با عددهای حقیقت‌ها) بازنویسی کن و فقط JSON برگردان.")
                 with lock:
                     if d["subtitle"] in subs:
                         raise ValueError("repeated subtitle")
                     doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
                                          "hall": r.get("talar", ""), "producer": r.get("producer_name", ""), **d, "model": name})
                     subs.add(d["subtitle"])
-                    save_scenarios(d["scenarios"], sym, date_fa)
                     json.dump(doc, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
                     stats["ok"] += 1
                     note(f"OK {sym} <- {name} ({time.time() - t0:.0f}s)")
                     if os.environ.get("PUSH_EACH"):
-                        subprocess.run('git add -A news-test queue data/importance.json data/scenarios.jsonl && git commit -qm "queue: progress" && git pull -q --rebase && git push -q',
+                        subprocess.run('git add -A news-test queue data/importance.json data/scenarios.jsonl && git commit -qm "queue: progress" && git pull -q --rebase --autostash && git push -q',
                                        shell=True, cwd=ROOT, check=False, capture_output=True)
                 return True
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model of this provider

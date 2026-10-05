@@ -55,7 +55,7 @@ jobs:
             # 0 = backlog mode: packages of 40 (parallel, one worker per provider) until every traded symbol of the latest day has a news (max ~5h)
             end=$(( $(date +%s) + 330*60 ))
             while [ "$(date +%s)" -lt "$end" ]; do
-              git pull -q --rebase || true
+              git pull -q --rebase --autostash || true
               out=$(python tools/write_free.py --limit 40 --out queue | tee -a pilot-log.txt | tail -1)
               case "$out" in *"/0;"*) break ;; esac          # nothing left to write
               case "$out" in "written 0/"*) sleep 900 ;; *) sleep 60 ;; esac  # all models busy -> wait 15 min
