@@ -145,12 +145,11 @@ def main():
         hp = os.path.join(ROOT, "report-now.txt")
         m = re.search(r"^headline:\s*(.+)$", open(hp, encoding="utf-8").read(), re.M) if os.path.exists(hp) else None
         HEADLINE = m.group(1).strip() if m and force else ""
-    if (now.hour, now.minute) < (18, 30) and not force:
-        return
     latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
-    date = latest["date"]
-    if date != now.strftime("%Y-%m-%d") and not force:
-        return  # no trading today
+    date, today = latest["date"], now.strftime("%Y-%m-%d")
+    # today's report from 18:30; a report still missing after midnight is written then (it never skips to the next day)
+    if not force and (date > today or (date == today and (now.hour, now.minute) < (18, 30))):
+        return
     out = os.path.join(ROOT, "queue", f"report-{date}.json")
     if os.path.exists(out) or os.path.exists(os.path.join(ROOT, "news", f"report-{date}.json")):
         return
@@ -175,7 +174,7 @@ def main():
     w.RULES_GEMMA = REPORT_RULES.replace(w.style_for("ب"), w.compact_for("ب"))
     provs = w.providers()
     provs.sort(key=lambda p: RANK.index(p[0]) if p[0] in RANK else len(RANK))
-    if (now.hour, now.minute) < FALLBACK_FROM and not force:
+    if date == today and (now.hour, now.minute) < FALLBACK_FROM and not force:
         provs = [p for p in provs if p[0] == REPORT_MODEL]  # the report's own model; others only after 19:30
     for model, call in provs:
         if model in w.exhausted():

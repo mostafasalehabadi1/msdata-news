@@ -58,9 +58,10 @@ jobs:
               touch "/tmp/macro-$h"
               python tools/write_macro.py --dry | grep -q "^0 new" || { gh workflow run macro.yml -R "$GITHUB_REPOSITORY" && echo "macro news started"; }
             fi
-            # daily report: from 18:30 Tehran on a trading day, until it exists (report.yml writes and publishes it)
+            # daily report: from 18:30 Tehran on a trading day, until it exists (also after midnight - a day never loses its report) (report.yml writes and publishes it)
             d=$(python -c "import json;print(json.load(open('data/latest.json'))['date'])")
-            if [ "$(TZ=Asia/Tehran date +%H%M)" -ge 1830 ] && [ "$d" = "$(TZ=Asia/Tehran date +%F)" ] && [ ! -f "queue/report-$d.json" ] \
+            t=$(TZ=Asia/Tehran date +%F)
+            if { [ "$d" \< "$t" ] || { [ "$d" = "$t" ] && [ "$(TZ=Asia/Tehran date +%H%M)" -ge 1830 ]; }; } && [ ! -f "queue/report-$d.json" ] \
                && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w report.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w report.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
               gh workflow run report.yml -R "$GITHUB_REPOSITORY" && echo "daily report started"
             fi
