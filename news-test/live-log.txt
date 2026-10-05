@@ -119,3 +119,39 @@ OK NAC-PCT2G42.5-L50-00 <- openrouter:inclusionai/ling-3.0-flash-sante:free (175
   ALSC-LRENNA1A-00 zai:glm-4.5-flash: 280s TimeoutError: The read operation timed out
   AAK-PCT2G42.5-J-00 gemini:gemini-3.6-flash: 103s ValueError: markers: عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش)
 OK SSCB-SSG09XROA-00 <- kilo:dots-studio/dots-3-note-preview:free (318s)
+  KECE-SPCBNG42.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 211s TypeError: expected string or bytes-like object, got 'NoneType'
+  AAK-PCT2G42.5-J-00 gemini:gemini-3.5-flash: 62s ValueError: 102 words / 3 paragraphs
+  gemini:gemini-omni-1.1-flash: quota used up - skipped for the rest of the day
+  AAK-PCT2G42.5-J-00 gemini:gemini-omni-1.1-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  AAK-PCT2G42.5-J-00 gemini:gemma-4-26b-a4b-it: 155s JSONDecodeError: Extra data: line 1 column 164 (char 163)
+  AAK-PCT2G42.5-J-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "Developer instruction is not enabled for this model",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+]
+  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
+  NACE-PCT2G42.5-B-00 gemini:gemini-flash-latest: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
+  NACE-PCT2G42.5-B-00 gemini:gemini-3.8-flash: 53s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  NACE-PCT2G42.5-B-00 gemini:gemini-3.7-flash: 54s ValueError: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+    "status": "UNAVAILABLE"
+  }
+}
+]
+  IALC-ALHYD-00 kilo:dots-studio/dots-3-note-preview:free: 342s TimeoutError: The read operation timed out
+OK NACE-PCT2G42.5-B-00 <- gemini:gemini-3.6-flash (111s)
