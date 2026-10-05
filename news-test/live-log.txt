@@ -1,24 +1,14 @@
 40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
   BORC-OAVBSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  KHSS-DRIBRI-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KHSS-DRIBRI-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791182599-BMVVjjIpyisnC5P3eda3","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
   THOR-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  GOLG-PELL-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 204 (char 534)
-  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (74133fe8-cd4a-4dea-
-  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 29s ValueError: HTTP 422: {"error_type":"NO_VALID_RESPONSE_GENERATED","id":"9d31c487-87ac-4294-827d-85b3027406b1","message":"No valid response generated. Try updating messages"}
-  NCI-OACCAA-00 zai:glm-4.5-flash: 53s ValueError: empty subtitle
-  SSC-MREEEEA3B-00 cohere:command-a-03-2025: 41s ValueError: markers: 9 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس | رقم لاتین و فارسی قاطی شده؛ همه فارسی
-  THOR-LUBECUTLB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9c4f0be8-7c99-4762-
-  AJSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (715d749f-8390-4514-
-  BORC-LUBECUTHB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 223s ValueError: 108 words / 3 paragraphs
-  IKRC-OAVBB-00 zai:glm-4.5-flash: 214s ValueError: empty subtitle
-OK BORC-LUBECUTHB-00 <- kilo:stepfun/step-3.7-flash:free (94s)
-  SJS-MREEEEA3B-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
-  TORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 322s ValueError: 105 words / 3 paragraphs
-  OSC-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 379s TimeoutError: The read operation timed out
-  OSC-HS00000-00 kilo:stepfun/step-3.7-flash:free: 182s ValueError: markers: 5 عدد در متن؛ حداکثر 3 (بقیه در جدول)
-  KSCO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 305s ValueError: markers: عبارت ممنوع «محسوب می‌شود» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | 5 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ میانگین معامله میلگرد ۱۴ تا ۲۰ تولید سپید فراب کویر در ت» | «ام
-  IAC-AP15351-00 kilo:dots-studio/dots-3-note-preview:free: 337s TimeoutError: The read operation timed out
-  IAC-AP15351-00 kilo:stepfun/step-3.7-flash:free: 138s ValueError: markers: 4 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  ALM-AP06101-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  ALM-AP06101-00 kilo:stepfun/step-3.7-flash:free: 190s ValueError: markers: عبارت ممنوع «به خود اختصاص داد» (الگو: به خود اختصاص داد|به ثبت رسید|بالغ (?:شد) | 6 عدد در متن؛ حداکثر 3 (بقیه در جدول)
+  THOR-LUBECUTLB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  GOLG-PELL-00 cohere:command-a-03-2025: 18s JSONDecodeError: Invalid control character at: line 6 column 226 (char 579)
+  KSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4cb58bfa-ac43-4df4-
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9d100a25-91c9-458d-
+  SSC-MREEEEA3B-00 cohere:command-a-03-2025: 90s JSONDecodeError: Expecting property name enclosed in double quotes: line 3 column 40 (char 124)
+  NCI-OACCAA-00 zai:glm-4.5-flash: 117s ValueError: empty subtitle
+  TORC-OAVBB-00 cohere:command-a-03-2025: 19s JSONDecodeError: Invalid control character at: line 6 column 158 (char 500)
+  AJSC-SSG09XROA-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (cc50e1e2-b0af-4db8-
+  KSO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 208s TimeoutError: The read operation timed out
+OK KSO-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (111s)
