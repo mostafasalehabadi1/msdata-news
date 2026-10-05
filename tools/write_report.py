@@ -27,7 +27,7 @@ from validate import FORBIDDEN, SLUG_BAD, paragraphs, words  # noqa: E402
 ROOT = w.ROOT
 # optional fixed headline: --headline "..." or the first line of report-now.txt after "headline:"
 HEADLINE = ""
-MIXED = re.compile(r"[؀-ۿ][A-Za-z]|[A-Za-z][؀-ۿ]")
+FX = [""]  # the facts and tables given to the model (names with Latin letters in them are allowed)
 TEHRAN = timezone(timedelta(hours=3, minutes=30))
 REPORT_MODEL = "gemini:gemma-4-31b-it"
 FALLBACK_FROM = (19, 30)
@@ -101,8 +101,10 @@ def check(d, symbols, urls, tables, known):
         raise ValueError("forbidden content")
     if re.search(r"[A-Z]{2,}-[A-Z0-9.]+-\d\d", d["text"]):
         raise ValueError("symbol code in text")
-    if MIXED.search(d["text"]):  # a model that slips Latin letters into a Persian word (سولfurیک)
-        raise ValueError("mixed-script word")
+    # a model that slips Latin letters into a Persian word (سولfurیک); names given in the facts (پی وی سی SE-950) are fine
+    mixed = [x for x in re.findall(r"\S*(?:[؀-ۿ][A-Za-z]|[A-Za-z][؀-ۿ])\S*", d["text"]) if x.strip("«»()،.؛:") not in FX[0]]
+    if mixed:
+        raise ValueError("mixed-script word: " + " ".join(mixed[:5]))
     d["slug"] = SLUG_BAD.sub("-", d["slug"].strip())
     # keep only links the site can resolve: the anchor must be in the text, the symbol a trade of today
     d["links"] = [{"title": x["title"], "symbol": x["symbol"]} for x in d.get("links") or []
@@ -166,6 +168,7 @@ def main():
               "\n\nنماد هر معامله (فقط برای links؛ هرگز در متن ننویس): " + symmap +
               "\n\nجدول‌های پیشنهادی (۱ تا ۳ تا را انتخاب کن):\n" + json.dumps(tables, ensure_ascii=False) +
               "\n\nخبرهای امروز در رسانه‌ها (فقط برای علت‌ها؛ هر کدام را استفاده کردی در sources بیاور):\n" + ctx_txt)
+    FX[0] = fx + json.dumps(tables, ensure_ascii=False) + symmap
     known = set(w.NUM.findall(fx + json.dumps(tables, ensure_ascii=False) + ctx_txt)) | set("۰۱۲۳۴۵۶۷۸۹0123456789")
     symbols, urls = {r["symbol"] for r in rows}, {x["url"] for x in ctx}
     w.RULES = REPORT_RULES
