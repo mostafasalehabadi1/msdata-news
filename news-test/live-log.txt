@@ -1,13 +1,13 @@
-5 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  IALC-ALHYD-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  OAC-PCT2G42.5-L50-00 cohere:command-a-03-2025: 25s JSONDecodeError: Invalid control character at: line 6 column 214 (char 561)
-  KHCO-PCT2G42.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1389a89e-2ad5-4a14-
-  IALC-ALHYD-00 cohere:command-a-03-2025: 18s JSONDecodeError: Invalid control character at: line 6 column 215 (char 606)
-  KHCO-PCT2G42.5-B-00 cohere:command-a-03-2025: 27s JSONDecodeError: Invalid control character at: line 6 column 248 (char 523)
-  OAC-PCT2G42.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1f45fd89-8512-443c-
-  IALC-ALHYD-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (cad06a2a-9c2f-456f-
-  AAK-PCT1G42.5-J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SSC-MRNENNA1A-00 zai:glm-4.5-flash: 324s ValueError: 83 words / 3 paragraphs
-  AAK-PCT1G42.5-J-00 kilo:stepfun/step-3.7-flash:free: 148s ValueError: markers: 5 عدد در متن؛ حداکثر 3 (بقیه در جدول) | «امروز» ننویس؛ نام روز و تاریخ را بنویس
-  OAC-PCT2G42.5-L50-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-OK OAC-PCT2G42.5-L50-00 <- kilo:stepfun/step-3.7-flash:free (100s)
+6 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  IORC-OAVBB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  AAK-PCT1G42.5-J-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791198657-ZOwJkPfoXnJXMq4nqbp1","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  AAK-PCT1G42.5-J-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  IALC-ALHYD-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b6ae803e-2979-4b0d-
+  SHPC-PBR1220WWP-00 cohere:command-a-03-2025: 55s ValueError: markers: عبارت ممنوع «نشان‌دهنده» (الگو: نشان[‌ ]?دهنده|نشانگر|حاکی از|بیانگر) | 15 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «نرخ امروز ۳٫۸ درصد بالاتر از میانگین ۱۰ روزه (۳ میلیون و ۴۳۵» | «امروز» 
+  IORC-OAVBB-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 166 (char 481)
+  AAK-PCT1G42.5-J-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (76166e39-3f2b-4725-
+  IALC-ALHYD-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 211 (char 597)
+  KHCO-PCT2G42.5-B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SSC-MRNENNA1A-00 zai:glm-4.5-flash: 358s TimeoutError: The read operation timed out
+  KHCO-PCT2G42.5-B-00 kilo:stepfun/step-3.7-flash:free: 180s ValueError: markers: عبارت ممنوع «بیشترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | 9 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «میانگین عرضه‌ی سیمان پرتلند نوع ۲ رده ۴۲٫۵ فله در ۱۰ روز گذش»
+OK SHPC-PBR1220WWP-00 <- kilo:dots-studio/dots-3-note-preview:free (301s)
