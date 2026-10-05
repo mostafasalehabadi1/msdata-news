@@ -227,8 +227,10 @@ def parse(raw, facts="", tables=None):
         else:
             d["table"] = tables[tid]
         # every number in the news must come from the facts or the tables (the model does no arithmetic)
-        known = set(NUM.findall(facts + json.dumps(tables, ensure_ascii=False))) | set("۰۱۲۳۴۵۶۷۸۹0123456789")
-        bad = sorted({n for k in ("title", "subtitle", "lead", "text") for n in NUM.findall(d[k]) if n not in known})
+        # Latin or Persian digits are the same number (a model that writes «1.7» for «۱٫۷» is not inventing it)
+        fa = lambda n: n.translate(str.maketrans("0123456789.", "۰۱۲۳۴۵۶۷۸۹٫"))  # noqa: E731
+        known = {fa(n) for n in NUM.findall(facts + json.dumps(tables, ensure_ascii=False))} | set("۰۱۲۳۴۵۶۷۸۹")
+        bad = sorted({n for k in ("title", "subtitle", "lead", "text") for n in NUM.findall(d[k]) if fa(n) not in known})
         if bad:
             probs.append("عدد بیرون از حقیقت‌ها: " + "، ".join(bad))
     if d["lead"] in d["text"]:
