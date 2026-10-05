@@ -1,36 +1,28 @@
-40 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  CHMI-BSG194X-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ETSS-BSG017OO-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SHPC-PPRP270GPP-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  SHPC-PPRP270GPP-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  JPPC-PPEP3130UVJ-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ARCO-PVCS65J-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SSC-MRNENNA1A-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid control character at: line 6 column 190 (char 550)
-  AGIC-PPHP550JJ-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  AGIC-PPHP550JJ-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
+23 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  DAP-PPHP550PJ-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   JPPC-PPHP510LPP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  MNB-BSG194X-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SIS-BSG324X-00 cohere:command-a-03-2025: 16s JSONDecodeError: Invalid control character at: line 6 column 306 (char 672)
+  ETSS-BSG017OO-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  ETSS-BSG017OO-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  JPPC-PPEP6540GJ-089 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   KBL-BSG194X-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  JPPC-PPEP6540GJ-089 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid control character at: line 6 column 103 (char 460)
   KBL-BSG194X-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  PSC-BSG324O-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 7s JSONDecodeError: Invalid control character at: line 6 column 104 (char 417)
-OK APCO-PVCS65RPP-00 <- cohere:command-a-03-2025 (22s)
-  DAP-PPHP550PJ-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 59s ValueError: 96 words / 1 paragraphs
-  MPC-PPRP340RP-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 346 (char 789)
-OK JPPC-PPRP340RP-00 <- cohere:command-a-03-2025 (8s)
-OK RJCO-PPRG3212ERJ-00 <- cohere:command-a-03-2025 (8s)
-OK ARCO-OAEPVC6834PP-00 <- cohere:command-a-03-2025 (9s)
-  ATSC-BSG324X-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 64s ValueError: 91 words / 1 paragraphs
-OK APCO-PVCS57RPP-00 <- cohere:command-a-03-2025 (22s)
-OK IMID-BARILUMP-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (139s)
-  NZCH-PPZH515MAJ-00 gemini:gemma-4-26b-a4b-it: 144s JSONDecodeError: Extra data: line 9 column 5 (char 1081)
+  PSC-BSG324O-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ATSC-BSG324X-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  ATSC-BSG324X-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  JPPC-PPEP3130UVJ-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (a47a62a0-42a4-41d2-
+  NZCH-PPZH510LJ-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2aa202d1-3a1a-4563-
+  CHMI-BSG194X-00 zai:glm-4.5-flash: 66s JSONDecodeError: Expecting value: line 5 column 11 (char 197)
+  SRM-BSG017OO-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (08f9c079-f333-415e-
+  JPPC-PPHP510LPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b5986aad-b847-4cf1-
+  PBSC-BSO1720X-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (881c1dba-5baa-48c7-
+  CHMI-BSG194X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (23f16325-4d3b-4c75-
+  NZCH-PPZH515MAJ-00 gemini:gemma-4-26b-a4b-it: 299s RemoteDisconnected: Remote end closed connection without response
   NZCH-PPZH515MAJ-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
   "error": {
     "code": 400,
@@ -39,82 +31,8 @@ OK IMID-BARILUMP-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (139s)
   }
 }
 ]
-  SSC-MRNENNA1A-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 2s ValueError: bad response: '{"id":"gen-1791223220-qdIWsFNHk06vfeDMRrkv","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-OK DAP-PPHP500KJ-00 <- cohere:command-a-03-2025 (10s)
-  SRM-BSG017OO-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 19s JSONDecodeError: Expecting value: line 3 column 11 (char 70)
-  PBSC-BSO1720X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791223229-4meYRO6XoFOwncZ63A1z","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  SHIN-PVCSUSSE-950J-000 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 2s ValueError: bad response: '{"id":"gen-1791223237-t4EhZuWwqYMdW2FMzbhH","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  NZCH-PPZH550JJ-00 cohere:command-a-03-2025: 21s JSONDecodeError: Invalid control character at: line 6 column 337 (char 748)
-  NZCH-PPZH510LJ-00 cohere:command-a-03-2025: 21s JSONDecodeError: Invalid control character at: line 6 column 351 (char 764)
-  JPPC-PPEP548TPP-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 373 (char 739)
-OK SHPC-PPHP510LPP-00 <- zai:glm-4.5-flash (236s)
-  MPC-PPC30SPP-00 kilo:dots-studio/dots-3-note-preview:free: 270s TimeoutError: The read operation timed out
-OK ZAI-BSO1720X-00 <- gemini:gemma-4-26b-a4b-it (119s)
-OK MPC-PPC30SPP-00 <- kilo:stepfun/step-3.7-flash:free (102s)
-OK SSC-MRNENNA1A-00 <- zai:glm-4.5-flash (163s)
-OK SDSM-BSG017OO-00 <- gemini:gemma-4-26b-a4b-it (185s)
-  MPC-PPSHP565SPP-00 kilo:dots-studio/dots-3-note-preview:free: 101s ValueError: markers: عدد بیرون از حقیقت‌ها: ۲۵.۲، ۸۳.۳، ۸۹.۱
-OK MPC-PPSHP565SPP-00 <- kilo:stepfun/step-3.7-flash:free (77s)
-  ETSS-BSG017OO-00 gemini:gemma-4-26b-a4b-it: 100s JSONDecodeError: Extra data: line 10 column 5 (char 144)
-  ETSS-BSG017OO-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-  NGFA-BSG194X-00 zai:glm-4.5-flash: 245s TimeoutError: The read operation timed out
-OK SHPC-PPRP270GPP-00 <- gemini:gemma-4-26b-a4b-it (98s)
-OK AGIC-PPHP550JJ-00 <- gemini:gemma-4-26b-a4b-it (175s)
-  JPPC-PPEP3130UVJ-00 zai:glm-4.5-flash: 212s ValueError: empty slug
-  JPPC-PPEP6540GJ-089 zai:glm-4.5-flash: 10s ValueError: no JSON
-OK AIOC-BOSN150B-00 <- kilo:dots-studio/dots-3-note-preview:free (332s)
-  MNB-BSG194X-00 gemini:gemma-4-26b-a4b-it: 161s JSONDecodeError: Extra data: line 10 column 5 (char 144)
-  MNB-BSG194X-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-  IMID-BSG194X-616 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  KBL-BSG194X-00 gemini:gemma-4-26b-a4b-it: 158s JSONDecodeError: Extra data: line 10 column 5 (char 131)
-  KBL-BSG194X-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-OK IMID-BSG194X-616 <- kilo:stepfun/step-3.7-flash:free (120s)
-  DAP-PPV30SJ-00 kilo:dots-studio/dots-3-note-preview:free: 352s TimeoutError: The read operation timed out
-OK DAP-PPV30SJ-00 <- kilo:stepfun/step-3.7-flash:free (42s)
-  BOC-BOSN350B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  PSC-BSG324O-00 gemini:gemma-4-26b-a4b-it: 600s TimeoutError: The read operation timed out
-  PSC-BSG324O-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-OK BOC-BOSN350B-00 <- kilo:stepfun/step-3.7-flash:free (43s)
-  CHMI-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 223s TimeoutError: The read operation timed out
-  CHMI-BSG194X-00 kilo:stepfun/step-3.7-flash:free: 175s ValueError: markers: عدد بیرون از حقیقت‌ها: 116، 1404، 1405، 15.2، 16.7، 203، 27، 29، 293، 354، 412، 50، 59، 660، 706، 715، 780، 800، 824، 877، 902
-  ARCO-PVCS65J-00 kilo:dots-studio/dots-3-note-preview:free: 11s TypeError: expected string or bytes-like object, got 'NoneType'
-OK ARCO-PVCS65J-00 <- kilo:stepfun/step-3.7-flash:free (174s)
-  JPPC-PPHP510LPP-00 kilo:dots-studio/dots-3-note-preview:free: 298s ValueError: markers: عدد بیرون از حقیقت‌ها: ۲۰.۵، ۸۷.۷
-  JPPC-PPHP510LPP-00 kilo:stepfun/step-3.7-flash:free: 137s ValueError: 245 words / 1 paragraphs
-  SIS-BSG324X-00 kilo:dots-studio/dots-3-note-preview:free: 192s ValueError: 121 words / 2 paragraphs
-OK SIS-BSG324X-00 <- kilo:stepfun/step-3.7-flash:free (59s)
-OK MPC-PPRP340RP-00 <- kilo:dots-studio/dots-3-note-preview:free (328s)
-  NZCH-PPZH550JJ-00 kilo:dots-studio/dots-3-note-preview:free: 201s ValueError: markers: عدد بیرون از حقیقت‌ها: ۲۵.۲
-OK NZCH-PPZH550JJ-00 <- kilo:stepfun/step-3.7-flash:free (29s)
-  NZCH-PPZH510LJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  NZCH-PPZH510LJ-00 kilo:stepfun/step-3.7-flash:free: 158s ValueError: markers: عدد بیرون از حقیقت‌ها: ۲۰.2، ۴۷.9، ۸۵.4
-  JPPC-PPEP548TPP-00 kilo:dots-studio/dots-3-note-preview:free: 235s TimeoutError: The read operation timed out
-OK JPPC-PPEP548TPP-00 <- kilo:stepfun/step-3.7-flash:free (59s)
+  MNB-BSG194X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 302s ValueError: 127 words / 3 paragraphs
+  NZCH-PPZH510LJ-00 zai:glm-4.5-flash: 265s ValueError: markers: عدد بیرون از حقیقت‌ها: 1.7، 126، 1404، 20.2، 210، 25، 30، 47.4، 659، 749، 764، 85.4
+  JPPC-PPHP510LPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  NGFA-BSG194X-00 zai:glm-4.5-flash: 220s ValueError: 105 words / 2 paragraphs
+OK CHMI-BSG194X-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (131s)
