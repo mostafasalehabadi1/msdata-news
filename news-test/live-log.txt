@@ -1,89 +1,46 @@
-12 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  SHPC-PPRP270GPP-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
+31 symbols to write; 14 parallel workers: gemini, openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HSR-LUSUFEB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  JPPC-PPEP440LPP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   gemini:gemini-pro-latest: quota used up - skipped for the rest of the day
-  HSR-LUSUFEB-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
+  ARCO-PVCS65PP-00 gemini:gemini-pro-latest: 0s QuotaError: HTTP 429: [{
   "error": {
     "code": 429,
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  HSR-LUSUACB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SHIN-PVCSUSSE-950J-000 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SHPC-PPRP270GPP-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  JPPC-PPEP548RPP-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  SHPC-PPRP270GPP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  RJCO-PPRG1102XLRJ-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"073f59136d5eed49c9062f0a94c08927"
+}
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  HSR-LUSUACB-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 4053 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":4053}}
+  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
+  MPC-PPMR230CPP-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 60 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":60}}
+  JPPC-PPEP548RPP-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  MPC-PPMR230CPP-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
+  RJCO-PPRG1102XLRJ-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"cc16d25a4b3a9e49a6e2e478606ec509"
+}
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  RJCO-PPRG1102XLRJ-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"7ed9cf0200f66134bd31c42de9ad4a70"
+}
+  KHCO-PCT2G42.5-B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  JPPC-PPRP345SPP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  SHPC-PPHP510LPP-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  SHPC-PPHP510LPP-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  DAP-PPZ30SJ-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   IORC-LUSUGEB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SHIN-PVCSUSSE-950J-000 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  AGIC-PPHP500MJ-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  SHIN-PVCSUSSE-950J-000 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  AGIC-PPHP500MJ-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  TIOC-PDATARB-00 cohere:command-a-03-2025: 22s JSONDecodeError: Invalid control character at: line 6 column 169 (char 556)
-  SSC-MRNENNA1A-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (66fa5a84-78a2-40be-
-  HSR-LUSUACB-00 cohere:command-a-03-2025: 22s JSONDecodeError: Invalid control character at: line 6 column 177 (char 601)
-  gemini:gemini-flash-latest: quota used up - skipped for the rest of the day
-  HSR-LUSUFEB-00 gemini:gemini-flash-latest: 58s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  gemini:gemini-3.8-flash: quota used up - skipped for the rest of the day
-  HSR-LUSUFEB-00 gemini:gemini-3.8-flash: 0s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  IORC-LUSUGEB-00 cohere:command-a-03-2025: 15s JSONDecodeError: Invalid control character at: line 6 column 148 (char 520)
-  gemini:gemini-3.7-flash: quota used up - skipped for the rest of the day
-  HSR-LUSUFEB-00 gemini:gemini-3.7-flash: 18s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  SHPC-PPRP270GPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (90728320-f2a9-45b2-
-  ZBPC-TISSDLGR14-00 llm7:DeepSeek-V4-Flash-0731: 125s ValueError: HTTP 524: error code: 524
-
-  SHIN-PVCSUSSE-950J-000 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (bd226672-f915-475f-
-  gemini:gemini-3.6-flash: quota used up - skipped for the rest of the day
-  HSR-LUSUFEB-00 gemini:gemini-3.6-flash: 69s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  IORC-OAVBB-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
-  IALC-ALHYD-00 kilo:dots-studio/dots-3-note-preview:free: 195s TimeoutError: The read operation timed out
-  TIOC-PDATARB-00 llm7:DeepSeek-V4-Flash-0731: 125s ValueError: HTTP 524: error code: 524
-
-  IALC-ALHYD-00 kilo:stepfun/step-3.7-flash:free: 68s JSONDecodeError: Expecting value: line 10 column 16 (char 1149)
-  KHCO-PCT2G42.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 274s TimeoutError: The read operation timed out
-  HSR-LUSUFEB-00 gemini:gemini-3.5-flash: 138s ValueError: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "status": "UNAVAILABLE"
-  }
-}
-]
-  gemini:gemini-omni-1.1-flash: quota used up - skipped for the rest of the day
-  HSR-LUSUFEB-00 gemini:gemini-omni-1.1-flash: 15s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-  HSR-LUSUACB-00 llm7:DeepSeek-V4-Flash-0731: 125s ValueError: HTTP 524: error code: 524
-
-  IORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 116s ValueError: bad response: '{"id":"gen-1791209921-AYEuINaHL263E7KGALUB","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  SSC-MRNENNA1A-00 zai:glm-4.5-flash: 256s ValueError: markers: عبارت ممنوع «کمترین» (الگو: (?<![؀-ۿ])(?:بزرگترین|بیشترین|کمترین|میش) | 12 عدد در متن؛ حداکثر 3 (بقیه در جدول) | بیش از ۲ عدد در یک جمله: «تمام 50 تن عرضه این محصول با نرخ ثابت 994 هزار و 359 ریال هر» | «امروز» 
-  PGIL-LUSUACB-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 468s ValueError: bad response: '\n         \n{"id":"gen-1791209993-ueVQZWY0ynZgPhQNmPbq","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  IORC-LUSUGEB-00 kilo:dots-studio/dots-3-note-preview:free: 204s TimeoutError: The read operation timed out
-  PGIL-LUSUACB-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
-  HSR-LUSUFEB-00 gemini:gemma-4-26b-a4b-it: 224s JSONDecodeError: Extra data: line 1 column 181 (char 180)
-  HSR-LUSUFEB-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
-  "error": {
-    "code": 400,
-    "message": "Developer instruction is not enabled for this model",
-    "status": "INVALID_ARGUMENT"
-  }
-}
-]
-  PGIL-LUSUACB-00 openrouter:google/gemma-4-26b-a4b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
-  IALC-ALHYD-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  gemini:gemini-3.5-flash: quota used up - skipped for the rest of the day
-  SHPC-PPRP270GPP-00 gemini:gemini-3.5-flash: 61s QuotaError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
-OK PGIL-LUSUACB-00 <- openrouter:apodex/apodex-1.1-mini:free (101s)
+OK ZBPC-TISSDLGR14-00 <- cohere:command-a-03-2025 (30s)
