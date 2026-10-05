@@ -85,3 +85,26 @@ OK ZBPC-TISSDLGR14-00 <- cohere:command-a-03-2025 (30s)
     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
   IALC-ALHYD-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 200s ValueError: bad response: '{"id":"gen-1791212146-DNuLRe3uaWKbhQhAH8j0","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
 OK PNCO-PPSF060J-00 <- openrouter:apodex/apodex-1.1-mini:free (66s)
+  KHCO-PCT2G42.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791212152-uClWkfuDkGpfJgXgVmWb","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  IORC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791212159-1ptrnEGj0C6y0JhfSMO1","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  gemini:gemini-3.5-flash: quota used up - skipped for the rest of the day
+  ARCO-PVCS65PP-00 gemini:gemini-3.5-flash: 72s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  gemini:gemini-omni-1.1-flash: quota used up - skipped for the rest of the day
+  ARCO-PVCS65PP-00 gemini:gemini-omni-1.1-flash: 0s QuotaError: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/r
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
+  TIOC-BOSN600B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 121s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped for the rest of the day
+  TIOC-BOSN600B-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped for the rest of the day
+  TIOC-BOSN600B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:apodex/apodex-1.1-mini:free: quota used up - skipped for the rest of the day
+  TIOC-BOSN600B-00 openrouter:apodex/apodex-1.1-mini:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:inclusionai/ling-3.0-flash-sante:free: quota used up - skipped for the rest of the day
+  TIOC-BOSN600B-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+OK ARCO-PVCS65PP-00 <- gemini:gemma-4-26b-a4b-it (97s)
