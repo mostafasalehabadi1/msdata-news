@@ -50,10 +50,22 @@ def series():
         if a and c:
             ka, kc = sorted(a, key=jkey), sorted(c, key=jkey)
             key = max(ka[-1], kc[-1], key=jkey)
+            # raw values are in thousand billion rial (÷10 = همت); the model gets them already in همت with the unit in the key,
+            # so it never guesses the unit (the 1405/07/06 report wrote «۷۰۰ میلیارد تومان» for 70 همت)
+            money = ("requested", "accepted", "matured", "outstanding", "outright_requested", "outright_accepted", "credit", "repaid")
+            fa_keys = {"requested": "سفارش بانک‌ها (همت)", "accepted": "پذیرفته‌شده (همت)", "matured": "سررسیدشده (همت)",
+                       "outstanding": "مانده (همت)", "outright_requested": "سفارش خرید قطعی اوراق (همت)",
+                       "outright_accepted": "خرید قطعی پذیرفته‌شده (همت)", "credit": "اعتبار دریافتی بانک‌ها (همت)",
+                       "repaid": "بازپرداخت (همت)", "bank_count": "تعداد بانک‌ها", "rate": "نرخ (درصد)",
+                       "duration_days": "مدت (روز)", "auction_no": "شماره‌ی حراج امسال", "date": "تاریخ"}
+
+            def h(row):
+                return {fa_keys.get(k, k): (round(v / 10, 1) if k in money and isinstance(v, (int, float)) else v) for k, v in row.items()}
             out["openmarket-week"] = ("گزارش هفتگی بازار باز بانک مرکزی: حراج ریپو و اعتبار قاعده‌مند", True, key,
-                                      {"حراج ریپوی این هفته": a[ka[-1]], "حراج‌های قبلی": [a[k] for k in ka[-6:-1]],
-                                       "اعتبار قاعده‌مند روزهای این گزارش": {k: c[k] for k in kc[-7:]},
-                                       "اعتبار قاعده‌مند روزهای قبل": {k: c[k] for k in kc[-21:-7]}})
+                                      {"واحد همه‌ی مبالغ": "همت (هزار میلیارد تومان)",
+                                       "حراج ریپوی این هفته": h(a[ka[-1]]), "حراج‌های قبلی": [h(a[k]) for k in ka[-6:-1]],
+                                       "اعتبار قاعده‌مند روزهای این گزارش": {k: h(c[k]) for k in kc[-7:]},
+                                       "اعتبار قاعده‌مند روزهای قبل": {k: h(c[k]) for k in kc[-21:-7]}})
     except Exception as e:  # noqa: BLE001
         print(f"raw-data: {e}")
     try:
