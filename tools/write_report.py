@@ -191,7 +191,7 @@ def main():
                               "در ۶ تا ۹ پاراگراف و با links برای هر معامله‌ی نام‌برده بازنویسی کن و فقط JSON برگردان.")
                 d = check(json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), symbols, urls, tables, known)
             os.makedirs(os.path.dirname(out), exist_ok=True)
-            json.dump({"date_fa": date_fa, "date": date, **d, "model": model}, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            json.dump({"date_fa": date_fa, "date": date, **d, "author": "مصطفی صالح‌آبادی", "author_title": "کارشناس اقتصادی", "model": model}, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             w.save_scenarios(d["scenarios"], "report", date_fa)
             print(f"report {date_fa} <- {model} ({time.time() - t0:.0f}s, {len(d['links'])} links, {len(d['sources'])} sources)")
             return

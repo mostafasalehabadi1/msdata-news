@@ -144,7 +144,7 @@ def write(name, subject, long, key, facts, first_seen):
                     raw = w.retry(call, prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایرادها: {e}. همان خبر را با رفع همه‌ی این ایرادها "
                                   "بازنویسی کن و فقط JSON برگردان.")
             item = {"date": now.strftime("%Y-%m-%d"), "series": name, "key": key, "tag": TAG, "kind": "report" if long else "news",
-                    **d, "model": model, "published_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
+                    **d, "author": "مصطفی صالح‌آبادی", "author_title": "کارشناس اقتصادی", "model": model, "published_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
             w.save_scenarios(d["scenarios"], name, key)
             return item
         except Exception as e:  # noqa: BLE001 - next model
