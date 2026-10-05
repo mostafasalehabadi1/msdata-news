@@ -30,3 +30,14 @@ OK ARCO-OAEPVC6834PP-00 <- cohere:command-a-03-2025 (9s)
   ATSC-BSG324X-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 64s ValueError: 91 words / 1 paragraphs
 OK APCO-PVCS57RPP-00 <- cohere:command-a-03-2025 (22s)
 OK IMID-BARILUMP-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (139s)
+  NZCH-PPZH515MAJ-00 gemini:gemma-4-26b-a4b-it: 144s JSONDecodeError: Extra data: line 9 column 5 (char 1081)
+  NZCH-PPZH515MAJ-00 gemini:gemini-3.5-transcribe: 0s ValueError: HTTP 400: [{
+  "error": {
+    "code": 400,
+    "message": "Developer instruction is not enabled for this model",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+]
+  SSC-MRNENNA1A-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 2s ValueError: bad response: '{"id":"gen-1791223220-qdIWsFNHk06vfeDMRrkv","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+OK DAP-PPHP500KJ-00 <- cohere:command-a-03-2025 (10s)
