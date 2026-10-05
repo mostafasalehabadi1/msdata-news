@@ -21,7 +21,7 @@ from html import unescape
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import write_free as w  # noqa: E402
 import markers  # noqa: E402
-from factsheet import YEAR, fa_date, fa_int, fa_num, toman_billion  # noqa: E402
+import facts_report  # noqa: E402
 from validate import FORBIDDEN, SLUG_BAD, paragraphs, words  # noqa: E402
 
 ROOT = w.ROOT
@@ -39,9 +39,10 @@ RANK = [REPORT_MODEL, "llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025",
 REPORT_RULES = (
     "تو سردبیر بورس کالای msdata.ir هستی و گزارش پایان روز بازار فیزیکی بورس کالا را به فارسی می‌نویسی. "
     "چارچوب نگارش زیر را مو به مو رعایت کن، در «حالت کامل» (بخش ۲-۱۴) و با «قالب ب»:\n\n" + w.style_for("ب") + "\n\n"
-    "- عددها فقط از «فکت‌شیت»؛ علت‌ها فقط از «خبرهای رسانه‌ها» با نام رسانه در متن.\n"
-    "- text: ۴۵۰ تا ۶۵۰ کلمه؛ پاراگراف‌ها جدا با یک خط خالی؛ هر میان‌تیتر یک خط کوتاه جدا (بدون نقطه) است. لینک، آدرس اینترنتی و HTML در متن نگذار.\n"
-    "- table: ۳ تا ۸ ردیف عدد مهم روز از فکت‌شیت، هر ردیف یک شیء با نام ستون‌ها (بخش ۲-۱۶).\n"
+    "- همه‌ی حقیقت‌ها را کد حساب کرده (F1، F2، …). هیچ حساب، درصد، مقایسه یا رتبه‌ای خودت نساز؛ عددها را عیناً از حقیقت‌ها بنویس. "
+    "لازم نیست همه را بیاوری؛ مهم‌ترین‌ها را انتخاب کن. علت‌ها فقط از «خبرهای رسانه‌ها» با نام رسانه در متن؛ اگر علتی نیست، حدس نزن.\n"
+    "- text: ۴۵۰ تا ۶۵۰ کلمه؛ پاراگراف‌ها جدا با یک خط خالی؛ دست‌کم ۲ میان‌تیتر، هر میان‌تیتر یک خط کوتاه جدا (۲ تا ۷ کلمه، بدون نقطه). لینک، آدرس اینترنتی و HTML در متن نگذار.\n"
+    "- table: فهرست ۱ تا ۳ شناسه از «جدول‌های پیشنهادی» (مثلاً [\"T2\", \"T4\"]) که با متن جور است؛ همان جدول‌ها کنار گزارش منتشر می‌شوند و می‌توانی در متن به آن‌ها اشاره کنی.\n"
     "- scenarios: ۲ یا ۳ سناریوی قابل‌بررسی به شکل JSON بخش ۲-۱۵.\n"
     "- links: برای هر معامله‌ای که در متن نام بردی {\"title\": عبارت دقیقاً همان‌طور که در متن آمده، \"symbol\": نماد از فکت‌شیت}.\n"
     "- sources: برای هر خبر بیرونی که استفاده کردی {\"title\": نام رسانه همان‌طور که در متن آمده، \"url\": آدرس همان خبر از فهرست}.\n"
@@ -49,50 +50,7 @@ REPORT_RULES = (
     "فقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, scenarios, links, sources و هیچ متن دیگری.")
 
 
-def val(r):
-    return r.get("trade_value") or 0
-
-
-def comp(r):
-    return (r["weighted_price"] / r["weighted_base_price"] - 1) * 100 if r.get("weighted_price") and r.get("weighted_base_price") else 0
-
-
-def name(r):
-    return f"{r.get('goods_name')} {r.get('producer_name')}"
-
-
-def facts(rows, date_fa):
-    YEAR[0] = date_fa[:4]
-    total = sum(val(r) for r in rows)
-    L = [f"تاریخ: {fa_date(date_fa)} {date_fa[:4].translate(str.maketrans('0123456789', '۰۱۲۳۴۵۶۷۸۹'))}",
-         f"کل بازار: {fa_int(len(rows))} نماد معامله شد، از {fa_int(len({r.get('goods_name') for r in rows}))} کالا و "
-         f"{fa_int(len({r.get('producer_name') for r in rows}))} عرضه‌کننده؛ ارزش کل معاملات {toman_billion(total)}."]
-    halls = {}
-    for r in rows:
-        halls.setdefault(r.get("talar") or "نامشخص", []).append(r)
-    for h, rs in sorted(halls.items(), key=lambda x: -sum(val(r) for r in x[1])):
-        v = sum(val(r) for r in rs)
-        share = v / total * 100 if total else 0
-        share = "کمتر از ۰٫۱" if 0 < share < 0.1 else fa_num(share)
-        L.append(f"{h}: {fa_int(len(rs))} نماد، " + (f"ارزش {toman_billion(v)} ({share} درصد کل بازار)." if v else "ارزش معامله ثبت نشده."))
-    L.append("بزرگ‌ترین معامله‌ها: " + "؛ ".join(f"{name(r)}: {toman_billion(val(r))}، رقابت {fa_num(comp(r))} درصد" for r in sorted(rows, key=val, reverse=True)[:8]))
-    hot = [r for r in sorted(rows, key=comp, reverse=True) if comp(r) > 0][:5]
-    if hot:
-        L.append("بیشترین رقابت (نرخ معامله بالاتر از قیمت پایه): " + "؛ ".join(f"{name(r)}: {fa_num(comp(r))} درصد" for r in hot))
-    at_base = sum(1 for r in rows if abs(comp(r)) < 0.05)
-    more_demand = sum(1 for r in rows if (r.get("demand_qty") or 0) > (r.get("offered_qty") or 0))
-    L.append(f"{fa_int(at_base)} نماد روی قیمت پایه معامله شد؛ در {fa_int(more_demand)} نماد سفارش خریداران از عرضه بیشتر بود.")
-    ch = [r for r in rows if r.get("price_change_pct") is not None]
-    up = [r for r in sorted(ch, key=lambda r: r["price_change_pct"], reverse=True)[:4] if r["price_change_pct"] > 0]
-    down = [r for r in sorted(ch, key=lambda r: r["price_change_pct"])[:4] if r["price_change_pct"] < 0]
-    if up:
-        L.append("بیشترین افزایش نرخ نسبت به معامله‌ی قبلی همان نماد: " + "؛ ".join(f"{name(r)}: {fa_num(r['price_change_pct'])} درصد" for r in up))
-    if down:
-        L.append("بیشترین کاهش نرخ نسبت به معامله‌ی قبلی همان نماد: " + "؛ ".join(f"{name(r)}: {fa_num(abs(r['price_change_pct']))} درصد" for r in down))
-    named = sorted(rows, key=val, reverse=True)[:8] + hot + up + down
-    L.append("\nنماد هر معامله (فقط برای links؛ هرگز در متن ننویس): " +
-             "؛ ".join(f"{name(r)} = {r['symbol']}" for r in {r["symbol"]: r for r in named}.values()))
-    return "\n".join(L)
+from facts_report import val  # noqa: E402,F401 - news() ranks queries by trade value
 
 
 def news(rows, days=3):
@@ -125,7 +83,13 @@ def news(rows, days=3):
     return out[:15]
 
 
-def check(d, symbols, urls):
+def subheads(text):
+    """a sub-heading = a paragraph of one short line without final punctuation."""
+    return sum(1 for p in re.split(r"\n\s*\n", text) if p.strip() and "\n" not in p.strip() and words(p) <= 8
+               and not re.search(r"[.!؟?:،]$", p.strip()))
+
+
+def check(d, symbols, urls, tables, known):
     for k in ("title", "slug", "subtitle", "lead", "text"):
         if not isinstance(d.get(k), str) or not d[k].strip():
             raise ValueError(f"empty {k}")
@@ -148,9 +112,20 @@ def check(d, symbols, urls):
                     if isinstance(x, dict) and x.get("url") in urls and x.get("title") and x["title"] in d["text"]]
     if not d["links"]:
         raise ValueError("no trade links")
-    d["table"] = [x for x in d.get("table") or [] if isinstance(x, dict)][:8]
     d["scenarios"] = [x for x in d.get("scenarios") or [] if isinstance(x, dict)]
     probs = markers.check(d["text"], "" if HEADLINE else d["title"], d["lead"], table=False, full=True)
+    if subheads(d["text"]) < 2:
+        probs.append("دست‌کم ۲ میان‌تیتر لازم است (هر کدام یک خط کوتاه جدا، بدون نقطه)")
+    ids = d.get("table") if isinstance(d.get("table"), list) else [d.get("table")]
+    ids = list(dict.fromkeys(str(x).strip().upper() for x in ids if x))
+    if not 1 <= len(ids) <= 3 or any(x not in tables for x in ids):
+        probs.append(f"table باید فهرست ۱ تا ۳ شناسه از {', '.join(tables)} باشد")
+    else:
+        d["table"] = [tables[x] for x in ids]
+    # every number must come from the facts, the tables or the news given (the model does no arithmetic)
+    bad = sorted({n for k in ("title", "subtitle", "lead", "text") for n in w.NUM.findall(d[k]) if n not in known})
+    if bad:
+        probs.append("عدد بیرون از حقیقت‌ها: " + "، ".join(bad))
     if probs:
         raise ValueError("markers: " + " | ".join(probs))
     if HEADLINE:
@@ -184,9 +159,14 @@ def main():
     if not rows:
         return
     ctx = news(rows)
-    prompt = (f"تیتر گزارش از پیش تعیین شده: «{HEADLINE}»؛ متن را با همین تیتر هماهنگ بنویس.\n\n" if HEADLINE else "") + ("فکت‌شیت کل بازار امروز (فقط همین عددها را به کار ببر):\n" + facts(rows, date_fa) +
-              "\n\nخبرهای امروز در رسانه‌ها (فقط برای علت‌ها؛ هر کدام را استفاده کردی در sources بیاور):\n" +
-              ("\n".join(f"- {x['site']} | {x['title']} | {x['summary']} | {x['url']}" for x in ctx) or "- خبری پیدا نشد."))
+    fx, symmap, tables = facts_report.build(rows, date_fa, date, os.path.join(ROOT, "data", date, "symbols"))
+    ctx_txt = "\n".join(f"- {x['site']} | {x['title']} | {x['summary']} | {x['url']}" for x in ctx) or "- خبری پیدا نشد."
+    prompt = (f"تیتر گزارش از پیش تعیین شده: «{HEADLINE}»؛ متن را با همین تیتر هماهنگ بنویس.\n\n" if HEADLINE else "") + (
+              "حقیقت‌های کل بازار امروز (فقط از این‌ها انتخاب کن؛ عددها را عیناً بنویس):\n" + fx +
+              "\n\nنماد هر معامله (فقط برای links؛ هرگز در متن ننویس): " + symmap +
+              "\n\nجدول‌های پیشنهادی (۱ تا ۳ تا را انتخاب کن):\n" + json.dumps(tables, ensure_ascii=False) +
+              "\n\nخبرهای امروز در رسانه‌ها (فقط برای علت‌ها؛ هر کدام را استفاده کردی در sources بیاور):\n" + ctx_txt)
+    known = set(w.NUM.findall(fx + json.dumps(tables, ensure_ascii=False) + ctx_txt)) | set("۰۱۲۳۴۵۶۷۸۹0123456789")
     symbols, urls = {r["symbol"] for r in rows}, {x["url"] for x in ctx}
     w.RULES = REPORT_RULES
     w.RULES_GEMMA = REPORT_RULES.replace(w.style_for("ب"), w.compact_for("ب"))
@@ -201,13 +181,13 @@ def main():
         try:
             raw = w.retry(call, prompt)
             try:
-                d = check(json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), symbols, urls)
+                d = check(json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), symbols, urls, tables, known)
             except ValueError as e:
-                if "words" not in str(e) and "links" not in str(e):
+                if not re.search(r"words|links|markers|table", str(e)):
                     raise
                 raw = w.retry(call, prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایراد: {e}. همان گزارش را با text بین ۶۵۰ تا ۷۵۰ کلمه "
                               "در ۶ تا ۹ پاراگراف و با links برای هر معامله‌ی نام‌برده بازنویسی کن و فقط JSON برگردان.")
-                d = check(json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), symbols, urls)
+                d = check(json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), symbols, urls, tables, known)
             os.makedirs(os.path.dirname(out), exist_ok=True)
             json.dump({"date_fa": date_fa, "date": date, **d, "model": model}, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             w.save_scenarios(d["scenarios"], "report", date_fa)
