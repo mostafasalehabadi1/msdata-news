@@ -164,18 +164,12 @@ def providers():
         out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
     for m in ("dots-studio/dots-3-note-preview:free", "nvidia/nemotron-3-ultra-550b-a55b:free", "stepfun/step-3.7-flash:free"):  # Kilo gateway: no signup, 200 req/h per IP
         out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
-    if os.environ.get("BENCH_NEW"):  # candidates under test (model_bench.py), not used by the writer yet
-        for m in ("poolside/laguna-s-2.1:free", "nvidia/nemotron-3-super-120b-a12b:free", "inclusionai/ling-3.1-flash",
-                  "thinkingmachines/inkling-small:free", "kilo-auto/free", "nvidia/nemotron-3.5-lightning:free"):
-            out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
-        for m in ("Qwen3.6-27B", "Mistral-Small-3.2-24B-Instruct-2506"):
-            out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
-        if os.environ.get("LLM7_API_KEY"):
-            for m in ("DeepSeek-V4.1-Flash", "deepseek-v4-pro", "GLM-5.3-Flash", "glm-5.3", "kimi-k2.6", "kimi-k3",
-                      "mistral-large-3:675b", "llama-4-maverick", "gemma4:31b", "minimax-m3", "seed-2.0-mini", "Inkling"):
-                out.append(("llm7:" + m, lambda p, m=m: post("https://api.llm7.io/v1/chat/completions", os.environ["LLM7_API_KEY"], m, p)))
-        if os.environ.get("COHERE_API_KEY"):
-            out.append(("cohere:aya-expanse-32b", lambda p: post("https://api.cohere.ai/compatibility/v1/chat/completions", os.environ["COHERE_API_KEY"], "aya-expanse-32b", p)))
+    # added 2026-10-06 after the 20-model bench (passed or only rate-limited); LLM7 big models were paid-only (402) and dropped
+    for m in ("inclusionai/ling-3.1-flash", "kilo-auto/free", "nvidia/nemotron-3-super-120b-a12b:free", "poolside/laguna-s-2.1:free",
+              "thinkingmachines/inkling-small:free"):
+        out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
+    for m in ("Qwen3.6-27B", "Mistral-Small-3.2-24B-Instruct-2506"):
+        out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
     return out
 
 
