@@ -168,7 +168,7 @@ def providers():
     for m in ("inclusionai/ling-3.1-flash", "kilo-auto/free", "nvidia/nemotron-3-super-120b-a12b:free", "poolside/laguna-s-2.1:free",
               "thinkingmachines/inkling-small:free", "cohere/north-mini-code:free"):
         out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
-    for m in ("Qwen3.6-27B", "Mistral-Small-3.2-24B-Instruct-2506"):
+    for m in ("Qwen3.6-27B", "Mistral-Small-3.2-24B-Instruct-2506", "Qwen3-Coder-30B-A3B-Instruct"):
         out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
     if os.environ.get("BENCH_NEW"):  # 3rd batch of candidates (+ batch-2 models that hit quota), model_bench.py only
         if os.environ.get("LLM7_API_KEY"):
