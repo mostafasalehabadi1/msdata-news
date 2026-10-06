@@ -156,7 +156,7 @@ def providers():
                               ("@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/qwen/qwen2.5-coder-32b-instruct")),
                              ("NVIDIA_API_KEY","https://integrate.api.nvidia.com/v1/chat/completions", ("deepseek-ai/deepseek-v3.1", "qwen/qwen3-235b-a22b", "meta/llama-3.3-70b-instruct")),
                              ("LLM7_API_KEY", "https://api.llm7.io/v1/chat/completions", ("DeepSeek-V4-Flash-0731", "minimax-m2.7", "mistral-Nemo-Instruct-2407")),
-                             ("COHERE_API_KEY", "https://api.cohere.ai/compatibility/v1/chat/completions", ("command-a-03-2025",))):
+                             ("COHERE_API_KEY", "https://api.cohere.ai/compatibility/v1/chat/completions", ("command-a-03-2025", "command-a-reasoning-08-2025", "command-r-plus-08-2024"))):
         if os.environ.get(env):
             for m in models:
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
@@ -166,7 +166,7 @@ def providers():
         out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
     # added 2026-10-06 after the 20-model bench (passed or only rate-limited); LLM7 big models were paid-only (402) and dropped
     for m in ("inclusionai/ling-3.1-flash", "kilo-auto/free", "nvidia/nemotron-3-super-120b-a12b:free", "poolside/laguna-s-2.1:free",
-              "thinkingmachines/inkling-small:free"):
+              "thinkingmachines/inkling-small:free", "cohere/north-mini-code:free"):
         out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
     for m in ("Qwen3.6-27B", "Mistral-Small-3.2-24B-Instruct-2506"):
         out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
