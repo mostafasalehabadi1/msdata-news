@@ -6,6 +6,7 @@ build(row, history, peers, date_fa, date, ytd_value) -> (facts_text, {table_id: 
 table = {"title": str, "columns": [str], "rows": [[str]]}
 """
 import datetime as dt
+import re
 
 from factsheet import FA, fa_date, fa_int, fa_num, toman_billion, YEAR
 
@@ -61,7 +62,7 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     # history
     past = [h for h in history if h.get("trade_date") != date_fa and (h.get("traded_qty") or 0) > 0 and h.get("weighted_price")]
     if not past:
-        F.append("این نخستین معامله‌ی ثبت‌شده‌ی این نماد در داده‌ی msdata است؛ مقایسه با قبل ممکن نیست.")
+        F.append("این نخستین معامله‌ی ثبت‌شده‌ی این نماد در داده‌های موجود است؛ مقایسه با قبل ممکن نیست.")
     else:
         last = past[-1]
         lp, gap = last["weighted_price"], days_between(last["trade_date"], date_fa)
@@ -87,9 +88,9 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
             F.append(f"در {fa_int(len(past))} معامله‌ی ثبت‌شده از {fa_date(past[0]['trade_date'])}، بیشترین نرخ {fa_int(hi['weighted_price'])} ریال "
                      f"({fa_date(hi['trade_date'])}) و کمترین {fa_int(lo['weighted_price'])} ریال ({fa_date(lo['trade_date'])}) بود.")
             if trd and price > max(prices):
-                F.append(f"نرخ امروز بیشترین نرخ این نماد از {fa_date(past[0]['trade_date'])} (آغاز داده‌ی msdata) است.")
+                F.append(f"نرخ امروز بیشترین نرخ این نماد از {fa_date(past[0]['trade_date'])} (نخستین معامله‌ی موجود) است.")
             elif trd and price < min(prices):
-                F.append(f"نرخ امروز کمترین نرخ این نماد از {fa_date(past[0]['trade_date'])} (آغاز داده‌ی msdata) است.")
+                F.append(f"نرخ امروز کمترین نرخ این نماد از {fa_date(past[0]['trade_date'])} (نخستین معامله‌ی موجود) است.")
             k = past[-5:]
             avg = sum(h["weighted_price"] for h in k) / len(k)
             c = pct(price, avg) if trd else None
@@ -126,13 +127,16 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
             f"شرکت {p.get('producer_name')} با نرخ {fa_int(p['weighted_price'])} ریال" for p in others[:4]) + ".")
         if trd:
             ps = sorted(same, key=lambda p: p["weighted_price"])
-            if ps[0] is row:
+            # only a strict min/max (content agent 1405-07-14: a tie was called «ارزان‌ترین»)
+            if ps[0] is row and ps[0]["weighted_price"] < ps[1]["weighted_price"]:
                 F.append(f"شرکت {prod} ارزان‌ترین فروشنده‌ی {goods} در معاملات امروز بود.")
-            elif ps[-1] is row:
+            elif ps[-1] is row and ps[-1]["weighted_price"] > ps[-2]["weighted_price"]:
                 F.append(f"شرکت {prod} گران‌ترین فروشنده‌ی {goods} در معاملات امروز بود.")
             tot = sum(p["traded_qty"] for p in same)
             if tot:
                 F.append(f"سهم شرکت {prod} از کل {fa_num(tot)} {unit} {goods} معامله‌شده‌ی امروز {fa_num(trd / tot * 100, 0)} درصد بود.")
+    # style guide v2: no «امروز» in the facts (the model copied it 3-6 times per news); the date is in F1
+    F = [F[0]] + [re.sub(r"\bامروز\b", "این جلسه", x) for x in F[1:]]
     facts = "\n".join(f"F{i + 1}. {s}" for i, s in enumerate(F))
     return facts, tables(row, past, same if others else [], unit, goods, trd)
 

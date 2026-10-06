@@ -100,7 +100,7 @@ REPORT_ONLY = {"gemini:gemma-4-31b-it"}
 STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "kilo:dots-studio/dots-3-note-preview:free",
           "hf:deepseek-ai/DeepSeek-V3.1", "kilo:stepfun/step-3.7-flash:free"}
 # the next three by rating: write the important half too, but only when every strong model is out or a symbol waited 2h
-BACKUP = {"zai:glm-4.7-flash", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast"}
+BACKUP = {"zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast"}
 BACKUP_WAIT = 2 * 3600
 
 
@@ -150,7 +150,7 @@ def providers():
     for env, url, models in (
                              ("MISTRAL_API_KEY", MISTRAL_URL, ("mistral-large-latest", "mistral-medium-latest")),
                              ("CEREBRAS_API_KEY", "https://api.cerebras.ai/v1/chat/completions", ("qwen-3-235b-a22b-instruct-2507", "llama-3.3-70b")),
-                             ("ZAI_API_KEY", "https://api.z.ai/api/paas/v4/chat/completions", ("glm-4.7-flash", "glm-4.5-flash")),
+                             ("ZAI_API_KEY", "https://api.z.ai/api/paas/v4/chat/completions", ("glm-4.5-flash",)),
                              ("HF_TOKEN", "https://router.huggingface.co/v1/chat/completions", ("deepseek-ai/DeepSeek-V3.1", "Qwen/Qwen3-235B-A22B-Instruct-2507")),
                              ("CF_API_TOKEN", f"https://api.cloudflare.com/client/v4/accounts/{os.environ.get('CF_ACCOUNT_ID', '')}/ai/v1/chat/completions",
                               ("@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/qwen/qwen2.5-coder-32b-instruct")),
@@ -264,10 +264,16 @@ def retry(call, prompt):
 
 # clichés the code fixes by itself (no rewrite needed); the rest of BANNED sends the text back to the model
 FIXES = [(re.compile(r"^به گزارش [^،,]{0,40}(?:ام[‌ ]?اس[‌ ]?دیتا|msdata)[^،,]{0,10}[،,]\s*"), ""),
-         (re.compile(r"به شمار می[‌ ]?رود|محسوب می[‌ ]?شود"), "است"), (re.compile(r"به ثبت رسید|رقم خورد"), "ثبت شد"),
-         (re.compile(r"بالغ شد"), "رسید"), (re.compile(r"شایان ذکر است(?: که)?\s*"), ""), (re.compile(r"در این میان،?\s*"), "")]
+         (re.compile(r"به شمار می[‌ ]?رود|محسوب می[‌ ]?شود"), "است"), (re.compile(r"به ثبت رسید|رقم خورد"), "رسید"),
+         (re.compile(r"بالغ شد"), "رسید"), (re.compile(r"شایان ذکر است(?: که)?\s*"), ""), (re.compile(r"در این میان،?\s*"), ""),
+         # content agent 1405-07-14: «۱ هزار و» -> «هزار و»; a lone «عرض/العرض» is always a typo of «عرضه» in commodity news
+         (re.compile(r"(?<![0-9۰-۹٫.])[1۱] هزار"), "هزار"), (re.compile(r"(?<![\w‌])(?:ال)?عرض(?![\w‌])"), "عرضه")]
 BANNED = re.compile(r"به گزارش|بررسی (?:داده|آمار)\S* نشان|نشان[‌ ]?دهنده|حاکی از|بیانگر|؛ رقمی که|این در حالی است|به خود اختصاص|"
-                    r"در مجموع|روی میز|رکورد تاریخی|سقف تاریخی|فصل ساخت|منتظر|انتظار می‌رود|احتمالاً|شاید|[?؟]\s*$")
+                    r"در مجموع|روی میز|رکورد|تاریخی|فصل ساخت|منتظر|انتظار می‌رود|احتمالاً|شاید|[?؟]\s*$|"
+                    r"ms ?d\w*ata|ام[‌ ]?اس[‌ ]?دیتا", re.I)
+# style guide v2 items that every model still breaks often (1405-07-14: 0 of 131 news passed them) -> logged, not rejected yet;
+# promoted to BANNED/probs once the new facts and prompt bring them down
+SOFT = re.compile(r"ثبت شد|به ثبت رساند|در حالی که")
 NUM = re.compile(r"[0-9۰-۹]+(?:[٫.][0-9۰-۹]+)?")
 
 
@@ -307,8 +313,21 @@ def parse(raw, facts="", tables=None):
         bad = sorted({n for k in ("title", "subtitle", "lead", "text") for n in NUM.findall(d[k]) if fa(n) not in known})
         if bad:
             probs.append("عدد بیرون از حقیقت‌ها: " + "، ".join(bad))
-    if d["lead"] in d["text"]:
+    first = re.split(r"(?<=[.!؟])\s", d["text"].strip(), 1)[0]
+    if d["lead"] in d["text"] or d["lead"][:40] == first[:40]:
         probs.append("لید عیناً در متن تکرار شده")
+    # content agent checks (style guide v2, 1405-07-14)
+    soft = [x.group(0) for k in ("title", "lead", "text") for x in SOFT.finditer(d[k])]
+    if len(re.findall(r"امروز", d["title"] + d["lead"] + d["text"])) > 2:
+        soft.append("امروز>2")
+    if re.search(r"[A-Za-z]{2,}[-0-9]|[A-Za-z][0-9]|[0-9][A-Za-z]", d["title"] + " " + d["lead"] + " " + d["text"]):
+        probs.append("کد کالا یا حروف لاتین وسط متن")
+    if len(d["lead"].split()) > 35 or len(NUM.findall(d["lead"])) > 1:
+        soft.append("lead>35w/1num")
+    if len(NUM.findall(d["text"])) > 8:
+        soft.append(f"text {len(NUM.findall(d['text']))} nums")
+    if soft:
+        note("style-soft: " + ", ".join(soft))
     if probs:
         raise ValueError("markers: " + " | ".join(probs))
     d["slug"] = SLUG_BAD.sub("-", d["slug"].strip())
