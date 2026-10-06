@@ -3,150 +3,68 @@
  "prompt": "فکت‌شیت (فقط همین عددها را به کار ببر):\nکالا: سیمان پرتلند نوع 5 رده 42/5-فله | تولیدکننده: سیمان خوزستان | تالار سیمان\nتاریخ امروز: ۱۴ مهر ۱۴۰۵\nعرضه: ۲ هزار و ۷۹۰ تن | سفارش خریداران: ۲ هزار و ۳۱۰ تن | معامله‌شده: ۲ هزار و ۳۱۰ تن\nنرخ میانگین معامله: ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم | قیمت پایه: ۳۰ هزار و ۹۰۵ ریال\nفاصله‌ی نرخ معامله از قیمت پایه (درصد رقابت): ۰ درصد\nارزش معامله: ۷٫۱ میلیارد تومان\nسفارش خریداران نسبت به عرضه: ۸۳ درصد\nآخرین معامله‌ی قبلی: ۷ مهر، نرخ ۳۰ هزار و ۳۶۸ ریال، ۳ هزار و ۸۳۰ تن؛ تغییر نرخ امروز نسبت به آن: ۱٫۸ درصد\nدر ۳۹ معامله‌ی قبلی موجود (از ۲۸ بهمن ۱۴۰۴): بیشترین نرخ ۳۰ هزار و ۳۶۸ ریال در ۷ مهر، کمترین ۲۰ هزار و ۱۴۵ ریال در ۲۴ اسفند ۱۴۰۴\nنرخ امروز بالاترین نرخ در کل تاریخچه‌ی موجود است.\nروند نرخ چند معامله‌ی اخیر: ۲۸ شهریور: ۲۸ هزار و ۲۶۸، ۳۱ شهریور: ۲۹ هزار و ۷۱۱، ۱ مهر: ۲۹ هزار و ۷۱۱، ۴ مهر: ۲۹ هزار و ۷۱۱، ۷ مهر: ۳۰ هزار و ۳۶۸\nتولیدکننده‌های دیگر همین کالا امروز: سیمان کارون: ۳۰ هزار و ۹۰۵ ریال، ۲۰۰ تن؛ سیمان غرب: ۳۰ هزار و ۹۰۵ ریال، ۱۸۰ تن؛ سیمان ایلام: ۳۰ هزار و ۹۰۵ ریال، ۵۰ تن؛ سیمان مدلل (صنایع سیمان سامان غرب): ۳۰ هزار و ۹۰۵ ریال، ۴۵۰ تن",
  "results": [
   {
-   "model": "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (6098be23-434f-48b5-ad15-0032ed7c06b9)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
-  },
-  {
-   "model": "cf:@cf/qwen/qwen2.5-coder-32b-instruct",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (80456d5b-7d0f-4a80-bd81-572d076c30e1)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
-  },
-  {
-   "model": "llm7:grok-4.5",
-   "error": "ValueError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
-   "seconds": 1
-  },
-  {
-   "model": "llm7:grok-4.6",
-   "error": "ValueError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
-   "seconds": 1
-  },
-  {
-   "model": "llm7:gpt-5.6-sol",
-   "error": "ValueError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
-   "seconds": 1
-  },
-  {
-   "model": "llm7:gpt-5.6-terra",
-   "error": "ValueError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
-   "seconds": 1
-  },
-  {
-   "model": "llm7:gpt-6-astra",
-   "error": "ValueError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
-   "seconds": 1
-  },
-  {
-   "model": "llm7:gpt-6-sol",
-   "error": "ValueError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
-   "seconds": 1
-  },
-  {
-   "model": "llm7:gpt-6.1-sol",
-   "error": "ValueError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
-   "seconds": 1
-  },
-  {
-   "model": "llm7:chroma-v.46-flash",
-   "error": "ValueError: HTTP 400: {\"error\":{\"message\":\"Model 'chroma-v.46-flash' does not support chat endpoints.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"unsupported_model_feature\"}}",
-   "seconds": 1
-  },
-  {
-   "model": "llm7:jev-latest",
-   "error": "ValueError: HTTP 400: {\"error\":{\"message\":\"Model 'jev-latest' does not support chat endpoints.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"unsupported_model_feature\"}}",
-   "seconds": 1
-  },
-  {
-   "model": "llm7:Voxtral-Small-24B-2507",
-   "error": "ValueError: HTTP 400: {\"error\":{\"message\":\"Model 'Voxtral-Small-24B-2507' does not support this endpoint.\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"unsupported_model_feature\"}}",
-   "seconds": 1
-  },
-  {
    "model": "llm7:codestral-latest",
-   "error": "ValueError: HTTP 429: {\"error\":{\"message\":\"Daily token quota exceeded. Retry after 12169 seconds.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"quota_exceeded\",\"retry_after\":12169}}",
+   "error": "ValueError: HTTP 429: {\"error\":{\"message\":\"Daily token quota exceeded. Retry after 9945 seconds.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"quota_exceeded\",\"retry_after\":9945}}",
    "seconds": 1
-  },
-  {
-   "model": "cf:@cf/zai-org/glm-5.2",
-   "error": "ValueError: HTTP 403: {\"errors\":[{\"message\":\"AiError: Model @cf/zai-org/glm-5.2 is not available on the Workers Free plan: Model @cf/zai-org/glm-5.2 is not available on the Workers Free plan. Upgrade to access this model: https://dash.cloudflare.com/?to=/:account/workers/plans (a5153043-fd70-4207-8a74-0aae16839",
-   "seconds": 0
-  },
-  {
-   "model": "cf:@cf/moonshotai/kimi-k2.7-code",
-   "error": "ValueError: HTTP 403: {\"errors\":[{\"message\":\"AiError: Model @cf/moonshotai/kimi-k2.7-code is not available on the Workers Free plan: Model @cf/moonshotai/kimi-k2.7-code is not available on the Workers Free plan. Upgrade to access this model: https://dash.cloudflare.com/?to=/:account/workers/plans (1cd0cd2f-48f7",
-   "seconds": 0
-  },
-  {
-   "model": "cf:@cf/cloudflare/clef",
-   "error": "ValueError: HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'model,state,questions' (40326a09-2242-4bbb-af01-61d5b245319d)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
-  },
-  {
-   "model": "cf:@cf/cloudflare/clef-flash",
-   "error": "ValueError: HTTP 400: {\"errors\":[{\"message\":\"AiError: Bad input: Error: required properties at '/' are 'model,state,questions' (f0ca6689-a464-499d-a201-c2807d86753f)\",\"code\":5006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
-  },
-  {
-   "model": "cf:@cf/swiss-ai/apertus-v1.5-8b",
-   "error": "ValueError: HTTP 403: {\"errors\":[{\"message\":\"AiError: Ai: This account is not allowed to access @cf/swiss-ai/apertus-v1.5-8b. (5c15ea1a-1bc5-4697-83a3-6132da235711)\",\"code\":5018}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
   },
   {
    "model": "cf:@cf/utter-project/eurollm-9b-it",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2b66d7d8-85ff-4068-9cfc-37ee8efeb28b)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
+   "error": "ValueError: HTTP 400: {\"errors\":[{\"message\":\"AiError: AiError: AI model does not have config (72e65c50-5acc-4eef-8eb3-cb05ea4fa9e5)\",\"code\":4003}],\"success\":false,\"result\":{},\"messages\":[]}",
    "seconds": 0
   },
   {
    "model": "cf:@cf/aisingapore/gemma-sea-lion-v4-27b-it",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (47f9d03e-161f-4fad-9c92-0de353ec8dce)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
+   "raw": "```json\n{\n  \"title\": \"سیمان خوزستان؛ ثبت رکورد قیمت در بورس کالا - ۱۴ مهر\",\n  \"slug\": \"siman-khozestan-rekord-ghimat-bors-kala\",\n  \"subtitle\": \"معامله‌ی امروز سیمان پرتلند نوع 5 خوزستان با قیمت ۳۰٫۹۰۵ ریال، بالاترین نرخ ثبت‌شده در تاریخ معاملات این کالا بود.\",\n  \"lead\": \"تالار سیمان شاهد ثبت رکورد قیمت برای سیمان پرتلند نوع 5 رده 42/5-فله تولیدی سیمان خوزستان بود؛ این کالا با نرخ ۳۰٫۹۰۵ ریال هر کیلوگرم معامله شد.\",\n  \"text\": \"امروز ۱۴ مهر ۱۴۰۵، کل ۲ هزار و ۳۱۰ تن از سیمان پرتلند نوع 5 رده 42/5-فله شرکت سیمان خوزستان در تالار سیمان بورس کالا معامله شد.  سفارش خریداران برای این کالا ۲ هزار و ۳۱۰ تن بود که معادل ۸۳ درصد عرضه‌ی ۲ هزار و ۷۹۰ تنی آن است.  نرخ میانگین معامله‌ی امروز برای سیمان خوزستان ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم ثبت شد. این نرخ، دقیقاً برابر با قیمت پایه بود و تغییری نسبت به قیمت پایه نداشت. \\n\\nمعامله‌ی امروز در ۳۹ معامله انجام شد و ارزش کل این معاملات به ۷٫۱ میلیارد تومان رسید.  آخرین معامله‌ی قبلی این کالا ۷ مهر با نرخ ۳۰ هزار و ۳۶۸ ریال و حجم ۳ هزار و ۸۳۰ تن انجام شده بود؛ بنابراین نرخ امروز ۱٫۸ درصد افزایش یافته است.  این در حالی است که بیشترین نرخ ثبت‌شده قبلی برای سیمان خوزستان، ۳۰ هزار و ۳۶۸ ریال در ۷ مهر بوده است. \\n\\nشرکت‌های سیمان کارون، غرب، ایلام و مدلل (صنایع سیمان سامان غرب) نیز امروز سیمان پرتلند نوع 5 رده 42/5-فله را به قیمت ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم به ترتیب به میزان ۲۰۰، ۱۸۰، ۵۰ و ۴۵۰ تن عرضه کردند.\",\n  \"table\": \"T1\"\n}\n```",
+   "parse_error": "markers: «این در حالی است» در text",
+   "seconds": 9
   },
   {
    "model": "cf:@cf/ibm-granite/granite-4.0-h-micro",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2667bfe2-f77b-4550-b8b3-405cf6480eee)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
+   "raw": "{\n  \"title\": \"سیمان پرتلند نوع 5 رده 42/5-فله: معاملات ۲۰۳۰ هزار تن با قیمت میانگین ۳۰ هزار و ۹۰۵ ریال\",\n  \"slug\": \"siman-pertland-navar-5-rd-42-5-falah-momelas-2030-tan-ba-qeime-mianeg-30-hesar-var-qeime-mianeg-30-hesar-var-raqabat\",\n  \"subtitle\": \"تالار سیمان: عرضه ۲۰۷۹۰ تن، سفارش خریداران ۲۰۳۱۰ تن و فاصله نرخ صفر درصدی\",\n  \"lead\": \"سیمان پرتلند نوع 5 رده 42/5-فله در تالار سیمان با معاملات ۲۰۳۰ هزار تن با قیمت میانگین ۳۰ هزار و ۹۰۵ ریال فروخته شد، که سفارش خریداران ۸۳ درصد عرضه را نشان می‌دهد.\",\n  \"text\": \"در روز ۱۴ مهر ۱۴۰۵، سیمان پرتلند نوع 5 رده 42/5-فله در تالار سیمان با عرضه ۲ هزار و ۷۹۰ تن موجود، با سفارش خریداران ۲ هزار و ۳۱۰ تن و معامله‌شده ۲ هزار و ۳۱۰ تن با نرخ میانگین قابل توجه ۳۰ هزار و ۹۰۵ ریال فروخته شد. این معامله‌ها رقم زیادی نسبت به معاملات قبلی، که ۳ هزار و ۸۳۰ تن در ۷ مهر بودند، را نشان می‌دهد و نرخ امروز نسبت به آخرین معامله قبلی (۷ مهر با ۳۰ هزار و ۳۶۸ ریال) ۱٫۸ درصد افزایش یافت.\\n\\nتولیدکننده‌های دیگر این نوع سیمان نیز در این روز فروش را انجام دادند، از جمله سیمان کارون با ۳۰ هزار و ۹۰۵ ریال و ۲۰۰ تن، سیمان غرب با ۳۰ هزار و ۹۰۵ ریال و ۱۸۰ تن، سیمان ایلام با ۳۰ هزار و ۹۰۵ ریال و ۵۰ تن و سیمان مدلل با ۳۰ هزار و ۹۰۵ ریال و ۴۵۰ تن. این مقایسه نشان‌دهنده تنوع سازماندهی تولید و معامله این کالا در بازار است.\\n\\nدر ۳۹ معامله قبلی از ۲۸ بهمن ۱۴۰۴، نرخ امروز ۳۰ هزار و ۹۰۵ ریال بالاترین نرخ در تاریخچه موجود است و نرخ کمترین ۲۰ هزار و ۱۴۵ ریال در ۲۴ اسفند ۱۴۰۴ را کشف نکرده است. این روند کنتینویوس نرخ افزایش را برای مالکان و بازار نمایان می‌سازد.\\n\\nمعاملات اخیر نمایانگر تغییر مستمر قیمت هستند، از ۲۸ شهریور با ۲۸ هزار و ۲۶۸ تا ۷ مهر با ۳۰ هزار و ۳۶۸ ریال. این رشد نشان می‌دهد که بازار به تولیدکننده‌های قدرتمندی مانند سیمان کارون و سیمان غرب وابدار است و احتمال رشد قیمت در آینده وجود دارد.\\n\\nدر نتیجه، سیمان پرتلند نوع 5 رده 42/5-فله در تالار سیمان با معاملات قابل تقدیر ۲۰۳۰ هزار تن و قیمت میانگین ۳۰ هزار و ۹۰۵ ریال، با ۸۳ درصد سفارش خریداران نسبت به عرضه، نشانه‌ای از رشد و پیشرفت در بازار کالاهای سیمان است. این اطلاعات به مالکان و بازار نکات مهمی برای تصمیم‌گیری و رشد اقتصادی فراهم می‌کند.\",\n  \"table\": \"T2\"\n}",
+   "parse_error": "320 words / 5 paragraphs",
+   "seconds": 41
   },
   {
    "model": "cf:@cf/meta/llama-3.1-8b-instruct-fp8",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5b244bfd-2348-47d6-bc73-4b0b000ec88d)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
+   "raw": "```json\n{\n  \"title\": \"سیمان پرتلند نوع 5 رده 42/5-فله؛ قیمت امروز 30 هزار و 905 ریال هر کیلوگرم\",\n  \"slug\": \"سیمان-پرتلند-نوع-5-رده-42/5-فله-۱۴۰۵-۱۴-مهر\",\n  \"subtitle\": \"معامله 2 هزار و 310 تن در تالار سیمان\",\n  \"lead\": \"سیمان پرتلند نوع 5 رده 42/5-فله امروز در تالار سیمان با نرخ 30 هزار و 905 ریال هر کیلوگرم معامله شد.\",\n  \"text\": \"معامله امروز سیمان پرتلند نوع 5 رده 42/5-فله در تالار سیمان در 2350 معامله‌ای و ارزش 7.1 میلیارد تومانی با نرخ 30 هزار و 905 ریال هر کیلوگرم انجام شد. این معامله به سفارش 2310 تن خریدار انجام شد. در این معامله 2590 تن از 2790 تن عرضه معامله شد. سفارش خریداران نسبت به عرضه 83 درصد بود. این قیمت بالاترین نرخ در تاریخچه معاملات این کالاست.\",\n  \"table\": \"T1\"\n}\n```",
+   "parse_error": "67 words / 1 paragraphs",
+   "seconds": 15
   },
   {
    "model": "cf:@cf/meta/llama-3.2-3b-instruct",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (67353ee6-e9c0-498c-85bb-47c78b18c891)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
+   "raw": "```json\n{\n  \"title\": \"سیمان پرتلند نوع ۵ رده ۴۲/۵-فله در تالار سیمان\",\n  \"slug\": \"~سیمان-پرتلند--type-5-42-5-فله~\",\n  \"subtitle\": \"عرضه و معامله‌ی سیمان پرتلند نوع ۵ رده ۴۲/۵-فله در تالار سیمان\",\n  \"lead\": \"سیمان پرتلند نوع ۵ رده ۴۲/۵-فله در تالار سیمان امروز معامله‌ی ۲ هزار و ۳۱۰ تن را با نرخ ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم انجام داد.\",\n  \"text\": \"عرضه: ۲ هزار و ۷۹۰ تن، سفارش خریداران: ۲ هزار و ۳۱۰ تن، معامله‌شده: ۲ هزار و ۳۱۰ تن. نرخ میانگین معامله: ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم. قیمت پایه: ۳۰ هزار و ۹۰۵ ریال. فاصله‌ی نرخ معامله از قیمت پایه (درصد رقابت): ۰ درصد. ارزش معامله: ۷٫۱ میلیارد تومان. سفارش خریداران نسبت به عرضه: ۸۳ درصد.آخرین معامله‌ی قبلی: ۷ مهر، نرخ ۳۰ هزار و ۳۶۸ ریال، ۳ هزار و ۸۳۰ تن؛ تغییر نرخ امروز نسبت به آن: ۱٫۸ درصد.روند نرخ چند معامله‌ی اخیر: ۲۸ شهریور: ۲۸ هزار و ۲۶۸، ۳۱ شهریور: ۲۹ هزار و ۷۱۱، ۱ مهر: ۲۹ هزار و ۷۱۱، ۴ مهر: ۲۹ هزار و ۷۱۱، ۷ مهر: ۳۰ هزار و ۳۶۸.\",\n  \"table\": \"T2\"\n}\n```",
+   "parse_error": "115 words / 1 paragraphs",
+   "seconds": 3
   },
   {
    "model": "cf:@cf/meta/llama-4-scout-17b-16e-instruct",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (196ef6a5-9fe3-4c62-8bf5-ef8dfc9a8969)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
+   "raw": "```json\n{\n    \"title\": \"سیمان پرتلند نوع 5 رده 42/5-فله سیمان خوزستان؛ 30905 ریال\",\n    \"slug\": \"سیمان-پرتلند-نوع-5-رده-425-فله-سیمان-خوزستان\",\n    \"subtitle\": \"همه 2310 تن سیمان پرتلند نوع 5 رده 42/5-فله سیمان خوزستان معامله شد\",\n    \"lead\": \"در معاملات امروز تالار سیمان بورس کالا، 2310 تن سیمان پرتلند نوع 5 رده 42/5-فله تولید شرکت سیمان خوزستان با نرخ 30905 ریال معامله شد.\",\n    \"text\": \"تولید 2310 تن سیمان پرتلند نوع 5 رده 42/5-فله در تالار سیمان بورس کالا با تقاضای 2310 تنی مواجه شد و تمام عرضه به فروش رفت. نرخ معامله این کالا 30905 ریال بود که نسبت به قیمت پایه بدون تغییر بود. ارزش معاملات این کالا 7.1 میلیارد تومان بود. سفارش خریداران نسبت به عرضه 83 درصد بود.\\n\\nنرخ امروز 1.8 درصد بالاتر از معامله قبلی آن در 7 مهر بود. نرخ امروز بالاترین نرخ در کل تاریخچه موجود است.\",\n    \"table\": \"T1\"\n}\n```",
+   "parse_error": "79 words / 2 paragraphs",
+   "seconds": 7
   },
   {
    "model": "cf:@cf/mistralai/mistral-small-3.1-24b-instruct",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (837630ba-c479-415b-a0cc-2abbfeecca9f)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
+   "raw": "```json\n{\n  \"title\": \"سیمان پرتلند ۵؛ سیمان خوزستان با افزایش ۱٫۸ درصدی\",\n  \"slug\": \"سیمان-پرتلند-۵-سیمان-خوزستان-از-۳۰-هزار-۹۰۵-ریال-به-فروش-رفت\",\n  \"subtitle\": \"کالا با تقاضای ۸۳ درصدی عرضه به فروش رفت\",\n  \"lead\": \"سیمان پرتلند نوع ۵ رده ۴۲/۵-فله نورد سیمان خوزستان با تقاضای ۸۳ درصدی عرضه به فروش رفت.\",\n  \"text\": \"سیمان پرتلند نوع ۵ رده ۴۲/۵-فله نورد سیمان خوزستان در تالار سیمان با تقاضای ۸۳ درصدی عرضه به فروش رفت. سفارش خریداران برابر معامله‌شده بود و کل عرضه به فروش رفت. نرخ میانگین معامله ۳۰ هزار و ۹۰۵ ریال به ازای هر کیلوگرم بود و به این ترتیب با تغییر ۱٫۸ درصدی نسبت به آخرین معامله‌ی قبلی، بالاترین نرخ در کل تاریخچه‌ی معامله‌های موجود بود. ارزش معامله ۷٫۱ میلیارد تومان بود. \\n\\n نرخ معامله امروز با تغییر ۱٫۸ درصدی نسبت به آخرین معامله، برابر با ۳۰ هزار و ۹۰۵ ریال بود. این نرخ بالاترین نرخ در کل تاریخچه‌ی معامله‌های موجود بود. در حالی که در ۳۹ معامله‌ی قبلی، بیشترین نرخ ۳۰ هزار و ۳۶۸ ریال در ۷ مهر و کمترین ۲۰ هزار و ۱۴۵ ریال در ۲۴ اسفند ۱۴۰۴ بود.\",\n  \"table\": \"T1\"\n}\n```",
+   "parse_error": "129 words / 2 paragraphs",
+   "seconds": 12
   },
   {
    "model": "cf:@cf/qwen/qwq-32b",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (802c1fe7-8677-41da-8915-4bedba7e7292)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
+   "raw": "Alright, let's tackle this query. The user wants me to write a news article in Persian for a commodity market symbol using the provided factsheet. First, I need to parse all the given data and make sure I understand each fact.\n\nStarting with the commodity details: it's \"سیمان پرتلند نوع 5 رده 42/5-فله\" from producer \"سیمان خوزستان\" in the Cement Exchange. The date is 14 Mehr 1405. The offer is 2,790 tons, but the buyers ordered 2,310 tons, so all the transactions were 2,310 tons. The average price is 30,905 Rials per kilogram, which matches the base price, so the competition rate is 0%. The total value is 7.1 billion Toman. Buyer orders were 83% of the offer.\n\nThe last transaction before was on 7 Mehr at 30,368 Rials with 3,830 tons. Today's price is 1.8% higher than that. Looking at the past 39 transactions, the highest was the same as today's, but the lowest was 20,145 on 24 Esfand 1404. So today's price is the highest ever recorded. The recent trend shows prices going up over the past few transactions.\n\nOther producers like سیمان کارون, غرب, ایلام, and مدلل all have the same price but lower volumes. \n\nNow, the user's instructions are detailed. The key points are to select 4-7 facts, avoid any analysis, just report. The angle should highlight the highest price record. Need to use the correct table, probably T1 or T2. Let me check the tables provided in the instructions. Since the main point is the record high price, maybe T1 which lists highest and lowest prices.\n\nTitle needs to be around 10 words, include product and producer, maybe a semicolon. The subtitle should have fresh info, not repeating the title. The lead is a concise summary. The text should be 140-200 words, 2-3 paragraphs. Avoid clichés and follow the grammar rules like not starting sentences with numbers, proper terms, etc.\n\nLet me structure the title first. Maybe \"سیمان خوزستان با قیمت رکورددوست دهم هزار و نهصد و پنج ریال فروش داد\" with a subtitle about the highest price ever. \n\nIn the lead, start with the key fact: the price hit a record high. Mention the exact number, the base price matching, and the competition at 0%. Then in the text, elaborate on the transaction details, the comparison with previous prices, and the other producers' prices.\n\nCheck the tables. Since the highest price is a key point, T1 which shows highest and lowest would be appropriate. \n\nNeed to ensure not to mention any reasons or predictions, just the facts. Also, make sure numbers are in Persian and follow all the formatting rules. Avoid any prohibited phrases. \n\nPutting it all together, making sure each part adheres to the guidelines. Double-check the factsheet to ensure all selected points are accurate and within the given data. Make sure the slug is correctly formatted with Persian hyphens. Finally, present everything in JSON as specified.\n</think>\n\n```json\n{\n  \"title\": \"سیمان خوزستان با قیمت رکورد ۳۰٬۹۰۵ ریال فروش داد\",\n  \"slug\": \"سيمان-خوزستان-با-قيمت-رکورد-۳۰٬۹۰۵-ريال-فروش-داد\",\n  \"subtitle\": \"اولین بار در تاریخچه‌ی ۳۹ معامله‌ی قبلی، نرخ بالاتر از ۳۰ هزار ریال رسید\",\n  \"lead\": \"سیمان پرتلند نوع ۵ تولید شرکت سیمان خوزستان در تالار سیمان با قیمت میانگین ۳۰٬۹۰۵ ریال در کیلوگرم فروش گردید، رقمی که بهترین قیمت تاریخچه‌ی این کالا را شکست.\",\n  \"text\": \"سیمان پرتلند نوع ۵ شرکت سیمان خوزستان در معاملات ۱۴ مهر ۱۴۰۵ با نرخ میانگین ۳۰٬۹۰۵ ریال در کیلوگرم فروش یافت. این نرخ هم‌ارز قیمت پایه‌ی کالا است و باعث صفر درصد رقابت نرخ شد. در حالی که عرضه ۲٬۷۹۰ تن بود، خریداران تنها ۲٬۳۱۰ تن سفارش داده و تمام معاملات در این میزان صورت گرفت. ارزش کل معاملات با این نرخ به ۷٫۱ میلیارد تومان رسید. \\n\\nاین قیمت بالاترین رقم در ۳۹ معامله‌ی قبلی (از ۲۸ بهمن ۱۴۰۴) است و ۱٫۸ درصد افزایشی نسبت به آخرین معامله‌ی ۷ مهر (۳۰٬۳۶۸ ریال) دارد. تولیدکنندگان دیگر سیمان همچون کارون، غرب، ایلام و مدلل نیز امروز با همان نرخ ۳۰٬۹۰۵ ریال فروش دادند اما حجم معاملاتشان از سیمان خوزستان کمتر بود.\",\n  \"table\": \"T1\"\n}\n```",
+   "parse_error": "119 words / 2 paragraphs",
+   "seconds": 43
   },
   {
    "model": "cf:@cf/qwen/qwen3-30b-a3b-fp8",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d5398afe-b1b0-4d16-8e53-06332318c000)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
+   "raw": "\n\n{\n  \"title\": \"سیمان پرتلند نوع 5 رده 42/5-فله؛ ۳۰ هزار و ۹۰۵ ریال\",\n  \"slug\": \"سيمن-پرتلند-نوع-5-رده-42-5-فله-۳۰-هزار-و-۹۰۵-ريال\",\n  \"subtitle\": \"نرخ معاملاتی با حداکثر تاریخچه مواجه شد\",\n  \"lead\": \"سیمان پرتلند نوع 5 رده 42/5-فله در تالار سیمان با نرخ ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم به بالاترین سطح تاریخی خود رسید\",\n  \"text\": \"نرخ معاملاتی سیمان پرتلند نوع 5 رده 42/5-فله ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم بود و فاصله‌ی آن از قیمت پایه ۰ درصد بود. سفارش خریداران ۲ هزار و ۳۱۰ تن بود و این عدد ۸۳ درصد عرضه بود. ارزش معامله ۷٫۱ میلیارد تومان شد.\\n\\nتغییر نرخ امروز نسبت به آخرین معامله‌ی قبلی ۱٫۸ درصد بود. نرخ امروز بالاترین نرخ در کل تاریخچه‌ی موجود است. تولیدکنندگان دیگری مانند سیمان کارون، غرب، ایلام و مدلل نیز با قیمت ۳۰ هزار و ۹۰۵ ریال به فروش رسیدند.\",\n  \"table\": \"T2\"\n}",
+   "parse_error": "86 words / 2 paragraphs",
+   "seconds": 12
   },
   {
    "model": "cf:@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
-   "error": "ValueError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5eae8e99-65a6-4b37-abad-8deb74658ea6)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
-   "seconds": 0
-  },
-  {
-   "model": "ovh:Qwen3-Coder-30B-A3B-Instruct",
-   "raw": "{\n  \"title\": \"سیمان خوزستان؛ رکورد نرخ معامله\",\n  \"slug\": \"سيمان-خوزستان-رکورد-نرخ-معامله\",\n  \"subtitle\": \"نرخ معامله امروز بالاترین رقم در تاریخچه است\",\n  \"lead\": \"نماد سیمان پرتلند نوع 5 رده 42/5-فله شرکت سیمان خوزستان در تالار سیمان با رکورد نرخ معامله امروز ۳۰ هزار و ۹۰۵ ریال به فروش رسید.\",\n  \"text\": \"تقاضا ۱٫۵ برابر عرضه بود و تمام عرضه به فروش رفت. نرخ معامله امروز ۳۰ هزار و ۹۰۵ ریال بود که بالاترین رقم در کل تاریخچه نماد است. سفارش خریداران ۲ هزار و ۳۱۰ تن بود که ۸۳ درصد عرضه است.\\n\\nدر ۳۹ معامله‌ی قبلی بیشترین نرخ ۳۰ هزار و ۳۶۸ ریال در ۷ مهر بود. کمترین نرخ ۲۰ هزار و ۱۴۵ ریال در ۲۴ اسفند ۱۴۰۴ بود. نرخ معامله امروز ۱٫۸ درصد بیشتر از معامله قبلی است.\\n\\nسایر تولیدکنندگان همین کالا در این روز با قیمت ۳۰ هزار و ۹۰۵ ریال معامله کردند. سیمان کارون ۲۰۰ تن، سیمان غرب ۱۸۰ تن، سیمان ایلام ۵۰ تن و سیمان مدلل ۴۵۰ تن فروختند. آخرین معامله قبلی ۷ مهر بود و نرخ آن ۳۰ هزار و ۳۶۸ ریال بود.\",\n  \"table\": \"T2\"\n}",
-   "parse_error": "127 words / 3 paragraphs",
-   "seconds": 43
+   "raw": "<think>\nخب، من باید یک خبر فارسی برای نماد سیمان خوزستان در بورس کالا نگارش کنم. اول، باید تمامی فکت شیت را دقیق بخونم و بهتر فهمیدم. فکت شیت شامل اطلاعاتی مانند کالا، تولیدکننده، تارikh امروز، عرضه، سفارش خریداران، معامله شده، نرخ میانگین، قیمت پایه، فاصله نرخ از قیمت پایه، ارزش معامله، سفارش خریداران نسبت به عرضه، آخرین معامله قبلی و تغییر نرخ، بیشترین و کمترین نرخ در ۳۹ معامله قبلی، روند نرخ چند معامله اخیر، و تولیدکنندگان دیگر همین کالا امروز است.\n\nاول، باید به دقت تمامی این اطلاعات را بررسی کنم تا بفهمم که چه اطلاعات خبریترند. به نظر میرسد که افزایش نرخ سیمان خوزستان به بالاترین نرخ در تاریخچه آن یک واقعیت خبری قوی است. همچنین، این کالا به عرضه خودش ۸۳ درصد فروخته شده است که نشاندهنده Demand بالا است. همچنین، همه تولیدکنندگان دیگر همین کالا هم یک نرخ مشابه داشتهاند.\n\nحالا باید این اطلاعات را به خبر تبدیل کنم. برای ساخت عنوان، باید نام کالا و تولیدکننده را درج کنم. عنوان میتواند \"سیمان خوزستان به بالاترین قیمت رکورد خود رسید\" باشد. سگل فارسی با خط تیره خواهد بود: \"سيمان-خوزستان-به-بالاترين-قيمت-رکورد-خود-رسيد\".\n\nزیرعنوان باید اطلاعات تازه را شامل کند، مثلاً \"قیمت امروزی ۳۰ هزار و ۹۰۵ ریال به ۱٫۸ درصد افزایش پرداخته است.\"\n\nلید باید یک جمله ۲۰ تا ۴۰ کلمه باشد که کل خبر را میگوید. مثلاً \"سیمان خوزستان در بورس کالا امروز به بالاترین قیمت خود در تاریخچه رسید و با ۸۳ درصد از عرضه خودش معامله شد.\"\n\nمتن خبر باید ۱۴۰ تا ۲۰۰ کلمه باشد و به دو یا سه پاراگراف تقسیم شود. باید از جملههای کوتاه و ساده استفاده کنم و از اصطلاحات محاورهای استفاده نکنم. همچنین باید از جدول T2 استفاده کنم که به جزئیات معاملات پرداخته است.\n\nدر نهایت، باید مطمئن شوم که هیچ کلیشههای ممنوع را استفاده نکردهام و همه موارد را به دقت پوشش دادهام. همچنین باید از اعداد فارسی استفاده کنم و نام کالا و شرکت را به درستی ذکر کنم.\n</think>\n\n```json\n{\n  \"title\": \"سیمان خوزستان به بالاترین قیمت رکورد خود رسید\",\n  \"slug\": \"سيمان-خوزستان-به-بالاترين-قيمت-رکورد-خود-رسيد\",\n  \"subtitle\": \"قیمت امروزی ۳۰ هزار و ۹۰۵ ریال به ۱٫۸ درصد افزایش پرداخته است.\",\n  \"lead\": \"سیمان خوزستان در بورس کالا امروز به بالاترین قیمت خود در تاریخچه رسید و با ۸۳ درصد از عرضه خودش معامله شد.\",\n  \"text\": \"سیمان خوزستان در تالار سیمان امروز به قیمت ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم فروخته شد که ۱٫۸ درصد افزایش قیمت نسبت به معامله قبلی ۷ مهر داشت. این قیمت به بالاترین نرخ در تاریخچه کالا تبدیل شد. معامله شده امروز ۲ هزار و ۳۱۰ تن بود که ۸۳ درصد از عرضه ۲ هزار و ۷۹۰ تن را پوشش داد. ارزش معامله در این معامله ۷٫۱ میلیارد تومان بود. همچنین، سفارش خریداران نسبت به عرضه ۸۳ درصد بود که نشاندهنده فشار خرید بالا است. در حالی که در معاملات ۳۹ بار قبلی، بیشترین نرخ ۳۰ هزار و ۳۶۸ ریال در ۷ مهر و کمترین نرخ ۲۰ هزار و ۱۴۵ ریال در ۲۴ اسفند ۱۴۰۴ روی میز خرید قرار گرفت. روند نرخهای چند معامله اخیر نشاندهنده افزایش پیاپی قیمت است. همچنین، سیمان کارون، سیمان غرب، سیمان ایلام و سیمان مدلل (صنایع سیمان سامان غرب) هم یک نرخ مشابه ۳۰ هزار و ۹۰۵ ریال به فروش رسانده شدند.\",\n  \"table\": \"T2\"\n}\n```",
+   "parse_error": "157 words / 1 paragraphs",
+   "seconds": 51
   },
   {
    "model": "ovh:Qwen3.5-9B",
@@ -154,21 +72,89 @@
    "seconds": 181
   },
   {
-   "model": "ovh:Mistral-7B-Instruct-v0.3",
-   "raw": " تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بورس کالا یک خبر فارسی می‌نویسی.\n\n# دستورالعمل خبر نماد بورس کالای ام-اس-دیتا (الگوی قدیم، بدون کلیشه؛ ۱۳ مهر ۱۴۰۵)\n\n## کار تو فقط نگارش است\n- همه‌ی حقیقت‌ها را کد حساب کرده و به‌صورت جمله‌های شماره‌دار (F1، F2، …) داده است. هیچ حساب، مقایسه، درصد، روز هفته یا نتیجه‌ای خودت نساز.\n- لازم نیست همه‌ی حقیقت‌ها را بیاوری: خبری‌ترین ۴ تا ۷ حقیقت را انتخاب کن و از آن‌ها یک خبر روان بساز. عددها را دقیقاً همان‌طور که در حقیقت‌ها آمده بنویس.\n- چیزی که در حقیقت‌ها نیست ننویس: علت، پیش‌بینی، فصل، انتظار بازار، حال خریداران، «بازار منتظر است». اگر علت معلوم نیست، از علت حرف نزن.\n- از جدول‌های پیشنهادی (T1، T2، …) یکی را که با زاویه‌ی خبرت جور است انتخاب کن؛ آن جدول کنار خبر منتشر می‌شود. می‌توانی در متن به آن اشاره کنی («جدول زیر»).\n\n## قواعد جمله‌بندی صاحب کسب‌وکار (بر همه مقدم‌اند)\n1. اول مفهوم یا نکته‌ی عجیب، بعد آمار: «تقاضا ۱٫۵ برابر عرضه بود و …».\n2. فعل و متعلقاتش آخر جمله می‌آیند.\n3. جمله با عدد شروع نمی‌شود.\n4. نام کالا و شرکت با «شرکت» از هم جدا شوند: «نبشی ۴ شرکت نورد فولاد پارسه کاوه».\n5. نام تالار کامل: «تالار صنعتی و معدنی».\n6. عبارت‌های رسمی بازار: «صف خرید X تنی ایجاد کردند»، «با فشار تقاضا مواجه شدند».\n7. حجم با نسبت به عرضه («با تقاضای ۱۲۰ درصدی فروخته شد») و قیمت با درصد تغییر.\n8. «هیچ تنی» ننویس؛ «تمام عرضه به فروش رفت».\n\n## قالب\n- title: حدود ۱۰ کلمه، با نام کالا و تولیدکننده؛ اغلب دوبخشی با «؛»؛ فقط یک عدد کلیدی.\n- subtitle: اطلاعات تازه، نه تکرار تیتر.\n- lead: یک جمله‌ی ۲۰ تا ۴۰ کلمه‌ای که کل خبر را می‌گوید؛ با «بورس کالا» شروع نشود.\n- text: ۱۴۰ تا ۲۰۰ کلمه در ۲ یا ۳ پاراگراف (جدا با یک خط خالی). جمله‌ی اول مستقیم مهم‌ترین واقعیت را بگوید. لید را عیناً در متن تکرار نکن. پایان با یک واقعیت، نه پرسش و نه پیش‌بینی.\n\n## زاویه (هر خبر متفاوت)\nاز خبری‌ترین حقیقت همان نماد: رکورد یا کف، تقاضای چندبرابری، کالای بی‌خریدار یا نیمه‌فروش، مقایسه با تولیدکننده‌های دیگر، روند پیاپی، بازگشت پس از غیبت، فاصله از قیمت پایه، تغییر قیمت پایه.\n\n## ممنوع (کلیشه‌ی ماشینی)\n«به گزارش …»، «بررسی داده‌ها نشان می‌دهد»، «نشان‌دهنده/حاکی از/بیانگر»، «؛ رقمی که»، «این در حالی است که»، «در این میان»، «شایان ذکر است»، «به شمار می‌رود»، «محسوب می‌شود»، «رقم خورد»، «بالغ شد»، «به ثبت رسید»، «به خود اختصاص داد»، «در مجموع»، «روی میز معامله رفت»، «رکورد تاریخی»، اصطلاح محاوره‌ای («ریخت»، «جا گذاشت»)، پرسش بی‌پاسخ در پایان.\nبه‌جایش فعل ساده: «فروخت»، «خرید»، «رسید»، «گران‌تر شد»، «است»، «بود».\n\n## نثر\nجمله‌های کوتاه و ساده (حدود ۱۵ تا ۲۰ کلمه)؛ هر پاراگراف حداکثر سه عدد؛ نام کالا یا شرکت را به‌جای «این کالا» بنویس؛ رقم فارسی؛ نیم‌فاصله‌ی درست.\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").\n\nفکت‌شیت (فقط همین عددها را به کار ببر):\nکالا: سیمان پرتلند نوع 5 رده 42/5-فله | تولیدکننده: سیمان خوزستان | تالار سیمان\nتاریخ امروز: ۱۴ مهر ۱۴۰۵\nعرضه: ۲ هزار و ۷۹۰ تن | سفارش خریداران: ۲ هزار و ۳۱۰ تن | معامله‌شده: ۲ هزار و ۳۱۰ تن\nنرخ میانگین معامله: ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم | قیمت پایه: ۳۰ هزار و ۹۰۵ ریال\nفاصله‌ی نرخ معامله از قیمت پایه (درصد رقابت): ۰ درصد\nارزش معامله: ۷٫۱ میلیارد تومان\nسفارش خریداران نسبت به عرضه: ۸۳ درصد\nآخرین معامله‌ی قبلی: ۷ مهر، نرخ ۳۰ هزار و ۳۶۸ ریال، ۳ هزار و ۸۳۰ تن؛ تغییر نرخ امروز نسبت به آن: ۱٫۸ درصد\nدر ۳۹ معامله‌ی قبلی موجود (از ۲۸ بهمن ۱۴۰۴): بیشترین نرخ ۳۰ هزار و ۳۶۸ ریال در ۷ مهر، کمترین ۲۰ هزار و ۱۴۵ ریال در ۲۴ اسفند ۱۴۰۴\nنرخ امروز بالاترین نرخ در کل تاریخچه‌ی موجود است.\nروند نرخ چند معامله‌ی اخیر: ۲۸ شهریور: ۲۸ هزار و ۲۶۸، ۳۱ شهریور: ۲۹ هزار و ۷۱۱، ۱ مهر: ۲۹ هزار و ۷۱۱، ۴ مهر: ۲۹ هزار و ۷۱۱، ۷ مهر: ۳۰ هزار و ۳۶۸\nتولیدکننده‌های دیگر همین کالا امروز: سیمان کارون: ۳۰ هزار و ۹۰۵ ریال، ۲۰۰ تن؛ سیمان غرب: ۳۰ هزار و ۹۰۵ ریال، ۱۸۰ تن؛ سیمان ایلام: ۳۰ هزار و ۹۰۵ ریال، ۵۰ تن؛ سیمان مدلل (صنایع سیمان سامان غرب): ۳۰ هزار و ۹۰۵ ریال، ۴۵۰ تن",
-   "parse_error": "no JSON",
-   "seconds": 128
-  },
-  {
    "model": "kilo:poolside/laguna-xs-2.1:free",
    "error": "ValueError: HTTP 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"poolside/laguna-xs-2.1:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Poolside\",\"i",
-   "seconds": 1
+   "seconds": 0
   },
   {
-   "model": "zai:glm-4.6v-flash",
-   "raw": "```json\n{\n  \"title\": \"سیمان خوزستان؛ قیمت 42/5-فله با قیمت پایه معامله شد\",\n  \"slug\": \"سیمان-خوزستان-سیمان-پرتلند-نوع-5-رده-42-5-فله\",\n  \"subtitle\": \"در تالار سیمان، با عرضه ۲۷۹۰ تن و تقاضای ۲۳۱۰ تن\",\n  \"lead\": \"بورس کالا: سیمان خوزستان امروز با قیمت پایه ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم معامله شد.\",\n  \"text\": \"سیمان خوزستان امروز در تالار سیمان، با عرضه ۲۷۹۰ تن و سفارش خریداران ۲۳۱۰ تن، تمام عرضه را فروخت. نرخ میانگین معامله ۳۰ هزار و ۹۰۵ ریال بود و با قیمت پایه هم‌ارز شد. ارزش معامله ۷٫۱ میلیارد تومان به ثبت رسید. سفارش خریداران نسبت به عرضه ۸۳ درصد بود.\",\n  \"table\": \"T2\"\n}\n```",
-   "parse_error": "49 words / 1 paragraphs",
-   "seconds": 6
+   "model": "gemini4:gemini-2.5-flash",
+   "error": "ValueError: HTTP 404: [{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemi",
+   "seconds": 0
+  },
+  {
+   "model": "gemini4:gemini-2.5-pro",
+   "error": "ValueError: HTTP 404: [{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/",
+   "seconds": 0
+  },
+  {
+   "model": "gemini4:gemini-flash-lite-latest",
+   "raw": "```json\n{\n  \"title\": \"سیمان فله سیمان خوزستان در تالار سیمان؛ رکوردشکنی نرخ معامله در تاریخچه\",\n  \"slug\": \"سیمان-فله-سیمان-خوزستان-رکورد-نرخ\",\n  \"subtitle\": \"ثبت نرخ ۳۰ هزار و ۹۰۵ ریالی برای سیمان پرتلند نوع ۵ رده ۴۲/۵-فله سیمان خوزستان در بورس کالا\",\n  \"lead\": \"سیمان پرتلند نوع ۵ رده ۴۲/۵-فله شرکت سیمان خوزستان با نرخ میانگین ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم در تالار سیمان معامله شد که بالاترین نرخ در کل تاریخچه‌ی موجود این محصول است.\",\n  \"text\": \"معاملات این محصول با تقاضای ۸۳ درصدی روبه‌رو شد و خریداران ۲ هزار و ۳۱۰ تن سفارش ثبت کردند که تمام عرضه به فروش رفت. ارزش کل معاملات این میزان سیمان به ۷٫۱ میلیارد تومان رسید.\\n\\nقیمت پایه این کالا ۳۰ هزار و ۹۰۵ ریال تعیین شده بود و معامله بدون رقابت و با نرخ پایه انجام شد. نرخ امروز نسبت به معامله قبلی در ۷ مهر ۱٫۸ درصد افزایش یافت.\",\n  \"table\": \"T1\"\n}\n```",
+   "parse_error": "71 words / 2 paragraphs",
+   "seconds": 2
+  },
+  {
+   "model": "gemini4:gemini-pro-latest",
+   "error": "ValueError: HTTP 429: [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\",
+   "seconds": 0
+  },
+  {
+   "model": "gemini4:gemini-2.5-flash-lite",
+   "error": "ValueError: HTTP 404: [{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.googl",
+   "seconds": 0
+  },
+  {
+   "model": "gemini4:gemini-3-flash-preview",
+   "error": "ValueError: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]",
+   "seconds": 5
+  },
+  {
+   "model": "gemini4:gemini-3.1-pro-preview",
+   "error": "ValueError: HTTP 429: [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\",
+   "seconds": 0
+  },
+  {
+   "model": "gemini4:gemini-3.1-pro-preview-customtools",
+   "error": "ValueError: HTTP 429: [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\",
+   "seconds": 0
+  },
+  {
+   "model": "gemini4:gemini-3.1-flash-lite-preview",
+   "error": "ValueError: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]",
+   "seconds": 8
+  },
+  {
+   "model": "gemini4:gemini-3.1-flash-lite",
+   "error": "ValueError: HTTP 503: [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n]",
+   "seconds": 28
+  },
+  {
+   "model": "gemini4:gemini-3.5-flash-lite",
+   "raw": "```json\n{\n  \"title\": \"سیمان فله سیمان خوزستان در تالار سیمان؛ اوج‌گیری نرخ به ۳۰۹۰۵ ریال\",\n  \"slug\": \"سیمان-فله-سیمان-خوزستان-تیر-۱۴۰۵\",\n  \"subtitle\": \"رشد ۱.۸ درصدی قیمت سیمان پرتلند نوع ۵ رده ۴۲/۵-فله نسبت به معامله قبلی\",\n  \"lead\": \"معاملات سیمان پرتلند نوع ۵ رده ۴۲/۵-فله شرکت سیمان خوزستان با نرخ میانگین ۳۰ هزار و ۹۰۵ ریال در تالار سیمان انجام شد تا رکورد جدیدی در تاریخچه این محصول ثبت شود.\",\n  \"text\": \"سیمان پرتلند نوع ۵ رده ۴۲/۵-فله شرکت سیمان خوزستان روز عرضه با تقاضای ۸۳ درصدی روبه‌رو شد و خریداران ۲ هزار و ۳۱۰ تن از این محصول را خریدند. ارزش کل این معاملات به ۷.۱ میلیارد تومان رسید و تمام عرضه به فروش رفت.\\n\\nنرخ میانگین معامله بدون رقابت و برابر با قیمت پایه تعیین شد. معامله قبلی این کالا در تاریخ ۷ مهر با نرخ ۳۰ هزار و ۳۶۸ ریال انجام شده بود و قیمت امروز رشد ۱.۸ درصدی را نشان می‌دهد.\",\n  \"table\": \"T1\"\n}\n```",
+   "parse_error": "83 words / 2 paragraphs",
+   "seconds": 2
+  },
+  {
+   "model": "gemini4:gemini-omni-flash-preview",
+   "error": "ValueError: HTTP 429: [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\",
+   "seconds": 0
+  },
+  {
+   "model": "ovh:Qwen2.5-VL-72B-Instruct",
+   "raw": "```json\n{\n    \"title\": \"سیمان خوزستان؛ بالاترین نرخ تاریخی ۳۰ هزار و ۹۰۵ ریال\",\n    \"slug\": \"siaman-khuzestan-balatarin-nrh-tarihi-30905-rial\",\n    \"subtitle\": \"معامله ۲ هزار و ۳۱۰ تن با فاصله صفر درصد از قیمت پایه\",\n    \"lead\": \"سیمان خوزستان در تالار سیمان با بالاترین نرخ تاریخی ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم، تمام عرضه خود را به فروش رساند.\",\n    \"text\": \"سیمان خوزستان در تالار سیمان، تمام عرضه ۲ هزار و ۳۱۰ تن خود را با نرخ میانگین ۳۰ هزار و ۹۰۵ ریال هر کیلوگرم فروخت. این نرخ بالاترین نرخ تاریخی این کالا است و دقیقاً با قیمت پایه برابر است. خریداران ۸۳ درصد عرضه را سفارش دادند و تمام آن به فروش رفت. ارزش معامله ۷٫۱ میلیارد تومان بود.\\n\\nتولیدکنندگان دیگر همین کالا نیز با همان نرخ معامله کردند: سیمان کارون ۲۰۰ تن، سیمان غرب ۱۸۰ تن، سیمان ایلام ۵۰ تن و سیمان مدلل ۴۵۰ تن. در جدول زیر، جزئیات معاملات امروز آورده شده است.\",\n    \"table\": \"T2\"\n}\n```",
+   "parse_error": "95 words / 2 paragraphs",
+   "seconds": 19
+  },
+  {
+   "model": "cohere:command-r-08-2024",
+   "raw": "{\n    \"title\": \"سیمان خوزستان؛ رکورد تاریخی قیمت در بورس کالا\"،\n    \"slug\": \"si-man-khouzestan-rekord-tarih-si-man\",\n    \"subtitle\": \"نرخ سیمان پرتلند نوع 5 رده 42/5-فله در بورس کالا به بالاترین رقم در تاریخ معاملات رسید\",\n    \"lead\": \"سیمان خوزستان در معاملات امروز تالار صنعتی و معدنی بورس کالا، با قیمت 30 هزار و 905 ریال هر کیلوگرم به فروش رسید که بالاترین نرخ در کل تاریخچه‌ی موجود است.\",\n    \"text\": \"سیمان پرتلند نوع 5 رده 42/5-فله تولیدی شرکت سیمان خوزستان در معاملات امروز تالار صنعتی و معدنی بورس کالا، با قیمت 30 هزار و 905 ریال هر کیلوگرم به فروش رسید. این نرخ، بالاترین رقم در کل تاریخچه‌ی موجود معاملات این کالا است. در این معامله، تمام عرضه‌ی 2 هزار و 790 تنی به فروش رسید و ارزش معامله به 7.1 میلیارد تومان رسید. نرخ معامله امروز، 1.8 درصد نسبت به آخرین معامله‌ی قبلی، افزایش داشت. روند نرخ معاملات اخیر نیز نشان‌دهنده‌ی افزایش قیمت بوده است. تولیدکنندگان دیگر این کالا نیز امروز با قیمت پایه معامله کردند.\",\n    \"table\": \"T2\"\n}",
+   "parse_error": "Expecting ',' delimiter: line 2 column 61 (char 62)",
+   "seconds": 42
+  },
+  {
+   "model": "cohere:command-a-vision-07-2025",
+   "raw": "{\n  \"title\": \"سیمان خوزستان رکورد تاریخی زد؛ قیمت سیمان پرتلند نوع 5 رده 42/5-فله به ۳۰ هزار و ۹۰۵ ریال رسید\",\n  \"slug\": \"cement-khuzestan-record\",\n  \"subtitle\": \"سفارش خریداران ۸۳ درصد عرضه را پوشش داد؛ ارزش معامله ۷٫۱ میلیارد تومان بود\",\n  \"lead\": \"سیمان خوزستان امروز در تالار سیمان بورس کالا رکورد تاریخی زد و قیمت سیمان پرتلند نوع 5 رده 42/5-فله به ۳۰ هزار و ۹۰۵ ریال رسید. این در حالی است که سفارش خریداران ۸۳ درصد از عرضه را پوشش داد و ارزش معامله به ۷٫۱ میلیارد تومان رسید.\",\n  \"text\": \"سیمان خوزستان امروز در تالار سیمان بورس کالا رکورد تاریخی زد و قیمت سیمان پرتلند نوع 5 رده 42/5-فله به ۳۰ هزار و ۹۰۵ ریال رسید. این در حالی است که سفارش خریداران ۸۳ درصد از عرضه را پوشش داد و ارزش معامله به ۷٫۱ میلیارد تومان رسید.\\n\\nاین قیمت بالاترین نرخ در کل تاریخچه‌ی موجود این نماد است. پیش از این، بالاترین نرخ سیمان پرتلند نوع 5 رده 42/5-فله در ۷ مهر به ثبت رسیده بود که آن هم ۳۰ هزار و ۳۶۸ ریال بود. بنابراین، قیمت امروز ۱٫۸ درصد نسبت به آخرین معامله‌ی قبلی افزایش یافت.\\n\\nدر ۳۹ معامله‌ی قبلی موجود (از ۲۸ بهمن ۱۴۰۴)، بیشترین نرخ سیمان پرتلند نوع 5 رده 42/5-فله در ۷ مهر به ثبت رسیده بود که آن هم ۳۰ هزار و ۳۶۸ ریال بود. کمترین نرخ این کالا در ۲۴ اسفند ۱۴۰۴ به ثبت رسید که ۲۰ هزار و ۱۴۵ ریال بود.\\n\\nروند نرخ چند معامله‌ی اخیر این کالا نشان می‌دهد که قیمت سیمان پرتلند نوع 5 رده 42/5-فله در حال افزایش است. در ۲۸ شهریور نرخ این کالا ۲۸ هزار و ۲۶۸ ریال بود که در ۳۱ شهریور به ۲۹ هزار و ۷۱۱ ریال رسید. این نرخ در ۱ مهر و ۴ مهر نیز ثابت ماند و سپس در ۷ مهر به ۳۰ هزار و ۳۶۸ ریال رسید و امروز به رکورد تاریخی ۳۰ هزار و ۹۰۵ ریال دست یافت.\\n\\nتولیدکننده‌های دیگر همین کالا امروز نیز عرضه‌هایی داشتند. سیمان کارون ۲۰۰ تن سیمان پرتلند نوع 5 رده 42/5-فله را به قیمت ۳۰ هزار و ۹۰۵ ریال فروخت. سیمان غرب نیز ۱۸۰ تن از این کالا را به همین قیمت عرضه کرد. سیمان ایلام ۵۰ تن و سیمان مدلل (صنایع سیمان سامان غرب) ۴۵۰ تن از این کالا را به قیمت ۳۰ هزار و ۹۰۵ ریال فروختند.\",\n  \"table\": \"T1\"\n}",
+   "parse_error": "291 words / 5 paragraphs",
+   "seconds": 16
   }
  ]
 }
