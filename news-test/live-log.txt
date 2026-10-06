@@ -1,7 +1,6 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-5 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+4 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
   LPC-LD2102TX00PO2P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MDC-HD52B18UVPP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   LOR-HD62N07UVPO1P-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
   LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   JPC-HDEXCRP100NO3J-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
@@ -13,20 +12,21 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   LOR-HD62N07UVPO1P-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
   JPC-HDEXCRP100NO3J-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  LPC-LD2102TX00PO2P-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
   JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   JPC-HDEXCRP100NO3J-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  MAPE-LLD22B02P-00 zai:glm-4.7-flash: 24s ValueError: 127 words / 1 paragraphs
   JPC-HDEXCRP100NO3J-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:dots-studio/dots-3-note-preview:free: 1s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  JPC-HDEXCRP100NO3J-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   LOR-HD62N07UVPO1P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 zai:glm-4.7-flash: 35s ValueError: 115 words / 1 paragraphs
-  LPC-LD2102TX00PO2P-00 groq:openai/gpt-oss-20b: 18s ValueError: no JSON
   LOR-HD62N07UVPO1P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   LOR-HD62N07UVPO1P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   LOR-HD62N07UVPO1P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   LOR-HD62N07UVPO1P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   LOR-HD62N07UVPO1P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 zai:glm-4.5-flash: 8s ValueError: empty slug
-  MDC-HD52B18UVPP-00 zai:glm-4.7-flash: 18s ValueError: 63 words / 1 paragraphs
-style-soft: lead>35w/1num, text 32 nums
-style-soft: lead>35w/1num, text 17 nums
-OK MDC-HD52B18UVPP-00 <- zai:glm-4.5-flash (40s)
+style-soft: lead>35w/1num, text 24 nums
+  MAPE-LLD22B02P-00 zai:glm-4.5-flash: 35s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+  LPC-LD2102TX00PO2P-00 zai:glm-4.7-flash: 16s ValueError: 77 words / 1 paragraphs
+  LPC-LD2102TX00PO2P-00 zai:glm-4.5-flash: 80s ValueError: 83 words / 1 paragraphs
+  JPC-HDEXCRP100NO3J-00 zai:glm-4.7-flash: 15s ValueError: 62 words / 1 paragraphs
+  JPC-HDEXCRP100NO3J-00 zai:glm-4.5-flash: 20s ValueError: 105 words / 2 paragraphs
