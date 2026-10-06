@@ -140,7 +140,7 @@ def providers():
             req = urllib.request.Request("https://api.groq.com/openai/v1/models", headers={"Authorization": f"Bearer {key}", "User-Agent": "msdata-news/1.0"})
             with urllib.request.urlopen(req, timeout=60) as r:
                 ids = [m["id"] for m in json.load(r)["data"] if m.get("active", True)]
-            ids = [i for i in ids if not re.search(r"whisper|guard|tts|orpheus|playai|compound|safeguard|distil", i, re.I)]
+            ids = [i for i in ids if not re.search(r"whisper|guard|tts|orpheus|playai|compound|safeguard|distil|qwen3.8|allam", i, re.I)]
             ids.sort(key=lambda i: next((n for n, w in enumerate(GROQ_PREFER) if w in i), 99))
             note("groq models: " + ", ".join(ids))
             for m in ids[:4]:
