@@ -170,27 +170,34 @@ def providers():
         out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
     for m in ("Qwen3.6-27B", "Mistral-Small-3.2-24B-Instruct-2506"):
         out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
-    if os.environ.get("BENCH_NEW"):  # 2nd batch of candidates under test (model_bench.py), not used by the writer
-        K = "https://api.kilo.ai/api/gateway/chat/completions"
-        for m in ("poolside/laguna-xs-2.1:free", "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free", "cohere/north-mini-code:free"):
-            out.append(("kilo:" + m, lambda p, m=m: post(K, "", m, p)))
-        if os.environ.get("OPENROUTER_API_KEY"):
-            out.append(("openrouter:thinkingmachines/inkling:free", lambda p: post(OR_URL, os.environ["OPENROUTER_API_KEY"], "thinkingmachines/inkling:free", p)))
-        if os.environ.get("COHERE_API_KEY"):
-            for m in ("command-r-plus-08-2024", "command-r7b-12-2024", "command-a-reasoning-08-2025", "command-a-translate-08-2025"):
-                out.append(("cohere:" + m, lambda p, m=m: post("https://api.cohere.ai/compatibility/v1/chat/completions", os.environ["COHERE_API_KEY"], m, p)))
-        if os.environ.get("ZAI_API_KEY"):
-            out.append(("zai:glm-4.6v-flash", lambda p: post("https://api.z.ai/api/paas/v4/chat/completions", os.environ["ZAI_API_KEY"], "glm-4.6v-flash", p)))
+    if os.environ.get("BENCH_NEW"):  # 3rd batch of candidates (+ batch-2 models that hit quota), model_bench.py only
+        if os.environ.get("LLM7_API_KEY"):
+            for m in ("grok-4.5", "grok-4.6", "gpt-5.6-sol", "gpt-5.6-terra", "gpt-6-astra", "gpt-6-sol", "gpt-6.1-sol",
+                      "chroma-v.46-flash", "jev-latest", "Voxtral-Small-24B-2507", "codestral-latest"):
+                out.append(("llm7:" + m, lambda p, m=m: post("https://api.llm7.io/v1/chat/completions", os.environ["LLM7_API_KEY"], m, p)))
         if os.environ.get("CF_API_TOKEN"):
-            cfu = f"https://api.cloudflare.com/client/v4/accounts/{os.environ.get('CF_ACCOUNT_ID', '')}/ai/v1/chat/completions"
-            for m in ("@cf/meta/llama-4-scout-17b-16e-instruct", "@cf/mistralai/mistral-small-3.1-24b-instruct", "@cf/qwen/qwq-32b",
-                      "@cf/qwen/qwen3-30b-a3b-fp8", "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b"):
-                out.append(("cf:" + m, lambda p, m=m: post(cfu, os.environ["CF_API_TOKEN"], m, p)))
+            acc = os.environ.get("CF_ACCOUNT_ID", "")
+            cfu = f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/v1/chat/completions"
+            want = ("glm-5.2", "kimi-k2.7-code", "clef", "clef-flash", "apertus-v1.5-8b", "eurollm-9b-it", "gemma-sea-lion-v4-27b-it",
+                    "granite-4.0-h-micro", "llama-3.1-8b-instruct-fp8", "llama-3.2-3b-instruct",
+                    "llama-4-scout-17b-16e-instruct", "mistral-small-3.1-24b-instruct", "qwq-32b", "qwen3-30b-a3b-fp8", "deepseek-r1-distill-qwen-32b")
+            try:  # full ids (@cf/<org>/<name>) from the live catalog
+                req = urllib.request.Request(f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/models/search?per_page=500",
+                                             headers={"Authorization": "Bearer " + os.environ["CF_API_TOKEN"]})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    names = [m["name"] for m in json.load(r)["result"]]
+                for w in want:
+                    hit = next((n for n in names if n.split("/")[-1] == w), None)
+                    note(f"cf candidate {w}: {hit}")
+                    if hit:
+                        out.append(("cf:" + hit, lambda p, m=hit: post(cfu, os.environ["CF_API_TOKEN"], m, p)))
+            except Exception as e:  # noqa: BLE001
+                note(f"cf catalog failed: {e}")
         for m in ("Qwen3-Coder-30B-A3B-Instruct", "Qwen3.5-9B", "Mistral-7B-Instruct-v0.3"):
             out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
-        if os.environ.get("LLM7_API_KEY"):
-            for m in ("mistral-Small-24B-Instruct-2501", "codestral-latest", "L3-8B-Lunaris-v1-Turbo"):
-                out.append(("llm7:" + m, lambda p, m=m: post("https://api.llm7.io/v1/chat/completions", os.environ["LLM7_API_KEY"], m, p)))
+        out.append(("kilo:poolside/laguna-xs-2.1:free", lambda p: post("https://api.kilo.ai/api/gateway/chat/completions", "", "poolside/laguna-xs-2.1:free", p)))
+        if os.environ.get("ZAI_API_KEY"):
+            out.append(("zai:glm-4.6v-flash", lambda p: post("https://api.z.ai/api/paas/v4/chat/completions", os.environ["ZAI_API_KEY"], "glm-4.6v-flash", p)))
     return out
 
 
