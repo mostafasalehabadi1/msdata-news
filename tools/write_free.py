@@ -196,6 +196,26 @@ def providers():
         for m in ("Qwen3-Coder-30B-A3B-Instruct", "Qwen3.5-9B", "Mistral-7B-Instruct-v0.3"):
             out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
         out.append(("kilo:poolside/laguna-xs-2.1:free", lambda p: post("https://api.kilo.ai/api/gateway/chat/completions", "", "poolside/laguna-xs-2.1:free", p)))
+        # 4th batch: models never tested before (checked against memory reference_tested_news_models)
+        if os.environ.get("GEMINI_API_KEY"):  # every Gemini/Gemma model has its own quota; only ids not tested yet
+            done = {"gemini-3.5-flash", "gemini-3.6-flash", "gemini-3.7-flash", "gemini-3.8-flash", "gemini-flash-latest",
+                    "gemma-4-26b-a4b-it", "gemma-4-31b-it"}
+            try:
+                url = "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200&key=" + os.environ["GEMINI_API_KEY"]
+                with urllib.request.urlopen(url, timeout=60) as r:
+                    seen = [m["name"].split("/", 1)[1] for m in json.load(r).get("models", [])
+                            if "generateContent" in m.get("supportedGenerationMethods", [])]
+                seen = [m for m in seen if re.match(r"^gem(ini|ma)-", m) and m not in done
+                        and not re.search(r"embed|image|tts|audio|live|robotics|computer", m)]
+                note("gemini new candidates: " + ", ".join(seen))
+                for m in seen[:12]:
+                    out.append(("gemini4:" + m, lambda p, m=m: post(GEMINI_URL, os.environ["GEMINI_API_KEY"], m, p)))
+            except Exception as e:  # noqa: BLE001
+                note(f"gemini list failed: {e}")
+        out.append(("ovh:Qwen2.5-VL-72B-Instruct", lambda p: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", "Qwen2.5-VL-72B-Instruct", p)))
+        if os.environ.get("COHERE_API_KEY"):
+            for m in ("command-r-08-2024", "command-a-vision-07-2025"):
+                out.append(("cohere:" + m, lambda p, m=m: post("https://api.cohere.ai/compatibility/v1/chat/completions", os.environ["COHERE_API_KEY"], m, p)))
         if os.environ.get("ZAI_API_KEY"):
             out.append(("zai:glm-4.6v-flash", lambda p: post("https://api.z.ai/api/paas/v4/chat/completions", os.environ["ZAI_API_KEY"], "glm-4.6v-flash", p)))
     return out

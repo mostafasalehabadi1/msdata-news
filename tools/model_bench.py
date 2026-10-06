@@ -1,4 +1,4 @@
-"""model_bench.py - one-off (all, parallel, rerun 7) (per provider, logged) Persian writing test: every configured model writes the same news, results go to news-test/bench.json."""
+"""model_bench.py - one-off (all, parallel, rerun 8) (per provider, logged) Persian writing test: every configured model writes the same news, results go to news-test/bench.json."""
 import concurrent.futures
 import json
 import os
