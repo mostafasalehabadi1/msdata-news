@@ -24,3 +24,32 @@
   WCO-PCT5G42.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (10c0f01c-df7b-4409-
   GAC-CPCANG42.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e9c78e3e-4a7b-4ef5-
 OK BCC-PCT5G32.5-B-00 <- ovh:Qwen3.5-397B-A17B (79s)
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  ILCE-CEMENTP-50L-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"5e5d2a76c7ceb869dde0c76ed32e147c"
+}
+  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
+  ILCE-CEMENTP-50L-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"1663cd0dedae8e2531359029675c7008"
+}
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  ILCE-CEMENTP-50L-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"0068915fd593f9007c90cd5982096018"
+}
+  NEYC-CPCBNG32.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 96s ValueError: bad response: '{"id":"gen-1791282044-cAfTsMAsTLKG9qzKkEaS","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ZCCO-CEMENTSPB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (85a41074-0881-4fb3-
+  ILCE-PCT5G42.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (bad3d1b2-50fc-4b0e-
+  NEYC-CPCBNG32.5-B-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  KACC-PCT5G42.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2242dd8a-769f-46de-
+  WCO-PCT5G42.5-B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9866dab8-82e6-4b9a-
+  NEYC-CPCBNG32.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+  ZATC-CPCBNG32.5-L50-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  HAK-TISSDLGR17-00 zai:glm-4.5-flash: 332s TimeoutError: The read operation timed out
+  NEYC-CPCBNG32.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 171s ValueError: markers: عدد بیرون از حقیقت‌ها: ۴۸۰۰
+  NEYC-CPCBNG32.5-B-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 265s TypeError: expected string or bytes-like object, got 'NoneType'
+  ZCCO-CEMENTSPB-00 zai:glm-4.5-flash: 339s TimeoutError: The read operation timed out
+  KBCC-CPCARG42.5-L50-00 zai:glm-4.5-flash: 235s ValueError: 119 words / 2 paragraphs
+OK NEYC-CPCBNG32.5-B-00 <- openrouter:dots-studio/dots-3-note-preview:free (348s)
