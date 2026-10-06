@@ -60,3 +60,22 @@ OK SACE-CEMENTWB-00 <- groq:openai/gpt-oss-120b (19s)
 OK AAK-CEMENTPOLI-50L-00 <- cohere:command-a-reasoning-08-2025 (23s)
   HAAL-PS10000-00 cohere:command-a-03-2025: 12s JSONDecodeError: Invalid control character at: line 6 column 178 (char 487)
 OK UWCO-CEMENTW-20L-00 <- cohere:command-a-reasoning-08-2025 (26s)
+  PAM-LD2420HPP-00 cohere:command-a-03-2025: 15s JSONDecodeError: Invalid control character at: line 6 column 245 (char 648)
+  KEPE-HDBL3PWJ-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2dbfa4b3-afa3-4fa7-
+  BCCO-CPCANG42.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (67a59218-20e8-4d48-
+  ovh:Qwen3.6-27B: quota used up - skipped for the rest of the day
+  ACC-CEMENTP-50L-00 ovh:Qwen3.6-27B: 95s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"832df3530d40366c6db73d7fe03fcc70"
+}
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for the rest of the day
+  ACC-CEMENTP-50L-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"996c8738582c1f5159a7ad7f9d2d346f"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for the rest of the day
+  ACC-CEMENTP-50L-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"5a98b31b284a11020416ca35b96dd61f"
+}
+OK EKC-CEMENTW-25L-00 <- cohere:command-a-reasoning-08-2025 (33s)
