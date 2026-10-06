@@ -170,6 +170,10 @@ def providers():
         out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
     for m in ("Qwen3.6-27B", "Mistral-Small-3.2-24B-Instruct-2506", "Qwen3-Coder-30B-A3B-Instruct"):
         out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
+    if os.environ.get("REQUESTY_API_KEY"):  # Requesty: free models, 200 req/day, no card (signed up 2026-10-06); 1 concurrent request, the per-provider worker keeps it serial
+        for m in ("mistral/leanstral-1-5", "novita/inclusionai/ling-3.0-tiny", "poolside/laguna-m.1",
+              "nvidia/nemotron-3-nano-30b-a3b", "nvidia/muse-glimmer-30b"):
+            out.append(("requesty:" + m, lambda p, m=m: post("https://router.requesty.ai/v1/chat/completions", os.environ["REQUESTY_API_KEY"], m, p)))
     if os.environ.get("BENCH_NEW"):  # 3rd batch of candidates (+ batch-2 models that hit quota), model_bench.py only
         if os.environ.get("LLM7_API_KEY"):
             for m in ("grok-4.5", "grok-4.6", "gpt-5.6-sol", "gpt-5.6-terra", "gpt-6-astra", "gpt-6-sol", "gpt-6.1-sol",
@@ -196,10 +200,6 @@ def providers():
         for m in ("Qwen3-Coder-30B-A3B-Instruct", "Qwen3.5-9B", "Mistral-7B-Instruct-v0.3"):
             out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
         out.append(("kilo:poolside/laguna-xs-2.1:free", lambda p: post("https://api.kilo.ai/api/gateway/chat/completions", "", "poolside/laguna-xs-2.1:free", p)))
-        if os.environ.get("REQUESTY_API_KEY"):  # Requesty: free models, 200 req/day, no card (signed up 2026-10-06)
-            for m in ("mistral/leanstral-1-5", "novita/inclusionai/ling-3.0-tiny", "poolside/laguna-m.1",
-                      "nvidia/nemotron-3-nano-30b-a3b", "nvidia/muse-glimmer-30b"):
-                out.append(("requesty:" + m, lambda p, m=m: post("https://router.requesty.ai/v1/chat/completions", os.environ["REQUESTY_API_KEY"], m, p)))
         # 4th batch: models never tested before (checked against memory reference_tested_news_models)
         if os.environ.get("GEMINI_API_KEY"):  # every Gemini/Gemma model has its own quota; only ids not tested yet
             done = {"gemini-3.5-flash", "gemini-3.6-flash", "gemini-3.7-flash", "gemini-3.8-flash", "gemini-flash-latest",
