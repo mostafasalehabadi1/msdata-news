@@ -59,6 +59,42 @@ def main():
         npath, n = days[name]
         json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"released {len(released)}: {', '.join(released)}")
+    apply_edits()
+
+
+EDITABLE = ("title", "subtitle", "lead", "text", "slug", "table")
+
+
+def apply_edits():
+    """edits/<YYYY-MM-DD>/<symbol>.json (content agent's corrections, owner-approved 1405-07-14) override the released item
+    in news/<date>.json on every run, so a later release or rewrite can never bring the old text back.
+    Only EDITABLE fields are taken; the item gets edited=true and edited_at. Nothing is deleted."""
+    root = os.path.join(ROOT, "edits")
+    for day in sorted(glob.glob(os.path.join(root, "????-??-??"))):
+        npath = os.path.join(N, os.path.basename(day) + ".json")
+        if not os.path.exists(npath):
+            continue
+        n = json.load(open(npath, encoding="utf-8"))
+        changed = 0
+        for ep in sorted(glob.glob(os.path.join(day, "*.json"))):
+            try:
+                e = json.load(open(ep, encoding="utf-8"))
+            except ValueError as err:
+                print(f"edit skipped (bad JSON) {ep}: {err}")
+                continue
+            sym = os.path.basename(ep)[:-5]
+            for it in n["items"]:
+                if it.get("symbol") != sym:
+                    continue
+                new = {k: e[k] for k in EDITABLE if k in e and isinstance(e[k], (str, dict, list)) and e[k] != it.get(k)}
+                if new:
+                    it.update(new)
+                    it["edited"] = True
+                    it["edited_at"] = e.get("edited_at") or datetime.now(timezone.utc).isoformat(timespec="seconds")
+                    changed += 1
+        if changed:
+            json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            print(f"edits applied: {os.path.basename(npath)} x{changed}")
 
 
 if __name__ == "__main__":
