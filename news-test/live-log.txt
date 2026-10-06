@@ -77,3 +77,11 @@ OK WSH-CEMENTW-25L-00 <- cohere:command-a-reasoning-08-2025 (43s)
   TCC-CEMENTP-50L-00 kilo:stepfun/step-3.7-flash:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
   KHCE-CEMENTSP-50L-00 kilo:dots-studio/dots-3-note-preview:free: 16s ValueError: bad response: '{"id":"gen-1791295952-KVFHCKbdLeDgY4oL9b17","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
 OK DCCO-PCT5G22.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (138s)
+  TCC-PCT5G42.5-B-00 zai:glm-4.7-flash: 138s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  KCC-CPCANG32.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 217s ValueError: bad response: '{"id":"gen-1791295991-C6X9ws7RqTj7UYZsmvi5","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  KHCE-CEMENTSP-50L-00 kilo:stepfun/step-3.7-flash:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
+  FICO-CPCANG42.5-L50-00 kilo:inclusionai/ling-3.1-flash: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"message\":\"server overload, please try again later trace_id: 5a88df8a718c3ec5ee071bb2a2ad9436\",\"type\":\"server_overload\"}\n","
+  TCC-PCT5G42.5-B-00 zai:glm-4.5-flash: 50s ValueError: empty slug
+  BCC-PCT5G32.5-L50-00 kilo:dots-studio/dots-3-note-preview:free: 15s ValueError: bad response: '{"id":"gen-1791296022-9My9MkReOb87VbnmOLkW","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
+  WSH-CEMENTW-20L-00 cohere:command-r-plus-08-2024: 180s TimeoutError: The read operation timed out
+OK FICO-CPCANG42.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (48s)
