@@ -33,6 +33,7 @@ GH_URL = "https://models.github.ai/inference/chat/completions"
 GH_AZURE_URL = "https://models.inference.ai.azure.com/chat/completions"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
+GROQ_PREFER = ("kimi-k2", "gpt-oss-120b", "llama-4-maverick", "qwen3", "llama-3.3-70b", "llama-4-scout", "gpt-oss-20b")
 OR_PREFER = ("nemotron-3-ultra", "gemma-4-31b", "nemotron-3-ultra", "deepseek", "qwen", "gemma", "llama")  # better Persian first
 
 STYLE_FULL = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read()
@@ -75,6 +76,8 @@ def post(url, key, model, prompt, extra=None):
     body = {"model": model, "temperature": 0.7,
             "messages": [{"role": "system", "content": RULES_GEMMA if RULES_GEMMA and model.startswith("gemma") else RULES},
                          {"role": "user", "content": prompt}]}
+    if "z.ai" in url:
+        body["thinking"] = {"type": "disabled"}  # GLM thinks by default: slow (timeouts) and it spends the answer budget on reasoning
     if "cloudflare.com" in url:
         body["max_tokens"] = 2048  # Cloudflare cuts answers at a 256-token default; a cap elsewhere starves reasoning models
     auth = {"Authorization": f"Bearer {key}"} if key else {}  # OVH AI Endpoints works anonymously (2 req/min per model)
@@ -97,7 +100,7 @@ REPORT_ONLY = {"gemini:gemma-4-31b-it"}
 STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "kilo:dots-studio/dots-3-note-preview:free",
           "hf:deepseek-ai/DeepSeek-V3.1", "kilo:stepfun/step-3.7-flash:free"}
 # the next three by rating: write the important half too, but only when every strong model is out or a symbol waited 2h
-BACKUP = {"zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast"}
+BACKUP = {"zai:glm-4.7-flash", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast"}
 BACKUP_WAIT = 2 * 3600
 
 
@@ -131,10 +134,23 @@ def providers():
         free.sort(key=lambda i: next((n for n, w in enumerate(OR_PREFER) if w in i), 99))
         for m in free[:6]:
             out.append(("openrouter:" + m, lambda p, m=m: post(OR_URL, key, m, p, {"X-Title": "msdata-news"})))
-    for env, url, models in (("GROQ_API_KEY", GROQ_URL, ("llama-3.3-70b-versatile", "qwen/qwen3-32b")),
+    key = os.environ.get("GROQ_API_KEY")
+    if key:  # Groq retires model ids often (old ones gave 404), so take the live list: text models only, best Persian first
+        try:
+            req = urllib.request.Request("https://api.groq.com/openai/v1/models", headers={"Authorization": f"Bearer {key}", "User-Agent": "msdata-news/1.0"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                ids = [m["id"] for m in json.load(r)["data"] if m.get("active", True)]
+            ids = [i for i in ids if not re.search(r"whisper|guard|tts|orpheus|playai|compound|safeguard|distil", i, re.I)]
+            ids.sort(key=lambda i: next((n for n, w in enumerate(GROQ_PREFER) if w in i), 99))
+            note("groq models: " + ", ".join(ids))
+            for m in ids[:4]:
+                out.append(("groq:" + m, lambda p, m=m: post(GROQ_URL, key, m, p)))
+        except Exception as e:  # noqa: BLE001
+            note(f"groq model list failed: {e}")
+    for env, url, models in (
                              ("MISTRAL_API_KEY", MISTRAL_URL, ("mistral-large-latest", "mistral-medium-latest")),
                              ("CEREBRAS_API_KEY", "https://api.cerebras.ai/v1/chat/completions", ("qwen-3-235b-a22b-instruct-2507", "llama-3.3-70b")),
-                             ("ZAI_API_KEY", "https://api.z.ai/api/paas/v4/chat/completions", ("glm-4.5-flash",)),
+                             ("ZAI_API_KEY", "https://api.z.ai/api/paas/v4/chat/completions", ("glm-4.7-flash", "glm-4.5-flash")),
                              ("HF_TOKEN", "https://router.huggingface.co/v1/chat/completions", ("deepseek-ai/DeepSeek-V3.1", "Qwen/Qwen3-235B-A22B-Instruct-2507")),
                              ("CF_API_TOKEN", f"https://api.cloudflare.com/client/v4/accounts/{os.environ.get('CF_ACCOUNT_ID', '')}/ai/v1/chat/completions",
                               ("@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/qwen/qwen2.5-coder-32b-instruct")),
@@ -313,6 +329,9 @@ def main():
                     except ValueError as e:
                         if attempt == 2 or not re.search(r"words|markers|table", str(e)):
                             raise
+                        short = re.match(r"(\d+) words", str(e))
+                        if short and int(short.group(1)) < 130:  # GLM and others stop short: say how many words are missing
+                            e = f"{e} (متن تو {short.group(1)} کلمه است؛ دست‌کم {150 - int(short.group(1))} کلمه‌ی دیگر از حقیقت‌ها اضافه کن)"
                         raw = retry(call, prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایرادها: {e}. همان خبر را با رفع همه‌ی این ایرادها "
                                     "(text بین ۱۴۰ تا ۲۰۰ کلمه در ۲ یا ۳ پاراگراف، فقط با عددهای حقیقت‌ها) بازنویسی کن و فقط JSON برگردان.")
                 with lock:
