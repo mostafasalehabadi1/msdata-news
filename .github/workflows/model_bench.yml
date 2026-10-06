@@ -39,7 +39,7 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           USE_GITHUB_MODELS: "1"
         run: |
-          BENCH_NEW=1 BENCH_ONLY=kilo:poolside,kilo:nvidia/nemotron-3-super,kilo:inclusionai/ling-3.1,kilo:thinking,kilo:kilo-auto,ovh:Qwen3.6,ovh:Mistral-Small,ovh:gpt-oss-20b,llm7:DeepSeek-V4.1,llm7:deepseek-v4-pro,llm7:GLM-5.3,llm7:glm-5.3,llm7:kimi,llm7:mistral-large,llm7:llama-4,llm7:gemma4,llm7:minimax-m3,llm7:gemini-3.7,cohere:aya python tools/model_bench.py 2>&1 | tee news-test/bench-log.txt || true
+          BENCH_NEW=1 BENCH_ONLY=kilo:poolside,kilo:nvidia/nemotron-3-super,kilo:inclusionai/ling-3.1,kilo:thinking,kilo:kilo-auto,ovh:Qwen3.6,ovh:Mistral-Small,llm7:DeepSeek-V4.1,llm7:deepseek-v4-pro,llm7:GLM-5.3,llm7:glm-5.3,llm7:kimi,llm7:mistral-large,llm7:llama-4,llm7:gemma4,llm7:minimax-m3,llm7:seed,llm7:Inkling,kilo:nvidia/nemotron-3.5,cohere:aya python tools/model_bench.py 2>&1 | tee news-test/bench-log.txt || true
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           git add news-test/bench.json news-test/bench-log.txt && git commit -qm "bench: persian writing" && git pull -q --rebase && git push -q
