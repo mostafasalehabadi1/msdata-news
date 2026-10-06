@@ -1,7 +1,28 @@
-groq models: openai/gpt-oss-120b, qwen/qwen3.8-27b, openai/gpt-oss-20b, allam-2-7b
-groq:qwen/qwen3.8-27b 108 words / 2 paragraphs
-groq:allam-2-7b no JSON
-groq:openai/gpt-oss-20b no JSON
-zai:glm-4.7-flash 87 words / 1 paragraphs
-groq:openai/gpt-oss-120b 72 words / 3 paragraphs
-zai:glm-4.5-flash empty slug
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+kilo:thinkingmachines/inkling-small:free ValueError: HTTP 429: {"error":{"message":"Rate limit exceeded: limit_rpd/thinkingmachines/inkling-small-20260730/e27a9a6d-1451-4be4-876e-292ffcbf1e71. Daily limit reached for thinkingmachines/inkling-small:free via Thinking Machines. Credits don't affect this cap. Add your own keys in https://openrouter.ai/set
+cohere:aya-expanse-32b ValueError: HTTP 404: {"id":"572b2032-cd15-415c-9326-0feaf500b403","message":"model 'aya-expanse-32b' not found, make sure the correct model ID was used and that you have access to the model."}
+llm7:DeepSeek-V4.1-Flash ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:kimi-k3 ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:llama-4-maverick ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:seed-2.0-mini ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:glm-5.3 ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+kilo:poolside/laguna-s-2.1:free ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hint":"The provider rate-limited your own key. Check the limits on your provider a
+llm7:kimi-k2.6 ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:Inkling ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:GLM-5.3-Flash ValueError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 16 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":16}}
+llm7:gemma4:31b ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:minimax-m3 ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:deepseek-v4-pro ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:mistral-large-3:675b ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+ovh:Mistral-Small-3.2-24B-Instruct-2506 ValueError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"c2d2ff3919a3657cc4822d25c7cc4f6c"
+}
+ovh:Qwen3.6-27B ValueError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"b8bd54102808207bcd5181478a74405d"
+}
+kilo:nvidia/nemotron-3-super-120b-a12b:free empty slug
+kilo:kilo-auto/free ok
+kilo:inclusionai/ling-3.1-flash ok
+kilo:nvidia/nemotron-3.5-lightning:free TimeoutError: The read operation timed out
