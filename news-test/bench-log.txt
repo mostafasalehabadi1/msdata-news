@@ -15,73 +15,24 @@ cf candidate qwq-32b: @cf/qwen/qwq-32b
 cf candidate qwen3-30b-a3b-fp8: @cf/qwen/qwen3-30b-a3b-fp8
 cf candidate deepseek-r1-distill-qwen-32b: @cf/deepseek-ai/deepseek-r1-distill-qwen-32b
 gemini new candidates: gemini-2.5-flash, gemini-2.5-pro, gemini-flash-lite-latest, gemini-pro-latest, gemini-2.5-flash-lite, gemini-3-flash-preview, gemini-3.1-pro-preview, gemini-3.1-pro-preview-customtools, gemini-3.1-flash-lite-preview, gemini-3.1-flash-lite, gemini-3.5-flash-lite, gemini-omni-flash-preview, gemini-omni-1.1-flash, gemini-3.5-transcribe
-gemini4:gemini-2.5-flash ValueError: HTTP 404: [{
-  "error": {
-    "code": 404,
-    "message": "This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemi
-gemini4:gemini-2.5-pro ValueError: HTTP 404: [{
-  "error": {
-    "code": 404,
-    "message": "This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/
-gemini4:gemini-pro-latest ValueError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \
-gemini4:gemini-2.5-flash-lite ValueError: HTTP 404: [{
-  "error": {
-    "code": 404,
-    "message": "This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.googl
-gemini4:gemini-3.1-pro-preview-customtools ValueError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \
-gemini4:gemini-omni-flash-preview ValueError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \
-gemini4:gemini-3.1-pro-preview ValueError: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \
-cf:@cf/utter-project/eurollm-9b-it ValueError: HTTP 400: {"errors":[{"message":"AiError: AiError: AI model does not have config (72e65c50-5acc-4eef-8eb3-cb05ea4fa9e5)","code":4003}],"success":false,"result":{},"messages":[]}
-kilo:poolside/laguna-xs-2.1:free ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"poolside/laguna-xs-2.1:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations","provider_name":"Poolside","i
-llm7:codestral-latest ValueError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 9945 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":9945}}
-gemini4:gemini-flash-lite-latest 71 words / 2 paragraphs
-gemini4:gemini-3.5-flash-lite 83 words / 2 paragraphs
-cf:@cf/meta/llama-3.2-3b-instruct 115 words / 1 paragraphs
-gemini4:gemini-3-flash-preview ValueError: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "status": "UNAVAILABLE"
-  }
+cf:@cf/mistralai/mistral-small-3.1-24b-instruct ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2eb3fb8a-b5b3-4c4a-b962-bf5630956cff)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/meta/llama-3.1-8b-instruct-fp8 ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (421145f6-ad5d-427c-9024-f09480bbf5ea)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/meta/llama-3.2-3b-instruct ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9547e060-df66-49fd-a57c-f08624251eff)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/aisingapore/gemma-sea-lion-v4-27b-it ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5ce8d4cf-e1ee-4455-8bd7-651cf0e23bd0)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/qwen/qwen3-30b-a3b-fp8 ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (28b16d23-c652-4e80-9efe-226407d41abc)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/utter-project/eurollm-9b-it ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (f6c24e48-ddc6-48b4-981f-c6d969e5a002)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/ibm-granite/granite-4.0-h-micro ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b0872498-671b-4379-bf4a-3b12535f73ca)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/deepseek-ai/deepseek-r1-distill-qwen-32b ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (240d4fff-9ed4-489c-8912-2a9909f2b8a6)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/meta/llama-4-scout-17b-16e-instruct ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (f3766b76-797d-464e-8624-1d1f81964871)","code":4006}],"success":false,"result":{},"messages":[]}
+requesty:nvidia/nemotron-3-nano-30b-a3b ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contact support@requesty.ai. See https://docs.requesty.ai/features/in-flight-rate-limi
+requesty:novita/inclusionai/ling-3.0-tiny ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contact support@requesty.ai. See https://docs.requesty.ai/features/in-flight-rate-limi
+requesty:nvidia/muse-glimmer-30b ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contact support@requesty.ai. See https://docs.requesty.ai/features/in-flight-rate-limi
+requesty:poolside/laguna-m.1 ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contact support@requesty.ai. See https://docs.requesty.ai/features/in-flight-rate-limi
+llm7:codestral-latest ValueError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 4521 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":4521}}
+ovh:Qwen3.5-9B ValueError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"55c18b18b0cdf268d2a01f4f8714e16d"
 }
-]
-cf:@cf/meta/llama-4-scout-17b-16e-instruct 79 words / 2 paragraphs
-gemini4:gemini-3.1-flash-lite-preview ValueError: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "status": "UNAVAILABLE"
-  }
-}
-]
-cf:@cf/aisingapore/gemma-sea-lion-v4-27b-it markers: «این در حالی است» در text
-cf:@cf/mistralai/mistral-small-3.1-24b-instruct 129 words / 2 paragraphs
-cf:@cf/qwen/qwen3-30b-a3b-fp8 86 words / 2 paragraphs
-cf:@cf/meta/llama-3.1-8b-instruct-fp8 67 words / 1 paragraphs
-cohere:command-a-vision-07-2025 291 words / 5 paragraphs
-ovh:Qwen2.5-VL-72B-Instruct 95 words / 2 paragraphs
-gemini4:gemini-3.1-flash-lite ValueError: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-    "status": "UNAVAILABLE"
-  }
-}
-]
-cf:@cf/ibm-granite/granite-4.0-h-micro 320 words / 5 paragraphs
-cohere:command-r-08-2024 Expecting ',' delimiter: line 2 column 61 (char 62)
-cf:@cf/qwen/qwq-32b 119 words / 2 paragraphs
-cf:@cf/deepseek-ai/deepseek-r1-distill-qwen-32b 157 words / 1 paragraphs
-ovh:Qwen3.5-9B TimeoutError: The read operation timed out
+cf:@cf/qwen/qwq-32b ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2bbe612e-fe4b-4906-8923-c9e98291d8d4)","code":4006}],"success":false,"result":{},"messages":[]}
+requesty:mistral/leanstral-1-5 115 words / 3 paragraphs
+kilo:poolside/laguna-xs-2.1:free empty slug
