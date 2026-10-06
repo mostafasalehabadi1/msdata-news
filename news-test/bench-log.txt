@@ -1,30 +1,49 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-cf:@cf/meta/llama-4-scout-17b-16e-instruct ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ad60ed3e-b6a5-40b7-acd6-f34cb487362a)","code":4006}],"success":false,"result":{},"messages":[]}
-cf:@cf/mistralai/mistral-small-3.1-24b-instruct ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (083c4630-88ec-4af8-b0bc-2d620ecc7ff1)","code":4006}],"success":false,"result":{},"messages":[]}
-openrouter:thinkingmachines/inkling:free ValueError: HTTP 403: {"error":{"message":"thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps","code":403,"metadata":{"routing_funnel":[{"step":"Initial Endpoints","endpoint_count":1}],"failed_routing
-cf:@cf/qwen/qwq-32b ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c543d81f-93d1-435d-9293-107398024684)","code":4006}],"success":false,"result":{},"messages":[]}
-cf:@cf/deepseek-ai/deepseek-r1-distill-qwen-32b ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (72a89074-0771-47f1-b369-6ef7004c4d0b)","code":4006}],"success":false,"result":{},"messages":[]}
-cf:@cf/qwen/qwen3-30b-a3b-fp8 ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (222eec3f-0225-47f7-be80-d36629d5738c)","code":4006}],"success":false,"result":{},"messages":[]}
+cf candidate glm-5.2: @cf/zai-org/glm-5.2
+cf candidate kimi-k2.7-code: @cf/moonshotai/kimi-k2.7-code
+cf candidate clef: @cf/cloudflare/clef
+cf candidate clef-flash: @cf/cloudflare/clef-flash
+cf candidate apertus-v1.5-8b: @cf/swiss-ai/apertus-v1.5-8b
+cf candidate eurollm-9b-it: @cf/utter-project/eurollm-9b-it
+cf candidate gemma-sea-lion-v4-27b-it: @cf/aisingapore/gemma-sea-lion-v4-27b-it
+cf candidate granite-4.0-h-micro: @cf/ibm-granite/granite-4.0-h-micro
+cf candidate llama-3.1-8b-instruct-fp8: @cf/meta/llama-3.1-8b-instruct-fp8
+cf candidate llama-3.2-3b-instruct: @cf/meta/llama-3.2-3b-instruct
+cf candidate llama-4-scout-17b-16e-instruct: @cf/meta/llama-4-scout-17b-16e-instruct
+cf candidate mistral-small-3.1-24b-instruct: @cf/mistralai/mistral-small-3.1-24b-instruct
+cf candidate qwq-32b: @cf/qwen/qwq-32b
+cf candidate qwen3-30b-a3b-fp8: @cf/qwen/qwen3-30b-a3b-fp8
+cf candidate deepseek-r1-distill-qwen-32b: @cf/deepseek-ai/deepseek-r1-distill-qwen-32b
+cf:@cf/qwen/qwen2.5-coder-32b-instruct ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (80456d5b-7d0f-4a80-bd81-572d076c30e1)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/aisingapore/gemma-sea-lion-v4-27b-it ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (47f9d03e-161f-4fad-9c92-0de353ec8dce)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/mistralai/mistral-small-3.1-24b-instruct ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (837630ba-c479-415b-a0cc-2abbfeecca9f)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (6098be23-434f-48b5-ad15-0032ed7c06b9)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/qwen/qwq-32b ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (802c1fe7-8677-41da-8915-4bedba7e7292)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/moonshotai/kimi-k2.7-code ValueError: HTTP 403: {"errors":[{"message":"AiError: Model @cf/moonshotai/kimi-k2.7-code is not available on the Workers Free plan: Model @cf/moonshotai/kimi-k2.7-code is not available on the Workers Free plan. Upgrade to access this model: https://dash.cloudflare.com/?to=/:account/workers/plans (1cd0cd2f-48f7
+cf:@cf/swiss-ai/apertus-v1.5-8b ValueError: HTTP 403: {"errors":[{"message":"AiError: Ai: This account is not allowed to access @cf/swiss-ai/apertus-v1.5-8b. (5c15ea1a-1bc5-4697-83a3-6132da235711)","code":5018}],"success":false,"result":{},"messages":[]}
+cf:@cf/zai-org/glm-5.2 ValueError: HTTP 403: {"errors":[{"message":"AiError: Model @cf/zai-org/glm-5.2 is not available on the Workers Free plan: Model @cf/zai-org/glm-5.2 is not available on the Workers Free plan. Upgrade to access this model: https://dash.cloudflare.com/?to=/:account/workers/plans (a5153043-fd70-4207-8a74-0aae16839
+cf:@cf/utter-project/eurollm-9b-it ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2b66d7d8-85ff-4068-9cfc-37ee8efeb28b)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/meta/llama-3.2-3b-instruct ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (67353ee6-e9c0-498c-85bb-47c78b18c891)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/ibm-granite/granite-4.0-h-micro ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2667bfe2-f77b-4550-b8b3-405cf6480eee)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/meta/llama-3.1-8b-instruct-fp8 ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5b244bfd-2348-47d6-bc73-4b0b000ec88d)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/cloudflare/clef-flash ValueError: HTTP 400: {"errors":[{"message":"AiError: Bad input: Error: required properties at '/' are 'model,state,questions' (f0ca6689-a464-499d-a201-c2807d86753f)","code":5006}],"success":false,"result":{},"messages":[]}
+cf:@cf/qwen/qwen3-30b-a3b-fp8 ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d5398afe-b1b0-4d16-8e53-06332318c000)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/deepseek-ai/deepseek-r1-distill-qwen-32b ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5eae8e99-65a6-4b37-abad-8deb74658ea6)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/meta/llama-4-scout-17b-16e-instruct ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (196ef6a5-9fe3-4c62-8bf5-ef8dfc9a8969)","code":4006}],"success":false,"result":{},"messages":[]}
+cf:@cf/cloudflare/clef ValueError: HTTP 400: {"errors":[{"message":"AiError: Bad input: Error: required properties at '/' are 'model,state,questions' (40326a09-2242-4bbb-af01-61d5b245319d)","code":5006}],"success":false,"result":{},"messages":[]}
+llm7:grok-4.5 ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
 kilo:poolside/laguna-xs-2.1:free ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"poolside/laguna-xs-2.1:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations","provider_name":"Poolside","i
-llm7:mistral-Small-24B-Instruct-2501 ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
-llm7:L3-8B-Lunaris-v1-Turbo ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
-llm7:codestral-latest ValueError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 12500 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":12500}}
-zai:glm-4.6v-flash ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-ovh:Qwen3.5-9B ValueError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"cbfecc527baff32088f59c286e7a6c54"
-}
-ovh:Qwen3-Coder-30B-A3B-Instruct ValueError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"6a284249280e24729efa16253afdbe6e"
-}
-ovh:Mistral-7B-Instruct-v0.3 ValueError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"c952901c5c6e9f3e45269554398aa615"
-}
-cohere:command-r7b-12-2024 88 words / 1 paragraphs
-cohere:command-a-translate-08-2025 markers: «رکورد تاریخی» در title | «رکورد تاریخی» در lead | «رکورد تاریخی» در text
-cohere:command-a-reasoning-08-2025 markers: «رکورد تاریخی» در title | «رکورد تاریخی» در text
-cohere:command-r-plus-08-2024 126 words / 3 paragraphs
-kilo:cohere/north-mini-code:free 128 words / 3 paragraphs
-kilo:nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free no JSON
+llm7:Voxtral-Small-24B-2507 ValueError: HTTP 400: {"error":{"message":"Model 'Voxtral-Small-24B-2507' does not support this endpoint.","type":"invalid_request_error","param":null,"code":"unsupported_model_feature"}}
+llm7:gpt-5.6-terra ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:gpt-6-sol ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:gpt-5.6-sol ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:jev-latest ValueError: HTTP 400: {"error":{"message":"Model 'jev-latest' does not support chat endpoints.","type":"invalid_request_error","param":null,"code":"unsupported_model_feature"}}
+llm7:chroma-v.46-flash ValueError: HTTP 400: {"error":{"message":"Model 'chroma-v.46-flash' does not support chat endpoints.","type":"invalid_request_error","param":null,"code":"unsupported_model_feature"}}
+llm7:grok-4.6 ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:gpt-6.1-sol ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+llm7:codestral-latest ValueError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 12169 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":12169}}
+llm7:gpt-6-astra ValueError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+zai:glm-4.6v-flash 49 words / 1 paragraphs
+ovh:Qwen3-Coder-30B-A3B-Instruct 127 words / 3 paragraphs
+ovh:Mistral-7B-Instruct-v0.3 no JSON
+ovh:Qwen3.5-9B TimeoutError: The read operation timed out
