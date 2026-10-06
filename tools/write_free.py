@@ -313,6 +313,10 @@ def parse(raw, facts="", tables=None):
         bad = sorted({n for k in ("title", "subtitle", "lead", "text") for n in NUM.findall(d[k]) if fa(n) not in known})
         if bad:
             probs.append("عدد بیرون از حقیقت‌ها: " + "، ".join(bad))
+    # wrong hall (content agent: cement written as «تالار صنعتی و معدنی"; the data hall was right)
+    for h in ("صنعتی و معدنی", "پتروشیمی", "سیمان", "کشاورزی", "فرعی", "صادراتی"):
+        if facts and re.search("تالار[‌ ]+" + h, " ".join(d[k] for k in ("title", "lead", "text"))) and h not in facts.splitlines()[0]:
+            probs.append(f"تالار اشتباه: «{h}»")
     first = re.split(r"(?<=[.!؟])\s", d["text"].strip(), 1)[0]
     if d["lead"] in d["text"] or d["lead"][:40] == first[:40]:
         probs.append("لید عیناً در متن تکرار شده")
