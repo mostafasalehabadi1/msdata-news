@@ -85,3 +85,9 @@ OK DCCO-PCT5G22.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (138s)
   BCC-PCT5G32.5-L50-00 kilo:dots-studio/dots-3-note-preview:free: 15s ValueError: bad response: '{"id":"gen-1791296022-9My9MkReOb87VbnmOLkW","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
   WSH-CEMENTW-20L-00 cohere:command-r-plus-08-2024: 180s TimeoutError: The read operation timed out
 OK FICO-CPCANG42.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (48s)
+  KCC-CPCANG32.5-L50-00 cohere:command-a-reasoning-08-2025: 28s ValueError: 128 words / 3 paragraphs
+  BCC-PCT5G32.5-L50-00 kilo:stepfun/step-3.7-flash:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
+  KCC-CPCANG32.5-L50-00 cohere:command-r-plus-08-2024: 16s JSONDecodeError: Invalid control character at: line 6 column 262 (char 576)
+  GHCO-CEMENTPOLI-50L-00 kilo:inclusionai/ling-3.1-flash: 47s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"code\":429,\"reason\":\"RATE_LIMIT_EXCEEDED\",\"message\":\"You have exceeded the request rate limit. Please wait a short period be
+  TCC-CEMENTW-40L-00 cohere:command-a-reasoning-08-2025: 30s ValueError: 108 words / 3 paragraphs
+OK TCC-CEMENTW-40L-00 <- cohere:command-r-plus-08-2024 (15s)
