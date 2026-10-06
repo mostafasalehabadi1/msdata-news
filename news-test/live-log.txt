@@ -1,151 +1,22 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-40 symbols to write; 15 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo
-  GHIR-DRI-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SPSC-DRI-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  BMIS-DRI-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791306364-e7amU6WxEx3nGFlA7sUy","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  GHIR-DRI-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GHIR-DRI-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GHIR-DRI-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PTC-PETBG785J-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LOR-HD62N07PJ-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LOR-HD54B04PJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791306370-Z4bah20Rmr7lNkduLh4y","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  BSC-DRI-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 8s JSONDecodeError: Invalid control character at: line 6 column 314 (char 662)
-  GHIR-DRI-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GHIR-DRI-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IMID-DRI-616 groq:openai/gpt-oss-120b: 11s ValueError: no JSON
-  JPC-HD52518PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  BCCO-CEMENTP-50L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  KZCO-CEMENTMC-50L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791306377-cpyJkvY7JdlFN3h1mCIH","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-style-soft: lead>35w/1num, text 25 nums
-  IMID-DRI-616 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  ECC-PCT5G42.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ECC-PCT5G42.5-L50-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ENPC-PSSER400J-089 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid control character at: line 6 column 150 (char 569)
-  ECC-PCT5G42.5-L50-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDCRP100NPP-00 cohere:command-a-03-2025: 21s JSONDecodeError: Invalid control character at: line 6 column 349 (char 768)
-  ECC-PCT5G42.5-L50-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: امروز>2, lead>35w/1num, text 33 nums
-OK SJS-DRI-00 <- cohere:command-a-reasoning-08-2025 (23s)
-  ECC-PCT5G42.5-L50-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GISD-DRI-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 25s JSONDecodeError: Expecting value: line 6 column 11 (char 408)
-  ECC-PCT5G42.5-L50-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IMID-DRI-271 zai:glm-4.7-flash: 28s ValueError: 128 words / 1 paragraphs
-  NECO-CEMENTW-25L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid control character at: line 6 column 127 (char 403)
-  LOR-HD62N07PJ-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07PJ-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07PJ-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: امروز>2, lead>35w/1num, text 24 nums
-OK SPSC-DRI-00 <- cohere:command-a-reasoning-08-2025 (10s)
-  LOR-HD62N07PJ-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IMID-DRI-271 zai:glm-4.5-flash: 11s ValueError: empty slug
-  LOR-HD62N07PJ-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07PJ-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: امروز>2, lead>35w/1num, text 31 nums
-OK SHPC-LLD0209AAPP-00 <- cohere:command-a-03-2025 (16s)
-style-soft: ثبت شد, امروز>2, lead>35w/1num, text 22 nums
-OK LOR-HD54B04PJ-00 <- cohere:command-a-reasoning-08-2025 (19s)
-style-soft: lead>35w/1num, text 25 nums
-style-soft: lead>35w/1num, text 22 nums
-OK PTC-PETTG645J-00 <- cohere:command-a-03-2025 (28s)
-  BSC-DRI-00 zai:glm-4.7-flash: 33s ValueError: 101 words / 1 paragraphs
-style-soft: امروز>2, lead>35w/1num, text 30 nums
-style-soft: امروز>2
-  BMIS-DRI-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 64s ValueError: 102 words / 1 paragraphs
-style-soft: lead>35w/1num, text 26 nums
-OK GHIR-DRI-00 <- cohere:command-a-reasoning-08-2025 (31s)
-style-soft: در حالی که, lead>35w/1num, text 24 nums
-  JPC-HDF7000LMPJ-00 groq:openai/gpt-oss-120b: 92s ValueError: no JSON
-  JPC-HDF7000LMPJ-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  PAM-HDEX3J-00 cohere:command-a-03-2025: 38s JSONDecodeError: Extra data: line 9 column 1 (char 1113)
-style-soft: ثبت شد, lead>35w/1num, text 20 nums
-style-soft: در حالی که, lead>35w/1num, text 19 nums
-  BSC-DRI-00 zai:glm-4.5-flash: 47s ValueError: markers: «رکورد» در subtitle | «تاریخی» در subtitle | لید عیناً در متن تکرار شده
-  KZCO-CEMENTMC-50L-00 cohere:command-a-reasoning-08-2025: 31s JSONDecodeError: Expecting ',' delimiter: line 6 column 13 (char 428)
-style-soft: lead>35w/1num, text 21 nums
-  BCCO-CEMENTP-50L-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s JSONDecodeError: Invalid control character at: line 6 column 408 (char 803)
-  PTC-PETBG821J-00 cohere:command-a-03-2025: 37s JSONDecodeError: Extra data: line 9 column 1 (char 1216)
-  IMID-DRI-616 zai:glm-4.7-flash: 35s ValueError: 85 words / 1 paragraphs
-  SHPC-HDCRP100BPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 20 nums
-OK IMID-DRI-616 <- zai:glm-4.5-flash (16s)
-  ILPE-HD7000FWP-00 cohere:command-a-03-2025: 18s JSONDecodeError: Invalid control character at: line 6 column 409 (char 761)
-  GISD-DRI-00 zai:glm-4.7-flash: 16s ValueError: 91 words / 1 paragraphs
-  ENPC-PSSER400J-089 groq:openai/gpt-oss-120b: 101s ValueError: no JSON
-  ENPC-PSSER400J-089 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-style-soft: lead>35w/1num, text 33 nums
-OK GISD-DRI-00 <- zai:glm-4.5-flash (39s)
-  KSFN-MBENN03E-00 zai:glm-4.7-flash: 45s ValueError: 126 words / 1 paragraphs
-  KZCO-CEMENTMC-50L-00 cohere:command-r-plus-08-2024: 167s JSONDecodeError: Invalid control character at: line 6 column 318 (char 641)
-style-soft: lead>35w/1num, text 29 nums
-style-soft: lead>35w/1num, text 28 nums
-OK ECC-PCT5G42.5-L50-00 <- cohere:command-a-reasoning-08-2025 (33s)
-style-soft: ثبت شد, امروز>2, lead>35w/1num, text 21 nums
-OK NECO-CEMENTW-25L-00 <- cohere:command-a-reasoning-08-2025 (18s)
-OK SSI-DRI-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (377s)
-style-soft: lead>35w/1num, text 20 nums
-  KSFN-MBENN03E-00 zai:glm-4.5-flash: 102s ValueError: markers: لید عیناً در متن تکرار شده
-  SHPC-HDCRP100BPP-00 kilo:stepfun/step-3.7-flash:free: 228s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-  IMID-DRI-271 cohere:command-a-reasoning-08-2025: 68s ValueError: 122 words / 2 paragraphs
-  BMIS-DRI-00 zai:glm-4.7-flash: 54s ValueError: 99 words / 1 paragraphs
-style-soft: امروز>2, lead>35w/1num, text 25 nums
-OK IMID-DRI-271 <- cohere:command-r-plus-08-2024 (32s)
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-  BMIS-DRI-00 zai:glm-4.5-flash: 56s ValueError: 120 words / 2 paragraphs
-style-soft: lead>35w/1num, text 12 nums
-  JPC-HDF7000LMPJ-00 cohere:command-a-reasoning-08-2025: 47s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  BCCO-CEMENTP-50L-00 zai:glm-4.7-flash: 34s ValueError: 124 words / 1 paragraphs
-  PTC-PETSBTG645J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 23 nums
-  JPC-HDF7000LMPJ-00 cohere:command-r-plus-08-2024: 87s JSONDecodeError: Invalid control character at: line 6 column 355 (char 735)
-  BCCO-CEMENTP-50L-00 zai:glm-4.5-flash: 71s ValueError: 118 words / 2 paragraphs
-  BSC-DRI-00 cohere:command-a-reasoning-08-2025: 12s JSONDecodeError: Expecting ',' delimiter: line 6 column 3 (char 365)
-style-soft: lead>35w/1num, text 10 nums
-  LOR-HD62N07PJ-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 305s ValueError: markers: «نشان‌دهنده» در text | کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 23 nums
-OK BSC-DRI-00 <- cohere:command-r-plus-08-2024 (90s)
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 24 nums
-style-soft: lead>35w/1num, text 14 nums
-  ENPC-PSSER400J-089 cohere:command-a-reasoning-08-2025: 75s ValueError: 120 words / 3 paragraphs
-style-soft: lead>35w/1num, text 11 nums
-OK PTC-PETSBTG645J-00 <- kilo:stepfun/step-3.7-flash:free (243s)
-style-soft: ثبت شد, lead>35w/1num, text 24 nums
-style-soft: lead>35w/1num, text 21 nums
-OK LOR-HD62N07PJ-00 <- kilo:cohere/north-mini-code:free (217s)
-  ENPC-PSSER400J-089 cohere:command-r-plus-08-2024: 93s JSONDecodeError: Invalid control character at: line 6 column 521 (char 838)
-style-soft: ثبت شد, lead>35w/1num, text 30 nums
-style-soft: lead>35w/1num, text 30 nums
-OK BMIS-DRI-00 <- cohere:command-a-reasoning-08-2025 (23s)
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 19 nums
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 19 nums
-OK BCCO-CEMENTP-50L-00 <- cohere:command-a-reasoning-08-2025 (20s)
-style-soft: ثبت شد, ثبت شد
-  LOR-LLD22B02P-00 kilo:dots-studio/dots-3-note-preview:free: 284s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-OK KZCO-CEMENTMC-50L-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (229s)
-  LOR-LLD22B02P-00 kilo:stepfun/step-3.7-flash:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-style-soft: lead>35w/1num, text 9 nums
-style-soft: lead>35w/1num, text 11 nums
-OK JPC-HDF7000LMPJ-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (189s)
-  ENPC-PSSEF105J-089 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 10 nums
-style-soft: ثبت شد, ثبت شد, lead>35w/1num
-OK ENPC-PSSER400J-089 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (146s)
-style-soft: ثبت شد, lead>35w/1num
-style-soft: text 10 nums
-OK ENPC-PSSEF105J-089 <- kilo:stepfun/step-3.7-flash:free (291s)
-  LPC-LD2100TN00RP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 15 nums
-style-soft: ثبت شد, lead>35w/1num, text 18 nums
-OK LPC-LD2100TN00RP-00 <- kilo:stepfun/step-3.7-flash:free (207s)
-  MAPE-LLD22B02PJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  MAPE-LLD22B02PJ-00 kilo:stepfun/step-3.7-flash:free: 180s TimeoutError: The read operation timed out
-  JPC-HD7000FWP-00 kilo:dots-studio/dots-3-note-preview:free: 340s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 15 nums
-style-soft: امروز>2, lead>35w/1num, text 22 nums
-  JPC-HD7000FWP-00 kilo:stepfun/step-3.7-flash:free: 289s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSER200J-089 kilo:dots-studio/dots-3-note-preview:free: 311s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 11 nums
-style-soft: ثبت شد, lead>35w/1num, text 27 nums
-  ENPC-PSSER200J-089 kilo:stepfun/step-3.7-flash:free: 258s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+40 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  IPC-HDHB0035LMPJ-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  JPC-HDCRP100NPP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ZCC-CEMENTSP-50L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
+  KBCC-CEMENTPB-00 llm7:minimax-m2.7: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  EKC-CEMENTWB-25L-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"0948945d14ddc0609f3f3c1c56b4663c"
+}
+  IPC-HDHB0035LMPJ-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IPC-HDHB0035LMPJ-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+style-soft: lead>35w/1num, text 19 nums
+  PAM-HDEX3J-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ZATC-PCT5G42.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  IPC-HDHB0035LMPJ-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  KSFN-MBENN03E-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 8s JSONDecodeError: Invalid control character at: line 6 column 177 (char 572)
+  IPC-HDHB0035LMPJ-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+style-soft: lead>35w/1num, text 19 nums
+OK KSSF-CEMENTWB-40L-00 <- requesty:mistral/leanstral-1-5 (9s)
