@@ -1,114 +1,236 @@
-7 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  MNB-BSG194X-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+4 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAK-TISSDLGR17-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  DCCO-PCT1G32.5-L50-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
-  DAP-PPHP550PJ-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  SHIN-PVCSUSSE-950J-000 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  DCCO-PCT1G32.5-L50-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+OK SHIN-PVCSUSSE-950J-000 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (52s)
+  DCCO-PCT1G32.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791272162-s2NzBDHcgVaxwZTdWAZj","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  DCCO-PCT1G32.5-L50-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+OK HSR-LUSUACB-00 <- zai:glm-4.5-flash (120s)
+  DCCO-PCT1G32.5-L50-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK DCCO-PCT1G32.5-L50-00 <- openrouter:apodex/apodex-1.1-mini:free (43s)
+  HAK-TISSDLGR17-00 zai:glm-4.5-flash: 263s ValueError: 100 words / 2 paragraphs
+written 3/4; total in file 3
+1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAK-TISSDLGR17-00 zai:glm-4.5-flash: 110s ValueError: 99 words / 2 paragraphs
+written 0/1; total in file 3
+1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAK-TISSDLGR17-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 3
+1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAK-TISSDLGR17-00 zai:glm-4.5-flash: 239s ValueError: 122 words / 2 paragraphs
+written 0/1; total in file 3
+1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAK-TISSDLGR17-00 zai:glm-4.5-flash: 323s TimeoutError: The read operation timed out
+written 0/1; total in file 3
+1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAK-TISSDLGR17-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 3
+1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAK-TISSDLGR17-00 zai:glm-4.5-flash: 137s ValueError: 102 words / 2 paragraphs
+written 0/1; total in file 3
+1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAK-TISSDLGR17-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 3
+1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAK-TISSDLGR17-00 zai:glm-4.5-flash: 237s ValueError: 120 words / 2 paragraphs
+written 0/1; total in file 3
+1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  HAK-TISSDLGR17-00 zai:glm-4.5-flash: 180s TimeoutError: The read operation timed out
+written 0/1; total in file 3
+28 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
+  ZCCO-CEMENTSPB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  DCC-CEMENTPOLI-50L-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
+  KHCO-PCT5G42.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  NEYC-CPCBNG32.5-L50-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791281949-YBVtMwtKuRdyRBnxu2d9","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
   llm7:minimax-m2.7: quota used up - skipped for the rest of the day
-  ARCO-EPVC6834PO1P-00 llm7:minimax-m2.7: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58662 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58662}}
-  openrouter:google/gemma-4-31b-it:free: quota used up - skipped for the rest of the day
-  DAP-PPHP550PJ-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  MNB-BSG194X-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  OAC-CEM2-32.5R-50L-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 16851 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":16851}}
+  DCC-CEMENTPOLI-50L-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
   llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
-  ARCO-EPVC6834PO1P-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
-  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped for the rest of the day
-  DAP-PPHP550PJ-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  MNB-BSG194X-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  openrouter:apodex/apodex-1.1-mini:free: quota used up - skipped for the rest of the day
-  DAP-PPHP550PJ-00 openrouter:apodex/apodex-1.1-mini:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  SHIN-PVCSUSSE-950J-000 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  OAC-CEM2-32.5R-50L-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  NAC-CEMENTP-50L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ZCCO-CEMENTSPB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791281955-trOygF5CjmmVnRdyx6CP","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  BCC-SPCANG32.5-L50-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  openrouter:inclusionai/ling-3.0-flash-sante:free: quota used up - skipped for the rest of the day
-  DAP-PPHP550PJ-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  SHIN-PVCSUSSE-950J-000 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  BCC-SPCANG32.5-L50-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  openrouter:dots-studio/dots-3-note-preview:free: quota used up - skipped for the rest of the day
-  DAP-PPHP550PJ-00 openrouter:dots-studio/dots-3-note-preview:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  ARCO-EPVC6834PO1P-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  DAP-PPHP550PJ-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  WCO-CPCANG42.5-L50-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  SGHC-PCT5G42.5-B-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  DAP-PPHP550PJ-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+  SGHC-PCT5G42.5-B-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
 
-  ARCO-PVCS65PO1P-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (895015af-c91e-42b2-
-  ARCO-PVCS65O2J-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5049aeda-42bb-4baa-
-  SHIN-PVCSUSSE-950J-000 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ed1d1c76-6441-4bbb-
-  MNB-BSG194X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (67455aaa-db25-4d46-
-  ARCO-EPVC6834PO1P-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (881caa58-b3d1-458e-
-  DAP-PPHP550PJ-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (264cbaea-f02d-4b8c-
-  JPPC-PPEP6540GJ-089 zai:glm-4.5-flash: 270s ValueError: markers: عدد بیرون از حقیقت‌ها: ۴.۸
-  ARCO-PVCS65PO1P-00 zai:glm-4.5-flash: 219s ValueError: 103 words / 2 paragraphs
-  ARCO-PVCS65O2J-00 zai:glm-4.5-flash: 169s ValueError: 102 words / 2 paragraphs
-written 0/7; total in file 112
-7 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  JPPC-PPEP6540GJ-089 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  DAP-PPHP550PJ-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
+  WCO-PCT5G42.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (10c0f01c-df7b-4409-
+  GAC-CPCANG42.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e9c78e3e-4a7b-4ef5-
+OK BCC-PCT5G32.5-B-00 <- ovh:Qwen3.5-397B-A17B (79s)
   ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
-  ARCO-PVCS65O2J-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  ILCE-CEMENTP-50L-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
   "message":"API rate limit exceeded",
-  "request_id":"9cfc18466d20975dcb15255e6a6b0265"
+  "request_id":"5e5d2a76c7ceb869dde0c76ed32e147c"
 }
-  DAP-PPHP550PJ-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
   ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
-  ARCO-PVCS65O2J-00 ovh:gpt-oss-120b: 0s QuotaError: HTTP 429: {
+  ILCE-CEMENTP-50L-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
   "message":"API rate limit exceeded",
-  "request_id":"28e8a17641df046a7701845bcb8dc172"
+  "request_id":"1663cd0dedae8e2531359029675c7008"
 }
   ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
-  ARCO-PVCS65O2J-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
+  ILCE-CEMENTP-50L-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
   "message":"API rate limit exceeded",
-  "request_id":"8d88407cd502c045f41ffc7d93d42c77"
+  "request_id":"0068915fd593f9007c90cd5982096018"
 }
-  DAP-PPHP550PJ-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  JPPC-PPEP6540GJ-089 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  JPPC-PPEP6540GJ-089 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  ARCO-PVCS65O2J-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ARCO-PVCS65O2J-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  ARCO-PVCS65O2J-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  SHIN-PVCSUSSE-950J-000 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (33c6ecf5-392b-4afd-
-  ARCO-PVCS65PO1P-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9cb6d866-3ac7-4212-
-  DAP-PPHP550PJ-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3b9c86af-6e95-4ce1-
-  JPPC-PPEP6540GJ-089 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4dbf3238-306a-42ea-
-  ARCO-PVCS65O2J-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ad8e4dba-b150-424d-
-  SHIN-PVCSUSSE-950J-000 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d0fe0935-9c6a-4438-
-  MNB-BSG194X-00 zai:glm-4.5-flash: 181s ValueError: 112 words / 2 paragraphs
-  ARCO-EPVC6834PO1P-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 294s TimeoutError: The read operation timed out
-OK DAP-PPHP550PJ-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (116s)
-OK JPPC-PPEP6540GJ-089 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (66s)
-  ARCO-PVCS65PO1P-00 zai:glm-4.5-flash: 331s TimeoutError: The read operation timed out
-OK ARCO-PVCS65O2J-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (106s)
-OK MNB-BSG194X-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (20s)
-OK ARCO-PVCS65PO1P-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (130s)
-  SHIN-PVCSUSSE-950J-000 zai:glm-4.5-flash: 301s ValueError: 91 words / 2 paragraphs
-written 5/7; total in file 117
-2 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  SHIN-PVCSUSSE-950J-000 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  SHIN-PVCSUSSE-950J-000 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  ARCO-EPVC6834PO1P-00 zai:glm-4.5-flash: 245s ValueError: 121 words / 2 paragraphs
-OK SHIN-PVCSUSSE-950J-000 <- zai:glm-4.5-flash (133s)
-written 1/2; total in file 118
-1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  ARCO-EPVC6834PO1P-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  ARCO-EPVC6834PO1P-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-written 0/1; total in file 118
-1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-  ARCO-EPVC6834PO1P-00 groq:llama-3.3-70b-versatile: 0s ValueError: HTTP 404: {"error":{"message":"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-  ARCO-EPVC6834PO1P-00 groq:qwen/qwen3-32b: 0s ValueError: HTTP 404: {"error":{"message":"The model `qwen/qwen3-32b` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
-
-written 0/1; total in file 118
-1 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-OK ARCO-EPVC6834PO1P-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (277s)
-written 1/1; total in file 119
-0 symbols to write; 13 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup
-written 0/0; total in file 119
+  NEYC-CPCBNG32.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 96s ValueError: bad response: '{"id":"gen-1791282044-cAfTsMAsTLKG9qzKkEaS","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ZCCO-CEMENTSPB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (85a41074-0881-4fb3-
+  ILCE-PCT5G42.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (bad3d1b2-50fc-4b0e-
+  NEYC-CPCBNG32.5-B-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  KACC-PCT5G42.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2242dd8a-769f-46de-
+  WCO-PCT5G42.5-B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9866dab8-82e6-4b9a-
+  NEYC-CPCBNG32.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+  ZATC-CPCBNG32.5-L50-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  HAK-TISSDLGR17-00 zai:glm-4.5-flash: 332s TimeoutError: The read operation timed out
+  NEYC-CPCBNG32.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 171s ValueError: markers: عدد بیرون از حقیقت‌ها: ۴۸۰۰
+  NEYC-CPCBNG32.5-B-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 265s TypeError: expected string or bytes-like object, got 'NoneType'
+  ZCCO-CEMENTSPB-00 zai:glm-4.5-flash: 339s TimeoutError: The read operation timed out
+  KBCC-CPCARG42.5-L50-00 zai:glm-4.5-flash: 235s ValueError: 119 words / 2 paragraphs
+OK NEYC-CPCBNG32.5-B-00 <- openrouter:dots-studio/dots-3-note-preview:free (348s)
+  DCCO-CPCANG32.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791282935-El4ZUIO3bn4VYYybKZFE","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  DCCO-CPCANG32.5-L50-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  DCCO-CPCANG32.5-L50-00 openrouter:google/gemma-4-26b-a4b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK DCCO-CPCANG32.5-L50-00 <- openrouter:apodex/apodex-1.1-mini:free (46s)
+  KECE-CEMENTWB-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 300s ValueError: bad response: '{"id":"gen-1791283383-TceYhvydbn4cHm1J8pve","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  KECE-CEMENTWB-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  KECE-CEMENTWB-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK KECE-CEMENTWB-00 <- openrouter:apodex/apodex-1.1-mini:free (38s)
+  ILCE-PCT5G42.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791283523-wTAc57JJ7kCzX6hH8JTc","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ILCE-PCT5G42.5-B-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  ILCE-PCT5G42.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK ILCE-PCT5G42.5-B-00 <- openrouter:apodex/apodex-1.1-mini:free (67s)
+  DCCO-CEMENTP-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791283693-nAXZudAyGA8ClQ4jvIj8","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  DCCO-CEMENTP-50L-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  DCCO-CEMENTP-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK DCCO-CEMENTP-50L-00 <- openrouter:apodex/apodex-1.1-mini:free (167s)
+  KBCC-CPCARG42.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791283964-UGesJFZA9sESsJ9VeV4D","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  KBCC-CPCARG42.5-B-00 openrouter:google/gemma-4-31b-it:free: 72s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  KBCC-CPCARG42.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 54s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK KBCC-CPCARG42.5-B-00 <- openrouter:apodex/apodex-1.1-mini:free (84s)
+OK NGC-CEMENTPOLIB-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (179s)
+  KMC-CEMENTSPB-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 101s ValueError: bad response: '{"id":"gen-1791284471-96SIbowscPyaLxaSqLtx","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  KMC-CEMENTSPB-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  KMC-CEMENTSPB-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK KMC-CEMENTSPB-00 <- openrouter:apodex/apodex-1.1-mini:free (133s)
+  KCC-PCT5G42.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 238s ValueError: bad response: '{"id":"gen-1791284945-BEAKUbGDTgc3sEfjBCQq","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  KCC-PCT5G42.5-L50-00 openrouter:google/gemma-4-31b-it:free: 71s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  KCC-PCT5G42.5-L50-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK KCC-PCT5G42.5-L50-00 <- openrouter:apodex/apodex-1.1-mini:free (50s)
+  KHCO-PCT5G42.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791285124-F5aXY5bgYkNdhjGg6Gik","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  KHCO-PCT5G42.5-B-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  KHCO-PCT5G42.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+  KHCO-PCT5G42.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 146s ValueError: 153 words / 4 paragraphs
+  KHCO-PCT5G42.5-B-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 109s TypeError: expected string or bytes-like object, got 'NoneType'
+OK KHCO-PCT5G42.5-B-00 <- openrouter:dots-studio/dots-3-note-preview:free (15s)
+  NEYC-CPCBNG32.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791285502-Ujft2HGI5E4sYdkSsCnY","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  NEYC-CPCBNG32.5-L50-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  NEYC-CPCBNG32.5-L50-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK NEYC-CPCBNG32.5-L50-00 <- openrouter:apodex/apodex-1.1-mini:free (76s)
+  DCC-CEMENTPOLI-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791285681-AqX1Zm0hSKvLMOHJNPRV","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  DCC-CEMENTPOLI-50L-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  DCC-CEMENTPOLI-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK DCC-CEMENTPOLI-50L-00 <- openrouter:apodex/apodex-1.1-mini:free (79s)
+  OAC-CEM2-32.5R-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791285863-vfWTHEWVcWd1VoLn8x1B","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+OK OAC-CEM2-32.5R-50L-00 <- openrouter:apodex/apodex-1.1-mini:free (38s)
+  NAC-CEMENTP-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791286004-ADOQgRgAwvtbqARNAgGq","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  NAC-CEMENTP-50L-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped for the rest of the day
+  NAC-CEMENTP-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 24s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+OK NAC-CEMENTP-50L-00 <- openrouter:apodex/apodex-1.1-mini:free (46s)
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
+  BCC-SPCANG32.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped for the rest of the day
+  BCC-SPCANG32.5-L50-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:apodex/apodex-1.1-mini:free: quota used up - skipped for the rest of the day
+  BCC-SPCANG32.5-L50-00 openrouter:apodex/apodex-1.1-mini:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:inclusionai/ling-3.0-flash-sante:free: quota used up - skipped for the rest of the day
+  BCC-SPCANG32.5-L50-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:dots-studio/dots-3-note-preview:free: quota used up - skipped for the rest of the day
+  BCC-SPCANG32.5-L50-00 openrouter:dots-studio/dots-3-note-preview:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+written 15/28; total in file 18
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+13 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, ovh, kilo/strong, kilo/backup, kilo
+  GAC-CPCANG42.5-L50-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ZCCO-CEMENTSPB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ILCE-CEMENTP-50L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  WCO-PCT5G42.5-L50-00 groq:openai/gpt-oss-120b: 12s ValueError: no JSON
+  KACC-PCT5G42.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  WCO-PCT5G42.5-L50-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  HAK-TISSDLGR17-00 zai:glm-4.7-flash: 34s ValueError: 83 words / 1 paragraphs
+  BCC-SPCANG32.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e9716543-e352-4947-
+  WCO-CPCANG42.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4e6cc9d9-f757-4149-
+  ILCE-PCT5G42.5-L50-00 kilo:inclusionai/ling-3.1-flash: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"message\":\"server overload, please try again later trace_id: fc49659a686aaab0e3d2dd57b31dd248\",\"type\":\"server_overload\"}\n","
+OK HAK-TISSDLGR17-00 <- zai:glm-4.5-flash (32s)
+OK WCO-PCT5G42.5-B-00 <- groq:openai/gpt-oss-120b (54s)
+OK ZATC-CPCBNG32.5-L50-00 <- ovh:Qwen3.6-27B (89s)
+  ovh:Qwen3.6-27B: quota used up - skipped for the rest of the day
+  KACC-PCT5G42.5-B-00 ovh:Qwen3.6-27B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"877b375863618408995dc76c92d2b430"
+}
+  ZCCO-CEMENTSPB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2a809d93-f56a-43a2-
+  KBCC-CPCARG42.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (a24f696d-f257-456e-
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for the rest of the day
+  KACC-PCT5G42.5-B-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"b28b6851240efe4227e4e95c692f534d"
+}
+  ILCE-CEMENTP-50L-00 groq:openai/gpt-oss-120b: 22s ValueError: no JSON
+  ILCE-CEMENTP-50L-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+OK SGHC-PCT5G42.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (138s)
+  ZCCO-CEMENTSPB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791286350-uyWULyzZOslWrUsEL1IM","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  BCC-SPCANG32.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c251743b-3e17-4039-
+  WCO-PCT5G42.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d074a5ee-028f-4fbd-
+  GAC-CPCANG42.5-L50-00 zai:glm-4.7-flash: 95s ValueError: 99 words / 1 paragraphs
+OK GAC-CPCANG42.5-L50-00 <- zai:glm-4.5-flash (40s)
+  WCO-CPCANG42.5-L50-00 groq:openai/gpt-oss-120b: 129s ValueError: no JSON
+  WCO-CPCANG42.5-L50-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  ILCE-PCT5G42.5-L50-00 kilo:kilo-auto/free: 205s ValueError: no JSON
+  KACC-PCT5G42.5-B-00 groq:openai/gpt-oss-120b: 22s ValueError: no JSON
+  ZCCO-CEMENTSPB-00 zai:glm-4.7-flash: 65s ValueError: 99 words / 1 paragraphs
+  KACC-PCT5G42.5-B-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  KBCC-CPCARG42.5-L50-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 163s ValueError: bad response: '{"id":"gen-1791286520-lnVnLca3q0GjZGWSLWxL","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ZCCO-CEMENTSPB-00 zai:glm-4.5-flash: 41s ValueError: 110 words / 1 paragraphs
+OK ILCE-CEMENTP-50L-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (93s)
+  WCO-PCT5G42.5-L50-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791286625-MTMl3KUaJ3c8ZeHR0fhK","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+OK ILCE-PCT5G42.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (174s)
+  BCC-SPCANG32.5-L50-00 zai:glm-4.7-flash: 108s ValueError: 108 words / 1 paragraphs
+  BCC-SPCANG32.5-L50-00 zai:glm-4.5-flash: 40s ValueError: 128 words / 1 paragraphs
+  KBCC-CPCARG42.5-L50-00 zai:glm-4.7-flash: 14s ValueError: 90 words / 1 paragraphs
+  KBCC-CPCARG42.5-L50-00 zai:glm-4.5-flash: 41s ValueError: 112 words / 1 paragraphs
+OK WCO-CPCANG42.5-L50-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (153s)
+  KACC-PCT5G42.5-B-00 kilo:inclusionai/ling-3.1-flash: 196s TimeoutError: The read operation timed out
+  BCC-SPCANG32.5-L50-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 87s ValueError: bad response: '{"id":"gen-1791286877-YtI4gvxwkw9Ifu4PGsEP","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  KACC-PCT5G42.5-B-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+OK KACC-PCT5G42.5-B-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (124s)
+  WCO-PCT5G42.5-L50-00 kilo:inclusionai/ling-3.1-flash: 226s TimeoutError: The read operation timed out
+  WCO-PCT5G42.5-L50-00 kilo:kilo-auto/free: 47s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"code\":429,\"reason\":\"RATE_LIMIT_EXCEEDED\",\"message\":\"You have exceeded the request rate limit. Please wait a short period be
+OK WCO-PCT5G42.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (164s)
+  KBCC-CPCARG42.5-L50-00 kilo:inclusionai/ling-3.1-flash: 196s TimeoutError: The read operation timed out
+  KBCC-CPCARG42.5-L50-00 kilo:kilo-auto/free: 226s TimeoutError: The read operation timed out
+OK KBCC-CPCARG42.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (56s)
+  BCC-SPCANG32.5-L50-00 kilo:inclusionai/ling-3.1-flash: 47s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"code\":429,\"reason\":\"RATE_LIMIT_EXCEEDED\",\"message\":\"You have exceeded the request rate limit. Please wait a short period be
+  BCC-SPCANG32.5-L50-00 kilo:kilo-auto/free: 196s TimeoutError: The read operation timed out
+OK BCC-SPCANG32.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (112s)
+written 12/13; total in file 30
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 15 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo
+  ZCCO-CEMENTSPB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+written 0/1; total in file 30
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 15 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo
+  ZCCO-CEMENTSPB-00 zai:glm-4.7-flash: 182s ValueError: 122 words / 1 paragraphs
+OK ZCCO-CEMENTSPB-00 <- zai:glm-4.5-flash (19s)
+written 1/1; total in file 31
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+0 symbols to write; 15 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo
+written 0/0; total in file 31
