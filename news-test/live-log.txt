@@ -99,3 +99,14 @@ OK KBCC-CEMENTP-50L-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (291s)
 OK ACC-CEMENTP-50L-00 <- cohere:command-a-reasoning-08-2025 (20s)
 OK AAC-CPCANG32.5-B-00 <- groq:openai/gpt-oss-120b (56s)
 OK ENPC-PSSEF305J-089 <- cohere:command-a-reasoning-08-2025 (23s)
+  SACE-CEMENTWB-25L-00 groq:openai/gpt-oss-120b: 23s ValueError: no JSON
+  SACE-CEMENTWB-25L-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  SCC-CPCANG32.5-L50-00 zai:glm-4.7-flash: 112s ValueError: 108 words / 1 paragraphs
+  AAC-CPCBNG42.5-B-00 cohere:command-a-reasoning-08-2025: 23s JSONDecodeError: Invalid control character at: line 6 column 401 (char 803)
+  SACE-CEMENTW-25L-00 groq:openai/gpt-oss-120b: 23s ValueError: no JSON
+  SCC-CPCANG32.5-L50-00 zai:glm-4.5-flash: 20s ValueError: empty slug
+  AAC-CPCBNG42.5-B-00 cohere:command-r-plus-08-2024: 16s JSONDecodeError: Invalid control character at: line 6 column 366 (char 693)
+  SACE-CEMENTW-25L-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  TORC-GRSUSUJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 79s ValueError: bad response: '{"id":"gen-1791290486-0RQ1t62LaAeqE8AzVe3K","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  SACE-CEMENTW-25L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791290493-wBjguH9aav8LHBQARxMH","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+OK SACE-CEMENTWB-25L-00 <- cohere:command-a-reasoning-08-2025 (24s)
