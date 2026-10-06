@@ -1,134 +1,19 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 40 symbols to write; 15 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo
-  SACE-CEMENTWB-40L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  BORC-LUBECUTHB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-  UCC-CEMENTPOLI-50L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SACE-CEMENTWB-40L-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SACE-CEMENTWB-40L-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SACE-CEMENTWB-40L-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  KRD-LD2420F8PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-  ZCCO-CEMENTSP-50L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SACE-CEMENTWB-40L-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-OK SCC-CEMENTPOLI-50L-00 <- cohere:command-a-reasoning-08-2025 (9s)
-  SACE-CEMENTWB-40L-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-OK BISP-LABB-00 <- cohere:command-a-03-2025 (11s)
-  ECC-CPCANG32.5-L50-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-  KCC-CPCANG32.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  WSH-CEMENTW-25L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  WSH-CEMENTW-25L-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  WSH-CEMENTW-25L-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  WSH-CEMENTW-25L-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  WSH-CEMENTW-25L-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-OK SGHC-PCT5G42.5-L50-00 <- cohere:command-a-03-2025 (9s)
-  WSH-CEMENTW-25L-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  TCC-PCT5G42.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  TCC-PCT5G42.5-B-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  TCC-PCT5G42.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-OK ACC-CPCANG32.5-L50-00 <- cohere:command-a-03-2025 (7s)
-  TCC-PCT5G42.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  TCC-PCT5G42.5-B-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  TCC-PCT5G42.5-B-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  WSH-CEMENTW-20L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (a81545b3-9d5a-4809-
-  FICO-CPCANG42.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 47s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4c1812c1-86e6-4640-
-  HCC-CEMENTPB-00 cohere:command-a-reasoning-08-2025: 34s ValueError: markers: «به خود اختصاص» در text
-  TCC-CEMENTP-50L-00 cohere:command-a-03-2025: 22s JSONDecodeError: Invalid control character at: line 6 column 308 (char 708)
-  OAC-SPCANG42.5-B-00 groq:openai/gpt-oss-120b: 75s ValueError: no JSON
-  OAC-SPCANG42.5-B-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  KHCE-CEMENTSP-50L-00 cohere:command-a-03-2025: 15s JSONDecodeError: Invalid control character at: line 6 column 179 (char 552)
-  KHAC-CEMENTSP-50L-00 zai:glm-4.7-flash: 89s ValueError: 113 words / 1 paragraphs
-  KCC-CPCANG32.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (50d59d10-4de9-4604-
-  GHCO-CEMENTPOLI-50L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (79243605-d8c0-4de9-
-OK KHAC-CEMENTSP-50L-00 <- zai:glm-4.5-flash (19s)
-  BCC-PCT5G32.5-L50-00 cohere:command-a-03-2025: 35s JSONDecodeError: Extra data: line 9 column 1 (char 1081)
-  MAS-CPCANG32.5-L50-00 zai:glm-4.7-flash: 28s ValueError: 86 words / 1 paragraphs
-  KACC-PCT5G32.5-L50-00 groq:openai/gpt-oss-120b: 62s ValueError: no JSON
-  TCC-CEMENTW-40L-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (442832a2-d169-4662-
-  FACO-PCT5G32.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c8ad1e43-21ff-4831-
-  KACC-PCT5G32.5-L50-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  MAS-CPCANG32.5-L50-00 zai:glm-4.5-flash: 12s ValueError: empty slug
-OK TCHC-CEMENTP-50L-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (164s)
-  CMK-CEMENTP-50L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791295481-xOvPLdJatfirbWUu7oqW","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-OK THOR-GRSUSUB-00 <- kilo:dots-studio/dots-3-note-preview:free (179s)
-  KECE-CEMENTP-50L-00 groq:openai/gpt-oss-120b: 52s ValueError: no JSON
-  KECE-CEMENTP-50L-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  WSH-CEMENTW-40L-00 zai:glm-4.7-flash: 57s ValueError: 194 words / 1 paragraphs
-  UWCO-CEMENTW-25L-00 kilo:inclusionai/ling-3.1-flash: 226s TimeoutError: The read operation timed out
-  HCC-CEMENTPB-00 cohere:command-r-plus-08-2024: 180s TimeoutError: The read operation timed out
-OK SACE-CEMENTSPB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (84s)
-  SACE-CEMENTW-40L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791295577-eLrV34OdpBC8tzGh7LAM","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  WSH-CEMENTW-50L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791295584-oex2ue8rHNCeGWA487DX","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-OK TCC-CEMENTSP-50L-00 <- cohere:command-a-reasoning-08-2025 (37s)
-OK UWCO-CEMENTW-25L-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (63s)
-OK WSH-CEMENTW-40L-00 <- zai:glm-4.5-flash (72s)
-  SHCO-CPCARG32.5-L50-00 cohere:command-a-reasoning-08-2025: 26s JSONDecodeError: Expecting ',' delimiter: line 5 column 131 (char 326)
-OK BORC-LUBECUTHB-00 <- kilo:dots-studio/dots-3-note-preview:free (166s)
-  UCC-CEMENTPOLI-50L-00 zai:glm-4.7-flash: 68s ValueError: 133 words / 1 paragraphs
-OK KRD-LD2420F8PP-00 <- kilo:dots-studio/dots-3-note-preview:free (20s)
-OK ECC-CPCANG32.5-L50-00 <- kilo:dots-studio/dots-3-note-preview:free (16s)
-OK NECO-CEMENTW-20L-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (164s)
-  ZCCO-CEMENTSP-50L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791295761-Yz1kxH555syB9ARgQK0J","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  SACE-CEMENTWB-40L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791295768-NHwnnYGR5pSWIlthhvVh","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  SHCO-CPCARG32.5-L50-00 cohere:command-r-plus-08-2024: 179s JSONDecodeError: Invalid control character at: line 6 column 339 (char 671)
-OK UCC-CEMENTPOLI-50L-00 <- zai:glm-4.5-flash (150s)
-  DCCO-PCT5G22.5-L50-00 kilo:inclusionai/ling-3.1-flash: 226s TimeoutError: The read operation timed out
-OK WSH-CEMENTW-25L-00 <- cohere:command-a-reasoning-08-2025 (43s)
-  WSH-CEMENTW-20L-00 cohere:command-a-reasoning-08-2025: 10s JSONDecodeError: Invalid control character at: line 6 column 338 (char 750)
-  TCC-CEMENTP-50L-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  TCC-CEMENTP-50L-00 kilo:stepfun/step-3.7-flash:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-  KHCE-CEMENTSP-50L-00 kilo:dots-studio/dots-3-note-preview:free: 16s ValueError: bad response: '{"id":"gen-1791295952-KVFHCKbdLeDgY4oL9b17","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
-OK DCCO-PCT5G22.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (138s)
-  TCC-PCT5G42.5-B-00 zai:glm-4.7-flash: 138s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  KCC-CPCANG32.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 217s ValueError: bad response: '{"id":"gen-1791295991-C6X9ws7RqTj7UYZsmvi5","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  KHCE-CEMENTSP-50L-00 kilo:stepfun/step-3.7-flash:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-  FICO-CPCANG42.5-L50-00 kilo:inclusionai/ling-3.1-flash: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"message\":\"server overload, please try again later trace_id: 5a88df8a718c3ec5ee071bb2a2ad9436\",\"type\":\"server_overload\"}\n","
-  TCC-PCT5G42.5-B-00 zai:glm-4.5-flash: 50s ValueError: empty slug
-  BCC-PCT5G32.5-L50-00 kilo:dots-studio/dots-3-note-preview:free: 15s ValueError: bad response: '{"id":"gen-1791296022-9My9MkReOb87VbnmOLkW","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
-  WSH-CEMENTW-20L-00 cohere:command-r-plus-08-2024: 180s TimeoutError: The read operation timed out
-OK FICO-CPCANG42.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (48s)
-  KCC-CPCANG32.5-L50-00 cohere:command-a-reasoning-08-2025: 28s ValueError: 128 words / 3 paragraphs
-  BCC-PCT5G32.5-L50-00 kilo:stepfun/step-3.7-flash:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-  KCC-CPCANG32.5-L50-00 cohere:command-r-plus-08-2024: 16s JSONDecodeError: Invalid control character at: line 6 column 262 (char 576)
-  GHCO-CEMENTPOLI-50L-00 kilo:inclusionai/ling-3.1-flash: 47s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"code\":429,\"reason\":\"RATE_LIMIT_EXCEEDED\",\"message\":\"You have exceeded the request rate limit. Please wait a short period be
-  TCC-CEMENTW-40L-00 cohere:command-a-reasoning-08-2025: 30s ValueError: 108 words / 3 paragraphs
-OK TCC-CEMENTW-40L-00 <- cohere:command-r-plus-08-2024 (15s)
-  OAC-SPCANG42.5-B-00 zai:glm-4.7-flash: 122s ValueError: 109 words / 1 paragraphs
-  FACO-PCT5G32.5-L50-00 cohere:command-a-reasoning-08-2025: 11s JSONDecodeError: Expecting value: line 4 column 15 (char 158)
-  FACO-PCT5G32.5-L50-00 cohere:command-r-plus-08-2024: 16s JSONDecodeError: Invalid control character at: line 6 column 512 (char 805)
-  KACC-PCT5G32.5-L50-00 cohere:command-a-reasoning-08-2025: 12s JSONDecodeError: Expecting ',' delimiter: line 7 column 3 (char 1181)
-  KACC-PCT5G32.5-L50-00 cohere:command-r-plus-08-2024: 22s JSONDecodeError: Invalid control character at: line 6 column 360 (char 729)
-OK GHCO-CEMENTPOLI-50L-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (103s)
-OK MAS-CPCANG32.5-L50-00 <- cohere:command-a-reasoning-08-2025 (39s)
-OK OAC-SPCANG42.5-B-00 <- zai:glm-4.5-flash (132s)
-OK KECE-CEMENTP-50L-00 <- cohere:command-a-reasoning-08-2025 (18s)
-  SACE-CEMENTW-40L-00 cohere:command-a-reasoning-08-2025: 31s ValueError: markers: «رکورد تاریخی» در text
-  SACE-CEMENTW-40L-00 cohere:command-r-plus-08-2024: 15s JSONDecodeError: Invalid control character at: line 6 column 318 (char 672)
-  WSH-CEMENTW-50L-00 cohere:command-a-reasoning-08-2025: 9s JSONDecodeError: Expecting value: line 4 column 15 (char 148)
-  WSH-CEMENTW-50L-00 cohere:command-r-plus-08-2024: 16s JSONDecodeError: Invalid control character at: line 6 column 310 (char 643)
-  ZCCO-CEMENTSP-50L-00 cohere:command-a-reasoning-08-2025: 11s JSONDecodeError: Expecting ',' delimiter: line 6 column 194 (char 620)
-OK CMK-CEMENTP-50L-00 <- kilo:inclusionai/ling-3.1-flash (190s)
-  ZCCO-CEMENTSP-50L-00 cohere:command-r-plus-08-2024: 31s JSONDecodeError: Invalid control character at: line 6 column 367 (char 694)
-  TCC-CEMENTP-50L-00 zai:glm-4.7-flash: 199s TimeoutError: The read operation timed out
-  TCC-CEMENTP-50L-00 zai:glm-4.5-flash: 11s ValueError: empty slug
-  HCC-CEMENTPB-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
-OK HCC-CEMENTPB-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (64s)
-  KHCE-CEMENTSP-50L-00 zai:glm-4.7-flash: 226s TimeoutError: The read operation timed out
-  KHCE-CEMENTSP-50L-00 zai:glm-4.5-flash: 25s ValueError: empty slug
-  BCC-PCT5G32.5-L50-00 zai:glm-4.7-flash: 18s ValueError: 122 words / 1 paragraphs
-  BCC-PCT5G32.5-L50-00 zai:glm-4.5-flash: 12s ValueError: empty slug
-  SACE-CEMENTWB-40L-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
-OK SACE-CEMENTWB-40L-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (100s)
-OK SHCO-CPCARG32.5-L50-00 <- kilo:inclusionai/ling-3.1-flash (155s)
-OK KCC-CPCANG32.5-B-00 <- kilo:inclusionai/ling-3.1-flash (331s)
-  TCC-PCT5G42.5-B-00 kilo:inclusionai/ling-3.1-flash: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"code\":429,\"reason\":\"RATE_LIMIT_EXCEEDED\",\"message\":\"You have exceeded the request rate limit. Please wait a short period be
-OK TCC-PCT5G42.5-B-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (212s)
-  WSH-CEMENTW-20L-00 kilo:inclusionai/ling-3.1-flash: 47s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"message\":\"server overload, please try again later trace_id: 14092560eec399f4d193f3e85142eb29\",\"type\":\"server_overload\"}\n","
-OK WSH-CEMENTW-20L-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (84s)
-  KCC-CPCANG32.5-L50-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
-OK KCC-CPCANG32.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (195s)
-  FACO-PCT5G32.5-L50-00 kilo:inclusionai/ling-3.1-flash: 196s TimeoutError: The read operation timed out
-OK FACO-PCT5G32.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (101s)
-  KACC-PCT5G32.5-L50-00 kilo:inclusionai/ling-3.1-flash: 196s TimeoutError: The read operation timed out
-OK KACC-PCT5G32.5-L50-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (152s)
-OK SACE-CEMENTW-40L-00 <- kilo:inclusionai/ling-3.1-flash (192s)
-OK WSH-CEMENTW-50L-00 <- kilo:inclusionai/ling-3.1-flash (125s)
-OK ZCCO-CEMENTSP-50L-00 <- kilo:inclusionai/ling-3.1-flash (88s)
+  CWD-CR08AB-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NCI-OANMMSB-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  CHG-GS00101-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  CWD-CR08AB-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  CWD-CR08AB-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  CWD-CR08AB-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  KRD-LD2420E02PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  MDC-HDF7000LMPJ-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  CWD-CR08AB-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  CWD-CR08AB-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NCI-OAMOOX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  PAM-HDEX5PP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  NCI-CR08AB-00 groq:openai/gpt-oss-120b: 14s ValueError: no JSON
+  FSIC-EA005000-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NCI-CR08AB-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  FSIC-EA005000-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+OK KEPE-HDBL3PP-00 <- cohere:command-a-03-2025 (20s)
