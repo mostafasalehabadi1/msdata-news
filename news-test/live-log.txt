@@ -1,8 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-40 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  SHPC-DEAB-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PPCO-OASTYB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-  KPC-OAPMDIB-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   llm7:minimax-m2.7: quota used up - skipped for the rest of the day
   OAC-CEM2-32.5R-50L-00 llm7:minimax-m2.7: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
   ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
@@ -207,3 +202,18 @@ OK BMIS-MRENEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (117s)
   FROJ-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
 style-soft: lead>35w/1num, text 13 nums
 OK FROJ-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (55s)
+  AZF-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 29 nums
+style-soft: lead>35w/1num, text 15 nums
+  AZF-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 146s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱۸۶۶ | کد کالا یا حروف لاتین وسط متن
+style-soft: lead>35w/1num, text 18 nums
+  SJS-HREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 204s TimeoutError: The read operation timed out
+style-soft: در حالی که, lead>35w/1num, text 15 nums
+style-soft: ثبت شد, lead>35w/1num, text 13 nums
+style-soft: lead>35w/1num, text 12 nums
+  SJS-HREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 145s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱٫۵
+  KSO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: در حالی که, lead>35w/1num, text 17 nums
+style-soft: در حالی که, lead>35w/1num, text 16 nums
+OK KSO-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (90s)
