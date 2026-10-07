@@ -113,7 +113,13 @@ def apply_edits(root=None, ndir=None):
                     continue
                 new = {k: e[k] for k in EDITABLE if k in e and isinstance(e[k], (str, dict, list)) and e[k] != it.get(k)}
                 # owner 1405-07-15: an edit may not shrink the text below 120 words - the short edit is skipped, the original stays
-                if len(str(e.get("text", it.get("text", ""))).split()) < 120:  # owner: 120 words minimum for all physical and Kish news
+                bad = []  # owner: 120 words minimum for all physical and Kish news; kala edits must also pass validate.py (or they block every release)
+                if len(str(e.get("text", it.get("text", ""))).split()) < 120:
+                    bad.append("under 120 words")
+                elif ndir is None:
+                    from validate import check_text
+                    check_text(sym, {**it, **{k: e[k] for k in EDITABLE if k in e}}, bad, 120, 220, 2, 4)
+                if bad:
                     # a short edit already applied earlier: bring the original written text back from the queue
                     qp = os.path.join(os.path.dirname(npath).replace(N, Q, 1), os.path.basename(npath))
                     orig = next((q for q in json.load(open(qp, encoding="utf-8"))["items"] if q.get("symbol") == sym), None) if os.path.exists(qp) else None
@@ -121,7 +127,7 @@ def apply_edits(root=None, ndir=None):
                         it.update({k: orig[k] for k in EDITABLE if k in orig})
                         it.pop("edited", None); it.pop("edited_at", None)
                         changed += 1
-                    print(f"edit skipped (text < 120 words) {ep}")
+                    print(f"edit skipped ({'; '.join(bad)}) {ep}")
                     continue
                 if new:
                     it.update(new)
