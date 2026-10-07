@@ -135,9 +135,7 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
                 F.append(f"شرکت {prod} ارزان‌ترین فروشنده‌ی {goods} در معاملات امروز بود.")
             elif ps[-1] is row and ps[-1]["weighted_price"] > ps[-2]["weighted_price"]:
                 F.append(f"شرکت {prod} گران‌ترین فروشنده‌ی {goods} در معاملات امروز بود.")
-            tot = sum(p["traded_qty"] for p in same)
-            if tot:
-                F.append(f"سهم شرکت {prod} از کل {fa_num(tot)} {unit} {goods} معامله‌شده‌ی امروز {fa_num(trd / tot * 100, 0)} درصد بود.")
+            # owner 1405-07-15: no share-of-day figures (the day is still trading when news are written)
     # style guide v2: no «امروز» in the facts (the model copied it 3-6 times per news); the date is in F1
     F = [F[0]] + [re.sub(r"\bامروز\b", "این جلسه", x) for x in F[1:]]
     facts = "\n".join(f"F{i + 1}. {s}" for i, s in enumerate(F))

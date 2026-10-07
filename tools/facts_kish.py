@@ -82,10 +82,7 @@ def build(row, series, day_rows, date_fa, date):
     tv = row.get("total_value") or 0
     if usd:
         F.append(f"ارزش این معامله {fa_int(round(tv))} دلار بود.")
-        tot = sum(x.get("total_value_usd") or 0 for x in day_rows if x.get("is_usd"))
-        if tot:
-            F.append(f"سهم این معامله از کل فروش دلاری بازار صادراتی در این روز {fa_num(tv / tot * 100, 1)} درصد بود "
-                     f"(کل روز: {fa_int(round(tot))} دلار).")
+        # owner 1405-07-15: no share-of-day figures - the day is still trading when news are written, so the total is incomplete
     else:
         F.append(f"ارزش این معامله {fa_int(round(tv))} ریال صادراتی بود.")
     # same goods, other producer or other delivery the same day (same currency only)
