@@ -145,22 +145,45 @@ def main():
         hp = os.path.join(ROOT, "report-now.txt")
         m = re.search(r"^headline:\s*(.+)$", open(hp, encoding="utf-8").read(), re.M) if os.path.exists(hp) else None
         HEADLINE = m.group(1).strip() if m and force else ""
-    latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
+    # --market kish: the Kish export-market report, same rules and timing (owner 1405-07-15); files under queue|news/kish/
+    kish = "--market" in sys.argv and sys.argv[sys.argv.index("--market") + 1] == "kish"
+    sub = "kish" if kish else ""
+    if kish:
+        subprocess.run([sys.executable, os.path.join(ROOT, "tools", "fetch_kish.py")], check=False)
+        k = json.load(open(os.path.join(ROOT, "data", "kish", "today.json"), encoding="utf-8"))
+        latest = {"date": k["date"], "date_fa": k["trade_date"]}
+    else:
+        latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
     date, today = latest["date"], now.strftime("%Y-%m-%d")
     # today's report from 18:30; a report still missing after midnight is written then (it never skips to the next day)
     if not force and (date > today or (date == today and (now.hour, now.minute) < (18, 30))):
         return
-    out = os.path.join(ROOT, "queue", f"report-{date}.json")
-    if os.path.exists(out) or os.path.exists(os.path.join(ROOT, "news", f"report-{date}.json")):
+    out = os.path.join(ROOT, "queue", sub, f"report-{date}.json")
+    if os.path.exists(out) or os.path.exists(os.path.join(ROOT, "news", sub, f"report-{date}.json")):
         return
-    subprocess.run([sys.executable, os.path.join(ROOT, "tools", "fetch.py")], check=False)  # the day's final numbers
-    latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
-    date, date_fa = latest["date"], latest["date_fa"]
-    rows = json.load(open(os.path.join(ROOT, "data", date, "today.json"), encoding="utf-8"))["rows"]
-    if not rows:
-        return
-    ctx = news(rows)
-    fx, symmap, tables = facts_report.build(rows, date_fa, date, os.path.join(ROOT, "data", date, "symbols"))
+    if kish:
+        import facts_report_kish
+        h = json.load(open(os.path.join(ROOT, "data", "kish", "history.json"), encoding="utf-8"))
+        date_fa, items = k["trade_date"], k["items"]
+        if not items:
+            return
+        prev = max((d for d in h.get("days", {}) if d < date_fa), default=None)
+        rows = [{"symbol": r["symbol"], "goods_name": facts_report_kish.clean_name(r.get("goods_name")),
+                 "trade_value": r.get("total_value_usd") or 0} for r in items]  # for news() and links only
+        ctx = news(rows)
+        fx, symmap, tables = facts_report_kish.build(items, h.get("series", {}), h["days"].get(prev) if prev else None, date_fa, date)
+        global REPORT_RULES
+        REPORT_RULES = REPORT_RULES.replace("گزارش پایان روز بازار فیزیکی بورس کالا", "گزارش پایان روز بازار صادراتی بورس کالا") + \
+            "\n\nقواعد بازار صادراتی:\n" + w.STYLE_KISH
+    else:
+        subprocess.run([sys.executable, os.path.join(ROOT, "tools", "fetch.py")], check=False)  # the day's final numbers
+        latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
+        date, date_fa = latest["date"], latest["date_fa"]
+        rows = json.load(open(os.path.join(ROOT, "data", date, "today.json"), encoding="utf-8"))["rows"]
+        if not rows:
+            return
+        ctx = news(rows)
+        fx, symmap, tables = facts_report.build(rows, date_fa, date, os.path.join(ROOT, "data", date, "symbols"))
     ctx_txt = "\n".join(f"- {x['site']} | {x['title']} | {x['summary']} | {x['url']}" for x in ctx) or "- خبری پیدا نشد."
     prompt = (f"تیتر گزارش از پیش تعیین شده: «{HEADLINE}»؛ متن را با همین تیتر هماهنگ بنویس.\n\n" if HEADLINE else "") + (
               "حقیقت‌های کل بازار امروز (فقط از این‌ها انتخاب کن؛ عددها را عیناً بنویس):\n" + fx +

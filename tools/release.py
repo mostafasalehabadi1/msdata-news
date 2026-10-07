@@ -73,6 +73,11 @@ def release_kish():
     qk, nk = os.path.join(Q, "kish"), os.path.join(N, "kish")
     os.makedirs(nk, exist_ok=True)
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    for rep in sorted(glob.glob(os.path.join(qk, "report-*.json"))):  # daily report: first run after it is queued, like kala's
+        dst = os.path.join(nk, os.path.basename(rep))
+        if not os.path.exists(dst):
+            shutil.copy(rep, dst)
+            print(f"kish report released: {os.path.basename(rep)}")
     for qpath in sorted(glob.glob(os.path.join(qk, "????-??-??.json"))):
         q = json.load(open(qpath, encoding="utf-8"))
         npath = os.path.join(nk, os.path.basename(qpath))

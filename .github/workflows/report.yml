@@ -48,6 +48,8 @@ jobs:
           git config user.email bot@msdata.ir
           HL="${{ inputs.headline }}"
           python tools/write_report.py ${{ (inputs.now || github.event_name == 'push') && '--now' || '' }} ${HL:+--headline "$HL"}
+          # Kish export-market report: same rules and time (owner 1405-07-15)
+          python tools/write_report.py --market kish ${{ (inputs.now || github.event_name == 'push') && '--now' || '' }} || true
           git add queue data
           git diff --cached --quiet && exit 0
           git commit -qm "report: $(python -c 'import json;print(json.load(open("data/latest.json"))["date_fa"])')"
