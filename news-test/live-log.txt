@@ -55,3 +55,12 @@ OK GOLD-BI6070BEX-00 <- cohere:command-a-03-2025 (12s)
 }
 style-soft: lead>35w/1num
 OK ACC-PCT2G42.5-BEX-00 <- cohere:command-a-reasoning-08-2025 (16s)
+  BPB-BIPG5210BEX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  SABD-INBPPBEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SABD-INBPPBEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SABD-INBPPBEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SABD-INBPPBEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+style-soft: lead>35w/1num, text 10 nums
+  SABD-INBPPBEX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+style-soft: lead>35w/1num, text 23 nums
+OK CBA-BI6070BEX-00 <- requesty:mistral/leanstral-1-5 (26s)
