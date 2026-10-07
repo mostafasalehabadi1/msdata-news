@@ -54,10 +54,10 @@ def build(row, series, day_rows, date_fa, date):
     off, dem, trd = row.get("offer_volume") or 0, row.get("demand_volume") or 0, row.get("trade_volume") or 0
     wd = WEEKDAYS[dt.date.fromisoformat(date).weekday()]
     deliv, country = delivery(row.get("delivery_place"))
-    F = [f"بازار صادراتی بورس کالا (عرضه برای خریدار خارجی یا صادرکننده). نام کالا: {goods}؛ تولیدکننده: شرکت {prod}.",
+    F = [f"نام کالا: {goods}؛ تولیدکننده: شرکت {prod}.",
          f"روز معامله: {wd} {fa_date(date_fa)}.",
          f"شرط تحویل: {deliv}." + (" مرز فقط مقصد اول است؛ از مصرف کالا در آن کشور حرفی نزن." if country else ""),
-         ("کشور مقصد برای تیتر: " + country + " (در تیتر «به " + country + "» بیاور).") if country else
+         ("مرز و کشور برای تیتر: " + deliv.replace("تحویل در ", "") + " (در تیتر «برای مرز " + country + "» یا «تحویل در مرز …» بیاور، نه «صادرات به " + country + "»).") if country else
          "کشور مقصد مشخص نیست؛ در تیتر کشوری نیاور.",
          ("نرخ‌های این معامله دلاری است." if usd else "این قرارداد «ریال صادراتی» است؛ صریح بنویس «با نرخ ریال صادراتی» و آن را با معامله‌های دلاری مقایسه یا جمع نکن.")]
     # volumes in the source are in kg-units of the contract unit (1000 kg) -> tons

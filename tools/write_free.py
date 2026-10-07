@@ -338,6 +338,17 @@ SOFT = re.compile(r"ثبت شد|به ثبت رساند|در حالی که")
 NUM = re.compile(r"[0-9۰-۹]+(?:[٫.][0-9۰-۹]+)?")
 
 
+SOURCE_END = "این خبر بر پایه‌ی داده‌های ام‌اس‌دیتا از بورس کالا نوشته شده است."
+
+
+def ensure_source(text):
+    """content agent 1405-07-15: a bare «ام‌اس‌دیتا» / «منبع: ام‌اس‌دیتا» tail, or no mention at all -> sentence 10 at the end."""
+    t = re.sub(r"\s*(?:منبع\s*[:：]\s*)?ام[‌ ]?اس[‌ ]?دیتا\.?\s*$", "", text.rstrip())
+    if not MSD.search(t):
+        t = t.rstrip() + " " + SOURCE_END
+    return t
+
+
 def clean(t):
     for rx, rep in FIXES:
         t = rx.sub(rep, t)
@@ -353,6 +364,7 @@ def parse(raw, facts="", tables=None):
         if not isinstance(d.get(k), str) or not d[k].strip():
             raise ValueError(f"empty {k}")
         d[k] = clean(d[k].replace("\r", "").strip())
+    d["text"] = ensure_source(d["text"])
     w, p = words(d["text"]), paragraphs(d["text"])
     if not MIN_WORDS[0] <= w <= 210 or not 2 <= p <= 3:
         raise ValueError(f"{w} words / {p} paragraphs")
@@ -387,7 +399,7 @@ def parse(raw, facts="", tables=None):
         soft.append("ام‌اس‌دیتا!=1")
     if len(re.findall(r"امروز", d["title"] + d["lead"] + d["text"])) > 2:
         soft.append("امروز>2")
-    if re.search(r"[A-Za-z]{2,}[-0-9]|[A-Za-z][0-9]|[0-9][A-Za-z]", d["title"] + " " + d["lead"] + " " + d["text"]):
+    if re.search(r"[A-Za-z]{2,}[-0-9]|[A-Za-z][0-9]|[0-9][A-Za-z]|[؀-ۿ][A-Za-z]|[A-Za-z][؀-ۿ]", d["title"] + " " + d["lead"] + " " + d["text"]):
         probs.append("کد کالا یا حروف لاتین وسط متن")
     if len(d["lead"].split()) > 35 or len(NUM.findall(d["lead"])) > 1:
         soft.append("lead>35w/1num")
