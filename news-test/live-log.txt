@@ -1,74 +1,30 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-15 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+11 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
   NGP-BI6070BEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   PACB-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  PACT-BI6070BEX-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 26 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":26}}
   NGP-BI6070BEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ALSU-AP06102EX-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
   NGP-BI6070BEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  KHCE-PCT2G32.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   NGP-BI6070BEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  MBS-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   NGP-BI6070BEX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   NGP-BI6070BEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MBS-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  GSS-BSO068XEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SMPC-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"27cffa6a-f874-4f8a-801b-0be6fae45326","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  NACE-PCT2G42.5-L50EX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ac69b998-f5fd-4712-
-  NCI-CCAAEX-00 zai:glm-4.7-flash: 51s JSONDecodeError: Invalid control character at: line 5 column 170 (char 474)
-style-soft: lead>35w/1num, text 12 nums
-  ALSU-AP06102EX-00 groq:openai/gpt-oss-120b: 62s ValueError: markers: «نشان‌دهنده» در text | کد کالا یا حروف لاتین وسط متن
-  ALSU-AP06102EX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  groq:openai/gpt-oss-120b: quota used up - skipped for the rest of the day
-  GSS-BSO068XEX-00 groq:openai/gpt-oss-120b: 6s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 200000, Requested 32
-  NCI-CCAAEX-00 zai:glm-4.5-flash: 26s ValueError: 99 words / 2 paragraphs
-  GSS-BSO068XEX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  NGP-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5bec32df-9ec1-4a86-
-  KMC-SPPC-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"706383ac-3122-4757-b000-7b8dc87dbcc9","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  NACE-PCT2G42.5-L50EX-00 zai:glm-4.7-flash: 15s ValueError: 59 words / 1 paragraphs
-  NACE-PCT2G42.5-L50EX-00 zai:glm-4.5-flash: 6s ValueError: empty slug
-  GSS-BSO068XEX-00 zai:glm-4.7-flash: 19s ValueError: empty slug
-  GSS-BSO068XEX-00 zai:glm-4.5-flash: 5s ValueError: empty slug
-  ALSU-AP06102EX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ec44e88e-8350-4e56-
-  ASHR-DSMLABSAEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"de8da89c-b07e-4edd-83e0-74ac5222b717","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  SHCO-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 312s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 14 nums
-  SHCO-PCT2G42.5-L50EX-00 kilo:stepfun/step-3.7-flash:free: 114s ValueError: markers: تالار اشتباه: «صنعتی و معدنی»
-style-soft: ثبت شد, ثبت شد, ثبت شد, lead>35w/1num, text 17 nums
-  PSP-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 280s ValueError: 114 words / 2 paragraphs
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 11 nums
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 10 nums
-OK PSP-BI6070BEX-00 <- kilo:stepfun/step-3.7-flash:free (110s)
-  PAC-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 17s ValueError: empty slug
-style-soft: lead>35w/1num, text 10 nums
-style-soft: ثبت شد, lead>35w/1num, text 10 nums
-  PAC-BI6070BEX-00 kilo:stepfun/step-3.7-flash:free: 172s ValueError: markers: تالار اشتباه: «صنعتی و معدنی»
-  PACB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
+  KMC-SPPC-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ALSU-AP06102EX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHCO-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"54f9d1ce-2849-421f-b931-11fe24606ccc","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  NACE-PCT2G42.5-L50EX-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"a8d65f2e-75f2-471f-883a-e96b3f78335c","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  GSS-BSO068XEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b08b1337-16e2-4a80-
+  NACE-PCT2G42.5-L50EX-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"b3141dc5-7629-494a-a324-f59717cc67c1","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ASHR-DSMLABSAEX-00 cohere:command-a-03-2025: 46s ValueError: HTTP 429: {"id":"acc95709-e1c9-4c5a-9799-a9d84be7e6e6","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  NGP-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (87364c64-4641-4659-
+  ALSU-AP06102EX-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"77d64be2-d246-41e3-b25c-201a05909219","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  PAC-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"39524942-72ad-4b09-bc6a-996004205498","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  NACE-PCT2G42.5-L50EX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c939d21c-c734-4114-
+  ALSU-AP06102EX-00 cohere:command-r-plus-08-2024: 46s ValueError: HTTP 429: {"id":"7ecdc39c-acfc-46c8-8198-f18eb821ceef","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
 style-soft: ثبت شد, lead>35w/1num, text 9 nums
-  PACB-BI6070BEX-00 kilo:stepfun/step-3.7-flash:free: 153s ValueError: markers: تالار اشتباه: «صنعتی و معدنی»
-  PACT-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 14 nums
-OK PACT-BI6070BEX-00 <- kilo:stepfun/step-3.7-flash:free (23s)
-  KHCE-PCT2G32.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 348s TimeoutError: The read operation timed out
-  KHCE-PCT2G32.5-L50EX-00 kilo:stepfun/step-3.7-flash:free: 67s ValueError: 150 words / 1 paragraphs
-  MBS-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 199s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 9 nums
-style-soft: lead>35w/1num, text 11 nums
-  MBS-BI6070BEX-00 kilo:stepfun/step-3.7-flash:free: 129s ValueError: markers: تالار اشتباه: «صنعتی و معدنی»
-  SMPC-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-style-soft: ثبت شد, lead>35w/1num, text 16 nums
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 11 nums
-OK SMPC-BI6070BEX-00 <- kilo:stepfun/step-3.7-flash:free (90s)
-  NCI-CCAAEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 12 nums
-style-soft: ثبت شد, lead>35w/1num, text 12 nums
-OK NCI-CCAAEX-00 <- kilo:stepfun/step-3.7-flash:free (133s)
+OK KHCE-PCT2G32.5-L50EX-00 <- kilo:dots-studio/dots-3-note-preview:free (205s)
