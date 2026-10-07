@@ -1,219 +1,88 @@
-  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
-  OAC-CEM2-32.5R-50L-00 llm7:minimax-m2.7: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
-  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
-  ESC-LRNNEA3B-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"1cfbea27da0c1b1c2d229e223a01b66f"
-}
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+30 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  SHPC-DEAB-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PPCO-OASTYB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ESC-HRNNENA3B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   SHPC-DEAB-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
-  ESC-LRNNEA3B-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"fad8b879829ccc180b1328794d453a51"
-}
   SHPC-DEAB-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ARCO-CASOALB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
+  AGIC-PPHP520HJ-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  HSSC-LRNENA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   SHPC-DEAB-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
-  ESC-LRNNEA3B-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"7da5236d4ef79c6fe0cc0a11b5eec148"
-}
-  FAAS-HREENNA3B-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  KSO-MREEEEA3BN-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
   SHPC-DEAB-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ovh:Qwen3.6-27B: quota used up - skipped for the rest of the day
-  ESC-LRNNEA3B-00 ovh:Qwen3.6-27B: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"84d3776d3fb23d04f37bbb2434fa6957"
-}
-  KSCO-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 10s JSONDecodeError: Invalid control character at: line 7 column 110 (char 587)
   SHPC-DEAB-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  FAAS-HREENNA3B-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for the rest of the day
-  ESC-LRNNEA3B-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"6bd0fb0705bc747af1fee700cea5883b"
-}
-  BIMC-MREEEEA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for the rest of the day
-  ESC-LRNNEA3B-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"b7a8ea688d35794bc78b8a1294fec572"
-}
-  KPC-OAPMDIB-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  KPC-OAPMDIB-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  KSO-MREEEEA3BN-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 19s JSONDecodeError: Expecting value: line 5 column 11 (char 298)
-style-soft: lead>35w/1num, text 25 nums
-OK PAGL-DEGB-00 <- cohere:command-a-reasoning-08-2025 (19s)
-  KPC-OAPMDIB-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  OAC-CEM2-32.5R-50L-00 llm7:mistral-Nemo-Instruct-2407: 19s JSONDecodeError: Invalid control character at: line 6 column 220 (char 674)
-  KPC-OAPMDIB-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  BMIS-MRENEEA3B-00 cohere:command-a-03-2025: 23s JSONDecodeError: Invalid control character at: line 6 column 190 (char 611)
-  FROJ-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 8s JSONDecodeError: Invalid control character at: line 6 column 316 (char 688)
-  KPC-OAPMDIB-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  KPC-OAPMDIB-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
-  KSO-MREEEEA3BN-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 5635 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":5635}}
-  OAC-CEM2-32.5R-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  OAC-CEM2-32.5R-50L-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  OAC-CEM2-32.5R-50L-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 28 nums
-  AZF-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 11s JSONDecodeError: Invalid control character at: line 7 column 141 (char 513)
-  OAC-CEM2-32.5R-50L-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ESC-LRNNEA3B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 19s JSONDecodeError: Expecting value: line 3 column 11 (char 68)
-style-soft: ثبت شد, lead>35w/1num, text 34 nums
-OK FAAS-HREENNA3B-00 <- cohere:command-a-reasoning-08-2025 (20s)
-style-soft: lead>35w/1num, text 28 nums
-  OAC-CEM2-32.5R-50L-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 14s JSONDecodeError: Expecting value: line 5 column 11 (char 235)
-  SHPC-DEAB-00 groq:openai/gpt-oss-120b: 55s ValueError: no JSON
-  SHPC-DEAB-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  SJS-HREEEEA3B-00 cohere:command-a-03-2025: 67s ValueError: HTTP 429: {"id":"328dfdbc-e4cf-4184-8f7e-412bddb0ec91","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  KPC-OAPMDIB-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"6a32b883-4f51-4e2d-9f06-a7abcdb64aab","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  KSO-MREEEEA3B-00 zai:glm-4.7-flash: 100s ValueError: 93 words / 1 paragraphs
-  KSO-MREEEEA3BN-00 groq:openai/gpt-oss-120b: 22s ValueError: no JSON
-  KSO-MREEEEA3B-00 zai:glm-4.5-flash: 7s ValueError: empty slug
-  KSO-MREEEEA3BN-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  SJS-MREEEEA3B-00 llm7:DeepSeek-V4-Flash-0731: 125s ValueError: HTTP 524: error code: 524
-
-style-soft: ثبت شد, در حالی که, lead>35w/1num, text 18 nums
-OK CWD-CR018OO-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (131s)
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  ESC-HRENNNA3B-00 llm7:DeepSeek-V4-Flash-0731: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 5530 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":5530}}
-  HSSC-LRNENA3B-00 zai:glm-4.7-flash: 26s JSONDecodeError: Invalid control character at: line 5 column 150 (char 486)
-  KPC-OAPMDIB-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"96abd556-c187-4b29-aa2f-790a76978249","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  MPC-PPHP525JPP-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"2ab22779-9547-4213-bb61-67db8a3df964","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  HSSC-LRNENA3B-00 zai:glm-4.5-flash: 8s JSONDecodeError: Invalid control character at: line 5 column 119 (char 423)
-style-soft: lead>35w/1num, text 16 nums
-OK SMC-HREENNA3B-00 <- kilo:inclusionai/ling-3.1-flash (168s)
-  FPCO-ACTACB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  ZNKM-CR018OO-00 zai:glm-4.7-flash: 30s ValueError: empty slug
-  ESC-LRNNEA3B-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"5b4ef047-0c46-4a51-9057-b4e9f4bd32de","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  ZNKM-CR018OO-00 zai:glm-4.5-flash: 28s JSONDecodeError: Invalid control character at: line 5 column 137 (char 420)
-  ESC-LRNNEA3B-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"f599edf9-cd18-4948-86ba-b86e82e4f7be","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 9 nums
-  SHPC-DEAB-00 cohere:command-a-reasoning-08-2025: 46s ValueError: HTTP 429: {"id":"195375c8-9b7a-4067-80b1-1679bc14aeff","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-style-soft: ثبت شد, lead>35w/1num, text 19 nums
-OK FPCO-ACTACB-00 <- kilo:stepfun/step-3.7-flash:free (121s)
-  MKL-TISSDLGR14-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  BSPC-OAXYLENEB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791394260-ryL6qC4AWHnuCB0Tf24c","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  MRV-DEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791394266-Dz8kUSVjc0BQASpdAfkJ","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  SHPC-DEAB-00 cohere:command-r-plus-08-2024: 46s ValueError: HTTP 429: {"id":"11d7f2a5-2277-4264-a35e-88ae080bed93","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  OAC-CEM2-32.5R-50L-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
-  CTRC-BIALAN-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  OAC-CEM2-32.5R-50L-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 16 nums
-OK CTRC-BIALAN-00 <- kilo:stepfun/step-3.7-flash:free (87s)
-  OAC-CEM2-32.5R-50L-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 40s ValueError: empty slug
-style-soft: ثبت شد, lead>35w/1num, text 22 nums
-style-soft: ثبت شد, lead>35w/1num, text 22 nums
-  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for the rest of the day
-  OAC-CEM2-32.5R-50L-00 kilo:poolside/laguna-s-2.1:free: 34s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
-  kilo:thinkingmachines/inkling-small:free: quota used up - skipped for the rest of the day
-  OAC-CEM2-32.5R-50L-00 kilo:thinkingmachines/inkling-small:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: limit_rpd/thinkingmachines/inkling-small-20260730/e27a9a6d-1451-4be4-876e-292ffcbf1e71. Daily limit reached for thinkingmachines/inkling-small:free via Thinking Machine
-style-soft: ثبت شد, lead>35w/1num, text 14 nums
-  OAC-CEM2-32.5R-50L-00 kilo:cohere/north-mini-code:free: 82s ValueError: 89 words / 2 paragraphs
-  ESC-MRNEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 300s TimeoutError: The read operation timed out
-  KSO-MREEEEA3BN-00 kilo:inclusionai/ling-3.1-flash: 196s TimeoutError: The read operation timed out
-  KSO-MREEEEA3BN-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 28 nums
-  ESC-MRNEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 219s ValueError: markers: عدد بیرون از حقیقت‌ها: ۲۱۷۵
-style-soft: امروز>2, lead>35w/1num
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-  FAAS-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 34 nums
-style-soft: lead>35w/1num, text 19 nums
-OK FAAS-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (174s)
-  KSO-MREEEEA3BN-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 379s TimeoutError: The read operation timed out
-  SHPC-NOBG-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: در حالی که, در حالی که, lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 14 nums
-OK SHPC-NOBG-00 <- kilo:stepfun/step-3.7-flash:free (130s)
-style-soft: text 10 nums
-  KSO-MREEEEA3BN-00 kilo:cohere/north-mini-code:free: 334s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱۰۰۰، ۱۳۰۰، ۱۵۵۰
-  AAIM-MRNEENA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  KPC-OAPMDIB-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 15 nums
+  KSO-MREEEEA3BN-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
+  JPPC-PPRP120LPP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ESC-HRENNNA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NICO-CASODASOLIDL-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NICO-CASODASOLIDL-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NICO-CASODASOLIDL-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NICO-CASODASOLIDL-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 groq:openai/gpt-oss-120b: 22s ValueError: no JSON
+  NICO-CASODASOLIDL-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NICO-CASODASOLIDL-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  KSCO-MREEEEA3B-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"e7f669b2-b179-4a0f-99e2-36e3c7ce93db","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SGHC-PCT5G42.5-B-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"dfeaf729-5713-4646-a07e-df9231105909","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SJS-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8d277446-56eb-4da5-
+  OAC-CEM2-32.5R-50L-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4ff7c290-a969-4d0a-
+  KDTS-HRNENNA3B-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  KDTS-HRNENNA3B-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  SJS-HREEEEA3B-00 zai:glm-4.7-flash: 79s JSONDecodeError: Invalid control character at: line 5 column 235 (char 562)
 style-soft: lead>35w/1num, text 17 nums
-OK AAIM-MRNEENA3B-00 <- kilo:stepfun/step-3.7-flash:free (134s)
-  KPC-OAPMDIB-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: text 11 nums
-OK KPC-OAPMDIB-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (76s)
-  ESC-MRNEENA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 11 nums
-  ESC-MRNEENA3B-00 kilo:stepfun/step-3.7-flash:free: 127s ValueError: markers: نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
-  ESC-LRNNEA3B-00 kilo:inclusionai/ling-3.1-flash: 196s TimeoutError: The read operation timed out
-  ESC-LRNNEA3B-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  ESC-MRNNEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 347s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num, text 12 nums
-  ESC-LRNNEA3B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 331s ValueError: 146 words / 10 paragraphs
-style-soft: lead>35w/1num, text 11 nums
-OK ESC-MRNNEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (250s)
-  KHS-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: text 10 nums
-OK KHS-HS00000-00 <- kilo:stepfun/step-3.7-flash:free (39s)
-  ESC-LRNNEA3B-00 kilo:cohere/north-mini-code:free: 300s TimeoutError: The read operation timed out
-  STPA-HREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SHPC-DEAB-00 kilo:inclusionai/ling-3.1-flash: 196s TimeoutError: The read operation timed out
-style-soft: امروز>2, lead>35w/1num, text 15 nums
-style-soft: امروز>2, lead>35w/1num, text 19 nums
-style-soft: امروز>2, lead>35w/1num, text 19 nums
-  STPA-HREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 110s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  SHPC-DEGB-00 kilo:dots-studio/dots-3-note-preview:free: 22s ValueError: empty slug
-style-soft: lead>35w/1num, text 16 nums
-OK SHPC-DEGB-00 <- kilo:stepfun/step-3.7-flash:free (58s)
-  SHPC-DEAB-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  SNMY-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: در حالی که, امروز>2, lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 25 nums
-OK SNMY-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (131s)
-style-soft: text 9 nums
-  SHPC-DEAB-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 350s ValueError: markers: عدد بیرون از حقیقت‌ها: ۳۳
-  DTS-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SHPC-DEAB-00 kilo:cohere/north-mini-code:free: 313s ValueError: 144 words / 1 paragraphs
-style-soft: lead>35w/1num, text 12 nums
-style-soft: ثبت شد, lead>35w/1num, text 12 nums
-  DTS-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 313s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  SPSG-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 16 nums
-OK SPSG-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (95s)
-  PPCO-OASTYB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  PPCO-OASTYB-00 kilo:stepfun/step-3.7-flash:free: 222s ValueError: 141 words / 1 paragraphs
-  ARCO-CASOALB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-OK ARCO-CASOALB-00 <- kilo:stepfun/step-3.7-flash:free (118s)
-  KSCO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 17 nums
-  KSCO-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 193s ValueError: 150 words / 1 paragraphs
-  BIMC-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 21 nums
-style-soft: lead>35w/1num, text 12 nums
-OK BIMC-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (111s)
-  BMIS-MRENEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: امروز>2, lead>35w/1num, text 22 nums
-style-soft: ثبت شد, lead>35w/1num, text 14 nums
-OK BMIS-MRENEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (117s)
-  FROJ-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 13 nums
-OK FROJ-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (55s)
+  SJS-HREEEEA3B-00 zai:glm-4.5-flash: 11s JSONDecodeError: Invalid control character at: line 6 column 161 (char 519)
+  SGHC-PCT5G42.5-B-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"d5eb1939-42c0-41d8-92ed-22c33faffc59","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  MKL-TISSDLGR14-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"f9acd563-1707-45bf-a186-5da50ba4aa9d","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ZNKM-CR018OO-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1088b294-2d32-4005-
+  AZF-MREEEEA3BN-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (517f5a81-8dbe-4381-
+style-soft: ثبت شد, lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 33 nums
+  ESC-HRNNENA3B-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"e21e059c-64bb-40ff-bc92-614e19fb278d","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  MRV-DEGB-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"72bdaeb7-374e-4d47-b565-72acc2cc8a19","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ESC-MRNEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (fb12ea3f-85e7-4da2-
+  AGIC-PPHP520HJ-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 47s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9e7231b4-5a0b-4b28-
+  BSPC-OAXYLENEB-00 zai:glm-4.7-flash: 69s JSONDecodeError: Invalid control character at: line 6 column 133 (char 622)
+  BSPC-OAXYLENEB-00 zai:glm-4.5-flash: 9s JSONDecodeError: Invalid control character at: line 6 column 170 (char 561)
+  ESC-LRNNEA3B-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
   AZF-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 29 nums
-style-soft: lead>35w/1num, text 15 nums
-  AZF-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 146s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱۸۶۶ | کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 18 nums
-  SJS-HREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 204s TimeoutError: The read operation timed out
-style-soft: در حالی که, lead>35w/1num, text 15 nums
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 12 nums
-  SJS-HREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 145s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱٫۵
-  KSO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: در حالی که, lead>35w/1num, text 17 nums
-style-soft: در حالی که, lead>35w/1num, text 16 nums
-OK KSO-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (90s)
+  ESC-HRNNENA3B-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"636d6d85-a71a-46e1-9a9b-d59538ffbbce","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  KDTS-MREEEEA3B-00 requesty:mistral/leanstral-1-5: 221s ValueError: 99 words / 2 paragraphs
+  KDTS-MREEEEA3B-00 requesty:novita/inclusionai/ling-3.0-tiny: 0s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  KDTS-MREEEEA3B-00 requesty:poolside/laguna-m.1: 0s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  KDTS-MREEEEA3B-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  SHPC-DEAB-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"a679e661-5526-48f6-b612-afd20a58084f","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ESC-MRNEENA3B-00 zai:glm-4.7-flash: 62s JSONDecodeError: Invalid control character at: line 6 column 237 (char 628)
+  SHPC-DEAB-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"8b3cf6a1-0f61-49d0-9490-4750d21a8322","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: ثبت شد, lead>35w/1num, text 20 nums
+  ESC-LRNNEA3B-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+  MPC-PPHP525JPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 367s ValueError: markers: «نشان‌دهنده» در text
+  STPA-HREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791403561-KlIO2jKocExqxuULBdeU","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  KDTS-MREEEEA3B-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 17 nums
+  AZF-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 242s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+  ESC-MRNEENA3B-00 zai:glm-4.5-flash: 200s TimeoutError: The read operation timed out
+  KSO-MREEEEA3BN-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  KSO-MREEEEA3BN-00 requesty:novita/inclusionai/ling-3.0-tiny: 46s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  KSO-MREEEEA3BN-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  KSO-MREEEEA3BN-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+style-soft: lead>35w/1num, text 13 nums
+  PPCO-OASTYB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  DTS-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 279s TimeoutError: The read operation timed out
+  KSO-MREEEEA3BN-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
+  ESC-LRNNEA3B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 363s ValueError: 153 words / 10 paragraphs
+  JPPC-PPRP120LPP-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+style-soft: lead>35w/1num, text 19 nums
+OK PPCO-OASTYB-00 <- kilo:stepfun/step-3.7-flash:free (164s)
