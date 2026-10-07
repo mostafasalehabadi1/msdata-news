@@ -24,3 +24,14 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   SZCE-PCT2G32.5-L50EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
 style-soft: lead>35w/1num
 OK TCC-PCT2G32.5-L50EX-00 <- groq:openai/gpt-oss-120b (5s)
+  SZCE-PCT2G32.5-L50EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  KHAC-PCT2G42.5-L50EX-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"47dc996f07add951fcd68b1fb8435656"
+}
+  DNJC-BI6070BEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  KHCE-PCT2G32.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  SZCE-PCT2G32.5-L50EX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+style-soft: lead>35w/1num, text 14 nums
+OK BEHD-DSMLABSAEX-00 <- cohere:command-a-03-2025 (8s)
