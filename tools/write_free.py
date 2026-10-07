@@ -68,7 +68,7 @@ def compact_for(*templates):
 RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (short style)
 STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read()
 # symbol news (owner 2026-10-05): the old template without clichés; every fact and table is built in code (facts_kala.py)
-MIN_WORDS = [130]  # kish news are shorter (100-160 words, content agent 1405-07-15)
+MIN_WORDS = [120]  # owner 1405-07-15: 120 words minimum for all physical and Kish news (same as validate.py)
 RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
          "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
          "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
@@ -366,7 +366,7 @@ def parse(raw, facts="", tables=None):
         d[k] = clean(d[k].replace("\r", "").strip())
     d["text"] = ensure_source(d["text"])
     w, p = words(d["text"]), paragraphs(d["text"])
-    if not MIN_WORDS[0] <= w <= 210 or not 2 <= p <= 3:
+    if not MIN_WORDS[0] <= w <= 220 or not 2 <= p <= 4:  # = validate.py limits; stricter limits only threw away good news
         raise ValueError(f"{w} words / {p} paragraphs")
     if any(FORBIDDEN.search(d[k]) for k in ("title", "subtitle", "lead", "text")):
         raise ValueError("forbidden content")
@@ -434,7 +434,7 @@ def main():
     a = ap.parse_args()
     kish = a.market == "kish"
     if kish:
-        MIN_WORDS[0] = 100
+        MIN_WORDS[0] = 120
         global RULES
         import facts_kish
         RULES = RULES_KISH
@@ -520,7 +520,7 @@ def main():
                         if attempt == 2 or not re.search(r"words|markers|table", str(e)):
                             raise
                         short = re.match(r"(\d+) words", str(e))
-                        if short and int(short.group(1)) < 130:  # GLM and others stop short: say how many words are missing
+                        if short and int(short.group(1)) < 120:  # GLM and others stop short: say how many words are missing
                             e = f"{e} (متن تو {short.group(1)} کلمه است؛ دست‌کم {150 - int(short.group(1))} کلمه‌ی دیگر از حقیقت‌ها اضافه کن)"
                         raw = retry(call, prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایرادها: {e}. همان خبر را با رفع همه‌ی این ایرادها "
                                     "(text بین ۱۴۰ تا ۲۰۰ کلمه در ۲ یا ۳ پاراگراف، فقط با عددهای حقیقت‌ها) بازنویسی کن و فقط JSON برگردان.")
