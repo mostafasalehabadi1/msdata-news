@@ -1,61 +1,18 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 40 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  KSO-MREEEEA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-  PPCO-OASTYB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-  SJS-MREEEEA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-style-soft: lead>35w/1num, text 25 nums
-  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 36s ValueError: 128 words / 3 paragraphs
-style-soft: lead>35w/1num, text 17 nums
-OK SHPC-OAEHB-00 <- cohere:command-a-03-2025 (30s)
-  ASC-MREEEEA3B-00 cohere:command-a-03-2025: 20s JSONDecodeError: Invalid control character at: line 6 column 146 (char 572)
-  KSCO-MREEEEA3B-00 cohere:command-a-03-2025: 29s ValueError: 129 words / 3 paragraphs
+  HSTC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
+  KSCO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791388859-YBRCu3nKjoyarjyD5Hgj","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  BMIS-MRENEEA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
+  FPCO-ACTACB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791388866-zeGx1eh2pHgjOwTk1eWf","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ARCO-CASOALB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
+  CWD-CR018OO-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791388873-rl1AGCy4o9LKk5l0w1Jv","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  SJS-MREEEEA3B-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 301 (char 739)
+  BIMC-MREEEEA3B-00 cohere:command-a-03-2025: 7s JSONDecodeError: Invalid control character at: line 6 column 12 (char 411)
+  KSO-MREEEEA3B-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  PPCO-OASTYB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 48s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e5e41a6b-9e07-4ea1-
+  FROJ-MREEEEA3B-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 147 (char 578)
+  KSO-MREEEEA3B-00 zai:glm-4.5-flash: 10s JSONDecodeError: Expecting value: line 3 column 15 (char 94)
+  ESC-MRNENNA3B-00 zai:glm-4.7-flash: 29s JSONDecodeError: Invalid control character at: line 5 column 103 (char 419)
+  SJS-HREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 47s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (72b12a22-4efd-4eac-
 style-soft: lead>35w/1num, text 22 nums
-OK NCI-SUACB-00 <- cohere:command-a-03-2025 (41s)
-  SSC-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 28 nums
-  BMIS-MRENEEA3B-00 cohere:command-a-03-2025: 40s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 30 nums
-OK KAS-HS00000-00 <- cohere:command-a-03-2025 (40s)
-  FPCO-ACTACB-00 cohere:command-a-03-2025: 26s JSONDecodeError: Invalid control character at: line 6 column 161 (char 656)
-  CWD-CR018OO-00 cohere:command-a-03-2025: 9s JSONDecodeError: Invalid control character at: line 6 column 112 (char 547)
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 16 nums
-  BIMC-MREEEEA3B-00 cohere:command-a-03-2025: 32s JSONDecodeError: Invalid control character at: line 6 column 641 (char 1059)
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 11 nums
-OK SSC-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (277s)
-  FROJ-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  FROJ-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 48s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-  SJS-HREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SJS-HREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 350s TimeoutError: The read operation timed out
-  RJCO-PPRG1104KRJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 15 nums
-OK RJCO-PPRG1104KRJ-00 <- kilo:stepfun/step-3.7-flash:free (117s)
-  ESC-MRNENNA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  ESC-MRNENNA3B-00 kilo:stepfun/step-3.7-flash:free: 279s TimeoutError: The read operation timed out
-  IPC-XYLENEMIXB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 11 nums
-OK IPC-XYLENEMIXB-00 <- kilo:stepfun/step-3.7-flash:free (95s)
-  AZF-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 16s ValueError: bad response: '{"id":"gen-1791385381-gwsNA1dig8pZfx2wbWwx","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
-  AZF-MREEEEA3B-00 kilo:stepfun/step-3.7-flash:free: 47s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-  MPC-PPHP525JPP-00 kilo:dots-studio/dots-3-note-preview:free: 15s ValueError: bad response: '{"id":"gen-1791385451-chV7ZSjvAL86adEbTBOo","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num
-style-soft: ثبت شد
-  MPC-PPHP525JPP-00 kilo:stepfun/step-3.7-flash:free: 363s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱۸۳۳
-  ESC-MRNNENA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 20 nums
-style-soft: lead>35w/1num, text 16 nums
-OK ESC-MRNNENA3B-00 <- kilo:stepfun/step-3.7-flash:free (279s)
-  ESC-MRNNNEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 15s ValueError: bad response: '{"id":"gen-1791386304-L25ejUgRIKmHmAScuvhq","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
-style-soft: lead>35w/1num, text 17 nums
-OK ESC-MRNNNEA3B-00 <- kilo:stepfun/step-3.7-flash:free (194s)
-  HSSC-LRNENA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 27 nums
-  HSSC-LRNENA3B-00 kilo:stepfun/step-3.7-flash:free: 200s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-  ESC-HRENNNA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 16 nums
-style-soft: ثبت شد, امروز>2, lead>35w/1num, text 21 nums
-  ESC-HRENNNA3B-00 kilo:stepfun/step-3.7-flash:free: 343s ValueError: markers: عدد بیرون از حقیقت‌ها: ۲۴۵۰ | کد کالا یا حروف لاتین وسط متن
-  FAKH-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 11 nums
-OK FAKH-HS00000-00 <- kilo:stepfun/step-3.7-flash:free (104s)
+OK ESC-MRNENNA3B-00 <- zai:glm-4.5-flash (26s)
