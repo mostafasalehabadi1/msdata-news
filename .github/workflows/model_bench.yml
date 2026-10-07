@@ -1,8 +1,8 @@
 name: model-bench
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "20 0 * * *"  # once after Cloudflare's daily quota reset (00:00 UTC); remove after the batch-3 test
+
+
   push:
     branches: [main]
     paths: ["tools/model_bench.py"]
@@ -42,7 +42,7 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           USE_GITHUB_MODELS: "1"
         run: |
-          BENCH_NEW=1 BENCH_ONLY=requesty:,cf:@cf/utter,cf:@cf/aisingapore,cf:@cf/ibm,cf:@cf/meta/llama-3.1,cf:@cf/meta/llama-3.2,cf:@cf/meta/llama-4,cf:@cf/mistralai,cf:@cf/qwen/qwq,cf:@cf/qwen/qwen3,cf:@cf/deepseek,ovh:Qwen3.5-9B,kilo:poolside/laguna-xs,llm7:codestral python tools/model_bench.py 2>&1 | tee news-test/bench-log.txt || true
+          BENCH_LIST=news-test/batch5.txt python tools/model_bench.py 2>&1 | tee news-test/bench-log.txt || true
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           git add news-test/bench.json news-test/bench-log.txt && git commit -qm "bench: persian writing" && git pull -q --rebase && git push -q

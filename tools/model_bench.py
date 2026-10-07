@@ -20,6 +20,12 @@ def main():
     out = {"symbol": r["symbol"], "prompt": prompt, "results": []}
     only = os.environ.get("BENCH_ONLY", "")
     provs = [x for x in w.providers() if x[0].startswith(tuple(only.split(",")))]
+    # batch 5 (1405-07-16): an explicit list "prov:model,..." of never-tested models (memory reference_tested_news_models)
+    urls = {"hf": ("HF_TOKEN", "https://router.huggingface.co/v1/chat/completions"),
+            "mistral": ("MISTRAL_API_KEY", w.MISTRAL_URL)}
+    if os.environ.get("BENCH_LIST"):
+        provs = [(x, lambda p, x=x: w.post(urls[x.split(":")[0]][1], os.environ[urls[x.split(":")[0]][0]], x.split(":", 1)[1], p))
+                 for x in open(os.environ["BENCH_LIST"], encoding="utf-8").read().split() if x.split(":")[0] in urls]
 
     def run(name, call):
         t0, res = time.time(), {"model": name}
