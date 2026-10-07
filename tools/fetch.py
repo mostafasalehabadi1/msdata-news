@@ -97,7 +97,7 @@ def main():
     # keep only the latest day in the snapshot
     for d in os.listdir(ROOT):
         p = os.path.join(ROOT, d)
-        if os.path.isdir(p) and d != date:
+        if os.path.isdir(p) and d != date and d != "kish":  # data/kish = export market snapshot (fetch_kish.py)
             for dirpath, _, files in os.walk(p, topdown=False):
                 for fn in files:
                     os.remove(os.path.join(dirpath, fn))

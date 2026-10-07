@@ -68,9 +68,15 @@ def compact_for(*templates):
 RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (short style)
 STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read()
 # symbol news (owner 2026-10-05): the old template without clichés; every fact and table is built in code (facts_kala.py)
+MIN_WORDS = [130]  # kish news are shorter (100-160 words, content agent 1405-07-15)
 RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
          "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
          "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
+STYLE_KISH = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kish.md"), encoding="utf-8").read()
+RULES_KISH = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک معامله‌ی بازار صادراتی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
+              "\n\n" + STYLE_KISH +
+              "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
+              "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
 
 
 # content agent 1405-07-15 (252 news of 1405-07-14): the one main flaw of each model, appended to its prompt
@@ -348,7 +354,7 @@ def parse(raw, facts="", tables=None):
             raise ValueError(f"empty {k}")
         d[k] = clean(d[k].replace("\r", "").strip())
     w, p = words(d["text"]), paragraphs(d["text"])
-    if not 130 <= w <= 210 or not 2 <= p <= 3:
+    if not MIN_WORDS[0] <= w <= 210 or not 2 <= p <= 3:
         raise ValueError(f"{w} words / {p} paragraphs")
     if any(FORBIDDEN.search(d[k]) for k in ("title", "subtitle", "lead", "text")):
         raise ValueError("forbidden content")
@@ -407,10 +413,30 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--out", default="news")
+    ap.add_argument("--market", default="kala", choices=("kala", "kish"))  # kish = export market (owner 1405-07-15)
     a = ap.parse_args()
-    latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
-    date, date_fa = latest["date"], latest["date_fa"]
-    rows = json.load(open(os.path.join(ROOT, "data", date, "today.json"), encoding="utf-8"))["rows"]
+    kish = a.market == "kish"
+    if kish:
+        MIN_WORDS[0] = 100
+        global RULES
+        import facts_kish
+        RULES = RULES_KISH
+        k = json.load(open(os.path.join(ROOT, "data", "kish", "today.json"), encoding="utf-8"))
+        kh = json.load(open(os.path.join(ROOT, "data", "kish", "history.json"), encoding="utf-8"))
+        date, date_fa = k["date"], k["trade_date"]
+        rows, seen = [], {}
+        for r in k["items"]:
+            if (r.get("trade_volume") or 0) <= 0:
+                continue
+            r["series_key"] = r["symbol"]
+            n = seen[r["symbol"]] = seen.get(r["symbol"], 0) + 1
+            if n > 1:  # same symbol twice in a day (other contract/delivery): one news each
+                r["symbol"] = f"{r['symbol']}-{n}"
+            rows.append(r)
+    else:
+        latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
+        date, date_fa = latest["date"], latest["date_fa"]
+        rows = json.load(open(os.path.join(ROOT, "data", date, "today.json"), encoding="utf-8"))["rows"]
     out_dir = os.path.join(ROOT, a.out)
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, f"{date}.json")
@@ -431,10 +457,16 @@ def main():
         groups.setdefault(name.split(":")[0] + ("/strong" if name in STRONG else "/backup" if name in BACKUP else ""), []).append((name, call))
     # importance tiers come from data/importance.json (tools/importance.py): 0 important (top half by value this year), 1 the rest.
     # A strong-model worker writes only important symbols, every other worker only the rest.
-    table = importance.update(date, rows)
-    tier = {s: e["tier"] for s, e in table.items()}
-    value = {s: e["value"] for s, e in table.items()}
-    seen_t = {s: e.get("seen_t", 0) for s, e in table.items()}
+    if kish:  # top half of the day's dollar value -> strong models (rial-export rows are never compared, they go to the rest)
+        byv = sorted(rows, key=lambda r: -(r.get("total_value_usd") or 0))
+        tier = {r["symbol"]: 0 if i < len(byv) // 2 and r.get("is_usd") else 1 for i, r in enumerate(byv)}
+        value = {r["symbol"]: r.get("total_value_usd") or 0 for r in rows}
+        seen_t = {}
+    else:
+        table = importance.update(date, rows)
+        tier = {s: e["tier"] for s, e in table.items()}
+        value = {s: e["value"] for s, e in table.items()}
+        seen_t = {s: e.get("seen_t", 0) for s, e in table.items()}
     todo.sort(key=lambda r: (tier.get(r["symbol"], 1), -value.get(r["symbol"], 0)))  # most important first
     del todo[a.limit or len(todo):]
     note(f"{len(todo)} symbols to write; {len(groups)} parallel workers: {', '.join(groups)}")
@@ -444,13 +476,16 @@ def main():
 
     def write_one(r, models):
         sym = r["symbol"]
-        hist_path = os.path.join(ROOT, "data", date, "symbols", f"{sym}.json")
-        sd = json.load(open(hist_path, encoding="utf-8")) if os.path.exists(hist_path) else {}
-        hist = sd.get("history", [])
-        peers = [p for p in rows if p.get("goods_name") == r.get("goods_name")]
         with lock:
             recent = list(subs)[-5:]
-        facts, tables = facts_kala.build(r, hist, peers, date_fa, date, sd.get("ytd_value"))
+        if kish:
+            facts, tables = facts_kish.build(r, kh["series"].get(r["series_key"], []), rows, date_fa, date)
+        else:
+            hist_path = os.path.join(ROOT, "data", date, "symbols", f"{sym}.json")
+            sd = json.load(open(hist_path, encoding="utf-8")) if os.path.exists(hist_path) else {}
+            hist = sd.get("history", [])
+            peers = [p for p in rows if p.get("goods_name") == r.get("goods_name")]
+            facts, tables = facts_kala.build(r, hist, peers, date_fa, date, sd.get("ytd_value"))
         prompt = ("حقیقت‌ها (فقط از این‌ها انتخاب کن؛ عددها را عیناً بنویس):\n" + facts +
                   "\n\nجدول‌های پیشنهادی (یکی را انتخاب کن):\n" + json.dumps(tables, ensure_ascii=False) +
                   f"\n\nزاویه‌ی خبرهای قبلی امروز را تکرار نکن. سوتیترهای قبلی: {' | '.join(recent)}")
@@ -475,8 +510,14 @@ def main():
                 with lock:
                     if d["subtitle"] in subs:
                         raise ValueError("repeated subtitle")
-                    doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
-                                         "hall": r.get("talar", ""), "producer": r.get("producer_name", ""), **d, "model": name})
+                    if kish:
+                        doc["items"].append({"symbol": sym, "trade_date": date_fa, "market": "kish",
+                                             "commodity": facts_kish.clean_name(r.get("goods_name")), "producer": r.get("producer", ""),
+                                             "delivery": facts_kish.delivery(r.get("delivery_place"))[0],
+                                             "currency": "USD" if r.get("is_usd") else "rial-export", **d, "model": name})
+                    else:
+                        doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
+                                             "hall": r.get("talar", ""), "producer": r.get("producer_name", ""), **d, "model": name})
                     subs.add(d["subtitle"])
                     json.dump(doc, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
                     stats["ok"] += 1

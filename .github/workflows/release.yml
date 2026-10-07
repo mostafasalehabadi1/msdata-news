@@ -53,6 +53,15 @@ jobs:
             if [ "${left:-0}" -gt 0 ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w write_free.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w write_free.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
               gh workflow run write_free.yml -R "$GITHUB_REPOSITORY" -f limit=0 && echo "writer started ($left left)"
             fi
+            # Kish export-market news (owner 1405-07-15): once an hour, if the latest Kish day has unwritten traded rows, start write_kish
+            if [ ! -f "/tmp/kish-$h" ]; then
+              touch "/tmp/kish-$h"
+              # read-only check (no file written here: data/kish is committed by write_kish only)
+              kleft=$(python tools/fetch_kish.py --left 2>/dev/null || echo 0)
+              if [ "${kleft:-0}" -gt 0 ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w write_kish.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w write_kish.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
+                gh workflow run write_kish.yml -R "$GITHUB_REPOSITORY" && echo "kish writer started ($kleft left)"
+              fi
+            fi
             # macro news (اقتصاد کلان): once an hour look for new macro data (macro.yml writes and publishes it)
             if [ ! -f "/tmp/macro-$h" ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w macro.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)" ]; then
               touch "/tmp/macro-$h"

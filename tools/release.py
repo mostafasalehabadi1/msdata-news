@@ -59,19 +59,39 @@ def main():
         npath, n = days[name]
         json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"released {len(released)}: {', '.join(released)}")
+    release_kish()
     apply_edits()
+    apply_edits(os.path.join(ROOT, "edits", "kish"), os.path.join(N, "kish"))
 
 
 EDITABLE = ("title", "subtitle", "lead", "text", "slug", "table")
 
 
-def apply_edits():
+def release_kish():
+    """Kish export market (owner 1405-07-15): queue/kish/<date>.json -> news/kish/<date>.json, every written item at once
+    (a few dozen a day, no drip). Released items are never removed."""
+    qk, nk = os.path.join(Q, "kish"), os.path.join(N, "kish")
+    os.makedirs(nk, exist_ok=True)
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    for qpath in sorted(glob.glob(os.path.join(qk, "????-??-??.json"))):
+        q = json.load(open(qpath, encoding="utf-8"))
+        npath = os.path.join(nk, os.path.basename(qpath))
+        n = json.load(open(npath, encoding="utf-8")) if os.path.exists(npath) else {**q, "items": []}
+        out = {i["symbol"] for i in n["items"]}
+        new = [{**i, "published_at": now} for i in q["items"] if i["symbol"] not in out]
+        if new:
+            n["items"] += new
+            json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            print(f"kish released {len(new)}: {os.path.basename(qpath)}")
+
+
+def apply_edits(root=None, ndir=None):
     """edits/<YYYY-MM-DD>/<symbol>.json (content agent's corrections, owner-approved 1405-07-14) override the released item
     in news/<date>.json on every run, so a later release or rewrite can never bring the old text back.
     Only EDITABLE fields are taken; the item gets edited=true and edited_at. Nothing is deleted."""
-    root = os.path.join(ROOT, "edits")
+    root = root or os.path.join(ROOT, "edits")  # edits/kish/<date>/<symbol>.json -> news/kish/<date>.json
     for day in sorted(glob.glob(os.path.join(root, "????-??-??"))):
-        npath = os.path.join(N, os.path.basename(day) + ".json")
+        npath = os.path.join(ndir or N, os.path.basename(day) + ".json")
         if not os.path.exists(npath):
             continue
         n = json.load(open(npath, encoding="utf-8"))
