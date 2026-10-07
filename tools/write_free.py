@@ -401,6 +401,11 @@ def parse(raw, facts="", tables=None):
         soft.append("امروز>2")
     if re.search(r"[A-Za-z]{2,}[-0-9]|[A-Za-z][0-9]|[0-9][A-Za-z]|[؀-ۿ][A-Za-z]|[A-Za-z][؀-ۿ]", d["title"] + " " + d["lead"] + " " + d["text"]):
         probs.append("کد کالا یا حروف لاتین وسط متن")
+    # content agent 1405-07-15: Chinese/Cyrillic/other scripts slipped through (e.g. «同样»); only Persian, digits, punctuation and Latin
+    if re.search(r"[^\u0600-\u06FF\u200c\u200d\uFB50-\uFDFF\uFE70-\uFEFF\x00-\x7F\u00A0-\u00FF\u2000-\u206F«»×÷٪]", " ".join(d[k] for k in ("title", "subtitle", "lead", "text"))):
+        probs.append("نویسه‌ی غیرفارسی (چینی/سیریلیک/…)")
+    if re.search(r"(?<![0-9۰-۹])صفر ریال|بدون قیمت", " ".join(d[k] for k in ("title", "subtitle", "lead", "text"))):
+        probs.append("نرخ «صفر ریال»/«بدون قیمت»")
     if len(d["lead"].split()) > 35 or len(NUM.findall(d["lead"])) > 1:
         soft.append("lead>35w/1num")
     if len(NUM.findall(d["text"])) > 8:
