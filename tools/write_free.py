@@ -357,11 +357,26 @@ def clean(t):
     return t
 
 
+def loads_lenient(t):
+    """JSON from a model, repaired instead of thrown away (1405-07-16: ~1/4 of failed tries were only broken JSON):
+    raw newlines/tabs inside strings, trailing commas, ```json fences, smart quotes around keys."""
+    try:
+        return json.loads(t, strict=False)
+    except ValueError:
+        pass
+    t2 = re.sub(r"^```(?:json)?|```$", "", t.strip(), flags=re.M)
+    t2 = re.sub(r",\s*([}\]])", r"\1", t2)
+    t2 = re.sub(r"[\u201c\u201d](\w+)[\u201c\u201d]\s*:", r'"\1":', t2)
+    return json.loads(t2, strict=False)
+
+
 def parse(raw, facts="", tables=None):
     m = re.search(r"\{.*\}", raw, re.S)
-    d = json.loads(m.group(0)) if m else None
+    d = loads_lenient(m.group(0)) if m else None
     if not isinstance(d, dict):
         raise ValueError("no JSON")
+    if isinstance(d.get("title"), str) and d["title"].strip() and not (isinstance(d.get("slug"), str) and d["slug"].strip()):
+        d["slug"] = d["title"]  # a missing slug is not worth a lost news: the title becomes the slug (cleaned below by SLUG_BAD)
     for k in ("title", "slug", "subtitle", "lead", "text"):
         if not isinstance(d.get(k), str) or not d[k].strip():
             raise ValueError(f"empty {k}")
