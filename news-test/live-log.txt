@@ -1,52 +1,52 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 40 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  HSTC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-  KSCO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791388859-YBRCu3nKjoyarjyD5Hgj","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  BMIS-MRENEEA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-  FPCO-ACTACB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791388866-zeGx1eh2pHgjOwTk1eWf","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  SHPC-DEAB-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  FAAS-HREENNA3B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  KSO-MREEEEA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
+  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
+  KSO-MREEEEA3BN-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 138 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":138}}
+  PPCO-OASTYB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791392262-ASdLWkNzWdp3EfI2xBt5","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  SHPC-DEAB-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  KSO-MREEEEA3BN-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  SHPC-DEAB-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEAB-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  FPCO-ACTACB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
+  KSO-MREEEEA3BN-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  CWD-CR018OO-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791392268-j6w2PsltnhYARghFKsAo","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  SHPC-DEAB-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  BMIS-MRENEEA3B-00 cohere:command-a-03-2025: 10s JSONDecodeError: Invalid control character at: line 6 column 12 (char 465)
+  SHPC-DEAB-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   ARCO-CASOALB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 400: {"error":{"message":"The requested model 'deepseek-ai/DeepSeek-V3.1' is not supported by any provider you have enabled.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
-  CWD-CR018OO-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791388873-rl1AGCy4o9LKk5l0w1Jv","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-  SJS-MREEEEA3B-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 301 (char 739)
-  BIMC-MREEEEA3B-00 cohere:command-a-03-2025: 7s JSONDecodeError: Invalid control character at: line 6 column 12 (char 411)
-  KSO-MREEEEA3B-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  PPCO-OASTYB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 48s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e5e41a6b-9e07-4ea1-
-  FROJ-MREEEEA3B-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 147 (char 578)
-  KSO-MREEEEA3B-00 zai:glm-4.5-flash: 10s JSONDecodeError: Expecting value: line 3 column 15 (char 94)
-  ESC-MRNENNA3B-00 zai:glm-4.7-flash: 29s JSONDecodeError: Invalid control character at: line 5 column 103 (char 419)
-  SJS-HREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 47s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (72b12a22-4efd-4eac-
-style-soft: lead>35w/1num, text 22 nums
-OK ESC-MRNENNA3B-00 <- zai:glm-4.5-flash (26s)
-  AZF-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (80696cfe-2055-4bfd-
-  ASC-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  MPC-PPHP525JPP-00 zai:glm-4.7-flash: 89s JSONDecodeError: Invalid control character at: line 6 column 199 (char 615)
-  MPC-PPHP525JPP-00 zai:glm-4.5-flash: 29s ValueError: 80 words / 1 paragraphs
-  HSSC-LRNENA3B-00 zai:glm-4.7-flash: 26s JSONDecodeError: Invalid control character at: line 6 column 159 (char 542)
-  HSSC-LRNENA3B-00 zai:glm-4.5-flash: 13s JSONDecodeError: Invalid control character at: line 6 column 165 (char 542)
-  ESC-HRENNNA3B-00 zai:glm-4.7-flash: 20s JSONDecodeError: Invalid control character at: line 6 column 167 (char 547)
-  ESC-HRENNNA3B-00 zai:glm-4.5-flash: 12s JSONDecodeError: Expecting value: line 6 column 10 (char 350)
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 13 nums
-OK ASC-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (218s)
-  SHPC-MEGB-00 kilo:dots-studio/dots-3-note-preview:free: 51s TypeError: expected string or bytes-like object, got 'NoneType'
-style-soft: ثبت شد, lead>35w/1num, text 14 nums
-style-soft: ثبت شد
-OK SHPC-MEGB-00 <- kilo:stepfun/step-3.7-flash:free (205s)
-  KHP-MCJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 16 nums
-OK KHP-MCJ-00 <- kilo:stepfun/step-3.7-flash:free (67s)
-  SMC-MRNEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-OK SMC-MRNEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (48s)
-  HSSC-LRNNEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 31 nums
-OK HSSC-LRNNEA3B-00 <- kilo:stepfun/step-3.7-flash:free (146s)
-  STPA-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: امروز>2, lead>35w/1num, text 26 nums
-style-soft: text 9 nums
-OK STPA-MREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (202s)
-  KSCO-HREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 19 nums
-style-soft: ثبت شد, lead>35w/1num, text 19 nums
-style-soft: ثبت شد, text 13 nums
-OK KSCO-HREEEEA3B-00 <- kilo:stepfun/step-3.7-flash:free (203s)
+  SHPC-DEAB-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  BIMC-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791392275-EUIHwzogfUcwlvHe4X82","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  FAAS-HREENNA3B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  FAAS-HREENNA3B-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  FAAS-HREENNA3B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  FAAS-HREENNA3B-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  FAAS-HREENNA3B-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  FROJ-MREEEEA3B-00 cohere:command-a-03-2025: 9s JSONDecodeError: Invalid control character at: line 6 column 12 (char 432)
+  FAAS-HREENNA3B-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  KSO-MREEEEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  KSO-MREEEEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  KSO-MREEEEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  KSO-MREEEEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  KSO-MREEEEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  KSO-MREEEEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SJS-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b0690036-872f-4e0d-
+  KPC-OAPMDIB-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3fcfe67f-0215-4906-
+  SJS-HREEEEA3B-00 cohere:command-a-03-2025: 19s JSONDecodeError: Invalid control character at: line 6 column 157 (char 606)
+  AZF-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (f4a1e431-862f-4a4b-
+  SHPC-DEAB-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ed4b85ae-cd30-4654-
+  KSCO-MREEEEA3B-00 zai:glm-4.7-flash: 115s JSONDecodeError: Invalid control character at: line 6 column 152 (char 550)
+  KSCO-MREEEEA3B-00 zai:glm-4.5-flash: 11s JSONDecodeError: Invalid control character at: line 6 column 140 (char 537)
+  MPC-PPHP525JPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (7a94fc6e-3325-4249-
+  FAAS-HREENNA3B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1ef42911-770e-4371-
+  HSTC-SSG09XROA-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  HSSC-LRNENA3B-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  HSSC-LRNENA3B-00 zai:glm-4.5-flash: 9s JSONDecodeError: Expecting value: line 4 column 11 (char 179)
+style-soft: امروز>2, lead>35w/1num, text 10 nums
+  ESC-HRENNNA3B-00 zai:glm-4.7-flash: 77s JSONDecodeError: Invalid control character at: line 6 column 202 (char 624)
+  ESC-HRENNNA3B-00 zai:glm-4.5-flash: 11s JSONDecodeError: Invalid control character at: line 5 column 199 (char 467)
+style-soft: lead>35w/1num, text 11 nums
+OK HSTC-SSG09XROA-00 <- kilo:stepfun/step-3.7-flash:free (143s)
