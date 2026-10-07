@@ -72,6 +72,13 @@ def release_kish():
     (a few dozen a day, no drip). Released items are never removed."""
     qk, nk = os.path.join(Q, "kish"), os.path.join(N, "kish")
     os.makedirs(nk, exist_ok=True)
+    # manual daily reports by the content agent (owner 1405-07-15, until the auto report exists):
+    # edits/kish/reports/report-<YYYY-MM-DD>.json -> news/kish/report-<date>.json (a newer edit replaces it)
+    for rp in sorted(glob.glob(os.path.join(ROOT, "edits", "kish", "reports", "report-????-??-??.json"))):
+        dst = os.path.join(nk, os.path.basename(rp))
+        if not os.path.exists(dst) or open(rp, "rb").read() != open(dst, "rb").read():
+            shutil.copy(rp, dst)
+            print(f"kish report released: {os.path.basename(rp)}")
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     for qpath in sorted(glob.glob(os.path.join(qk, "????-??-??.json"))):
         q = json.load(open(qpath, encoding="utf-8"))
