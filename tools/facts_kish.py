@@ -20,8 +20,9 @@ UNKNOWN = []  # borders not in BORDERS, logged by the writer
 def delivery(place):
     """'FCA-نوردوز' -> ('تحویل در مرز نوردوز', 'ارمنستان'); ports and factory have no country."""
     p = (place or "").strip()
-    rest = re.sub(r"^(FCA|FOB|CPT|DAP|EXW|Exwork)\s*-?\s*", "", p, flags=re.I).strip()
-    if re.match(r"(?i)^(exw|exwork)", p) or "انبار کارخانه" in rest or not rest:
+    rest = re.sub(r"^(FCA|FOB|CPT|DAP|Exwork|EXW)\s*-?\s*", "", p, flags=re.I).strip()
+    # «EXW - دوغارون» / «EXW-بندر لنگه» name a place: only a bare EXW / factory store is «درِ کارخانه» (content agent 1405-07-15)
+    if "انبار کارخانه" in rest or not rest:
         return "تحویل درِ کارخانه", None
     if re.match(r"(?i)^fob", p):
         port = re.sub(r"^بندر\s*", "", rest)
