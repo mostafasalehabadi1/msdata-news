@@ -69,7 +69,7 @@ def compact_for(*templates):
 RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (short style)
 STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read()
 # symbol news (owner 2026-10-05): the old template without clichés; every fact and table is built in code (facts_kala.py)
-STABLE_MIN, KISH_CLOSE_H = 60, 18  # Kish: a row is «settled» after 60 min unchanged, or after 18:00 Tehran (market closed)
+STABLE_MIN = 45  # Kish: the day is «closed» once no row changed for 45 minutes (owner 1405-07-15: write only after all trades)
 MIN_WORDS = [120]  # owner 1405-07-15: 120 words minimum for all physical and Kish news (same as validate.py)
 RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
          "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
@@ -447,7 +447,11 @@ def main():
         stab_path = os.path.join(ROOT, "data", "kish", f"stable-{date}.json")
         stab = json.load(open(stab_path, encoding="utf-8")) if os.path.exists(stab_path) else {}
         now_utc = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
-        closed = dt.datetime.now(dt.timezone.utc).astimezone(dt.timezone(dt.timedelta(hours=3, minutes=30))).hour >= KISH_CLOSE_H or date < dt.date.today().isoformat()
+        # owner 1405-07-15: the Kish session lasts ~20 minutes - news are written only after the whole day stopped changing
+        dfp = "|".join(sorted(f"{x.get('symbol')}:{x.get('trade_volume')}:{x.get('weighted_price')}:{x.get('total_value')}" for x in k["items"]))
+        if stab.get("__day__", [None])[0] != dfp:
+            stab["__day__"] = [dfp, now_utc]
+        closed = date < dt.date.today().isoformat() or             (dt.datetime.fromisoformat(now_utc) - dt.datetime.fromisoformat(stab["__day__"][1])).total_seconds() >= STABLE_MIN * 60
         unsettled = 0
         for r in k["items"]:
             if (r.get("trade_volume") or 0) <= 0:
