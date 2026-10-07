@@ -79,7 +79,9 @@ def main():
                 if it["trade_date"] != d["date_fa"]:
                     errs.append(f"{where}: trade_date != date_fa")
                 v2 = d.get("date", "") >= "2026-10-04"  # framework v2: template A, 120-220 words
-                check_text(where, it, errs, 120 if v2 else 150, 220 if v2 else 200, 2, 4 if v2 else 3)
+                # owner 1405-07-15: an edit by the content agent (edits/) is trusted as is - no length limits, it must never block a release
+                if not it.get("edited"):
+                    check_text(where, it, errs, 120 if v2 else 150, 220 if v2 else 200, 2, 4 if v2 else 3)
                 subs[it["subtitle"]] = subs.get(it["subtitle"], 0) + 1
                 n += 1
             # template detector: the same subtitle or the same opening sentence on many items = copy-paste news
