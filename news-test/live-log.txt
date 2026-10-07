@@ -1,32 +1,50 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-4 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  LPC-LD2102TX00PO2P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LPC-LD2102TX00PO2P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  JPC-HDEXCRP100NO3J-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 zai:glm-4.7-flash: 24s ValueError: 127 words / 1 paragraphs
-  JPC-HDEXCRP100NO3J-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 24 nums
-  MAPE-LLD22B02P-00 zai:glm-4.5-flash: 35s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  LPC-LD2102TX00PO2P-00 zai:glm-4.7-flash: 16s ValueError: 77 words / 1 paragraphs
-  LPC-LD2102TX00PO2P-00 zai:glm-4.5-flash: 80s ValueError: 83 words / 1 paragraphs
-  JPC-HDEXCRP100NO3J-00 zai:glm-4.7-flash: 15s ValueError: 62 words / 1 paragraphs
-  JPC-HDEXCRP100NO3J-00 zai:glm-4.5-flash: 20s ValueError: 105 words / 2 paragraphs
+26 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  SECO-PCT2G42.5-L50EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  BISP-LABBEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  SABD-INBPPBEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  ACC-CLINKERT2EX-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"8a4d34753175896c0192f069f8b3ed00"
+}
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  PNSA-BI5070BEX-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 52181 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":52181}}
+  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
+  ACC-PCT1G42.5-JEX-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 60 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":60}}
+  SECO-PCT2G42.5-L50EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  ACC-PCT1G42.5-JEX-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
+  ACC-CLINKERT2EX-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"8d9b81168199127bdcdddb6439fd147e"
+}
+  SECO-PCT2G42.5-L50EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+style-soft: lead>35w/1num
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  ACC-CLINKERT2EX-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"0c31c354a6895167ecb7530a7f22e205"
+}
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 9 nums
+  SECO-PCT2G42.5-L50EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  KSA-BI6070BEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ZATC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  SECO-PCT2G42.5-L50EX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Qwen3.6-27B: quota used up - skipped for the rest of the day
+  ACC-CLINKERT2EX-00 ovh:Qwen3.6-27B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"f1e02e3c7b35862274f89c305893f64d"
+}
+  SECO-PCT2G42.5-L50EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for the rest of the day
+  ACC-CLINKERT2EX-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"1f53f91067541554b44bcd78d5ac016a"
+}
+  BPB-BIPG5210BEX-00 groq:openai/gpt-oss-120b: 12s ValueError: no JSON
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 9 nums
+  SND-IOCEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  CMN-CLINKERT5EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+OK GOLD-BI6070BEX-00 <- cohere:command-a-03-2025 (12s)
