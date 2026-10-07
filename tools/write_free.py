@@ -8,6 +8,7 @@ env (any subset): GITHUB_TOKEN (GitHub Models, free in Actions), GEMINI_API_KEY,
 GROQ_API_KEY, MISTRAL_API_KEY.
 usage: python tools/write_free.py [--limit N] [--out news]
 """
+import random
 import argparse
 import json
 import os
@@ -70,6 +71,40 @@ STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "styl
 RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
          "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
          "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
+
+
+# content agent 1405-07-15 (252 news of 1405-07-14): the one main flaw of each model, appended to its prompt
+MODEL_HINTS = [(r"nemotron-3-super", "کلمه‌ی انگلیسی ننویس. «عرض» ننویس؛ «عرضه» بنویس."),
+               (r"dots", "هیچ کلمه‌ی انگلیسی مثل Display یا faced در متن نیاور."),
+               (r"command-a.*reason", "«امروز» ننویس؛ روز هفته و تاریخ را بنویس. «در حالی که» و «با این حال» ننویس."),
+               (r"command-a", "«امروز» ننویس؛ روز هفته و تاریخ را بنویس."),
+               (r"step-3\.7", "لید حداکثر ۳۰ کلمه."),
+               (r"glm-4\.5-flash|apodex|gpt-oss|ling|command-r", "متن کمتر از ۱۴۰ کلمه نباشد."),
+               (r"nemotron-3-ultra", "«نشان‌دهنده» و «منجر شد» ننویس.")]
+
+
+def model_hint(name):
+    for pat, h in MODEL_HINTS:
+        if re.search(pat, name, re.I):
+            return "\n\nنکته‌ی مخصوص تو: " + h
+    return ""
+
+
+# one opening/structure pattern per news, drawn at random (content agent 1405-07-15). 7 (half-sold) and 10 (bag price)
+# need data checks the code does not make yet, so they are left out
+PATTERNS = ["تضاد: اول نکته‌ی متناقض (مثلاً «تقاضا چند برابر شد، اما نرخ پایین آمد»)، بعد عددها.",
+            "روایت زمانی: از گذشته شروع کن («سه هفته پیش …») و به روز معامله برس.",
+            "جمله‌ی خیلی کوتاه اول متن (مثلاً «رقابت سخت بود.») و بعد توضیح.",
+            "پرسش در لید یا تیتر و پاسخ در همان پاراگراف اول.",
+            "مقایسه‌ی دو تولیدکننده‌ی همان کالا، اگر در حقیقت‌ها هست؛ وگرنه مقایسه با معامله‌ی قبلی همین کالا.",
+            "از خریدار شروع کن: چقدر خواستند و چقدر گیرشان آمد.",
+            "فاصله‌ی نرخ از قیمت پایه را در جمله‌ی اول بگو.",
+            "اگر در حقیقت‌ها بیشترین یا کمترین نرخ از یک تاریخ هست، همان را در جمله‌ی اول بگو؛ وگرنه از رقابت شروع کن."]
+
+
+def pattern_line():
+    return ("\n\nالگوی این خبر: " + random.choice(PATTERNS) +
+            " پاراگراف آخر یک واقعیت باشد، نه پیش‌بینی؛ و دست‌کم یکی از این‌ها در متن باشد: «اما»، یک جمله‌ی زیر هشت کلمه، یا پاراگراف تک‌جمله‌ای.")
 
 
 def post(url, key, model, prompt, extra=None):
@@ -269,8 +304,8 @@ FIXES = [(re.compile(r"^به گزارش [^،,]{0,40}(?:ام[‌ ]?اس[‌ ]?د�
          # content agent 1405-07-14: «۱ هزار و» -> «هزار و»; a lone «عرض/العرض» is always a typo of «عرضه» in commodity news
          (re.compile(r"(?<![0-9۰-۹٫.])[1۱] هزار"), "هزار"), (re.compile(r"(?<![\w‌])(?:ال)?عرض(?![\w‌])"), "عرضه")]
 BANNED = re.compile(r"به گزارش|بررسی (?:داده|آمار)\S* نشان|نشان[‌ ]?دهنده|حاکی از|بیانگر|؛ رقمی که|این در حالی است|به خود اختصاص|"
-                    r"در مجموع|روی میز|رکورد|تاریخی|فصل ساخت|منتظر|انتظار می‌رود|احتمالاً|شاید|[?؟]\s*$|"
-                    r"ms ?d\w*ata|ام[‌ ]?اس[‌ ]?دیتا", re.I)
+                    r"در مجموع|روی میز|تاریخی|فصل ساخت|منتظر|انتظار می‌رود|احتمالاً|شاید|[?؟]\s*$", re.I)
+# owner 1405-07-14: «رکورد» and msdata as the data source («از آغاز داده‌های msdata») are allowed (content agent 1405-07-15)
 # style guide v2 items that every model still breaks often (1405-07-14: 0 of 131 news passed them) -> logged, not rejected yet;
 # promoted to BANNED/probs once the new facts and prompt bring them down
 SOFT = re.compile(r"ثبت شد|به ثبت رساند|در حالی که")
@@ -402,7 +437,7 @@ def main():
                 continue
             t0 = time.time()
             try:
-                raw = retry(call, prompt)
+                raw = retry(call, prompt + model_hint(name))
                 for attempt in range(3):  # section 6 of style.md: every hit goes back to the model, up to 2 rewrites
                     try:
                         d = parse(raw, facts, tables)
