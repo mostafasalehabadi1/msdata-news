@@ -105,3 +105,9 @@ style-soft: ثبت شد, lead>35w/1num
 style-soft: lead>35w/1num, text 12 nums
 style-soft: lead>35w/1num, text 14 nums
 OK KHCO-PCT2G42.5-L50EX-00 <- groq:openai/gpt-oss-120b (5s)
+  SZCE-PCT2G32.5-L50EX-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: text 9 nums
+  groq:openai/gpt-oss-120b: quota used up - skipped for the rest of the day
+  KHAC-PCT2G42.5-L50EX-00 groq:openai/gpt-oss-120b: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197248, Requested 53
+style-soft: lead>35w/1num, text 10 nums
+OK GHCO-PCT2G42.5-L50EX-00 <- cohere:command-a-03-2025 (11s)
