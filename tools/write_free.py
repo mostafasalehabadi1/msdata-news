@@ -451,7 +451,14 @@ def main():
         dfp = "|".join(sorted(f"{x.get('symbol')}:{x.get('trade_volume')}:{x.get('weighted_price')}:{x.get('total_value')}" for x in k["items"]))
         if stab.get("__day__", [None])[0] != dfp:
             stab["__day__"] = [dfp, now_utc]
-        closed = date < dt.date.today().isoformat() or             (dt.datetime.fromisoformat(now_utc) - dt.datetime.fromisoformat(stab["__day__"][1])).total_seconds() >= STABLE_MIN * 60
+        # hall_end (kala_kish_export 1405-07-15, e.g. «11:42:00»): the hall is closed once the data was built 5+ min after it
+        he, lr = k.get("hall_end"), k.get("last_run_utc")
+        hall_done = False
+        if he and lr:
+            tz = dt.timezone(dt.timedelta(hours=3, minutes=30))
+            end = dt.datetime.combine(dt.date.fromisoformat(date), dt.time.fromisoformat(he), tz)
+            hall_done = dt.datetime.fromisoformat(lr) >= end + dt.timedelta(minutes=5)
+        closed = hall_done or date < dt.date.today().isoformat() or             (dt.datetime.fromisoformat(now_utc) - dt.datetime.fromisoformat(stab["__day__"][1])).total_seconds() >= STABLE_MIN * 60
         unsettled = 0
         for r in k["items"]:
             if (r.get("trade_volume") or 0) <= 0:
