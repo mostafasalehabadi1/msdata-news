@@ -86,14 +86,7 @@ def build(row, series, day_rows, date_fa, date):
         # owner 1405-07-15: no share-of-day figures - the day is still trading when news are written, so the total is incomplete
     else:
         F.append(f"ارزش این معامله {fa_int(round(tv))} ریال صادراتی بود.")
-    # same goods, other producer or other delivery the same day (same currency only)
-    for x in day_rows:
-        if x is row or bool(x.get("is_usd")) != usd or clean_name(x.get("goods_name")) != goods or not x.get("trade_volume"):
-            continue
-        d2, _ = delivery(x.get("delivery_place"))
-        who = f"شرکت {x.get('producer')}" if x.get("producer") != prod else "همین شرکت"
-        F.append(f"در همین روز {who} همین کالا را با {d2} به نرخ {fa_int(x.get('weighted_price') or 0)} {pu} فروخت.")
-        break
+    # owner 1405-07-15: no same-day comparisons (other sellers, totals, ranks) - the day may still change; they go to the end-of-day report
     # history: only when the symbol has at least 5 past trades (content agent rule)
     past = [h for h in (series or []) if (h.get("trade_date") or "") < date_fa and (h.get("trade_volume") or 0) > 0
             and bool(h.get("is_usd")) == usd]

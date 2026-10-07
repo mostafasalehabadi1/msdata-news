@@ -48,6 +48,7 @@ jobs:
           end=$(( $(date +%s) + 120*60 ))
           while [ "$(date +%s)" -lt "$end" ]; do
             git pull -q --rebase --autostash || true
+            python tools/fetch_kish.py || true  # fresh rows each round: a row is written only once it stopped changing (owner 1405-07-15)
             out=$(python tools/write_free.py --market kish --limit 40 --out queue/kish | tee -a pilot-log.txt | tail -1)
             case "$out" in *"/0;"*) break ;; esac
             case "$out" in "written 0/"*) sleep 600 ;; *) sleep 60 ;; esac
@@ -57,6 +58,6 @@ jobs:
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           mkdir -p news-test && mv pilot-log.txt news-test/kish-log.txt
-          git add queue/kish news-test
+          git add queue/kish news-test data/kish/stable-*.json
           git diff --cached --quiet || git commit -m "kish: export-market news"
           git pull --rebase -q && git push

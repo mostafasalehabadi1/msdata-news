@@ -10,6 +10,7 @@ usage: python tools/write_free.py [--limit N] [--out news]
 """
 import random
 import argparse
+import datetime as dt
 import json
 import os
 import re
@@ -68,6 +69,7 @@ def compact_for(*templates):
 RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (short style)
 STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read()
 # symbol news (owner 2026-10-05): the old template without clichés; every fact and table is built in code (facts_kala.py)
+STABLE_MIN, KISH_CLOSE_H = 60, 18  # Kish: a row is «settled» after 60 min unchanged, or after 18:00 Tehran (market closed)
 MIN_WORDS = [120]  # owner 1405-07-15: 120 words minimum for all physical and Kish news (same as validate.py)
 RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
          "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
@@ -442,14 +444,30 @@ def main():
         kh = json.load(open(os.path.join(ROOT, "data", "kish", "history.json"), encoding="utf-8"))
         date, date_fa = k["date"], k["trade_date"]
         rows, seen = [], {}
+        stab_path = os.path.join(ROOT, "data", "kish", f"stable-{date}.json")
+        stab = json.load(open(stab_path, encoding="utf-8")) if os.path.exists(stab_path) else {}
+        now_utc = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+        closed = dt.datetime.now(dt.timezone.utc).astimezone(dt.timezone(dt.timedelta(hours=3, minutes=30))).hour >= KISH_CLOSE_H or date < dt.date.today().isoformat()
+        unsettled = 0
         for r in k["items"]:
             if (r.get("trade_volume") or 0) <= 0:
                 continue
             r["series_key"] = r["symbol"]
+            # owner 1405-07-15: during the day only a settled trade is written - a row must be unchanged for STABLE_MIN minutes
+            fp = "|".join(str(r.get(x)) for x in ("trade_volume", "demand_volume", "weighted_price", "total_value"))
+            key = f"{r['symbol']}|{r.get('delivery_place')}|{r.get('contract_type')}"
+            old = stab.get(key)
+            if not old or old[0] != fp:
+                stab[key] = [fp, now_utc]
+            if not closed and (dt.datetime.fromisoformat(now_utc) - dt.datetime.fromisoformat(stab[key][1])).total_seconds() < STABLE_MIN * 60:
+                unsettled += 1
+                continue
             n = seen[r["symbol"]] = seen.get(r["symbol"], 0) + 1
             if n > 1:  # same symbol twice in a day (other contract/delivery): one news each
                 r["symbol"] = f"{r['symbol']}-{n}"
             rows.append(r)
+        json.dump(stab, open(stab_path, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+        print(f"kish: {len(rows)} settled rows, {unsettled} still changing (wait {STABLE_MIN} min unchanged)")
     else:
         latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
         date, date_fa = latest["date"], latest["date_fa"]
