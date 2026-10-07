@@ -69,7 +69,7 @@ def compact_for(*templates):
 RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (short style)
 STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read()
 # symbol news (owner 2026-10-05): the old template without clichés; every fact and table is built in code (facts_kala.py)
-STABLE_MIN = 45  # Kish: the day is «closed» once no row changed for 45 minutes (owner 1405-07-15: write only after all trades)
+STABLE_MIN = 20  # Kish: the hall is «closed» once no row changed for 20 minutes (a session lasts ~12 min, e.g. 11:30-11:42) (owner 1405-07-15: write only after all trades)
 MIN_WORDS = [120]  # owner 1405-07-15: 120 words minimum for all physical and Kish news (same as validate.py)
 RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
          "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
