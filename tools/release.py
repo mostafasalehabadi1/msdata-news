@@ -112,6 +112,10 @@ def apply_edits(root=None, ndir=None):
                 if it.get("symbol") != sym:
                     continue
                 new = {k: e[k] for k in EDITABLE if k in e and isinstance(e[k], (str, dict, list)) and e[k] != it.get(k)}
+                # owner 1405-07-15: an edit may not shrink the text below 120 words - the short edit is skipped, the original stays
+                if "text" in new and len(new["text"].split()) < 120:
+                    print(f"edit skipped (text {len(new['text'].split())} words < 120) {ep}")
+                    continue
                 if new:
                     it.update(new)
                     it["edited"] = True
