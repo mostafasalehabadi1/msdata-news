@@ -1,74 +1,21 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-19 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  IPD-INBPPBEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SMPC-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IPD-INBPPBEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  AZGI-BI6070BEX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  IPD-INBPPBEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IPD-INBPPBEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  AZGI-BI6070BEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  EACI-DSMLABSAEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SHCO-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 7s JSONDecodeError: Invalid control character at: line 6 column 158 (char 567)
-  IPD-INBPPBEX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IPD-INBPPBEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  KHCE-PCT2G32.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IPD-INBPPBEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  AZGI-BI6070BEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  AZGI-BI6070BEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 10 nums
-OK SGPE-BI6070BEX-00 <- kilo:dots-studio/dots-3-note-preview:free (19s)
-  AZGI-BI6070BEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  AZGI-BI6070BEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  AZGI-BI6070BEX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  AZGI-BI6070BEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  GSS-BSO068XEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LCC-PCT1G42.5-BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (a625980c-e6e8-47a8-
-  MBS-BI6070BEX-00 cohere:command-a-03-2025: 43s JSONDecodeError: Invalid control character at: line 6 column 148 (char 494)
-  IPD-INBPPBEX-00 groq:openai/gpt-oss-20b: 48s ValueError: no JSON
-  KMC-SPPC-L50EX-00 cohere:command-a-03-2025: 13s JSONDecodeError: Invalid control character at: line 6 column 179 (char 659)
-  AZGI-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (76be2e9c-6272-411a-
-  GSS-BSO068XEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5b7fad57-3e0a-4d90-
-  NACE-PCT2G42.5-L50EX-00 zai:glm-4.7-flash: 190s ValueError: 107 words / 1 paragraphs
-  NACE-PCT2G42.5-L50EX-00 zai:glm-4.5-flash: 7s JSONDecodeError: Invalid control character at: line 5 column 159 (char 456)
-  PIM-BI160220BEX-00 kilo:dots-studio/dots-3-note-preview:free: 199s TimeoutError: The read operation timed out
-  LCC-PCT1G42.5-BEX-00 zai:glm-4.7-flash: 42s JSONDecodeError: Invalid control character at: line 5 column 192 (char 527)
-style-soft: lead>35w/1num, text 12 nums
-OK LCC-PCT1G42.5-BEX-00 <- zai:glm-4.5-flash (11s)
-  IPD-INBPPBEX-00 zai:glm-4.7-flash: 18s ValueError: empty slug
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 12 nums
-OK IPD-INBPPBEX-00 <- zai:glm-4.5-flash (34s)
-  AZGI-BI6070BEX-00 zai:glm-4.7-flash: 9s JSONDecodeError: Invalid control character at: line 5 column 97 (char 375)
-  AZGI-BI6070BEX-00 zai:glm-4.5-flash: 10s ValueError: empty slug
-  GSS-BSO068XEX-00 zai:glm-4.7-flash: 134s ValueError: 78 words / 1 paragraphs
-style-soft: lead>35w/1num
-OK PIM-BI160220BEX-00 <- kilo:stepfun/step-3.7-flash:free (265s)
-  GSS-BSO068XEX-00 zai:glm-4.5-flash: 8s ValueError: empty slug
-style-soft: lead>35w/1num, text 9 nums
-OK GHHA-BI6070BEX-00 <- kilo:dots-studio/dots-3-note-preview:free (164s)
-  PSP-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 352s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 11 nums
-  PSP-BI6070BEX-00 kilo:stepfun/step-3.7-flash:free: 117s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-style-soft: lead>35w/1num, text 16 nums
-OK FAFI-PCT2G42.5-L50EX-00 <- kilo:dots-studio/dots-3-note-preview:free (125s)
-style-soft: ثبت شد, lead>35w/1num, text 11 nums
-OK MAJD-PCT2G42.5-L50EX-00 <- kilo:dots-studio/dots-3-note-preview:free (25s)
-style-soft: lead>35w/1num
-OK BIDC-INBOFBEX-00 <- kilo:dots-studio/dots-3-note-preview:free (171s)
-  NGP-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 9 nums
-  NGP-BI6070BEX-00 kilo:stepfun/step-3.7-flash:free: 116s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-  SMPC-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-style-soft: ثبت شد, lead>35w/1num, text 10 nums
-  SMPC-BI6070BEX-00 kilo:stepfun/step-3.7-flash:free: 295s ValueError: markers: «به خود اختصاص» در text
-style-soft: lead>35w/1num, text 12 nums
-OK EACI-DSMLABSAEX-00 <- kilo:dots-studio/dots-3-note-preview:free (156s)
+5 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  TORC-GRSUSUJ-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SGHC-PCT5G42.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  IORC-OAVBB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  TORC-GRSUSUJ-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  TORC-GRSUSUJ-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  TORC-GRSUSUJ-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  TORC-GRSUSUJ-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  HSR-LUSUACB-00 zai:glm-4.7-flash: 8s JSONDecodeError: Invalid control character at: line 6 column 145 (char 545)
+  TORC-GRSUSUJ-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  SGHC-PCT5G42.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SGHC-PCT5G42.5-B-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SGHC-PCT5G42.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SGHC-PCT5G42.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SGHC-PCT5G42.5-B-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SGHC-PCT5G42.5-B-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+style-soft: ثبت شد, lead>35w/1num, text 17 nums
+OK HSR-LUSUACB-00 <- zai:glm-4.5-flash (16s)
