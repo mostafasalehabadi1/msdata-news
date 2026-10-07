@@ -1,21 +1,43 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-5 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  TORC-GRSUSUJ-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SGHC-PCT5G42.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IORC-OAVBB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  TORC-GRSUSUJ-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  TORC-GRSUSUJ-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  TORC-GRSUSUJ-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  OAC-CEM2-32.5R-50L-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
-  TORC-GRSUSUJ-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  HSR-LUSUACB-00 zai:glm-4.7-flash: 8s JSONDecodeError: Invalid control character at: line 6 column 145 (char 545)
-  TORC-GRSUSUJ-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  OAC-CEM2-32.5R-50L-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  SGHC-PCT5G42.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SGHC-PCT5G42.5-B-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SGHC-PCT5G42.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SGHC-PCT5G42.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SGHC-PCT5G42.5-B-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SGHC-PCT5G42.5-B-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-OK HSR-LUSUACB-00 <- zai:glm-4.5-flash (16s)
+17 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  NGP-BI6070BEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  GSS-BSO068XEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  NCI-CCAAEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  PACB-BI6070BEX-00 llm7:DeepSeek-V4-Flash-0731: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 15761 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":15761}}
+  NGP-BI6070BEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NGP-BI6070BEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NACE-PCT2G42.5-L50EX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid control character at: line 7 column 113 (char 481)
+  SHCO-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  NGP-BI6070BEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+style-soft: lead>35w/1num, text 11 nums
+  NGP-BI6070BEX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NGP-BI6070BEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  KHCE-PCT2G32.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  NACE-PCT2G42.5-L50EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SMPC-BI6070BEX-00 cohere:command-a-03-2025: 16s JSONDecodeError: Invalid control character at: line 6 column 121 (char 506)
+  NACE-PCT2G42.5-L50EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  GSS-BSO068XEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 8s JSONDecodeError: Invalid control character at: line 6 column 315 (char 694)
+  NACE-PCT2G42.5-L50EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NACE-PCT2G42.5-L50EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NACE-PCT2G42.5-L50EX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NACE-PCT2G42.5-L50EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+style-soft: lead>35w/1num, text 12 nums
+  groq:openai/gpt-oss-120b: quota used up - skipped for the rest of the day
+  ALSU-AP06102EX-00 groq:openai/gpt-oss-120b: 28s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199800, Requested 33
+  NGP-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 4s JSONDecodeError: Invalid control character at: line 7 column 91 (char 397)
+  GSS-BSO068XEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ALSU-AP06102EX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  GSS-BSO068XEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  GSS-BSO068XEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  MBS-BI6070BEX-00 cohere:command-a-03-2025: 14s JSONDecodeError: Invalid control character at: line 6 column 115 (char 488)
+  GSS-BSO068XEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  GSS-BSO068XEX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  NACE-PCT2G42.5-L50EX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  GSS-BSO068XEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  AZGI-BI6070BEX-00 zai:glm-4.7-flash: 45s ValueError: empty slug
+  groq:openai/gpt-oss-20b: quota used up - skipped for the rest of the day
+  NGP-BI6070BEX-00 groq:openai/gpt-oss-20b: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198638, Requested 479
+  KMC-SPPC-L50EX-00 cohere:command-a-03-2025: 15s JSONDecodeError: Invalid control character at: line 6 column 117 (char 580)
+style-soft: lead>35w/1num, text 14 nums
+OK AZGI-BI6070BEX-00 <- zai:glm-4.5-flash (34s)
