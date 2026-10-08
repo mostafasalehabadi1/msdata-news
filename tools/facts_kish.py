@@ -60,7 +60,7 @@ def build(row, series, day_rows, date_fa, date):
          f"شرط تحویل: {deliv}." + (" مرز فقط مقصد اول است؛ از مصرف کالا در آن کشور حرفی نزن." if country else ""),
          ("مرز و کشور برای تیتر: " + deliv.replace("تحویل در ", "") + " (در تیتر «برای مرز " + country + "» یا «تحویل در مرز …» بیاور، نه «صادرات به " + country + "»).") if country else
          "کشور مقصد مشخص نیست؛ در تیتر کشوری نیاور.",
-         ("نرخ‌های این معامله دلاری است." if usd else "این قرارداد «ریال صادراتی» است؛ صریح بنویس «با نرخ ریال صادراتی» و آن را با معامله‌های دلاری مقایسه یا جمع نکن.")]
+         ("قیمت‌های این معامله دلاری است." if usd else "این قرارداد «ریال صادراتی» است؛ صریح بنویس «با نرخ ریال صادراتی» و آن را با معامله‌های دلاری مقایسه یا جمع نکن.")]
     # volumes in the source are in kg-units of the contract unit (1000 kg) -> tons
     # volumes are in contract units ("1000 کیلوگرم" in >99% of rows; a few 840/880 kg) -> tons
     m = re.search(r"(\d+)\s*کیلوگرم", row.get("unit") or "")
@@ -75,11 +75,11 @@ def build(row, series, day_rows, date_fa, date):
             F.append(f"تقاضا فقط {fa_num(r * 100, 0)} درصد عرضه بود.")
     if trd and off and trd < off - 1e-9:
         F.append(f"فقط {fa_num(trd / off * 100, 0)} درصد عرضه فروش رفت.")
-    F.append(f"نرخ میانگین معامله {fa_int(price)} {pu} بود و قیمت پایه {fa_int(base)} {pu}.")
+    F.append(f"قیمت میانگین معامله {fa_int(price)} {pu} بود و قیمت پایه {fa_int(base)} {pu}.")
     c = pct(price, base)
     if c is not None:
-        F.append("نرخ با قیمت پایه برابر بود." if abs(c) < 0.05 else
-                 f"رقابت نرخ را {signed(c)} بالاتر از قیمت پایه برد." if c > 0 else f"نرخ {signed(c)} پایین‌تر از قیمت پایه بود.")
+        F.append("قیمت با قیمت پایه برابر بود." if abs(c) < 0.05 else
+                 f"رقابت قیمت را {signed(c)} بالاتر از قیمت پایه برد." if c > 0 else f"قیمت {signed(c)} پایین‌تر از قیمت پایه بود.")
     tv = row.get("total_value") or 0
     if usd:
         F.append(f"ارزش این معامله {fa_int(round(tv))} دلار بود.")
@@ -96,20 +96,20 @@ def build(row, series, day_rows, date_fa, date):
         last_d, last_p = prices[-1]
         cl = pct(price, last_p)
         if cl is not None:
-            F.append(f"معامله‌ی قبلی همین نماد {fa_date(last_d)} با نرخ {fa_int(last_p)} {pu} بود؛ "
-                     + ("نرخ تغییری نکرد." if abs(cl) < 0.05 else f"نرخ این بار {signed(cl)} {'بالاتر' if cl > 0 else 'پایین‌تر'} است."))
+            F.append(f"معامله‌ی قبلی همین نماد {fa_date(last_d)} با قیمت {fa_int(last_p)} {pu} بود؛ "
+                     + ("قیمت تغییری نکرد." if abs(cl) < 0.05 else f"قیمت این بار {signed(cl)} {'بالاتر' if cl > 0 else 'پایین‌تر'} است."))
         hi = max(prices, key=lambda x: x[1])
         lo = min(prices, key=lambda x: x[1])
         first = prices[0][0]
         if price > hi[1]:
-            F.append(f"این بیشترین نرخ این نماد از {fa_date(first)} (آغاز داده‌ها) است؛ بیشترین قبلی {fa_int(hi[1])} در {fa_date(hi[0])} بود.")
+            F.append(f"این بیشترین قیمت این نماد از {fa_date(first)} (آغاز داده‌ها) است؛ بیشترین قبلی {fa_int(hi[1])} در {fa_date(hi[0])} بود.")
         elif price < lo[1]:
-            F.append(f"این کمترین نرخ این نماد از {fa_date(first)} (آغاز داده‌ها) است؛ کمترین قبلی {fa_int(lo[1])} در {fa_date(lo[0])} بود.")
+            F.append(f"این کمترین قیمت این نماد از {fa_date(first)} (آغاز داده‌ها) است؛ کمترین قبلی {fa_int(lo[1])} در {fa_date(lo[0])} بود.")
         F.append(f"این نماد از {fa_date(first)} تا امروز {fa_int(len(past))} بار معامله شده است.")
         rows = [[fa_date(d), fa_int(p)] for d, p in prices[-5:]] + [[fa_date(date_fa), fa_int(price)]]
-        tables["T1"] = {"title": f"نرخ {goods} در شش معامله‌ی اخیر ({pu})", "columns": ["تاریخ", "نرخ"], "rows": rows}
+        tables["T1"] = {"title": f"قیمت {goods} در شش معامله‌ی اخیر ({pu})", "columns": ["تاریخ", "قیمت"], "rows": rows}
     tables["T2"] = {"title": f"معامله‌ی {goods} شرکت {prod}", "columns": ["شاخص", "مقدار"],
                     "rows": [["عرضه (تن)", vol(off)], ["تقاضا (تن)", vol(dem)], ["فروش (تن)", vol(trd)],
-                             [f"قیمت پایه ({pu})", fa_int(base)], [f"نرخ معامله ({pu})", fa_int(price)], ["شرط تحویل", deliv]]}
+                             [f"قیمت پایه ({pu})", fa_int(base)], [f"قیمت معامله ({pu})", fa_int(price)], ["شرط تحویل", deliv]]}
     text = "\n".join(f"{i}. {f}" for i, f in enumerate(F, 1))
     return text, tables

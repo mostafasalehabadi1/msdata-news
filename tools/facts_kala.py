@@ -52,15 +52,15 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
         F.append(f"فقط {fa_num(trd)} {unit} از {fa_num(off)} {unit} عرضه فروش رفت ({fa_num(trd / off * 100, 0)} درصد) و "
                  f"{fa_num(off - trd)} {unit} بی‌خریدار ماند.")
     if trd > 0 and not price:  # content agent 1405-07-15: an empty/zero weighted_price is missing data, never «صفر ریال»
-        F.append(f"قیمت پایه‌ی عرضه {fa_int(base)} ریال هر کیلوگرم بود (نرخ معامله در داده نیامده؛ از نرخ معامله حرف نزن)." if base else
-                 "نرخ معامله در داده نیامده؛ از نرخ و قیمت حرف نزن.")
+        F.append(f"قیمت پایه‌ی عرضه {fa_int(base)} ریال هر کیلوگرم بود (قیمت معامله در داده نیامده؛ از قیمت معامله حرف نزن)." if base else
+                 "قیمت معامله در داده نیامده؛ از قیمت معامله حرف نزن.")
     elif trd > 0:
-        F.append(f"نرخ میانگین معامله {fa_int(price)} ریال هر کیلوگرم بود و قیمت پایه‌ی عرضه {fa_int(base)} ریال.")
+        F.append(f"قیمت میانگین معامله {fa_int(price)} ریال هر کیلوگرم بود و قیمت پایه‌ی عرضه {fa_int(base)} ریال.")
         c = pct(price, base)
         if c is not None:
-            F.append("نرخ معامله با قیمت پایه برابر بود و رقابتی بالاتر از پایه شکل نگرفت." if abs(c) < 0.05 else
-                     f"خریداران با رقابت، نرخ را {signed(c)} بالاتر از قیمت پایه بردند." if c > 0 else
-                     f"نرخ معامله {signed(c)} پایین‌تر از قیمت پایه بود.")
+            F.append("قیمت معامله با قیمت پایه برابر بود و رقابتی بالاتر از پایه شکل نگرفت." if abs(c) < 0.05 else
+                     f"خریداران با رقابت، قیمت را {signed(c)} بالاتر از قیمت پایه بردند." if c > 0 else
+                     f"قیمت معامله {signed(c)} پایین‌تر از قیمت پایه بود.")
         F.append(f"ارزش معامله‌ی امروز {toman_billion(row.get('trade_value'))} بود.")
     # history
     past = [h for h in history if h.get("trade_date") != date_fa and (h.get("traded_qty") or 0) > 0 and h.get("weighted_price")]
@@ -69,12 +69,12 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     else:
         last = past[-1]
         lp, gap = last["weighted_price"], days_between(last["trade_date"], date_fa)
-        F.append(f"آخرین معامله‌ی قبلی در {fa_date(last['trade_date'])} بود ({"دیروز" if gap == 1 else fa_int(gap) + " روز پیش"}) با نرخ {fa_int(lp)} ریال و "
+        F.append(f"آخرین معامله‌ی قبلی در {fa_date(last['trade_date'])} بود ({"دیروز" if gap == 1 else fa_int(gap) + " روز پیش"}) با قیمت {fa_int(lp)} ریال و "
                  f"{fa_num(last.get('traded_qty'))} {unit} معامله.")
         c = pct(price, lp) if trd and price else None
         if c is not None:
-            F.append(f"نرخ امروز با آخرین معامله ({fa_date(last['trade_date'])}) برابر بود." if abs(c) < 0.05 else
-                     f"نرخ امروز {signed(c)} {'گران‌تر' if c > 0 else 'ارزان‌تر'} از آخرین معامله ({fa_date(last['trade_date'])}) بود.")
+            F.append(f"قیمت امروز با آخرین معامله ({fa_date(last['trade_date'])}) برابر بود." if abs(c) < 0.05 else
+                     f"قیمت امروز {signed(c)} {'گران‌تر' if c > 0 else 'ارزان‌تر'} از آخرین معامله ({fa_date(last['trade_date'])}) بود.")
         q = pct(trd, last.get("traded_qty"))
         if trd and q is not None and abs(q) >= 20:
             F.append(f"حجم معامله‌ی امروز {fa_num(q / 100 + 1)} برابر آخرین معامله بود." if q >= 100 else
@@ -88,17 +88,17 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
         prices = [h["weighted_price"] for h in past]
         if len(past) >= 3:
             hi, lo = max(past, key=lambda h: h["weighted_price"]), min(past, key=lambda h: h["weighted_price"])
-            F.append(f"در {fa_int(len(past))} معامله‌ی ثبت‌شده از {fa_date(past[0]['trade_date'])}، بیشترین نرخ {fa_int(hi['weighted_price'])} ریال "
+            F.append(f"در {fa_int(len(past))} معامله‌ی ثبت‌شده از {fa_date(past[0]['trade_date'])}، بیشترین قیمت {fa_int(hi['weighted_price'])} ریال "
                      f"({fa_date(hi['trade_date'])}) و کمترین {fa_int(lo['weighted_price'])} ریال ({fa_date(lo['trade_date'])}) بود.")
             if trd and price > max(prices):
-                F.append(f"نرخ امروز بیشترین نرخ این نماد از {fa_date(past[0]['trade_date'])} (نخستین معامله‌ی موجود) است.")
+                F.append(f"قیمت امروز بیشترین قیمت این نماد از {fa_date(past[0]['trade_date'])} (نخستین معامله‌ی موجود) است.")
             elif trd and price < min(prices):
-                F.append(f"نرخ امروز کمترین نرخ این نماد از {fa_date(past[0]['trade_date'])} (نخستین معامله‌ی موجود) است.")
+                F.append(f"قیمت امروز کمترین قیمت این نماد از {fa_date(past[0]['trade_date'])} (نخستین معامله‌ی موجود) است.")
             k = past[-5:]
             avg = sum(h["weighted_price"] for h in k) / len(k)
             c = pct(price, avg) if trd else None
             if c is not None and abs(c) >= 0.5:
-                F.append(f"نرخ امروز {signed(c)} {'بالاتر' if c > 0 else 'پایین‌تر'} از میانگین {fa_int(len(k))} معامله‌ی اخیر ({fa_int(avg)} ریال) بود.")
+                F.append(f"قیمت امروز {signed(c)} {'بالاتر' if c > 0 else 'پایین‌تر'} از میانگین {fa_int(len(k))} معامله‌ی اخیر ({fa_int(avg)} ریال) بود.")
         seq = prices + ([price] if trd else [])
         n, d0 = 0, None
         for a, b in zip(reversed(seq[:-1]), reversed(seq[1:])):
@@ -109,14 +109,14 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
                 break
             n += 1
         if n >= 2:
-            F.append(f"نرخ این نماد {fa_int(n)} معامله‌ی پیاپی {'گران‌تر' if d0 > 0 else 'ارزان‌تر'} شده است.")
+            F.append(f"قیمت این نماد {fa_int(n)} معامله‌ی پیاپی {'گران‌تر' if d0 > 0 else 'ارزان‌تر'} شده است.")
         flat = 0
         for a, b in zip(reversed(seq[:-1]), reversed(seq[1:])):
             if a != b:
                 break
             flat += 1
         if flat >= 2:
-            F.append(f"نرخ این نماد {fa_int(flat + 1)} معامله‌ی پیاپی ثابت مانده است.")
+            F.append(f"قیمت این نماد {fa_int(flat + 1)} معامله‌ی پیاپی ثابت مانده است.")
         yr = [h for h in past if h["trade_date"][:4] == date_fa[:4]]
         if len(yr) >= 2:
             F.append(f"این نماد امسال (از فروردین {date_fa[:4].translate(FA)}) {fa_int(len(yr) + (1 if trd else 0))} بار معامله شده است.")
@@ -127,7 +127,7 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     others = [p for p in same if p is not row and p.get("producer_name") != prod]
     if others:
         F.append(f"امروز {fa_int(len(others))} تولیدکننده‌ی دیگر هم {goods} فروختند: " + "؛ ".join(
-            f"شرکت {p.get('producer_name')} با نرخ {fa_int(p['weighted_price'])} ریال" for p in others[:4]) + ".")
+            f"شرکت {p.get('producer_name')} با قیمت {fa_int(p['weighted_price'])} ریال" for p in others[:4]) + ".")
         if trd:
             ps = sorted(same, key=lambda p: p["weighted_price"])
             # only a strict min/max (content agent 1405-07-14: a tie was called «ارزان‌ترین»)
@@ -148,7 +148,7 @@ def tables(row, past, same, unit, goods, trd):
     off, dem = row.get("offered_qty") or 0, row.get("demand_qty") or 0
     T["T1"] = {"title": "معامله‌ی امروز", "columns": ["شاخص", "مقدار"], "rows": [
         ["عرضه", f"{fa_num(off)} {unit}"], ["سفارش خریداران", f"{fa_num(dem)} {unit}"], ["معامله‌شده", f"{fa_num(trd)} {unit}"],
-        ["قیمت پایه (ریال/کیلوگرم)", fa_int(base)], ["نرخ میانگین (ریال/کیلوگرم)", fa_int(price) if trd and price else "—"],
+        ["قیمت پایه (ریال/کیلوگرم)", fa_int(base)], ["قیمت میانگین (ریال/کیلوگرم)", fa_int(price) if trd and price else "—"],
         ["ارزش معامله", toman_billion(row.get("trade_value")) if trd else "—"]]}
     if len(past) >= 2:
         seq = past[-5:] + ([{"trade_date": row.get("trade_date") or "امروز", "weighted_price": price, "traded_qty": trd}] if trd and price else [])
@@ -158,16 +158,16 @@ def tables(row, past, same, unit, goods, trd):
             rows.append([fa_date(h["trade_date"]) if "/" in str(h["trade_date"]) else "امروز", fa_int(h["weighted_price"]),
                          f"{fa_num(h.get('traded_qty'))} {unit}", "—" if c is None else ("+" if c > 0 else "") + fa_num(c) + "٪"])
             prev = h["weighted_price"]
-        T["T2"] = {"title": "روند نرخ در معامله‌های اخیر", "columns": ["تاریخ", "نرخ (ریال/کیلوگرم)", "حجم معامله", "تغییر"], "rows": rows}
+        T["T2"] = {"title": "روند قیمت در معامله‌های اخیر", "columns": ["تاریخ", "قیمت (ریال/کیلوگرم)", "حجم معامله", "تغییر"], "rows": rows}
     if len(same) >= 2:
-        T["T3"] = {"title": f"تولیدکننده‌های {goods} در معاملات امروز", "columns": ["تولیدکننده", "نرخ (ریال/کیلوگرم)", "معامله‌شده", "تقاضا به عرضه"],
+        T["T3"] = {"title": f"تولیدکننده‌های {goods} در معاملات امروز", "columns": ["تولیدکننده", "قیمت (ریال/کیلوگرم)", "معامله‌شده", "تقاضا به عرضه"],
                    "rows": [[p.get("producer_name"), fa_int(p["weighted_price"]), f"{fa_num(p['traded_qty'])} {unit}",
                              f"{fa_num((p.get('demand_qty') or 0) / p['offered_qty'] * 100, 0)}٪" if p.get("offered_qty") else "—"]
                             for p in sorted(same, key=lambda p: p["weighted_price"])[:8]]}
     if len(past) >= 3 and trd and price:
         k = past[-5:]
         hi, lo = max(past, key=lambda h: h["weighted_price"]), min(past, key=lambda h: h["weighted_price"])
-        T["T4"] = {"title": "نرخ امروز در برابر گذشته", "columns": ["مبنا", "نرخ (ریال/کیلوگرم)", "تفاوت نرخ امروز"], "rows": [
+        T["T4"] = {"title": "قیمت امروز در برابر گذشته", "columns": ["مبنا", "قیمت (ریال/کیلوگرم)", "تفاوت قیمت امروز"], "rows": [
             [f"آخرین معامله ({fa_date(past[-1]['trade_date'])})", fa_int(past[-1]["weighted_price"]), fa_num(pct(price, past[-1]["weighted_price"])) + "٪"],
             [f"میانگین {fa_int(len(k))} معامله‌ی اخیر", fa_int(sum(h['weighted_price'] for h in k) / len(k)),
              fa_num(pct(price, sum(h['weighted_price'] for h in k) / len(k))) + "٪"],

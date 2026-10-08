@@ -85,20 +85,20 @@ def build(rows, date_fa, date, sym_dir):
         F.append(f"معامله‌ی بزرگ: {name(r)} با ارزش {toman_billion(val(r))}؛ " +
                  ("روی قیمت پایه." if abs(comp(r)) < 0.05 else f"{fa_num(comp(r))} درصد بالاتر از قیمت پایه."))
     for r in hot[:4]:
-        F.append(f"رقابت: نرخ {name(r)} {fa_num(comp(r))} درصد بالاتر از قیمت پایه بسته شد.")
+        F.append(f"رقابت: قیمت {name(r)} {fa_num(comp(r))} درصد بالاتر از قیمت پایه بسته شد.")
     ch = [r for r in traded if r.get("price_change_pct") is not None and abs(r["price_change_pct"]) >= 0.05]
     up = sorted([r for r in ch if r["price_change_pct"] > 0], key=lambda r: -r["price_change_pct"])
     down = sorted([r for r in ch if r["price_change_pct"] < 0], key=lambda r: r["price_change_pct"])
     F.append(f"نسبت به آخرین معامله‌ی همان نماد، {fa_int(len(up))} نماد گران‌تر و {fa_int(len(down))} نماد ارزان‌تر فروخته شد.")
     for r in up[:3]:
-        F.append(f"افزایش نرخ: {name(r)} {fa_num(r['price_change_pct'])} درصد گران‌تر از آخرین معامله‌ی خود.")
+        F.append(f"افزایش قیمت: {name(r)} {fa_num(r['price_change_pct'])} درصد گران‌تر از آخرین معامله‌ی خود.")
     for r in down[:3]:
-        F.append(f"کاهش نرخ: {name(r)} {fa_num(abs(r['price_change_pct']))} درصد ارزان‌تر از آخرین معامله‌ی خود.")
+        F.append(f"کاهش قیمت: {name(r)} {fa_num(abs(r['price_change_pct']))} درصد ارزان‌تر از آخرین معامله‌ی خود.")
     hi, lo = records(traded, sym_dir, date_fa)
     if hi:
-        F.append(f"{fa_int(len(hi))} نماد امروز به بیشترین نرخ خود در داده‌ی msdata رسید: " + "، ".join(name(r) for r in hi[:5]) + ".")
+        F.append(f"{fa_int(len(hi))} نماد امروز به بیشترین قیمت خود در داده‌ی msdata رسید: " + "، ".join(name(r) for r in hi[:5]) + ".")
     if lo:
-        F.append(f"{fa_int(len(lo))} نماد امروز کمترین نرخ خود در داده‌ی msdata را ثبت کرد: " + "، ".join(name(r) for r in lo[:5]) + ".")
+        F.append(f"{fa_int(len(lo))} نماد امروز کمترین قیمت خود در داده‌ی msdata را ثبت کرد: " + "، ".join(name(r) for r in lo[:5]) + ".")
     goods = {}
     for r in traded:
         goods.setdefault(r.get("goods_name"), []).append(r)
@@ -107,7 +107,7 @@ def build(rows, date_fa, date, sym_dir):
         if len(rs) >= 2:
             ps = sorted(rs, key=lambda r: r["weighted_price"])
             head = f"{g}: {fa_int(len(rs))} تولیدکننده فروختند، ارزش روی هم {toman_billion(sum(val(r) for r in rs))}؛ "
-            F.append(head + (f"همه با نرخ یکسان {fa_int(ps[0]['weighted_price'])} ریال." if ps[0]["weighted_price"] == ps[-1]["weighted_price"] else
+            F.append(head + (f"همه با قیمت یکسان {fa_int(ps[0]['weighted_price'])} ریال." if ps[0]["weighted_price"] == ps[-1]["weighted_price"] else
                              f"ارزان‌ترین شرکت {ps[0].get('producer_name')} ({fa_int(ps[0]['weighted_price'])} ریال) و گران‌ترین شرکت "
                              f"{ps[-1].get('producer_name')} ({fa_int(ps[-1]['weighted_price'])} ریال)."))
     facts = "\n".join(f"F{i + 1}. {s}" for i, s in enumerate(F))
@@ -120,17 +120,17 @@ def build(rows, date_fa, date, sym_dir):
          "T2": {"title": "بزرگ‌ترین معامله‌های امروز", "columns": ["کالا", "تولیدکننده", "ارزش معامله", "رقابت از پایه"],
                 "rows": [[r.get("goods_name"), r.get("producer_name"), toman_billion(val(r)), sgn(comp(r))] for r in big[:8]]}}
     if len(hot) >= 3:
-        T["T3"] = {"title": "بیشترین رقابت خریداران", "columns": ["کالا", "تولیدکننده", "نرخ بالاتر از پایه", "تقاضا به عرضه"],
+        T["T3"] = {"title": "بیشترین رقابت خریداران", "columns": ["کالا", "تولیدکننده", "قیمت بالاتر از پایه", "تقاضا به عرضه"],
                    "rows": [[r.get("goods_name"), r.get("producer_name"), sgn(comp(r)),
                              fa_num(r["demand_qty"] / r["offered_qty"] * 100, 0) + "٪" if r.get("offered_qty") else "—"] for r in hot[:8]]}
     if len(up) + len(down) >= 3:
-        T["T4"] = {"title": "بیشترین تغییر نرخ نسبت به آخرین معامله", "columns": ["کالا", "تولیدکننده", "تغییر نرخ"],
+        T["T4"] = {"title": "بیشترین تغییر قیمت نسبت به آخرین معامله", "columns": ["کالا", "تولیدکننده", "تغییر قیمت"],
                    "rows": [[r.get("goods_name"), r.get("producer_name"), sgn(r["price_change_pct"])] for r in (up[:4] + down[:4])]}
     if len(gtop) >= 3:
         T["T5"] = {"title": "کالاهای پرمعامله‌ی امروز", "columns": ["کالا", "تعداد تولیدکننده", "ارزش معامله"],
                    "rows": [[g, fa_int(len(rs)), toman_billion(sum(val(r) for r in rs))] for g, rs in gtop[:8]]}
     if len(hi) + len(lo) >= 2:
-        T["T6"] = {"title": "رکوردهای نرخ امروز (در داده‌ی msdata)", "columns": ["کالا", "تولیدکننده", "رکورد"],
-                   "rows": [[r.get("goods_name"), r.get("producer_name"), "بیشترین نرخ"] for r in hi[:6]] +
-                           [[r.get("goods_name"), r.get("producer_name"), "کمترین نرخ"] for r in lo[:4]]}
+        T["T6"] = {"title": "رکوردهای قیمت امروز (در داده‌ی msdata)", "columns": ["کالا", "تولیدکننده", "رکورد"],
+                   "rows": [[r.get("goods_name"), r.get("producer_name"), "بیشترین قیمت"] for r in hi[:6]] +
+                           [[r.get("goods_name"), r.get("producer_name"), "کمترین قیمت"] for r in lo[:4]]}
     return facts, symmap, T

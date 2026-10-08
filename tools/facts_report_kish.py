@@ -91,7 +91,7 @@ def build(items, series, prev_day, date_fa, date):
         F.append(f"معامله‌ی بزرگ: {name(r)} با ارزش {usd(val(r))}، {delivery(r.get('delivery_place'))[0]}؛ " +
                  ("روی قیمت پایه." if abs(comp(r)) < 0.05 else f"{fa_num(comp(r))} درصد بالاتر از قیمت پایه."))
     for r in hot[:4]:
-        F.append(f"رقابت: نرخ {name(r)} {fa_num(comp(r))} درصد بالاتر از قیمت پایه بسته شد.")
+        F.append(f"رقابت: قیمت {name(r)} {fa_num(comp(r))} درصد بالاتر از قیمت پایه بسته شد.")
     ch = []
     hi, lo = [], []
     for r in traded:
@@ -108,13 +108,13 @@ def build(items, series, prev_day, date_fa, date):
     down = sorted([x for x in ch if x[1] < 0], key=lambda x: x[1])
     F.append(f"نسبت به آخرین معامله‌ی همان کالا، {fa_int(len(up))} کالا گران‌تر و {fa_int(len(down))} کالا ارزان‌تر فروخته شد.")
     for r, c in up[:3]:
-        F.append(f"افزایش نرخ: {name(r)} {fa_num(c)} درصد گران‌تر از آخرین معامله‌ی خود.")
+        F.append(f"افزایش قیمت: {name(r)} {fa_num(c)} درصد گران‌تر از آخرین معامله‌ی خود.")
     for r, c in down[:3]:
-        F.append(f"کاهش نرخ: {name(r)} {fa_num(abs(c))} درصد ارزان‌تر از آخرین معامله‌ی خود.")
+        F.append(f"کاهش قیمت: {name(r)} {fa_num(abs(c))} درصد ارزان‌تر از آخرین معامله‌ی خود.")
     if hi:
-        F.append(f"{fa_int(len(hi))} کالا به بیشترین نرخ خود از مهر ۱۴۰۴ (آغاز داده‌ها) رسید: " + "، ".join(name(r) for r in hi[:5]) + ".")
+        F.append(f"{fa_int(len(hi))} کالا به بیشترین قیمت خود از مهر ۱۴۰۴ (آغاز داده‌ها) رسید: " + "، ".join(name(r) for r in hi[:5]) + ".")
     if lo:
-        F.append(f"{fa_int(len(lo))} کالا کمترین نرخ خود از مهر ۱۴۰۴ (آغاز داده‌ها) را ثبت کرد: " + "، ".join(name(r) for r in lo[:5]) + ".")
+        F.append(f"{fa_int(len(lo))} کالا کمترین قیمت خود از مهر ۱۴۰۴ (آغاز داده‌ها) را ثبت کرد: " + "، ".join(name(r) for r in lo[:5]) + ".")
     goods = {}
     for r in traded:
         goods.setdefault(clean_name(r.get("goods_name")), []).append(r)
@@ -135,11 +135,11 @@ def build(items, series, prev_day, date_fa, date):
          "T2": {"title": "بزرگ‌ترین معامله‌های بازار صادراتی", "columns": ["کالا", "تولیدکننده", "ارزش معامله", "رقابت از پایه"],
                 "rows": [[clean_name(r.get("goods_name")), r.get("producer"), usd(val(r)), sgn(comp(r))] for r in big[:8]]}}
     if len(hot) >= 3:
-        T["T3"] = {"title": "بیشترین رقابت خریداران", "columns": ["کالا", "تولیدکننده", "نرخ بالاتر از پایه", "تقاضا به عرضه"],
+        T["T3"] = {"title": "بیشترین رقابت خریداران", "columns": ["کالا", "تولیدکننده", "قیمت بالاتر از پایه", "تقاضا به عرضه"],
                    "rows": [[clean_name(r.get("goods_name")), r.get("producer"), sgn(comp(r)),
                              fa_num(r["demand_volume"] / r["offer_volume"] * 100, 0) + "٪" if r.get("offer_volume") else "—"] for r in hot[:8]]}
     if len(up) + len(down) >= 3:
-        T["T4"] = {"title": "بیشترین تغییر نرخ نسبت به آخرین معامله", "columns": ["کالا", "تولیدکننده", "تغییر نرخ"],
+        T["T4"] = {"title": "بیشترین تغییر قیمت نسبت به آخرین معامله", "columns": ["کالا", "تولیدکننده", "تغییر قیمت"],
                    "rows": [[clean_name(r.get("goods_name")), r.get("producer"), sgn(c)] for r, c in (up[:4] + down[:4])]}
     if len(gtop) >= 3:
         T["T5"] = {"title": "کالاهای پرمعامله‌ی بازار صادراتی", "columns": ["کالا", "تعداد معامله", "ارزش معامله"],
