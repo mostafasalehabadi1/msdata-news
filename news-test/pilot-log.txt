@@ -1,793 +1,317 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-40 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  IPC-HDHB0035LMPJ-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDCRP100NPP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ZCC-CEMENTSP-50L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+8 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  OAC-CEM2-32.5R-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMCUW-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   llm7:minimax-m2.7: quota used up - skipped for the rest of the day
-  KBCC-CEMENTPB-00 llm7:minimax-m2.7: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
-  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
-  EKC-CEMENTWB-25L-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"0948945d14ddc0609f3f3c1c56b4663c"
-}
-  IPC-HDHB0035LMPJ-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IPC-HDHB0035LMPJ-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 19 nums
-  PAM-HDEX3J-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ZATC-PCT5G42.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IPC-HDHB0035LMPJ-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  KSFN-MBENN03E-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 8s JSONDecodeError: Invalid control character at: line 6 column 177 (char 572)
-  IPC-HDHB0035LMPJ-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 19 nums
-OK KSSF-CEMENTWB-40L-00 <- requesty:mistral/leanstral-1-5 (9s)
-  IPC-HDHB0035LMPJ-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  KCC-CEMENTMC-50L-00 groq:openai/gpt-oss-120b: 11s ValueError: no JSON
-  PTC-PETBG821J-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ZATC-PCT5G32.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-style-soft: lead>35w/1num, text 23 nums
-  KCC-CEMENTMC-50L-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  ZATC-PCT5G32.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 32 nums
-  ZATC-PCT5G32.5-L50-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
-  EKC-CEMENTWB-25L-00 ovh:gpt-oss-120b: 17s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"9771bc1bf743e34348dd7e55877c3740"
-}
-  ZATC-PCT5G32.5-L50-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
-  EKC-CEMENTWB-25L-00 ovh:Meta-Llama-3_3-70B-Instruct: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"28e17222094f2b2749001c30b271053f"
-}
-  KCC-CEMENTSPB-00 requesty:mistral/leanstral-1-5: 8s ValueError: 126 words / 1 paragraphs
-  LAC-CEMENTW-50L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 8s JSONDecodeError: Invalid control character at: line 6 column 135 (char 423)
-  ZATC-PCT5G32.5-L50-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ZATC-PCT5G32.5-L50-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  KCC-CEMENTSPB-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  ovh:Qwen3.6-27B: quota used up - skipped for the rest of the day
-  EKC-CEMENTWB-25L-00 ovh:Qwen3.6-27B: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"b7992d7b7b2ac5602ad19a45f23bb20d"
-}
-  ZATC-PCT5G32.5-L50-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  KCC-CEMENTSPB-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for the rest of the day
-  EKC-CEMENTWB-25L-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"882c23280eceb5128364c710898e8a72"
-}
-  KCC-CEMENTSPB-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-style-soft: ثبت شد, lead>35w/1num, text 22 nums
-  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for the rest of the day
-  EKC-CEMENTWB-25L-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"81297f45cb711e4050442d47cc014074"
-}
-  JPC-HDCRP100NPO1P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PTC-PETBG785J-00 cohere:command-a-03-2025: 34s JSONDecodeError: Invalid control character at: line 6 column 342 (char 739)
-  SZSR-DSMCSFH-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid control character at: line 6 column 166 (char 506)
-  JPC-HDCRP100NPO1P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 zai:glm-4.7-flash: 37s ValueError: 112 words / 1 paragraphs
-  JPC-HDCRP100NPO1P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: ثبت شد, lead>35w/1num, text 22 nums
-OK EKC-CEMENTW-50L-00 <- cohere:command-a-reasoning-08-2025 (39s)
-  JPC-HDCRP100NPO1P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDCRP100NPO1P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDCRP100NPO1P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 22 nums
-OK KBCC-CEMENTPB-00 <- llm7:mistral-Nemo-Instruct-2407 (45s)
-style-soft: lead>35w/1num, text 23 nums
-  MAPE-LLD22B02P-00 zai:glm-4.5-flash: 14s ValueError: empty slug
-  ILPE-HD7000FWP-00 cohere:command-a-03-2025: 16s JSONDecodeError: Invalid control character at: line 6 column 368 (char 758)
-style-soft: ثبت شد, در حالی که, lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 26 nums
-  KECE-CPCANG32.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 73s JSONDecodeError: Invalid control character at: line 6 column 465 (char 905)
-  JPC-HDCRP100NPO2P-00 cohere:command-a-reasoning-08-2025: 38s ValueError: 129 words / 3 paragraphs
-  LOR-LLD22B02P-00 cohere:command-a-03-2025: 26s JSONDecodeError: Invalid control character at: line 6 column 359 (char 850)
-  FGP-MGB-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 17s JSONDecodeError: Expecting value: line 2 column 12 (char 13)
-  JPC-HD52518O3J-00 llm7:mistral-Nemo-Instruct-2407: 51s ValueError: 145 words / 1 paragraphs
-  KSFN-MBENN03E-00 zai:glm-4.7-flash: 50s ValueError: empty slug
-  PTC-PETTG645O3J-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 6 column 11 (char 416)
-  SHPC-HDCRP100BPP-00 llm7:DeepSeek-V4-Flash-0731: 125s ValueError: HTTP 524: error code: 524
-
-style-soft: lead>35w/1num, text 25 nums
-style-soft: lead>35w/1num, text 25 nums
-OK KSFN-MBENN03E-00 <- zai:glm-4.5-flash (25s)
-  JPC-HDCRP100NPO2P-00 cohere:command-r-plus-08-2024: 55s ValueError: 117 words / 2 paragraphs
-  NECO-CEMENTWB-00 groq:openai/gpt-oss-120b: 125s ValueError: 146 words / 1 paragraphs
-  NECO-CEMENTWB-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  groq:openai/gpt-oss-120b: quota used up - skipped for the rest of the day
-  ZATC-PCT5G32.5-B-00 groq:openai/gpt-oss-120b: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199975, Requested 30
-  ZATC-PCT5G32.5-B-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  ZCC-CEMENTSP-50L-00 llm7:mistral-Nemo-Instruct-2407: 62s ValueError: 214 words / 1 paragraphs
-  ZATC-PCT5G42.5-B-00 zai:glm-4.7-flash: 31s ValueError: 100 words / 1 paragraphs
-style-soft: lead>35w/1num, text 28 nums
-  KECE-SPCBNG42.5-B-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
-  UWCO-CEMENTW-50L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  LAC-CEMENTW-50L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791310525-mPgG2VsPcv2hK4u5231A","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-style-soft: lead>35w/1num, text 29 nums
-OK IPC-HDHB0035LMPJ-00 <- cohere:command-a-reasoning-08-2025 (45s)
-  JPC-HD52518PP-00 kilo:dots-studio/dots-3-note-preview:free: 194s TimeoutError: The read operation timed out
-  ZATC-PCT5G32.5-L50-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791310532-6skw8AY60zNtEXssXGGV","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-style-soft: امروز>2, lead>35w/1num, text 26 nums
-OK EKC-CEMENTWB-25L-00 <- cohere:command-a-reasoning-08-2025 (10s)
-  ZATC-PCT5G42.5-B-00 zai:glm-4.5-flash: 36s ValueError: 127 words / 2 paragraphs
-  KCC-CEMENTSPB-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-  KCC-CEMENTMC-50L-00 llm7:mistral-Nemo-Instruct-2407: 46s ValueError: no JSON
-  JPC-HDCRP100NPO1P-00 zai:glm-4.7-flash: 15s ValueError: 91 words / 1 paragraphs
-style-soft: ثبت شد, در حالی که, text 12 nums
-  MAPE-LLD22B02PJ-00 llm7:DeepSeek-V4-Flash-0731: 125s ValueError: HTTP 524: error code: 524
-
-  SZSR-DSMCSFH-00 cohere:command-a-reasoning-08-2025: 43s ValueError: 117 words / 2 paragraphs
-  KECE-CPCANG32.5-L50-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  JPC-HDCRP100NPO1P-00 zai:glm-4.5-flash: 34s ValueError: 125 words / 2 paragraphs
-style-soft: ثبت شد, lead>35w/1num, text 10 nums
-OK JPC-HD52518PP-00 <- kilo:stepfun/step-3.7-flash:free (76s)
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  JPC-HD7000FWP-00 llm7:DeepSeek-V4-Flash-0731: 28s QuotaError: HTTP 429: {"error":{"message":"Upstream provider rate limit exceeded.","type":"upstream_rate_limited","param":null,"code":"upstream_rate_limited"}}
-  FGP-MGB-00 zai:glm-4.7-flash: 27s ValueError: 76 words / 1 paragraphs
-  KECE-CPCANG32.5-L50-00 requesty:novita/inclusionai/ling-3.0-tiny: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 17 nums
-OK FGP-MGB-00 <- zai:glm-4.5-flash (41s)
-  KECE-CPCANG32.5-L50-00 requesty:poolside/laguna-m.1: 46s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  KECE-CPCANG32.5-L50-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  JPC-HD52518O3J-00 zai:glm-4.7-flash: 28s ValueError: 78 words / 1 paragraphs
-  JPC-HD52518O3J-00 zai:glm-4.5-flash: 37s ValueError: 128 words / 1 paragraphs
-  PTC-PETTG645O3J-00 zai:glm-4.7-flash: 13s ValueError: 84 words / 1 paragraphs
-  ENPC-PSSER200J-089 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  PTC-PETTG645O3J-00 zai:glm-4.5-flash: 54s ValueError: 123 words / 2 paragraphs
-  JPC-HDCRP100NPO2P-00 zai:glm-4.7-flash: 4s ValueError: empty slug
-  KECE-SPCBNG42.5-B-00 kilo:kilo-auto/free: 332s TimeoutError: The read operation timed out
-  SZSR-DSMCSFH-00 cohere:command-r-plus-08-2024: 262s ValueError: 116 words / 1 paragraphs
-  JPC-HDCRP100NPO2P-00 zai:glm-4.5-flash: 29s ValueError: 86 words / 2 paragraphs
-style-soft: ثبت شد, lead>35w/1num, text 20 nums
-  KECE-CPCANG32.5-L50-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 31 nums
-OK NECO-CEMENTWB-00 <- cohere:command-a-reasoning-08-2025 (39s)
-  ZCC-CEMENTSP-50L-00 cohere:command-a-reasoning-08-2025: 12s JSONDecodeError: Expecting value: line 4 column 15 (char 171)
-  ZATC-PCT5G32.5-B-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  ZATC-PCT5G32.5-B-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  ZATC-PCT5G32.5-B-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  ZATC-PCT5G32.5-B-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 11 nums
-style-soft: ثبت شد, lead>35w/1num
-style-soft: ثبت شد, lead>35w/1num, text 11 nums
-OK ENPC-PSSER200J-089 <- kilo:stepfun/step-3.7-flash:free (275s)
-style-soft: lead>35w/1num, text 28 nums
-OK ZCC-CEMENTSP-50L-00 <- cohere:command-r-plus-08-2024 (167s)
-style-soft: ثبت شد, lead>35w/1num, text 29 nums
-OK UWCO-CEMENTW-50L-00 <- cohere:command-a-reasoning-08-2025 (23s)
-  ZATC-PCT5G32.5-B-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, امروز>2, lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 25 nums
-OK LAC-CEMENTW-50L-00 <- cohere:command-a-reasoning-08-2025 (19s)
-style-soft: در حالی که, امروز>2, lead>35w/1num, text 18 nums
-  KECE-SPCBNG42.5-B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 319s TimeoutError: The read operation timed out
-style-soft: امروز>2, lead>35w/1num, text 19 nums
-OK ZATC-PCT5G32.5-L50-00 <- cohere:command-a-reasoning-08-2025 (30s)
-  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for the rest of the day
-  KECE-SPCBNG42.5-B-00 kilo:poolside/laguna-s-2.1:free: 14s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
-  kilo:thinkingmachines/inkling-small:free: quota used up - skipped for the rest of the day
-  KECE-SPCBNG42.5-B-00 kilo:thinkingmachines/inkling-small:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: limit_rpd/thinkingmachines/inkling-small-20260730/e27a9a6d-1451-4be4-876e-292ffcbf1e71. Daily limit reached for thinkingmachines/inkling-small:free via Thinking Machine
-  ZATC-PCT5G42.5-B-00 cohere:command-a-reasoning-08-2025: 11s JSONDecodeError: Expecting value: line 4 column 15 (char 168)
-style-soft: ثبت شد, text 13 nums
-OK IPC-XYLENEMIXB-00 <- kilo:dots-studio/dots-3-note-preview:free (166s)
-  ZATC-PCT5G42.5-B-00 cohere:command-r-plus-08-2024: 144s JSONDecodeError: Invalid control character at: line 6 column 476 (char 806)
-style-soft: lead>35w/1num, text 22 nums
-style-soft: lead>35w/1num, text 22 nums
-OK KCC-CEMENTSPB-00 <- cohere:command-a-reasoning-08-2025 (20s)
-  KECE-SPCBNG42.5-B-00 kilo:cohere/north-mini-code:free: 184s ValueError: 149 words / 1 paragraphs
-style-soft: ثبت شد, lead>35w/1num, text 27 nums
-style-soft: ثبت شد, lead>35w/1num, text 27 nums
-OK KCC-CEMENTMC-50L-00 <- cohere:command-a-reasoning-08-2025 (27s)
-  ENPC-PSSEF205J-089 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, در حالی که, lead>35w/1num, text 19 nums
-style-soft: ثبت شد, ثبت شد, در حالی که, lead>35w/1num, text 18 nums
-OK JPC-HD52518O3J-00 <- cohere:command-a-reasoning-08-2025 (47s)
-style-soft: در حالی که, text 12 nums
-  PTC-PETTG645O3J-00 cohere:command-a-reasoning-08-2025: 28s ValueError: 116 words / 3 paragraphs
-  PTC-PETTG645O3J-00 cohere:command-r-plus-08-2024: 77s ValueError: 103 words / 2 paragraphs
-style-soft: lead>35w/1num, text 25 nums
-style-soft: ثبت شد, lead>35w/1num, text 19 nums
-style-soft: lead>35w/1num, text 25 nums
-OK KECE-CPCANG32.5-L50-00 <- cohere:command-a-reasoning-08-2025 (29s)
-  JPC-HDCRP100NPO1P-00 kilo:inclusionai/ling-3.1-flash: 226s TimeoutError: The read operation timed out
-style-soft: امروز>2, lead>35w/1num, text 30 nums
-  ZATC-PCT5G32.5-B-00 cohere:command-a-reasoning-08-2025: 27s ValueError: 127 words / 2 paragraphs
-  ZATC-PCT5G32.5-B-00 cohere:command-r-plus-08-2024: 17s JSONDecodeError: Invalid control character at: line 6 column 387 (char 825)
-  KECE-SPCBNG42.5-B-00 cohere:command-a-reasoning-08-2025: 10s JSONDecodeError: Expecting value: line 4 column 15 (char 198)
-style-soft: lead>35w/1num, text 10 nums
-OK ENPC-PSSEF205J-089 <- kilo:stepfun/step-3.7-flash:free (308s)
-style-soft: lead>35w/1num, text 20 nums
-OK KECE-SPCBNG42.5-B-00 <- cohere:command-r-plus-08-2024 (71s)
-style-soft: ثبت شد, lead>35w/1num, text 24 nums
-  JPC-HDCRP100NPO1P-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 11 nums
-  LOR-HD54B04UVPP-00 kilo:dots-studio/dots-3-note-preview:free: 220s TimeoutError: The read operation timed out
-style-soft: ثبت شد, text 9 nums
-OK JPC-HDCRP100NPO1P-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (185s)
-style-soft: ثبت شد, lead>35w/1num, text 12 nums
-style-soft: ثبت شد, lead>35w/1num, text 10 nums
-style-soft: text 10 nums
-OK SZSR-DSMCSFH-00 <- kilo:inclusionai/ling-3.1-flash (213s)
-style-soft: ثبت شد, lead>35w/1num, text 9 nums
-  LOR-HD54B04UVPP-00 kilo:stepfun/step-3.7-flash:free: 270s ValueError: markers: تالار اشتباه: «صنعتی و معدنی»
-OK JPC-HDCRP100NPO2P-00 <- kilo:inclusionai/ling-3.1-flash (176s)
-  BSPC-OAXYLENEB-00 kilo:dots-studio/dots-3-note-preview:free: 192s ValueError: 114 words / 2 paragraphs
-  ZATC-PCT5G42.5-B-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 37 nums
-style-soft: ثبت شد, lead>35w/1num
-  BSPC-OAXYLENEB-00 kilo:stepfun/step-3.7-flash:free: 276s ValueError: 95 words / 2 paragraphs
-  ZATC-PCT5G42.5-B-00 kilo:kilo-auto/free: 195s TimeoutError: The read operation timed out
-  MDC-HD52B18UVPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: text 15 nums
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 17 nums
-  MDC-HD52B18UVPP-00 kilo:stepfun/step-3.7-flash:free: 110s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-  ZATC-PCT5G42.5-B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 285s ValueError: markers: لید عیناً در متن تکرار شده
-  ZATC-PCT5G42.5-B-00 kilo:cohere/north-mini-code:free: 324s TimeoutError: The read operation timed out
-  PTC-PETTG645O3J-00 kilo:inclusionai/ling-3.1-flash: 196s TimeoutError: The read operation timed out
-  PTC-PETTG645O3J-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 9 nums
-  PTC-PETTG645O3J-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 249s ValueError: markers: عدد بیرون از حقیقت‌ها: ۰۰۲، ۱۱۹ | تالار اشتباه: «صنعتی و معدنی»
-  PTC-PETTG645O3J-00 kilo:cohere/north-mini-code:free: 252s ValueError: 92 words / 1 paragraphs
-  ZATC-PCT5G32.5-B-00 kilo:inclusionai/ling-3.1-flash: 226s TimeoutError: The read operation timed out
-  ZATC-PCT5G32.5-B-00 kilo:kilo-auto/free: 190s TimeoutError: The read operation timed out
-  ZATC-PCT5G32.5-B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 238s ValueError: 187 words / 10 paragraphs
-style-soft: ثبت شد, lead>35w/1num, text 12 nums
-  ZATC-PCT5G32.5-B-00 kilo:cohere/north-mini-code:free: 185s ValueError: markers: «رکورد» در text | «نشان‌دهنده» در text | «بیانگر» در text
-written 24/40; total in file 217
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-39 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ZATC-PCT5G42.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PTC-PETTG645O3J-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  JPC-HDCRP100NPP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
+  ASBK-DSMHYDLIME-00 llm7:minimax-m2.7: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 26489 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":26489}}
+  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
-  LOR-HD62N07UVPO1P-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 77219 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":77219}}
-  ZATC-PCT5G42.5-B-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ZATC-PCT5G32.5-B-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  ZATC-PCT5G42.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ZATC-PCT5G42.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ILPE-HD7000FWP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  IKCO-DSMWASTWP-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  KEPE-HDBL3PO1P-00 requesty:mistral/leanstral-1-5: 7s ValueError: 81 words / 1 paragraphs
-  ZATC-PCT5G42.5-B-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  KEPE-HDBL3PO1P-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  ZATC-PCT5G42.5-B-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IKCO-DSMWASTCAS-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  KEPE-HDBL3PO1P-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  JPC-HD52505PO1P-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LOR-LLD22B02P-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  KEPE-HDBL3PO1P-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  SSI-DSMWSTDRI-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: امروز>2, lead>35w/1num, text 24 nums
-  SSI-DSMWSTDRI-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: ثبت شد, lead>35w/1num, text 36 nums
-  SSI-DSMWSTDRI-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SSI-DSMWSTDRI-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SSI-DSMWSTDRI-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SSI-DSMWSTDRI-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: امروز>2, lead>35w/1num, text 23 nums
-OK PTC-PETBG785J-00 <- cohere:command-a-03-2025 (28s)
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 10 nums
-  ENPC-PSEPSOSJ-089 cohere:command-a-reasoning-08-2025: 28s ValueError: markers: «منتظر» در text
-  MAPE-LLD22B02P-00 zai:glm-4.7-flash: 31s ValueError: 125 words / 1 paragraphs
-  PAM-LD2420HO1J-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ASPC-HDHCH5110WO2P-00 groq:openai/gpt-oss-20b: 18s ValueError: no JSON
-  PAM-HDEX3J-00 kilo:dots-studio/dots-3-note-preview:free: 36s ValueError: bad response: '{"id":"gen-1791315201-dQn0VKOD4VcuV2NUXwV2","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
-  PAM-LD2420HO1J-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PAM-LD2420HO1J-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PAM-LD2420HO1J-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PAM-LD2420HO1J-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PAM-LD2420HO1J-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SHPC-HDCRP100BPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (fff66d00-ffb2-4439-
-  IKCO-DSMWASTBOPA-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (94a88f42-5ad9-4930-
-style-soft: lead>35w/1num, text 31 nums
-  MAPE-LLD22B02P-00 zai:glm-4.5-flash: 29s ValueError: 107 words / 1 paragraphs
-  ENPC-PSEPSOSJ-089 cohere:command-r-plus-08-2024: 35s ValueError: 129 words / 1 paragraphs
-style-soft: lead>35w/1num, text 29 nums
-OK MAPE-LLD22B02PJ-00 <- cohere:command-a-03-2025 (34s)
-  LOR-HD54B04UVPP-00 zai:glm-4.7-flash: 14s ValueError: 87 words / 1 paragraphs
-style-soft: امروز>2, lead>35w/1num, text 29 nums
-OK BSPC-OAXYLENEB-00 <- cohere:command-a-03-2025 (16s)
-  LOR-HD54B04UVPP-00 zai:glm-4.5-flash: 13s ValueError: empty slug
-  JPC-HD7000FWP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (544c13f9-1059-409d-
-  LPC-LD2102TX00PO2P-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (641bce64-490e-4707-
-style-soft: ثبت شد, lead>35w/1num, text 11 nums
-  KEPE-HDBL3O2J-00 cohere:command-a-reasoning-08-2025: 39s ValueError: 121 words / 2 paragraphs
-  MDC-HD52B18UVPP-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 361 (char 752)
-  JPC-HDCRP100NPP-00 zai:glm-4.7-flash: 20s ValueError: empty slug
-  LOR-LLD22B02P-00 cohere:command-a-03-2025: 17s JSONDecodeError: Invalid control character at: line 6 column 322 (char 741)
-  KEPE-HDBL3O2J-00 cohere:command-r-plus-08-2024: 31s JSONDecodeError: Invalid control character at: line 6 column 299 (char 679)
-  ILPE-HD7000FWP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e33faf75-2a45-4289-
-  JPC-HDEXCRP100NO3J-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (7bd1af05-f8c9-47f1-
-  SHPC-HDCRP100BPP-00 cohere:command-a-03-2025: 22s JSONDecodeError: Invalid control character at: line 6 column 231 (char 595)
-  JPC-HDCRP100NPP-00 zai:glm-4.5-flash: 48s ValueError: empty slug
-  PTC-PETBG821J-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  ASBK-DSMHYDLIME-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ASBK-DSMHYDLIME-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
 style-soft: ثبت شد, lead>35w/1num, text 10 nums
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 10 nums
-  NCI-DSMCUCON-00 cohere:command-a-reasoning-08-2025: 35s ValueError: markers: «منتظر» در text
-  JPC-HD52518PO1P-00 kilo:inclusionai/ling-3.1-flash: 196s TimeoutError: The read operation timed out
-  KEPE-HDBL3PO1P-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-  IKCO-DSMSSW-00 requesty:mistral/leanstral-1-5: 21s ValueError: 66 words / 2 paragraphs
-  IKCO-DSMSSW-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  IKCO-DSMSSW-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  IKCO-DSMSSW-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  PAM-HDEX3J-00 kilo:stepfun/step-3.7-flash:free: 212s ValueError: 114 words / 2 paragraphs
-  NCI-DSMCUCON-00 cohere:command-r-plus-08-2024: 81s ValueError: 114 words / 2 paragraphs
-style-soft: ثبت شد, lead>35w/1num, text 15 nums
-  JPC-HD52518PO1P-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-OK LOR-HD54B04UVPP-00 <- kilo:dots-studio/dots-3-note-preview:free (157s)
-  IKCO-DSMSSW-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد
-OK JPC-HD52518PO1P-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (38s)
-style-soft: ثبت شد, lead>35w/1num, text 18 nums
-  IKCO-DSMWACA-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  IKCO-DSMWACA-00 requesty:novita/inclusionai/ling-3.0-tiny: 46s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  IKCO-DSMWACA-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  IKCO-DSMWACA-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  MAPE-LLD22B02P-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 336s TimeoutError: The read operation timed out
-style-soft: text 10 nums
-OK IKCO-DSMSST-00 <- kilo:inclusionai/ling-3.1-flash (172s)
-  JPC-HD7000FWP-00 kilo:dots-studio/dots-3-note-preview:free: 201s TimeoutError: The read operation timed out
-  IKCO-DSMWACA-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-  MDC-HD52B18UVPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-OK KRD-LD2420F8PO1P-00 <- kilo:inclusionai/ling-3.1-flash (156s)
-style-soft: ثبت شد, lead>35w/1num, text 14 nums
-OK JPC-HD7000FWP-00 <- kilo:stepfun/step-3.7-flash:free (181s)
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-  LPC-LDEP1922TPO1P-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
-  LOR-LLD22B02P-00 kilo:dots-studio/dots-3-note-preview:free: 201s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 24 nums
+  groq:openai/gpt-oss-120b: quota used up - skipped for the rest of the day
+  SHPC-DEGKG-00 groq:openai/gpt-oss-120b: 7s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197090, Requested 40
+  OAC-CEM2-32.5R-50L-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  groq:openai/gpt-oss-20b: quota used up - skipped for the rest of the day
+  SHPC-DEGKG-00 groq:openai/gpt-oss-20b: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196821, Requested 373
+  OAC-CEM2-32.5R-50L-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  IKCO-DSMCUW-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMCUW-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMCUW-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMCUW-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMCUW-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMCUW-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ASBK-DSMHYDLIME-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ASBK-DSMHYDLIME-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ASBK-DSMHYDLIME-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ASBK-DSMHYDLIME-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ASBK-DSMHYDLIME-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ASBK-DSMHYDLIME-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"8684d6e3-1a76-43ae-adab-c8d08a2f7d6c","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  PTC-PTACO1J-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (103341e2-05ee-41b3-
+  IKKC-DSMWASTCAS-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d6ef725c-79ec-4b8d-
+  IKCO-DSMEQPITM-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"5ae04f76-a0d4-438f-8df8-da70a277140f","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  OAC-CEM2-32.5R-50L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (6393d21d-4e4b-4b41-
+  SHPC-DEGKG-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (34d7f658-627d-405d-
+  ESC-LRNNEA3BN-00 zai:glm-4.7-flash: 139s ValueError: 109 words / 3 paragraphs
+  IKCO-DSMCUW-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"15721fdc-996f-47a6-9222-f79251a57843","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ASBK-DSMHYDLIME-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c80fc480-3831-433d-
+  PTC-PTACO1J-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (022741fd-eecc-4602-
 style-soft: lead>35w/1num, text 15 nums
-  LOR-LLD22B02P-00 kilo:stepfun/step-3.7-flash:free: 191s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-  ILPE-HD7000FWP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  LPC-LDEP1922TPO1P-00 kilo:kilo-auto/free: 485s ValueError: 124 words / 2 paragraphs
-style-soft: lead>35w/1num, text 10 nums
-style-soft: ثبت شد, در حالی که, lead>35w/1num, text 9 nums
-  LPC-LDEP1922TPO1P-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 144s ValueError: markers: لید عیناً در متن تکرار شده
-style-soft: ثبت شد, lead>35w/1num, text 15 nums
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 25 nums
-  ILPE-HD7000FWP-00 kilo:stepfun/step-3.7-flash:free: 289s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 11 nums
-  LPC-LDEP1922TPO1P-00 kilo:cohere/north-mini-code:free: 211s ValueError: 81 words / 3 paragraphs
-  SHPC-HDCRP100BPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-style-soft: text 10 nums
-OK JPC-HDLMPO1J-00 <- kilo:inclusionai/ling-3.1-flash (213s)
-  kilo:inclusionai/ling-3.1-flash: quota used up - skipped for the rest of the day
-  ASPC-HDHBM5510WO1P-00 kilo:inclusionai/ling-3.1-flash: 0s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"code\":429,\"reason\":\"TOKEN_LIMIT_EXCEEDED\",\"message\":\"You have exceeded the token rate limit. Please wait a short period bef
-style-soft: text 13 nums
-OK SHPC-HDCRP100BPP-00 <- kilo:stepfun/step-3.7-flash:free (212s)
-  ASPC-HDHBM5510WO1P-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  JPC-HDCRP100NPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: text 10 nums
-OK ASPC-HDHBM5510WO1P-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (120s)
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 9 nums
-  JPC-HDCRP100NPP-00 kilo:stepfun/step-3.7-flash:free: 204s ValueError: markers: عدد بیرون از حقیقت‌ها: ۷۲۸۲
-OK JPC-HD7000FWO1P-00 <- kilo:kilo-auto/free (179s)
-  PTC-PETTG645O3J-00 kilo:kilo-auto/free: 319s TimeoutError: The read operation timed out
-  PTC-PETBG821J-00 kilo:dots-studio/dots-3-note-preview:free: 357s TimeoutError: The read operation timed out
-  PTC-PETTG645O3J-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 20s ValueError: empty slug
-  PTC-PETTG645O3J-00 kilo:cohere/north-mini-code:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 10 nums
-  PTC-PETBG821J-00 kilo:stepfun/step-3.7-flash:free: 287s ValueError: markers: تالار اشتباه: «صنعتی و معدنی» | کد کالا یا حروف لاتین وسط متن
-  LOR-HD62N07UVPO1P-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: در حالی که, lead>35w/1num, text 14 nums
-style-soft: در حالی که, text 9 nums
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 17 nums
-  LOR-HD62N07UVPO1P-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 216s ValueError: 143 words / 9 paragraphs
-  MAPE-LLD22B02P-00 kilo:dots-studio/dots-3-note-preview:free: 468s TimeoutError: The read operation timed out
-  LOR-HD62N07UVPO1P-00 kilo:cohere/north-mini-code:free: 180s TimeoutError: The read operation timed out
-  ZATC-PCT5G32.5-B-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  MAPE-LLD22B02P-00 kilo:stepfun/step-3.7-flash:free: 248s ValueError: 128 words / 1 paragraphs
-style-soft: ثبت شد
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 10 nums
-OK ZATC-PCT5G32.5-B-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (324s)
-  IKCO-DSMWASTWP-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, text 13 nums
-style-soft: ثبت شد, در حالی که
-OK IKCO-DSMWASTWP-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (180s)
-  ZATC-PCT5G42.5-B-00 kilo:kilo-auto/free: 197s TimeoutError: The read operation timed out
-  ZATC-PCT5G42.5-B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 246s ValueError: markers: لید عیناً در متن تکرار شده
-  ZATC-PCT5G42.5-B-00 kilo:cohere/north-mini-code:free: 59s ValueError: 145 words / 1 paragraphs
-style-soft: ثبت شد, به ثبت رساند
-  IKCO-DSMWASTCAS-00 kilo:kilo-auto/free: 340s TimeoutError: The read operation timed out
-  IKCO-DSMWASTCAS-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 138s ValueError: empty slug
-  IKCO-DSMWASTCAS-00 kilo:cohere/north-mini-code:free: 42s TypeError: expected string or bytes-like object, got 'NoneType'
-  JPC-HD52505PO1P-00 kilo:kilo-auto/free: 520s TimeoutError: The read operation timed out
-style-soft: ثبت شد
-  JPC-HD52505PO1P-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 214s ValueError: markers: تالار اشتباه: «صنعتی و معدنی»
-  JPC-HD52505PO1P-00 kilo:cohere/north-mini-code:free: 79s ValueError: 142 words / 1 paragraphs
-written 14/39; total in file 231
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-25 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ZATC-PCT5G42.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PAM-LD2420HO1J-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  JPC-HDCRP100NPP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ZATC-PCT5G42.5-B-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ZATC-PCT5G42.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SSI-DSMWSTDRI-00 groq:openai/gpt-oss-20b: 5s ValueError: no JSON
-  ZATC-PCT5G42.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IKCO-DSMSSW-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  MDC-HD52B18UVPP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  ZATC-PCT5G42.5-B-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  NCI-DSMCUCON-00 requesty:mistral/leanstral-1-5: 9s ValueError: 87 words / 2 paragraphs
-  ZATC-PCT5G42.5-B-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  NCI-DSMCUCON-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  ASPC-HDHCH5110WO2P-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  NCI-DSMCUCON-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-style-soft: lead>35w/1num, text 31 nums
-  NCI-DSMCUCON-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  PTC-PETTG645O3J-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 32 nums
-  PTC-PETTG645O3J-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PTC-PETTG645O3J-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PTC-PETTG645O3J-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 20 nums
-OK PTC-PETBG821J-00 <- cohere:command-a-03-2025 (24s)
-  PTC-PETTG645O3J-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PTC-PETTG645O3J-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IKCO-DSMWACA-00 groq:openai/gpt-oss-20b: 18s ValueError: no JSON
-  IKCO-DSMWASTBOPA-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IKCO-DSMWASTBOPA-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 12 nums
-  KEPE-HDBL3O2J-00 cohere:command-a-reasoning-08-2025: 36s ValueError: markers: «تاریخی» در text | «این در حالی است» در text | کد کالا یا حروف لاتین وسط متن
-  IKCO-DSMWASTBOPA-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IKCO-DSMWASTBOPA-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 21 nums
-  IKCO-DSMWASTBOPA-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  IKCO-DSMWASTBOPA-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (0d611c3b-352a-482e-
-  PAM-HDEX3J-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (a73254a8-6b2b-4511-
-  JPC-HDCRP100NPP-00 cohere:command-a-03-2025: 26s JSONDecodeError: Invalid control character at: line 6 column 249 (char 628)
-style-soft: lead>35w/1num, text 23 nums
-style-soft: lead>35w/1num, text 22 nums
-style-soft: text 16 nums
-  KEPE-HDBL3O2J-00 cohere:command-r-plus-08-2024: 43s JSONDecodeError: Invalid control character at: line 6 column 441 (char 782)
-  LOR-HD62N07UVPO1P-00 groq:openai/gpt-oss-20b: 48s ValueError: no JSON
-style-soft: lead>35w/1num, text 22 nums
-  PAM-HDEX3J-00 cohere:command-a-03-2025: 22s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  ENPC-PSEPSOSJ-089 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (488e330b-9963-4376-
-  MDC-HD52B18UVPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 47s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (16647447-f98c-4bdb-
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 10 nums
-  KEPE-HDBL3PO1P-00 cohere:command-a-reasoning-08-2025: 31s ValueError: 117 words / 2 paragraphs
-  IKCO-DSMWASTCAS-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4d642875-23e9-42f9-
-  JPC-HDCRP100NPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c85dcdba-f715-419b-
-  KEPE-HDBL3PO1P-00 cohere:command-r-plus-08-2024: 43s ValueError: 92 words / 1 paragraphs
-style-soft: text 11 nums
-OK NCI-DSMCUCON-00 <- requesty:nvidia/muse-glimmer-30b (159s)
-  JPC-HD52505PO1P-00 cohere:command-a-reasoning-08-2025: 9s JSONDecodeError: Expecting ',' delimiter: line 7 column 3 (char 878)
-  JPC-HDEXCRP100NO3J-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  LPC-LDEP1922TPO1P-00 requesty:mistral/leanstral-1-5: 7s ValueError: 90 words / 2 paragraphs
-  LPC-LDEP1922TPO1P-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  ILPE-HD7000FWP-00 kilo:dots-studio/dots-3-note-preview:free: 195s TimeoutError: The read operation timed out
-  LPC-LDEP1922TPO1P-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  LPC-LDEP1922TPO1P-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  MAPE-LLD22B02P-00 zai:glm-4.7-flash: 202s ValueError: 138 words / 1 paragraphs
-  JPC-HD52505PO1P-00 cohere:command-r-plus-08-2024: 36s ValueError: 108 words / 2 paragraphs
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 17 nums
-  LOR-LLD22B02P-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 249s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱۰۸۰، ۲.۱۲، ۲۸۰۸ | کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 19 nums
-  MAPE-LLD22B02P-00 zai:glm-4.5-flash: 49s ValueError: markers: لید عیناً در متن تکرار شده | کد کالا یا حروف لاتین وسط متن
-  PAM-HDEX3J-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791321871-3ypRKyewqhNXUAQ4svBj","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num, text 9 nums
-style-soft: text 11 nums
-style-soft: ثبت شد, lead>35w/1num, text 28 nums
-  JPC-HDCRP100NPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 68s ValueError: bad response: '{"id":"gen-1791321945-uuUYY5t8hQ1JtyznQNcu","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-style-soft: text 13 nums
-  JPC-HDEXCRP100NO3J-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 163s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  MDC-HD52B18UVPP-00 zai:glm-4.7-flash: 117s JSONDecodeError: Expecting ',' delimiter: line 2 column 69 (char 70)
-  LPC-LDEP1922TPO1P-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num
-OK ILPE-HD7000FWP-00 <- kilo:stepfun/step-3.7-flash:free (206s)
-style-soft: ثبت شد, lead>35w/1num, text 23 nums
-style-soft: lead>35w/1num, text 19 nums
-  MDC-HD52B18UVPP-00 zai:glm-4.5-flash: 53s ValueError: markers: «تاریخی» در text
-  PAM-LD2420HO1J-00 requesty:mistral/leanstral-1-5: 53s ValueError: 91 words / 1 paragraphs
-  PAM-LD2420HO1J-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  JPC-HDEXCRP100NO3J-00 kilo:cohere/north-mini-code:free: 96s ValueError: 115 words / 2 paragraphs
-  PAM-LD2420HO1J-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  PAM-LD2420HO1J-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  PAM-HDEX3J-00 zai:glm-4.7-flash: 44s ValueError: empty slug
-style-soft: lead>35w/1num, text 18 nums
-  PAM-HDEX3J-00 zai:glm-4.5-flash: 32s ValueError: 109 words / 3 paragraphs
-style-soft: lead>35w/1num, text 10 nums
-  LOR-LLD22B02P-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SSI-DSMWSTDRI-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 10 nums
-OK PAM-LD2420HO1J-00 <- requesty:nvidia/muse-glimmer-30b (245s)
-  IKCO-DSMSSW-00 requesty:mistral/leanstral-1-5: 6s ValueError: 90 words / 2 paragraphs
-  IKCO-DSMSSW-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  IKCO-DSMSSW-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  IKCO-DSMSSW-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-style-soft: lead>35w/1num, text 38 nums
-style-soft: ثبت شد, lead>35w/1num, text 30 nums
-OK LOR-LLD22B02P-00 <- kilo:stepfun/step-3.7-flash:free (204s)
-  SSI-DSMWSTDRI-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 180s TimeoutError: The read operation timed out
-  SSI-DSMWSTDRI-00 kilo:cohere/north-mini-code:free: 81s ValueError: 166 words / 1 paragraphs
-  IKCO-DSMSSW-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-  ASPC-HDHCH5110WO2P-00 requesty:mistral/leanstral-1-5: 23s ValueError: 84 words / 1 paragraphs
-  ASPC-HDHCH5110WO2P-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  ASPC-HDHCH5110WO2P-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  ASPC-HDHCH5110WO2P-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  MAPE-LLD22B02P-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  MAPE-LLD22B02P-00 kilo:stepfun/step-3.7-flash:free: 48s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":{\"message\":\"request limited concurrency reached, current: 401, limit: 400. Please top up at https://platform.stepfun.ai/
-style-soft: lead>35w/1num, text 26 nums
-  ZATC-PCT5G42.5-B-00 kilo:kilo-auto/free: 192s TimeoutError: The read operation timed out
-  ASPC-HDHCH5110WO2P-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-  PTC-PETTG645O3J-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-style-soft: lead>35w/1num
-  PTC-PETTG645O3J-00 requesty:novita/inclusionai/ling-3.0-tiny: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  PTC-PETTG645O3J-00 requesty:poolside/laguna-m.1: 16s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  PTC-PETTG645O3J-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  JPC-HDCRP100NPP-00 kilo:dots-studio/dots-3-note-preview:free: 207s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-OK ZATC-PCT5G42.5-B-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (197s)
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-  PTC-PETTG645O3J-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 11 nums
-OK JPC-HDCRP100NPP-00 <- kilo:stepfun/step-3.7-flash:free (203s)
-  IKCO-DSMWACA-00 kilo:kilo-auto/free: 319s TimeoutError: The read operation timed out
-  MDC-HD52B18UVPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: در حالی که
-OK IKCO-DSMWACA-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (42s)
-style-soft: ثبت شد, lead>35w/1num, text 10 nums
-  MDC-HD52B18UVPP-00 kilo:stepfun/step-3.7-flash:free: 275s ValueError: 123 words / 2 paragraphs
-  IKCO-DSMWASTBOPA-00 kilo:kilo-auto/free: 326s TimeoutError: The read operation timed out
-  PAM-HDEX3J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  IKCO-DSMWASTBOPA-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 223s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, ثبت شد, lead>35w/1num, text 9 nums
-OK IKCO-DSMWASTBOPA-00 <- kilo:cohere/north-mini-code:free (36s)
-style-soft: lead>35w/1num, text 18 nums
-  PAM-HDEX3J-00 kilo:stepfun/step-3.7-flash:free: 186s ValueError: markers: تالار اشتباه: «صنعتی و معدنی» | کد کالا یا حروف لاتین وسط متن
-  LPC-LD2102TX00PO2P-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  LPC-LD2102TX00PO2P-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 180s TimeoutError: The read operation timed out
-  LPC-LD2102TX00PO2P-00 kilo:cohere/north-mini-code:free: 243s ValueError: 140 words / 1 paragraphs
-style-soft: lead>35w/1num
-  KEPE-HDBL3O2J-00 kilo:kilo-auto/free: 337s TimeoutError: The read operation timed out
-OK KEPE-HDBL3O2J-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (130s)
-  LOR-HD62N07UVPO1P-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  LOR-HD62N07UVPO1P-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 180s TimeoutError: The read operation timed out
-  LOR-HD62N07UVPO1P-00 kilo:cohere/north-mini-code:free: 114s ValueError: 152 words / 1 paragraphs
-  ENPC-PSEPSOSJ-089 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد
-OK ENPC-PSEPSOSJ-089 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (168s)
-  IKCO-DSMWASTCAS-00 kilo:kilo-auto/free: 195s TimeoutError: The read operation timed out
-style-soft: ثبت شد
-style-soft: ثبت شد, ثبت شد
-  IKCO-DSMWASTCAS-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 153s ValueError: 141 words / 4 paragraphs
-style-soft: ثبت شد, ثبت شد, در حالی که, ثبت شد
-OK IKCO-DSMWASTCAS-00 <- kilo:cohere/north-mini-code:free (131s)
-  KEPE-HDBL3PO1P-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, lead>35w/1num
-style-soft: lead>35w/1num, text 9 nums
-OK KEPE-HDBL3PO1P-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (163s)
-  JPC-HD52505PO1P-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  JPC-HD52505PO1P-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 33s ValueError: empty slug
-style-soft: ثبت شد, در حالی که, text 10 nums
-OK JPC-HD52505PO1P-00 <- kilo:cohere/north-mini-code:free (92s)
-  LPC-LDEP1922TPO1P-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  LPC-LDEP1922TPO1P-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 111s JSONDecodeError: Expecting ',' delimiter: line 2 column 55 (char 56)
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 12 nums
-  LPC-LDEP1922TPO1P-00 kilo:cohere/north-mini-code:free: 93s ValueError: 112 words / 3 paragraphs
-  IKCO-DSMSSW-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-OK IKCO-DSMSSW-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (111s)
-  ASPC-HDHCH5110WO2P-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد
-style-soft: ثبت شد, ثبت شد
-OK ASPC-HDHCH5110WO2P-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (224s)
-  PTC-PETTG645O3J-00 kilo:kilo-auto/free: 350s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num
-style-soft: ثبت شد
-style-soft: ثبت شد
-OK PTC-PETTG645O3J-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (165s)
-written 17/25; total in file 248
+  ESC-LRNNEA3BN-00 zai:glm-4.5-flash: 39s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+  IKCO-DSMCUW-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"0bca0d59-09dd-4434-bb17-aed1a3e783d4","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  IKKC-DSMWASTCAS-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  OAC-CEM2-32.5R-50L-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"d8a993ca-1f41-4f15-9828-f412d0efea4d","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  IKKC-DSMWASTCAS-00 zai:glm-4.5-flash: 32s ValueError: 116 words / 2 paragraphs
+  OAC-CEM2-32.5R-50L-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"40013885-fd6a-4cb9-a10d-af051b3cfeca","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  IKCO-DSMEQPITM-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IKCO-DSMEQPITM-00 zai:glm-4.5-flash: 37s ValueError: 72 words / 2 paragraphs
+written 0/8; total in file 93
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 8 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  SSI-DSMWSTDRI-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  PAM-HDEX3J-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SSI-DSMWSTDRI-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  SSI-DSMWSTDRI-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SSI-DSMWSTDRI-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  SSI-DSMWSTDRI-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SSI-DSMWSTDRI-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  LPC-LD2102TX00PO2P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 zai:glm-4.7-flash: 19s ValueError: 135 words / 1 paragraphs
-  SSI-DSMWSTDRI-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-  LPC-LD2102TX00PO2P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 zai:glm-4.5-flash: 6s ValueError: empty slug
-  LPC-LD2102TX00PO2P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-OK LPC-LDEP1922TPO1P-00 <- cohere:command-a-reasoning-08-2025 (36s)
-  JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2babec86-86af-434e-
-  MDC-HD52B18UVPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (17bdc60c-4c2e-4d8c-
-  PAM-HDEX3J-00 zai:glm-4.7-flash: 16s ValueError: 84 words / 1 paragraphs
+  OAC-CEM2-32.5R-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  PTC-PTACO1J-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"3dbf622cf0e1284d2e72392d009bf862"
+}
+  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
+  PTC-PTACO1J-00 ovh:gpt-oss-120b: 0s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"5308af393942eb3d8b90775b66f57a53"
+}
+  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  PTC-PTACO1J-00 ovh:Meta-Llama-3_3-70B-Instruct: 0s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"a1ae7229abb5191acbfa95092827553b"
+}
+  OAC-CEM2-32.5R-50L-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Qwen3.6-27B: quota used up - skipped for the rest of the day
+  PTC-PTACO1J-00 ovh:Qwen3.6-27B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"3751723ccbd3aa79b96c1f2983d71a0b"
+}
+  OAC-CEM2-32.5R-50L-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for the rest of the day
+  PTC-PTACO1J-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"9e6a1c0ba640fc01db0607100e6fbf2a"
+}
+  PTC-PTACO1J-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 0s ValueError: HTTP 404: {
+  "message":"no Route matched with those values",
+  "request_id":"0303226db557eb028efab578be98842b"
+}
+  PTC-PTACO1J-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PTC-PTACO1J-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s ValueError: HTTP 404: {
+  "message":"no Route matched with those values",
+  "request_id":"c4e3ee527022c52d2f65165999c1fd6d"
+}
+  PTC-PTACO1J-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PTC-PTACO1J-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PTC-PTACO1J-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PTC-PTACO1J-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (90c9cca7-1e24-426a-
+  IKKC-DSMWASTCAS-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"92428a23-e8e5-4c6b-a14b-c5f1e2b0a34b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  IKCO-DSMCUW-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (673f04aa-af60-4504-
+  ASBK-DSMHYDLIME-00 kilo:inclusionai/ling-3.1-flash: 48s ValueError: HTTP 429: {"error":{"message":"Too Many Requests","type":"AI_APICallError","param":{"error":"Too Many Requests","statusCode":429,"name":"AI_APICallError","message":"Too Many Requests","isRetryable":true,"type":"AI_APICal
+  IKKC-DSMWASTCAS-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"8f3116c4-5a26-461e-b022-ce467c53143b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  OAC-CEM2-32.5R-50L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3035a9bd-7f5b-4361-
+  PTC-PTACO1J-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (552f70a0-5d22-4d19-
+  SHPC-DEGKG-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"bac39280-445f-4959-8431-81cc690bab0d","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  IKCO-DSMCUW-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ca5b655b-8186-4667-
+  IKKC-DSMWASTCAS-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (feb218f6-0dbc-481f-
+  IKCO-DSMEQPITM-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  SHPC-DEGKG-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"859e7d03-ef52-4fc1-aa60-c99a51edb02e","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ESC-LRNNEA3BN-00 zai:glm-4.7-flash: 235s ValueError: 90 words / 1 paragraphs
+  PTC-PTACO1J-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"04555aab-9292-46d3-9cb7-fe50719ba70c","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: در حالی که, ثبت شد, lead>35w/1num, text 15 nums
+  OAC-CEM2-32.5R-50L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 65s ValueError: bad response: '{"id":"gen-1791457427-zAtDQiZUSNd3I9XZuKRz","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ESC-LRNNEA3BN-00 zai:glm-4.5-flash: 16s JSONDecodeError: Expecting value: line 5 column 10 (char 289)
+OK ASBK-DSMHYDLIME-00 <- kilo:kilo-auto/free (221s)
+  PTC-PTACO1J-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"c598bbe2-f8ba-462b-957f-89fa78a88dff","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  IKKC-DSMWASTCAS-00 zai:glm-4.7-flash: 130s ValueError: 75 words / 3 paragraphs
+  IKKC-DSMWASTCAS-00 zai:glm-4.5-flash: 33s ValueError: 87 words / 2 paragraphs
+  IKCO-DSMEQPITM-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
 style-soft: ثبت شد, lead>35w/1num
-OK SSI-DSMWSTDRI-00 <- cohere:command-a-reasoning-08-2025 (34s)
-  PAM-HDEX3J-00 zai:glm-4.5-flash: 27s ValueError: 117 words / 1 paragraphs
-  MAPE-LLD22B02P-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (815a5c8d-f861-448e-
-  LPC-LD2102TX00PO2P-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (637e62b3-ec5e-4ea4-
-  MDC-HD52B18UVPP-00 zai:glm-4.7-flash: 19s ValueError: 104 words / 1 paragraphs
-style-soft: ثبت شد, lead>35w/1num, text 11 nums
-  JPC-HDEXCRP100NO3J-00 cohere:command-a-reasoning-08-2025: 37s ValueError: 121 words / 3 paragraphs
-style-soft: lead>35w/1num, text 20 nums
-  JPC-HDEXCRP100NO3J-00 cohere:command-r-plus-08-2024: 12s JSONDecodeError: Expecting ',' delimiter: line 2 column 65 (char 66)
-style-soft: lead>35w/1num, text 18 nums
-  MDC-HD52B18UVPP-00 zai:glm-4.5-flash: 33s ValueError: markers: لید عیناً در متن تکرار شده
-  LOR-HD62N07UVPO1P-00 cohere:command-a-reasoning-08-2025: 9s JSONDecodeError: Invalid control character at: line 6 column 554 (char 995)
-  PAM-HDEX3J-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (f1da2f91-b757-4d98-
-style-soft: ثبت شد, lead>35w/1num, text 12 nums
-  LOR-HD62N07UVPO1P-00 cohere:command-r-plus-08-2024: 52s ValueError: markers: «نشان‌دهنده» در text | «انتظار می‌رود» در text | کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, lead>35w/1num, text 10 nums
-  LPC-LD2102TX00PO2P-00 cohere:command-a-reasoning-08-2025: 38s ValueError: markers: «نشان‌دهنده» در text | «نشان‌دهنده» در text | کد کالا یا حروف لاتین وسط متن
-  LPC-LD2102TX00PO2P-00 cohere:command-r-plus-08-2024: 55s ValueError: 132 words / 1 paragraphs
-written 2/8; total in file 250
+  IKCO-DSMCUW-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 231s ValueError: bad response: '{"id":"gen-1791457664-VfodexCsDydZ0kh8R3mD","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  IKCO-DSMEQPITM-00 kilo:kilo-auto/free: 80s ValueError: bad response: '{"id":"gen-1791457715-nW5H3tU4hcrt17JiSfjU","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  SHPC-DEGKG-00 zai:glm-4.7-flash: 126s ValueError: 75 words / 2 paragraphs
+  SHPC-DEGKG-00 zai:glm-4.5-flash: 10s JSONDecodeError: Expecting value: line 4 column 11 (char 198)
+style-soft: ثبت شد
+  IKCO-DSMEQPITM-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 282s ValueError: 105 words / 3 paragraphs
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for the rest of the day
+  IKCO-DSMEQPITM-00 kilo:poolside/laguna-s-2.1:free: 10s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
+  kilo:thinkingmachines/inkling-small:free: quota used up - skipped for the rest of the day
+  IKCO-DSMEQPITM-00 kilo:thinkingmachines/inkling-small:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: limit_rpd/thinkingmachines/inkling-small-20260730/e27a9a6d-1451-4be4-876e-292ffcbf1e71. Daily limit reached for thinkingmachines/inkling-small:free via Thinking Machine
+style-soft: lead>35w/1num, text 10 nums
+  IKCO-DSMEQPITM-00 kilo:cohere/north-mini-code:free: 224s TimeoutError: The read operation timed out
+  OAC-CEM2-32.5R-50L-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
+  OAC-CEM2-32.5R-50L-00 kilo:kilo-auto/free: 207s TimeoutError: The read operation timed out
+style-soft: ثبت شد, lead>35w/1num, text 15 nums
+style-soft: ثبت شد, lead>35w/1num, text 21 nums
+  OAC-CEM2-32.5R-50L-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 322s TypeError: expected string or bytes-like object, got 'NoneType'
+style-soft: lead>35w/1num, text 11 nums
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+OK OAC-CEM2-32.5R-50L-00 <- kilo:cohere/north-mini-code:free (303s)
+  ESC-LRNNEA3BN-00 kilo:inclusionai/ling-3.1-flash: 227s TimeoutError: The read operation timed out
+  ESC-LRNNEA3BN-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+style-soft: ثبت شد, lead>35w/1num
+style-soft: lead>35w/1num, text 10 nums
+  ESC-LRNNEA3BN-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 234s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+  ESC-LRNNEA3BN-00 kilo:cohere/north-mini-code:free: 309s ValueError: 144 words / 1 paragraphs
+  PTC-PTACO1J-00 kilo:inclusionai/ling-3.1-flash: 196s TimeoutError: The read operation timed out
+  PTC-PTACO1J-00 kilo:kilo-auto/free: 175s ValueError: 88 words / 2 paragraphs
+style-soft: ام‌اس‌دیتا!=1
+OK PTC-PTACO1J-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (400s)
+  IKKC-DSMWASTCAS-00 kilo:inclusionai/ling-3.1-flash: 227s TimeoutError: The read operation timed out
+  IKKC-DSMWASTCAS-00 kilo:kilo-auto/free: 283s TimeoutError: The read operation timed out
+style-soft: ثبت شد
+style-soft: lead>35w/1num
+  IKKC-DSMWASTCAS-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 263s ValueError: markers: عدد بیرون از حقیقت‌ها: ۰۰۰
+style-soft: در حالی که, lead>35w/1num
+style-soft: lead>35w/1num
+OK IKKC-DSMWASTCAS-00 <- kilo:cohere/north-mini-code:free (181s)
+  IKCO-DSMCUW-00 kilo:inclusionai/ling-3.1-flash: 48s ValueError: HTTP 429: {"error":{"message":"Too Many Requests","type":"AI_APICallError","param":{"error":"Too Many Requests","statusCode":429,"name":"AI_APICallError","message":"Too Many Requests","isRetryable":true,"type":"AI_APICal
+  IKCO-DSMCUW-00 kilo:kilo-auto/free: 196s TimeoutError: The read operation timed out
+  IKCO-DSMCUW-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 180s TimeoutError: The read operation timed out
+  IKCO-DSMCUW-00 kilo:cohere/north-mini-code:free: 144s ValueError: 97 words / 3 paragraphs
+  SHPC-DEGKG-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
+  SHPC-DEGKG-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+OK SHPC-DEGKG-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (356s)
+written 5/8; total in file 98
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-6 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  LPC-LD2102TX00PO2P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  PAM-HDEX3J-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LOR-HD62N07UVPO1P-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LPC-LD2102TX00PO2P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
-  MAPE-LLD22B02P-00 zai:glm-4.7-flash: 14s ValueError: 91 words / 1 paragraphs
-  JPC-HDEXCRP100NO3J-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 zai:glm-4.5-flash: 24s ValueError: empty slug
-  LOR-HD62N07UVPO1P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MDC-HD52B18UVPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (369ec0be-089c-433c-
-  PAM-HDEX3J-00 zai:glm-4.7-flash: 29s ValueError: 90 words / 1 paragraphs
-  MAPE-LLD22B02P-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (80e02d5f-7e48-4919-
-  LPC-LD2102TX00PO2P-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3cc03093-b48d-4a82-
-style-soft: text 27 nums
-style-soft: text 24 nums
-OK PAM-HDEX3J-00 <- zai:glm-4.5-flash (93s)
-  MDC-HD52B18UVPP-00 zai:glm-4.7-flash: 30s ValueError: 69 words / 1 paragraphs
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-  MDC-HD52B18UVPP-00 zai:glm-4.5-flash: 48s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  JPC-HDEXCRP100NO3J-00 zai:glm-4.7-flash: 45s ValueError: 76 words / 1 paragraphs
-  JPC-HDEXCRP100NO3J-00 zai:glm-4.5-flash: 22s ValueError: 126 words / 2 paragraphs
-  LOR-HD62N07UVPO1P-00 zai:glm-4.7-flash: 13s ValueError: 71 words / 1 paragraphs
-  LOR-HD62N07UVPO1P-00 zai:glm-4.5-flash: 27s ValueError: 99 words / 1 paragraphs
-written 1/6; total in file 251
+3 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (a692bfb0-79f7-4360-
+  IKCO-DSMCUW-00 zai:glm-4.7-flash: 54s ValueError: 68 words / 1 paragraphs
+  ESC-LRNNEA3BN-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (57fe1d64-b533-432b-
+  IKCO-DSMCUW-00 zai:glm-4.5-flash: 50s ValueError: 92 words / 3 paragraphs
+  IKCO-DSMEQPITM-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IKCO-DSMEQPITM-00 zai:glm-4.5-flash: 43s ValueError: 92 words / 2 paragraphs
+  ESC-LRNNEA3BN-00 zai:glm-4.7-flash: 65s ValueError: 96 words / 1 paragraphs
+  ESC-LRNNEA3BN-00 zai:glm-4.5-flash: 55s JSONDecodeError: Expecting value: line 4 column 11 (char 169)
+written 0/3; total in file 98
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-5 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  LPC-LD2102TX00PO2P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MDC-HD52B18UVPP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LOR-HD62N07UVPO1P-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LPC-LD2102TX00PO2P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  JPC-HDEXCRP100NO3J-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:dots-studio/dots-3-note-preview:free: 1s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 zai:glm-4.7-flash: 35s ValueError: 115 words / 1 paragraphs
-  LPC-LD2102TX00PO2P-00 groq:openai/gpt-oss-20b: 18s ValueError: no JSON
-  LOR-HD62N07UVPO1P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 zai:glm-4.5-flash: 8s ValueError: empty slug
-  MDC-HD52B18UVPP-00 zai:glm-4.7-flash: 18s ValueError: 63 words / 1 paragraphs
-style-soft: lead>35w/1num, text 32 nums
+3 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMCUW-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IKCO-DSMCUW-00 zai:glm-4.5-flash: 52s ValueError: 99 words / 2 paragraphs
+  ESC-LRNNEA3BN-00 zai:glm-4.7-flash: 114s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ESC-LRNNEA3BN-00 zai:glm-4.5-flash: 96s ValueError: 117 words / 2 paragraphs
+  IKCO-DSMEQPITM-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IKCO-DSMEQPITM-00 zai:glm-4.5-flash: 38s ValueError: 85 words / 2 paragraphs
+written 0/3; total in file 98
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+3 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (162b7657-f347-4604-
+  IKCO-DSMCUW-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IKCO-DSMCUW-00 zai:glm-4.5-flash: 46s ValueError: 95 words / 3 paragraphs
+  ESC-LRNNEA3BN-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (7bc85d32-9668-4b74-
+  IKCO-DSMCUW-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (45310e77-2029-4a09-
+  IKCO-DSMEQPITM-00 zai:glm-4.7-flash: 89s ValueError: 68 words / 1 paragraphs
+  IKCO-DSMEQPITM-00 zai:glm-4.5-flash: 47s ValueError: 94 words / 2 paragraphs
+  ESC-LRNNEA3BN-00 zai:glm-4.7-flash: 103s ValueError: 79 words / 2 paragraphs
+  ESC-LRNNEA3BN-00 zai:glm-4.5-flash: 55s ValueError: 116 words / 2 paragraphs
+written 0/3; total in file 98
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+3 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3f25cb39-3540-40e4-
+  IKCO-DSMCUW-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IKCO-DSMCUW-00 zai:glm-4.5-flash: 38s ValueError: 75 words / 2 paragraphs
+  ESC-LRNNEA3BN-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (a42b36f1-473c-4b88-
+  IKCO-DSMCUW-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c74abe1f-da25-4208-
+  IKCO-DSMEQPITM-00 zai:glm-4.7-flash: 135s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IKCO-DSMEQPITM-00 zai:glm-4.5-flash: 39s ValueError: 71 words / 1 paragraphs
 style-soft: lead>35w/1num, text 17 nums
-OK MDC-HD52B18UVPP-00 <- zai:glm-4.5-flash (40s)
-  JPC-HDEXCRP100NO3J-00 zai:glm-4.7-flash: 17s ValueError: 75 words / 1 paragraphs
-  JPC-HDEXCRP100NO3J-00 zai:glm-4.5-flash: 97s ValueError: 80 words / 2 paragraphs
-  LPC-LD2102TX00PO2P-00 zai:glm-4.7-flash: 14s ValueError: 65 words / 1 paragraphs
-  LPC-LD2102TX00PO2P-00 zai:glm-4.5-flash: 133s ValueError: 85 words / 1 paragraphs
-  LOR-HD62N07UVPO1P-00 zai:glm-4.7-flash: 15s ValueError: 69 words / 1 paragraphs
-  LOR-HD62N07UVPO1P-00 zai:glm-4.5-flash: 32s ValueError: 82 words / 1 paragraphs
-written 1/5; total in file 252
+  ESC-LRNNEA3BN-00 zai:glm-4.7-flash: 272s TimeoutError: The read operation timed out
+  ESC-LRNNEA3BN-00 zai:glm-4.5-flash: 40s ValueError: 81 words / 1 paragraphs
+written 0/3; total in file 98
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-4 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  LPC-LD2102TX00PO2P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  LPC-LD2102TX00PO2P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage."}
-  LPC-LD2102TX00PO2P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  JPC-HDEXCRP100NO3J-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LPC-LD2102TX00PO2P-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  JPC-HDEXCRP100NO3J-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MAPE-LLD22B02P-00 zai:glm-4.7-flash: 24s ValueError: 127 words / 1 paragraphs
-  JPC-HDEXCRP100NO3J-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  JPC-HDEXCRP100NO3J-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  LOR-HD62N07UVPO1P-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 24 nums
-  MAPE-LLD22B02P-00 zai:glm-4.5-flash: 35s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  LPC-LD2102TX00PO2P-00 zai:glm-4.7-flash: 16s ValueError: 77 words / 1 paragraphs
-  LPC-LD2102TX00PO2P-00 zai:glm-4.5-flash: 80s ValueError: 83 words / 1 paragraphs
-  JPC-HDEXCRP100NO3J-00 zai:glm-4.7-flash: 15s ValueError: 62 words / 1 paragraphs
-  JPC-HDEXCRP100NO3J-00 zai:glm-4.5-flash: 20s ValueError: 105 words / 2 paragraphs
-written 0/4; total in file 252
+3 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 1s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  IKCO-DSMEQPITM-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d96f78ff-3d9a-4530-
+  ESC-LRNNEA3BN-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (886a0ce4-5242-4faa-
+  IKCO-DSMCUW-00 zai:glm-4.7-flash: 204s ValueError: 104 words / 2 paragraphs
+  IKCO-DSMCUW-00 zai:glm-4.5-flash: 120s ValueError: 106 words / 3 paragraphs
+  IKCO-DSMEQPITM-00 zai:glm-4.7-flash: 144s ValueError: 76 words / 1 paragraphs
+style-soft: در حالی که, lead>35w/1num
+  IKCO-DSMEQPITM-00 zai:glm-4.5-flash: 33s ValueError: 114 words / 3 paragraphs
+  ESC-LRNNEA3BN-00 zai:glm-4.7-flash: 312s ValueError: 95 words / 3 paragraphs
+  ESC-LRNNEA3BN-00 zai:glm-4.5-flash: 60s ValueError: 112 words / 2 paragraphs
+written 0/3; total in file 98
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 2s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+written 0/1; total in file 98
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+written 0/1; total in file 98
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+written 0/1; total in file 98
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+written 0/1; total in file 98
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+written 0/1; total in file 98
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ESC-LRNNEA3BN-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+written 0/1; total in file 98
