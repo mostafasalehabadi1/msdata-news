@@ -1,15 +1,65 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-3 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  NGP-BI6070BEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  NGP-BI6070BEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  NGP-BI6070BEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  NGP-BI6070BEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  NGP-BI6070BEX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  NGP-BI6070BEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: lead>35w/1num, text 12 nums
-  GSS-BSO068XEX-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  ALSU-AP06102EX-00 groq:openai/gpt-oss-120b: 56s ValueError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 1978, Requested 611
-  ALSU-AP06102EX-00 groq:openai/gpt-oss-20b: 5s ValueError: no JSON
-style-soft: ثبت شد, lead>35w/1num
-style-soft: ثبت شد, lead>35w/1num, text 9 nums
-OK NGP-BI6070BEX-00 <- groq:openai/gpt-oss-120b (27s)
+8 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  OAC-CEM2-32.5R-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  PTC-PTACO1J-00 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"3dbf622cf0e1284d2e72392d009bf862"
+}
+  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
+  PTC-PTACO1J-00 ovh:gpt-oss-120b: 0s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"5308af393942eb3d8b90775b66f57a53"
+}
+  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  PTC-PTACO1J-00 ovh:Meta-Llama-3_3-70B-Instruct: 0s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"a1ae7229abb5191acbfa95092827553b"
+}
+  OAC-CEM2-32.5R-50L-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Qwen3.6-27B: quota used up - skipped for the rest of the day
+  PTC-PTACO1J-00 ovh:Qwen3.6-27B: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"3751723ccbd3aa79b96c1f2983d71a0b"
+}
+  OAC-CEM2-32.5R-50L-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for the rest of the day
+  PTC-PTACO1J-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"9e6a1c0ba640fc01db0607100e6fbf2a"
+}
+  PTC-PTACO1J-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 0s ValueError: HTTP 404: {
+  "message":"no Route matched with those values",
+  "request_id":"0303226db557eb028efab578be98842b"
+}
+  PTC-PTACO1J-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PTC-PTACO1J-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s ValueError: HTTP 404: {
+  "message":"no Route matched with those values",
+  "request_id":"c4e3ee527022c52d2f65165999c1fd6d"
+}
+  PTC-PTACO1J-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PTC-PTACO1J-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PTC-PTACO1J-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PTC-PTACO1J-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (90c9cca7-1e24-426a-
+  IKKC-DSMWASTCAS-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"92428a23-e8e5-4c6b-a14b-c5f1e2b0a34b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  IKCO-DSMCUW-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (673f04aa-af60-4504-
+  ASBK-DSMHYDLIME-00 kilo:inclusionai/ling-3.1-flash: 48s ValueError: HTTP 429: {"error":{"message":"Too Many Requests","type":"AI_APICallError","param":{"error":"Too Many Requests","statusCode":429,"name":"AI_APICallError","message":"Too Many Requests","isRetryable":true,"type":"AI_APICal
+  IKKC-DSMWASTCAS-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"8f3116c4-5a26-461e-b022-ce467c53143b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  OAC-CEM2-32.5R-50L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3035a9bd-7f5b-4361-
+  PTC-PTACO1J-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (552f70a0-5d22-4d19-
+  SHPC-DEGKG-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"bac39280-445f-4959-8431-81cc690bab0d","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  IKCO-DSMCUW-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ca5b655b-8186-4667-
+  IKKC-DSMWASTCAS-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (feb218f6-0dbc-481f-
+  IKCO-DSMEQPITM-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  SHPC-DEGKG-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"859e7d03-ef52-4fc1-aa60-c99a51edb02e","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ESC-LRNNEA3BN-00 zai:glm-4.7-flash: 235s ValueError: 90 words / 1 paragraphs
+  PTC-PTACO1J-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"04555aab-9292-46d3-9cb7-fe50719ba70c","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: در حالی که, ثبت شد, lead>35w/1num, text 15 nums
+  OAC-CEM2-32.5R-50L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 65s ValueError: bad response: '{"id":"gen-1791457427-zAtDQiZUSNd3I9XZuKRz","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ESC-LRNNEA3BN-00 zai:glm-4.5-flash: 16s JSONDecodeError: Expecting value: line 5 column 10 (char 289)
+OK ASBK-DSMHYDLIME-00 <- kilo:kilo-auto/free (221s)
