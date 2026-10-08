@@ -1,38 +1,23 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-7 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  NGP-BI6070BEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SHCO-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  MBS-BI6070BEX-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 59190 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":59190}}
-  NGP-BI6070BEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  NGP-BI6070BEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  NGP-BI6070BEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  MBS-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  NGP-BI6070BEX-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  NGP-BI6070BEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: ثبت شد, lead>35w/1num
-  groq:openai/gpt-oss-120b: quota used up - skipped for the rest of the day
-  ALSU-AP06102EX-00 groq:openai/gpt-oss-120b: 11s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196561, Requested 35
-  ALSU-AP06102EX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-style-soft: lead>35w/1num, text 13 nums
-  groq:openai/gpt-oss-20b: quota used up - skipped for the rest of the day
-  NGP-BI6070BEX-00 groq:openai/gpt-oss-20b: 2s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197106, Requested 362
-  KMC-SPPC-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"0312f490-4da9-4b9b-8958-88740f1e572d","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  SHCO-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"37e9d946-f723-4cf9-9251-a8c45b9d7b7b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  MBS-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"77a146b6-d23c-4a65-a192-6fefb3f138df","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  ASHR-DSMLABSAEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 10 nums
-style-soft: ثبت شد, text 13 nums
-OK ASHR-DSMLABSAEX-00 <- kilo:stepfun/step-3.7-flash:free (156s)
-  GSS-BSO068XEX-00 zai:glm-4.7-flash: 348s ValueError: 53 words / 1 paragraphs
-style-soft: lead>35w/1num
-  GSS-BSO068XEX-00 zai:glm-4.5-flash: 34s ValueError: 97 words / 2 paragraphs
-  ALSU-AP06102EX-00 zai:glm-4.7-flash: 270s ValueError: 86 words / 1 paragraphs
-  KMC-SPPC-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 377s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num
-OK KMC-SPPC-L50EX-00 <- kilo:stepfun/step-3.7-flash:free (37s)
-  ALSU-AP06102EX-00 zai:glm-4.5-flash: 162s ValueError: 90 words / 2 paragraphs
-  SHCO-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 15 nums
-OK SHCO-PCT2G42.5-L50EX-00 <- kilo:stepfun/step-3.7-flash:free (148s)
+5 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  OAC-CEM2-32.5R-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  OAC-CEM2-32.5R-50L-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 openrouter:inclusionai/ling-3.0-flash-sante:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SHPC-DEGKG-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ESC-LRNNEA3BN-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (680ccc52-c0fc-42a3-
+  ESC-LRNNEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (79bb7896-f62c-4ba0-
+  ESC-MRNEENA3B-00 zai:glm-4.7-flash: 79s ValueError: 91 words / 2 paragraphs
+  OAC-CEM2-32.5R-50L-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (34a1fd1d-6303-4b88-
+  SHPC-DEGKG-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (80184aa5-ba04-4619-
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+OK ESC-MRNEENA3B-00 <- zai:glm-4.5-flash (43s)
