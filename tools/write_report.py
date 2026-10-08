@@ -102,7 +102,10 @@ def check(d, symbols, urls, tables, known):
     if re.search(r"[A-Z]{2,}-[A-Z0-9.]+-\d\d", d["text"]):
         raise ValueError("symbol code in text")
     # a model that slips Latin letters into a Persian word (سولfurیک); names given in the facts (پی وی سی SE-950) are fine
-    mixed = [x for x in re.findall(r"\S*(?:[؀-ۿ][A-Za-z]|[A-Za-z][؀-ۿ])\S*", d["text"]) if x.strip("«»()،.؛:") not in FX[0]]
+    # only Persian LETTERS next to Latin letters count: «khabarpu.com،» (Persian comma) or «۵۰p» (Persian digit) are not a broken word
+    # (1405-07-16: two full gemma reports of 1405/07/15 were thrown away for «khabarpu.com،»)
+    FA_LETTER = "[\u0621-\u063A\u0641-\u064A\u067E\u0686\u0698\u06A9\u06AF\u06CC]"
+    mixed = [x for x in re.findall(r"\S*(?:" + FA_LETTER + r"[A-Za-z]|[A-Za-z]" + FA_LETTER + r")\S*", d["text"]) if x.strip("«»()،.؛:") not in FX[0]]
     if mixed:
         raise ValueError("mixed-script word: " + " ".join(mixed[:5]))
     d["slug"] = SLUG_BAD.sub("-", d["slug"].strip())
