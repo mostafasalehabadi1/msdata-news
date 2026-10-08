@@ -69,6 +69,11 @@ def build(row, past, date_fa, date):
          f"بازار: {mk} بورس انرژی ایران؛ نوع قرارداد: {row.get('contract_type') or 'نقدی'}.",
          f"روز معامله: {wd} {fa_date(date_fa)}.",
          f"{prod} {fa_num(off)} {vu} {goods} عرضه کرد و {fa_num(trd)} {vu} آن فروش رفت."]
+    dem = row.get("demand_volume")  # kala_energy fce103a: «حجم تقاضا» of the IEE stats page
+    if dem and off:
+        r = dem / off
+        F.append(f"خریداران {fa_num(dem)} {vu} تقاضا ثبت کردند" + (f"؛ تقاضا {fa_num(r)} برابر عرضه بود." if r >= 1.5 else
+                 f"؛ تقاضا فقط {fa_num(r * 100, 0)} درصد عرضه بود." if r < 1 else "."))
     if trd and off and trd < off - 1e-9:
         F.append(f"{fa_num(trd / off * 100, 0)} درصد عرضه فروش رفت.")
     elif trd and off:
