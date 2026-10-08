@@ -1,6 +1,11 @@
 name: write-energy
 # Iran Energy Exchange news (owner 1405-07-16): one news per settled traded row of data/energy/today.json -> queue/energy/.
 on:
+  push:  # a change to this file starts one run (first energy run 1405-07-16: release-news started before the energy trigger existed)
+    branches: [main]
+    paths: [".github/workflows/write_energy.yml"]
+  schedule:
+    - cron: "40 * * * *"  # safety net besides release-news (GitHub schedules are not punctual)
   workflow_dispatch:
     inputs:
       limit:
