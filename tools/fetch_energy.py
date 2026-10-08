@@ -17,7 +17,8 @@ SRC = {"today": ("https://msdata.ir/api/energy/raw-data.json", "https://riz-api.
 
 def key(r):
     """stable commodity key: the source gives no fixed code (designer 1405-07-16), so name + producer + market."""
-    return "|".join((r.get("commodity_key") or "", r.get("goods_name") or "", r.get("producer") or "", r.get("target_market") or ""))
+    # kala_energy f12f05e: commodity_key = "goods_name|producer|target_market"; older rows without it get the same string
+    return r.get("commodity_key") or "|".join((r.get("goods_name") or "", r.get("producer") or "", r.get("target_market") or ""))
 
 
 def get(urls):
