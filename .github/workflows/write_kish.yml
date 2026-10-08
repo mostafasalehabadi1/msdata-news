@@ -58,6 +58,6 @@ jobs:
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           mkdir -p news-test && mv pilot-log.txt news-test/kish-log.txt
-          git add queue/kish news-test data/kish/stable-*.json
+          git add queue/kish news-test; git add -f data/kish/stable-*.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "kish: export-market news"
           git pull --rebase -q && git push
