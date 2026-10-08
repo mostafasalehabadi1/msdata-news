@@ -95,7 +95,7 @@ def main():
         except Exception as e:  # noqa: BLE001
             errs.append(f"{name}: invalid JSON {e}")
             continue
-        long = d.get("kind") == "report"
+        long = d.get("kind") in ("report", "analysis")  # «تحلیل» (owner 1405-07-16): same length rule as a report
         check_text(name, d, errs, 550 if long else 230, 1000 if long else 470, 3, 40)
         n += 1
     for e in errs:
