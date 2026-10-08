@@ -62,6 +62,14 @@ jobs:
                 gh workflow run write_kish.yml -R "$GITHUB_REPOSITORY" && echo "kish writer started ($kleft left)"
               fi
             fi
+            # Iran Energy Exchange news (owner 1405-07-16): same hourly check as Kish
+            if [ ! -f "/tmp/energy-$h" ]; then
+              touch "/tmp/energy-$h"
+              eleft=$(python tools/fetch_energy.py --left 2>/dev/null || echo 0)
+              if [ "${eleft:-0}" -gt 0 ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w write_energy.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w write_energy.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
+                gh workflow run write_energy.yml -R "$GITHUB_REPOSITORY" && echo "energy writer started ($eleft left)"
+              fi
+            fi
             # macro news (اقتصاد کلان): once an hour look for new macro data (macro.yml writes and publishes it)
             if [ ! -f "/tmp/macro-$h" ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w macro.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)" ]; then
               touch "/tmp/macro-$h"

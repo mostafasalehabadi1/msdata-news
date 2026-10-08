@@ -79,6 +79,11 @@ RULES_KISH = ("تو خبرنگار بورس کالای msdata.ir هستی و ب�
               "\n\n" + STYLE_KISH +
               "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
               "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
+STYLE_ENERGY = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_energy.md"), encoding="utf-8").read()
+RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و برای یک معامله‌ی بورس انرژی ایران یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
+                "\n\n" + STYLE_ENERGY +
+                "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
+                "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
 
 
 # content agent 1405-07-15 (252 news of 1405-07-14): the one main flaw of each model, appended to its prompt
@@ -447,19 +452,22 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--out", default="news")
-    ap.add_argument("--market", default="kala", choices=("kala", "kish"))  # kish = export market (owner 1405-07-15)
+    ap.add_argument("--market", default="kala", choices=("kala", "kish", "energy"))  # kish = export market (owner 1405-07-15), energy = Iran Energy Exchange (owner 1405-07-16)
     a = ap.parse_args()
-    kish = a.market == "kish"
+    energy = a.market == "energy"
+    kish = a.market == "kish" or energy  # energy runs the Kish path (one news per settled traded row), with its own facts
     if kish:
         MIN_WORDS[0] = 120
         global RULES
         import facts_kish
-        RULES = RULES_KISH
-        k = json.load(open(os.path.join(ROOT, "data", "kish", "today.json"), encoding="utf-8"))
-        kh = json.load(open(os.path.join(ROOT, "data", "kish", "history.json"), encoding="utf-8"))
+        import facts_energy
+        import fetch_energy
+        RULES = RULES_ENERGY if energy else RULES_KISH
+        k = json.load(open(os.path.join(ROOT, "data", a.market, "today.json"), encoding="utf-8"))
+        kh = json.load(open(os.path.join(ROOT, "data", a.market, "history.json"), encoding="utf-8"))
         date, date_fa = k["date"], k["trade_date"]
         rows, seen = [], {}
-        stab_path = os.path.join(ROOT, "data", "kish", f"stable-{date}.json")
+        stab_path = os.path.join(ROOT, "data", a.market, f"stable-{date}.json")
         stab = json.load(open(stab_path, encoding="utf-8")) if os.path.exists(stab_path) else {}
         now_utc = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
         # owner 1405-07-15: the Kish session lasts ~20 minutes - news are written only after the whole day stopped changing
@@ -478,7 +486,7 @@ def main():
         for r in k["items"]:
             if (r.get("trade_volume") or 0) <= 0:
                 continue
-            r["series_key"] = r["symbol"]
+            r["series_key"] = fetch_energy.key(r) if energy else r["symbol"]
             # owner 1405-07-15: during the day only a settled trade is written - a row must be unchanged for STABLE_MIN minutes
             fp = "|".join(str(r.get(x)) for x in ("trade_volume", "demand_volume", "weighted_price", "total_value"))
             key = f"{r['symbol']}|{r.get('delivery_place')}|{r.get('contract_type')}"
@@ -493,7 +501,7 @@ def main():
                 r["symbol"] = f"{r['symbol']}-{n}"
             rows.append(r)
         json.dump(stab, open(stab_path, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
-        print(f"kish: {len(rows)} settled rows, {unsettled} still changing (wait {STABLE_MIN} min unchanged)")
+        print(f"{a.market}: {len(rows)} settled rows, {unsettled} still changing (wait {STABLE_MIN} min unchanged)")
     else:
         latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
         date, date_fa = latest["date"], latest["date_fa"]
@@ -519,9 +527,10 @@ def main():
     # importance tiers come from data/importance.json (tools/importance.py): 0 important (top half by value this year), 1 the rest.
     # A strong-model worker writes only important symbols, every other worker only the rest.
     if kish:  # top half of the day's dollar value -> strong models (rial-export rows are never compared, they go to the rest)
-        byv = sorted(rows, key=lambda r: -(r.get("total_value_usd") or 0))
-        tier = {r["symbol"]: 0 if i < len(byv) // 2 and r.get("is_usd") else 1 for i, r in enumerate(byv)}
-        value = {r["symbol"]: r.get("total_value_usd") or 0 for r in rows}
+        vk = "total_value_rial" if energy else "total_value_usd"  # energy: every row has a rial value (dollar and premium rows too)
+        byv = sorted(rows, key=lambda r: -(r.get(vk) or 0))
+        tier = {r["symbol"]: 0 if i < len(byv) // 2 and (energy or r.get("is_usd")) else 1 for i, r in enumerate(byv)}
+        value = {r["symbol"]: r.get(vk) or 0 for r in rows}
         seen_t = {}
     else:
         table = importance.update(date, rows)
@@ -539,7 +548,9 @@ def main():
         sym = r["symbol"]
         with lock:
             recent = list(subs)[-5:]
-        if kish:
+        if energy:
+            facts, tables = facts_energy.build(r, kh["series"].get(r["series_key"], []), date_fa, date)
+        elif kish:
             facts, tables = facts_kish.build(r, kh["series"].get(r["series_key"], []), rows, date_fa, date)
         else:
             hist_path = os.path.join(ROOT, "data", date, "symbols", f"{sym}.json")
@@ -571,7 +582,12 @@ def main():
                 with lock:
                     if d["subtitle"] in subs:
                         raise ValueError("repeated subtitle")
-                    if kish:
+                    if energy:
+                        doc["items"].append({"symbol": sym, "trade_date": date_fa, "market": "energy",
+                                             "commodity": facts_energy.clean(r.get("goods_name")), "producer": facts_energy.clean(r.get("producer")),
+                                             "ring": facts_energy.market_fa(r), "board": r.get("board_name", ""),
+                                             "commodity_key": r["series_key"], "price_kind": facts_energy.kind(r), **d, "model": name})
+                    elif kish:
                         doc["items"].append({"symbol": sym, "trade_date": date_fa, "market": "kish",
                                              "commodity": facts_kish.clean_name(r.get("goods_name")), "producer": r.get("producer", ""),
                                              "delivery": facts_kish.delivery(r.get("delivery_place"))[0],

@@ -1,0 +1,63 @@
+name: write-energy
+# Iran Energy Exchange news (owner 1405-07-16): one news per settled traded row of data/energy/today.json -> queue/energy/.
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "how many symbols"
+        default: "10"
+concurrency:
+  group: write-energy
+  cancel-in-progress: true
+permissions:
+  contents: write
+  models: read
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: write news with free models
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          REQUESTY_API_KEY: ${{ secrets.REQUESTY_API_KEY }}
+          LLM7_API_KEY: ${{ secrets.LLM7_API_KEY }}
+          VERCEL_AI_KEY: ${{ secrets.VERCEL_AI_KEY }}
+          SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          PUSH_EACH: "1"
+        run: |
+          git config user.name msdata-news-bot
+          git config user.email bot@msdata.ir
+          python tools/fetch_energy.py
+          end=$(( $(date +%s) + 120*60 ))
+          while [ "$(date +%s)" -lt "$end" ]; do
+            git pull -q --rebase --autostash || true
+            python tools/fetch_energy.py || true  # fresh rows each round: a row is written only once it stopped changing
+            out=$(python tools/write_free.py --market energy --limit 40 --out queue/energy | tee -a pilot-log.txt | tail -1)
+            case "$out" in *"/0;"*) break ;; esac
+            case "$out" in "written 0/"*) sleep 600 ;; *) sleep 60 ;; esac
+          done
+      - name: commit pilot output
+        run: |
+          git config user.name msdata-news-bot
+          git config user.email bot@msdata.ir
+          mkdir -p news-test && mv pilot-log.txt news-test/energy-log.txt
+          git add queue/energy news-test; git add -f data/energy/stable-*.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "energy: news"
+          git pull --rebase -q && git push

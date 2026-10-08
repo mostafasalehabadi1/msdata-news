@@ -60,24 +60,26 @@ def main():
         json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"released {len(released)}: {', '.join(released)}")
     release_kish()
+    release_kish("energy")  # Iran Energy Exchange (owner 1405-07-16): same one-shot release as Kish
     apply_edits()
     apply_edits(os.path.join(ROOT, "edits", "kish"), os.path.join(N, "kish"))
+    apply_edits(os.path.join(ROOT, "edits", "energy"), os.path.join(N, "energy"))
 
 
 EDITABLE = ("title", "subtitle", "lead", "text", "slug", "table")
 
 
-def release_kish():
+def release_kish(market="kish"):
     """Kish export market (owner 1405-07-15): queue/kish/<date>.json -> news/kish/<date>.json, every written item at once
     (a few dozen a day, no drip). Released items are never removed."""
-    qk, nk = os.path.join(Q, "kish"), os.path.join(N, "kish")
+    qk, nk = os.path.join(Q, market), os.path.join(N, market)
     os.makedirs(nk, exist_ok=True)
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     for rep in sorted(glob.glob(os.path.join(qk, "report-*.json"))):  # daily report: first run after it is queued, like kala's
         dst = os.path.join(nk, os.path.basename(rep))
         if not os.path.exists(dst):
             shutil.copy(rep, dst)
-            print(f"kish report released: {os.path.basename(rep)}")
+            print(f"{market} report released: {os.path.basename(rep)}")
     for qpath in sorted(glob.glob(os.path.join(qk, "????-??-??.json"))):
         q = json.load(open(qpath, encoding="utf-8"))
         npath = os.path.join(nk, os.path.basename(qpath))
@@ -87,7 +89,7 @@ def release_kish():
         if new:
             n["items"] += new
             json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-            print(f"kish released {len(new)}: {os.path.basename(qpath)}")
+            print(f"{market} released {len(new)}: {os.path.basename(qpath)}")
 
 
 def apply_edits(root=None, ndir=None):
