@@ -64,6 +64,7 @@ def main():
     apply_edits()
     apply_edits(os.path.join(ROOT, "edits", "kish"), os.path.join(N, "kish"))
     apply_edits(os.path.join(ROOT, "edits", "energy"), os.path.join(N, "energy"))
+    apply_fx_edits()
 
 
 EDITABLE = ("title", "subtitle", "lead", "text", "slug", "table")
@@ -139,6 +140,37 @@ def apply_edits(root=None, ndir=None):
         if changed:
             json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             print(f"edits applied: {os.path.basename(npath)} x{changed}")
+
+
+def apply_fx_edits():
+    """«ارز و طلا» (one news per day): edits/fx/<YYYY-MM-DD>.json overrides news/fx/<YYYY-MM-DD>.json on every run.
+    Only EDITABLE fields; the edit must pass validate.py's fx rule (200-320 words, 3-4 paragraphs) or it is skipped.
+    The first edit keeps the written text under "original", so the model's version is never lost."""
+    from validate import check_text
+    for ep in sorted(glob.glob(os.path.join(ROOT, "edits", "fx", "????-??-??.json"))):
+        npath = os.path.join(N, "fx", os.path.basename(ep))
+        if not os.path.exists(npath):
+            continue
+        try:
+            e = json.load(open(ep, encoding="utf-8"))
+        except ValueError as err:
+            print(f"fx edit skipped (bad JSON) {ep}: {err}")
+            continue
+        n = json.load(open(npath, encoding="utf-8"))
+        new = {k: e[k] for k in EDITABLE if k in e and isinstance(e[k], (str, dict, list)) and e[k] != n.get(k)}
+        if not new:
+            continue
+        bad = []
+        check_text(os.path.basename(ep), {**n, **new}, bad, 200, 320, 3, 4)
+        if bad:
+            print(f"fx edit skipped ({'; '.join(bad)}) {ep}")
+            continue
+        n.setdefault("original", {k: n.get(k) for k in EDITABLE if k in n})
+        n.update(new)
+        n["edited"] = True
+        n["edited_at"] = e.get("edited_at") or datetime.now(timezone.utc).isoformat(timespec="seconds")
+        json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        print(f"fx edit applied: {os.path.basename(npath)}")
 
 
 if __name__ == "__main__":
