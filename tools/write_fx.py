@@ -119,10 +119,15 @@ def facts():
          "سکه و طلا": {"منبع": SRC_FREE, "قیمت‌ها": metal}}
     if ice:
         f["حواله‌ی توافقی"] = {"منبع": SRC_ICE, "ارزها": ice}
+        fu, iu = (free.get(CUR["USD"]) or {}).get("قیمت فروش امروز (تومان)"), (ice.get(CUR["USD"]) or {}).get("قیمت فروش حواله (تومان)")
+        if fu and iu:  # content agent 1405-07-19: the free-minus-havaleh gap of the dollar is the axis of the news
+            f["فاصله‌ی دلار آزاد و حواله"] = {"آزاد منهای حواله (تومان)": fu - iu, "درصد بالاتر بودن آزاد از حواله": round((fu - iu) / iu * 100, 1)}
     if usdt:
         f["تتر"] = {"منبع": SRC_USDT, **usdt}
     return day, f
 
+
+BANNED = ("نرخ", "جدول زیر", "ردیف‌های جدول", "ردیف های جدول", "گران شد", "ارزان شد", "بالا کشید", "پرید", "ریخت")  # content agent 1405-07-19
 
 RULES = ("تو خبرنگار بازار ارز و طلای msdata.ir هستی و هر روز یک خبر فارسی درباره‌ی قیمت ارز، سکه و طلا می‌نویسی. "
          "چارچوب نگارش زیر را مو به مو رعایت کن، در «حالت کامل» (بخش ۲-۱۴)، با «قالب ه» (خبر داده‌ی شش‌بندی):\n\n")
@@ -147,8 +152,12 @@ def check(d):
         raise ValueError(f"{n} words / {p} paragraphs (need 200-300 words, 3-4 paragraphs)")
     if any(FORBIDDEN.search(d[k]) for k in ("title", "subtitle", "lead", "text")):
         raise ValueError("forbidden content")
-    if "نرخ" in d["text"]:
-        raise ValueError("markers: کلمه‌ی «نرخ» به کار رفته؛ «قیمت» بنویس")
+    all_text = " ".join(d[k] for k in ("title", "subtitle", "lead", "text"))
+    bad = [w_ for w_ in BANNED if w_ in all_text]
+    if "؟" in d["text"] or "?" in d["text"]:
+        bad.append("جمله‌ی پرسشی")
+    if bad:
+        raise ValueError("markers: این‌ها ممنوع است: " + "، ".join(bad))
     d["table"] = [x for x in d.get("table") or [] if isinstance(x, dict)][:8]
     probs = markers.check(d["text"], d["title"], d["lead"], table=bool(d["table"]), full=True)
     if len(d["table"]) < 3:
