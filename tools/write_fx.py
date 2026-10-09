@@ -36,6 +36,40 @@ def get(name):
         return json.loads(r.read().decode("utf-8-sig"))
 
 
+WEEK = ["دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه", "یکشنبه"]
+
+
+def j2g(jy, jm, jd):  # Jalali -> Gregorian (same algorithm as the designer's dataset_ld.js)
+    jy += 1595
+    days = -355668 + 365 * jy + (jy // 33) * 8 + ((jy % 33) + 3) // 4 + jd + ((jm - 1) * 31 if jm < 7 else (jm - 7) * 30 + 186)
+    gy = 400 * (days // 146097)
+    days %= 146097
+    if days > 36524:
+        days -= 1
+        gy += 100 * (days // 36524)
+        days %= 36524
+        if days >= 365:
+            days += 1
+    gy += 4 * (days // 1461)
+    days %= 1461
+    if days > 365:
+        gy += (days - 1) // 365
+        days = (days - 1) % 365
+    gd = days + 1
+    sal = [0, 31, 29 if (gy % 4 == 0 and gy % 100 != 0) or gy % 400 == 0 else 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    gm = 0
+    while gm < 13 and gd > sal[gm]:
+        gd -= sal[gm]
+        gm += 1
+    return gy, gm, gd
+
+
+def weekday(jd):  # 1405/07/17 -> جمعه (the first sample wrote «پنجشنبه» by itself)
+    from datetime import date
+    y, m, d = (int(x) for x in re.findall(r"\d+", jd)[:3])
+    return WEEK[date(*j2g(y, m, d)).weekday()]
+
+
 def pct(a, b):
     return round((a - b) / b * 100, 2) if a and b else None
 
@@ -80,7 +114,7 @@ def facts():
             usdt = {"تاریخ": h[-1][0], "قیمت فروش (تومان)": h[-1][2], "روز قبل (تومان)": h[-2][2], "تغییر (درصد)": pct(h[-1][2], h[-2][2])}
     except Exception as e:  # noqa: BLE001
         print(f"usdt_history: {e}")
-    f = {"تاریخ داده‌ی بازار آزاد": day, "تاریخ روز قبل": p.get("date"),
+    f = {"تاریخ داده‌ی بازار آزاد": day, "روز هفته": weekday(day), "تاریخ روز قبل": p.get("date"),
          "بازار آزاد ارز": {"منبع": SRC_FREE, "ارزها": free},
          "سکه و طلا": {"منبع": SRC_FREE, "قیمت‌ها": metal}}
     if ice:
