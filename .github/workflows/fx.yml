@@ -3,6 +3,9 @@ name: fx-news
 # published at once (news/fx/ on the published branch). Later runs only retry a day that has no news yet.
 on:
   workflow_dispatch:
+  push:  # editing fx-now.txt from the manager VPS = write today's fx news now
+    branches: [main]
+    paths: [fx-now.txt]
   schedule:
     - cron: "30 16 * * *"
     - cron: "30 17 * * *"
