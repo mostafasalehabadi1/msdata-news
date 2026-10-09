@@ -98,6 +98,15 @@ def main():
         long = d.get("kind") in ("report", "analysis")  # «تحلیل» (owner 1405-07-16): same length rule as a report
         check_text(name, d, errs, 550 if long else 230, 1000 if long else 470, 3, 40)
         n += 1
+    for path in sorted(glob.glob(os.path.join(ROOT, "fx", "*.json"))):  # «ارز و طلا» daily news (tools/write_fx.py)
+        name = "fx/" + os.path.basename(path)
+        try:
+            d = json.load(open(path, encoding="utf-8"))
+        except Exception as e:  # noqa: BLE001
+            errs.append(f"{name}: invalid JSON {e}")
+            continue
+        check_text(name, d, errs, 200, 320, 3, 40)
+        n += 1
     for e in errs:
         print("ERROR", e)
     print(f"checked {n} articles, {len(errs)} errors")

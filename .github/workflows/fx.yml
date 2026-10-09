@@ -1,0 +1,48 @@
+name: fx-news
+# «ارز و طلا» (owner 1405-07-18): one daily news at 20:00 Tehran from the /dollar/ and /fx/ data (tools/write_fx.py),
+# published at once (news/fx/ on the published branch). Later runs only retry a day that has no news yet.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 16 * * *"
+    - cron: "30 17 * * *"
+    - cron: "30 18 * * *"
+concurrency:
+  group: fx-news
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  fx:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: write and publish fx news
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+          LLM7_API_KEY: ${{ secrets.LLM7_API_KEY }}
+          ZAI_API_KEY: ${{ secrets.ZAI_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          git config user.name msdata-news-bot
+          git config user.email bot@msdata.ir
+          python tools/write_fx.py
+          git add news/fx 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          python tools/validate.py || { echo "validate failed"; exit 1; }
+          git commit -qm "fx: news"
+          git pull -q --rebase && git push -q origin HEAD:main && git push -qf origin HEAD:refs/heads/published
