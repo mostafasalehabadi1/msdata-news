@@ -58,6 +58,8 @@ jobs:
             while [ "$(date +%s)" -lt "$end" ]; do
               git pull -q --rebase --autostash || true
               out=$(python tools/write_free.py --limit 40 --out queue | tee -a pilot-log.txt | tail -1)
+              # the log of each package is pushed so a stuck backlog can be read without the Actions UI (backend 2026-10-10: 55 symbols unwritten for hours, no visible reason)
+              cp pilot-log.txt news-test/kala-log.txt && git add news-test/kala-log.txt && { git diff --cached --quiet || git commit -qm "kala: writer log"; } && { git pull -q --rebase --autostash && git push -q || true; }
               case "$out" in *"/0;"*) break ;; esac          # nothing left to write
               case "$out" in "written 0/"*) sleep 900 ;; *) sleep 60 ;; esac  # all models busy -> wait 15 min
             done
