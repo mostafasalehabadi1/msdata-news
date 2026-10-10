@@ -167,7 +167,9 @@ REPORT_ONLY = {"gemini:gemma-4-31b-it"}
 STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "kilo:dots-studio/dots-3-note-preview:free",
           "hf:deepseek-ai/DeepSeek-V3.1", "kilo:stepfun/step-3.7-flash:free"}
 # the next three by rating: write the important half too, but only when every strong model is out or a symbol waited 2h
-BACKUP = {"zai:glm-4.7-flash", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast"}
+# ovh:Qwen3.5 added by the owner on 2026-10-10: every strong/backup model was out of quota and 30 important symbols stayed unwritten
+BACKUP = {"zai:glm-4.7-flash", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+          "ovh:Qwen3.5-397B-A17B"}
 BACKUP_WAIT = 2 * 3600
 
 
