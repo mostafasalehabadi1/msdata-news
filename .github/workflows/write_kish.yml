@@ -50,6 +50,8 @@ jobs:
             git pull -q --rebase --autostash || true
             python tools/fetch_kish.py || true  # fresh rows each round: a row is written only once it stopped changing (owner 1405-07-15)
             out=$(python tools/write_free.py --market kish --limit 40 --out queue/kish | tee -a pilot-log.txt | tail -1)
+            # log of each round pushed so a stuck run can be read without the Actions UI (backend 2026-10-10)
+            cp pilot-log.txt news-test/kish-live-log.txt && git add news-test/kish-live-log.txt && { git diff --cached --quiet || git commit -qm "kish: writer log"; } && { git pull -q --rebase --autostash && git push -q || true; }
             case "$out" in *"/0;"*) break ;; esac
             case "$out" in "written 0/"*) sleep 600 ;; *) sleep 60 ;; esac
           done

@@ -165,7 +165,7 @@ STRONG_GEMINI = ("gemma-4-31b-it",)
 # gemma-4-31b-it is kept for the daily report only (write_report.py) and writes no symbol news
 REPORT_ONLY = {"gemini:gemma-4-31b-it"}
 STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "kilo:dots-studio/dots-3-note-preview:free",
-          "hf:deepseek-ai/DeepSeek-V3.1", "kilo:stepfun/step-3.7-flash:free"}
+          "hf:deepseek-ai/DeepSeek-V3.1"}  # kilo:stepfun/step-3.7-flash:free removed 2026-10-10: Kilo answers 404 (model no longer exists)
 # the next three by rating: write the important half too, but only when every strong model is out or a symbol waited 2h
 # ovh:Qwen3.5 added by the owner on 2026-10-10: every strong/backup model was out of quota and 30 important symbols stayed unwritten
 BACKUP = {"zai:glm-4.7-flash", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
@@ -231,7 +231,7 @@ def providers():
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
     for m in ("Qwen3.5-397B-A17B", "gpt-oss-120b", "Meta-Llama-3_3-70B-Instruct"):  # OVH: no signup, no key
         out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
-    for m in ("dots-studio/dots-3-note-preview:free", "nvidia/nemotron-3-ultra-550b-a55b:free", "stepfun/step-3.7-flash:free"):  # Kilo gateway: no signup, 200 req/h per IP
+    for m in ("dots-studio/dots-3-note-preview:free", "nvidia/nemotron-3-ultra-550b-a55b:free"):  # Kilo gateway: no signup, 200 req/h per IP
         out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
     # added 2026-10-06 after the 20-model bench (passed or only rate-limited); LLM7 big models were paid-only (402) and dropped
     for m in ("inclusionai/ling-3.1-flash", "kilo-auto/free", "nvidia/nemotron-3-super-120b-a12b:free", "poolside/laguna-s-2.1:free",

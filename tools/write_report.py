@@ -33,7 +33,7 @@ REPORT_MODEL = "gemini:gemma-4-31b-it"
 FALLBACK_FROM = (19, 30)
 # the owner's blind rating (2026-09-30/10-01), best first; models not listed come after them
 RANK = [REPORT_MODEL, "llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025",
-        "kilo:dots-studio/dots-3-note-preview:free", "hf:deepseek-ai/DeepSeek-V3.1", "kilo:stepfun/step-3.7-flash:free",
+        "kilo:dots-studio/dots-3-note-preview:free", "hf:deepseek-ai/DeepSeek-V3.1",
         "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
         "cf:@cf/qwen/qwen2.5-coder-32b-instruct", "llm7:mistral-Nemo-Instruct-2407"]
 REPORT_RULES = (
