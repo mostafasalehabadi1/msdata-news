@@ -6,3 +6,10 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   DOXKOFWBEX0050818 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 8675 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":8675}}
   DOXKOFWBEX0050818 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
 written 0/2; total in file 3
+energy: 5 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+2 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  DHCSACABEX0050721 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DOXKOFWBEX0050818 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"bf79a38c-2c59-4b91-9584-06c7b7757893","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  DHCSACABEX0050721 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"e844f9c2-d6e7-46bc-a3d9-6016a0a18a89","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+written 0/2; total in file 3
