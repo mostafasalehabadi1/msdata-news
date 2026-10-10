@@ -97,7 +97,7 @@ def main():
     # keep only the latest day in the snapshot
     for d in os.listdir(ROOT):
         p = os.path.join(ROOT, d)
-        if os.path.isdir(p) and d != date and d != "kish":  # data/kish = export market snapshot (fetch_kish.py)
+        if os.path.isdir(p) and d != date and d not in ("kish", "energy"):  # other markets keep their own snapshot and stable-<date>.json (fetch_kish.py, fetch_energy.py); deleting data/energy every hour reset the 20-min settle clock, so same-day energy news were never written
             for dirpath, _, files in os.walk(p, topdown=False):
                 for fn in files:
                     os.remove(os.path.join(dirpath, fn))
