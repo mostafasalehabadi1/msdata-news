@@ -1,16 +1,13 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-3 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  WCO-CPCANG42.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  WCO-CPCANG42.5-L50-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  WCO-CPCANG42.5-L50-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  WCO-CPCANG42.5-L50-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SGHC-PCT5G42.5-B-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
-  WCO-CPCANG42.5-L50-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  WCO-CPCANG42.5-L50-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  SGHC-PCT5G42.5-B-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+2 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
   SGHC-PCT5G42.5-B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   SGHC-PCT5G42.5-B-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   SGHC-PCT5G42.5-B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   SGHC-PCT5G42.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: ثبت شد, lead>35w/1num, text 10 nums
-OK WCO-CPCANG42.5-L50-00 <- groq:openai/gpt-oss-120b (6s)
+  SGHC-PCT5G42.5-B-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SGHC-PCT5G42.5-B-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  ASPC-LDLFI2047AWP-00 zai:glm-4.7-flash: 78s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ASPC-LDLFI2047AWP-00 zai:glm-4.5-flash: 96s ValueError: 119 words / 2 paragraphs
+  SGHC-PCT5G42.5-B-00 zai:glm-4.7-flash: 114s ValueError: 102 words / 4 paragraphs
+style-soft: lead>35w/1num, text 11 nums
+OK SGHC-PCT5G42.5-B-00 <- zai:glm-4.5-flash (141s)
