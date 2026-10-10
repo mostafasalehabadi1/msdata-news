@@ -17,3 +17,16 @@ OK DLNKOFWBEX0050818 <- groq:openai/gpt-oss-120b (6s)
   DOXAACABEX0050722 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   DOXAACABEX0050722 zai:glm-4.5-flash: 52s ValueError: 90 words / 2 paragraphs
 written 1/4; total in file 2
+energy: 5 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+3 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  DOXAACABEX0050722 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  DHCSACABEX0050721 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DOXAACABEX0050722 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  DOXAACABEX0050722 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  DOXAACABEX0050722 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  DOXAACABEX0050722 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  DOXAACABEX0050722 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  DOXKOFWBEX0050818 llm7:DeepSeek-V4-Flash-0731: 46s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 17359 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":17359}}
+written 0/3; total in file 2
