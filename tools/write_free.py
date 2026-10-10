@@ -202,7 +202,7 @@ def providers():
             free = [m["id"] for m in json.load(r)["data"] if m["id"].endswith(":free") and "qwen3.8" not in m["id"]]  # qwen3.8 wrote nonsense Persian
         free.sort(key=lambda i: next((n for n, w in enumerate(OR_PREFER) if w in i), 99))
         for m in free[:6]:
-            out.append(("openrouter:" + m, lambda p, m=m: post(OR_URL, key, m, p, {"X-Title": "msdata-news"})))
+            out.append(("openrouter:" + m, lambda p, m=m, key=key: post(OR_URL, key, m, p, {"X-Title": "msdata-news"})))
     key = os.environ.get("GROQ_API_KEY")
     if key:  # Groq retires model ids often (old ones gave 404), so take the live list: text models only, best Persian first
         try:
@@ -213,7 +213,7 @@ def providers():
             ids.sort(key=lambda i: next((n for n, w in enumerate(GROQ_PREFER) if w in i), 99))
             note("groq models: " + ", ".join(ids))
             for m in ids[:4]:
-                out.append(("groq:" + m, lambda p, m=m: post(GROQ_URL, key, m, p)))
+                out.append(("groq:" + m, lambda p, m=m, key=key: post(GROQ_URL, key, m, p)))
         except Exception as e:  # noqa: BLE001
             note(f"groq model list failed: {e}")
     for env, url, models in (
