@@ -1,2 +1,34 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+10 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
+  SABD-INBPPBEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PACT-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  SABD-INBPPBEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SABD-INBPPBEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SABD-INBPPBEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  BEHD-DSMLABSAEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  PBDC-INBPPBEX-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  SABD-INBPPBEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SABD-INBPPBEX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PBDC-INBPPBEX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  AAC-PCT2G42.5-JEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  PBDC-INBPPBEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  DCCO-PCT2G32.5-L50EX-00 llm7:DeepSeek-V4-Flash-0731: 17s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 36504 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":36504}}
+  groq:openai/gpt-oss-120b: quota used up - skipped for the rest of the day
+  SABD-INBPPBEX-00 groq:openai/gpt-oss-120b: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 194170, Requested 59
+  PBDC-INBPPBEX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PBDC-INBPPBEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SABD-INBPPBEX-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
+  PBDC-INBPPBEX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  PBDC-INBPPBEX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  BACC-PCT2G42.5-L50EX-00 zai:glm-4.7-flash: 25s ValueError: 81 words / 1 paragraphs
+  PBDC-INBPPBEX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+  SZCE-PCT2G32.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"7fc16e2e-c75f-4281-ac3b-1c04e9de2d0e","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BPB-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"ba25e7e7-e6e4-4532-9f9a-2d864cf462f1","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  PACT-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"3a047d85-bde3-4f0f-be39-d5ab70012884","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BOCO-INBOFBEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  BOCO-INBOFBEX-00 kilo:stepfun/step-3.7-flash:free: 0s ValueError: HTTP 404: {"error":"The requested model 'stepfun/step-3.7-flash:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.",
+  BACC-PCT2G42.5-L50EX-00 zai:glm-4.5-flash: 168s ValueError: 111 words / 1 paragraphs
+  SABD-INBPPBEX-00 zai:glm-4.7-flash: 29s ValueError: 94 words / 1 paragraphs
+style-soft: lead>35w/1num, text 9 nums
+OK SABD-INBPPBEX-00 <- zai:glm-4.5-flash (92s)
