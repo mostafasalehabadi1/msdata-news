@@ -1,47 +1,19 @@
 energy: 5 settled rows, 0 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-5 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+4 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   DOXAACABEX0050722 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DLNKOFWBEX0050818 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   DOXKOFWBEX0050818 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   DOXAACABEX0050722 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   DOXAACABEX0050722 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-style-soft: ثبت شد, text 13 nums
-OK DLNAACABEX0050722 <- groq:openai/gpt-oss-120b (6s)
+style-soft: ثبت شد, ثبت شد, ثبت شد, lead>35w/1num
+OK DLNKOFWBEX0050818 <- groq:openai/gpt-oss-120b (6s)
   DOXAACABEX0050722 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   DOXAACABEX0050722 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
   DOXAACABEX0050722 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DLNKOFWBEX0050818 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
-  DLNKOFWBEX0050818 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  groq:openai/gpt-oss-120b: quota used up - skipped for the rest of the day
-  DOXAACABEX0050722 groq:openai/gpt-oss-120b: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199806, Requested 33
-  groq:openai/gpt-oss-20b: quota used up - skipped for the rest of the day
-  DOXAACABEX0050722 groq:openai/gpt-oss-20b: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197912, Requested 332
-  DHCSACABEX0050721 zai:glm-4.7-flash: 94s ValueError: 108 words / 4 paragraphs
-  DHCSACABEX0050721 zai:glm-4.5-flash: 37s ValueError: 111 words / 3 paragraphs
-  DOXKOFWBEX0050818 zai:glm-4.7-flash: 51s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  DOXKOFWBEX0050818 zai:glm-4.5-flash: 62s ValueError: 117 words / 2 paragraphs
-  DLNKOFWBEX0050818 zai:glm-4.7-flash: 79s ValueError: 83 words / 2 paragraphs
-style-soft: lead>35w/1num, text 12 nums
-  DLNKOFWBEX0050818 zai:glm-4.5-flash: 41s ValueError: markers: لید عیناً در متن تکرار شده
-written 1/5; total in file 1
-energy: 5 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-4 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  DOXAACABEX0050722 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DHCSACABEX0050721 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  DLNKOFWBEX0050818 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  DOXAACABEX0050722 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DOXAACABEX0050722 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DOXAACABEX0050722 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DOXAACABEX0050722 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DOXAACABEX0050722 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DLNKOFWBEX0050818 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DLNKOFWBEX0050818 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DLNKOFWBEX0050818 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DLNKOFWBEX0050818 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DLNKOFWBEX0050818 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DLNKOFWBEX0050818 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  DOXKOFWBEX0050818 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"4cb64a9d-230b-4c83-b52d-f4c0735bdd68","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  DHCSACABEX0050721 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"c8d0f205-e53a-4d8a-8f80-1f722ac9c33a","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-written 0/4; total in file 1
+  DHCSACABEX0050721 zai:glm-4.7-flash: 152s ValueError: 99 words / 2 paragraphs
+  DHCSACABEX0050721 zai:glm-4.5-flash: 118s ValueError: 114 words / 2 paragraphs
+  DOXKOFWBEX0050818 zai:glm-4.7-flash: 92s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  DOXKOFWBEX0050818 zai:glm-4.5-flash: 59s ValueError: 121 words / 1 paragraphs
+  DOXAACABEX0050722 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  DOXAACABEX0050722 zai:glm-4.5-flash: 52s ValueError: 90 words / 2 paragraphs
+written 1/4; total in file 2
