@@ -1,83 +1,150 @@
-kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
+kish: 25 settled rows, 0 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-5 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+25 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  BCC-CLINKERT2EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  SHCO-PCT2G42.5-L50EX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ADG-BI6070BEX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
   llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  PACT-BI6070BEX-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 26691 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":26691}}
-  BPB-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  PACT-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  DCCO-PCT2G32.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"6edf5f8b-6bfe-41ab-bfb9-5262117a73bd","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"e8a2a8f1-7159-40d9-9526-0f1c28cbb579","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BPB-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"37b75a05-37fb-403c-8151-ecb26e1e194f","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 358s TimeoutError: The read operation timed out
-  PACT-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 197s TimeoutError: The read operation timed out
-  DCCO-PCT2G32.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-written 0/5; total in file 22
-kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-5 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  AAC-PCT2G42.5-JEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  BPB-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  PACT-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"0eb87921-d9d1-40b2-886c-eb88022fe39e","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"cb44f923-b6df-43d1-af23-c88c59527d14","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  AAC-PCT2G42.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"3830f53a-7a31-4bd9-ab81-dda40859949a","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  DCCO-PCT2G32.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 190s TimeoutError: The read operation timed out
-  BPB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 15 nums
-OK PACT-BI6070BEX-00 <- kilo:dots-studio/dots-3-note-preview:free (245s)
-style-soft: lead>35w/1num
-  BACC-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 511s ValueError: 116 words / 2 paragraphs
-  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-written 1/5; total in file 23
-kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-4 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  BPB-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  DCCO-PCT2G32.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"65ae76a1-c988-4315-a90d-9e33cd9b50fb","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"8b00e5b3-668a-4c42-99ed-e4e9c68ab8ea","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BPB-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"bb6f586f-58e1-4d6a-9ecb-1d613dce6f7a","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 9 nums
-OK DCCO-PCT2G32.5-L50EX-00 <- kilo:dots-studio/dots-3-note-preview:free (160s)
-  BACC-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 336s TimeoutError: The read operation timed out
-  BPB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 349s TimeoutError: The read operation timed out
-written 1/4; total in file 24
-kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-3 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  AAC-PCT2G42.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"b86d6ddc-3fea-4d34-aa2a-1312d183acd5","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"7f2ecb6a-f47b-441b-bc88-939961a74783","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BPB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 312s TimeoutError: The read operation timed out
-  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 204s TimeoutError: The read operation timed out
-  BACC-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 331s TimeoutError: The read operation timed out
-written 0/3; total in file 24
-kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-3 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  AAC-PCT2G42.5-JEX-00 cohere:command-a-03-2025: 46s ValueError: HTTP 429: {"id":"73b87f2e-5bfe-4e77-87ad-bde229690372","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"6f9287ba-a2eb-4f34-8486-53b5d3962f06","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BPB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 312s TimeoutError: The read operation timed out
-  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 317s TimeoutError: The read operation timed out
-  BACC-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 355s TimeoutError: The read operation timed out
-written 0/3; total in file 24
-kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-3 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  AAC-PCT2G42.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"cac7cf57-7ecc-4ed2-b50e-87a506f10c10","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"8e5c702f-64e1-449c-b41d-c3df6107f874","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  BPB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num
-OK BACC-PCT2G42.5-L50EX-00 <- kilo:dots-studio/dots-3-note-preview:free (313s)
-  AAC-PCT2G42.5-JEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3ebffe41-604b-47d5-
-style-soft: ثبت شد, lead>35w/1num, text 18 nums
-OK BPB-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (157s)
+  NFAC-BI6070BEX-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 38 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":38}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  ADG-BI6070BEX-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 35 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":35}}
+  KACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  TSM-BIPG7016BEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  NGP-BI160220BEX-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  SHCO-PCT2G42.5-L50EX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  AYIS-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ADG-BI6070BEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  NGP-BI160220BEX-00 groq:openai/gpt-oss-20b: 5s ValueError: no JSON
+  NAC-PCT2G42.5-L50EX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 14s JSONDecodeError: Expecting value: line 5 column 11 (char 257)
+  TSM-BIPG7016BEX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  FBG-INBOFBEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 17s ValueError: 104 words / 1 paragraphs
+  SHCO-PCT2G42.5-L50EX-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  PKAD-BI6070BEX-00 requesty:mistral/leanstral-1-5: 32s ValueError: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants a news article for the export market of the commodity exchange (بورس کالا) based on specific facts provide'
+  PKAD-BI6070BEX-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  PKAD-BI6070BEX-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  ADG-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 18s JSONDecodeError: Expecting value: line 5 column 11 (char 211)
+  PKAD-BI6070BEX-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  FAFI-PCT1G52.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"de3ac7ba-0542-40ca-99fb-49e756848cad","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  AZGI-BI6070BEX-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"bd29cb62-6590-4d4c-b5e5-e13e7486b95a","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SHCO-PCT2G42.5-L50EX-00 groq:openai/gpt-oss-20b: 17s ValueError: no JSON
+  SGPE-BI6070BEX-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  TSM-BIPG7016BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 19s JSONDecodeError: Expecting value: line 5 column 11 (char 272)
+  NGP-BI160220BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 42s ValueError: 113 words / 2 paragraphs
+  ADG-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 17s ValueError: 118 words / 1 paragraphs
+  AZGI-BI6070BEX-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"8a6a7bcd-1891-49b0-bb44-4510251c54c3","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: lead>35w/1num, text 13 nums
+  PND-INBPPBEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"b03c6aa9-cdc7-464d-aecd-6aed9c692f60","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  NAC-PCT2G42.5-L50EX-00 groq:openai/gpt-oss-120b: 52s ValueError: no JSON
+  SGPE-BI6070BEX-00 zai:glm-4.5-flash: 59s ValueError: 118 words / 2 paragraphs
+  NAC-PCT2G42.5-L50EX-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
+style-soft: ثبت شد, lead>35w/1num, text 23 nums
 style-soft: lead>35w/1num, text 10 nums
+OK AZRC-BI6070BEX-00 <- ovh:Qwen3.5-397B-A17B (136s)
+  FBG-INBOFBEX-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"20d8d9ae-02ae-4045-89da-5d103624fe58","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  GHHA-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"540a29b7-3c73-4dd7-a731-d706002dc97b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: ثبت شد, lead>35w/1num, text 9 nums
+  PAGH-BI6070BEX-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
+  FBG-INBOFBEX-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"12ba7ad6-ca72-4b69-baee-b68bf0225e7a","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
 style-soft: lead>35w/1num, text 9 nums
-OK AAC-PCT2G42.5-JEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (153s)
-written 3/3; total in file 27
+OK CJOV-PCT2G42.5-L50EX-00 <- ovh:gpt-oss-120b (242s)
+  NGP-BI160220BEX-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"8d4ed295-6412-42dd-8744-9967368cfe3f","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: lead>35w/1num, text 14 nums
+OK TSM-BIPG7016BEX-00 <- ovh:Qwen3.5-397B-A17B (106s)
+style-soft: lead>35w/1num, text 15 nums
+style-soft: ثبت شد, lead>35w/1num, text 13 nums
+OK DNJC-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (270s)
+style-soft: lead>35w/1num
+  BIDC-INBOFBEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 276s ValueError: markers: «نشان‌دهنده» در text
+  NGP-BI160220BEX-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"cb20d372-45a9-4230-90e4-328dd64c8a6f","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SHCO-PCT2G42.5-L50EX-00 zai:glm-4.7-flash: 182s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  PKAD-BI6070BEX-00 requesty:nvidia/muse-glimmer-30b: 268s TimeoutError: The read operation timed out
+  BIDC-INBOFBEX-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+style-soft: lead>35w/1num, text 15 nums
+  PAGH-BI6070BEX-00 kilo:kilo-auto/free: 150s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱۳۷۰
+  SHCO-PCT2G42.5-L50EX-00 zai:glm-4.5-flash: 48s ValueError: 87 words / 2 paragraphs
+  MBS-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 360s TimeoutError: The read operation timed out
+  FBG-INBOFBEX-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  BIDC-INBOFBEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+style-soft: ثبت شد
+style-soft: text 10 nums
+OK AZGI-BI6070BEX-00 <- ovh:Qwen3.5-397B-A17B (133s)
+  NGP-BI160220BEX-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  FBG-INBOFBEX-00 requesty:novita/inclusionai/ling-3.0-tiny: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+style-soft: ثبت شد, lead>35w/1num, text 13 nums
+OK NGP-BI160220BEX-00 <- zai:glm-4.5-flash (22s)
+style-soft: lead>35w/1num, text 12 nums
+  FBG-INBOFBEX-00 requesty:poolside/laguna-m.1: 46s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  FBG-INBOFBEX-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+style-soft: ثبت شد, lead>35w/1num
+OK PAGH-BI6070BEX-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (139s)
+style-soft: lead>35w/1num, text 15 nums
+OK ADG-BI6070BEX-00 <- ovh:gpt-oss-120b (249s)
+style-soft: ثبت شد, lead>35w/1num
+OK NAC-PCT2G42.5-L50EX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (249s)
+style-soft: lead>35w/1num, text 18 nums
+  SZCE-PCT2G32.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  PKAD-BI6070BEX-00 ovh:Qwen3.5-397B-A17B: 183s ValueError: 96 words / 2 paragraphs
+  BIDC-INBOFBEX-00 openrouter:apodex/apodex-1.1-mini:free: 231s TypeError: expected string or bytes-like object, got 'NoneType'
+  FBG-INBOFBEX-00 requesty:nvidia/muse-glimmer-30b: 161s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  PKAD-BI6070BEX-00 zai:glm-4.7-flash: 100s ValueError: 99 words / 2 paragraphs
+  SHCO-PCT2G42.5-L50EX-00 kilo:inclusionai/ling-3.1-flash: 226s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 17 nums
+  PKAD-BI6070BEX-00 zai:glm-4.5-flash: 80s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱۲۰۰
+  NEYC-PCT1G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 284s TimeoutError: The read operation timed out
+  FBG-INBOFBEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 270s TimeoutError: The read operation timed out
+  SHCO-PCT2G42.5-L50EX-00 kilo:kilo-auto/free: 226s TimeoutError: The read operation timed out
+  BCC-CLINKERT2EX-00 zai:glm-4.7-flash: 106s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 10 nums
+  BCC-CLINKERT2EX-00 zai:glm-4.5-flash: 47s ValueError: 106 words / 2 paragraphs
+style-soft: lead>35w/1num, text 13 nums
+OK BIDC-INBOFBEX-00 <- openrouter:dots-studio/dots-3-note-preview:free (422s)
+style-soft: lead>35w/1num
+OK PGPS-BI6070BEX-00 <- ovh:Qwen3.5-397B-A17B (205s)
+  NFAC-BI6070BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 159s ValueError: 118 words / 3 paragraphs
+  KACC-PCT2G42.5-L50EX-00 zai:glm-4.7-flash: 107s ValueError: 69 words / 1 paragraphs
+  SHCO-PCT2G42.5-L50EX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 180s TimeoutError: The read operation timed out
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for the rest of the day
+  SHCO-PCT2G42.5-L50EX-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
+  kilo:thinkingmachines/inkling-small:free: quota used up - skipped for the rest of the day
+  SHCO-PCT2G42.5-L50EX-00 kilo:thinkingmachines/inkling-small:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: limit_rpd/thinkingmachines/inkling-small-20260730/e27a9a6d-1451-4be4-876e-292ffcbf1e71. Daily limit reached for thinkingmachines/inkling-small:free via Thinking Machine
+style-soft: ثبت شد, lead>35w/1num
+OK AYIS-BI6070BEX-00 <- ovh:Qwen3.5-397B-A17B (95s)
+  KACC-PCT2G42.5-L50EX-00 zai:glm-4.5-flash: 55s ValueError: 94 words / 2 paragraphs
+style-soft: lead>35w/1num, text 12 nums
+style-soft: ثبت شد, lead>35w/1num
+  SHCO-PCT2G42.5-L50EX-00 kilo:cohere/north-mini-code:free: 119s ValueError: 147 words / 1 paragraphs
+style-soft: ثبت شد, lead>35w/1num, text 13 nums
+OK PKAD-BI6070BEX-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (217s)
+style-soft: ثبت شد, lead>35w/1num
+  FAFI-PCT1G52.5-JEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 236s ValueError: markers: تالار اشتباه: «صادراتی»
+style-soft: ثبت شد
+style-soft: lead>35w/1num
+OK PND-INBPPBEX-00 <- ovh:Qwen3.5-397B-A17B (221s)
+style-soft: lead>35w/1num, text 9 nums
+OK SHCO-PCT2G42.5-L50EX-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (165s)
+  FBG-INBOFBEX-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
+style-soft: text 11 nums
+OK SGPE-BI6070BEX-00 <- ovh:Qwen3.5-397B-A17B (168s)
+style-soft: ثبت شد, ثبت شد, lead>35w/1num
+style-soft: ثبت شد, lead>35w/1num
+OK FBG-INBOFBEX-00 <- kilo:kilo-auto/free (259s)
+OK GHHA-BI6070BEX-00 <- ovh:Qwen3.5-397B-A17B (148s)
+OK MBS-BI6070BEX-00 <- ovh:Qwen3.5-397B-A17B (156s)
+style-soft: ثبت شد, text 12 nums
+style-soft: text 12 nums
+OK SZCE-PCT2G32.5-L50EX-00 <- ovh:Qwen3.5-397B-A17B (272s)
+style-soft: text 10 nums
+OK NEYC-PCT1G42.5-JEX-00 <- ovh:Qwen3.5-397B-A17B (143s)
+OK BCC-CLINKERT2EX-00 <- ovh:Qwen3.5-397B-A17B (198s)
+style-soft: ثبت شد, lead>35w/1num
+OK NFAC-BI6070BEX-00 <- ovh:Qwen3.5-397B-A17B (113s)
+style-soft: lead>35w/1num
+OK KACC-PCT2G42.5-L50EX-00 <- ovh:Qwen3.5-397B-A17B (147s)
+OK FAFI-PCT1G52.5-JEX-00 <- ovh:Qwen3.5-397B-A17B (228s)
+written 25/25; total in file 25
