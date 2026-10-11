@@ -8,3 +8,11 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   NGC-PCT2G32.5-B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 23s JSONDecodeError: Expecting value: line 5 column 11 (char 268)
 style-soft: ثبت شد, lead>35w/1num, text 11 nums
 OK IMID-OAIOL-619 <- groq:openai/gpt-oss-120b (26s)
+  IMID-OAIOL-617 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 26s ValueError: 112 words / 2 paragraphs
+  PPIG-OAIOC-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 3 column 11 (char 90)
+  GHZ-PELL-00 cohere:command-a-03-2025: 46s ValueError: HTTP 429: {"id":"4a30ebb1-2c78-463e-92f1-47b6348c3d87","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  GAC-PCT2G42.5-L50-00 cohere:command-a-reasoning-08-2025: 46s ValueError: HTTP 429: {"id":"069f8b74-6ff0-4c12-a5fe-750063ebb5dc","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  DKPC-OAIOC-00 llm7:mistral-Nemo-Instruct-2407: 51s ValueError: 130 words / 1 paragraphs
+  FSIO-OAIOMFV-00 zai:glm-4.7-flash: 64s ValueError: 108 words / 2 paragraphs
+style-soft: lead>35w/1num, text 16 nums
+OK KHCE-PCT2G32.5-B-00 <- ovh:gpt-oss-120b (64s)
