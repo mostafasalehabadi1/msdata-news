@@ -625,11 +625,17 @@ def main():
                     late = [r for r in todo if gname not in tried[r["symbol"]] and tier.get(r["symbol"], 1) == 0
                             and (strong_out or time.time() - seen_t.get(r["symbol"], time.time()) > BACKUP_WAIT)]
                     pick = late + pick  # a waiting important symbol comes before the rest
-                if not live or not pick:
+                # a backup worker with nothing to pick waits while a strong worker is still busy: the important symbols a strong
+                # model fails on come back to the list minutes later, and the backups had already left by then (kish 2026-10-11)
+                if not live or (not pick and (not gname.endswith("/backup") or strong_out)):
                     return
-                r = pick[0]
-                todo.remove(r)
-                tried[r["symbol"]].add(gname)
+                r = pick[0] if pick else None
+                if r is not None:
+                    todo.remove(r)
+                    tried[r["symbol"]].add(gname)
+            if r is None:
+                time.sleep(5)
+                continue
             if write_one(r, live):
                 fails = 0
             else:
