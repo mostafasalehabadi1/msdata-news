@@ -138,3 +138,14 @@ style-soft: lead>35w/1num, text 15 nums
 OK ACC-PCT1G32.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (69s)
 style-soft: text 9 nums
 OK ZZKI-ZII1-00 <- ovh:Qwen3.5-397B-A17B (59s)
+style-soft: lead>35w/1num, text 9 nums
+style-soft: text 11 nums
+  PTC-POY250D48FBWP-00 ovh:Qwen3.6-27B: 363s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for the rest of the day
+  PTC-POY250D48FBWP-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 24s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"713c6e43006a63258e25ca58a1345d55"
+}
+  PTC-POY250D48FBWP-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s ValueError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+style-soft: text 10 nums
+OK ZCC-PCT1G32.5-B-00 <- ovh:Qwen3.5-397B-A17B (91s)
