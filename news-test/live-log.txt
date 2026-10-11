@@ -3,3 +3,8 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   DOXFBCABEX0050722 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1791725970-hNwjxE2hx3BvzoTBopv1","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
 style-soft: lead>35w/1num, text 14 nums
 OK DLNFBCABEX0050722 <- groq:openai/gpt-oss-120b (5s)
+  DOXFBCABEX0050722 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  DOXFBCABEX0050722 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+  DIRTHCABEX0050722 zai:glm-4.7-flash: 105s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  DIRTHCABEX0050722 zai:glm-4.5-flash: 15s JSONDecodeError: Expecting value: line 4 column 11 (char 191)
+OK DOXFBCABEX0050722 <- openrouter:apodex/apodex-1.1-mini:free (62s)
