@@ -1,2 +1,15 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+16 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ASC-DSMWASTOXSH-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  MAPE-LDLUMPB-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  IRIR-DSMWSTMCMN-089 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  JPC-HDPEPOW1J-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  JPC-HDPEPOW1J-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  KEPE-HDLUMPB-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  SHPC-HDWAXB-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 17s JSONDecodeError: Expecting value: line 3 column 11 (char 82)
+  IRIR-DSMWSTMLNR-089 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 21s ValueError: 72 words / 1 paragraphs
+style-soft: lead>35w/1num
+  ASC-DSMWASTOXSH-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 13s JSONDecodeError: Expecting value: line 5 column 11 (char 264)
+  IRIR-DSMWSTMCMN-089 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 16s ValueError: 93 words / 2 paragraphs
+style-soft: lead>35w/1num
+OK MAPE-LDLUMPB-00 <- llm7:mistral-Nemo-Instruct-2407 (41s)
