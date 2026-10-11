@@ -1,135 +1,83 @@
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
+kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-2 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
+5 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  PACT-BI6070BEX-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 26691 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":26691}}
+  BPB-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  PACT-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DCCO-PCT2G32.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"6edf5f8b-6bfe-41ab-bfb9-5262117a73bd","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"e8a2a8f1-7159-40d9-9526-0f1c28cbb579","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BPB-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"37b75a05-37fb-403c-8151-ecb26e1e194f","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 358s TimeoutError: The read operation timed out
+  PACT-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 197s TimeoutError: The read operation timed out
+  DCCO-PCT2G32.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+written 0/5; total in file 22
+kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+5 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  AAC-PCT2G42.5-JEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  BPB-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  PACT-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"0eb87921-d9d1-40b2-886c-eb88022fe39e","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"cb44f923-b6df-43d1-af23-c88c59527d14","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  AAC-PCT2G42.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"3830f53a-7a31-4bd9-ab81-dda40859949a","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  DCCO-PCT2G32.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 190s TimeoutError: The read operation timed out
+  BPB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 15 nums
+OK PACT-BI6070BEX-00 <- kilo:dots-studio/dots-3-note-preview:free (245s)
+style-soft: lead>35w/1num
+  BACC-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 511s ValueError: 116 words / 2 paragraphs
+  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+written 1/5; total in file 23
+kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+4 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  BPB-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DCCO-PCT2G32.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"65ae76a1-c988-4315-a90d-9e33cd9b50fb","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"8b00e5b3-668a-4c42-99ed-e4e9c68ab8ea","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BPB-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"bb6f586f-58e1-4d6a-9ecb-1d613dce6f7a","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 9 nums
+OK DCCO-PCT2G32.5-L50EX-00 <- kilo:dots-studio/dots-3-note-preview:free (160s)
+  BACC-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 336s TimeoutError: The read operation timed out
+  BPB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 349s TimeoutError: The read operation timed out
+written 1/4; total in file 24
+kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+3 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  AAC-PCT2G42.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"b86d6ddc-3fea-4d34-aa2a-1312d183acd5","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"7f2ecb6a-f47b-441b-bc88-939961a74783","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BPB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 312s TimeoutError: The read operation timed out
+  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 204s TimeoutError: The read operation timed out
+  BACC-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 331s TimeoutError: The read operation timed out
+written 0/3; total in file 24
+kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+3 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  AAC-PCT2G42.5-JEX-00 cohere:command-a-03-2025: 46s ValueError: HTTP 429: {"id":"73b87f2e-5bfe-4e77-87ad-bde229690372","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"6f9287ba-a2eb-4f34-8486-53b5d3962f06","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BPB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 312s TimeoutError: The read operation timed out
+  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 317s TimeoutError: The read operation timed out
+  BACC-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 355s TimeoutError: The read operation timed out
+written 0/3; total in file 24
+kish: 27 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+3 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  BACC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  AAC-PCT2G42.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"cac7cf57-7ecc-4ed2-b50e-87a506f10c10","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BACC-PCT2G42.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"8e5c702f-64e1-449c-b41d-c3df6107f874","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  BPB-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  AAC-PCT2G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+OK BACC-PCT2G42.5-L50EX-00 <- kilo:dots-studio/dots-3-note-preview:free (313s)
+  AAC-PCT2G42.5-JEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3ebffe41-604b-47d5-
+style-soft: ثبت شد, lead>35w/1num, text 18 nums
+OK BPB-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (157s)
 style-soft: lead>35w/1num, text 10 nums
-OK GSS-BSO068XEX-00 <- groq:openai/gpt-oss-120b (62s)
-  groq:openai/gpt-oss-120b: quota used up - skipped for the rest of the day
-  ALSU-AP06102EX-00 groq:openai/gpt-oss-120b: 36s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196252, Requested 59
-  ALSU-AP06102EX-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
-written 1/2; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 1s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
-kish: 43 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 16 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ALSU-AP06102EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-31b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:apodex/apodex-1.1-mini:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:dots-studio/dots-3-note-preview:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-  ALSU-AP06102EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s ValueError: HTTP 401: {"error":{"message":"Missing Authentication header","code":401}}
-written 0/1; total in file 42
+style-soft: lead>35w/1num, text 9 nums
+OK AAC-PCT2G42.5-JEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (153s)
+written 3/3; total in file 27
