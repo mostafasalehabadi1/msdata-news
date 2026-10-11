@@ -1,116 +1,35 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 40 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  SECO-PCT1G32.5-L50-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  BCCO-PCT2G42.5-L50-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  SECO-PCT2G42.5-B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  SCC-PCT2G32.5-B-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"6a0f9974-e964-45ba-b2b3-891e38d0f5b0","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  GSCC-PCT2G42.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8c5aa9df-d4f9-4a25-
-style-soft: lead>35w/1num, text 13 nums
-OK BCCO-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (62s)
-style-soft: lead>35w/1num, text 14 nums
-OK SZCE-PCT2G32.5-L50-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (69s)
-  NFCO-PCT2G42.5-B-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"c41a36ec-8b19-4139-8f46-e601fdf14aaf","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  PGOC-PCT2G42.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d832146e-424a-4731-
-style-soft: ثبت شد, lead>35w/1num, text 12 nums
-OK SCC-PCT1G42.5-L50-00 <- ovh:Qwen3.5-397B-A17B (44s)
-style-soft: lead>35w/1num, text 16 nums
-OK KHAC-PCT2G42.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (41s)
-  DCC-PCT2G42.5-B-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"2985bfdc-c48f-41c8-a4e1-3becff10312c","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  HCC-PCT2G32.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2ef6ba32-db54-4b38-
-  ACCO-PCT2G42.5-L50-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  ACC-PCT2G42.5-B-00 zai:glm-4.7-flash: 194s ValueError: 116 words / 3 paragraphs
-style-soft: ثبت شد
-OK SECO-PCT2G42.5-L50-00 <- ovh:Qwen3.5-397B-A17B (117s)
-style-soft: lead>35w/1num, text 20 nums
-style-soft: ثبت شد, lead>35w/1num, text 15 nums
-  ACC-PCT2G42.5-B-00 zai:glm-4.5-flash: 79s ValueError: 100 words / 2 paragraphs
-style-soft: text 11 nums
-OK GHCO-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (89s)
-style-soft: ثبت شد, lead>35w/1num, text 15 nums
-  FACO-PCT2G32.5-L50-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 9 nums
-OK FAFI-PCT2G42.5-L50-00 <- ovh:Qwen3.5-397B-A17B (105s)
-  KHCE-PCT2G32.5-L50-00 zai:glm-4.7-flash: 186s ValueError: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-style-soft: ثبت شد, text 17 nums
-OK ZCCO-PCT2G32.5-L50-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (350s)
-  KHCE-PCT2G32.5-L50-00 zai:glm-4.5-flash: 15s JSONDecodeError: Expecting value: line 4 column 11 (char 187)
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
+  ZCC-PCT2G42.5-L50-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  SHCO-PCT2G42.5-B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  MACC-PCT2G42.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped for the rest of the day
+  ZCC-PCT2G42.5-L50-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  MACC-PCT2G42.5-L50-00 llm7:minimax-m2.7: 4s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped for the rest of the day
+  ZCC-PCT2G42.5-L50-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  ZCCO-PCT2G32.5-B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  WCO-PCT1G42.5-L50-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  openrouter:apodex/apodex-1.1-mini:free: quota used up - skipped for the rest of the day
+  ZCC-PCT2G42.5-L50-00 openrouter:apodex/apodex-1.1-mini:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  MACC-PCT2G42.5-L50-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 15875 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":15875}}
+  TCHC-PCT2G42.5-L50-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  openrouter:dots-studio/dots-3-note-preview:free: quota used up - skipped for the rest of the day
+  ZCC-PCT2G42.5-L50-00 openrouter:dots-studio/dots-3-note-preview:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:liquid/lfm-2.5-2.6b:free: quota used up - skipped for the rest of the day
+  ZCC-PCT2G42.5-L50-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  TCHC-PCT2G42.5-L50-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  AIOC-SW10B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  KBCC-PCT2G42.5-L50-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  PTJP-PSGPPSG1161PPP-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  ZATC-PCT2G42.5-L50-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  CICE-PCT2G42.5-L50-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  CICE-PCT2G42.5-L50-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  WCO-PCT2G42.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d99e5458-a1ff-4647-
+  NEYC-PCT2G42.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d0cb370f-7850-48c6-
+  NAC-PCT1G42.5-B-00 cohere:command-a-reasoning-08-2025: 49s ValueError: HTTP 429: {"id":"76c9dcd9-3f8c-4d85-8e44-62efe263e189","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SAES-PCT1G42.5-B-00 cohere:command-a-03-2025: 49s ValueError: HTTP 429: {"id":"c184f91a-6c08-43d9-8d5a-0271dab3bf7f","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
 style-soft: lead>35w/1num
-OK NAC-PCT2G32.5-L50-00 <- ovh:Qwen3.5-397B-A17B (61s)
-  ESCO-PCT1G32.5-L50-00 zai:glm-4.7-flash: 51s ValueError: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  SHCO-PCT2G42.5-B-00 kilo:dots-studio/dots-3-note-preview:free: 184s TimeoutError: The read operation timed out
-  ESCO-PCT1G32.5-L50-00 zai:glm-4.5-flash: 57s ValueError: 118 words / 2 paragraphs
-style-soft: lead>35w/1num, text 11 nums
-OK BACC-PCT2G42.5-L50-00 <- ovh:Qwen3.5-397B-A17B (100s)
-  FACO-PCT2G42.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 10 nums
-OK BCCO-PCT1G32.5-L50-00 <- ovh:Qwen3.5-397B-A17B (119s)
-style-soft: lead>35w/1num, text 30 nums
-OK MPG-PSGPMP08L-00 <- ovh:Qwen3.5-397B-A17B (141s)
-style-soft: lead>35w/1num, text 17 nums
-OK ACCO-PCT2G42.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (249s)
-OK DCCO-PCT2G32.5-L50-00 <- ovh:Qwen3.5-397B-A17B (60s)
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-OK SHPC-TEAB-00 <- ovh:Qwen3.5-397B-A17B (99s)
-style-soft: ثبت شد, lead>35w/1num, text 24 nums
-OK GHCO-PCT2G42.5-L50-00 <- ovh:Qwen3.5-397B-A17B (60s)
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-  KBCC-PCT2G42.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 265s ValueError: markers: «نشان‌دهنده» در text
-style-soft: text 13 nums
-OK MACC-PCT1G52.5-L50-00 <- ovh:Qwen3.5-397B-A17B (110s)
-style-soft: ثبت شد, lead>35w/1num, text 16 nums
-OK ACCO-PCT1G42.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (56s)
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num
-OK SSH-PCT2G32.5-L50-00 <- ovh:Qwen3.5-397B-A17B (265s)
-style-soft: در حالی که, ثبت شد, lead>35w/1num, text 11 nums
-OK FICO-PCT2G42.5-L50-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (266s)
-style-soft: text 10 nums
-OK SKC-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (54s)
-style-soft: lead>35w/1num, text 11 nums
-OK WCO-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (43s)
-style-soft: text 9 nums
-OK SECO-PCT1G32.5-L50-00 <- ovh:Qwen3.5-397B-A17B (118s)
-  KBCC-PCT1G42.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 257s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 9 nums
-style-soft: text 17 nums
-OK SECO-PCT2G42.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (98s)
-style-soft: lead>35w/1num, text 9 nums
-OK BCCO-PCT2G42.5-L50-00 <- ovh:Qwen3.5-397B-A17B (209s)
-style-soft: text 10 nums
-OK GSCC-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (77s)
-style-soft: در حالی که, ثبت شد, امروز>2, text 18 nums
-style-soft: lead>35w/1num, text 14 nums
-OK NFCO-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (63s)
-style-soft: ثبت شد, text 16 nums
-  SCC-PCT2G32.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 225s ValueError: markers: «نشان‌دهنده» در text
-style-soft: text 11 nums
-OK PGOC-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (194s)
-style-soft: lead>35w/1num, text 11 nums
-OK HCC-PCT2G32.5-B-00 <- ovh:Qwen3.5-397B-A17B (78s)
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num
-OK ACCO-PCT2G42.5-L50-00 <- ovh:Qwen3.5-397B-A17B (92s)
-style-soft: lead>35w/1num, text 20 nums
-OK ACC-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (51s)
-  DCC-PCT2G42.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 451s TimeoutError: The read operation timed out
-style-soft: text 9 nums
-OK FACO-PCT2G32.5-L50-00 <- ovh:Qwen3.5-397B-A17B (87s)
-style-soft: در حالی که, lead>35w/1num, text 16 nums
-OK KHCE-PCT2G32.5-L50-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (107s)
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 14 nums
-  SHCO-PCT2G42.5-B-00 ovh:Qwen3.5-397B-A17B: 258s ValueError: markers: عدد بیرون از حقیقت‌ها: ۳۶۸۰
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-OK FACO-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (54s)
-style-soft: ثبت شد, در حالی که
-OK ESCO-PCT1G32.5-L50-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (287s)
-style-soft: lead>35w/1num, text 11 nums
-OK KBCC-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (54s)
-style-soft: ثبت شد, text 9 nums
-OK KBCC-PCT1G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (145s)
-style-soft: lead>35w/1num, text 9 nums
-OK SCC-PCT2G32.5-B-00 <- ovh:Qwen3.5-397B-A17B (66s)
-  SHCO-PCT2G42.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 324s TimeoutError: The read operation timed out
-style-soft: ثبت شد
-OK DCC-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (195s)
+OK CICE-PCT2G42.5-B-00 <- ovh:Qwen3.5-397B-A17B (62s)
