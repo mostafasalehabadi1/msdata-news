@@ -7,128 +7,6 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   SABD-INBPPBEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"3fde39c8-4f7b-45e8-91f7-e2d63e580892","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
   OAC-CLINKERT2EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"607ab86e-a330-48eb-bc01-8ccf41d59d1e","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
 style-soft: lead>35w/1num, text 9 nums
-  OC-PVCSUSP225L-000 gapgpt:gemma-3-27b-it: 61s ValueError: 119 words / 3 paragraphs
-OK JPPC-PPEP6540GJ-295 <- ovh:Qwen3.5-397B-A17B (103s)
-  MKL-TISSDLGR18-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"1c7e34ae-6fbc-40eb-ae67-d8f4a1f46c51","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  JAST-BSG017OO-00 zai:glm-4.7-flash: 41s ValueError: 85 words / 3 paragraphs
-  JAST-BSG017OO-00 zai:glm-4.5-flash: 32s JSONDecodeError: Expecting value: line 4 column 11 (char 184)
-  MKL-TISSDLGR18-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"9214cdf6-98f0-414b-85b5-525e54688a51","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-style-soft: lead>35w/1num, text 14 nums
-OK TFET-BSG017OO-00 <- requesty:nvidia/muse-glimmer-30b (270s)
-style-soft: ثبت شد, text 9 nums
-OK JPPC-PPHP515MPP-00 <- ovh:Qwen3.5-397B-A17B (63s)
-style-soft: text 9 nums
-OK AGIC-PPHP500KJ-00 <- ovh:Qwen3.5-397B-A17B (60s)
-  AIOC-BOSN150B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 11 nums
-  ATSC-BSG194X-00 ovh:gpt-oss-120b: 374s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
-  ATSC-BSG194X-00 ovh:Meta-Llama-3_3-70B-Instruct: 16s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"83c53502c0f3b600dea3440947966059"
-}
-  SRM-BSG017OO-00 kilo:kilo-auto/free: 227s TimeoutError: The read operation timed out
-OK SHPC-PPRP270GPP-00 <- ovh:Qwen3.5-397B-A17B (129s)
-style-soft: ثبت شد, lead>35w/1num, text 18 nums
-  MPC-PPEP548RPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 18 nums
-  ZAI-BSO1720X-00 requesty:mistral/leanstral-1-5: 270s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  ZAI-BSO1720X-00 requesty:novita/inclusionai/ling-3.0-tiny: 0s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  ZAI-BSO1720X-00 requesty:poolside/laguna-m.1: 0s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  ATSC-BSG194X-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-  ZAI-BSO1720X-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-style-soft: lead>35w/1num, text 19 nums
-OK ATSC-BSG194X-00 <- ovh:Mistral-Small-3.2-24B-Instruct-2506 (15s)
-style-soft: ثبت شد, در حالی که, lead>35w/1num, text 18 nums
-  MPC-PPRP340RP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 505s ValueError: markers: «نشان‌دهنده» در text | عدد بیرون از حقیقت‌ها: ۵۰
-OK JAST-BSG017OO-00 <- ovh:Qwen3.5-397B-A17B (138s)
-style-soft: text 10 nums
-OK MPC-PPEP548RPP-00 <- ovh:Qwen3.5-397B-A17B (56s)
-style-soft: ثبت شد, lead>35w/1num, text 18 nums
-  AIOC-BOSN150B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 87s ValueError: bad response: '{"id":"gen-1791825884-8leEdckqZ5aEUIGZ32N3","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-style-soft: text 27 nums
-  SRM-BSG017OO-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 275s ValueError: markers: عدد بیرون از حقیقت‌ها: 1255 | کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-  ZAI-BSO1720X-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-style-soft: ثبت شد, text 20 nums
-OK SRM-BSG017OO-00 <- kilo:poolside/laguna-s-2.1:free (56s)
-  IORC-LUSUGEB-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-style-soft: lead>35w/1num
-  IORC-LUSUGEB-00 requesty:novita/inclusionai/ling-3.0-tiny: 45s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  IORC-LUSUGEB-00 requesty:poolside/laguna-m.1: 0s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  IORC-LUSUGEB-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-style-soft: ثبت شد, lead>35w/1num, text 16 nums
-OK ZNT-BSG017OO-00 <- ovh:gpt-oss-120b (292s)
-style-soft: lead>35w/1num, text 10 nums
-  TIOC-BOSN150B-00 kilo:inclusionai/ling-3.1-flash: 197s TimeoutError: The read operation timed out
-style-soft: text 12 nums
-OK MPC-PPRP340RP-00 <- ovh:Qwen3.5-397B-A17B (306s)
-style-soft: lead>35w/1num, text 11 nums
-  IORC-LUSUGEB-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-  TIOC-BOSN150B-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, text 9 nums
-OK AIOC-BOSN150B-00 <- ovh:Qwen3.5-397B-A17B (152s)
-style-soft: text 10 nums
-OK AGIC-PPHP550JJ-00 <- ovh:Qwen3.5-397B-A17B (74s)
-  PKC-POYSD485D96FAAWP-00 requesty:mistral/leanstral-1-5: 210s ValueError: 167 words / 1 paragraphs
-  PKC-POYSD485D96FAAWP-00 requesty:novita/inclusionai/ling-3.0-tiny: 0s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  PKC-POYSD485D96FAAWP-00 requesty:poolside/laguna-m.1: 0s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  PKC-POYSD485D96FAAWP-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  PBSC-BSO1720X-00 ovh:gpt-oss-120b: 421s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 20 nums
-style-soft: text 10 nums
-OK AGIC-PPHP500NJ-00 <- ovh:Qwen3.5-397B-A17B (134s)
-  PKC-POYSD485D96FAAWP-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-style-soft: text 10 nums
-OK PBSC-BSO1720X-00 <- ovh:Qwen3.6-27B (143s)
-style-soft: lead>35w/1num
-  TIOC-BOSN150B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 310s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 24 nums
-  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for the rest of the day
-  TIOC-BOSN150B-00 kilo:poolside/laguna-s-2.1:free: 21s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
-  kilo:thinkingmachines/inkling-small:free: quota used up - skipped for the rest of the day
-  TIOC-BOSN150B-00 kilo:thinkingmachines/inkling-small:free: 1s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: limit_rpd/thinkingmachines/inkling-small-20260730/e27a9a6d-1451-4be4-876e-292ffcbf1e71. Daily limit reached for thinkingmachines/inkling-small:free via Thinking Machine
-OK SHIN-PVCSUSSE-950J-000 <- ovh:Qwen3.5-397B-A17B (114s)
-style-soft: ثبت شد, text 9 nums
-OK TIOC-BOSN500B-00 <- ovh:Qwen3.5-397B-A17B (58s)
-style-soft: lead>35w/1num, text 12 nums
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num
-  TIOC-BOSN150B-00 kilo:cohere/north-mini-code:free: 123s ValueError: markers: «نشان‌دهنده» در text | کد کالا یا حروف لاتین وسط متن
-style-soft: text 10 nums
-OK HBK-POYSD485D96FAAWP-00 <- ovh:Qwen3.5-397B-A17B (128s)
-style-soft: text 10 nums
-  ZAJT-BSG194X-00 ovh:gpt-oss-120b: 326s ValueError: markers: «تاریخی» در text | «نشان‌دهنده» در text | کد کالا یا حروف لاتین وسط متن
-style-soft: text 9 nums
-  SHPC-PPHP552RPJ-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
-OK SHPC-PPRP210GPP-00 <- ovh:Qwen3.5-397B-A17B (159s)
-  ZAJT-BSG194X-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-style-soft: text 9 nums
-OK SHPC-PPRP210GPJ-00 <- ovh:Qwen3.5-397B-A17B (118s)
-  SHPC-PPHP552RPJ-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 35 nums
-style-soft: lead>35w/1num, text 29 nums
-  ZAJT-BSG194X-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 34s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  ZAJT-BSG194X-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s ValueError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num, text 15 nums
-OK MKL-TISSDLGR18-00 <- ovh:gpt-oss-120b (113s)
-OK OC-PVCSUSP225L-000 <- ovh:Qwen3.5-397B-A17B (175s)
-style-soft: text 10 nums
-  SHPC-PPHP552RPJ-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 315s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 15 nums
-style-soft: text 11 nums
-OK IORC-LUSUGEB-00 <- ovh:Qwen3.5-397B-A17B (196s)
   SZCE-PCT2G32.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 350s TimeoutError: The read operation timed out
 style-soft: ثبت شد, ثبت شد, text 9 nums
 style-soft: lead>35w/1num, text 13 nums
@@ -165,3 +43,9 @@ OK OAC-CLINKERT2EX-00 <- ovh:Qwen3.5-397B-A17B (187s)
   ZAI-BSO1720X-00 ovh:gpt-oss-120b: 297s ValueError: 66 words / 2 paragraphs
   SHPC-PPHP552RPJ-00 kilo:cohere/north-mini-code:free: 123s ValueError: 112 words / 1 paragraphs
 OK PKC-POYSD485D96FAAWP-00 <- ovh:Qwen3.5-397B-A17B (101s)
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 10 nums
+  CJOV-PCT1G42.5-JEX-00 zai:glm-4.5-flash: 184s ValueError: 105 words / 2 paragraphs
+style-soft: lead>35w/1num, text 13 nums
+style-soft: lead>35w/1num, text 12 nums
+OK SECO-PCT2G42.5-L50EX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (301s)
