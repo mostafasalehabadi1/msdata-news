@@ -176,12 +176,22 @@ def write(day, f):
     w.RULES_GEMMA = w.RULES.replace(w.style_for("ه"), w.compact_for("ه"))
     provs = w.providers()
     provs.sort(key=lambda p: RANK.index(p[0]) if p[0] in RANK else len(RANK))
+    if "--model" in sys.argv:  # owner 2026-10-12: the day's news by one named model
+        provs = [p for p in provs if p[0] == sys.argv[sys.argv.index("--model") + 1]]
     for model, call in provs:
         if model in w.exhausted():
             continue
         try:
             raw = w.retry(call, prompt)
-            for attempt in range(3):  # style.md section 6: hits go back to the model, up to 2 rewrites
+            if model in w.PAID and "--model" in sys.argv:  # owner 2026-10-12: a named paid model is repaired sentence by sentence (fx_repair.py)
+                import fx_repair
+                from fetch import jalali_to_gregorian
+                import datetime as _dt
+                jy, jm, jd = (int(x) for x in day.split("/"))
+                week = ["دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه", "یکشنبه"][_dt.date.fromisoformat(str(jalali_to_gregorian(jy, jm, jd))).weekday()]
+                fa_day = str(jd).translate(str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")) + " " + markers.MONTHS.split("|")[jm - 1]
+                d = fx_repair.repair(call, w.loads_lenient(raw[raw.index("{"):raw.rindex("}") + 1]), check, json.dumps(f, ensure_ascii=False), week, fa_day, BANNED)
+            for attempt in range(0 if model in w.PAID and "--model" in sys.argv else 3):  # style.md section 6: hits go back to the model, up to 2 rewrites
                 try:
                     d = check(json.loads(raw[raw.index("{"):raw.rindex("}") + 1]))
                     break
@@ -190,8 +200,8 @@ def write(day, f):
                         raise
                     raw = w.retry(call, prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایرادها: {e}. همان خبر را با رفع همه‌ی این ایرادها "
                                   "بازنویسی کن و فقط JSON برگردان.")
-            return {"date": now.strftime("%Y-%m-%d"), "date_fa": day, "series": "fx-daily", "key": day, "tag": TAG, "kind": "news",
-                    **d, "sources": [SRC_FREE, SRC_ICE, SRC_USDT], "author": "مصطفی صالح‌آبادی", "author_title": "کارشناس اقتصادی",
+            return {"date": sys.argv[sys.argv.index("--date") + 1] if "--date" in sys.argv else now.strftime("%Y-%m-%d"), "date_fa": day, "series": "fx-daily", "key": day, "tag": TAG, "kind": "news",
+                    **d, "sources": [SRC_FREE, SRC_ICE, SRC_USDT], "author": re.sub(r":free$", "", model.split(":", 1)[1].split("/")[-1]), "author_title": "مدل هوش مصنوعی",
                     "model": model, "published_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
         except Exception as e:  # noqa: BLE001 - next model
             print(f"  fx {model}: {type(e).__name__}: {str(e)[:1500]}")
@@ -202,7 +212,8 @@ def write(day, f):
 
 def main():
     day, f = facts()
-    path = os.path.join(OUT, datetime.now(TEHRAN).strftime("%Y-%m-%d") + ".json")  # one news per day (Tehran date)
+    # --date YYYY-MM-DD: a news written after midnight still belongs to its own day (owner 2026-10-12)
+    path = os.path.join(OUT, (sys.argv[sys.argv.index("--date") + 1] if "--date" in sys.argv else datetime.now(TEHRAN).strftime("%Y-%m-%d")) + ".json")  # one news per day (Tehran date)
     print(f"fx {day}: {len(f['بازار آزاد ارز']['ارزها'])} free-market currencies, ice={'حواله‌ی توافقی' in f}, usdt={'تتر' in f}")
     if "--dry" in sys.argv:
         print(json.dumps(f, ensure_ascii=False, indent=1))
