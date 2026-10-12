@@ -233,8 +233,8 @@ def providers():
         if os.environ.get(env):
             for m in models:
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
-    if os.environ.get("GAPGPT_API_KEY"):  # GapGPT gateway (paid, owner 2026-10-12): gemma wrote 2 of 3 test news in ~12s, deepseek thinks long and wrote 0 of 3
-        for m in ("gemma-3-27b-it", "deepseek-v4-flash"):
+    if os.environ.get("GAPGPT_API_KEY"):  # GapGPT gateway (paid, owner 2026-10-12): gemma wrote 2 of 3 test news in ~12s; deepseek-v4-flash wrote 0 of 3 and is off (owner: gemma only for now)
+        for m in ("gemma-3-27b-it",):
             out.append(("gapgpt:" + m, lambda p, m=m: post("https://api.gapgpt.app/v1/chat/completions", os.environ["GAPGPT_API_KEY"], m, p)))
     if os.environ.get("ARAD_API_KEY"):  # Arad AI gateway (paid, owner 2026-10-12); the key is tied to DeepSeek V4 Flash 0423
         out.append(("arad:deepseek-v4-flash-0423", lambda p: post("https://llm.aradai.ir/v1/chat/completions", os.environ["ARAD_API_KEY"],
