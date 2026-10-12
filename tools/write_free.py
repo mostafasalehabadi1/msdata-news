@@ -143,9 +143,9 @@ def pattern_line():
             " پاراگراف آخر یک واقعیت باشد، نه پیش‌بینی؛ و دست‌کم یکی از این‌ها در متن باشد: «اما»، یک جمله‌ی زیر هشت کلمه، یا پاراگراف تک‌جمله‌ای.")
 
 
-def post(url, key, model, prompt, extra=None):
+def post(url, key, model, prompt, extra=None, system=None):
     body = {"model": model, "temperature": 0.7,
-            "messages": [{"role": "system", "content": RULES_GEMMA if RULES_GEMMA and model.startswith("gemma") else RULES},
+            "messages": [{"role": "system", "content": system or (RULES_GEMMA if RULES_GEMMA and model.startswith("gemma") else RULES)},
                          {"role": "user", "content": prompt}]}
     if "z.ai" in url:
         body["thinking"] = {"type": "disabled"}  # GLM thinks by default: slow (timeouts) and it spends the answer budget on reasoning
@@ -240,7 +240,7 @@ def providers():
     if os.environ.get("GAPGPT_API_KEY"):  # GapGPT gateway (paid, owner 2026-10-12): gemma wrote 2 of 3 test news in ~12s; deepseek-v4-flash wrote 0 of 3 and is off (owner: gemma only for now)
         # deepseek is wired but off: set DEEPSEEK_ON = True below to let it write
         for m in ("gemma-3-27b-it",) + (("deepseek-v4-flash",) if DEEPSEEK_ON else ()):
-            out.append(("gapgpt:" + m, lambda p, m=m: post("https://api.gapgpt.app/v1/chat/completions", os.environ["GAPGPT_API_KEY"], m, p)))
+            out.append(("gapgpt:" + m, lambda p, s=None, m=m: post("https://api.gapgpt.app/v1/chat/completions", os.environ["GAPGPT_API_KEY"], m, p, system=s)))
     if os.environ.get("ARAD_API_KEY"):  # Arad AI gateway (paid, owner 2026-10-12); the key is tied to DeepSeek V4 Flash 0423
         out.append(("arad:deepseek-v4-flash-0423", lambda p: post("https://llm.aradai.ir/v1/chat/completions", os.environ["ARAD_API_KEY"],
                                                                   "arad/model-1624c3b5a0d4c57211c492845a9f7bb1", p)))
@@ -464,6 +464,144 @@ def parse(raw, facts="", tables=None):
     return d
 
 
+# ---- paid model, staged writing (owner 2026-10-12) ----
+# A small model loses half of a long rule sheet. So it never gets all rules at once: it writes a draft with the general
+# rules, then corrects the same draft twice (accuracy, then wording), and every result still passes parse() like any other
+# news. A rejected text goes back with its errors; after 2 failed corrections a fresh draft starts. Up to PAID_TRIES calls.
+PAID_TRIES = 20
+JSON_KEYS = ("فقط یک JSON با کلیدهای title, slug, subtitle, lead, text, table, key_points برگردان و هیچ متن دیگری ننویس. "
+             "slug همان تیتر با خط تیره به‌جای فاصله است. table فقط شناسه‌ی یکی از جدول‌های پیشنهادی است (مثلاً \"T2\"). ")
+STAGE1 = ("تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده و روان بنویس. "
+          "کار تو فقط نگارش است: خبری‌ترین ۴ تا ۷ حقیقت را انتخاب کن و هیچ عدد، درصد یا مقایسه‌ای خودت نساز.\n"
+          "- title: حدود ۱۰ کلمه با نام کالا و تولیدکننده و فقط یک عدد.\n"
+          "- subtitle: یک جمله با نکته‌ای غیر از تیتر.\n"
+          "- lead: یک جمله‌ی ۲۰ تا ۳۰ کلمه‌ای با حداکثر یک عدد که کل خبر را می‌گوید.\n"
+          "- text: ۱۵۰ تا ۱۹۰ کلمه در دقیقاً ۳ پاراگراف. بین پاراگراف‌ها یک خط خالی بگذار (در JSON یعنی \\n\\n). "
+          "هر پاراگراف ۲ تا ۴ جمله‌ی کوتاه. جمله‌ی اول text با lead فرق داشته باشد.\n"
+          "- key_points: آرایه‌ی دقیقاً ۳ جمله‌ی کوتاه (هر کدام کمتر از ۱۵ کلمه) با عددهای همین خبر.\n" + JSON_KEYS)
+STAGE2 = ("تو ویراستار دقت هستی. یک پیش‌نویس خبر و «حقیقت‌ها»ی آن را می‌گیری. متن را نگه دار و فقط این خطاها را درست کن:\n"
+          "۱) هر عدد متن باید عیناً در حقیقت‌ها یا جدول‌ها باشد. عددی که آن‌جا نیست، عدد صفر و هر عددی که حساب شده را بردار. "
+          "ارزش معامله را فقط از حقیقت‌ها بردار. هر عدد فقط یک بار بیاید و در text بیش از ۸ عدد نباشد.\n"
+          "۲) همه‌ی رقم‌ها فارسی و اعشار با «٫» (۷٫۲ نه 7.2).\n"
+          "۳) «امروز» و «دیروز» ننویس؛ روز هفته و تاریخ را از حقیقت اول بنویس. در key_points هم همین.\n"
+          "۴) هیچ حرف لاتین، کد کالا یا نام گرید لاتین در title، lead و text نباشد؛ نام فارسی کالا کافی است.\n"
+          "۵) نام تالار فقط همان باشد که در حقیقت اول آمده؛ اگر مطمئن نیستی نام تالار را ننویس.\n"
+          "۶) علت، پیش‌بینی و حال بازار که در حقیقت‌ها نیست حذف شود.\n"
+          "۷) text همچنان ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها بماند؛ اگر کوتاه شد از حقیقت‌های دیگر جمله اضافه کن.\n"
+          + JSON_KEYS)
+STAGE3 = ("تو ویراستار نثر هستی. یک خبر را می‌گیری. عددها، نام‌ها و تاریخ‌ها را دست نزن و فقط نثر را درست کن:\n"
+          "۱) این عبارت‌ها ممنوع است و باید با فعل ساده (فروخت، خرید، رسید، بود، است) عوض شود: «به گزارش»، «نشان‌دهنده»، «نشان می‌دهد»، "
+          "«حاکی از»، «بیانگر»، «این در حالی است»، «در این میان»، «شایان ذکر است»، «به شمار می‌رود»، «محسوب می‌شود»، «رقم خورد»، "
+          "«رقم زد»، «بالغ شد»، «به ثبت رسید»، «به خود اختصاص داد»، «در مجموع»، «تاریخی»، «انتظار می‌رود»، «احتمالاً»، «شاید».\n"
+          "۲) جمله با عدد شروع نشود و فعل آخر جمله بیاید. جمله‌ها کوتاه (۱۵ تا ۲۰ کلمه).\n"
+          "۳) نام کالا و شرکت با واژه‌ی «شرکت» جدا شود. «هیچ تنی» ننویس؛ بنویس «تمام عرضه به فروش رفت».\n"
+          "۴) واژه‌ی اصلی «قیمت» است، نه «نرخ». واژه‌ی «نماد» ننویس. جمله‌ی سؤالی ننویس.\n"
+          "۵) دقیقاً یک بار «ام‌اس‌دیتا» در وسط یا آخر text بیاید (مثل «طبق داده‌های ام‌اس‌دیتا»)، نه در تیتر، لید و جمله‌ی اول.\n"
+          "۶) lead عیناً در text تکرار نشود.\n"
+          "۷) text همچنان ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها بماند.\n" + JSON_KEYS)
+STAGE_FIX = ("تو ویراستار هستی. یک خبر و فهرست ایرادهایش را می‌گیری. فقط همان ایرادها را رفع کن و بقیه‌ی متن را نگه دار. "
+             "عددها فقط از حقیقت‌ها. text باید ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها باشد. " + JSON_KEYS)
+
+
+LATIN_CODE = re.compile(r"[A-Za-z][A-Za-z0-9./+-]*")
+DOT = re.compile(r"(?<=[0-9۰-۹])[.](?=[0-9۰-۹])")
+STAGE_SENT = ("تو ویراستار هستی. یک جمله از یک خبر و ایراد آن را می‌گیری. همان جمله را با همان معنا و همان عددها دوباره بنویس تا ایراد رفع شود. "
+              "فعل ساده به کار ببر (فروخت، خرید، رسید، بود، است). فقط خودِ جمله‌ی تازه را برگردان؛ بدون توضیح، بدون گیومه و بدون JSON.")
+
+
+def staged(name, call, prompt, facts, tables, market_rules=""):
+    """the paid model's own path: draft -> accuracy -> wording -> parse(); up to PAID_TRIES model calls for one news.
+    What a small model keeps getting wrong is repaired in small pieces: Latin product codes never reach it, a sentence with
+    a number that is not in the facts is cut by the code, and a sentence with a banned phrase is rewritten alone."""
+    calls, err = 0, None
+    ban = re.compile(BANNED.pattern + "|امروز|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد", re.I)  # stricter for this model (content agent 2026-10-12)
+    day = facts.splitlines()[0] if facts else ""
+    fa_digits = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
+    # Latin grades and codes (HP510L, S65 ...) are taken out of what the model reads, so it cannot copy them into the text
+    src = LATIN_CODE.sub(lambda m: m.group(0) if re.fullmatch(r"[TF]\d+|title|columns|rows", m.group(0)) else "", prompt + ("\n\nقواعد این بازار:\n" + market_rules if market_rules else ""))
+
+    def ask(system, user):
+        nonlocal calls
+        calls += 1
+        try:
+            raw = retry(lambda p: call(p, system), user)
+        except QuotaError:
+            raise
+        except ValueError as e:  # a gateway hiccup (404 no channel, 5xx, timeout) costs one call, not the whole news
+            note(f"  staged {name}: call {calls} failed: {str(e)[:120]}")
+            time.sleep(20)
+            return ""
+        return raw if isinstance(raw, str) else ""
+
+    def repair(raw, problem):
+        """sentence-level repair of the two errors the model repeats; returns the new raw text or None when it does not apply"""
+        m = re.search(r"\{.*\}", raw, re.S)
+        d = loads_lenient(m.group(0)) if m else None
+        if not isinstance(d, dict) or not all(isinstance(d.get(k), str) for k in ("title", "lead", "text")):
+            return None
+        changed = False
+        bad_nums = re.search(r"عدد بیرون از حقیقت‌ها: ([^|]*)", problem)
+        nums = [n.strip() for n in bad_nums.group(1).split("،")] if bad_nums else []
+        paras = []
+        for para in d["text"].split("\n\n"):
+            keep = []
+            for s in re.split(r"(?<=[.!؟])\s+", para.strip()):
+                if any(n and n in NUM.findall(s) for n in nums):
+                    changed = True  # a sentence with an invented number is cut, never «corrected»
+                    continue
+                hit = ban.search(s)
+                if hit and calls < PAID_TRIES:
+                    new = ask(STAGE_SENT, f"جمله: {s}\n\nایراد: عبارت «{hit.group(0)}» ممنوع است؛ جمله را بدون آن بنویس. اگر تاریخ لازم شد: {day}").strip().strip("«»\"")
+                    if new and not ban.search(new) and set(NUM.findall(new)) <= set(NUM.findall(s) + NUM.findall(day)) and "\n" not in new:
+                        s, changed = new, True
+                keep.append(s)
+            if keep:
+                paras.append(" ".join(keep))
+        d["text"] = "\n\n".join(paras)
+        for k in ("title", "subtitle", "lead"):
+            hit = ban.search(d.get(k) or "")
+            if hit and calls < PAID_TRIES:
+                new = ask(STAGE_SENT, f"جمله: {d[k]}\n\nایراد: عبارت «{hit.group(0)}» ممنوع است؛ جمله را بدون آن بنویس. اگر تاریخ لازم شد: {day}").strip().strip("«»\"")
+                if new and not ban.search(new) and set(NUM.findall(new)) <= set(NUM.findall(d[k]) + NUM.findall(day)) and "\n" not in new:
+                    d[k], changed = new, True
+        return json.dumps(d, ensure_ascii=False) if changed else None
+
+    while calls < PAID_TRIES:
+        raw = ask(STAGE1, src + model_hint(name))
+        if raw and calls < PAID_TRIES:
+            raw = ask(STAGE2, src + "\n\nپیش‌نویس:\n" + raw) or raw
+        if raw and calls < PAID_TRIES:
+            raw = ask(STAGE3, "خبر:\n" + raw + "\n\nشناسه‌ی جدول‌های مجاز: " + ", ".join(tables or {})) or raw
+        for fix in range(4):  # the check, then up to 3 corrections of this draft
+            try:
+                d = parse(raw, facts, tables)
+                extra = [f"«{x.group(0)}» در {k}" for k in ("title", "subtitle", "lead", "text") for x in ban.finditer(d[k])]
+                if extra:
+                    raise ValueError("markers: " + " | ".join(extra))
+                for k in ("title", "subtitle", "lead", "text"):  # Persian digits and decimal mark are fixed here, not asked for
+                    d[k] = DOT.sub("٫", d[k]).translate(fa_digits)
+                if d.get("key_points"):
+                    d["key_points"] = [DOT.sub("٫", x).translate(fa_digits) for x in d["key_points"]]
+                note(f"  staged {name}: accepted after {calls} calls")
+                return d
+            except ValueError as e:
+                err = str(e)
+            if calls >= PAID_TRIES or fix == 3 or not raw:
+                break
+            fixed = repair(raw, err) if re.search(r"«[^»]+» در |عدد بیرون از حقیقت‌ها", err) else None
+            if fixed:
+                raw = fixed
+                continue
+            short = re.match(r"(\d+) words", err)
+            if short and int(short.group(1)) < 140:
+                err += f" (متن {short.group(1)} کلمه است؛ دست‌کم {150 - int(short.group(1))} کلمه‌ی دیگر از حقیقت‌ها اضافه کن و ۳ پاراگراف با \\n\\n بساز)"
+            elif short and int(short.group(1)) > 220:
+                err += f" (متن {short.group(1)} کلمه است؛ کم‌اهمیت‌ترین جمله‌ها را حذف کن تا به ۱۸۰ کلمه برسد)"
+            raw = ask(STAGE_FIX, src + "\n\nخبر:\n" + raw + f"\n\nایرادها: {err}") or raw
+        note(f"  staged {name}: draft dropped after {calls} calls: {str(err)[:160]}")
+    raise ValueError(f"staged: {calls} calls, last: {err}")
+
+
 def save_scenarios(items, subject, date_fa):
     """style.md 2-15: every scenario is also kept as one JSON line in data/scenarios.jsonl for the monthly judging."""
     if items:
@@ -593,8 +731,9 @@ def main():
                 continue
             t0 = time.time()
             try:
-                raw = retry(call, prompt + model_hint(name))
-                for attempt in range(3):  # section 6 of style.md: every hit goes back to the model, up to 2 rewrites
+                d = staged(name, call, prompt, facts, tables, STYLE_ENERGY if energy else STYLE_KISH if kish else "") if name in PAID else None
+                raw = retry(call, prompt + model_hint(name)) if d is None else ""
+                for attempt in range(3 if d is None else 0):  # section 6 of style.md: every hit goes back to the model, up to 2 rewrites
                     try:
                         d = parse(raw, facts, tables)
                         break
@@ -641,7 +780,7 @@ def main():
 
     def worker(gname, models, lvl):
         fails = 0
-        while fails < 3:  # a provider that fails 3 symbols in a row (quota / broken) stops
+        while fails < 3 or gname.endswith("/paid"):  # a provider that fails 3 symbols in a row (quota / broken) stops; the paid one never does (owner 2026-10-12)
             with lock:
                 live = [m for m in models if m[0] not in exhausted()]
                 pick = [r for r in todo if gname not in tried[r["symbol"]] and tier.get(r["symbol"], 1) == lvl]
