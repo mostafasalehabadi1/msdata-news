@@ -627,7 +627,7 @@ def main():
                     stats["ok"] += 1
                     note(f"OK {sym} <- {name} ({time.time() - t0:.0f}s)")
                     if os.environ.get("PUSH_EACH"):
-                        subprocess.run('git add -A news-test queue data/importance.json data/scenarios.jsonl && git commit -qm "queue: progress" && git pull -q --rebase --autostash && git push -q',
+                        subprocess.run('git add -A news-test queue data/importance.json data/scenarios.jsonl && git commit -qm "queue: progress" && (git pull -q --rebase --autostash || git rebase --abort) && git push -q',
                                        shell=True, cwd=ROOT, check=False, capture_output=True)
                 return True
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model of this provider

@@ -58,10 +58,10 @@ jobs:
             # 0 = backlog mode: packages of 40 (parallel, one worker per provider) until every traded symbol of the latest day has a news (max ~5h)
             end=$(( $(date +%s) + 330*60 ))
             while [ "$(date +%s)" -lt "$end" ]; do
-              git pull -q --rebase --autostash || true
+              git pull -q --rebase --autostash || git rebase --abort || true  # a failed rebase must not leave the checkout detached (kish 2026-10-12: 2h of news never pushed)
               out=$(python tools/write_free.py --limit 40 --out queue | tee -a pilot-log.txt | tail -1)
               # the log of each package is pushed so a stuck backlog can be read without the Actions UI (backend 2026-10-10: 55 symbols unwritten for hours, no visible reason)
-              cp pilot-log.txt news-test/kala-log.txt && git add news-test/kala-log.txt && { git diff --cached --quiet || git commit -qm "kala: writer log"; } && { git pull -q --rebase --autostash && git push -q || true; }
+              cp pilot-log.txt news-test/kala-log.txt && git add news-test/kala-log.txt && { git diff --cached --quiet || git commit -qm "kala: writer log"; } && { git pull -q --rebase --autostash && git push -q || git rebase --abort || true; }
               case "$out" in *"/0;"*) break ;; esac          # nothing left to write
               case "$out" in "written 0/"*) sleep 900 ;; *) sleep 60 ;; esac  # all models busy -> wait 15 min
             done
@@ -73,4 +73,4 @@ jobs:
           mkdir -p news-test && mv pilot-log.txt news-test/
           git add queue news-test data/importance.json data/scenarios.jsonl
           git diff --cached --quiet || git commit -m "pilot: free-model news"
-          git pull --rebase -q && git push
+          git pull --rebase -q || { git rebase --abort; git pull --rebase -q -X theirs; }; git push
