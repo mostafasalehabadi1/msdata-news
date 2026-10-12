@@ -67,7 +67,7 @@ def main():
     apply_fx_edits()
 
 
-EDITABLE = ("title", "subtitle", "lead", "text", "slug", "table")
+EDITABLE = ("title", "subtitle", "lead", "text", "slug", "table", "key_points")  # key_points: «در یک نگاه» box (owner 1405-07-21)
 
 
 def release_kish(market="kish"):

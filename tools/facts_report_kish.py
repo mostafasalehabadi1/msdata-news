@@ -54,7 +54,7 @@ def build(items, series, prev_day, date_fa, date):
     traded = [r for r in rows if (r.get("trade_volume") or 0) > 0]
     total = sum(val(r) for r in rows)
     F = [f"روز: {WEEKDAYS[dt.date.fromisoformat(date).weekday()]} {fa_date(date_fa)}.",
-         f"در بازار صادراتی بورس کالا {fa_int(len(items))} کالا از {fa_int(len({r.get('producer') for r in items}))} عرضه‌کننده روی تابلو رفت "
+         f"در تالار صادراتی بورس کالا {fa_int(len(items))} کالا از {fa_int(len({r.get('producer') for r in items}))} عرضه‌کننده روی تابلو رفت "
          f"({fa_int(len(rows))} دلاری و {fa_int(len(rial))} ریال صادراتی).",
          f"ارزش کل معامله‌های دلاری {usd(total)} بود."]
     if prev_day and prev_day.get("total_value_usd"):
@@ -132,7 +132,7 @@ def build(items, series, prev_day, date_fa, date):
     T = {"T1": {"title": "فروش دلاری بر اساس مقصد", "columns": ["مقصد", "کالا", "ارزش معامله", "سهم"],
                 "rows": [[c, fa_int(len(rs)), usd(sum(val(r) for r in rs)), fa_num(sum(val(r) for r in rs) / total * 100) + "٪" if total else "—"]
                          for c, rs in dest_rows]},
-         "T2": {"title": "بزرگ‌ترین معامله‌های بازار صادراتی", "columns": ["کالا", "تولیدکننده", "ارزش معامله", "رقابت از پایه"],
+         "T2": {"title": "بزرگ‌ترین معامله‌های تالار صادراتی", "columns": ["کالا", "تولیدکننده", "ارزش معامله", "رقابت از پایه"],
                 "rows": [[clean_name(r.get("goods_name")), r.get("producer"), usd(val(r)), sgn(comp(r))] for r in big[:8]]}}
     if len(hot) >= 3:
         T["T3"] = {"title": "بیشترین رقابت خریداران", "columns": ["کالا", "تولیدکننده", "قیمت بالاتر از پایه", "تقاضا به عرضه"],
@@ -142,6 +142,6 @@ def build(items, series, prev_day, date_fa, date):
         T["T4"] = {"title": "بیشترین تغییر قیمت نسبت به آخرین معامله", "columns": ["کالا", "تولیدکننده", "تغییر قیمت"],
                    "rows": [[clean_name(r.get("goods_name")), r.get("producer"), sgn(c)] for r, c in (up[:4] + down[:4])]}
     if len(gtop) >= 3:
-        T["T5"] = {"title": "کالاهای پرمعامله‌ی بازار صادراتی", "columns": ["کالا", "تعداد معامله", "ارزش معامله"],
+        T["T5"] = {"title": "کالاهای پرمعامله‌ی تالار صادراتی", "columns": ["کالا", "تعداد معامله", "ارزش معامله"],
                    "rows": [[g, fa_int(len(rs)), usd(sum(val(r) for r in rs))] for g, rs in gtop[:8]]}
     return facts, symmap, T

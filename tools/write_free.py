@@ -70,19 +70,22 @@ RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (sho
 STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read()
 # symbol news (owner 2026-10-05): the old template without clichés; every fact and table is built in code (facts_kala.py)
 STABLE_MIN = 20  # Kish: the hall is «closed» once no row changed for 20 minutes (a session lasts ~12 min, e.g. 11:30-11:42) (owner 1405-07-15: write only after all trades)
+# «در یک نگاه» box of the news page (designer + content agent, owner 1405-07-21): optional, never a reason to reject a news
+KEY_POINTS = ("key_points آرایه‌ای از دقیقاً ۳ جمله‌ی کوتاه است (هر کدام کمتر از ۱۵ کلمه) که مهم‌ترین نکته‌های همین خبر را "
+              "فقط با عددهای خود خبر می‌گوید. ")
 MIN_WORDS = [120]  # owner 1405-07-15: 120 words minimum for all physical and Kish news (same as validate.py)
 RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
-         "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
+         "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, key_points و هیچ متن دیگری. " + KEY_POINTS +
          "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
 STYLE_KISH = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kish.md"), encoding="utf-8").read()
-RULES_KISH = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک معامله‌ی بازار صادراتی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
+RULES_KISH = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک معامله‌ی تالار صادراتی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
               "\n\n" + STYLE_KISH +
-              "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
+              "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, key_points و هیچ متن دیگری. " + KEY_POINTS +
               "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
 STYLE_ENERGY = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_energy.md"), encoding="utf-8").read()
 RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و برای یک معامله‌ی بورس انرژی ایران یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
                 "\n\n" + STYLE_ENERGY +
-                "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table و هیچ متن دیگری. "
+                "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, key_points و هیچ متن دیگری. " + KEY_POINTS +
                 "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
 
 
@@ -439,6 +442,13 @@ def parse(raw, facts="", tables=None):
     if probs:
         raise ValueError("markers: " + " | ".join(probs))
     d["slug"] = SLUG_BAD.sub("-", d["slug"].strip())
+    # key_points: kept only when it is 3 clean short sentences with numbers of this news; otherwise dropped, the news stays
+    kp = d.pop("key_points", None)
+    if isinstance(kp, list) and len(kp) == 3 and all(isinstance(x, str) and 0 < len(x.split()) < 15 for x in kp):
+        kp = [clean(x.strip()) for x in kp]
+        body = d["title"] + " " + d["subtitle"] + " " + d["lead"] + " " + d["text"]
+        if not any(BANNED.search(x) or FORBIDDEN.search(x) or re.search(r"[A-Za-z]", x) for x in kp) and all(n in body for x in kp for n in NUM.findall(x)):
+            d["key_points"] = kp
     return d
 
 

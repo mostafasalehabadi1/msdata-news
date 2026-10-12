@@ -176,8 +176,8 @@ def main():
         ctx = news(rows)
         fx, symmap, tables = facts_report_kish.build(items, h.get("series", {}), h["days"].get(prev) if prev else None, date_fa, date)
         global REPORT_RULES
-        REPORT_RULES = REPORT_RULES.replace("گزارش پایان روز بازار فیزیکی بورس کالا", "گزارش پایان روز بازار صادراتی بورس کالا") + \
-            "\n\nقواعد بازار صادراتی:\n" + w.STYLE_KISH
+        REPORT_RULES = REPORT_RULES.replace("گزارش پایان روز بازار فیزیکی بورس کالا", "گزارش پایان روز تالار صادراتی بورس کالا") + \
+            "\n\nقواعد تالار صادراتی:\n" + w.STYLE_KISH
     else:
         subprocess.run([sys.executable, os.path.join(ROOT, "tools", "fetch.py")], check=False)  # the day's final numbers
         latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
