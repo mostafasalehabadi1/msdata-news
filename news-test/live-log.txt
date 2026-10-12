@@ -1,2 +1,39 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+2 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  SZCE-PCT2G32.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  CJOV-PCT1G42.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"942b4db7-0434-4bcb-b143-547c6f8abdef","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SZCE-PCT2G32.5-L50EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"eac265be-8a84-43ff-bb0c-90f31b57b9c5","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: ثبت شد
+  SZCE-PCT2G32.5-L50EX-00 ovh:Qwen3.5-397B-A17B: 206s ValueError: markers: تالار اشتباه: «صادراتی»
+  CJOV-PCT1G42.5-JEX-00 zai:glm-4.7-flash: 255s ValueError: 56 words / 1 paragraphs
+style-soft: lead>35w/1num, text 14 nums
+  CJOV-PCT1G42.5-JEX-00 zai:glm-4.5-flash: 49s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱۴۶۰ | تالار اشتباه: «صادراتی»
+  SZCE-PCT2G32.5-L50EX-00 zai:glm-4.7-flash: 77s ValueError: 68 words / 2 paragraphs
+  SZCE-PCT2G32.5-L50EX-00 zai:glm-4.5-flash: 44s ValueError: 101 words / 2 paragraphs
+style-soft: lead>35w/1num, text 11 nums
+style-soft: lead>35w/1num, text 13 nums
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 5 calls: markers: «نشان‌دهنده» در text | عدد بیرون از حقیقت‌ها: ۱.۴۶۰
+style-soft: lead>35w/1num, text 17 nums
+style-soft: lead>35w/1num, text 20 nums
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 14 calls: markers: تالار اشتباه: «صادراتی» | لید عیناً در متن تکرار شده
+style-soft: ثبت شد, lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «این در حالی است» در text | «نشان‌دهنده» در text | عدد بیرون از حقیقت‌ها: ۱٫۴۶۰
+  CJOV-PCT1G42.5-JEX-00 gapgpt:gemma-3-27b-it: 409s ValueError: staged: 20 calls, last: markers: «این در حالی است» در text | «نشان‌دهنده» در text | عدد بیرون از حقیقت‌ها: ۱٫۴۶۰
+style-soft: lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 24 nums
+style-soft: lead>35w/1num, text 28 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: markers: لید عیناً در متن تکرار شده
+style-soft: lead>35w/1num, text 19 nums
+style-soft: lead>35w/1num, text 19 nums
+style-soft: lead>35w/1num, text 19 nums
+style-soft: lead>35w/1num, text 19 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 14 calls: markers: «نشان می‌دهد» در text
+style-soft: lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 22 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 20 calls
+OK SZCE-PCT2G32.5-L50EX-00 <- gapgpt:gemma-3-27b-it (344s)
