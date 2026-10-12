@@ -198,6 +198,8 @@ def main():
     symbols, urls = {r["symbol"] for r in rows}, {x["url"] for x in ctx}
     w.RULES = REPORT_RULES
     w.RULES_GEMMA = REPORT_RULES.replace(w.style_for("ب"), w.compact_for("ب"))
+    if "--model" in sys.argv and "deepseek" in sys.argv[sys.argv.index("--model") + 1]:
+        w.DEEPSEEK_ON = True  # the paid deepseek writes only when it is named (owner 2026-10-12)
     provs = w.providers()
     provs.sort(key=lambda p: RANK.index(p[0]) if p[0] in RANK else len(RANK))
     if "--model" in sys.argv:  # owner 2026-10-12: a report by one named model only (e.g. gapgpt:gemma-3-27b-it)
@@ -209,9 +211,19 @@ def main():
             continue
         t0 = time.time()
         try:
-            raw = w.retry(call, prompt)
+            if model in w.PAID and "--model" in sys.argv:  # only when named: a paid model writes the report in small pieces (report_staged.py)
+                import report_staged
+                d = report_staged.write(call, fx, symmap, tables, "گزارش پایان روز تالار صادراتی بورس کالا" if kish else "گزارش پایان روز بازار فیزیکی بورس کالا",
+                                        lambda x: check(x, symbols, urls, tables, known), known)
+                raw = None
+            else:
+                raw = w.retry(call, prompt)
             try:
+                if raw is None:
+                    raise StopIteration
                 d = check(json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), symbols, urls, tables, known)
+            except StopIteration:
+                pass
             except ValueError as e:
                 if not re.search(r"words|links|markers|table", str(e)):
                     raise
