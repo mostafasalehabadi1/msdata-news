@@ -9,3 +9,11 @@ OK DMTZGFWBEX0050804 <- llm7:DeepSeek-V4-Flash-0731 (13s)
   DMTBRCABEX0050727 zai:glm-4.5-flash: 48s ValueError: 89 words / 2 paragraphs
   DMTBRCABEX0050727 gapgpt:gemma-3-27b-it: 42s ValueError: 126 words / 1 paragraphs
 written 1/2; total in file 24
+energy: 25 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  DMTBRCABEX0050727 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DMTBRCABEX0050727 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  DMTBRCABEX0050727 zai:glm-4.5-flash: 13s JSONDecodeError: Expecting value: line 4 column 11 (char 165)
+  DMTBRCABEX0050727 gapgpt:gemma-3-27b-it: 65s ValueError: 138 words / 1 paragraphs
+written 0/1; total in file 24
