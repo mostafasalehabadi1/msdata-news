@@ -200,6 +200,8 @@ def main():
     w.RULES_GEMMA = REPORT_RULES.replace(w.style_for("ب"), w.compact_for("ب"))
     provs = w.providers()
     provs.sort(key=lambda p: RANK.index(p[0]) if p[0] in RANK else len(RANK))
+    if "--model" in sys.argv:  # owner 2026-10-12: a report by one named model only (e.g. gapgpt:gemma-3-27b-it)
+        provs = [p for p in provs if p[0] == sys.argv[sys.argv.index("--model") + 1]]
     if date == today and (now.hour, now.minute) < FALLBACK_FROM and not force:
         provs = [p for p in provs if p[0] == REPORT_MODEL]  # the report's own model; others only after 19:30
     for model, call in provs:
