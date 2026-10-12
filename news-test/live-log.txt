@@ -1,2 +1,76 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+40 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  CWD-CR08AB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  SKS-BSG324X-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  AISC-BSG194X-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  CHMI-BSG194X-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"d6ac1c5a-8900-4301-a810-3bd0f40c1a7a","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  KSC-BSG194X-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"6b9359e5-6550-439d-86d4-ec92f569b963","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  NCI-CR08AB-00 llm7:DeepSeek-V4-Flash-0731: 115s ValueError: no JSON
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  SRBK-CR08AB-00 llm7:DeepSeek-V4-Flash-0731: 21s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 44328 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":44328}}
+  SKS-BSG194X-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"a822eed2-a351-4a2a-8799-e0110aa83033","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ALSU-AP06101-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SIS-BSG324X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SIS-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SJS-BSG194X-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  ALM-AP06101-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 67s ValueError: 83 words / 2 paragraphs
+  SJS-BSG194X-00 zai:glm-4.5-flash: 36s JSONDecodeError: Expecting value: line 4 column 11 (char 165)
+style-soft: ثبت شد, lead>35w/1num, text 19 nums
+style-soft: lead>35w/1num, text 20 nums
+  KSO-BSG194X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 42s ValueError: markers: «به خود اختصاص» در text | کد کالا یا حروف لاتین وسط متن
+style-soft: ثبت شد, lead>35w/1num, text 16 nums
+style-soft: در حالی که, ثبت شد, lead>35w/1num, text 17 nums
+  DAP-PPHP510LJ-00 gapgpt:gemma-3-27b-it: 80s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+style-soft: ثبت شد, text 11 nums
+OK IAC-AP15351-00 <- ovh:Qwen3.5-397B-A17B (120s)
+  ARCO-PVCS65PP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 121s ValueError: bad response: '{"id":"gen-1791813011-ctHqm79rRFIIF0DB6GGg","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  SJS-BSG324X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 28s ValueError: 84 words / 2 paragraphs
+style-soft: lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 18 nums
+  FZI-BSG194X-00 gapgpt:gemma-3-27b-it: 68s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+style-soft: lead>35w/1num, text 21 nums
+style-soft: در حالی که, lead>35w/1num, text 25 nums
+style-soft: در حالی که, lead>35w/1num, text 21 nums
+  GPC-PVCS65J-00 gapgpt:gemma-3-27b-it: 50s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱۰۰ | کد کالا یا حروف لاتین وسط متن
+style-soft: ثبت شد
+OK FZI-BSG324X-00 <- ovh:Qwen3.5-397B-A17B (144s)
+  NGHS-BSG194X-00 zai:glm-4.7-flash: 216s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 18 nums
+OK PNCO-PPSF060J-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (202s)
+  NGHS-BSG194X-00 zai:glm-4.5-flash: 46s ValueError: 107 words / 2 paragraphs
+style-soft: text 9 nums
+style-soft: lead>35w/1num, text 23 nums
+style-soft: ثبت شد, lead>35w/1num, text 21 nums
+style-soft: ثبت شد, lead>35w/1num, text 21 nums
+  AGIC-PPHP510LJ-00 zai:glm-4.7-flash: 82s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 17 nums
+style-soft: ثبت شد, text 10 nums
+OK JPPC-PPEP548RPP-00 <- ovh:Qwen3.5-397B-A17B (210s)
+  AGIC-PPHP510LJ-00 zai:glm-4.5-flash: 50s ValueError: 91 words / 2 paragraphs
+style-soft: lead>35w/1num
+OK MPC-PPC30SPP-00 <- ovh:Qwen3.5-397B-A17B (69s)
+OK BISC-BSG324X-00 <- ovh:Qwen3.5-397B-A17B (55s)
+style-soft: ثبت شد, lead>35w/1num, text 16 nums
+  SOC-BOSN500B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 357s ValueError: markers: «نشان‌دهنده» در text | کد کالا یا حروف لاتین وسط متن
+  BISC-BSG194X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791813587-3beE0UmrHopR3vxCPtEy","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+style-soft: text 10 nums
+OK HSR-LUSUFEB-00 <- ovh:Qwen3.5-397B-A17B (99s)
+style-soft: ثبت شد, lead>35w/1num, text 20 nums
+  FANA-BSG194X-00 ovh:Qwen3.5-397B-A17B: 334s TimeoutError: The read operation timed out
+  JPPC-PPEP440LPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 397s TimeoutError: The read operation timed out
+OK HSR-LUSUACB-00 <- ovh:Qwen3.5-397B-A17B (136s)
+style-soft: text 10 nums
+OK GPC-PVCS65PP-00 <- ovh:Qwen3.5-397B-A17B (77s)
+style-soft: text 9 nums
+OK JPPC-PPHP510LPP-00 <- ovh:Qwen3.5-397B-A17B (121s)
+style-soft: text 11 nums
+OK MPC-PPMR230CPP-00 <- ovh:Qwen3.5-397B-A17B (246s)
+style-soft: ثبت شد, text 9 nums
+style-soft: lead>35w/1num, text 11 nums
+  APCO-PVCS65RPP-00 ovh:Qwen3.5-397B-A17B: 335s ValueError: markers: عدد بیرون از حقیقت‌ها: ۸۶
+  JPPC-PPHP552RPP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+style-soft: ثبت شد, lead>35w/1num
+style-soft: text 9 nums
+OK POCO-BOSN500B-00 <- ovh:Qwen3.5-397B-A17B (268s)
