@@ -149,6 +149,8 @@ def post(url, key, model, prompt, extra=None, system=None):
                          {"role": "user", "content": prompt}]}
     if "z.ai" in url:
         body["thinking"] = {"type": "disabled"}  # GLM thinks by default: slow (timeouts) and it spends the answer budget on reasoning
+    if "gapgpt.app" in url and "deepseek" in model:
+        body["reasoning"] = {"enabled": False}  # 2026-10-12: with thinking it spent 1400-4900 tokens and 25-140s per news and still wrote short; off = 3s
     if "cloudflare.com" in url:
         body["max_tokens"] = 2048  # Cloudflare cuts answers at a 256-token default; a cap elsewhere starves reasoning models
     auth = {"Authorization": f"Bearer {key}"} if key else {}  # OVH AI Endpoints works anonymously (2 req/min per model)
@@ -403,6 +405,11 @@ def parse(raw, facts="", tables=None):
         if not isinstance(d.get(k), str) or not d[k].strip():
             raise ValueError(f"empty {k}")
         d[k] = clean(d[k].replace("\r", "").strip())
+    if facts:  # owner 2026-10-12: «امروز» -> weekday and date the first time, only the weekday after that
+        seen = [False]
+        d["title"] = today_words(d["title"], facts.splitlines()[0])
+        for k in ("subtitle", "lead", "text"):
+            d[k] = today_words(d[k], facts.splitlines()[0], seen)
     d["text"] = ensure_source(d["text"])
     w, p = words(d["text"]), paragraphs(d["text"])
     if not MIN_WORDS[0] <= w <= 220 or not 2 <= p <= 4:  # = validate.py limits; stricter limits only threw away good news
@@ -514,7 +521,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     What a small model keeps getting wrong is repaired in small pieces: Latin product codes never reach it, a sentence with
     a number that is not in the facts is cut by the code, and a sentence with a banned phrase is rewritten alone."""
     calls, err = 0, None
-    ban = re.compile(BANNED.pattern + "|امروز|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد", re.I)  # stricter for this model (content agent 2026-10-12)
+    ban = re.compile(BANNED.pattern + "|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد", re.I)  # stricter for this model (content agent 2026-10-12)
     day = facts.splitlines()[0] if facts else ""
     fa_digits = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
     # Latin grades and codes (HP510L, S65 ...) are taken out of what the model reads, so it cannot copy them into the text
@@ -600,6 +607,32 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
             raw = ask(STAGE_FIX, src + "\n\nخبر:\n" + raw + f"\n\nایرادها: {err}") or raw
         note(f"  staged {name}: draft dropped after {calls} calls: {str(err)[:160]}")
     raise ValueError(f"staged: {calls} calls, last: {err}")
+
+
+TODAY = re.compile(r"(?<![؀-ۿ])امروز(?![؀-ۿ])")
+
+
+def day_parts(day_line):
+    """«F1. روز: دوشنبه ۲۰ مهر ۱۴۰۵.» -> («دوشنبه», «دوشنبه ۲۰ مهر»)"""
+    m = re.search(r"((?:یک|دو|سه|چهار|پنج)?[‌ ]?شنبه|جمعه)\s+([۰-۹0-9]+\s+\S+)", day_line or "")
+    return (m.group(1), f"{m.group(1)} {m.group(2).rstrip('.،')}") if m else ("", "")
+
+
+def today_words(text, day_line, seen=None):
+    """owner 2026-10-12: «امروز» becomes the weekday and date the first time and only the weekday after that."""
+    week, full = day_parts(day_line)
+    if not week or not text:
+        return text
+    seen = seen if seen is not None else [full in text]
+
+    def one(m):
+        rest = text[m.end():m.end() + len(full) + 2].strip()
+        if rest.startswith(week):  # «امروز دوشنبه ۲۰ مهر» already names the day
+            return ""
+        out = week if seen[0] else full
+        seen[0] = True
+        return out
+    return re.sub(r"  +", " ", TODAY.sub(one, text)).strip()
 
 
 def save_scenarios(items, subject, date_fa):

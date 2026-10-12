@@ -17,7 +17,7 @@ SECTION = ("تو سردبیر بورس کالای ام‌اس‌دیتا هست�
            "هیچ عدد، درصد، مقایسه، علت یا پیش‌بینی از خودت نساز.\n"
            "- خط اول فقط یک میان‌تیتر ۲ تا ۶ کلمه‌ای، بدون عدد و بدون نقطه. بعد یک خط خالی. بعد متن.\n"
            "- متن: ۱۱۰ تا ۱۴۰ کلمه در ۲ پاراگراف که با یک خط خالی جدا شده‌اند.\n"
-           "- جمله‌های کوتاه با فعل ساده (فروخت، خرید، رسید، بود، است). کل بخش حداکثر ۳ عدد داشته باشد و بیشتر جمله‌ها بدون عدد باشند.\n"
+           "- جمله‌های کوتاه با فعل ساده (فروخت، خرید، رسید، بود، است). کل بخش حداکثر ۵ عدد داشته باشد و بیشتر جمله‌ها بدون عدد باشند.\n"
            "- به‌جای عدد، نام شرکت‌ها، کالاها و مقصدها را بگو: چه چیزی فروش رفت، چه چیزی خریدار نداشت، قیمت بالا رفت یا پایین آمد.\n"
            "- نام کالا و شرکت را دقیقاً همان‌طور که در حقیقت‌ها آمده بنویس.\n"
            "- «امروز» و «دیروز» ننویس. این‌ها ممنوع است: نشان‌دهنده، نشان می‌دهد، حاکی از، بیشترین، کمترین، بزرگ‌ترین، "
@@ -30,6 +30,7 @@ HEAD = ("تو سردبیر بورس کالای ام‌اس‌دیتا هستی. 
         "- lead: یک جمله‌ی ۲۵ تا ۳۵ کلمه‌ای با حداکثر یک عدد که کل گزارش را می‌گوید.\n"
         "عددها فقط از حقیقت‌ها. «امروز» ننویس؛ روز و تاریخ را بنویس. واژه‌های بیشترین، کمترین، بزرگ‌ترین و نشان‌دهنده ممنوع است.")
 SENT = w.STAGE_SENT
+CAP = 30  # numbers in the whole report text (owner 1405-07-21; check() uses the same limit)
 SPARE_HEADS = ["نگاه کلی بازار", "رقابت خریداران", "معامله‌های پرارزش", "تغییر قیمت‌ها", "کالاهای دیگر", "جزئیات بیشتر"]
 FA = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
 DOT = re.compile(r"(?<=[0-9۰-۹])[.](?=[0-9۰-۹])")
@@ -63,7 +64,7 @@ def write(call, fx, symmap, tables, market, check, known, note=print, tries=90):
 
     state = {"nums": 0, "while": 0}
 
-    def clean(body, budget=3):
+    def clean(body, budget=6):
         """keeps only sentences that pass every rule a sentence can break; returns the paragraphs"""
         paras, used = [], 0
         for para in re.split(r"\n\s*\n", norm(body).strip()):
@@ -76,12 +77,12 @@ def write(call, fx, symmap, tables, market, check, known, note=print, tries=90):
                     s = new if new and "\n" not in new and new[-1] in ".!؟" else s
                 nums = w.NUM.findall(s)
                 n = len(markers.numbers(s))
-                # the whole report may hold 20 numbers: a correct sentence that is over the budget is said again without numbers
-                if n and not dirty(s) and all(x in known for x in nums) and (n > 2 or used + n > budget or state["nums"] + n > 20) and calls[0] < tries:
+                # the whole report may hold CAP numbers: a correct sentence that is over the budget is said again without numbers
+                if n and not dirty(s) and all(x in known for x in nums) and (n > 2 or used + n > budget or state["nums"] + n > CAP) and calls[0] < tries:
                     new = norm(ask(SENT, f"جمله: {s}\n\nایراد: همین را بدون هیچ عدد و رقمی بنویس؛ فقط بگو چه شد (مثلاً «کامل فروش رفت»، «خریدار نداشت»، «گران‌تر شد»).").strip().strip("«»\""))
                     if new and "\n" not in new and new[-1] in ".!؟" and not w.NUM.search(new) and not dirty(new):
                         s, nums, n = new, [], 0
-                if dirty(s) or any(x not in known for x in nums) or n > 2 or used + n > budget or state["nums"] + n > 20:
+                if dirty(s) or any(x not in known for x in nums) or n > 2 or used + n > budget or state["nums"] + n > CAP:
                     continue
                 if "در حالی که" in s:
                     if state["while"]:
@@ -169,6 +170,9 @@ def write(call, fx, symmap, tables, market, check, known, note=print, tries=90):
         strip = lambda s: re.sub(r"^F\d+\.\s*", "", s).strip()  # noqa: E731
         head3 = {"title": f"{market}، {strip(day).replace('روز:', '').strip(' .')}", "subtitle": strip(facts[1]) if len(facts) > 1 else market,
                  "lead": " ".join(strip(x) for x in facts[1:3])}
+    # last guard: «امروز» that came in through a fact copied word for word (the fallback headline) is said as the day itself
+    head3 = {x: re.sub(r"(?<![؀-ۿ])امروز", "این روز", v) for x, v in head3.items()}
+    text = re.sub(r"(?<![؀-ۿ])امروز", "این روز", text)
     out = {**head3, "slug": head3["title"], "text": text, "table": list(tables)[:2], "scenarios": [], "links": links, "sources": []}
     note(f"  staged report: {calls[0]} calls, {len(text.split())} words, {state['nums']} numbers, {len(links)} links")
     return check(json.loads(json.dumps(out, ensure_ascii=False)))

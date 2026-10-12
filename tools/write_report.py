@@ -118,7 +118,11 @@ def check(d, symbols, urls, tables, known):
     if not d["links"]:
         raise ValueError("no trade links")
     d["scenarios"] = [x for x in d.get("scenarios") or [] if isinstance(x, dict)]
-    probs = markers.check(d["text"], "" if HEADLINE else d["title"], d["lead"], table=False, full=True, cap=20)  # owner 1405-07-20: reports up to 20 numbers
+    day_line, seen = FX[0].splitlines()[0] if FX[0] else "", [False]
+    d["title"] = w.today_words(d["title"], day_line)
+    for k in ("subtitle", "lead", "text"):
+        d[k] = w.today_words(d[k], day_line, seen)
+    probs = markers.check(d["text"], "" if HEADLINE else d["title"], d["lead"], table=False, full=True, cap=30)  # owner 1405-07-20: reports up to 20 numbers; 1405-07-21: 30
     if subheads(d["text"]) < 2:
         probs.append("دست‌کم ۲ میان‌تیتر لازم است (هر کدام یک خط کوتاه جدا، بدون نقطه)")
     ids = d.get("table") if isinstance(d.get("table"), list) else [d.get("table")]
@@ -211,10 +215,15 @@ def main():
             continue
         t0 = time.time()
         try:
-            if model in w.PAID and "--model" in sys.argv:  # only when named: a paid model writes the report in small pieces (report_staged.py)
+            if model in w.PAID and "--model" in sys.argv and "--sections" in sys.argv:  # section by section (report_staged.py)
                 import report_staged
                 d = report_staged.write(call, fx, symmap, tables, "گزارش پایان روز تالار صادراتی بورس کالا" if kish else "گزارش پایان روز بازار فیزیکی بورس کالا",
                                         lambda x: check(x, symbols, urls, tables, known), known)
+                raw = None
+            elif model in w.PAID and "--model" in sys.argv:  # one full draft, then sentence-by-sentence repair (report_repair.py)
+                import report_repair
+                raw = w.retry(call, prompt)
+                d = report_repair.repair(call, json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), lambda x: check(x, symbols, urls, tables, known), known, fx, symmap)
                 raw = None
             else:
                 raw = w.retry(call, prompt)
@@ -231,7 +240,7 @@ def main():
                               "در ۶ تا ۹ پاراگراف و با links برای هر معامله‌ی نام‌برده بازنویسی کن و فقط JSON برگردان.")
                 d = check(json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), symbols, urls, tables, known)
             os.makedirs(os.path.dirname(out), exist_ok=True)
-            json.dump({"date_fa": date_fa, "date": date, **d, "author": "مصطفی صالح‌آبادی", "author_title": "کارشناس اقتصادی", "model": model}, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+            json.dump({"date_fa": date_fa, "date": date, **d, "author": re.sub(r":free$", "", model.split(":", 1)[1].split("/")[-1]), "author_title": "مدل هوش مصنوعی", "model": model}, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             w.save_scenarios(d["scenarios"], "report", date_fa)
             print(f"report {date_fa} <- {model} ({time.time() - t0:.0f}s, {len(d['links'])} links, {len(d['sources'])} sources)")
             return

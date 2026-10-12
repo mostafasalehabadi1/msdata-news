@@ -62,8 +62,11 @@ jobs:
           for try in 1 2 3; do
             git rebase --abort 2>/dev/null || true
             git fetch -q origin main && git reset -q --hard origin/main && git clean -qfd queue news
-            cp /tmp/rep/report-*.json queue/ 2>/dev/null || true
-            cp /tmp/rep/kish/report-*.json queue/kish/ 2>/dev/null || true
+            # content agent 1405-07-21: a report it has put there meanwhile (queue or news) always wins and is never overwritten
+            n=0
+            for f in /tmp/rep/report-*.json; do b=$(basename "$f"); [ -e "$f" ] && [ ! -e "queue/$b" ] && [ ! -e "news/$b" ] && cp "$f" queue/ && n=$((n+1)); done
+            for f in /tmp/rep/kish/report-*.json; do b=$(basename "$f"); [ -e "$f" ] && [ ! -e "queue/kish/$b" ] && [ ! -e "news/kish/$b" ] && mkdir -p queue/kish && cp "$f" queue/kish/ && n=$((n+1)); done
+            [ "$n" -gt 0 ] || { echo "the report is already there (content agent); nothing to publish"; exit 0; }
             cat /tmp/rep/scenarios.txt >> data/scenarios.jsonl
             git add queue data/scenarios.jsonl
             git commit -qm "report: $(python -c 'import json;print(json.load(open("data/latest.json"))["date_fa"])')"
