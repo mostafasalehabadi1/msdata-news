@@ -1,2 +1,21 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+9 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  AAK-PCT1G42.5-J-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  AAK-PCT2G42.5-J-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  SABC-PCT2G42.5-B-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 12543 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":12543}}
+  SABC-PCT2G42.5-B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  NACE-PCT2G42.5-B-00 groq:openai/gpt-oss-120b: 11s ValueError: no JSON
+  NACE-PCT2G42.5-B-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  WCO-PCT5G42.5-B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c4274303-056c-47b0-
+  GCC-PCT2G32.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9090b736-1ff6-48b4-
+  NGC-PCT2G32.5-B-00 cohere:command-a-03-2025: 46s ValueError: HTTP 429: {"id":"02c5de4a-e530-4c08-9474-14f6dce04be6","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  IMID-OAIOL-617 zai:glm-4.7-flash: 50s ValueError: 108 words / 1 paragraphs
+  WCO-PCT5G42.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (79c97873-b272-4163-
+  GCC-PCT2G32.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (fe609102-36fb-4915-
+  AAK-PCT1G42.5-J-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"bc8f252c-88e9-4268-bc16-6aa87e243dd1","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: lead>35w/1num, text 18 nums
+  IMID-OAIOL-617 zai:glm-4.5-flash: 60s ValueError: 98 words / 2 paragraphs
+  SABC-PCT2G42.5-B-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"11183d16-a6d2-456d-9578-1ca0517c114e","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: lead>35w/1num, text 23 nums
+OK NACE-PCT2G42.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (135s)
