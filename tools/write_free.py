@@ -172,7 +172,7 @@ STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "kilo:dots-
 # the next three by rating: write the important half too, but only when every strong model is out or a symbol waited 2h
 # ovh:Qwen3.5 added by the owner on 2026-10-10: every strong/backup model was out of quota and 30 important symbols stayed unwritten
 BACKUP = {"zai:glm-4.7-flash", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
-          "ovh:Qwen3.5-397B-A17B"}
+          "ovh:Qwen3.5-397B-A17B", "arad:deepseek-v4-flash-0423"}
 BACKUP_WAIT = 2 * 3600
 
 
@@ -232,6 +232,9 @@ def providers():
         if os.environ.get(env):
             for m in models:
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
+    if os.environ.get("ARAD_API_KEY"):  # Arad AI gateway (paid, owner 2026-10-12); the key is tied to DeepSeek V4 Flash 0423
+        out.append(("arad:deepseek-v4-flash-0423", lambda p: post("https://llm.aradai.ir/v1/chat/completions", os.environ["ARAD_API_KEY"],
+                                                                  "arad/model-1624c3b5a0d4c57211c492845a9f7bb1", p)))
     for m in ("Qwen3.5-397B-A17B", "gpt-oss-120b", "Meta-Llama-3_3-70B-Instruct"):  # OVH: no signup, no key
         out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
     for m in ("dots-studio/dots-3-note-preview:free", "nvidia/nemotron-3-ultra-550b-a55b:free"):  # Kilo gateway: no signup, 200 req/h per IP
