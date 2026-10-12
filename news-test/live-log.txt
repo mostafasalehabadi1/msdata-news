@@ -47,3 +47,8 @@ style-soft: ثبت شد, lead>35w/1num, text 10 nums
   BPCO-BI6070JEX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 325s TimeoutError: The read operation timed out
 style-soft: ثبت شد, lead>35w/1num
 OK OAC-PCT2G42.5-BEX-00 <- ovh:gpt-oss-120b (488s)
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  IALC-ALHYD-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  IALC-ALHYD-00 zai:glm-4.7-flash: 101s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 15 nums
+OK IALC-ALHYD-00 <- zai:glm-4.5-flash (40s)
