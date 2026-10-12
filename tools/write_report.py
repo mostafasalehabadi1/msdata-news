@@ -118,7 +118,7 @@ def check(d, symbols, urls, tables, known):
     if not d["links"]:
         raise ValueError("no trade links")
     d["scenarios"] = [x for x in d.get("scenarios") or [] if isinstance(x, dict)]
-    probs = markers.check(d["text"], "" if HEADLINE else d["title"], d["lead"], table=False, full=True)
+    probs = markers.check(d["text"], "" if HEADLINE else d["title"], d["lead"], table=False, full=True, cap=20)  # owner 1405-07-20: reports up to 20 numbers
     if subheads(d["text"]) < 2:
         probs.append("دست‌کم ۲ میان‌تیتر لازم است (هر کدام یک خط کوتاه جدا، بدون نقطه)")
     ids = d.get("table") if isinstance(d.get("table"), list) else [d.get("table")]

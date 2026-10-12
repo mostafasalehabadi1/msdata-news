@@ -43,7 +43,7 @@ def has_subheads(t):
                for p in re.split(r"\n\s*\n", t.strip())[1:])
 
 
-def check(text, title="", lead="", dated=True, table=False, full=False):
+def check(text, title="", lead="", dated=True, table=False, full=False, cap=None):  # cap: owner 1405-07-20, reports 20 numbers, news 8
     probs = []
     allt = "\n".join(x for x in (title, lead, text) if x)
     for rx, p in zip(RES, PATTERNS):
@@ -51,7 +51,7 @@ def check(text, title="", lead="", dated=True, table=False, full=False):
         if m:
             probs.append(f"عبارت ممنوع «{m.group(0).strip()}» (الگو: {p[:40]})")
     n = len(numbers(text))
-    cap = 3 if table else 8
+    cap = cap or (3 if table else 8)
     if n > cap:
         probs.append(f"{n} عدد در متن؛ حداکثر {cap}" + (" (بقیه در جدول)" if table else ""))
     for s in re.split(r"[.!؟?\n]", text):
