@@ -90,7 +90,8 @@ RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و �
 
 
 # content agent 1405-07-15 (252 news of 1405-07-14): the one main flaw of each model, appended to its prompt
-MODEL_HINTS = [(r"nemotron-3-super", "کلمه‌ی انگلیسی ننویس. «عرض» ننویس؛ «عرضه» بنویس."),
+MODEL_HINTS = [(r"gapgpt:gemma", "«امروز» و «دیروز» ننویس؛ تاریخ را بنویس. در تیتر «؛» نگذار. «نماد» ننویس. متن کمتر از ۱۴۰ کلمه نباشد و بیش از ۸ عدد نداشته باشد."),
+               (r"nemotron-3-super", "کلمه‌ی انگلیسی ننویس. «عرض» ننویس؛ «عرضه» بنویس."),
                (r"dots", "هیچ کلمه‌ی انگلیسی مثل Display یا faced در متن نیاور."),
                (r"command-a.*reason", "«امروز» ننویس؛ روز هفته و تاریخ را بنویس. «در حالی که» و «با این حال» ننویس."),
                (r"command-a", "«امروز» ننویس؛ روز هفته و تاریخ را بنویس."),
@@ -172,7 +173,7 @@ STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "kilo:dots-
 # the next three by rating: write the important half too, but only when every strong model is out or a symbol waited 2h
 # ovh:Qwen3.5 added by the owner on 2026-10-10: every strong/backup model was out of quota and 30 important symbols stayed unwritten
 BACKUP = {"zai:glm-4.7-flash", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
-          "ovh:Qwen3.5-397B-A17B", "arad:deepseek-v4-flash-0423"}
+          "ovh:Qwen3.5-397B-A17B", "arad:deepseek-v4-flash-0423", "gapgpt:gemma-3-27b-it"}
 BACKUP_WAIT = 2 * 3600
 
 
@@ -232,6 +233,9 @@ def providers():
         if os.environ.get(env):
             for m in models:
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
+    if os.environ.get("GAPGPT_API_KEY"):  # GapGPT gateway (paid, owner 2026-10-12): gemma wrote 2 of 3 test news in ~12s, deepseek thinks long and wrote 0 of 3
+        for m in ("gemma-3-27b-it", "deepseek-v4-flash"):
+            out.append(("gapgpt:" + m, lambda p, m=m: post("https://api.gapgpt.app/v1/chat/completions", os.environ["GAPGPT_API_KEY"], m, p)))
     if os.environ.get("ARAD_API_KEY"):  # Arad AI gateway (paid, owner 2026-10-12); the key is tied to DeepSeek V4 Flash 0423
         out.append(("arad:deepseek-v4-flash-0423", lambda p: post("https://llm.aradai.ir/v1/chat/completions", os.environ["ARAD_API_KEY"],
                                                                   "arad/model-1624c3b5a0d4c57211c492845a9f7bb1", p)))
