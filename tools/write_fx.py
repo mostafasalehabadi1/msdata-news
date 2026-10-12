@@ -159,7 +159,7 @@ def check(d):
     if bad:
         raise ValueError("markers: این‌ها ممنوع است: " + "، ".join(bad))
     d["table"] = [x for x in d.get("table") or [] if isinstance(x, dict)][:8]
-    probs = markers.check(d["text"], d["title"], d["lead"], table=bool(d["table"]), full=True)
+    probs = markers.check(d["text"], d["title"], d["lead"], table=bool(d["table"]), full=True, cap=20)  # owner 1405-07-20: fx news is all numbers, up to 20
     if len(d["table"]) < 3:
         probs.append("table باید ۳ تا ۸ ردیف داشته باشد")
     if probs:
