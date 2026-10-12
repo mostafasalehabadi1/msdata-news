@@ -1,11 +1,75 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-6 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  OAC-CLINKERT2EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  SECO-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  CJOV-PCT1G42.5-JEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  PSP-BI6070BEX-00 cohere:command-a-03-2025: 46s ValueError: HTTP 429: {"id":"1abd678f-a347-40c8-ae53-00416a7f45ec","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  SABD-INBPPBEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"3fde39c8-4f7b-45e8-91f7-e2d63e580892","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  OAC-CLINKERT2EX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"607ab86e-a330-48eb-bc01-8ccf41d59d1e","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+30 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  AIOC-BOSN150B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  MKL-TISSDLGR18-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
+  IORC-LUSUGEB-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped for the rest of the day
+  IORC-LUSUGEB-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped for the rest of the day
+  IORC-LUSUGEB-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  JPPC-PPEP6540GJ-295 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ZAI-BSO1720X-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  openrouter:apodex/apodex-1.1-mini:free: quota used up - skipped for the rest of the day
+  IORC-LUSUGEB-00 openrouter:apodex/apodex-1.1-mini:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  ZNT-BSG017OO-00 llm7:minimax-m2.7: 7s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  openrouter:dots-studio/dots-3-note-preview:free: quota used up - skipped for the rest of the day
+  IORC-LUSUGEB-00 openrouter:dots-studio/dots-3-note-preview:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  ZNT-BSG017OO-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 31625 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":31625}}
+  openrouter:liquid/lfm-2.5-2.6b:free: quota used up - skipped for the rest of the day
+  IORC-LUSUGEB-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  TIOC-BOSN150B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  MPC-PPHP552RVPP-603 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  TFET-BSG017OO-00 requesty:mistral/leanstral-1-5: 13s ValueError: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants a news article for the MSDATA news agency (msdata.ir) about a specific commodity in the Iran Commodity Exc'
+  TFET-BSG017OO-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  PBSC-BSO1720X-00 llm7:minimax-m2.7: 1s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  TFET-BSG017OO-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  TFET-BSG017OO-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  PKC-POYSD485D96FAAWP-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  AGIC-PPHP550JJ-00 groq:openai/gpt-oss-120b: 27s ValueError: no JSON
+  AGIC-PPHP550JJ-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+style-soft: ثبت شد, lead>35w/1num, text 23 nums
+  MPC-PPEP548RPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ec1826f2-7007-4014-
+  AGIC-PPHP500KJ-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"dbcdbcce-4630-4d43-b86c-690dddf17507","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ZAJT-BSG194X-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"c7c0698e-2aa8-4d51-b930-e5674ccbff7c","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  AGIC-PPHP500NJ-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (aaaace86-6f6b-4706-
+style-soft: lead>35w/1num, text 16 nums
+style-soft: ثبت شد, lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 16 nums
+  MPC-PPRP340RP-00 zai:glm-4.7-flash: 55s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+  SHIN-PVCSUSSE-950J-000 groq:openai/gpt-oss-120b: 22s ValueError: no JSON
+  SHIN-PVCSUSSE-950J-000 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  JPPC-PPHP515MPP-00 gapgpt:gemma-3-27b-it: 68s ValueError: HTTP 404: {"error":{"message":"No available channel for this model on the current token (request id: 202610121713427636173708268d9d6gwcQIEXl)","type":"gap_api_error","param":"","code":"model_not_found"}}
+OK MFNI-BSG194X-00 <- ovh:Qwen3.5-397B-A17B (75s)
+  MPC-PPRP340RP-00 zai:glm-4.5-flash: 33s JSONDecodeError: Expecting value: line 4 column 11 (char 200)
+  HBK-POYSD485D96FAAWP-00 groq:openai/gpt-oss-120b: 22s ValueError: no JSON
+  ZAJT-BSG194X-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"3bec84a5-5220-4a2b-a3ae-d85aadc0e5a6","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  JPPC-PPEP6540GJ-295 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"2d29446e-f5bb-470e-be0e-5c3f20905012","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  AIOC-BOSN150B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (be308e20-da48-45f9-
+  TIOC-BOSN500B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8c3f2485-3268-4aa7-
+  HBK-POYSD485D96FAAWP-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+style-soft: ثبت شد, lead>35w/1num, text 19 nums
+  JAST-BSG017OO-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 114s ValueError: bad response: '{"id":"gen-1791825280-kdeO8oEJ9bIj6ZJCX5s0","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+OK MPC-PPHP552RVPP-603 <- ovh:Qwen3.5-397B-A17B (41s)
+style-soft: ثبت شد, lead>35w/1num, text 21 nums
+  SHPC-PPRP210GPJ-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"19f44da7-3383-47ea-a13f-027221770af5","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  JPPC-PPHP515MPP-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"88b820a6-94b6-4a13-afcb-3da87aa97ab9","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  AGIC-PPHP500KJ-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (f866c955-4132-4663-
+  SHPC-PPHP552RPJ-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8a629c9a-6488-45c9-
+  SHPC-PPRP210GPP-00 gapgpt:gemma-3-27b-it: 81s ValueError: 116 words / 3 paragraphs
+style-soft: lead>35w/1num, text 13 nums
+  MPC-PPEP548RPP-00 zai:glm-4.7-flash: 67s ValueError: 77 words / 3 paragraphs
+style-soft: ثبت شد, ام‌اس‌دیتا!=1, lead>35w/1num, text 10 nums
+  SHPC-PPRP270GPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SHPC-PPRP210GPJ-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"c74aff79-e3fa-4553-b591-1652ba290f7d","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: lead>35w/1num, text 17 nums
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 10 nums
+  MPC-PPEP548RPP-00 zai:glm-4.5-flash: 42s ValueError: 98 words / 2 paragraphs
+  SRM-BSG017OO-00 kilo:inclusionai/ling-3.1-flash: 218s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"message\":\"server overload, please try again later trace_id: 39a0413e982b282ca250b8f43a68f362\",\"type\":\"server_overload\"}\n","
 style-soft: lead>35w/1num, text 9 nums
   OC-PVCSUSP225L-000 gapgpt:gemma-3-27b-it: 61s ValueError: 119 words / 3 paragraphs
 OK JPPC-PPEP6540GJ-295 <- ovh:Qwen3.5-397B-A17B (103s)
@@ -88,15 +152,14 @@ OK AGIC-PPHP550JJ-00 <- ovh:Qwen3.5-397B-A17B (74s)
 style-soft: ثبت شد, lead>35w/1num, text 20 nums
 style-soft: text 10 nums
 OK AGIC-PPHP500NJ-00 <- ovh:Qwen3.5-397B-A17B (134s)
-  SZCE-PCT2G32.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 350s TimeoutError: The read operation timed out
-style-soft: ثبت شد, ثبت شد, text 9 nums
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 12 nums
-  CJOV-PCT1G42.5-JEX-00 gapgpt:gemma-3-27b-it: 40s ValueError: 109 words / 2 paragraphs
-style-soft: lead>35w/1num, text 17 nums
-  PSP-BI6070BEX-00 gapgpt:gemma-3-27b-it: 65s ValueError: 116 words / 2 paragraphs
-style-soft: به ثبت رساند, lead>35w/1num, text 12 nums
-OK SABD-INBPPBEX-00 <- gapgpt:gemma-3-27b-it (17s)
   PKC-POYSD485D96FAAWP-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
 style-soft: text 10 nums
 OK PBSC-BSO1720X-00 <- ovh:Qwen3.6-27B (143s)
+style-soft: lead>35w/1num
+  TIOC-BOSN150B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 310s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+style-soft: lead>35w/1num, text 24 nums
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for the rest of the day
+  TIOC-BOSN150B-00 kilo:poolside/laguna-s-2.1:free: 21s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
+  kilo:thinkingmachines/inkling-small:free: quota used up - skipped for the rest of the day
+  TIOC-BOSN150B-00 kilo:thinkingmachines/inkling-small:free: 1s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: limit_rpd/thinkingmachines/inkling-small-20260730/e27a9a6d-1451-4be4-876e-292ffcbf1e71. Daily limit reached for thinkingmachines/inkling-small:free via Thinking Machine
+OK SHIN-PVCSUSSE-950J-000 <- ovh:Qwen3.5-397B-A17B (114s)
