@@ -489,8 +489,9 @@ STAGE1 = ("تو خبرنگار بورس کالای ام‌اس‌دیتا هست
 STAGE2 = ("تو ویراستار دقت هستی. یک پیش‌نویس خبر و «حقیقت‌ها»ی آن را می‌گیری. متن را نگه دار و فقط این خطاها را درست کن:\n"
           "۱) هر عدد متن باید عیناً در حقیقت‌ها یا جدول‌ها باشد. عددی که آن‌جا نیست، عدد صفر و هر عددی که حساب شده را بردار. "
           "ارزش معامله را فقط از حقیقت‌ها بردار. هر عدد فقط یک بار بیاید و در text بیش از ۸ عدد نباشد.\n"
-          "۲) همه‌ی رقم‌ها فارسی و اعشار با «٫» (۷٫۲ نه 7.2).\n"
-          "۳) «امروز» و «دیروز» ننویس؛ روز هفته و تاریخ را از حقیقت اول بنویس. در key_points هم همین.\n"
+          "۲) همه‌ی رقم‌ها فارسی و خوانا، در تیتر، متن و key_points: «۲۶۰ هزار و ۶۰۰ تومان» نه 260600، «۱٫۲۹-» نه -1.29، «۷٫۲» نه 7.2.\n"
+          "۳) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه. روز را با نام و تاریخ بنویس و روز قبل را با نام روز. "
+          "نام روز و ماه را عیناً از حقیقت اول بردار.\n"
           "۴) هیچ حرف لاتین، کد کالا یا نام گرید لاتین در title، lead و text نباشد؛ نام فارسی کالا کافی است.\n"
           "۵) نام تالار فقط همان باشد که در حقیقت اول آمده؛ اگر مطمئن نیستی نام تالار را ننویس.\n"
           "۶) علت، پیش‌بینی و حال بازار که در حقیقت‌ها نیست حذف شود.\n"
@@ -503,7 +504,8 @@ STAGE3 = ("تو ویراستار نثر هستی. یک خبر را می‌گیر
           "۲) جمله با عدد شروع نشود و فعل آخر جمله بیاید. جمله‌ها کوتاه (۱۵ تا ۲۰ کلمه).\n"
           "۳) نام کالا و شرکت با واژه‌ی «شرکت» جدا شود. «هیچ تنی» ننویس؛ بنویس «تمام عرضه به فروش رفت».\n"
           "۴) واژه‌ی اصلی «قیمت» است، نه «نرخ». واژه‌ی «نماد» ننویس. جمله‌ی سؤالی ننویس.\n"
-          "۵) دقیقاً یک بار «ام‌اس‌دیتا» در وسط یا آخر text بیاید (مثل «طبق داده‌های ام‌اس‌دیتا»)، نه در تیتر، لید و جمله‌ی اول.\n"
+          "۵) نام «ام‌اس‌دیتا» فقط یک بار و فقط در این جمله در آخر text بیاید: «این آمار از ام‌اس‌دیتا است.» جمله‌ی دیگری با این نام ننویس "
+          "و برای پر کردن متن جمله‌ی بی‌خبر و کلی نساز.\n"
           "۶) lead عیناً در text تکرار نشود.\n"
           "۷) text همچنان ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها بماند.\n" + JSON_KEYS)
 STAGE_FIX = ("تو ویراستار هستی. یک خبر و فهرست ایرادهایش را می‌گیری. فقط همان ایرادها را رفع کن و بقیه‌ی متن را نگه دار. "
@@ -581,14 +583,18 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
             raw = ask(STAGE3, "خبر:\n" + raw + "\n\nشناسه‌ی جدول‌های مجاز: " + ", ".join(tables or {})) or raw
         for fix in range(4):  # the check, then up to 3 corrections of this draft
             try:
-                d = parse(raw, facts, tables)
-                extra = [f"«{x.group(0)}» در {k}" for k in ("title", "subtitle", "lead", "text") for x in ban.finditer(d[k])]
+                d = parse(yesterday_words(raw, day), facts, tables)
+                extra =[f"«{x.group(0)}» در {k}" for k in ("title", "subtitle", "lead", "text") for x in ban.finditer(d[k])]
                 if extra:
                     raise ValueError("markers: " + " | ".join(extra))
-                for k in ("title", "subtitle", "lead", "text"):  # Persian digits and decimal mark are fixed here, not asked for
-                    d[k] = DOT.sub("٫", d[k]).translate(fa_digits)
-                if d.get("key_points"):
-                    d["key_points"] = [DOT.sub("٫", x).translate(fa_digits) for x in d["key_points"]]
+                for k in ("title", "subtitle", "lead", "text"):  # Persian, readable digits are fixed here, not asked for
+                    d[k] = readable(d[k])
+                if d.get("key_points"):  # content agent 2026-10-13: no «امروز»/«دیروز» in key_points either
+                    kp = [readable(yesterday_words(today_words(x, day, [True]), day)) for x in d["key_points"]]
+                    if any(ban.search(x) for x in kp):
+                        d.pop("key_points")
+                    else:
+                        d["key_points"] = kp
                 note(f"  staged {name}: accepted after {calls} calls")
                 return d
             except ValueError as e:
@@ -633,6 +639,33 @@ def today_words(text, day_line, seen=None):
         seen[0] = True
         return out
     return re.sub(r"  +", " ", TODAY.sub(one, text)).strip()
+
+
+WEEK = ["شنبه", "یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه"]
+BIG = re.compile(r"(?<![0-9۰-۹٫.,٬/])[0-9۰-۹]{5,}(?![0-9۰-۹٫.,٬/])")
+NEG = re.compile(r"(?<![0-9۰-۹A-Za-z؀-ۿ])[-−]([0-9۰-۹]+(?:[.٫][0-9۰-۹]+)?)")
+
+
+def yesterday_words(text, day_line):
+    """content agent 2026-10-13: «دیروز» becomes the name of the day before (not when that is a Friday: left to the ban)."""
+    week = day_parts(day_line)[0].replace("‌", "").replace(" ", "")
+    i = next((k for k, x in enumerate(WEEK) if x.replace("‌", "") == week), None)
+    if i is None or not text or i == 0:
+        return text
+    return re.sub(r"(?<![؀-ۿ])دیروز(?![؀-ۿ])", WEEK[i - 1], text)
+
+
+def readable(t):
+    """content agent 2026-10-13: «۲۶۰ هزار و ۶۰۰» not 260600, «۱٫۲۹-» not -1.29, «۷٫۲» not 7.2"""
+    def big(m):
+        v, parts = int(m.group(0)), []
+        for u, name in ((10 ** 9, "میلیارد"), (10 ** 6, "میلیون"), (1000, "هزار")):
+            q, v = divmod(v, u)
+            if q:
+                parts.append(f"{q} {name}")
+        return " و ".join(parts + ([str(v)] if v else []))
+    t = BIG.sub(big, NEG.sub(r"\1-", t))
+    return re.sub(r"(?<=[0-9۰-۹])[.](?=[0-9۰-۹])", "٫", t).translate(str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹"))
 
 
 def save_scenarios(items, subject, date_fa):

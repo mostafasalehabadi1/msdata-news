@@ -16,7 +16,7 @@ import write_free as w
 CAP = 20
 ADD = ("تو خبرنگار بازار ارز و طلای ام‌اس‌دیتا هستی. برای خبری که متنش را می‌بینی فقط یک پاراگراف تازه‌ی ۶۰ تا ۸۰ کلمه‌ای بنویس که چیزی "
        "را بگوید که در متن نیامده. عددها فقط از «داده». حداکثر ۳ عدد و هر جمله حداکثر ۲ عدد. «قیمت» بنویس نه «نرخ». «امروز» ننویس. "
-       "جمله‌ی پرسشی ننویس. فقط خودِ پاراگراف را برگردان؛ بدون تیتر، بدون JSON.")
+       "جمله‌ی پرسشی ننویس. جمله‌ی کلی و بی‌خبر برای پر کردن متن ننویس و نام ام‌اس‌دیتا را نیاور. فقط خودِ پاراگراف را برگردان؛ بدون تیتر، بدون JSON.")
 
 
 def repair(call, d, check, data_json, weekday, day, banned=(), note=print, tries=25):
@@ -38,11 +38,18 @@ def repair(call, d, check, data_json, weekday, day, banned=(), note=print, tries
     def bad_word(s):
         return next((x for x in banned if x in s), None) or next((rx.search(s).group(0).strip() for rx in markers.RES if rx.search(s)), None)
 
+    # content agent 2026-10-13: the model wrote «۲۰ تیر» three times in the news of 20 Mehr -> the month comes from the data
+    jd, mon = day.split()
+    other = re.compile(r"([۰-۹0-9]{1,2})\s+(" + "|".join(m for m in markers.MONTHS.split("|") if m != mon) + r")(?![؀-ۿ])")
+    month = lambda t: other.sub(lambda m: f"{m.group(1)} {mon}" if int(m.group(1)) in (int(jd), int(jd) - 1) else m.group(0), t)  # noqa: E731
     seen = [False]
     for k in ("title", "subtitle", "lead", "text"):
         if isinstance(d.get(k), str):
             t = rr.plain_fixes(d[k].replace("\r", "")).replace("نرخ", "قیمت")  # owner 1405-07-16: «قیمت», never «نرخ»
+            t = "\n".join(w.readable(x) for x in w.yesterday_words(month(t), day_line).split("\n"))
             d[k] = w.today_words(t, day_line, seen if k in ("lead", "text") else None)
+    if isinstance(d.get("table"), list):  # readable Persian numbers in the table too
+        d["table"] = [{w.readable(str(a)): w.readable(str(b)) for a, b in r.items()} for r in d["table"] if isinstance(r, dict)]
     state = {"nums": 0}
 
     def clean(text):
