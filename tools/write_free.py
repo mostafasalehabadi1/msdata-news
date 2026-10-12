@@ -175,6 +175,7 @@ STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "kilo:dots-
 BACKUP = {"zai:glm-4.7-flash", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
           "ovh:Qwen3.5-397B-A17B", "arad:deepseek-v4-flash-0423", "gapgpt:gemma-3-27b-it"}
 BACKUP_WAIT = 2 * 3600
+DEEPSEEK_ON = False  # owner 2026-10-12: GapGPT deepseek-v4-flash stays ready but writes nothing until this is True
 
 
 def providers():
@@ -234,7 +235,8 @@ def providers():
             for m in models:
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
     if os.environ.get("GAPGPT_API_KEY"):  # GapGPT gateway (paid, owner 2026-10-12): gemma wrote 2 of 3 test news in ~12s; deepseek-v4-flash wrote 0 of 3 and is off (owner: gemma only for now)
-        for m in ("gemma-3-27b-it",):
+        # deepseek is wired but off: set DEEPSEEK_ON = True below to let it write
+        for m in ("gemma-3-27b-it",) + (("deepseek-v4-flash",) if DEEPSEEK_ON else ()):
             out.append(("gapgpt:" + m, lambda p, m=m: post("https://api.gapgpt.app/v1/chat/completions", os.environ["GAPGPT_API_KEY"], m, p)))
     if os.environ.get("ARAD_API_KEY"):  # Arad AI gateway (paid, owner 2026-10-12); the key is tied to DeepSeek V4 Flash 0423
         out.append(("arad:deepseek-v4-flash-0423", lambda p: post("https://llm.aradai.ir/v1/chat/completions", os.environ["ARAD_API_KEY"],
