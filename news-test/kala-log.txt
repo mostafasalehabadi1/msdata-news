@@ -13,3 +13,14 @@ style-soft: ثبت شد, ثبت شد, text 18 nums
 style-soft: در حالی که, ثبت شد, ثبت شد, text 13 nums
 OK OAC-CEM2-32.5R-50L-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (347s)
 written 1/3; total in file 12
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+2 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  SHPC-OAVAMB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  FZI-PELL-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"eecad242-1890-4612-bd40-37d01387ba9c","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SHPC-OAVAMB-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"23b04bad-38ad-49e4-bccc-7396e29cb453","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  FZI-PELL-00 zai:glm-4.7-flash: 53s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  FZI-PELL-00 zai:glm-4.5-flash: 28s JSONDecodeError: Expecting value: line 4 column 11 (char 167)
+  SHPC-OAVAMB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+style-soft: ثبت شد, lead>35w/1num, text 11 nums
+OK FZI-PELL-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (108s)
+written 1/2; total in file 13
