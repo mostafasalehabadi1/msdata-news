@@ -1,4 +1,67 @@
-energy: 5 settled rows, 18 still changing (wait 20 min unchanged)
+energy: 23 settled rows, 0 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-written 0/0; total in file 13
+10 symbols to write; 17 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  DCDKHCRBEX0050725 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DCDRZCABEX0050725 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
+  DSBBICABEX1050725 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  DSBBICABEX0050725 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 1490 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":1490}}
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped for the rest of the day
+  DSBBICABEX1050725 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped for the rest of the day
+  DSBBICABEX1050725 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  DSCBICABEX0050725 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  openrouter:apodex/apodex-1.1-mini:free: quota used up - skipped for the rest of the day
+  DSBBICABEX1050725 openrouter:apodex/apodex-1.1-mini:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  DMTKPCABEX0050725 groq:openai/gpt-oss-120b: 8s ValueError: no JSON
+  openrouter:dots-studio/dots-3-note-preview:free: quota used up - skipped for the rest of the day
+  DSBBICABEX1050725 openrouter:dots-studio/dots-3-note-preview:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:liquid/lfm-2.5-2.6b:free: quota used up - skipped for the rest of the day
+  DSBBICABEX1050725 openrouter:liquid/lfm-2.5-2.6b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  DMTSHCABEX0050725 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DMTKPCABEX0050725 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  DMTAPCABEX0050728 zai:glm-4.7-flash: 37s ValueError: 82 words / 3 paragraphs
+  DSVKSCABEX1050725 cohere:command-a-03-2025: 46s ValueError: HTTP 429: {"id":"aa8abd93-fd20-40e3-9279-8219d15a3cc9","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  DCDRZCABEX0050725 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d3232180-d6e2-406d-
+  DMTAPCABEX0050728 zai:glm-4.5-flash: 22s JSONDecodeError: Expecting value: line 5 column 10 (char 278)
+style-soft: lead>35w/1num
+style-soft: ثبت شد
+  DCDKHCRBEX0050725 cohere:command-a-03-2025: 46s ValueError: HTTP 429: {"id":"a20ef556-5d58-4671-959d-4022081f872f","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  DMTAPCABEX0050728 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1c903cea-b787-4d87-
+  DCDRZCABEX0050725 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  DSBBICABEX0050725 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"1e7934a0-b86c-4c12-94a4-9da710d7793a","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  DMTKPCABEX0050725 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 150s ValueError: 106 words / 3 paragraphs
+  DMTAPCABEX0050728 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791801482-6C1KhJMDtFqjG5kuuqqb","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  DBEZSCABEX0050725 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: ثبت شد, lead>35w/1num
+OK DSBBICABEX1050725 <- ovh:Qwen3.5-397B-A17B (169s)
+  DCDRZCABEX0050725 zai:glm-4.5-flash: 75s ValueError: 115 words / 3 paragraphs
+  DMTKPCABEX0050725 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (6007a84e-e8b0-42cd-
+  DMTKPCABEX0050725 zai:glm-4.7-flash: 100s ValueError: 99 words / 4 paragraphs
+style-soft: text 10 nums
+OK DMTAPCABEX0050728 <- ovh:Qwen3.5-397B-A17B (134s)
+  DSCBICABEX0050725 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  DCDRZCABEX0050725 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  DMTKPCABEX0050725 zai:glm-4.5-flash: 67s ValueError: 117 words / 2 paragraphs
+style-soft: ثبت شد, ثبت شد
+OK DCDRZCABEX0050725 <- ovh:Qwen3.5-397B-A17B (77s)
+style-soft: lead>35w/1num, text 9 nums
+OK DMTKPCABEX0050725 <- ovh:Qwen3.5-397B-A17B (108s)
+  DMTSHCABEX0050725 kilo:dots-studio/dots-3-note-preview:free: 349s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+style-soft: ثبت شد, lead>35w/1num, text 14 nums
+OK DSVKSCABEX1050725 <- ovh:Qwen3.5-397B-A17B (226s)
+style-soft: text 11 nums
+OK DCDKHCRBEX0050725 <- ovh:Qwen3.5-397B-A17B (53s)
+style-soft: lead>35w/1num, text 11 nums
+style-soft: lead>35w/1num, text 22 nums
+OK DSBBICABEX0050725 <- ovh:Qwen3.5-397B-A17B (143s)
+style-soft: در حالی که, text 9 nums
+OK DBEZSCABEX0050725 <- ovh:Qwen3.5-397B-A17B (114s)
+style-soft: ثبت شد, lead>35w/1num, text 13 nums
+style-soft: ثبت شد, ثبت شد, lead>35w/1num
+OK DSCBICABEX0050725 <- ovh:Qwen3.5-397B-A17B (226s)
+style-soft: text 9 nums
+OK DMTSHCABEX0050725 <- ovh:Qwen3.5-397B-A17B (164s)
+written 10/10; total in file 23
