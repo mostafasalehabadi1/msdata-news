@@ -508,6 +508,8 @@ def main():
         latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
         date, date_fa = latest["date"], latest["date_fa"]
         rows = json.load(open(os.path.join(ROOT, "data", date, "today.json"), encoding="utf-8"))["rows"]
+        # owner 1405-07-16: no news for the side hall («تالار فرعی»): those symbols have no price and no page on the site
+        rows = [r for r in rows if "فرعی" not in (r.get("talar") or "")]
     out_dir = os.path.join(ROOT, a.out)
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, f"{date}.json")
