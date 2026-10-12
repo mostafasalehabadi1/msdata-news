@@ -49,7 +49,7 @@ jobs:
               fi
             fi
             # writer is never started by anything else: if the latest day has unwritten symbols and no writer runs, start one
-            left=$(python -c "import json,os;l=json.load(open('data/latest.json'));r={x['symbol'] for x in json.load(open(f\"data/{l['date']}/today.json\"))['rows']};p=f\"queue/{l['date']}.json\";d={x['symbol'] for x in json.load(open(p))['items']} if os.path.exists(p) else set();print(len(r-d))" 2>/dev/null || echo 0)
+            left=$(python -c "import json,os;l=json.load(open('data/latest.json'));r={x['symbol'] for x in json.load(open(f\"data/{l['date']}/today.json\"))['rows'] if 'فرعی' not in (x.get('talar') or '')};p=f\"queue/{l['date']}.json\";d={x['symbol'] for x in json.load(open(p))['items']} if os.path.exists(p) else set();print(len(r-d))" 2>/dev/null || echo 0)
             if [ "${left:-0}" -gt 0 ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w write_free.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w write_free.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
               gh workflow run write_free.yml -R "$GITHUB_REPOSITORY" -f limit=0 && echo "writer started ($left left)"
             fi
