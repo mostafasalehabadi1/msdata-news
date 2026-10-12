@@ -173,8 +173,11 @@ STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "kilo:dots-
 # the next three by rating: write the important half too, but only when every strong model is out or a symbol waited 2h
 # ovh:Qwen3.5 added by the owner on 2026-10-10: every strong/backup model was out of quota and 30 important symbols stayed unwritten
 BACKUP = {"zai:glm-4.7-flash", "zai:glm-4.5-flash", "kilo:nvidia/nemotron-3-ultra-550b-a55b:free", "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
-          "ovh:Qwen3.5-397B-A17B", "arad:deepseek-v4-flash-0423", "gapgpt:gemma-3-27b-it"}
+          "ovh:Qwen3.5-397B-A17B", "arad:deepseek-v4-flash-0423"}
 BACKUP_WAIT = 2 * 3600
+# owner 2026-10-12: a paid model writes a symbol (any tier) only after the free models had 10 minutes for it and it is still unwritten
+PAID = {"gapgpt:gemma-3-27b-it", "gapgpt:deepseek-v4-flash"}
+PAID_WAIT = 600
 DEEPSEEK_ON = False  # owner 2026-10-12: GapGPT deepseek-v4-flash stays ready but writes nothing until this is True
 
 
@@ -546,7 +549,7 @@ def main():
     for name, call in provs:
         if name in REPORT_ONLY or name.startswith("gemini:"):  # every Gemini model is kept for the daily report and macro news (owner 2026-10-05)
             continue
-        groups.setdefault(name.split(":")[0] + ("/strong" if name in STRONG else "/backup" if name in BACKUP else ""), []).append((name, call))
+        groups.setdefault(name.split(":")[0] + ("/paid" if name in PAID else "/strong" if name in STRONG else "/backup" if name in BACKUP else ""), []).append((name, call))
     # importance tiers come from data/importance.json (tools/importance.py): 0 important (top half by value this year), 1 the rest.
     # A strong-model worker writes only important symbols, every other worker only the rest.
     if kish:  # top half of the day's dollar value -> strong models (rial-export rows are never compared, they go to the rest)
@@ -564,6 +567,7 @@ def main():
     del todo[a.limit or len(todo):]
     note(f"{len(todo)} symbols to write; {len(groups)} parallel workers: {', '.join(groups)}")
     lock = threading.Lock()
+    run_t0 = time.time()  # kish and energy keep no first-seen time: their 10 minutes start with the run
     tried = {r["symbol"]: set() for r in todo}
     stats = {"ok": 0}
 
@@ -648,7 +652,13 @@ def main():
                     pick = late + pick  # a waiting important symbol comes before the rest
                 # a backup worker with nothing to pick waits while a strong worker is still busy: the important symbols a strong
                 # model fails on come back to the list minutes later, and the backups had already left by then (kish 2026-10-11)
-                if not live or (not pick and (not gname.endswith("/backup") or strong_out)):
+                if gname.endswith("/paid"):
+                    pick = [r for r in todo if gname not in tried[r["symbol"]]
+                            and time.time() - (seen_t.get(r["symbol"]) or run_t0) > PAID_WAIT]
+                    others = any(t.is_alive() for g, t in zip(groups, threads) if not g.endswith("/paid"))
+                    if not live or (not pick and not others and not any(gname not in tried[r["symbol"]] for r in todo)):
+                        return
+                elif not live or (not pick and (not gname.endswith("/backup") or strong_out)):
                     return
                 r = pick[0] if pick else None
                 if r is not None:
@@ -662,7 +672,7 @@ def main():
             else:
                 fails += 1
                 with lock:
-                    if any(g not in tried[r["symbol"]] and (lvl_of(g) == tier.get(r["symbol"], 1) or g.endswith("/backup")) for g in groups):
+                    if any(g not in tried[r["symbol"]] and (lvl_of(g) == tier.get(r["symbol"], 1) or g.endswith(("/backup", "/paid"))) for g in groups):
                         todo.append(r)  # another provider may still write it
             time.sleep(4)  # stay under free-tier rate limits
 
