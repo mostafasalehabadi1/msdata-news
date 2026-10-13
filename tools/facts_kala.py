@@ -30,6 +30,8 @@ def days_between(d1, d2):
     return n(d2) - n(d1)
 
 
+GRADE = re.compile(r"(?<![0-9/٫.,-])[0-9]{4,}(?![0-9/٫.,%])")  # a bare number of 4+ digits inside a product name is a grade code
+
 def build(row, history, peers, date_fa, date, ytd_value=None):
     YEAR[0] = date_fa[:4]
     unit = (history[-1].get("unit") if history else None) or "تن"
@@ -37,13 +39,16 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     price, base = row.get("weighted_price") or 0, row.get("weighted_base_price") or 0
     off, dem, trd = row.get("offered_qty") or 0, row.get("demand_qty") or 0, row.get("traded_qty") or 0
     wd = WEEKDAYS[dt.date.fromisoformat(date).weekday()]
-    F = [f"نام کالا: {goods}؛ تولیدکننده: شرکت {prod}؛ {hall}.",
+    codes = GRADE.findall(goods)  # content agent 1405-07-22: «52518» was spelled as «۵۲ هزار و ۵۱۸»
+    F = [f"نام کالا: {goods}؛ تولیدکننده: شرکت {prod}؛ {hall}." + (f" کد گرید: {'، '.join(codes)} (کد است، مقدار نیست؛ اگر آن را می‌نویسی عیناً همین رقم‌ها باشد، نه به حروف)." if codes else ""),
          f"روز معامله: {wd} {fa_date(date_fa)} {date_fa[:4].translate(FA)}."]
     # today
     if off:
         F.append(f"شرکت {prod} امروز {fa_num(off)} {unit} {goods} عرضه کرد و خریداران {fa_num(dem)} {unit} سفارش دادند.")
         r = dem / off * 100
-        F.append(f"سفارش خریداران {fa_num(r, 0)} درصد عرضه بود" + (f"؛ یعنی تقاضا {fa_num(dem / off)} برابر عرضه بود." if r >= 150 else "."))
+        # content agent 1405-07-22: «۲۷۲ درصد عرضه» was written as «۲۷۲ درصد بیشتر از عرضه»; above the supply only «X برابر»
+        F.append(f"تقاضا {fa_num(dem / off)} برابر عرضه بود (نسبت تقاضا به عرضه را فقط همین‌طور «برابر عرضه» بنویس، نه با درصد)." if r > 100 else
+                 "تقاضا با عرضه برابر بود." if r == 100 else f"سفارش خریداران فقط {fa_num(r, 0)} درصد عرضه بود.")
     else:  # owner 1405-07-21: a supply of 0 is missing data - never in the facts, the tables or a ratio
         F.append((f"خریداران امروز {fa_num(dem)} {unit} {goods} شرکت {prod} سفارش دادند. " if dem else "") +
                  "حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.")

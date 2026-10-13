@@ -90,7 +90,7 @@ RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و �
 
 
 # content agent 1405-07-15 (252 news of 1405-07-14): the one main flaw of each model, appended to its prompt
-MODEL_HINTS = [(r"gapgpt:gemma", "۱) همه‌ی رقم‌ها و اعشارها فارسی و با «٫» (۷٫۲ نه 7.2)؛ در تیتر، متن و key_points. ۲) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه؛ روز و تاریخ را بنویس (مثل دوشنبه ۲۰ مهر). ۳) هر عدد را فقط یک بار و دقیقاً از حقیقت‌ها بنویس؛ عدد صفر یا عددی که در حقیقت‌ها نیست ننویس و ارزش معامله را خودت حساب نکن. ۴) text دست‌کم ۱۴۰ کلمه در ۲ یا ۳ پاراگراف باشد و پاراگراف‌ها با یک خط خالی جدا شوند؛ بیش از ۸ عدد نداشته باشد. ۵) هیچ حرف لاتین یا کد کالا (مثل نام گرید) در تیتر و متن نیاور؛ نام فارسی کالا کافی است. ۶) در تیتر «؛» نگذار و «نماد» ننویس."),
+MODEL_HINTS = [(r"gapgpt:gemma", "۱) همه‌ی رقم‌ها و اعشارها فارسی و با «٫» (۷٫۲ نه 7.2)؛ در تیتر، متن و key_points. ۲) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه؛ روز و تاریخ را بنویس (مثل دوشنبه ۲۰ مهر). ۳) هر عدد را فقط یک بار و دقیقاً از حقیقت‌ها بنویس؛ عدد صفر یا عددی که در حقیقت‌ها نیست ننویس و ارزش معامله را خودت حساب نکن. ۴) text دست‌کم ۱۴۰ کلمه در ۲ یا ۳ پاراگراف باشد و پاراگراف‌ها با یک خط خالی جدا شوند؛ بیش از ۸ عدد نداشته باشد. ۵) هیچ حرف لاتین یا کد کالا (مثل نام گرید) در تیتر و متن نیاور؛ نام فارسی کالا کافی است. ۶) در تیتر «؛» نگذار و «نماد» ننویس. ۷) تیتر جمله‌ی کامل با فعل است، ۸ تا ۱۳ کلمه. ۸) نسبت تقاضا به عرضه را فقط به شکل «X برابر عرضه» بنویس؛ «X درصد بیشتر از عرضه» ننویس."),
                (r"nemotron-3-super", "کلمه‌ی انگلیسی ننویس. «عرض» ننویس؛ «عرضه» بنویس."),
                (r"dots", "هیچ کلمه‌ی انگلیسی مثل Display یا faced در متن نیاور."),
                (r"command-a.*reason", "«امروز» ننویس؛ روز هفته و تاریخ را بنویس. «در حالی که» و «با این حال» ننویس."),
@@ -407,9 +407,9 @@ def parse(raw, facts="", tables=None):
         d[k] = clean(d[k].replace("\r", "").strip())
     if facts:  # owner 2026-10-12: «امروز» -> weekday and date the first time, only the weekday after that
         seen = [False]
-        d["title"] = today_words(d["title"], facts.splitlines()[0])
+        d["title"] = today_words(d["title"], day_of(facts))
         for k in ("subtitle", "lead", "text"):
-            d[k] = today_words(d[k], facts.splitlines()[0], seen)
+            d[k] = today_words(d[k], day_of(facts), seen)
     d["text"] = ensure_source(d["text"])
     w, p = words(d["text"]), paragraphs(d["text"])
     if not MIN_WORDS[0] <= w <= 220 or not 2 <= p <= 4:  # = validate.py limits; stricter limits only threw away good news
@@ -524,10 +524,10 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     a number that is not in the facts is cut by the code, and a sentence with a banned phrase is rewritten alone."""
     calls, err = 0, None
     ban = re.compile(BANNED.pattern + "|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد", re.I)  # stricter for this model (content agent 2026-10-12)
-    day = facts.splitlines()[0] if facts else ""
+    day = day_of(facts)
     fa_digits = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
     # Latin grades and codes (HP510L, S65 ...) are taken out of what the model reads, so it cannot copy them into the text
-    src = LATIN_CODE.sub(lambda m: m.group(0) if re.fullmatch(r"[TF]\d+|title|columns|rows", m.group(0)) else "", prompt + ("\n\nقواعد این بازار:\n" + market_rules if market_rules else ""))
+    src = LATIN_CODE.sub(lambda m: m.group(0) if re.fullmatch(r"[TF]\d{1,2}|title|columns|rows", m.group(0)) else "", prompt + ("\n\nقواعد این بازار:\n" + market_rules if market_rules else ""))
 
     def ask(system, user):
         nonlocal calls
@@ -587,8 +587,9 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 extra =[f"«{x.group(0)}» در {k}" for k in ("title", "subtitle", "lead", "text") for x in ban.finditer(d[k])]
                 if extra:
                     raise ValueError("markers: " + " | ".join(extra))
+                keep = set(re.findall(r"کد گرید: ([^()]+) \(", facts.splitlines()[0])[0].split("، ")) if facts and "کد گرید: " in facts.splitlines()[0] else ()
                 for k in ("title", "subtitle", "lead", "text"):  # Persian, readable digits are fixed here, not asked for
-                    d[k] = readable(d[k])
+                    d[k] = readable(d[k], keep)
                 if d.get("key_points"):  # content agent 2026-10-13: no «امروز»/«دیروز» in key_points either
                     kp = [readable(yesterday_words(today_words(x, day, [True]), day)) for x in d["key_points"]]
                     if any(ban.search(x) for x in kp):
@@ -624,6 +625,13 @@ def day_parts(day_line):
     return (m.group(1), f"{m.group(1)} {m.group(2).rstrip('.،')}") if m else ("", "")
 
 
+def day_of(facts):
+    """the fact line that names the day. It is not the first line in the kala and energy facts (content agent 1405-07-22:
+    «امروز» stayed in 79 of 93 news because the first line, the product name, was read as the day)."""
+    lines = (facts or "").splitlines()
+    return next((x for x in lines[:8] if "روز" in x and day_parts(x)[0]), lines[0] if lines else "")
+
+
 def today_words(text, day_line, seen=None):
     """owner 2026-10-12: «امروز» becomes the weekday and date the first time and only the weekday after that."""
     week, full = day_parts(day_line)
@@ -655,9 +663,11 @@ def yesterday_words(text, day_line):
     return re.sub(r"(?<![؀-ۿ])دیروز(?![؀-ۿ])", WEEK[i - 1], text)
 
 
-def readable(t):
+def readable(t, keep=()):
     """content agent 2026-10-13: «۲۶۰ هزار و ۶۰۰» not 260600, «۱٫۲۹-» not -1.29, «۷٫۲» not 7.2"""
     def big(m):
+        if m.group(0).translate(str.maketrans("۰۱۲۳۴۵۶۷۸۹", "0123456789")) in keep:  # a grade code stays as it is
+            return m.group(0)
         v, parts = int(m.group(0)), []
         for u, name in ((10 ** 9, "میلیارد"), (10 ** 6, "میلیون"), (1000, "هزار")):
             q, v = divmod(v, u)
