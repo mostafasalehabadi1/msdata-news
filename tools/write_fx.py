@@ -70,6 +70,29 @@ def weekday(jd):  # 1405/07/17 -> جمعه (the first sample wrote «پنجشن�
     return WEEK[date(*j2g(y, m, d)).weekday()]
 
 
+def greg(jd):  # 1405/07/21 -> 2026-10-13
+    y, m, d = (int(x) for x in re.findall(r"\d+", jd)[:3])
+    return "%04d-%02d-%02d" % j2g(y, m, d)
+
+
+def news_date():
+    """Gregorian day of the news: --date, else today in Tehran, else yesterday when the run is before noon."""
+    if "--date" in sys.argv:
+        return sys.argv[sys.argv.index("--date") + 1]
+    now = datetime.now(TEHRAN)
+    return (now - timedelta(days=1) if now.hour < 12 else now).strftime("%Y-%m-%d")
+
+
+def early(path, day):
+    """True when the day's file was written before noon of that same day: the market had not traded yet, so it is
+    yesterday's close under today's date and is written again (owner 1405-07-22)."""
+    try:
+        t = datetime.strptime(json.load(open(path, encoding="utf-8"))["published_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    except (OSError, ValueError, KeyError):
+        return False
+    return t.astimezone(TEHRAN) < datetime.strptime(greg(day) + " 12", "%Y-%m-%d %H").replace(tzinfo=TEHRAN)
+
+
 def pct(a, b):
     return round((a - b) / b * 100, 2) if a and b else None
 
@@ -79,6 +102,15 @@ def facts():
     raw, hd = get("raw-data.json"), get("history-daily.json")
     lt = raw["latest"]
     day = lt["trade_date"]
+    # owner 1405-07-22: after midnight the collector already carries the new date with yesterday's prices, so a late run
+    # (or --date) wrote «no change» under the wrong day. Before noon the news is about the last finished market day.
+    want = news_date()
+    done = [r for r in hd["rows"] if greg(r["date"]) <= want]
+    if greg(day) != want and done:
+        t = done[-1]
+        day = t["date"]
+        lt = {"prices": {"currency": {k: {"sell": v} for k, v in (t.get("currency_close") or {}).items()},
+                         "coin": {k: {"sell": v} for k, v in (t.get("coin_close") or {}).items()}, "gold": t.get("gold_close") or {}}}
     prev = [r for r in hd["rows"] if r["date"] < day]
     p = prev[-1] if prev else {}
     cur, pc = lt["prices"]["currency"], p.get("currency_close") or {}
@@ -109,7 +141,7 @@ def facts():
         print(f"ice_havaleh: {e}")
     usdt = {}
     try:
-        h = get("usdt_history.json")["history"]
+        h = [x for x in get("usdt_history.json")["history"] if x[0] <= day]
         if len(h) >= 2:
             usdt = {"تاریخ": h[-1][0], "قیمت فروش (تومان)": h[-1][2], "روز قبل (تومان)": h[-2][2], "تغییر (درصد)": pct(h[-1][2], h[-2][2])}
     except Exception as e:  # noqa: BLE001
@@ -200,7 +232,7 @@ def write(day, f):
                         raise
                     raw = w.retry(call, prompt + "\n\nپیش‌نویس قبلی تو:\n" + raw + f"\n\nایرادها: {e}. همان خبر را با رفع همه‌ی این ایرادها "
                                   "بازنویسی کن و فقط JSON برگردان.")
-            return {"date": sys.argv[sys.argv.index("--date") + 1] if "--date" in sys.argv else now.strftime("%Y-%m-%d"), "date_fa": day, "series": "fx-daily", "key": day, "tag": TAG, "kind": "news",
+            return {"date": greg(day), "date_fa": day, "series": "fx-daily", "key": day, "tag": TAG, "kind": "news",
                     **d, "sources": [SRC_FREE, SRC_ICE, SRC_USDT], "author": re.sub(r":free$", "", model.split(":", 1)[1].split("/")[-1]), "author_title": "مدل هوش مصنوعی",
                     "model": model, "published_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
         except Exception as e:  # noqa: BLE001 - next model
@@ -213,12 +245,12 @@ def write(day, f):
 def main():
     day, f = facts()
     # --date YYYY-MM-DD: a news written after midnight still belongs to its own day (owner 2026-10-12)
-    path = os.path.join(OUT, (sys.argv[sys.argv.index("--date") + 1] if "--date" in sys.argv else datetime.now(TEHRAN).strftime("%Y-%m-%d")) + ".json")  # one news per day (Tehran date)
+    path = os.path.join(OUT, greg(day) + ".json")  # one news per market day (the day of the data, not of the clock)
     print(f"fx {day}: {len(f['بازار آزاد ارز']['ارزها'])} free-market currencies, ice={'حواله‌ی توافقی' in f}, usdt={'تتر' in f}")
     if "--dry" in sys.argv:
         print(json.dumps(f, ensure_ascii=False, indent=1))
         return
-    if os.path.exists(path):
+    if os.path.exists(path) and not early(path, day):
         print(f"{path}: already written")
         return
     os.makedirs(OUT, exist_ok=True)
