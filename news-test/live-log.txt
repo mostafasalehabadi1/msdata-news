@@ -32,3 +32,29 @@ OK SABC-PCT2G42.5-L50-00 <- llm7:DeepSeek-V4-Flash-0731 (76s)
   DCCO-CEMENTP-50L-00 groq:openai/gpt-oss-120b: 45s ValueError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6412, Requested 344
 style-soft: lead>35w/1num, text 19 nums
 OK ZNKM-CR018OO-00 <- zai:glm-4.5-flash (34s)
+26 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  AZGI-BI6070BEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  FPCO-ACTACGEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DNJC-BI6070BEX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  ECC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DNJC-BI6070BEX-00 llm7:mistral-Nemo-Instruct-2407: 7s ValueError: no JSON
+  ZBRC-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  AZGI-BI6070BEX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  AZGI-BI6070BEX-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
+  CJOV-PCT2G42.5-L50EX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 20s JSONDecodeError: Expecting value: line 5 column 11 (char 279)
+  CJOV-PCT2G42.5-L50EX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  AZRC-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: 97 words / 1 paragraphs
+  DNJC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 5 column 11 (char 183)
+  EGHP-BI6070BEX-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"1e84fc6a-6872-4db0-a092-c54d9cb080fe","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SHCO-PCT1G42.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"d5457dac-ff62-4208-8b62-3b495eb6224b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SHGA-INBOFBEX-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  ADG-BI6070BEX-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  GHCO-PCT2G42.5-JEX-00 groq:openai/gpt-oss-120b: 52s ValueError: no JSON
+  GHCO-PCT2G42.5-JEX-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
+  AZGI-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: 81 words / 1 paragraphs
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  FPCO-ACTACBEX-00 llm7:DeepSeek-V4-Flash-0731: 64s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 8702 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":8702}}
+  AZRC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 19s JSONDecodeError: Expecting value: line 5 column 11 (char 215)
+style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 15 nums
+OK CJOV-PCT2G42.5-L50EX-00 <- groq:openai/gpt-oss-120b (20s)
