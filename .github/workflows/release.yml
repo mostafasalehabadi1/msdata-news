@@ -83,8 +83,9 @@ jobs:
               gh workflow run report.yml -R "$GITHUB_REPOSITORY" && echo "daily report started"
             fi
             python tools/release.py
+            python tools/news_flow.py || echo "news flow failed"  # owner 1405-07-22: per-hour flow for the stats page
             if python tools/validate.py; then
-              git add news
+              git add news stats
               if ! git diff --cached --quiet; then
                 git commit -qm "release: $(date -u +%H:%M)"
                 git pull -q --rebase && git push -q origin HEAD:main && git push -qf origin HEAD:refs/heads/published
