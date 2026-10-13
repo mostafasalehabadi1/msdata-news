@@ -1,2 +1,14 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+25 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ZCCO-CEMENTSPB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  OAC-CEM2-32.5R-50L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  HCC-CEMENTPB-00 llm7:minimax-m2.7: 1s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  KACC-PCT5G42.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  TCHC-CEMENTP-50L-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  TCHC-CEMENTP-50L-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  NECO-CEMENTW-40L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ZCCO-CEMENTSP-50L-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 15s JSONDecodeError: Expecting value: line 3 column 11 (char 71)
+  HCC-CEMENTPB-00 llm7:mistral-Nemo-Instruct-2407: 20s ValueError: 153 words / 1 paragraphs
+  KBCC-CPCARG42.5-L50-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+style-soft: lead>35w/1num, text 25 nums
+OK NEYC-CPCBNG32.5-L50-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (27s)
