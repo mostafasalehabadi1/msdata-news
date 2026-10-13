@@ -1,13 +1,15 @@
-energy: 2 settled rows, 1 still changing (wait 20 min unchanged)
+energy: 3 settled rows, 4 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-style-soft: ثبت شد, lead>35w/1num, text 9 nums
-  DMTAPCABEX0050728 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 327s ValueError: 114 words / 3 paragraphs
-  DMTAPCABEX0050728 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
-  DMTAPCABEX0050728 openrouter:google/gemma-4-26b-a4b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
-OK DMTAPCABEX0050728 <- openrouter:apodex/apodex-1.1-mini:free (66s)
-written 1/1; total in file 2
-energy: 2 settled rows, 1 still changing (wait 20 min unchanged)
+  DHCSACABEX0050726 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DHCSACABEX0050726 zai:glm-4.7-flash: 72s ValueError: 86 words / 4 paragraphs
+  DHCSACABEX0050726 zai:glm-4.5-flash: 75s ValueError: 102 words / 2 paragraphs
+style-soft: ثبت شد, lead>35w/1num, text 11 nums
+style-soft: ثبت شد, lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 4 calls
+OK DHCSACABEX0050726 <- gapgpt:gemma-3-27b-it (34s)
+written 1/1; total in file 3
+energy: 3 settled rows, 4 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-written 0/0; total in file 2
+written 0/0; total in file 3
