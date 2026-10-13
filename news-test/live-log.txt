@@ -12,3 +12,11 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   KBCC-CPCARG42.5-L50-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
 style-soft: lead>35w/1num, text 25 nums
 OK NEYC-CPCBNG32.5-L50-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (27s)
+  KBCC-CPCARG42.5-L50-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
+  ILCE-PCT5G42.5-B-00 llm7:minimax-m2.7: 1s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  DCCO-CPCANG32.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 18s JSONDecodeError: Expecting value: line 3 column 11 (char 78)
+  UWCO-CEMENTW-20L-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"cd5ad830-95fd-4f30-b879-1426ad34e0b0","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ZNKM-CR018OO-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ILCE-PCT5G42.5-B-00 llm7:mistral-Nemo-Instruct-2407: 19s ValueError: 173 words / 1 paragraphs
+style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 14 nums
+OK KBCC-CEMENTPOLI-50L-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (53s)
