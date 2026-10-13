@@ -1,2 +1,8 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  HSR-LUSUACB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  HSR-LUSUACB-00 zai:glm-4.7-flash: 113s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  HSR-LUSUACB-00 zai:glm-4.5-flash: 140s ValueError: 113 words / 2 paragraphs
+style-soft: ثبت شد, امروز>2, lead>35w/1num, text 28 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
+OK HSR-LUSUACB-00 <- gapgpt:gemma-3-27b-it (39s)
