@@ -96,6 +96,37 @@ OK KACC-PCT5G42.5-B-00 <- ovh:gpt-oss-120b (154s)
 style-soft: ثبت شد, lead>35w/1num, text 13 nums
   ILCE-PCT5G42.5-B-00 openrouter:apodex/apodex-1.1-mini:free: 227s TypeError: expected string or bytes-like object, got 'NoneType'
   ZCCO-CEMENTSP-50L-00 requesty:novita/inclusionai/ling-3.0-tiny: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+26 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  AZGI-BI6070BEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  FPCO-ACTACGEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DNJC-BI6070BEX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  ECC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DNJC-BI6070BEX-00 llm7:mistral-Nemo-Instruct-2407: 7s ValueError: no JSON
+  ZBRC-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  AZGI-BI6070BEX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  AZGI-BI6070BEX-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
+  CJOV-PCT2G42.5-L50EX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 20s JSONDecodeError: Expecting value: line 5 column 11 (char 279)
+  CJOV-PCT2G42.5-L50EX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  AZRC-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: 97 words / 1 paragraphs
+  DNJC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 5 column 11 (char 183)
+  EGHP-BI6070BEX-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"1e84fc6a-6872-4db0-a092-c54d9cb080fe","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SHCO-PCT1G42.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"d5457dac-ff62-4208-8b62-3b495eb6224b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SHGA-INBOFBEX-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  ADG-BI6070BEX-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  GHCO-PCT2G42.5-JEX-00 groq:openai/gpt-oss-120b: 52s ValueError: no JSON
+  GHCO-PCT2G42.5-JEX-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
+  AZGI-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: 81 words / 1 paragraphs
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  FPCO-ACTACBEX-00 llm7:DeepSeek-V4-Flash-0731: 64s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 8702 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":8702}}
+  AZRC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 19s JSONDecodeError: Expecting value: line 5 column 11 (char 215)
+style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 15 nums
+OK CJOV-PCT2G42.5-L50EX-00 <- groq:openai/gpt-oss-120b (20s)
+  EGHP-BI6070BEX-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"37c8a5b3-bbb2-4d9c-b892-c3e85915faee","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SHGA-INBOFBEX-00 requesty:novita/inclusionai/ling-3.0-tiny: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  DNJC-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 27s ValueError: 119 words / 1 paragraphs
+  BOCO-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"70a63d54-79ac-45cc-bf49-12b74528cd50","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  PKAD-BI6070BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 125s TypeError: expected string or bytes-like object, got 'NoneType'
 style-soft: ثبت شد, lead>35w/1num
 OK DCCO-CEMENTP-50L-00 <- ovh:Qwen3.5-397B-A17B (87s)
 style-soft: lead>35w/1num, text 22 nums
@@ -141,6 +172,35 @@ style-soft: lead>35w/1num
 style-soft: lead>35w/1num, text 25 nums
   staged gapgpt:gemma-3-27b-it: accepted after 3 calls
 OK ILCE-PCT5G42.5-B-00 <- gapgpt:gemma-3-27b-it (60s)
+OK PKAD-BI6070BEX-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (140s)
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: markers: «نشان‌دهنده» در text | تالار اشتباه: «صادراتی»
+style-soft: lead>35w/1num, text 11 nums
+style-soft: lead>35w/1num, text 12 nums
+  ADG-BI6070BEX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 281s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: markers: تالار اشتباه: «صادراتی»
+style-soft: lead>35w/1num, text 9 nums
+OK DNJC-BI6070BEX-00 <- ovh:gpt-oss-120b (198s)
+  ADG-BI6070BEX-00 kilo:cohere/north-mini-code:free: 95s ValueError: 166 words / 1 paragraphs
+style-soft: ثبت شد, lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: 110 words / 3 paragraphs
+  FPCO-ACTACGEX-00 gapgpt:gemma-3-27b-it: 281s ValueError: staged: 20 calls, last: 110 words / 3 paragraphs
+style-soft: ثبت شد, lead>35w/1num, text 16 nums
+style-soft: ثبت شد, lead>35w/1num, text 14 nums
+  AZRC-BI6070BEX-00 kilo:inclusionai/ling-3.1-flash: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"message\":\"server overload, please try again later trace_id: f7e16c464e673f9cf3307c488d434dc5\",\"type\":\"server_overload\"}\n","
+style-soft: ثبت شد, lead>35w/1num, text 14 nums
+style-soft: ثبت شد, lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+OK ECC-PCT2G42.5-L50EX-00 <- gapgpt:gemma-3-27b-it (44s)
+style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 17 nums
+style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 18 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+OK ZBRC-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (43s)
+style-soft: ثبت شد
+OK AZRC-BI6070BEX-00 <- kilo:nvidia/nemotron-3-super-120b-a12b:free (103s)
 style-soft: lead>35w/1num, text 12 nums
 style-soft: lead>35w/1num, text 15 nums
 style-soft: lead>35w/1num, text 9 nums
@@ -157,3 +217,16 @@ style-soft: امروز>2, lead>35w/1num, text 15 nums
 style-soft: امروز>2, lead>35w/1num, text 12 nums
   staged gapgpt:gemma-3-27b-it: accepted after 5 calls
 OK OAC-CEM2-32.5R-50L-00 <- gapgpt:gemma-3-27b-it (118s)
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 19 calls: markers: «نشان‌دهنده» در text | «نشان‌دهنده» در text | تالار اشتباه: «صادراتی»
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «نشان‌دهنده» در text | «نشان‌دهنده» در text | تالار اشتباه: «صادراتی»
+  SHCO-PCT1G42.5-JEX-00 gapgpt:gemma-3-27b-it: 201s ValueError: staged: 20 calls, last: markers: «نشان‌دهنده» در text | «نشان‌دهنده» در text | تالار اشتباه: «صادراتی»
+  GHCO-PCT2G42.5-JEX-00 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  GSS-BSO068XEX-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+  GHCO-PCT2G42.5-JEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+OK FPCO-ACTACBEX-00 <- gapgpt:gemma-3-27b-it (74s)
