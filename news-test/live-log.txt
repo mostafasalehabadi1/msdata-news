@@ -54,3 +54,69 @@ OK ESTC-PCT2G42.5-L50EX-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free 
   GSS-BSO068XEX-00 ovh:Qwen3.5-397B-A17B: 251s ValueError: markers: تالار اشتباه: «صنعتی و معدنی»
 style-soft: ثبت شد, text 18 nums
 OK PAGH-BI6070BEX-00 <- ovh:gpt-oss-120b (257s)
+25 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ZCCO-CEMENTSPB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  OAC-CEM2-32.5R-50L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  HCC-CEMENTPB-00 llm7:minimax-m2.7: 1s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  KACC-PCT5G42.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  TCHC-CEMENTP-50L-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  TCHC-CEMENTP-50L-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  NECO-CEMENTW-40L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ZCCO-CEMENTSP-50L-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 15s JSONDecodeError: Expecting value: line 3 column 11 (char 71)
+  HCC-CEMENTPB-00 llm7:mistral-Nemo-Instruct-2407: 20s ValueError: 153 words / 1 paragraphs
+  KBCC-CPCARG42.5-L50-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+style-soft: lead>35w/1num, text 25 nums
+OK NEYC-CPCBNG32.5-L50-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (27s)
+  KBCC-CPCARG42.5-L50-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
+  ILCE-PCT5G42.5-B-00 llm7:minimax-m2.7: 1s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  DCCO-CPCANG32.5-L50-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 18s JSONDecodeError: Expecting value: line 3 column 11 (char 78)
+  UWCO-CEMENTW-20L-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"cd5ad830-95fd-4f30-b879-1426ad34e0b0","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ZNKM-CR018OO-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ILCE-PCT5G42.5-B-00 llm7:mistral-Nemo-Instruct-2407: 19s ValueError: 173 words / 1 paragraphs
+style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 14 nums
+OK KBCC-CEMENTPOLI-50L-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (53s)
+  KBCC-CEMENTPB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 21s ValueError: 103 words / 1 paragraphs
+  KBCC-CPCARG42.5-B-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  KMC-CEMENTSPB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791884073-ccbdZ0rLX2929nFek6Hz","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+style-soft: ثبت شد, در حالی که, lead>35w/1num, text 13 nums
+OK KHCO-PCT5G42.5-B-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (64s)
+  EKC-CEMENTW-50L-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 21s JSONDecodeError: Expecting value: line 2 column 12 (char 13)
+  KBCC-CPCARG42.5-B-00 llm7:mistral-Nemo-Instruct-2407: 6s ValueError: no JSON
+style-soft: امروز>2, lead>35w/1num, text 14 nums
+OK SABC-PCT2G42.5-L50-00 <- llm7:DeepSeek-V4-Flash-0731 (76s)
+  DCCO-CEMENTP-50L-00 groq:openai/gpt-oss-120b: 45s ValueError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6412, Requested 344
+style-soft: lead>35w/1num, text 19 nums
+OK ZNKM-CR018OO-00 <- zai:glm-4.5-flash (34s)
+  SHCO-CPCARG32.5-B-00 requesty:mistral/leanstral-1-5: 92s ValueError: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write a news article based on specific facts provided about a commodity (Cement) traded on the physi'
+  UWCO-CEMENTW-20L-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"34dcf70d-e108-45dd-aa94-41a20372cd2b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  SHCO-CPCARG32.5-B-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  SHCO-CPCARG32.5-B-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  DCCO-CEMENTP-50L-00 groq:openai/gpt-oss-20b: 18s ValueError: no JSON
+  SHCO-CPCARG32.5-B-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  OAC-CEM2-32.5R-50L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 44s ValueError: 117 words / 1 paragraphs
+style-soft: امروز>2, lead>35w/1num, text 12 nums
+OK ZCCO-CEMENTSPB-00 <- llm7:DeepSeek-V4-Flash-0731 (39s)
+style-soft: lead>35w/1num, text 17 nums
+OK HCC-CEMENTPB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (27s)
+  ZCCO-CEMENTSP-50L-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"e32eb73c-382a-465e-987a-d5410bd5043c","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: ثبت شد, امروز>2, lead>35w/1num, text 13 nums
+OK WCO-CPCANG42.5-L50-00 <- ovh:gpt-oss-120b (155s)
+  KBCC-CPCARG42.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 22s ValueError: 117 words / 1 paragraphs
+  NECO-CEMENTW-40L-00 zai:glm-4.7-flash: 90s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ILCE-CEMENTP-50L-00 kilo:inclusionai/ling-3.1-flash: 180s TimeoutError: The read operation timed out
+  TCC-CEMENTW-40L-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  ZCCO-CEMENTSP-50L-00 cohere:command-r-plus-08-2024: 46s ValueError: HTTP 429: {"id":"b737bb9f-c3e8-4153-838a-97a4fbbcaf0c","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  ILCE-PCT5G42.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 26s ValueError: 62 words / 2 paragraphs
+style-soft: lead>35w/1num, text 19 nums
+OK EKC-CEMENTW-50L-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (23s)
+style-soft: lead>35w/1num, text 19 nums
+OK NECO-CEMENTW-40L-00 <- zai:glm-4.5-flash (50s)
+  KMC-CEMENTSPB-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"cf175be0-2713-457a-b3d5-4cf2faca81fe","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  KACC-PCT5G42.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 21 nums
+  KBCC-CPCARG42.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 28s ValueError: markers: نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
+style-soft: lead>35w/1num, text 9 nums
+OK ILCE-CEMENTP-50L-00 <- kilo:kilo-auto/free (99s)
