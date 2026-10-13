@@ -1,8 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-26 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  AZGI-BI6070BEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  FPCO-ACTACGEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  DNJC-BI6070BEX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
   ECC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   DNJC-BI6070BEX-00 llm7:mistral-Nemo-Instruct-2407: 7s ValueError: no JSON
   ZBRC-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
@@ -202,3 +197,9 @@ style-soft: امروز>2, lead>35w/1num, text 14 nums
 style-soft: امروز>2, lead>35w/1num, text 14 nums
   staged gapgpt:gemma-3-27b-it: accepted after 4 calls
 OK MBS-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (36s)
+  EGHP-BI6070BEX-00 ovh:gpt-oss-120b: 254s TimeoutError: The read operation timed out
+style-soft: ثبت شد, lead>35w/1num, text 13 nums
+style-soft: ثبت شد, lead>35w/1num, text 13 nums
+style-soft: ثبت شد, lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+OK PIM-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (94s)
