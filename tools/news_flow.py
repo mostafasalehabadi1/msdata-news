@@ -2,7 +2,9 @@
 how many traded commodities reached the writer, how many news were written and how many were published in each
 Tehran hour of a day. Not cumulative. Read from this repo's own history, so past days can be built too.
 
-stats/flow.json: {"updated": ..., "days": {"2026-10-13": {"date_fa": "1405/07/21", "kala": [24], "written": [24], "published": [24]}}}
+stats/flow.json: {"updated": ..., "days": {"2026-10-13": {"date_fa": "1405/07/21", "kala": [24], "written": [24], "published": [24],
+    "minutes": {"kala": [[minute, count], ...], "written": [...], "published": [...]},   minute 0-1439 of the Tehran day
+    "lag_min": {"write": median minutes from arrival to written, "publish": written to published, "total": arrival to published}}}}
 usage: python tools/news_flow.py            today and (before 03:00 Tehran) yesterday
        python tools/news_flow.py --days 20  the last 20 days (backfill)
 """
@@ -22,38 +24,45 @@ def git(*a):
     return subprocess.run(["git", "-C", ROOT] + list(a), capture_output=True).stdout.decode("utf-8-sig", "replace")
 
 
-def history(path, day, count):
-    """[(Tehran time, count)] of one file through the day's commits, oldest first."""
+def history(path, day, symbols):
+    """{symbol: Tehran time of the first commit of the day's file that holds it}"""
     d = dt.date.fromisoformat(day)
     since, until = f"{d - dt.timedelta(days=1)}T20:30:00Z", f"{d + dt.timedelta(days=1)}T06:00:00Z"
-    pts = []
-    for line in git("log", "--format=%H %ct", f"--since={since}", f"--until={until}", "--", path).split("\n"):
+    first = {}
+    for line in reversed(git("log", "--format=%H %ct", f"--since={since}", f"--until={until}", "--", path).split("\n")):
         if not line.strip():
             continue
         h, t = line.split()
         try:
-            pts.append((dt.datetime.fromtimestamp(int(t), TEHRAN), count(json.loads(git("show", f"{h}:{path}")))))
+            for sym in symbols(json.loads(git("show", f"{h}:{path}"))):
+                first.setdefault(sym, dt.datetime.fromtimestamp(int(t), TEHRAN))
         except (ValueError, KeyError, TypeError):
             continue
-    return sorted(pts)
+    return first
 
 
 def traded(j):  # same rows the writer takes: traded, not the secondary hall
-    return len({r["symbol"] for r in j["rows"] if float(r.get("traded_qty") or 0) > 0 and "فرعی" not in (r.get("talar") or "")})
+    return {r["symbol"] for r in j["rows"] if float(r.get("traded_qty") or 0) > 0 and "فرعی" not in (r.get("talar") or "")}
 
 
-def hour_of(t, day):
-    """Tehran hour 0-23 inside the day; a late commit after midnight counts in the last hour, an early one in the first."""
-    return 23 if t.date().isoformat() > day else 0 if t.date().isoformat() < day else t.hour
+def minute_of(t, day):
+    """Tehran minute 0-1439 inside the day; a late commit after midnight counts in the last minute, an early one in the first."""
+    return 1439 if t.date().isoformat() > day else 0 if t.date().isoformat() < day else t.hour * 60 + t.minute
 
 
-def per_hour(pts, day):
-    out, last = [0] * 24, 0
-    for t, n in pts:
-        if n > last:
-            out[hour_of(t, day)] += n - last
-            last = n
-    return out
+def series(times, day):
+    """-> (24 counts per hour, sparse [[minute, count], ...])"""
+    hours, mins = [0] * 24, {}
+    for t in times:
+        m = minute_of(t, day)
+        hours[m // 60] += 1
+        mins[m] = mins.get(m, 0) + 1
+    return hours, [[m, n] for m, n in sorted(mins.items())]
+
+
+def median(xs):
+    xs = sorted(xs)
+    return None if not xs else round((xs[len(xs) // 2] + xs[(len(xs) - 1) // 2]) / 2, 1)
 
 
 def build(day):
@@ -61,14 +70,20 @@ def build(day):
         cur = json.load(open(os.path.join(ROOT, "news", day + ".json"), encoding="utf-8"))
     except (OSError, ValueError):
         cur = {}
-    pub = [0] * 24
+    pub = {}
     for it in cur.get("items") or []:
         try:
-            pub[hour_of(dt.datetime.fromisoformat(it["published_at"].replace("Z", "+00:00")).astimezone(TEHRAN), day)] += 1
+            pub[it["symbol"]] = dt.datetime.fromisoformat(it["published_at"].replace("Z", "+00:00")).astimezone(TEHRAN)
         except (KeyError, ValueError):
             continue
-    row = {"date_fa": cur.get("date_fa"), "kala": per_hour(history(f"data/{day}/today.json", day, traded), day),
-           "written": per_hour(history(f"queue/{day}.json", day, lambda j: len(j["items"])), day), "published": pub}
+    kala = history(f"data/{day}/today.json", day, traded)
+    wrote = history(f"queue/{day}.json", day, lambda j: {i["symbol"] for i in j["items"]})
+    row, mins = {"date_fa": cur.get("date_fa")}, {}
+    for k, times in (("kala", kala), ("written", wrote), ("published", pub)):
+        row[k], mins[k] = series(times.values(), day)
+    row["minutes"] = mins  # owner 1405-07-22: the exact minute, [[minute of the day in Tehran, count], ...]
+    gap = lambda a, b: [(b[x] - a[x]).total_seconds() / 60 for x in b if x in a and b[x] >= a[x]]  # noqa: E731
+    row["lag_min"] = {"write": median(gap(kala, wrote)), "publish": median(gap(wrote, pub)), "total": median(gap(kala, pub))}
     return row if any(sum(row[k]) for k in ("kala", "written", "published")) else None
 
 
