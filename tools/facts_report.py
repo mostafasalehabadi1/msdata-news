@@ -61,7 +61,7 @@ def build(rows, date_fa, date, sym_dir):
     part = [r for r in traded if r["traded_qty"] < (r.get("offered_qty") or 0) - 1e-9]
     if part:
         F.append(f"در {fa_int(len(part))} نماد فقط بخشی از عرضه فروش رفت؛ روی هم {fa_num(sum(r['offered_qty'] - r['traded_qty'] for r in part))} واحد بی‌خریدار ماند.")
-    full = [r for r in traded if r["traded_qty"] >= (r.get("offered_qty") or 0) - 1e-9]
+    full = [r for r in traded if r["traded_qty"] >= (r.get("offered_qty") or 0) - 1e-9 and r.get("offered_qty")]  # supply 0 = missing data
     F.append(f"در {fa_int(len(full))} نماد تمام عرضه به فروش رفت.")
     at_base = sum(1 for r in traded if abs(comp(r)) < 0.05)
     hot = sorted([r for r in traded if comp(r) > 0.05], key=comp, reverse=True)

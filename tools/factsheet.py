@@ -56,7 +56,7 @@ def build(row, history, peers, date_fa):
     offered, demand, traded = row.get("offered_qty") or 0, row.get("demand_qty") or 0, row.get("traded_qty") or 0
     L = [f"کالا: {row.get('goods_name')} | تولیدکننده: {row.get('producer_name')} | {row.get('talar')}",
          f"تاریخ امروز: {fa_date(date_fa)} {date_fa[:4].translate(FA)}"]
-    L.append(f"عرضه: {fa_num(offered)} {unit} | سفارش خریداران: {fa_num(demand)} {unit} | معامله‌شده: {fa_num(traded)} {unit}")
+    L.append((f"عرضه: {fa_num(offered)} {unit} | " if offered else "") + f"سفارش خریداران: {fa_num(demand)} {unit} | معامله‌شده: {fa_num(traded)} {unit}")
     if traded > 0:
         L.append(f"نرخ میانگین معامله: {fa_int(price)} ریال هر کیلوگرم | قیمت پایه: {fa_int(base)} ریال")
         if base:

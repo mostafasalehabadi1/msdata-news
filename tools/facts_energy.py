@@ -68,7 +68,9 @@ def build(row, past, date_fa, date):
     F = [f"نام کالا: {goods}؛ عرضه‌کننده: {prod}.",
          f"بازار: {mk} بورس انرژی ایران؛ نوع قرارداد: {row.get('contract_type') or 'نقدی'}.",
          f"روز معامله: {wd} {fa_date(date_fa)}.",
-         f"{prod} {fa_num(off)} {vu} {goods} عرضه کرد و {fa_num(trd)} {vu} آن فروش رفت."]
+         f"{prod} {fa_num(off)} {vu} {goods} عرضه کرد و {fa_num(trd)} {vu} آن فروش رفت." if off else
+         # owner 1405-07-21: a supply of 0 is missing data - never in the facts, the tables or a ratio
+         f"{fa_num(trd)} {vu} {goods} {prod} فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن."]
     dem = row.get("demand_volume")  # kala_energy fce103a: «حجم تقاضا» of the IEE stats page
     if dem and off:
         r = dem / off
@@ -114,7 +116,7 @@ def build(row, past, date_fa, date):
             tables["T1"] = {"title": f"قیمت {goods} در معامله‌های اخیر ({pu})", "columns": ["تاریخ", "قیمت"],
                             "rows": [[fa_date(d), fa_num(p, 2 if abs(p) < 10 else 0)] for d, p in prices[-5:]] + [[fa_date(date_fa), fa_num(price, 2 if abs(price) < 10 else 0)]]}
     tables["T2"] = {"title": f"معامله‌ی {goods} {prod}", "columns": ["شاخص", "مقدار"],
-                    "rows": [[f"عرضه ({vu})", fa_num(off)], [f"فروش ({vu})", fa_num(trd)],
+                    "rows": ([[f"عرضه ({vu})", fa_num(off)]] if off else []) + [[f"فروش ({vu})", fa_num(trd)],
                              [f"قیمت پایه ({pu})", fa_num(base, 2 if abs(base) < 10 else 0)],
                              [f"قیمت معامله ({pu})", fa_num(price, 2 if abs(price) < 10 else 0)], ["بازار", mk]]}
     text = "\n".join(f"{i}. {f}" for i, f in enumerate(F, 1))

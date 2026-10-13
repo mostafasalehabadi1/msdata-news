@@ -40,12 +40,17 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     F = [f"نام کالا: {goods}؛ تولیدکننده: شرکت {prod}؛ {hall}.",
          f"روز معامله: {wd} {fa_date(date_fa)} {date_fa[:4].translate(FA)}."]
     # today
-    F.append(f"شرکت {prod} امروز {fa_num(off)} {unit} {goods} عرضه کرد و خریداران {fa_num(dem)} {unit} سفارش دادند.")
     if off:
+        F.append(f"شرکت {prod} امروز {fa_num(off)} {unit} {goods} عرضه کرد و خریداران {fa_num(dem)} {unit} سفارش دادند.")
         r = dem / off * 100
         F.append(f"سفارش خریداران {fa_num(r, 0)} درصد عرضه بود" + (f"؛ یعنی تقاضا {fa_num(dem / off)} برابر عرضه بود." if r >= 150 else "."))
+    else:  # owner 1405-07-21: a supply of 0 is missing data - never in the facts, the tables or a ratio
+        F.append((f"خریداران امروز {fa_num(dem)} {unit} {goods} شرکت {prod} سفارش دادند. " if dem else "") +
+                 "حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.")
     if trd <= 0:
         F.append("امروز هیچ معامله‌ای انجام نشد و کالا بی‌خریدار ماند (از نبود معامله نتیجه‌ی قیمتی نگیر).")
+    elif not off:
+        F.append(f"{fa_num(trd)} {unit} {goods} فروش رفت.")
     elif trd >= off - 1e-9:
         F.append("تمام عرضه به فروش رفت.")
     else:
@@ -146,8 +151,8 @@ def tables(row, past, same, unit, goods, trd):
     T = {}
     price, base = row.get("weighted_price") or 0, row.get("weighted_base_price") or 0
     off, dem = row.get("offered_qty") or 0, row.get("demand_qty") or 0
-    T["T1"] = {"title": "معامله‌ی امروز", "columns": ["شاخص", "مقدار"], "rows": [
-        ["عرضه", f"{fa_num(off)} {unit}"], ["سفارش خریداران", f"{fa_num(dem)} {unit}"], ["معامله‌شده", f"{fa_num(trd)} {unit}"],
+    T["T1"] = {"title": "معامله‌ی امروز", "columns": ["شاخص", "مقدار"], "rows": ([["عرضه", f"{fa_num(off)} {unit}"]] if off else []) + [
+        ["سفارش خریداران", f"{fa_num(dem)} {unit}"], ["معامله‌شده", f"{fa_num(trd)} {unit}"],
         ["قیمت پایه (ریال/کیلوگرم)", fa_int(base)], ["قیمت میانگین (ریال/کیلوگرم)", fa_int(price) if trd and price else "—"],
         ["ارزش معامله", toman_billion(row.get("trade_value")) if trd else "—"]]}
     if len(past) >= 2:

@@ -67,7 +67,7 @@ def build(items, series, prev_day, date_fa, date):
     part = [r for r in traded if r["trade_volume"] < (r.get("offer_volume") or 0) - 1e-9]
     if part:
         F.append(f"در {fa_int(len(part))} کالا فقط بخشی از عرضه فروش رفت.")
-    full = [r for r in traded if r["trade_volume"] >= (r.get("offer_volume") or 0) - 1e-9]
+    full = [r for r in traded if r["trade_volume"] >= (r.get("offer_volume") or 0) - 1e-9 and r.get("offer_volume")]  # supply 0 = missing data
     F.append(f"در {fa_int(len(full))} کالای دلاری تمام عرضه فروش رفت.")
     at_base = sum(1 for r in traded if abs(comp(r)) < 0.05)
     hot = sorted([r for r in traded if comp(r) > 0.05], key=comp, reverse=True)

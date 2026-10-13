@@ -66,7 +66,11 @@ def build(row, series, day_rows, date_fa, date):
     m = re.search(r"(\d+)\s*کیلوگرم", row.get("unit") or "")
     kg = int(m.group(1)) if m else 1000
     vol = lambda v: fa_num(v * kg / 1000)
-    F.append(f"شرکت {prod} {vol(off)} تن {goods} عرضه کرد و خریداران {vol(dem)} تن خواستند؛ {vol(trd)} تن فروش رفت.")
+    if not off:  # owner 1405-07-21: a supply of 0 is missing data - never in the facts, the tables or a ratio
+        F.append(f"{vol(trd)} تن {goods} شرکت {prod} فروش رفت" + (f" و خریداران {vol(dem)} تن خواستند" if dem else "") +
+                 ". حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.")
+    else:
+        F.append(f"شرکت {prod} {vol(off)} تن {goods} عرضه کرد و خریداران {vol(dem)} تن خواستند؛ {vol(trd)} تن فروش رفت.")
     if off:
         r = dem / off
         if r >= 1.5:
@@ -109,7 +113,7 @@ def build(row, series, day_rows, date_fa, date):
         rows = [[fa_date(d), fa_int(p)] for d, p in prices[-5:]] + [[fa_date(date_fa), fa_int(price)]]
         tables["T1"] = {"title": f"قیمت {goods} در شش معامله‌ی اخیر ({pu})", "columns": ["تاریخ", "قیمت"], "rows": rows}
     tables["T2"] = {"title": f"معامله‌ی {goods} شرکت {prod}", "columns": ["شاخص", "مقدار"],
-                    "rows": [["عرضه (تن)", vol(off)], ["تقاضا (تن)", vol(dem)], ["فروش (تن)", vol(trd)],
+                    "rows": ([["عرضه (تن)", vol(off)]] if off else []) + [["تقاضا (تن)", vol(dem)], ["فروش (تن)", vol(trd)],
                              [f"قیمت پایه ({pu})", fa_int(base)], [f"قیمت معامله ({pu})", fa_int(price)], ["شرط تحویل", deliv]]}
     text = "\n".join(f"{i}. {f}" for i, f in enumerate(F, 1))
     return text, tables
