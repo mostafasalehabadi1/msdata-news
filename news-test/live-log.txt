@@ -1,191 +1,32 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 40 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  CHG-GS00101-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  MPC-HDBL3PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  NCI-OANMMSB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  KRD-LD2420E02PP-00 kilo:dots-studio/dots-3-note-preview:free: 16s ValueError: bad response: '{"id":"gen-1791895552-wNuaYgsVXOaM1xdSzuaH","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
-style-soft: lead>35w/1num, text 22 nums
-  AKSC-GS00101-00 kilo:dots-studio/dots-3-note-preview:free: 17s ValueError: bad response: '{"id":"gen-1791895575-PofIrGFDQDcMz4MbajME","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
-  NCI-OAMOOX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"9cc4e924-a2cf-479c-8966-1768ef0f9410","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-style-soft: lead>35w/1num, text 21 nums
-OK KEPE-HDBL3PP-00 <- llm7:DeepSeek-V4-Flash-0731 (51s)
-  NCI-OANMMSA-00 kilo:dots-studio/dots-3-note-preview:free: 16s ValueError: bad response: '{"id":"gen-1791895596-BEH28jsQ6WrKxrIN1qsR","error":{"message":"JSON error injected into SSE stream","code":502,"metadata":{"error_type":"provider_unavailable"}}}'
-style-soft: در حالی که, lead>35w/1num, text 12 nums
-  LPC-LD2102TX00RP-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"2cd1bfe0-0f89-48dc-a6bd-83c4d47af9f8","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  LOR-HD62N07UVPP-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"42a4408d-76ca-4e8f-aeb7-ed8580365297","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  ASPC-LDLFI2119WP-00 llm7:DeepSeek-V4-Flash-0731: 141s ValueError: HTTP 524: error code: 524
+  MDC-HD7000FPJ-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  WCO-PCT5G42.5-L50-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
+  DCC-CEMENTPOLI-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  MDC-HDF7000LMPJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1791898111-k7UWyh77FzcfFbTFAsri","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped for the rest of the day
+  DCC-CEMENTPOLI-50L-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped for the rest of the day
+  DCC-CEMENTPOLI-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  BCC-PCT5G32.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  openrouter:apodex/apodex-1.1-mini:free: quota used up - skipped for the rest of the day
+  DCC-CEMENTPOLI-50L-00 openrouter:apodex/apodex-1.1-mini:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:dots-studio/dots-3-note-preview:free: quota used up - skipped for the rest of the day
+  DCC-CEMENTPOLI-50L-00 openrouter:dots-studio/dots-3-note-preview:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:liquid/lfm-2.5-2.6b:free: quota used up - skipped for the rest of the day
+  DCC-CEMENTPOLI-50L-00 openrouter:liquid/lfm-2.5-2.6b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  UWCO-CEMENTW-25L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  WSH-CEMENTW-20L-00 requesty:mistral/leanstral-1-5: 17s ValueError: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants a news article for the MSData.ir website about a specific commodity in the physical market of the Commodit'
+  WSH-CEMENTW-20L-00 requesty:novita/inclusionai/ling-3.0-tiny: 0s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
 
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  NCI-OANMMSF-00 llm7:DeepSeek-V4-Flash-0731: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 645 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":645}}
-  TABC-MD3840UAPP-00 zai:glm-4.7-flash: 33s ValueError: 98 words / 2 paragraphs
-  KSFN-MBENN03E-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 46s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5d24740a-1ac3-452e-
-style-soft: ثبت شد, text 9 nums
-style-soft: lead>35w/1num, text 16 nums
-  TABC-MD3840UAPP-00 zai:glm-4.5-flash: 54s ValueError: 85 words / 2 paragraphs
-  THOR-GRSUSUB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (0d7d7789-f45b-4850-
-  KHCO-PCT5G42.5-L50-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (eda3da1b-24b5-48f0-
-style-soft: ثبت شد, text 11 nums
-OK HSR-LUSUFEB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (173s)
-  KRD-LD2420F8PP-00 zai:glm-4.7-flash: 83s ValueError: 105 words / 2 paragraphs
-  PAM-LD2420HPP-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  KRD-LD2420F8PP-00 zai:glm-4.5-flash: 19s JSONDecodeError: Expecting ',' delimiter: line 11 column 4 (char 693)
-  ENPC-PSSER310J-089 zai:glm-4.7-flash: 36s ValueError: 93 words / 2 paragraphs
-  ENPC-PSSER310J-089 zai:glm-4.5-flash: 16s JSONDecodeError: Expecting value: line 4 column 11 (char 172)
-style-soft: text 10 nums
-style-soft: lead>35w/1num, text 11 nums
-OK IPC-HDHB0035PP-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (175s)
-style-soft: lead>35w/1num, text 15 nums
-OK ECC-CPCANG32.5-L50-00 <- ovh:Qwen3.5-397B-A17B (239s)
-style-soft: lead>35w/1num, text 24 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK AAC-CPCANG32.5-L50-00 <- gapgpt:gemma-3-27b-it (57s)
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: عدد بیرون از حقیقت‌ها: ۹۵۰۰
-style-soft: ثبت شد, lead>35w/1num, text 12 nums
-OK LOR-HD54B04UVPP-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (174s)
-style-soft: lead>35w/1num, text 24 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-OK SGHC-PCT5G42.5-L50-00 <- gapgpt:gemma-3-27b-it (121s)
-  IKRC-GRSUSUB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: call 3 failed: HTTP 504: <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width">
-style-soft: lead>35w/1num, text 28 nums
-style-soft: lead>35w/1num, text 25 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK ACC-CPCANG32.5-L50-00 <- gapgpt:gemma-3-27b-it (79s)
-style-soft: ثبت شد, text 12 nums
-OK SACE-CEMENTSP-50L-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (152s)
-style-soft: امروز>2, lead>35w/1num, text 15 nums
-style-soft: امروز>2, lead>35w/1num, text 17 nums
-style-soft: امروز>2, lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
-OK MDC-HD52B18UVPP-00 <- gapgpt:gemma-3-27b-it (68s)
-OK KEPE-HDEX5PP-00 <- ovh:Qwen3.5-397B-A17B (137s)
-style-soft: lead>35w/1num, text 23 nums
-style-soft: lead>35w/1num, text 23 nums
-style-soft: lead>35w/1num, text 23 nums
-style-soft: lead>35w/1num, text 23 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: عدد بیرون از حقیقت‌ها: ۴۵٫۹۵۵ | لید عیناً در متن تکرار شده
-style-soft: در حالی که, ثبت شد, lead>35w/1num, text 17 nums
-  MDC-HD62N07UVPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 136s ValueError: bad response: '{"id":"gen-1791896598-6kk4wJVAhyQiohqYtA6X","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-style-soft: lead>35w/1num, text 22 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-OK TCC-CEMENTP-50L-00 <- gapgpt:gemma-3-27b-it (124s)
-OK ASPC-LDLFI2047AWP-00 <- ovh:Qwen3.5-397B-A17B (121s)
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
+  KHAC-CEMENTSP-50L-00 llm7:minimax-m2.7: 20s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
+  WSH-CEMENTW-20L-00 requesty:poolside/laguna-m.1: 0s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  WSH-CEMENTW-20L-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  FICO-CPCANG42.5-L50-00 groq:openai/gpt-oss-120b: 29s ValueError: no JSON
+style-soft: lead>35w/1num, text 19 nums
+style-soft: lead>35w/1num, text 19 nums
   staged gapgpt:gemma-3-27b-it: accepted after 4 calls
-OK KHCE-CEMENTSP-50L-00 <- gapgpt:gemma-3-27b-it (51s)
-style-soft: lead>35w/1num, text 22 nums
-style-soft: lead>35w/1num, text 20 nums
-style-soft: lead>35w/1num, text 20 nums
-style-soft: lead>35w/1num, text 20 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 5 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 12 nums
-style-soft: text 14 nums
-OK BCC-PCT5G32.5-L50-00 <- ovh:Qwen3.5-397B-A17B (114s)
-  SHPC-PPRP270GPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s ValueError: bad response: '{"id":"gen-1791896784-40WYf93OxU097ZA6JAnH","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-style-soft: امروز>2, lead>35w/1num, text 22 nums
-style-soft: lead>35w/1num, text 20 nums
-style-soft: lead>35w/1num, text 20 nums
-style-soft: lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: markers: کد کالا یا حروف لاتین وسط متن
-OK SACE-CEMENTWB-25L-00 <- ovh:Qwen3.5-397B-A17B (64s)
-style-soft: lead>35w/1num, text 22 nums
-style-soft: lead>35w/1num, text 21 nums
-style-soft: lead>35w/1num, text 21 nums
-style-soft: lead>35w/1num, text 21 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: امروز>2, lead>35w/1num, text 18 nums
-style-soft: امروز>2, lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSEF305J-089 gapgpt:gemma-3-27b-it: 255s ValueError: staged: 20 calls, last: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 10 nums
-OK NEYC-CPCBNG32.5-B-00 <- ovh:Qwen3.5-397B-A17B (129s)
-style-soft: lead>35w/1num, text 23 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK CHG-GS00101-00 <- gapgpt:gemma-3-27b-it (46s)
-style-soft: ثبت شد, lead>35w/1num, text 20 nums
-style-soft: ثبت شد, lead>35w/1num, text 20 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 4 calls
-OK NCI-OANMMSB-00 <- gapgpt:gemma-3-27b-it (36s)
-style-soft: ثبت شد, در حالی که
-OK SACE-CEMENTWB-40L-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (279s)
-style-soft: lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK KRD-LD2420E02PP-00 <- gapgpt:gemma-3-27b-it (46s)
-style-soft: lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK NCI-OAMOOX-00 <- gapgpt:gemma-3-27b-it (36s)
-  MPC-HDBL3PP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 25 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK NCI-OANMMSA-00 <- gapgpt:gemma-3-27b-it (38s)
-style-soft: lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK LOR-HD62N07UVPP-00 <- gapgpt:gemma-3-27b-it (50s)
-style-soft: text 18 nums
-style-soft: text 18 nums
-style-soft: text 18 nums
-  AKSC-GS00101-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 230s ValueError: bad response: '{"id":"gen-1791897304-qaOPpgCAofSOp6MZurrK","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-style-soft: text 18 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: عدد بیرون از حقیقت‌ها: ۱۶۰۸
-style-soft: lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-OK ASPC-LDLFI2119WP-00 <- gapgpt:gemma-3-27b-it (137s)
-style-soft: ثبت شد, lead>35w/1num, text 11 nums
-OK LPC-LD2102TX00RP-00 <- ovh:Qwen3.5-397B-A17B (252s)
-style-soft: lead>35w/1num, text 23 nums
-style-soft: امروز>2, lead>35w/1num, text 34 nums
-style-soft: امروز>2, lead>35w/1num, text 34 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: «نشان‌دهنده» در text
-  NCI-OANMMSF-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 24 nums
-style-soft: lead>35w/1num, text 25 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 10 calls
-OK KSFN-MBENN03E-00 <- gapgpt:gemma-3-27b-it (131s)
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-  THOR-GRSUSUB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 48s ValueError: bad response: '{"id":"gen-1791897545-juTZiKevbkfuYRToTsCb","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
-style-soft: به ثبت رساند, ثبت شد, در حالی که, lead>35w/1num, text 23 nums
-style-soft: به ثبت رساند, ثبت شد, در حالی که, lead>35w/1num, text 23 nums
-OK TABC-MD3840UAPP-00 <- ovh:Qwen3.5-397B-A17B (143s)
-style-soft: به ثبت رساند, ثبت شد, در حالی که, lead>35w/1num, text 23 nums
-style-soft: به ثبت رساند, ثبت شد, در حالی که, lead>35w/1num, text 23 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: لید عیناً در متن تکرار شده
-style-soft: ثبت شد, lead>35w/1num, text 26 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-OK KHCO-PCT5G42.5-L50-00 <- gapgpt:gemma-3-27b-it (107s)
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
-OK PAM-LD2420HPP-00 <- gapgpt:gemma-3-27b-it (56s)
-OK KRD-LD2420F8PP-00 <- ovh:Qwen3.5-397B-A17B (106s)
-style-soft: امروز>2, lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK ENPC-PSSER310J-089 <- gapgpt:gemma-3-27b-it (39s)
-style-soft: امروز>2, lead>35w/1num, text 20 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK IKRC-GRSUSUB-00 <- gapgpt:gemma-3-27b-it (43s)
-style-soft: ثبت شد, امروز>2, lead>35w/1num, text 24 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK SHPC-PPRP270GPP-00 <- gapgpt:gemma-3-27b-it (38s)
-style-soft: lead>35w/1num, text 22 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK MPC-HDBL3PP-00 <- gapgpt:gemma-3-27b-it (39s)
-  MDC-HD62N07UVPP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-style-soft: امروز>2, lead>35w/1num, text 22 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK AKSC-GS00101-00 <- gapgpt:gemma-3-27b-it (36s)
-style-soft: امروز>2, lead>35w/1num, text 22 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK NCI-OANMMSF-00 <- gapgpt:gemma-3-27b-it (37s)
-style-soft: ثبت شد, امروز>2, lead>35w/1num, text 22 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK THOR-GRSUSUB-00 <- gapgpt:gemma-3-27b-it (47s)
-style-soft: lead>35w/1num, text 27 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK MDC-HD62N07UVPP-00 <- gapgpt:gemma-3-27b-it (42s)
-OK ENPC-PSSEF305J-089 <- ovh:Qwen3.5-397B-A17B (174s)
+OK FSIC-EA005000-00 <- gapgpt:gemma-3-27b-it (32s)
