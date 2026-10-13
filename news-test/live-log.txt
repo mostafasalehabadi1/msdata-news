@@ -1,59 +1,4 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-26 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  AZGI-BI6070BEX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  FPCO-ACTACGEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  DNJC-BI6070BEX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
-  ECC-PCT2G42.5-L50EX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  DNJC-BI6070BEX-00 llm7:mistral-Nemo-Instruct-2407: 7s ValueError: no JSON
-  ZBRC-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  AZGI-BI6070BEX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
-  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
-  AZGI-BI6070BEX-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
-  CJOV-PCT2G42.5-L50EX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 20s JSONDecodeError: Expecting value: line 5 column 11 (char 279)
-  CJOV-PCT2G42.5-L50EX-00 llm7:minimax-m2.7: 0s ValueError: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":null,"code":"model_unavailable"}}
-  AZRC-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: 97 words / 1 paragraphs
-  DNJC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 5 column 11 (char 183)
-  EGHP-BI6070BEX-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"1e84fc6a-6872-4db0-a092-c54d9cb080fe","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  SHCO-PCT1G42.5-JEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"d5457dac-ff62-4208-8b62-3b495eb6224b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  SHGA-INBOFBEX-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  ADG-BI6070BEX-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  GHCO-PCT2G42.5-JEX-00 groq:openai/gpt-oss-120b: 52s ValueError: no JSON
-  GHCO-PCT2G42.5-JEX-00 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
-  AZGI-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: 81 words / 1 paragraphs
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  FPCO-ACTACBEX-00 llm7:DeepSeek-V4-Flash-0731: 64s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 8702 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":8702}}
-  AZRC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 19s JSONDecodeError: Expecting value: line 5 column 11 (char 215)
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 15 nums
-OK CJOV-PCT2G42.5-L50EX-00 <- groq:openai/gpt-oss-120b (20s)
-  EGHP-BI6070BEX-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"37c8a5b3-bbb2-4d9c-b892-c3e85915faee","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  SHGA-INBOFBEX-00 requesty:novita/inclusionai/ling-3.0-tiny: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  DNJC-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 27s ValueError: 119 words / 1 paragraphs
-  BOCO-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"70a63d54-79ac-45cc-bf49-12b74528cd50","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  PKAD-BI6070BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 125s TypeError: expected string or bytes-like object, got 'NoneType'
-style-soft: ثبت شد, lead>35w/1num
-  ADG-BI6070BEX-00 zai:glm-4.5-flash: 78s ValueError: 103 words / 3 paragraphs
-  AZGI-BI6070BEX-00 groq:openai/gpt-oss-120b: 52s ValueError: no JSON
-  SHGA-INBOFBEX-00 requesty:poolside/laguna-m.1: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  GHCO-PCT2G42.5-JEX-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"291ae4bf-8c93-4428-af7d-c2e94c5e14a0","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  AZGI-BI6070BEX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  GHHA-BI6070BEX-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"806123ca-ab8f-4a20-a776-9cbd68d4b4e9","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-style-soft: ثبت شد, text 19 nums
-style-soft: text 9 nums
-  MBS-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SHGA-INBOFBEX-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  GHCO-PCT2G42.5-JEX-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"6b643edf-4a8e-47d0-9097-51033ee7ee26","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  DNJC-BI6070BEX-00 groq:openai/gpt-oss-120b: 71s ValueError: no JSON
-  DNJC-BI6070BEX-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  PKH-BI6070BEX-00 kilo:inclusionai/ling-3.1-flash: 226s TimeoutError: The read operation timed out
-  kilo:kilo-auto/free: quota used up - skipped for the rest of the day
-  PKH-BI6070BEX-00 kilo:kilo-auto/free: 0s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
-style-soft: ثبت شد, lead>35w/1num
-OK ESTC-PCT2G42.5-L50EX-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (233s)
-  SHGA-INBOFBEX-00 requesty:nvidia/muse-glimmer-30b: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  PKAD-BI6070BEX-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"50bc6b6e-d83c-4afa-9f11-97c0ee396795","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  GSS-BSO068XEX-00 ovh:Qwen3.5-397B-A17B: 251s ValueError: markers: تالار اشتباه: «صنعتی و معدنی»
-style-soft: ثبت شد, text 18 nums
-OK PAGH-BI6070BEX-00 <- ovh:gpt-oss-120b (257s)
 25 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   ZCCO-CEMENTSPB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   OAC-CEM2-32.5R-50L-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
@@ -120,3 +65,8 @@ style-soft: lead>35w/1num, text 21 nums
   KBCC-CPCARG42.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 28s ValueError: markers: نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
 style-soft: lead>35w/1num, text 9 nums
 OK ILCE-CEMENTP-50L-00 <- kilo:kilo-auto/free (99s)
+  SHCO-CPCARG32.5-B-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
+  KMC-CEMENTSPB-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"f15e66db-6eeb-4578-867b-f67ef4faa6b3","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  TCC-CEMENTW-40L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 25s ValueError: 107 words / 1 paragraphs
+style-soft: در حالی که, ثبت شد, text 24 nums
+OK TCHC-CEMENTP-50L-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (224s)
