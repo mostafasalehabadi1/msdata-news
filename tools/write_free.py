@@ -510,7 +510,7 @@ JSON_KEYS = ("فقط یک JSON با کلیدهای title, slug, subtitle, lead, 
 # step 1 - draft: only the shape of the news; no wording rules (they come in later steps)
 STAGE1 = ("تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس. "
           "فقط از همین حقیقت‌ها بنویس و هیچ عدد، درصد یا مقایسه‌ای خودت نساز. هر جمله یک واقعیت از حقیقت‌ها داشته باشد.\n"
-          "- title: حدود ۱۰ کلمه. - subtitle: یک جمله. - lead: یک جمله‌ی ۲۰ تا ۳۰ کلمه‌ای.\n"
+          "- title: حدود ۱۰ کلمه. - subtitle: یک جمله. - lead: یک جمله‌ی ۲۰ تا ۳۰ کلمه‌ای با فعل خبری و عدد اصلی خبر (قیمت یا مقدار فروش)؛ جمله‌ی کلی ننویس.\n"
           "- text: ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها.\n"
           "- key_points: ۳ جمله‌ی کوتاه با عددهای همین خبر.\n" + JSON_KEYS)
 # step 2 - check: a closed yes/no question per sentence is easier for a small model than a rewrite (content agent 1405-07-22)
@@ -546,6 +546,44 @@ NAME_STOP = {"شرکت", "صنایع", "گروه", "تولید", "ایران", "
 TITLE_VERB = re.compile(r"(?:ت|د|است|ند)$")
 
 
+DATE_WORDS = re.compile(r"[0-9۰-۹]{1,2} (?:فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند)(?: [0-9۰-۹]{4})?")
+
+
+def clean_title(t):
+    """content agent 1405-07-22: no final dot, the slug is made from the cleaned title (no comma, dot or Latin)"""
+    return re.sub(r"[.。]+$", "", t.strip().strip("«»\"").strip())
+
+
+def title_problem(t, facts):
+    """content agent 1405-07-22: no Latin, at most one comma, 8-13 words, a verb, and the commodity named as in the data
+    (its first two words, or the one word) - «کنسانتره مس» for «کنسانتره فلزات گرانبها» is another commodity."""
+    probs = []
+    if re.search(r"[A-Za-z]", t):
+        probs.append("حرف لاتین در تیتر")
+    if len(re.findall(r"[،,]", t)) > 1:
+        probs.append("بیش از یک ویرگول در تیتر")
+    if not 8 <= len(t.split()) <= 13:
+        probs.append(f"تیتر {len(t.split())} کلمه است؛ ۸ تا ۱۳ کلمه بنویس")
+    m = NAME_LINE.search(facts.splitlines()[0]) if facts else None
+    if m:
+        w = re.findall(r"[\u0600-\u06FF\u200c]+", m.group(1))[:2]
+        if w and " ".join(w) not in t:
+            probs.append(f"نام کالا در تیتر باید «{' '.join(w)}» باشد")
+    return " | ".join(probs)
+
+
+def number_problem(text):
+    """content agent 1405-07-22: at most 2 numbers in a sentence and 15 in the text (dates are not counted)"""
+    t = DATE_WORDS.sub("", text)
+    probs = []
+    if len(NUM.findall(t)) > 15:
+        probs.append(f"متن {len(NUM.findall(t))} عدد دارد؛ حداکثر ۱۵ عدد بماند")
+    many = [x for x in re.split(r"(?<=[.!؟])\s+", t) if len(NUM.findall(x)) > 2]
+    if many:
+        probs.append(f"{len(many)} جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد")
+    return " | ".join(probs)
+
+
 def off_topic(d, facts):
     """content agent 1405-07-22: gemma once published a car-market story under a rebar symbol. The text must name this commodity
     and this producer (one main word of each), and the title must end with a verb. Returns the problem or ''."""
@@ -568,7 +606,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     What a small model keeps getting wrong is repaired in small pieces: Latin product codes never reach it, a sentence with
     a number that is not in the facts is cut by the code, and a sentence with a banned phrase is rewritten alone."""
     calls, err = 0, None
-    ban = re.compile(BANNED.pattern + r"|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد", re.I)  # stricter for this model (content agent 2026-10-12)
+    ban = re.compile(BANNED.pattern + r"|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد|لازم به ذکر است|رقم زد|را تجربه کرد|ثبت شد|امروز", re.I)  # stricter for this model (content agent 2026-10-12/-22)
     day = day_of(facts)
     fa_digits = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
     # Latin grades and codes (HP510L, S65 ...) are taken out of what the model reads, so it cannot copy them into the text
@@ -626,10 +664,12 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
         return d if isinstance(d, dict) and all(isinstance(d.get(k), str) for k in ("title", "lead", "text")) else None
 
     # every step is told which commodity and producer the news is about (content agent 1405-07-22: one car-market story)
-    head = (facts.splitlines()[0] + "\n\n") if facts else ""
+    fl = LATIN_CODE.sub("", facts or "").replace("  ", " ")  # «تختال C» -> «تختال» (content agent 1405-07-22)
+    head = (fl.splitlines()[0] + "\n\n") if fl else ""
     # a small model loses a long input: the draft gets the first 10 facts; the tables and the check still see all of them
-    lines = [x for x in (facts or "").splitlines() if x.strip()]
-    brief = src.replace(facts, "\n".join(lines[:10])) if facts and len(lines) > 10 else src
+    lines = [x for x in fl.splitlines() if x.strip()]
+    must = [x for x in lines[10:] if re.search(r"از آخرین معامله|ارزش معامله", x)]  # content agent 1405-07-22
+    brief = src.replace(LATIN_CODE.sub(lambda m: m.group(0) if re.fullmatch(r"[TF]\d{1,2}|title|columns|rows", m.group(0)) else "", facts), "\n".join(lines[:10] + must)) if facts and len(lines) > 10 else src
     key = (lines[0] + day) if lines else ""
     while calls < PAID_TRIES:
         raw = ask(STAGE1, brief + model_hint(name))
@@ -656,10 +696,16 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 raw = new
         d0 = as_dict(raw)
         if d0 and calls < PAID_TRIES:  # step 4: the title alone
-            t = ask(STAGE_TITLE, head + "\n".join(lines[:8]) + "\n\nلید خبر: " + d0["lead"]).strip().strip("«»\"").splitlines()
-            t = t[0].strip() if t else ""
-            if t and not off_topic({"title": t, "lead": d0["lead"], "text": d0["text"]}, facts) and len(t.split()) <= 16:
-                d0["title"], d0["slug"] = t, t
+            why = ""
+            for _ in range(3):
+                if calls >= PAID_TRIES:
+                    break
+                t = ask(STAGE_TITLE, head + "\n".join(lines[:8]) + "\n\nلید خبر: " + d0["lead"] + (f"\n\nتیتر قبلی رد شد: {why}" if why else "")).strip().splitlines()
+                t = clean_title(t[0]) if t else ""
+                why = (off_topic({"title": t, "lead": d0["lead"], "text": d0["text"]}, facts) + " " + title_problem(t, facts)).strip() if t else "خالی"
+                if not why:
+                    d0["title"], d0["slug"] = t, t
+                    break
         if d0:  # step 5: the source sentence is the code's job; whatever the model wrote about the source goes
             paras = [" ".join(x for x in re.split(r"(?<=[.!؟])\s+", para.strip()) if not MSD.search(x)) for para in d0["text"].split("\n\n")]
             d0["text"] = ensure_source("\n\n".join(x for x in paras if x), key)
@@ -670,9 +716,12 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 extra =[f"«{x.group(0)}» در {k}" for k in ("title", "subtitle", "lead", "text") for x in ban.finditer(d[k])]
                 if extra:
                     raise ValueError("markers: " + " | ".join(extra))
-                off = off_topic(d, facts)
+                d["title"] = clean_title(d["title"])
+                off = " | ".join(x for x in (off_topic(d, facts), title_problem(d["title"], facts), number_problem(d["text"]),
+                                             "" if NUM.search(DATE_WORDS.sub("", d["lead"])) else "لید عدد اصلی خبر را ندارد") if x)
                 if off:
                     raise ValueError(off)
+                d["slug"] = SLUG_BAD.sub("-", re.sub(r"[،,.A-Za-z]", " ", d["title"]).strip())
                 keep = set(re.findall(r"کد گرید: ([^()]+) \(", facts.splitlines()[0])[0].split("، ")) if facts and "کد گرید: " in facts.splitlines()[0] else ()
                 for k in ("title", "subtitle", "lead", "text"):  # Persian, readable digits are fixed here, not asked for
                     d[k] = readable(d[k], keep)
