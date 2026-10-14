@@ -1,19 +1,4 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-4 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  THOR-GRSUSUB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  SHPC-TEAB-00 llm7:DeepSeek-V4-Flash-0731: 3s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 1633 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":1633}}
-  SHPC-TEAB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  THOR-OAVBB-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  THOR-GRSUSUB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (24b5114e-081a-48cc-
-  THOR-OAVBB-00 zai:glm-4.5-flash: 61s ValueError: 112 words / 3 paragraphs
-style-soft: lead>35w/1num
-OK SHPC-TEAKG-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (155s)
-  THOR-GRSUSUB-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: ثبت شد, ثبت شد, lead>35w/1num
-OK SHPC-TEAB-00 <- ovh:Qwen3.5-397B-A17B (172s)
-style-soft: lead>35w/1num, text 15 nums
-OK THOR-GRSUSUB-00 <- zai:glm-4.5-flash (32s)
 33 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   SABC-PCT2G42.5-L50EX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   NCI-CCAAEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
@@ -65,3 +50,5 @@ style-soft: lead>35w/1num, text 19 nums
   TCHC-PCT2G42.5-L50EX-00 cohere:command-r-plus-08-2024: 45s ValueError: HTTP 429: {"id":"cb8f05be-ba31-4a72-8c13-7932c18dd7b8","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
 style-soft: ثبت شد, text 9 nums
 OK CTM-PCT2G42.5-L50EX-00 <- ovh:Qwen3.5-397B-A17B (208s)
+style-soft: ثبت شد, lead>35w/1num, text 24 nums
+OK CJOV-PCT2G42.5-L50EX-00 <- ovh:gpt-oss-120b (225s)
