@@ -106,10 +106,10 @@ def build(row, series, day_rows, date_fa, date):
         lo = min(prices, key=lambda x: x[1])
         first = prices[0][0]
         if price > hi[1]:
-            F.append(f"این بیشترین قیمت این نماد از {fa_date(first)} (آغاز داده‌ها) است؛ بیشترین قبلی {fa_int(hi[1])} در {fa_date(hi[0])} بود.")
+            F.append(f"این بیشترین قیمت این کالا از {fa_date(first)} (آغاز داده‌ها) است؛ بیشترین قبلی {fa_int(hi[1])} در {fa_date(hi[0])} بود.")
         elif price < lo[1]:
-            F.append(f"این کمترین قیمت این نماد از {fa_date(first)} (آغاز داده‌ها) است؛ کمترین قبلی {fa_int(lo[1])} در {fa_date(lo[0])} بود.")
-        F.append(f"این نماد از {fa_date(first)} تا امروز {fa_int(len(past))} بار معامله شده است.")
+            F.append(f"این کمترین قیمت این کالا از {fa_date(first)} (آغاز داده‌ها) است؛ کمترین قبلی {fa_int(lo[1])} در {fa_date(lo[0])} بود.")
+        F.append(f"این کالا از {fa_date(first)} تا امروز {fa_int(len(past))} بار معامله شده است.")
         rows = [[fa_date(d), fa_int(p)] for d, p in prices[-5:]] + [[fa_date(date_fa), fa_int(price)]]
         tables["T1"] = {"title": f"قیمت {goods} در شش معامله‌ی اخیر ({pu})", "columns": ["تاریخ", "قیمت"], "rows": rows}
     tables["T2"] = {"title": f"معامله‌ی {goods} شرکت {prod}", "columns": ["شاخص", "مقدار"],

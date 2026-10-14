@@ -14,6 +14,7 @@ import datetime as dt
 import json
 import os
 import re
+import zlib
 import subprocess
 import sys
 import tempfile
@@ -120,22 +121,43 @@ PATTERNS = ["تضاد: اول نکته‌ی متناقض (مثلاً «تقاض�
 
 
 # the source sentence (owner 1405-07-15): «ام‌اس‌دیتا» exactly once, mid or end of the text, never title/lead/first sentence.
-# the site builder links it to https://msdata.ir/ (kala_build srcLink). «به گزارش …» stays banned, so its sample is left out
-SOURCE_LINES = ["«بر اساس داده‌های ام‌اس‌دیتا از معاملات بورس کالا، …»", "«طبق محاسبه‌ی ام‌اس‌دیتا، قیمت … درصد بالاتر از … بود.»",
-                "«در داده‌هایی که ام‌اس‌دیتا از … جمع کرده، این بیشترین قیمت است.»", "«ام‌اس‌دیتا این نماد را از … دنبال می‌کند؛ …»",
-                "«جدول زیر را ام‌اس‌دیتا از معاملات روز تهیه کرده است.»", "«در … معامله‌ی اخیری که ام‌اس‌دیتا ثبت کرده، …»",
-                "«به استناد داده‌های روزانه‌ی ام‌اس‌دیتا، …»", "«در آمار ام‌اس‌دیتا از تالار …، …»",
-                "«محاسبه‌ی ام‌اس‌دیتا از سهم هر تولیدکننده: …»", "«این خبر بر پایه‌ی داده‌های ام‌اس‌دیتا از بورس کالا نوشته شده است.» (فقط جمله‌ی آخر متن)",
-                "«ام‌اس‌دیتا قیمت این کالا را با … معامله‌ی قبلی‌اش مقایسه کرده است: …»", "«در حساب ام‌اس‌دیتا، ارزش این معامله حدود … بود.»",
-                "«پایگاه داده‌ی ام‌اس‌دیتا معاملات این نماد را از … ثبت کرده است.»", "«نمودار ام‌اس‌دیتا برای این کالا، روند … را نشان می‌دهد.»",
-                "«بنا بر داده‌هایی که ام‌اس‌دیتا هر روز از بورس کالا جمع می‌کند، …»", "«ام‌اس‌دیتا سهم این تولیدکننده از کل معامله‌ی روز را … درصد حساب کرده است.»",
-                "«در مقایسه‌ای که ام‌اس‌دیتا با معامله‌ی … انجام داده، …»", "«طبق جدول معاملات ام‌اس‌دیتا، …»",
-                "«کارنامه‌ای که ام‌اس‌دیتا از این نماد دارد، … است.»"]
+# content agent 1405-07-22: 20 complete sentences (no blanks for the model to fill with a made-up number), one per news,
+# chosen by symbol+day so a rerun gives the same one; the code puts it in when the model leaves it out.
+SOURCE_LINES = ["این ارقام از داده‌های روزانه‌ی ام‌اس‌دیتا از معاملات بورس کالا استخراج شده است.",
+                "ام‌اس‌دیتا معاملات این کالا را روز به روز ثبت و با جلسه‌های قبل مقایسه می‌کند.",
+                "مقایسه‌ی قیمت با معامله‌های قبلی بر پایه‌ی داده‌های ام‌اس‌دیتا است.",
+                "سابقه‌ی قیمت این کالا در پایگاه داده‌ی ام‌اس‌دیتا در دسترس است.",
+                "ام‌اس‌دیتا روند قیمت و حجم این کالا را از نخستین معامله‌ی ثبت‌شده دنبال می‌کند.",
+                "محاسبه‌ی تغییر قیمت و نسبت تقاضا به عرضه را ام‌اس‌دیتا انجام داده است.",
+                "داده‌های این معامله را ام‌اس‌دیتا از گزارش رسمی معاملات بورس کالا گردآوری کرده است.",
+                "جزئیات معامله‌های قبلی این کالا در صفحه‌ی آن در ام‌اس‌دیتا آمده است.",
+                "طبق داده‌های ام‌اس‌دیتا، این مقایسه با آخرین معامله‌ی همین تولیدکننده انجام شده است.",
+                "ام‌اس‌دیتا قیمت این کالا را در کنار دیگر فروشندگان همین جلسه مقایسه کرده است.",
+                "نمودار روند قیمت این کالا در ام‌اس‌دیتا هر روز به‌روز می‌شود.",
+                "بالاترین و پایین‌ترین قیمت‌های این کالا از داده‌های ثبت‌شده‌ی ام‌اس‌دیتا آمده است.",
+                "این گزارش بر پایه‌ی آمار معاملات روزانه‌ای است که ام‌اس‌دیتا منتشر می‌کند.",
+                "ارزش معامله‌های امسال این کالا را ام‌اس‌دیتا از جمع معاملات ثبت‌شده حساب کرده است.",
+                "ام‌اس‌دیتا همه‌ی عرضه‌های این تولیدکننده را در بورس کالا ثبت می‌کند.",
+                "داده‌ی عرضه، تقاضا و قیمت این معامله از آرشیو ام‌اس‌دیتا گرفته شده است.",
+                "به استناد داده‌های ام‌اس‌دیتا، این معامله با جلسه‌های پیشین همین کالا سنجیده شده است.",
+                "در آرشیو ام‌اس‌دیتا، معامله‌های این کالا به تفکیک تولیدکننده ثبت شده است.",
+                "ام‌اس‌دیتا داده‌های این تالار را هر روز پس از پایان معاملات جمع‌آوری می‌کند.",
+                "خوانندگان می‌توانند سابقه‌ی کامل معاملات این کالا را در ام‌اس‌دیتا ببینند."]
+MARKET = ["kala"]  # set by main(): sentences 1, 7 and 13 name the energy exchange / the export hall instead
 
 
-def source_line():
-    return ("\n\nمنبع: در متن دقیقاً یک بار «ام‌اس‌دیتا» بیاور (نه در تیتر، نه در لید، نه در جمله‌ی اول متن؛ وسط یا آخر متن) "
-            "با این شکل و با عددهای واقعی همین حقیقت‌ها: " + random.choice(SOURCE_LINES) + " msdata را به لاتین ننویس و لینک نگذار.")
+def source_pick(key):
+    line = SOURCE_LINES[zlib.crc32(key.encode("utf-8")) % len(SOURCE_LINES)]
+    if MARKET[0] == "energy":
+        return line.replace("بورس کالا", "بورس انرژی")
+    if MARKET[0] == "kish":
+        return line.replace("معاملات بورس کالا", "معاملات تالار صادراتی بورس کالا").replace("گزارش رسمی معاملات بورس کالا", "گزارش رسمی تالار صادراتی بورس کالا")
+    return line
+
+
+def source_line(key=""):
+    return ("\n\nمنبع: این جمله را عیناً و فقط یک بار در وسط یا آخر text بیاور (نه در title، نه در lead، نه در جمله‌ی اول text): «"
+            + (source_pick(key) if key else random.choice(SOURCE_LINES)) + "» جمله‌ی دیگری با «ام‌اس‌دیتا» ننویس.")
 
 
 def pattern_line():
@@ -353,7 +375,10 @@ FIXES = [(re.compile(r"^به گزارش [^،,]{0,40}(?:ام[‌ ]?اس[‌ ]?د�
          (re.compile(r"به شمار می[‌ ]?رود|محسوب می[‌ ]?شود"), "است"), (re.compile(r"به ثبت رسید|رقم خورد"), "رسید"),
          (re.compile(r"بالغ شد"), "رسید"), (re.compile(r"شایان ذکر است(?: که)?\s*"), ""), (re.compile(r"در این میان،?\s*"), ""),
          # content agent 1405-07-14: «۱ هزار و» -> «هزار و»; a lone «عرض/العرض» is always a typo of «عرضه» in commodity news
-         (re.compile(r"(?<![0-9۰-۹٫.])[1۱] هزار"), "هزار"), (re.compile(r"(?<![\w‌])(?:ال)?عرض(?![\w‌])"), "عرضه")]
+         (re.compile(r"(?<![0-9۰-۹٫.])[1۱] هزار"), "هزار"), (re.compile(r"(?<![0-9۰-۹٫.])[1۱] میلیون"), "یک میلیون"),
+         # content agent 1405-07-22: «این نماد/این سهم» -> «این کالا», a lone «نماد» -> «کالا», «۲۲ مهر ۲۲ مهر» -> once
+         (re.compile(r"این (?:نماد|سهم)(?![\w‌])"), "این کالا"), (re.compile(r"(?<![\w‌])نماد(?![\w‌])"), "کالا"),
+         (re.compile(r"([0-9۰-۹]{1,2} (?:فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند))(?: \1)+"), r"\1"), (re.compile(r"(?<![\w‌])(?:ال)?عرض(?![\w‌])"), "عرضه")]
 BANNED = re.compile(r"به گزارش|بررسی (?:داده|آمار)\S* نشان|نشان[‌ ]?دهنده|حاکی از|بیانگر|؛ رقمی که|این در حالی است|به خود اختصاص|"
                     r"در مجموع|روی میز|تاریخی|فصل ساخت|منتظر|انتظار می‌رود|احتمالاً|شاید|[?؟]\s*$|ms ?d\w*ata", re.I)
 # owner 1405-07-14: «رکورد» is allowed; the source is named once, in Persian only («ام‌اس‌دیتا», owner 1405-07-15 via content agent)
@@ -367,11 +392,15 @@ NUM = re.compile(r"[0-9۰-۹]+(?:[٫.][0-9۰-۹]+)?")
 SOURCE_END = "این خبر بر پایه‌ی داده‌های ام‌اس‌دیتا از بورس کالا نوشته شده است."
 
 
-def ensure_source(text):
-    """content agent 1405-07-15: a bare «ام‌اس‌دیتا» / «منبع: ام‌اس‌دیتا» tail, or no mention at all -> sentence 10 at the end."""
+def ensure_source(text, key=""):
+    """content agent 1405-07-15: a bare «ام‌اس‌دیتا» / «منبع: ام‌اس‌دیتا» tail, or no mention at all -> the picked source
+    sentence at the end of paragraph 2 (content agent 1405-07-22), or of the last paragraph when there is only one."""
     t = re.sub(r"\s*(?:منبع\s*[:：]\s*)?ام[‌ ]?اس[‌ ]?دیتا\.?\s*$", "", text.rstrip())
     if not MSD.search(t):
-        t = t.rstrip() + " " + SOURCE_END
+        paras = t.split("\n\n")
+        k = 1 if len(paras) > 1 else 0
+        paras[k] = paras[k].rstrip() + " " + (source_pick(key) if key else SOURCE_END)
+        t = "\n\n".join(paras)
     return t
 
 
@@ -410,7 +439,7 @@ def parse(raw, facts="", tables=None):
         d["title"] = today_words(d["title"], day_of(facts))
         for k in ("subtitle", "lead", "text"):
             d[k] = today_words(d[k], day_of(facts), seen)
-    d["text"] = ensure_source(d["text"])
+    d["text"] = ensure_source(d["text"], (facts.splitlines()[0] + day_of(facts)) if facts else "")
     w, p = words(d["text"]), paragraphs(d["text"])
     if not MIN_WORDS[0] <= w <= 220 or not 2 <= p <= 4:  # = validate.py limits; stricter limits only threw away good news
         raise ValueError(f"{w} words / {p} paragraphs")
@@ -478,41 +507,30 @@ def parse(raw, facts="", tables=None):
 PAID_TRIES = 20
 JSON_KEYS = ("فقط یک JSON با کلیدهای title, slug, subtitle, lead, text, table, key_points برگردان و هیچ متن دیگری ننویس. "
              "slug همان تیتر با خط تیره به‌جای فاصله است. table فقط شناسه‌ی یکی از جدول‌های پیشنهادی است (مثلاً \"T2\"). ")
-STAGE1 = ("تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده و روان بنویس. "
-          "کار تو فقط نگارش است: خبری‌ترین ۴ تا ۷ حقیقت را انتخاب کن و هیچ عدد، درصد یا مقایسه‌ای خودت نساز.\n"
-          "- title: حدود ۱۰ کلمه با نام کالا و تولیدکننده و فقط یک عدد.\n"
-          "- subtitle: یک جمله با نکته‌ای غیر از تیتر.\n"
-          "- lead: یک جمله‌ی ۲۰ تا ۳۰ کلمه‌ای با حداکثر یک عدد که کل خبر را می‌گوید.\n"
-          "- text: ۱۵۰ تا ۱۹۰ کلمه در دقیقاً ۳ پاراگراف. بین پاراگراف‌ها یک خط خالی بگذار (در JSON یعنی \\n\\n). "
-          "هر پاراگراف ۲ تا ۴ جمله‌ی کوتاه. جمله‌ی اول text با lead فرق داشته باشد.\n"
-          "- key_points: آرایه‌ی دقیقاً ۳ جمله‌ی کوتاه (هر کدام کمتر از ۱۵ کلمه) با عددهای همین خبر.\n"
-          # content agent 1405-07-22: filler sentences, verbless titles, «این سهم»
-          "- تیتر با فعل تمام شود (مثل «… فروخته شد»، «… به … رسید»). هر جمله دست‌کم یک واقعیت از حقیقت‌ها داشته باشد؛ "
-          "جمله‌ی کلی درباره‌ی بازار ننویس. واژه‌ی «سهم» و «این سهم» ننویس.\n" + JSON_KEYS)
-STAGE2 = ("تو ویراستار دقت هستی. یک پیش‌نویس خبر و «حقیقت‌ها»ی آن را می‌گیری. متن را نگه دار و فقط این خطاها را درست کن:\n"
-          "۱) هر عدد متن باید عیناً در حقیقت‌ها یا جدول‌ها باشد. عددی که آن‌جا نیست، عدد صفر و هر عددی که حساب شده را بردار. "
-          "ارزش معامله را فقط از حقیقت‌ها بردار. هر عدد فقط یک بار بیاید و در text بیش از ۸ عدد نباشد.\n"
-          "۲) همه‌ی رقم‌ها فارسی و خوانا، در تیتر، متن و key_points: «۲۶۰ هزار و ۶۰۰ تومان» نه 260600، «۱٫۲۹-» نه -1.29، «۷٫۲» نه 7.2.\n"
-          "۳) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه. روز را با نام و تاریخ بنویس و روز قبل را با نام روز. "
-          "نام روز و ماه را عیناً از حقیقت اول بردار.\n"
-          "۴) هیچ حرف لاتین، کد کالا یا نام گرید لاتین در title، lead و text نباشد؛ نام فارسی کالا کافی است.\n"
-          "۵) نام تالار فقط همان باشد که در حقیقت اول آمده؛ اگر مطمئن نیستی نام تالار را ننویس.\n"
-          "۶) علت، پیش‌بینی و حال بازار که در حقیقت‌ها نیست حذف شود.\n"
-          "۶ب) جهت تغییر (بالاتر/پایین‌تر، بیشتر/کمتر) را عیناً از حقیقت‌ها بردار. اگر عرضه بیشتر از فروش است، ننویس تمام عرضه فروخته شد. "
-          "ارزش معاملات همین کالا را «ارزش کل معاملات» ننویس.\n"
-          "۷) text همچنان ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها بماند؛ اگر کوتاه شد از حقیقت‌های دیگر جمله اضافه کن.\n"
-          + JSON_KEYS)
-STAGE3 = ("تو ویراستار نثر هستی. یک خبر را می‌گیری. عددها، نام‌ها و تاریخ‌ها را دست نزن و فقط نثر را درست کن:\n"
-          "۱) این عبارت‌ها ممنوع است و باید با فعل ساده (فروخت، خرید، رسید، بود، است) عوض شود: «به گزارش»، «نشان‌دهنده»، «نشان می‌دهد»، "
+# step 1 - draft: only the shape of the news; no wording rules (they come in later steps)
+STAGE1 = ("تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس. "
+          "فقط از همین حقیقت‌ها بنویس و هیچ عدد، درصد یا مقایسه‌ای خودت نساز. هر جمله یک واقعیت از حقیقت‌ها داشته باشد.\n"
+          "- title: حدود ۱۰ کلمه. - subtitle: یک جمله. - lead: یک جمله‌ی ۲۰ تا ۳۰ کلمه‌ای.\n"
+          "- text: ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها.\n"
+          "- key_points: ۳ جمله‌ی کوتاه با عددهای همین خبر.\n" + JSON_KEYS)
+# step 2 - check: a closed yes/no question per sentence is easier for a small model than a rewrite (content agent 1405-07-22)
+STAGE2 = ("تو راستی‌آزما هستی. «حقیقت‌ها» و جمله‌های شماره‌دار یک خبر را می‌گیری. هر جمله را با حقیقت‌ها بسنج. "
+          "جمله غلط است اگر: جهت را برعکس بگوید (بیشتر/کمتر، گران‌تر/ارزان‌تر)، بگوید تمام عرضه فروخته شد در حالی که بخشی ماند، "
+          "ارزش این جلسه را ارزش امسال یا ارزش کل بنامد، یا چیزی بگوید که در حقیقت‌ها نیست (علت، پیش‌بینی، حال بازار، همکاری، انبار). "
+          "فقط یک JSON مثل {\"bad\": [2, 5]} برگردان؛ اگر همه درست است {\"bad\": []}.")
+# step 3 - wording only (numbers, names and dates stay)
+STAGE3 = ("تو ویراستار نثر هستی. یک خبر را می‌گیری. عددها، نام‌ها، تاریخ‌ها و جهت تغییرها را دست نزن و فقط نثر را درست کن:\n"
+          "۱) این عبارت‌ها را با فعل ساده (فروخت، خرید، رسید، بود، است) عوض کن: «به گزارش»، «نشان‌دهنده»، «نشان می‌دهد»، "
           "«حاکی از»، «بیانگر»، «این در حالی است»، «در این میان»، «شایان ذکر است»، «به شمار می‌رود»، «محسوب می‌شود»، «رقم خورد»، "
-          "«رقم زد»، «بالغ شد»، «به ثبت رسید»، «به خود اختصاص داد»، «در مجموع»، «تاریخی»، «انتظار می‌رود»، «احتمالاً»، «شاید».\n"
-          "۲) جمله با عدد شروع نشود و فعل آخر جمله بیاید. جمله‌ها کوتاه (۱۵ تا ۲۰ کلمه).\n"
-          "۳) نام کالا و شرکت با واژه‌ی «شرکت» جدا شود. «هیچ تنی» ننویس؛ بنویس «تمام عرضه به فروش رفت».\n"
-          "۴) واژه‌ی اصلی «قیمت» است، نه «نرخ». واژه‌ی «نماد» ننویس. جمله‌ی سؤالی ننویس.\n"
-          "۵) نام «ام‌اس‌دیتا» فقط یک بار و فقط در این جمله در آخر text بیاید: «این آمار از ام‌اس‌دیتا است.» جمله‌ی دیگری با این نام ننویس "
-          "و برای پر کردن متن جمله‌ی بی‌خبر و کلی نساز.\n"
-          "۶) lead عیناً در text تکرار نشود.\n"
-          "۷) text همچنان ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها بماند.\n" + JSON_KEYS)
+          "«بالغ شد»، «به ثبت رسید»، «به خود اختصاص داد»، «در مجموع»، «تاریخی»، «انتظار می‌رود»، «احتمالاً»، «شاید».\n"
+          "۲) جمله‌ها کوتاه (۱۵ تا ۲۰ کلمه) و فعل در آخر جمله. جمله‌ی سؤالی ننویس.\n"
+          "۳) «قیمت» بنویس، نه «نرخ». «نماد» و «سهم» ننویس؛ «کالا» بنویس. «امروز» و «دیروز» ننویس.\n"
+          "۴) «ام‌اس‌دیتا» را ننویس؛ جمله‌ی منبع را خود سامانه می‌گذارد.\n"
+          "۵) text همچنان ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف بماند.\n" + JSON_KEYS)
+# step 4 - the title alone, with a verb chosen from the data
+STAGE_TITLE = ("تو تیترنویس هستی. فقط یک تیتر فارسی بنویس، حدود ۱۰ کلمه: نام کالا و تولیدکننده، فقط یک عدد از حقیقت‌ها، "
+               "و در آخر یک فعل که با حقیقت‌ها بخواند (مثل «فروخته شد»، «به … رسید»، «گران‌تر شد»، «ارزان‌تر شد»، «ثابت ماند»، "
+               "«بی‌خریدار ماند»، «… برابر عرضه شد»). فقط خود تیتر را برگردان؛ بدون گیومه و بدون توضیح.")
 STAGE_FIX = ("تو ویراستار هستی. یک خبر و فهرست ایرادهایش را می‌گیری. فقط همان ایرادها را رفع کن و بقیه‌ی متن را نگه دار. "
              "عددها فقط از حقیقت‌ها. text باید ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها باشد. " + JSON_KEYS)
 
@@ -550,7 +568,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     What a small model keeps getting wrong is repaired in small pieces: Latin product codes never reach it, a sentence with
     a number that is not in the facts is cut by the code, and a sentence with a banned phrase is rewritten alone."""
     calls, err = 0, None
-    ban = re.compile(BANNED.pattern + r"|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد|(?<![\w‌])(?:این )?سهم(?![\w‌])", re.I)  # stricter for this model (content agent 2026-10-12/-14)
+    ban = re.compile(BANNED.pattern + r"|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد", re.I)  # stricter for this model (content agent 2026-10-12)
     day = day_of(facts)
     fa_digits = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
     # Latin grades and codes (HP510L, S65 ...) are taken out of what the model reads, so it cannot copy them into the text
@@ -602,12 +620,50 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                     d[k], changed = new, True
         return json.dumps(d, ensure_ascii=False) if changed else None
 
+    def as_dict(raw):
+        m = re.search(r"\{.*\}", raw or "", re.S)
+        d = loads_lenient(m.group(0)) if m else None
+        return d if isinstance(d, dict) and all(isinstance(d.get(k), str) for k in ("title", "lead", "text")) else None
+
+    # every step is told which commodity and producer the news is about (content agent 1405-07-22: one car-market story)
+    head = (facts.splitlines()[0] + "\n\n") if facts else ""
+    # a small model loses a long input: the draft gets the first 10 facts; the tables and the check still see all of them
+    lines = [x for x in (facts or "").splitlines() if x.strip()]
+    brief = src.replace(facts, "\n".join(lines[:10])) if facts and len(lines) > 10 else src
+    key = (lines[0] + day) if lines else ""
     while calls < PAID_TRIES:
-        raw = ask(STAGE1, src + model_hint(name))
-        if raw and calls < PAID_TRIES:
-            raw = ask(STAGE2, src + "\n\nپیش‌نویس:\n" + raw) or raw
-        if raw and calls < PAID_TRIES:
-            raw = ask(STAGE3, "خبر:\n" + raw + "\n\nشناسه‌ی جدول‌های مجاز: " + ", ".join(tables or {})) or raw
+        raw = ask(STAGE1, brief + model_hint(name))
+        d0 = as_dict(raw)
+        if d0 and calls < PAID_TRIES:  # step 2: sentences the check calls wrong are cut by the code
+            sents = [(pi, x) for pi, para in enumerate(d0["text"].split("\n\n")) for x in re.split(r"(?<=[.!؟])\s+", para.strip()) if x]
+            ans = ask(STAGE2, "حقیقت‌ها:\n" + facts + "\n\nجمله‌ها:\n" + "\n".join(f"{n + 1}. {x}" for n, (_, x) in enumerate(sents)))
+            m = re.search(r"\{.*\}", ans or "", re.S)
+            bad = (loads_lenient(m.group(0)) or {}).get("bad") if m else None
+            if isinstance(bad, list) and len(bad) <= len(sents) // 2:  # a check that rejects most of the text is not trusted
+                bad = {int(b) for b in bad if str(b).isdigit()}
+                paras = {}
+                for n, (pi, x) in enumerate(sents):
+                    if n + 1 not in bad:
+                        paras.setdefault(pi, []).append(x)
+                d0["text"] = "\n\n".join(" ".join(v) for _, v in sorted(paras.items()))
+                if bad:
+                    note(f"  staged {name}: check cut {len(bad)} sentence(s)")
+            raw = json.dumps(d0, ensure_ascii=False)
+        if raw and calls < PAID_TRIES:  # step 3: wording; a result that changed the numbers is not used
+            new = ask(STAGE3, head + "خبر:\n" + raw + "\n\nشناسه‌ی جدول‌های مجاز: " + ", ".join(tables or {}))
+            d1, d0 = as_dict(new), as_dict(raw)
+            if d1 and d0 and sorted(NUM.findall(d1["text"])) == sorted(NUM.findall(d0["text"])):
+                raw = new
+        d0 = as_dict(raw)
+        if d0 and calls < PAID_TRIES:  # step 4: the title alone
+            t = ask(STAGE_TITLE, head + "\n".join(lines[:8]) + "\n\nلید خبر: " + d0["lead"]).strip().strip("«»\"").splitlines()
+            t = t[0].strip() if t else ""
+            if t and not off_topic({"title": t, "lead": d0["lead"], "text": d0["text"]}, facts) and len(t.split()) <= 16:
+                d0["title"], d0["slug"] = t, t
+        if d0:  # step 5: the source sentence is the code's job; whatever the model wrote about the source goes
+            paras = [" ".join(x for x in re.split(r"(?<=[.!؟])\s+", para.strip()) if not MSD.search(x)) for para in d0["text"].split("\n\n")]
+            d0["text"] = ensure_source("\n\n".join(x for x in paras if x), key)
+            raw = json.dumps(d0, ensure_ascii=False)
         for fix in range(4):  # the check, then up to 3 corrections of this draft
             try:
                 d = parse(yesterday_words(raw, day), facts, tables)
@@ -723,6 +779,7 @@ def main():
     ap.add_argument("--market", default="kala", choices=("kala", "kish", "energy"))  # kish = export market (owner 1405-07-15), energy = Iran Energy Exchange (owner 1405-07-16)
     a = ap.parse_args()
     energy = a.market == "energy"
+    MARKET[0] = a.market
     kish = a.market == "kish" or energy  # energy runs the Kish path (one news per settled traded row), with its own facts
     if kish:
         MIN_WORDS[0] = 120

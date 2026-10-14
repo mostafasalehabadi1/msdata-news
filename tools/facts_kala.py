@@ -75,7 +75,7 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     # history
     past = [h for h in history if h.get("trade_date") != date_fa and (h.get("traded_qty") or 0) > 0 and h.get("weighted_price")]
     if not past:
-        F.append("این نخستین معامله‌ی ثبت‌شده‌ی این نماد در داده‌های موجود است؛ مقایسه با قبل ممکن نیست.")
+        F.append("این نخستین معامله‌ی ثبت‌شده‌ی این کالا در داده‌های موجود است؛ مقایسه با قبل ممکن نیست.")
     else:
         last = past[-1]
         lp, gap = last["weighted_price"], days_between(last["trade_date"], date_fa)
@@ -94,16 +94,16 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
         if cb is not None and abs(cb) >= 0.05:
             F.append(f"قیمت پایه‌ی این عرضه {signed(cb)} {'بالاتر' if cb > 0 else 'پایین‌تر'} از قیمت پایه‌ی عرضه‌ی {fa_date(last['trade_date'])} بود.")
         if gap >= 30:
-            F.append(f"این نماد پس از {fa_int(gap)} روز غیبت دوباره معامله شد.")
+            F.append(f"این کالا پس از {fa_int(gap)} روز غیبت دوباره معامله شد.")
         prices = [h["weighted_price"] for h in past]
         if len(past) >= 3:
             hi, lo = max(past, key=lambda h: h["weighted_price"]), min(past, key=lambda h: h["weighted_price"])
             F.append(f"در {fa_int(len(past))} معامله‌ی ثبت‌شده از {fa_date(past[0]['trade_date'])}، بیشترین قیمت {fa_int(hi['weighted_price'])} ریال "
                      f"({fa_date(hi['trade_date'])}) و کمترین {fa_int(lo['weighted_price'])} ریال ({fa_date(lo['trade_date'])}) بود.")
             if trd and price > max(prices):
-                F.append(f"قیمت امروز بیشترین قیمت این نماد از {fa_date(past[0]['trade_date'])} (نخستین معامله‌ی موجود) است.")
+                F.append(f"قیمت امروز بیشترین قیمت این کالا از {fa_date(past[0]['trade_date'])} (نخستین معامله‌ی موجود) است.")
             elif trd and price < min(prices):
-                F.append(f"قیمت امروز کمترین قیمت این نماد از {fa_date(past[0]['trade_date'])} (نخستین معامله‌ی موجود) است.")
+                F.append(f"قیمت امروز کمترین قیمت این کالا از {fa_date(past[0]['trade_date'])} (نخستین معامله‌ی موجود) است.")
             k = past[-5:]
             avg = sum(h["weighted_price"] for h in k) / len(k)
             c = pct(price, avg) if trd else None
@@ -119,19 +119,19 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
                 break
             n += 1
         if n >= 2:
-            F.append(f"قیمت این نماد {fa_int(n)} معامله‌ی پیاپی {'گران‌تر' if d0 > 0 else 'ارزان‌تر'} شده است.")
+            F.append(f"قیمت این کالا {fa_int(n)} معامله‌ی پیاپی {'گران‌تر' if d0 > 0 else 'ارزان‌تر'} شده است.")
         flat = 0
         for a, b in zip(reversed(seq[:-1]), reversed(seq[1:])):
             if a != b:
                 break
             flat += 1
         if flat >= 2:
-            F.append(f"قیمت این نماد {fa_int(flat + 1)} معامله‌ی پیاپی ثابت مانده است.")
+            F.append(f"قیمت این کالا {fa_int(flat + 1)} معامله‌ی پیاپی ثابت مانده است.")
         yr = [h for h in past if h["trade_date"][:4] == date_fa[:4]]
         if len(yr) >= 2:
-            F.append(f"این نماد امسال (از فروردین {date_fa[:4].translate(FA)}) {fa_int(len(yr) + (1 if trd else 0))} بار معامله شده است.")
+            F.append(f"این کالا امسال (از فروردین {date_fa[:4].translate(FA)}) {fa_int(len(yr) + (1 if trd else 0))} بار معامله شده است.")
     if ytd_value:
-        F.append(f"ارزش کل معاملات این نماد از ابتدای امسال {toman_billion(ytd_value)} است.")
+        F.append(f"ارزش کل معاملات این کالا از ابتدای امسال {toman_billion(ytd_value)} است.")
     # same goods, other producers today
     same = [p for p in peers if (p.get("traded_qty") or 0) > 0 and p.get("weighted_price")]
     others = [p for p in same if p is not row and p.get("producer_name") != prod]
