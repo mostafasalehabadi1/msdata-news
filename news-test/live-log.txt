@@ -8,3 +8,20 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   HSR-LUSUACB-00 zai:glm-4.7-flash: 168s ValueError: 114 words / 2 paragraphs
 style-soft: ثبت شد, lead>35w/1num, text 17 nums
 OK HSR-LUSUACB-00 <- zai:glm-4.5-flash (28s)
+  ZBS-MBENN03E-00 zai:glm-4.7-flash: 38s ValueError: 78 words / 1 paragraphs
+  ZBS-MBENN03E-00 zai:glm-4.5-flash: 146s ValueError: 114 words / 2 paragraphs
+style-soft: ثبت شد, lead>35w/1num, text 19 nums
+  ILPE-HDF7000LMPJ-00 zai:glm-4.7-flash: 108s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ILPE-HDF7000LMPJ-00 zai:glm-4.5-flash: 60s ValueError: 112 words / 3 paragraphs
+  TCHC-CEMENTP-50L-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 596s ValueError: 106 words / 3 paragraphs
+style-soft: lead>35w/1num, text 26 nums
+  TCHC-CEMENTP-50L-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+style-soft: lead>35w/1num, text 26 nums
+style-soft: lead>35w/1num, text 26 nums
+  TCHC-CEMENTP-50L-00 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+style-soft: lead>35w/1num, text 26 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: markers: «نشان می‌دهد» در text
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 14 calls
+OK ZBS-MBENN03E-00 <- gapgpt:gemma-3-27b-it (152s)
