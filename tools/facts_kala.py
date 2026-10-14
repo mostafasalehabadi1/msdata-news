@@ -6,6 +6,7 @@ build(row, history, peers, date_fa, date, ytd_value) -> (facts_text, {table_id: 
 table = {"title": str, "columns": [str], "rows": [[str]]}
 """
 import datetime as dt
+import json
 import re
 
 from factsheet import FA, fa_date, fa_int, fa_num, toman_billion, YEAR
@@ -149,7 +150,10 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     # style guide v2: no «امروز» in the facts (the model copied it 3-6 times per news); the date is in F1
     F = [F[0]] + [re.sub(r"\bامروز\b", "این جلسه", x) for x in F[1:]]
     facts = "\n".join(f"F{i + 1}. {s}" for i, s in enumerate(F))
-    return facts, tables(row, past, same if others else [], unit, goods, trd)
+    T = tables(row, past, same if others else [], unit, goods, trd)
+    day = fa_date(row["trade_date"]) if "/" in str(row.get("trade_date") or "") else "این جلسه"
+    T = json.loads(json.dumps(T, ensure_ascii=False).replace("امروز", day))  # content agent 1405-07-22: «معامله‌ی امروز» -> date
+    return facts, T
 
 
 def tables(row, past, same, unit, goods, trd):
