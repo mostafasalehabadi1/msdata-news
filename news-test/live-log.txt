@@ -1,20 +1,2 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-3 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  MPC-HDBL3PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  IALC-ALHYD-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 10153 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":10153}}
-  IALC-ALHYD-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  KHCO-PCT2G42.5-B-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"59ebe69b-2497-4a6d-a415-34e2c72faffd","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  MPC-HDBL3PP-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"7cb74dfa-8e51-4726-896e-a11011860fea","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  IALC-ALHYD-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"fead4cd2-93b7-44ed-bbfc-1606f53593be","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-style-soft: ثبت شد, lead>35w/1num, text 14 nums
-style-soft: text 10 nums
-OK IALC-ALHYD-00 <- ovh:Qwen3.5-397B-A17B (86s)
-style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 13 nums
-OK KHCO-PCT2G42.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (131s)
-  MPC-HDBL3PP-00 zai:glm-4.7-flash: 143s ValueError: 103 words / 4 paragraphs
-style-soft: lead>35w/1num, text 18 nums
-  MPC-HDBL3PP-00 zai:glm-4.5-flash: 145s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK MPC-HDBL3PP-00 <- gapgpt:gemma-3-27b-it (47s)
+0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty

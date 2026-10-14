@@ -1,207 +1,24 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ENPC-PSSEF105J-089 zai:glm-4.7-flash: 314s ValueError: 88 words / 3 paragraphs
+3 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  MPC-HDBL3PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  IALC-ALHYD-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 10153 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":10153}}
+  IALC-ALHYD-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  KHCO-PCT2G42.5-B-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"59ebe69b-2497-4a6d-a415-34e2c72faffd","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  MPC-HDBL3PP-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"7cb74dfa-8e51-4726-896e-a11011860fea","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  IALC-ALHYD-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"fead4cd2-93b7-44ed-bbfc-1606f53593be","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: ثبت شد, lead>35w/1num, text 14 nums
+style-soft: text 10 nums
+OK IALC-ALHYD-00 <- ovh:Qwen3.5-397B-A17B (86s)
+style-soft: ثبت شد, ثبت شد, lead>35w/1num, text 13 nums
+OK KHCO-PCT2G42.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (131s)
+  MPC-HDBL3PP-00 zai:glm-4.7-flash: 143s ValueError: 103 words / 4 paragraphs
 style-soft: lead>35w/1num, text 18 nums
-  ENPC-PSSEF105J-089 zai:glm-4.5-flash: 41s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 21 nums
-style-soft: text 19 nums
-style-soft: text 19 nums
-style-soft: text 19 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 21 nums
-style-soft: text 21 nums
-style-soft: text 21 nums
-style-soft: text 21 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 14 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 18 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSEF105J-089 gapgpt:gemma-3-27b-it: 304s ValueError: staged: 20 calls, last: markers: کد کالا یا حروف لاتین وسط متن
-written 0/1; total in file 218
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ENPC-PSSEF105J-089 zai:glm-4.7-flash: 276s ValueError: 95 words / 3 paragraphs
-  ENPC-PSSEF105J-089 zai:glm-4.5-flash: 23s JSONDecodeError: Expecting value: line 6 column 10 (char 426)
-style-soft: ثبت شد, text 23 nums
-style-soft: ثبت شد, text 23 nums
-style-soft: ثبت شد, text 23 nums
-style-soft: ثبت شد, text 23 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 23 nums
-style-soft: text 23 nums
-style-soft: text 23 nums
-style-soft: text 23 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 12 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 25 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «نشان‌دهنده» در text | کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSEF105J-089 gapgpt:gemma-3-27b-it: 309s ValueError: staged: 20 calls, last: markers: «نشان‌دهنده» در text | کد کالا یا حروف لاتین وسط متن
-written 0/1; total in file 218
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ENPC-PSSEF105J-089 zai:glm-4.7-flash: 278s ValueError: 83 words / 1 paragraphs
-style-soft: lead>35w/1num, text 22 nums
-  ENPC-PSSEF105J-089 zai:glm-4.5-flash: 64s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, text 22 nums
-style-soft: ثبت شد, text 22 nums
-style-soft: ثبت شد, text 22 nums
-style-soft: ثبت شد, text 21 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 19 nums
-style-soft: text 19 nums
-style-soft: text 19 nums
-style-soft: text 18 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 12 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, text 21 nums
-style-soft: ثبت شد, text 20 nums
-style-soft: ثبت شد, text 20 nums
-style-soft: ثبت شد, text 20 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «نشان‌دهنده» در text | کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSEF105J-089 gapgpt:gemma-3-27b-it: 360s ValueError: staged: 20 calls, last: markers: «نشان‌دهنده» در text | کد کالا یا حروف لاتین وسط متن
-written 0/1; total in file 218
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ENPC-PSSEF105J-089 zai:glm-4.7-flash: 257s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 19 nums
-style-soft: lead>35w/1num, text 19 nums
-  ENPC-PSSEF105J-089 zai:glm-4.5-flash: 52s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, lead>35w/1num, text 18 nums
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-style-soft: ثبت شد, lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 21 nums
-style-soft: text 21 nums
-style-soft: text 21 nums
-style-soft: text 21 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 12 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: به ثبت رساند, ثبت شد, lead>35w/1num, text 25 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSEF105J-089 gapgpt:gemma-3-27b-it: 392s ValueError: staged: 20 calls, last: markers: کد کالا یا حروف لاتین وسط متن
-written 0/1; total in file 218
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ENPC-PSSEF105J-089 zai:glm-4.7-flash: 217s ValueError: 88 words / 5 paragraphs
-style-soft: lead>35w/1num, text 19 nums
-style-soft: lead>35w/1num, text 19 nums
-  ENPC-PSSEF105J-089 zai:glm-4.5-flash: 37s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, lead>35w/1num, text 19 nums
-style-soft: ثبت شد, lead>35w/1num, text 19 nums
-style-soft: ثبت شد, lead>35w/1num, text 19 nums
-style-soft: ثبت شد, lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 22 nums
-style-soft: lead>35w/1num, text 19 nums
-style-soft: lead>35w/1num, text 19 nums
-style-soft: lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 11 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 15 nums
-style-soft: text 15 nums
-style-soft: text 15 nums
-style-soft: text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 18 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSEF105J-089 gapgpt:gemma-3-27b-it: 336s ValueError: staged: 20 calls, last: markers: کد کالا یا حروف لاتین وسط متن
-written 0/1; total in file 218
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-style-soft: ثبت شد, lead>35w/1num, text 19 nums
-  ENPC-PSSEF105J-089 zai:glm-4.7-flash: 237s ValueError: 99 words / 2 paragraphs
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 18 nums
-  ENPC-PSSEF105J-089 zai:glm-4.5-flash: 45s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 18 nums
-style-soft: text 18 nums
-style-soft: text 17 nums
-style-soft: text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, امروز>2, text 21 nums
-style-soft: ثبت شد, امروز>2, text 22 nums
-style-soft: ثبت شد, امروز>2, text 20 nums
-style-soft: ثبت شد, امروز>2, text 20 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 12 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, به ثبت رساند, lead>35w/1num, text 17 nums
-style-soft: ثبت شد, به ثبت رساند, lead>35w/1num, text 15 nums
-style-soft: ثبت شد, به ثبت رساند, lead>35w/1num, text 15 nums
-style-soft: ثبت شد, به ثبت رساند, lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: markers: کد کالا یا حروف لاتین وسط متن
-  staged gapgpt:gemma-3-27b-it: call 20 failed: HTTP 404: {"error":{"message":"No available channel for this model on the current token (request id: 2026101321000795011
-style-soft: ثبت شد, lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «نشان‌دهنده» در text | عدد بیرون از حقیقت‌ها: ۱۰۰۰ | کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSEF105J-089 gapgpt:gemma-3-27b-it: 409s ValueError: staged: 20 calls, last: markers: «نشان‌دهنده» در text | عدد بیرون از حقیقت‌ها: ۱۰۰۰ | کد کالا یا حروف لاتین وسط متن
-written 0/1; total in file 218
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-style-soft: lead>35w/1num, text 20 nums
-style-soft: lead>35w/1num, text 20 nums
-style-soft: lead>35w/1num, text 20 nums
-  ENPC-PSSEF105J-089 zai:glm-4.7-flash: 286s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSEF105J-089 zai:glm-4.5-flash: 33s ValueError: 88 words / 1 paragraphs
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 22 nums
-style-soft: text 19 nums
-style-soft: text 21 nums
-style-soft: text 20 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 11 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: text 25 nums
-style-soft: text 25 nums
-style-soft: text 23 nums
-style-soft: text 23 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSEF105J-089 gapgpt:gemma-3-27b-it: 296s ValueError: staged: 20 calls, last: markers: کد کالا یا حروف لاتین وسط متن
-written 0/1; total in file 218
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ENPC-PSSEF105J-089 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  ENPC-PSSEF105J-089 zai:glm-4.5-flash: 14s JSONDecodeError: Expecting value: line 5 column 10 (char 329)
-style-soft: text 18 nums
-style-soft: text 17 nums
-style-soft: text 17 nums
-style-soft: text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 17 nums
-style-soft: text 17 nums
-style-soft: text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 12 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: ثبت شد, text 18 nums
-style-soft: ثبت شد, text 18 nums
-style-soft: ثبت شد, text 17 nums
-style-soft: ثبت شد, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: در حالی که, text 21 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «در مجموع» در text | کد کالا یا حروف لاتین وسط متن
-  ENPC-PSSEF105J-089 gapgpt:gemma-3-27b-it: 523s ValueError: staged: 20 calls, last: markers: «در مجموع» در text | کد کالا یا حروف لاتین وسط متن
-written 0/1; total in file 218
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ENPC-PSSEF105J-089 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-style-soft: lead>35w/1num, text 17 nums
-  ENPC-PSSEF105J-089 zai:glm-4.5-flash: 57s ValueError: markers: عدد بیرون از حقیقت‌ها: ۱۰۰۰، ۱۲۳۰ | کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num, text 20 nums
+  MPC-HDBL3PP-00 zai:glm-4.5-flash: 145s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+style-soft: ثبت شد, lead>35w/1num, text 13 nums
   staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK ENPC-PSSEF105J-089 <- gapgpt:gemma-3-27b-it (27s)
-written 1/1; total in file 219
+OK MPC-HDBL3PP-00 <- gapgpt:gemma-3-27b-it (47s)
+written 3/3; total in file 3
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-written 0/0; total in file 219
+written 0/0; total in file 3
