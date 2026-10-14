@@ -1,2 +1,12 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+40 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  NCI-OANMGODSD-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  AJSC-SSG09XROA-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  PPCO-OASTYB-00 hf:deepseek-ai/DeepSeek-V3.1: 6s URLError: <urlopen error [Errno -5] No address associated with hostname>
+  HSTC-SSG09XROA-00 cohere:command-a-03-2025: 46s ValueError: HTTP 429: {"id":"c6344490-c461-4099-9266-8a5b396771c0","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  KSC-SSG09XROA-00 zai:glm-4.7-flash: 94s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  SJS-MREEEEA3B-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"10f47e0d-2b35-45b2-b232-c09282618500","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  KSO-MREEEEA3B-00 llm7:DeepSeek-V4-Flash-0731: 125s ValueError: HTTP 524: error code: 524
+
+style-soft: lead>35w/1num, text 19 nums
+OK KSC-SSG09XROA-00 <- zai:glm-4.5-flash (41s)
