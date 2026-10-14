@@ -1,5 +1,4 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
 33 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   SABC-PCT2G42.5-L50EX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   NCI-CCAAEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
@@ -78,3 +77,40 @@ style-soft: ثبت شد, lead>35w/1num, text 16 nums
   NEYC-PCT1G42.5-JEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 60s ValueError: bad response: '{"id":"gen-1791970929-4gpxyEHjUs1tNaCEP0kX","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
   PGM-BI6070BEX-00 zai:glm-4.7-flash: 268s TimeoutError: The read operation timed out
 OK PBDC-INBPPBEX-00 <- ovh:Qwen3.5-397B-A17B (368s)
+  PGM-BI6070BEX-00 zai:glm-4.5-flash: 54s ValueError: 105 words / 3 paragraphs
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  PAZK-BI6070BEX-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: markers: «نشان‌دهنده» در text | تالار اشتباه: «صادراتی»
+  PACR-BI6070BEX-00 ovh:gpt-oss-120b: 268s TimeoutError: The read operation timed out
+  GAC-PCT2G42.5-L50EX-00 openrouter:dots-studio/dots-3-note-preview:free: 524s ValueError: 109 words / 2 paragraphs
+  FCH-BI6070BEX-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: markers: تالار اشتباه: «صادراتی»
+  FCH-BI6070BEX-00 requesty:novita/inclusionai/ling-3.0-tiny: 47s ValueError: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  PACR-BI6070BEX-00 ovh:Meta-Llama-3_3-70B-Instruct: 64s ValueError: 94 words / 2 paragraphs
+  FCH-BI6070BEX-00 requesty:poolside/laguna-m.1: 1s ValueError: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  FCH-BI6070BEX-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 1s ValueError: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+style-soft: lead>35w/1num, text 17 nums
+  ZCCO-PPC-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 465s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num, text 13 nums
+  TPA-BI6070BEX-00 zai:glm-4.7-flash: 180s TimeoutError: The read operation timed out
+  JRC-BI6070BEX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 460s TimeoutError: The read operation timed out
+  GAC-PCT2G42.5-L50EX-00 openrouter:liquid/lfm-2.5-2.6b:free: 87s ValueError: 117 words / 2 paragraphs
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 21 calls: markers: «نشان می‌دهد» در text | «نشان می‌دهد» در text
+  ZCCO-PPC-BEX-00 gapgpt:gemma-3-27b-it: 213s ValueError: staged: 21 calls, last: markers: «نشان می‌دهد» در text | «نشان می‌دهد» در text
+style-soft: ثبت شد, lead>35w/1num, text 21 nums
+style-soft: ثبت شد, lead>35w/1num, text 19 nums
+style-soft: ثبت شد, lead>35w/1num, text 19 nums
+  JRC-BI6070BEX-00 kilo:poolside/laguna-s-2.1:free: 46s ValueError: markers: تالار اشتباه: «صادراتی»
+style-soft: ثبت شد, lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 3 calls
+OK ASHR-DSMLABSAEX-00 <- gapgpt:gemma-3-27b-it (32s)
