@@ -554,6 +554,28 @@ def clean_title(t):
     return re.sub(r"[.。]+$", "", t.strip().strip("«»\"").strip())
 
 
+def sale_problem(d, facts):
+    """content agent 1405-07-22: «x برابر» only with «تقاضا»; «بی‌خریدار ماند» only when nothing traded; «تمام/کامل» only
+    when the whole offer sold; the quantity next to «عرضه کرد» is the offered quantity."""
+    probs, t = [], d["title"]
+    for m in re.finditer(r"برابر", t):
+        if "تقاضا" not in t[max(0, m.start() - 40):m.start()]:
+            probs.append("در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x برابر عرضه بود)")
+            break
+    if "بی‌خریدار" in t and "هیچ معامله‌ای انجام نشد" not in facts:
+        probs.append("تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است")
+    if re.search(r"تمام|کامل", t) and "تمام عرضه به فروش رفت" not in facts:
+        probs.append("تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت")
+    m = re.search(r"(?:امروز|این جلسه) ((?:[0-9۰-۹٫]+ )?(?:هزار|میلیون)(?: و [0-9۰-۹٫]+)?|[0-9۰-۹٫]+) [^.]*? عرضه کرد", facts)
+    off = set(NUM.findall(m.group(1))[-1:]) if m else set()  # the last group: «۱ هزار و ۷۲۵» -> ۷۲۵
+    if off:
+        for x in re.split(r"(?<=[.!؟])\s+", d["lead"] + " " + d["text"]):
+            if "عرضه کرد" in x and NUM.findall(DATE_WORDS.sub("", x)) and not off & set(NUM.findall(x)):
+                probs.append(f"مقدار عرضه غلط است؛ عرضه {m.group(1)} بود")
+                break
+    return " | ".join(probs)
+
+
 def title_problem(t, facts):
     """content agent 1405-07-22: no Latin, at most one comma, 8-13 words, a verb, and the commodity named as in the data
     (its first two words, or the one word) - «کنسانتره مس» for «کنسانتره فلزات گرانبها» is another commodity."""
@@ -587,7 +609,14 @@ def number_problem(text):
 
 AUTO_FIX = [(re.compile(r"لازم به ذکر است(?: که)?\s*"), ""), (re.compile(r"(?<![\w‌])ثبت شد"), "بود"),
             (re.compile(r"رقم زد"), "رسید"), (re.compile(r"(?<![\w‌])نشان[‌ ]?دهنده‌ی"), "یعنی"),
-            (re.compile(r"(?<![\w‌])نشان[‌ ]?دهنده"), "نشانه‌ی")]
+            (re.compile(r"(?<![\w‌])نشان[‌ ]?دهنده"), "نشانه‌ی"),
+            # content agent 1405-07-22 (second review)
+            (re.compile(r"\s*تعیین[‌ ]?شده توسط (?:شرکت )?[^،.]{0,40}?(?=[،.]| بود| است| به| در| را)"), ""),
+            (re.compile(r"(?<![0-9۰-۹٫.])(?:یک|[1۱]) هزار"), "هزار"), (re.compile("[\u0660-\u0669]"), lambda m: chr(ord(m.group(0)) + 0x90))]
+# sentences cut when the text stays long enough: fillers, a date alone, no verb at the end
+FILLER = re.compile(r"مورد توجه فعالان|به تصویر کشید|استقبال مناسب|قابل توجه|به این میزان استقبال کردند")
+DATE_ONLY = re.compile(r"^(?:(?:شنبه|یکشنبه|دوشنبه|سه‌شنبه|چهارشنبه|پنجشنبه|جمعه)\s+)?[0-9۰-۹]{1,2} \S+(?: [0-9۰-۹]{4})?[.!]?$")
+VERB_END = re.compile(r"(?:ت|د|است|ند|ید|یم)[.!؟]?$")
 
 
 def autofix(raw, min_words=120):
@@ -601,10 +630,30 @@ def autofix(raw, min_words=120):
         if isinstance(d.get(k), str):
             for rx, r in AUTO_FIX:
                 d[k] = rx.sub(r, d[k])
-            d[k] = re.sub(r"(?<![\w-])[A-Za-z]{1,3}(?![\w-])", "", d[k]).replace("  ", " ").replace(" ،", "،")
+            d[k] = re.sub(r"(?<![\w-])[A-Za-z][A-Za-z0-9]{0,3}(?![\w])", "", d[k])
+            d[k] = re.sub(r"\s*-+\s*(?=[\s،.؛)]|$)|(?<=\s)-+(?=\s)", " ", d[k])  # «میلگرد ۲۲ تا ۳۲-» -> «میلگرد ۲۲ تا ۳۲»
+            d[k] = re.sub(r" {2,}", " ", d[k]).replace(" ،", "،").replace(" .", ".").strip()
     d["title"] = clean_title(d["title"])
-    sents = [(pi, x) for pi, para in enumerate(d["text"].split("\n\n")) for x in re.split(r"(?<=[.!؟])\s+", para.strip()) if x]
     cnt = lambda x: len(NUM.findall(DATE_WORDS.sub("", x)))  # noqa: E731
+
+    def split(x):  # content agent 1405-07-22: «… بود و قیمت پایه … بود.» -> two sentences
+        if cnt(x) <= 2:
+            return [x]
+        for m in re.finditer(r" و (?=\S)", x):
+            a, b = x[:m.start()], x[m.end():]
+            if VERB_END.search(a) and cnt(a) <= 2 and len(b.split()) >= 3:
+                return [a + "."] + split(b[0].upper() + b[1:] if b else b)
+        return [x]
+    sents = [(pi, y) for pi, para in enumerate(d["text"].split("\n\n")) for x in re.split(r"(?<=[.!؟])\s+", para.strip()) if x for y in split(x)]
+    sents = [(pi, x) for pi, x in sents if not DATE_ONLY.match(x.strip())]
+    total0 = sum(len(x.split()) for _, x in sents)
+    keep = []
+    for pi, x in sents:
+        if (FILLER.search(x) or not VERB_END.search(x.strip())) and not MSD.search(x) and total0 - len(x.split()) >= min_words:
+            total0 -= len(x.split())
+            continue
+        keep.append((pi, x))
+    sents = keep
     total = sum(len(x.split()) for _, x in sents)
     nums = sum(cnt(x) for _, x in sents)
     drop = set()
@@ -617,7 +666,7 @@ def autofix(raw, min_words=120):
         drop.add(i)
         total -= len(x.split())
         nums -= cnt(x)
-    if drop:
+    if True:
         paras = {}
         for i, (pi, x) in enumerate(sents):
             if i not in drop:
@@ -744,7 +793,8 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                     break
                 t = ask(STAGE_TITLE, head + "\n".join(lines[:8]) + "\n\nلید خبر: " + d0["lead"] + (f"\n\nتیتر قبلی رد شد: {why}" if why else "")).strip().splitlines()
                 t = clean_title(t[0]) if t else ""
-                why = (off_topic({"title": t, "lead": d0["lead"], "text": d0["text"]}, facts) + " " + title_problem(t, facts)).strip() if t else "خالی"
+                tt = {"title": t, "lead": d0["lead"], "text": d0["text"]}
+                why = (off_topic(tt, facts) + " " + title_problem(t, facts) + " " + sale_problem(tt, facts)).strip() if t else "خالی"
                 if not why:
                     d0["title"], d0["slug"] = t, t
                     break
@@ -760,7 +810,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 if extra:
                     raise ValueError("markers: " + " | ".join(extra))
                 d["title"] = clean_title(d["title"])
-                off = off_topic(d, facts)
+                off = " | ".join(x for x in (off_topic(d, facts), sale_problem(d, facts)) if x)
                 if off:
                     raise ValueError(off)
                 soft = " | ".join(x for x in (title_problem(d["title"], facts), number_problem(d["text"]),
@@ -770,9 +820,9 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 d["slug"] = SLUG_BAD.sub("-", re.sub(r"[،,.A-Za-z]", " ", d["title"]).strip())
                 keep = set(re.findall(r"کد گرید: ([^()]+) \(", facts.splitlines()[0])[0].split("، ")) if facts and "کد گرید: " in facts.splitlines()[0] else ()
                 for k in ("title", "subtitle", "lead", "text"):  # Persian, readable digits are fixed here, not asked for
-                    d[k] = readable(d[k], keep)
+                    d[k] = re.sub(r"(?<![0-9۰-۹٫.])(?:یک|۱) هزار", "هزار", readable(d[k], keep))
                 if d.get("key_points"):  # content agent 2026-10-13: no «امروز»/«دیروز» in key_points either
-                    kp = [readable(yesterday_words(today_words(x, day, [True]), day)) for x in d["key_points"]]
+                    kp = [re.sub(r"(?<![0-9۰-۹٫.])(?:یک|۱) هزار", "هزار", readable(yesterday_words(today_words(x, day, [True]), day))) for x in d["key_points"]]
                     if any(ban.search(x) for x in kp):
                         d.pop("key_points")
                     else:
