@@ -14,3 +14,18 @@ OK DSZESCABEX0050727 <- llm7:DeepSeek-V4-Flash-0731 (96s)
   DTAZECABEX0050729 llm7:DeepSeek-V4-Flash-0731: 12s QuotaError: HTTP 429: {"error":{"message":"Upstream provider rate limit exceeded.","type":"upstream_rate_limited","param":null,"code":"upstream_rate_limited"}}
   DSBBICABEX0050727 zai:glm-4.7-flash: 113s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
 OK DC6MDCABEX0050727 <- ovh:Qwen3.5-397B-A17B (162s)
+6 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  FROJ-MREEEEA3B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  SHS-MREEENA4B-00 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  SHS-MREEENA4B-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  HSR-LUSUFEB-00 llm7:DeepSeek-V4-Flash-0731: 31s QuotaError: HTTP 429: {"error":{"message":"Upstream provider rate limit exceeded.","type":"upstream_rate_limited","param":null,"code":"upstream_rate_limited"}}
+  RSP-HS00000-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"e8de084a-884c-45ba-a24b-f31b6e8dfdb5","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  KAS-HS00000-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 25 nums
+  SHS-MREEENA4B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 79s ValueError: markers: کد کالا یا حروف لاتین وسط متن
+  KAS-HS00000-00 zai:glm-4.5-flash: 47s ValueError: 112 words / 2 paragraphs
+  FROJ-MREEEEA3B-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"48d75f26-a26a-4c14-8235-6b69566ca23b","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  HSR-LUSUFEB-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"ceeeb431-5465-4bf1-a363-19fd9a46b580","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  RSP-HS00000-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 58s ValueError: 110 words / 2 paragraphs
+OK SHS-MREEENA4B-00 <- ovh:Qwen3.5-397B-A17B (132s)
