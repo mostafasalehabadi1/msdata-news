@@ -67,3 +67,16 @@ style-soft: ثبت شد, lead>35w/1num, text 11 nums
   PAZK-BI6070BEX-00 requesty:mistral/leanstral-1-5: 46s ValueError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
 style-soft: text 9 nums
 OK SABD-INBPPBEX-00 <- ovh:gpt-oss-120b (199s)
+  SHPC-TEAB-00 llm7:DeepSeek-V4-Flash-0731: 3s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 1633 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":1633}}
+  SHPC-TEAB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  THOR-OAVBB-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  THOR-GRSUSUB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 45s ValueError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (24b5114e-081a-48cc-
+  THOR-OAVBB-00 zai:glm-4.5-flash: 61s ValueError: 112 words / 3 paragraphs
+style-soft: lead>35w/1num
+OK SHPC-TEAKG-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (155s)
+  THOR-GRSUSUB-00 zai:glm-4.7-flash: 47s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: ثبت شد, ثبت شد, lead>35w/1num
+OK SHPC-TEAB-00 <- ovh:Qwen3.5-397B-A17B (172s)
+style-soft: lead>35w/1num, text 15 nums
+OK THOR-GRSUSUB-00 <- zai:glm-4.5-flash (32s)
+OK THOR-OAVBB-00 <- ovh:Qwen3.5-397B-A17B (281s)
