@@ -566,7 +566,7 @@ def title_problem(t, facts):
         probs.append(f"تیتر {len(t.split())} کلمه است؛ ۸ تا ۱۳ کلمه بنویس")
     m = NAME_LINE.search(facts.splitlines()[0]) if facts else None
     if m:
-        w = re.match(r"\s*((?:[\u0600-\u06FF\u200c]+ ?){1,2})", m.group(1))
+        w = re.match(r"\s*((?:[\u0600-\u06EF\u06FA-\u06FF\u200c]+ ?){1,2})", m.group(1))  # Persian digits end the name
         w = w.group(1).split() if w else []
         if w and " ".join(w) not in t:
             probs.append(f"نام کالا در تیتر باید «{' '.join(w)}» باشد")
