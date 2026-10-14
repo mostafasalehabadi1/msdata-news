@@ -485,7 +485,10 @@ STAGE1 = ("تو خبرنگار بورس کالای ام‌اس‌دیتا هست
           "- lead: یک جمله‌ی ۲۰ تا ۳۰ کلمه‌ای با حداکثر یک عدد که کل خبر را می‌گوید.\n"
           "- text: ۱۵۰ تا ۱۹۰ کلمه در دقیقاً ۳ پاراگراف. بین پاراگراف‌ها یک خط خالی بگذار (در JSON یعنی \\n\\n). "
           "هر پاراگراف ۲ تا ۴ جمله‌ی کوتاه. جمله‌ی اول text با lead فرق داشته باشد.\n"
-          "- key_points: آرایه‌ی دقیقاً ۳ جمله‌ی کوتاه (هر کدام کمتر از ۱۵ کلمه) با عددهای همین خبر.\n" + JSON_KEYS)
+          "- key_points: آرایه‌ی دقیقاً ۳ جمله‌ی کوتاه (هر کدام کمتر از ۱۵ کلمه) با عددهای همین خبر.\n"
+          # content agent 1405-07-22: filler sentences, verbless titles, «این سهم»
+          "- تیتر با فعل تمام شود (مثل «… فروخته شد»، «… به … رسید»). هر جمله دست‌کم یک واقعیت از حقیقت‌ها داشته باشد؛ "
+          "جمله‌ی کلی درباره‌ی بازار ننویس. واژه‌ی «سهم» و «این سهم» ننویس.\n" + JSON_KEYS)
 STAGE2 = ("تو ویراستار دقت هستی. یک پیش‌نویس خبر و «حقیقت‌ها»ی آن را می‌گیری. متن را نگه دار و فقط این خطاها را درست کن:\n"
           "۱) هر عدد متن باید عیناً در حقیقت‌ها یا جدول‌ها باشد. عددی که آن‌جا نیست، عدد صفر و هر عددی که حساب شده را بردار. "
           "ارزش معامله را فقط از حقیقت‌ها بردار. هر عدد فقط یک بار بیاید و در text بیش از ۸ عدد نباشد.\n"
@@ -495,6 +498,8 @@ STAGE2 = ("تو ویراستار دقت هستی. یک پیش‌نویس خبر 
           "۴) هیچ حرف لاتین، کد کالا یا نام گرید لاتین در title، lead و text نباشد؛ نام فارسی کالا کافی است.\n"
           "۵) نام تالار فقط همان باشد که در حقیقت اول آمده؛ اگر مطمئن نیستی نام تالار را ننویس.\n"
           "۶) علت، پیش‌بینی و حال بازار که در حقیقت‌ها نیست حذف شود.\n"
+          "۶ب) جهت تغییر (بالاتر/پایین‌تر، بیشتر/کمتر) را عیناً از حقیقت‌ها بردار. اگر عرضه بیشتر از فروش است، ننویس تمام عرضه فروخته شد. "
+          "ارزش معاملات همین کالا را «ارزش کل معاملات» ننویس.\n"
           "۷) text همچنان ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها بماند؛ اگر کوتاه شد از حقیقت‌های دیگر جمله اضافه کن.\n"
           + JSON_KEYS)
 STAGE3 = ("تو ویراستار نثر هستی. یک خبر را می‌گیری. عددها، نام‌ها و تاریخ‌ها را دست نزن و فقط نثر را درست کن:\n"
@@ -518,12 +523,34 @@ STAGE_SENT = ("تو ویراستار هستی. یک جمله از یک خبر و
               "فعل ساده به کار ببر (فروخت، خرید، رسید، بود، است). فقط خودِ جمله‌ی تازه را برگردان؛ بدون توضیح، بدون گیومه و بدون JSON.")
 
 
+NAME_LINE = re.compile(r"نام کالا: ([^؛]+)؛ (?:تولیدکننده|عرضه‌کننده): (?:شرکت )?([^.؛]+)")
+NAME_STOP = {"شرکت", "صنایع", "گروه", "تولید", "ایران", "مجتمع", "کارخانه", "انواع", "نوع", "درجه", "گرید"}
+TITLE_VERB = re.compile(r"(?:ت|د|است|ند)$")
+
+
+def off_topic(d, facts):
+    """content agent 1405-07-22: gemma once published a car-market story under a rebar symbol. The text must name this commodity
+    and this producer (one main word of each), and the title must end with a verb. Returns the problem or ''."""
+    m = NAME_LINE.search(facts.splitlines()[0]) if facts else None
+    body = " ".join(d[k] for k in ("title", "lead", "text"))
+    probs = []
+    if m:
+        for label, name in (("نام کالا", m.group(1)), ("نام تولیدکننده", m.group(2))):
+            keys = [w for w in re.findall(r"[\u0600-\u06FF\u200c]{3,}", name) if w not in NAME_STOP]
+            if keys and not any(w in body for w in keys):
+                probs.append(f"{label} («{name.strip()}») در خبر نیست؛ خبر باید درباره‌ی همین کالا و همین تولیدکننده باشد")
+    last = re.findall(r"[\u0600-\u06FF\u200c]+", d["title"].split("؛")[-1])
+    if last and not TITLE_VERB.search(last[-1]):
+        probs.append("تیتر فعل ندارد؛ تیتر را با یک فعل تمام کن")
+    return " | ".join(probs)
+
+
 def staged(name, call, prompt, facts, tables, market_rules=""):
     """the paid model's own path: draft -> accuracy -> wording -> parse(); up to PAID_TRIES model calls for one news.
     What a small model keeps getting wrong is repaired in small pieces: Latin product codes never reach it, a sentence with
     a number that is not in the facts is cut by the code, and a sentence with a banned phrase is rewritten alone."""
     calls, err = 0, None
-    ban = re.compile(BANNED.pattern + "|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد", re.I)  # stricter for this model (content agent 2026-10-12)
+    ban = re.compile(BANNED.pattern + r"|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد|(?<![\w‌])(?:این )?سهم(?![\w‌])", re.I)  # stricter for this model (content agent 2026-10-12/-14)
     day = day_of(facts)
     fa_digits = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
     # Latin grades and codes (HP510L, S65 ...) are taken out of what the model reads, so it cannot copy them into the text
@@ -587,6 +614,9 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 extra =[f"«{x.group(0)}» در {k}" for k in ("title", "subtitle", "lead", "text") for x in ban.finditer(d[k])]
                 if extra:
                     raise ValueError("markers: " + " | ".join(extra))
+                off = off_topic(d, facts)
+                if off:
+                    raise ValueError(off)
                 keep = set(re.findall(r"کد گرید: ([^()]+) \(", facts.splitlines()[0])[0].split("، ")) if facts and "کد گرید: " in facts.splitlines()[0] else ()
                 for k in ("title", "subtitle", "lead", "text"):  # Persian, readable digits are fixed here, not asked for
                     d[k] = readable(d[k], keep)
