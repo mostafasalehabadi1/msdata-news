@@ -566,7 +566,8 @@ def title_problem(t, facts):
         probs.append(f"تیتر {len(t.split())} کلمه است؛ ۸ تا ۱۳ کلمه بنویس")
     m = NAME_LINE.search(facts.splitlines()[0]) if facts else None
     if m:
-        w = re.findall(r"[\u0600-\u06FF\u200c]+", m.group(1))[:2]
+        w = re.match(r"\s*((?:[\u0600-\u06FF\u200c]+ ?){1,2})", m.group(1))
+        w = w.group(1).split() if w else []
         if w and " ".join(w) not in t:
             probs.append(f"نام کالا در تیتر باید «{' '.join(w)}» باشد")
     return " | ".join(probs)
@@ -582,6 +583,47 @@ def number_problem(text):
     if many:
         probs.append(f"{len(many)} جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد")
     return " | ".join(probs)
+
+
+AUTO_FIX = [(re.compile(r"لازم به ذکر است(?: که)?\s*"), ""), (re.compile(r"(?<![\w‌])ثبت شد"), "بود"),
+            (re.compile(r"رقم زد"), "رسید"), (re.compile(r"(?<![\w‌])نشان[‌ ]?دهنده‌ی"), "یعنی"),
+            (re.compile(r"(?<![\w‌])نشان[‌ ]?دهنده"), "نشانه‌ی")]
+
+
+def autofix(raw, min_words=120):
+    """what gemma could not fix in 20 calls is fixed here: stock phrases replaced, lone Latin letters removed, and sentences
+    with more than 2 numbers (dates not counted) cut while the text keeps min_words; at most 15 numbers in the text."""
+    m = re.search(r"\{.*\}", raw or "", re.S)
+    d = loads_lenient(m.group(0)) if m else None
+    if not isinstance(d, dict) or not all(isinstance(d.get(k), str) for k in ("title", "lead", "text")):
+        return raw
+    for k in ("title", "subtitle", "lead", "text"):
+        if isinstance(d.get(k), str):
+            for rx, r in AUTO_FIX:
+                d[k] = rx.sub(r, d[k])
+            d[k] = re.sub(r"(?<![\w-])[A-Za-z]{1,3}(?![\w-])", "", d[k]).replace("  ", " ").replace(" ،", "،")
+    d["title"] = clean_title(d["title"])
+    sents = [(pi, x) for pi, para in enumerate(d["text"].split("\n\n")) for x in re.split(r"(?<=[.!؟])\s+", para.strip()) if x]
+    cnt = lambda x: len(NUM.findall(DATE_WORDS.sub("", x)))  # noqa: E731
+    total = sum(len(x.split()) for _, x in sents)
+    nums = sum(cnt(x) for _, x in sents)
+    drop = set()
+    for i in sorted(range(len(sents)), key=lambda i: -cnt(sents[i][1])):
+        x = sents[i][1]
+        if cnt(x) <= 2 and nums <= 15:
+            break
+        if MSD.search(x) or total - len(x.split()) < min_words:
+            continue
+        drop.add(i)
+        total -= len(x.split())
+        nums -= cnt(x)
+    if drop:
+        paras = {}
+        for i, (pi, x) in enumerate(sents):
+            if i not in drop:
+                paras.setdefault(pi, []).append(x)
+        d["text"] = "\n\n".join(" ".join(v) for _, v in sorted(paras.items()))
+    return json.dumps(d, ensure_ascii=False)
 
 
 def off_topic(d, facts):
@@ -606,7 +648,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     What a small model keeps getting wrong is repaired in small pieces: Latin product codes never reach it, a sentence with
     a number that is not in the facts is cut by the code, and a sentence with a banned phrase is rewritten alone."""
     calls, err = 0, None
-    ban = re.compile(BANNED.pattern + r"|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد|لازم به ذکر است|رقم زد|را تجربه کرد|ثبت شد|امروز", re.I)  # stricter for this model (content agent 2026-10-12/-22)
+    ban = re.compile(BANNED.pattern + r"|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد|را تجربه کرد|امروز", re.I)  # stricter for this model (content agent 2026-10-12/-22)
     day = day_of(facts)
     fa_digits = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
     # Latin grades and codes (HP510L, S65 ...) are taken out of what the model reads, so it cannot copy them into the text
@@ -712,15 +754,19 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
             raw = json.dumps(d0, ensure_ascii=False)
         for fix in range(4):  # the check, then up to 3 corrections of this draft
             try:
+                raw = autofix(raw)
                 d = parse(yesterday_words(raw, day), facts, tables)
                 extra =[f"«{x.group(0)}» در {k}" for k in ("title", "subtitle", "lead", "text") for x in ban.finditer(d[k])]
                 if extra:
                     raise ValueError("markers: " + " | ".join(extra))
                 d["title"] = clean_title(d["title"])
-                off = " | ".join(x for x in (off_topic(d, facts), title_problem(d["title"], facts), number_problem(d["text"]),
-                                             "" if NUM.search(DATE_WORDS.sub("", d["lead"])) else "لید عدد اصلی خبر را ندارد") if x)
+                off = off_topic(d, facts)
                 if off:
                     raise ValueError(off)
+                soft = " | ".join(x for x in (title_problem(d["title"], facts), number_problem(d["text"]),
+                                              "" if NUM.search(DATE_WORDS.sub("", d["lead"])) else "لید بی‌عدد") if x)
+                if soft:
+                    note(f"  staged {name}: soft: {soft[:160]}")
                 d["slug"] = SLUG_BAD.sub("-", re.sub(r"[،,.A-Za-z]", " ", d["title"]).strip())
                 keep = set(re.findall(r"کد گرید: ([^()]+) \(", facts.splitlines()[0])[0].split("، ")) if facts and "کد گرید: " in facts.splitlines()[0] else ()
                 for k in ("title", "subtitle", "lead", "text"):  # Persian, readable digits are fixed here, not asked for
