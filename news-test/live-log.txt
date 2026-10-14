@@ -1,7 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-33 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  SABC-PCT2G42.5-L50EX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  NCI-CCAAEX-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
   JRC-BI6070BEX-00 kilo:inclusionai/ling-3.1-flash: 0s ValueError: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"paid_model_auth_required"}
   llm7:minimax-m2.7: quota used up - skipped for the rest of the day
   TCHC-PCT2G42.5-L50EX-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 45 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":45}}
@@ -200,3 +196,13 @@ style-soft: ثبت شد, lead>35w/1num, text 13 nums
   SABC-PCT2G42.5-L50EX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 239s TimeoutError: The read operation timed out
 style-soft: ثبت شد, lead>35w/1num, text 13 nums
 OK TPA-BI6070BEX-00 <- ovh:gpt-oss-120b (336s)
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for the rest of the day
+  SABC-PCT2G42.5-L50EX-00 kilo:poolside/laguna-s-2.1:free: 32s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
+style-soft: ثبت شد, lead>35w/1num, text 15 nums
+style-soft: ثبت شد, lead>35w/1num, text 15 nums
+style-soft: ثبت شد, lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: markers: «نشان‌دهنده» در text | تالار اشتباه: «صادراتی»
+style-soft: text 9 nums
+style-soft: در حالی که, lead>35w/1num, text 16 nums
+style-soft: ثبت شد, text 12 nums
+OK TCHC-PCT2G42.5-L50EX-00 <- ovh:gpt-oss-120b (105s)
