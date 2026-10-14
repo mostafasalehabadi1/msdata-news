@@ -1,94 +1,14 @@
-energy: 10 settled rows, 5 still changing (wait 20 min unchanged)
+energy: 16 settled rows, 0 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-9 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  DSVESCABEX1050727 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  DC6MDCABEX0050727 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  DOXMSFWBEX0050820 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 22s ValueError: 94 words / 2 paragraphs
-  DTAZECABEX0050729 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"bca8bdfb-f9c8-4144-8d37-8696384c02cf","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  DSCESCABEX0050727 groq:openai/gpt-oss-120b: 57s ValueError: no JSON
-  DSCESCABEX0050727 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
-style-soft: در حالی که, lead>35w/1num, text 17 nums
-OK DSZESCABEX0050727 <- llm7:DeepSeek-V4-Flash-0731 (96s)
-  DSVESCABEX1050727 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"d7806e6e-7164-4209-8d96-9fa8923f3642","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  DSCESCABEX0050727 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 40s ValueError: 119 words / 3 paragraphs
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  DTAZECABEX0050729 llm7:DeepSeek-V4-Flash-0731: 12s QuotaError: HTTP 429: {"error":{"message":"Upstream provider rate limit exceeded.","type":"upstream_rate_limited","param":null,"code":"upstream_rate_limited"}}
-  DSBBICABEX0050727 zai:glm-4.7-flash: 113s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-OK DC6MDCABEX0050727 <- ovh:Qwen3.5-397B-A17B (162s)
-  DSBBICABEX0050727 zai:glm-4.5-flash: 55s ValueError: 111 words / 2 paragraphs
-  DSVESCABEX0050727 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ثبت شد, lead>35w/1num, text 9 nums
-style-soft: ثبت شد, lead>35w/1num, text 13 nums
-  DBTSZCABEX0050727 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 217s ValueError: markers: کد کالا یا حروف لاتین وسط متن
-style-soft: lead>35w/1num
-OK DSCESCABEX0050727 <- ovh:Qwen3.5-397B-A17B (88s)
-  DBTSZCABEX0050727 openrouter:google/gemma-4-31b-it:free: 46s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
-  DBTSZCABEX0050727 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
-  DSVESCABEX1050727 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  DOXMSFWBEX0050820 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 454s TimeoutError: The read operation timed out
-style-soft: ثبت شد
-OK DOXMSFWBEX0050820 <- ovh:Qwen3.5-397B-A17B (64s)
-  DTAZECABEX0050729 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 10 nums
-OK DBTSZCABEX0050727 <- openrouter:dots-studio/dots-3-note-preview:free (280s)
-style-soft: ثبت شد, lead>35w/1num, text 17 nums
-OK DSVESCABEX1050727 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (49s)
-  DTAZECABEX0050729 zai:glm-4.7-flash: 53s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  DSBBICABEX0050727 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 62s ValueError: 118 words / 2 paragraphs
-  DTAZECABEX0050729 zai:glm-4.5-flash: 42s ValueError: 108 words / 3 paragraphs
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num
-OK DSVESCABEX0050727 <- ovh:Qwen3.5-397B-A17B (220s)
-style-soft: ثبت شد, ثبت شد
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 15 nums
-style-soft: text 14 nums
-OK DTAZECABEX0050729 <- ovh:Qwen3.5-397B-A17B (223s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 6 calls: markers: «نشان‌دهنده» در text
-style-soft: ثبت شد, lead>35w/1num, text 21 nums
-style-soft: ثبت شد, lead>35w/1num, text 23 nums
-style-soft: ثبت شد, lead>35w/1num, text 23 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: markers: «نشان‌دهنده» در text
-  staged gapgpt:gemma-3-27b-it: call 16 failed: HTTP 404: {"error":{"message":"No available channel for this model on the current token (request id: 2026101411580235217
-  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: no JSON
-style-soft: ثبت شد, lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 19 calls
-OK DSBBICABEX0050727 <- gapgpt:gemma-3-27b-it (879s)
-written 9/9; total in file 10
-energy: 15 settled rows, 0 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-5 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  DIRESCABEX0050729 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  DSTESCABEX1050727 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
-  DSTESCABEX1050727 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
-  DSCESCABEX1050727 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"b8c6c220-3cff-4c3d-ae2c-c71de1670b24","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  DSTESCABEX1050727 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 65s ValueError: 112 words / 2 paragraphs
-  DIRESCABEX0050729 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"72a6ff61-90f3-4ccb-a31e-c581684f598d","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  DSTESCABEX1050727 zai:glm-4.7-flash: 18s ValueError: 55 words / 1 paragraphs
-  DSBESCABEX1050727 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  DSTESCABEX1050727 zai:glm-4.5-flash: 109s ValueError: 106 words / 2 paragraphs
-style-soft: ثبت شد, lead>35w/1num, text 19 nums
-OK DSBESCABEX0050727 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (266s)
-  DSCESCABEX1050727 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  DSTESCABEX1050727 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-OK DSTESCABEX1050727 <- ovh:Qwen3.5-397B-A17B (128s)
-  DIRESCABEX0050729 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 21 nums
-OK DSBESCABEX1050727 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (66s)
-  DSCESCABEX1050727 zai:glm-4.7-flash: 114s ValueError: 92 words / 2 paragraphs
-  DIRESCABEX0050729 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 260s TimeoutError: The read operation timed out
-  DSCESCABEX1050727 zai:glm-4.5-flash: 190s ValueError: 116 words / 3 paragraphs
-style-soft: lead>35w/1num, text 18 nums
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ISVPGPRBFC0050729 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ISVPGPRBFC0050729 zai:glm-4.7-flash: 100s ValueError: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ISVPGPRBFC0050729 zai:glm-4.5-flash: 53s ValueError: 110 words / 2 paragraphs
+style-soft: lead>35w/1num, text 9 nums
   staged gapgpt:gemma-3-27b-it: accepted after 3 calls
-OK DIRESCABEX0050729 <- gapgpt:gemma-3-27b-it (99s)
-style-soft: lead>35w/1num, text 25 nums
-style-soft: lead>35w/1num, text 25 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 4 calls
-OK DSCESCABEX1050727 <- gapgpt:gemma-3-27b-it (113s)
-written 5/5; total in file 15
-energy: 15 settled rows, 1 still changing (wait 20 min unchanged)
+OK ISVPGPRBFC0050729 <- gapgpt:gemma-3-27b-it (49s)
+written 1/1; total in file 16
+energy: 16 settled rows, 0 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-written 0/0; total in file 15
+written 0/0; total in file 16
