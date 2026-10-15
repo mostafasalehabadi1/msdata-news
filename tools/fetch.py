@@ -23,7 +23,7 @@ def get_json(url, tries=3):
     last = None
     for i in range(tries):
         try:
-            with urllib.request.urlopen(url, timeout=60) as r:
+            with urllib.request.urlopen(url, timeout=30) as r:
                 return json.load(r)
         except Exception as e:  # noqa: BLE001 - network errors of any kind are retried
             last = e
@@ -31,15 +31,22 @@ def get_json(url, tries=3):
     raise RuntimeError(f"{url}: {last}")
 
 
+DEAD = set()  # a source that failed once is skipped for the rest of the run (a dead server blocked releases for hours)
+
+
 def fetch(qs=""):
     errors = []
     for base in SOURCES:
+        if base in DEAD and base != SOURCES[-1]:
+            errors.append(f"{base}: skipped (failed earlier)")
+            continue
         try:
             d = get_json(base + qs)
             if d.get("status") == "ok":
                 return d, base
             errors.append(f"{base}: status={d.get('status')}")
         except Exception as e:  # noqa: BLE001
+            DEAD.add(base)
             errors.append(str(e))
     raise RuntimeError(" | ".join(errors))
 
