@@ -91,7 +91,7 @@ RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و �
 
 
 # content agent 1405-07-15 (252 news of 1405-07-14): the one main flaw of each model, appended to its prompt
-MODEL_HINTS = [(r"gapgpt:gemma", "۱) همه‌ی رقم‌ها و اعشارها فارسی و با «٫» (۷٫۲ نه 7.2)؛ در تیتر، متن و key_points. ۲) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه؛ روز و تاریخ را بنویس (مثل دوشنبه ۲۰ مهر). ۳) هر عدد را فقط یک بار و دقیقاً از حقیقت‌ها بنویس؛ عدد صفر یا عددی که در حقیقت‌ها نیست ننویس و ارزش معامله را خودت حساب نکن. ۴) text دست‌کم ۱۴۰ کلمه در ۲ یا ۳ پاراگراف باشد و پاراگراف‌ها با یک خط خالی جدا شوند؛ بیش از ۸ عدد نداشته باشد. ۵) هیچ حرف لاتین یا کد کالا (مثل نام گرید) در تیتر و متن نیاور؛ نام فارسی کالا کافی است. ۶) در تیتر «؛» نگذار و «نماد» ننویس. ۷) تیتر جمله‌ی کامل با فعل است، ۸ تا ۱۳ کلمه. ۸) نسبت تقاضا به عرضه را فقط به شکل «X برابر عرضه» بنویس؛ «X درصد بیشتر از عرضه» ننویس."),
+MODEL_HINTS = [(r"gapgpt:gemma", "۱) همه‌ی رقم‌ها و اعشارها فارسی و با «٫» (۷٫۲ نه 7.2)؛ در تیتر، متن و key_points. ۲) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه؛ روز و تاریخ را بنویس (مثل دوشنبه ۲۰ مهر). ۳) هر عدد را فقط یک بار و دقیقاً از حقیقت‌ها بنویس؛ عدد صفر یا عددی که در حقیقت‌ها نیست ننویس و ارزش معامله را خودت حساب نکن. ۴) text دست‌کم ۱۴۰ کلمه در ۲ یا ۳ پاراگراف باشد و پاراگراف‌ها با یک خط خالی جدا شوند؛ بیش از ۱۵ عدد نداشته باشد. ۵) هیچ حرف لاتین یا کد کالا (مثل نام گرید) در تیتر و متن نیاور؛ نام فارسی کالا کافی است. ۶) در تیتر «؛» نگذار و «نماد» ننویس. ۷) تیتر جمله‌ی کامل با فعل است، ۸ تا ۱۳ کلمه. ۸) نسبت تقاضا به عرضه را فقط به شکل «X برابر عرضه» بنویس؛ «X درصد بیشتر از عرضه» ننویس."),
                (r"nemotron-3-super", "کلمه‌ی انگلیسی ننویس. «عرض» ننویس؛ «عرضه» بنویس."),
                (r"dots", "هیچ کلمه‌ی انگلیسی مثل Display یا faced در متن نیاور."),
                (r"command-a.*reason", "«امروز» ننویس؛ روز هفته و تاریخ را بنویس. «در حالی که» و «با این حال» ننویس."),
@@ -516,7 +516,9 @@ STAGE1 = ("تو خبرنگار بورس کالای ام‌اس‌دیتا هست
 # step 2 - check: a closed yes/no question per sentence is easier for a small model than a rewrite (content agent 1405-07-22)
 STAGE2 = ("تو راستی‌آزما هستی. «حقیقت‌ها» و جمله‌های شماره‌دار یک خبر را می‌گیری. هر جمله را با حقیقت‌ها بسنج. "
           "جمله غلط است اگر: جهت را برعکس بگوید (بیشتر/کمتر، گران‌تر/ارزان‌تر)، بگوید تمام عرضه فروخته شد در حالی که بخشی ماند، "
-          "ارزش این جلسه را ارزش امسال یا ارزش کل بنامد، یا چیزی بگوید که در حقیقت‌ها نیست (علت، پیش‌بینی، حال بازار، همکاری، انبار). "
+          "ارزش این جلسه را ارزش امسال یا ارزش کل بنامد، حجم تقاضا را مقدار خرید بنامد، تعداد تولیدکننده‌ها را غلط بشمارد، "
+          "یا تفسیری کند که حقیقت‌ها پشتش نیست یا منطقش وارونه است (مثل «با وجود تقاضای بالا، تمام عرضه فروش رفت» یا «به افزایش رقابت در بازار کمک می‌کند»)، "
+          "یا پیش‌بینی، همکاری یا انبار بگوید. تفسیری که از عددهای حقیقت‌ها درمی‌آید درست است (مثل «تقاضا ۲٫۲ برابر بود و رقابت قیمت را ۱۱ درصد بالا برد»). "
           "فقط یک JSON مثل {\"bad\": [2, 5]} برگردان؛ اگر همه درست است {\"bad\": []}.")
 # step 3 - wording only (numbers, names and dates stay)
 STAGE3 = ("تو ویراستار نثر هستی. یک خبر را می‌گیری. عددها، نام‌ها، تاریخ‌ها و جهت تغییرها را دست نزن و فقط نثر را درست کن:\n"
@@ -612,14 +614,19 @@ AUTO_FIX = [(re.compile(r"لازم به ذکر است(?: که)?\s*"), ""), (re.c
             (re.compile(r"(?<![\w‌])نشان[‌ ]?دهنده"), "نشانه‌ی"),
             # content agent 1405-07-22 (second review)
             (re.compile(r"\s*تعیین[‌ ]?شده توسط (?:شرکت )?[^،.]{0,40}?(?=[،.]| بود| است| به| در| را)"), ""),
-            (re.compile(r"(?<![0-9۰-۹٫.])(?:یک|[1۱]) هزار"), "هزار"), (re.compile("[\u0660-\u0669]"), lambda m: chr(ord(m.group(0)) + 0x90))]
+            (re.compile(r"(?<![0-9۰-۹٫.])(?:یک|[1۱]) هزار"), "هزار"), (re.compile("[\u0660-\u0669]"), lambda m: chr(ord(m.group(0)) + 0x90)),
+            # content agent 1405-07-23 (third review): tone words go, stock verbs become plain ones
+            (re.compile(r"خوشبختانه،?\s*"), ""), (re.compile(r"موفق به ([\u0600-\u06FF\u200c]+) (?:شد|شدند|گردید)"), r"\1 داشت"),
+            (re.compile(r"در نهایت،?\s*"), ""), (re.compile(r"صورت گرفت"), "انجام شد"), (re.compile(r"به (?:اتمام|پایان) رسید"), "تمام شد"),
+            (re.compile(r"به شمار می[‌ ]?رسد"), "است"), (re.compile(r"بوده بود"), "بود"), (re.compile(r"بورس کالای ام[‌ ]?اس[‌ ]?دیتا"), "بورس کالا")]
 # sentences cut when the text stays long enough: fillers, a date alone, no verb at the end
-FILLER = re.compile(r"مورد توجه فعالان|به تصویر کشید|استقبال مناسب|قابل توجه|به این میزان استقبال کردند")
+FILLER = re.compile(r"مورد توجه فعالان|به تصویر کشید|استقبال مناسب|قابل توجه|به این میزان استقبال کردند|شاهد|نشان می[‌ ]?داد|در حداقل سطح ممکن")
+ABOVE_BASE = re.compile(r"([0-9۰-۹]+(?:[٫.][0-9۰-۹]+)?) درصد بالاتر از قیمت پایه")
 DATE_ONLY = re.compile(r"^(?:(?:شنبه|یکشنبه|دوشنبه|سه‌شنبه|چهارشنبه|پنجشنبه|جمعه)\s+)?[0-9۰-۹]{1,2} \S+(?: [0-9۰-۹]{4})?[.!]?$")
 VERB_END = re.compile(r"(?:ت|د|است|ند|ید|یم)[.!؟]?$")
 
 
-def autofix(raw, min_words=120):
+def autofix(raw, min_words=120, facts=""):
     """what gemma could not fix in 20 calls is fixed here: stock phrases replaced, lone Latin letters removed, and sentences
     with more than 2 numbers (dates not counted) cut while the text keeps min_words; at most 15 numbers in the text."""
     m = re.search(r"\{.*\}", raw or "", re.S)
@@ -633,7 +640,12 @@ def autofix(raw, min_words=120):
             d[k] = re.sub(r"(?<![\w-])[A-Za-z][A-Za-z0-9]{0,3}(?![\w])", "", d[k])
             d[k] = re.sub(r"\s*-+\s*(?=[\s،.؛)]|$)|(?<=\s)-+(?=\s)", " ", d[k])  # «میلگرد ۲۲ تا ۳۲-» -> «میلگرد ۲۲ تا ۳۲»
             d[k] = re.sub(r" {2,}", " ", d[k]).replace(" ،", "،").replace(" .", ".").strip()
-    d["title"] = clean_title(d["title"])
+    d["title"] = clean_title(d["title"]).replace(":", "،")
+    lead = re.split(r"(?<=[.!؟])\s+", d["lead"].strip())
+    if len(lead) > 1 and len(lead[0].split()) >= 12:
+        d["lead"] = lead[0]
+    m = ABOVE_BASE.search(facts or "")
+    rival = bool(m) and float(m.group(1).translate(str.maketrans("۰۱۲۳۴۵۶۷۸۹٫", "0123456789."))) > 1
     cnt = lambda x: len(NUM.findall(DATE_WORDS.sub("", x)))  # noqa: E731
 
     def split(x):  # content agent 1405-07-22: «… بود و قیمت پایه … بود.» -> two sentences
@@ -649,7 +661,7 @@ def autofix(raw, min_words=120):
     total0 = sum(len(x.split()) for _, x in sents)
     keep = []
     for pi, x in sents:
-        if (FILLER.search(x) or not VERB_END.search(x.strip())) and not MSD.search(x) and total0 - len(x.split()) >= min_words:
+        if (FILLER.search(x) or not VERB_END.search(x.strip()) or (not rival and "رقابت" in x)) and not MSD.search(x) and total0 - len(x.split()) >= min_words:
             total0 -= len(x.split())
             continue
         keep.append((pi, x))
@@ -804,7 +816,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
             raw = json.dumps(d0, ensure_ascii=False)
         for fix in range(4):  # the check, then up to 3 corrections of this draft
             try:
-                raw = autofix(raw)
+                raw = autofix(raw, facts=facts)
                 d = parse(yesterday_words(raw, day), facts, tables)
                 extra =[f"«{x.group(0)}» در {k}" for k in ("title", "subtitle", "lead", "text") for x in ban.finditer(d[k])]
                 if extra:
@@ -820,7 +832,11 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 d["slug"] = SLUG_BAD.sub("-", re.sub(r"[،,.A-Za-z]", " ", d["title"]).strip())
                 keep = set(re.findall(r"کد گرید: ([^()]+) \(", facts.splitlines()[0])[0].split("، ")) if facts and "کد گرید: " in facts.splitlines()[0] else ()
                 for k in ("title", "subtitle", "lead", "text"):  # Persian, readable digits are fixed here, not asked for
-                    d[k] = re.sub(r"(?<![0-9۰-۹٫.])(?:یک|۱) هزار", "هزار", readable(d[k], keep))
+                    d[k] = round_words(re.sub(r"(?<![0-9۰-۹٫.])(?:یک|۱) هزار", "هزار", readable(d[k], keep)))
+                if not d.get("key_points"):  # content agent 1405-07-23: 12 of 20 had none
+                    kp = [x for x in re.split(r"(?<=[.!؟])\s+", d["text"]) if NUM.search(DATE_WORDS.sub("", x)) and 5 <= len(x.split()) <= 15 and not MSD.search(x)]
+                    if len(kp) >= 3:
+                        d["key_points"] = kp[:3]
                 if d.get("key_points"):  # content agent 2026-10-13: no «امروز»/«دیروز» in key_points either
                     kp = [re.sub(r"(?<![0-9۰-۹٫.])(?:یک|۱) هزار", "هزار", readable(yesterday_words(today_words(x, day, [True]), day))) for x in d["key_points"]]
                     if any(ban.search(x) for x in kp):
@@ -907,6 +923,22 @@ def readable(t, keep=()):
         return " و ".join(parts + ([str(v)] if v else []))
     t = BIG.sub(big, NEG.sub(r"\1-", t))
     return re.sub(r"(?<=[0-9۰-۹])[.](?=[0-9۰-۹])", "٫", t).translate(str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹"))
+
+
+FA = str.maketrans("۰۱۲۳۴۵۶۷۸۹", "0123456789")
+ROUND = re.compile(r"(?<![0-9۰-۹٫])(حدود )?((?:یک|[0-9۰-۹]+) (?:میلیارد|میلیون)) و ([0-9۰-۹]+) (میلیون|هزار) و ([0-9۰-۹]+)(?: (هزار))?(?![0-9۰-۹٫]| هزار| میلیون)")
+
+
+def round_words(t):
+    """content agent 1405-07-23: «یک میلیون و ۱۷۰ هزار و ۹۵۷ ریال» -> «حدود یک میلیون و ۱۷۱ هزار ریال» in the text;
+    the exact number stays in the table."""
+    def one(m):
+        mid, tail = int(m.group(3).translate(FA)), int(m.group(5).translate(FA))
+        frac = tail / 1000 if m.group(4) == "هزار" or m.group(6) else tail / 10 ** 6
+        if frac >= 0.5 and mid < 999:
+            mid += 1
+        return f"حدود {m.group(2)} و {mid} {m.group(4)}".translate(str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹"))
+    return ROUND.sub(one, t)
 
 
 def save_scenarios(items, subject, date_fa):
