@@ -117,7 +117,7 @@ def build(row, past, date_fa, date):
                             "rows": [[fa_date(d), fa_num(p, 2 if abs(p) < 10 else 0)] for d, p in prices[-5:]] + [[fa_date(date_fa), fa_num(price, 2 if abs(price) < 10 else 0)]]}
     tables["T2"] = {"title": f"معامله‌ی {goods} {prod}", "columns": ["شاخص", "مقدار"],
                     "rows": ([[f"عرضه ({vu})", fa_num(off)]] if off else []) + [[f"فروش ({vu})", fa_num(trd)],
-                             [f"قیمت پایه ({pu})", fa_num(base, 2 if abs(base) < 10 else 0)],
-                             [f"قیمت معامله ({pu})", fa_num(price, 2 if abs(price) < 10 else 0)], ["بازار", mk]]}
+                             [f"{'پریمیوم پایه' if k.startswith('premium') else 'قیمت پایه'} ({pu})", fa_num(base, 2 if abs(base) < 10 else 0)],
+                             [f"{'پریمیوم معامله' if k.startswith('premium') else 'قیمت معامله'} ({pu})", fa_num(price, 2 if abs(price) < 10 else 0)], ["بازار", mk]]}
     text = "\n".join(f"{i}. {f}" for i, f in enumerate(F, 1))
     return text, tables
