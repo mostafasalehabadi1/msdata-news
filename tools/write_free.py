@@ -520,6 +520,16 @@ STAGE2 = ("تو راستی‌آزما هستی. «حقیقت‌ها» و جمل�
           "یا تفسیری کند که حقیقت‌ها پشتش نیست یا منطقش وارونه است (مثل «با وجود تقاضای بالا، تمام عرضه فروش رفت» یا «به افزایش رقابت در بازار کمک می‌کند»)، "
           "یا پیش‌بینی، همکاری یا انبار بگوید. تفسیری که از عددهای حقیقت‌ها درمی‌آید درست است (مثل «تقاضا ۲٫۲ برابر بود و رقابت قیمت را ۱۱ درصد بالا برد»). "
           "فقط یک JSON مثل {\"bad\": [2, 5]} برگردان؛ اگر همه درست است {\"bad\": []}.")
+# 5-step variant (owner 1405-07-23, off until compared): the check above in two short questions
+FIVE_STEPS = [False]
+STAGE2_NUM = ("تو راستی‌آزمای عدد هستی. «حقیقت‌ها» و جمله‌های شماره‌دار یک خبر را می‌گیری. فقط عدد و جهت هر جمله را بسنج. "
+              "جمله غلط است اگر عددش با حقیقت‌ها نخواند، جهت را برعکس بگوید (بیشتر/کمتر، گران‌تر/ارزان‌تر)، حجم تقاضا را مقدار خرید بنامد، "
+              "ارزش این جلسه را ارزش امسال یا ارزش کل بنامد، یا تعداد تولیدکننده‌ها را غلط بشمارد. "
+              "فقط یک JSON مثل {\"bad\": [2, 5]} برگردان؛ اگر همه درست است {\"bad\": []}.")
+STAGE2_MEANING = ("تو راستی‌آزمای تفسیر هستی. «حقیقت‌ها» و جمله‌های شماره‌دار یک خبر را می‌گیری. فقط جمله‌هایی را بسنج که تفسیر می‌کنند (علت، نتیجه، حال بازار). "
+                  "تفسیری که از عددهای حقیقت‌ها درمی‌آید درست است (مثل «تقاضا ۲٫۲ برابر بود و رقابت قیمت را ۱۱ درصد بالا برد»). "
+                  "غلط است اگر حقیقت‌ها پشتش نباشد، منطقش وارونه باشد (مثل «با وجود تقاضای بالا، تمام عرضه فروش رفت»)، یا پیش‌بینی، همکاری یا انبار بگوید. "
+                  "فقط یک JSON مثل {\"bad\": [3]} برگردان؛ اگر همه درست است {\"bad\": []}.")
 # step 3 - wording only (numbers, names and dates stay)
 STAGE3 = ("تو ویراستار نثر هستی. یک خبر را می‌گیری. عددها، نام‌ها، تاریخ‌ها و جهت تغییرها را دست نزن و فقط نثر را درست کن:\n"
           "۱) این عبارت‌ها را با فعل ساده (فروخت، خرید، رسید، بود، است) عوض کن: «به گزارش»، «نشان‌دهنده»، «نشان می‌دهد»، "
@@ -777,9 +787,10 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     while calls < PAID_TRIES:
         raw = ask(STAGE1, brief + model_hint(name))
         d0 = as_dict(raw)
-        if d0 and calls < PAID_TRIES:  # step 2: sentences the check calls wrong are cut by the code
+        for check in ((STAGE2_NUM, STAGE2_MEANING) if FIVE_STEPS[0] else (STAGE2,)):  # step 2 (and 3 in the 5-step variant)
+          if d0 and calls < PAID_TRIES:  # sentences the check calls wrong are cut by the code
             sents = [(pi, x) for pi, para in enumerate(d0["text"].split("\n\n")) for x in re.split(r"(?<=[.!؟])\s+", para.strip()) if x]
-            ans = ask(STAGE2, "حقیقت‌ها:\n" + facts + "\n\nجمله‌ها:\n" + "\n".join(f"{n + 1}. {x}" for n, (_, x) in enumerate(sents)))
+            ans = ask(check, "حقیقت‌ها:\n" + facts + "\n\nجمله‌ها:\n" + "\n".join(f"{n + 1}. {x}" for n, (_, x) in enumerate(sents)))
             m = re.search(r"\{.*\}", ans or "", re.S)
             bad = (loads_lenient(m.group(0)) or {}).get("bad") if m else None
             if isinstance(bad, list) and len(bad) <= len(sents) // 2:  # a check that rejects most of the text is not trusted
