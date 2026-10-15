@@ -105,7 +105,10 @@ def main():
         except Exception as e:  # noqa: BLE001
             errs.append(f"{name}: invalid JSON {e}")
             continue
-        check_text(name, d, errs, 200, 320, 3, 40)
+        if name.startswith("us/"):  # owner 1405-07-23: the US report is 400-500 words in 4-8 paragraphs
+            check_text(name, d, errs, 400, 500, 4, 8)
+        else:
+            check_text(name, d, errs, 200, 320, 3, 40)
         n += 1
     for e in errs:
         print("ERROR", e)
