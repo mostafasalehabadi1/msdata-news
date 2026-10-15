@@ -98,8 +98,8 @@ def main():
         long = d.get("kind") in ("report", "analysis")  # «تحلیل» (owner 1405-07-16): same length rule as a report
         check_text(name, d, errs, 550 if long else 230, 1000 if long else 470, 3, 40)
         n += 1
-    for path in sorted(glob.glob(os.path.join(ROOT, "fx", "*.json"))):  # «ارز و طلا» daily news (tools/write_fx.py)
-        name = "fx/" + os.path.basename(path)
+    for path in sorted(glob.glob(os.path.join(ROOT, "fx", "*.json")) + glob.glob(os.path.join(ROOT, "us", "*.json"))):  # «ارز و طلا» (tools/write_fx.py) and the daily US elections report (content agent, 1405-07-23)
+        name = os.path.basename(os.path.dirname(path)) + "/" + os.path.basename(path)
         try:
             d = json.load(open(path, encoding="utf-8"))
         except Exception as e:  # noqa: BLE001
