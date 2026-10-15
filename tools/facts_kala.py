@@ -66,7 +66,8 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
         F.append(f"قیمت پایه‌ی عرضه {fa_int(base)} ریال هر کیلوگرم بود (قیمت معامله در داده نیامده؛ از قیمت معامله حرف نزن)." if base else
                  "قیمت معامله در داده نیامده؛ از قیمت معامله حرف نزن.")
     elif trd > 0:
-        F.append(f"قیمت میانگین معامله {fa_int(price)} ریال هر کیلوگرم بود و قیمت پایه‌ی عرضه {fa_int(base)} ریال.")
+        F.append(f"قیمت میانگین معامله {fa_int(price)} ریال هر کیلوگرم بود و قیمت پایه‌ی عرضه {fa_int(base)} ریال." if base else
+                 f"قیمت میانگین معامله {fa_int(price)} ریال هر کیلوگرم بود (قیمت پایه در داده نیامده؛ از قیمت پایه حرف نزن).")
         c = pct(price, base)
         if c is not None:
             F.append("قیمت معامله با قیمت پایه برابر بود و رقابتی بالاتر از پایه شکل نگرفت." if abs(c) < 0.05 else

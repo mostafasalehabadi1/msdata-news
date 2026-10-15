@@ -146,8 +146,13 @@ SOURCE_LINES = ["این ارقام از داده‌های روزانه‌ی ام
 MARKET = ["kala"]  # set by main(): sentences 1, 7 and 13 name the energy exchange / the export hall instead
 
 
+FIRST_TRADE = [False]  # set by staged(): the facts say this is the first trade on record
+NOT_FIRST = {2, 8, 16}  # content agent 1405-07-23: they talk about earlier sessions
+
+
 def source_pick(key):
-    line = SOURCE_LINES[zlib.crc32(key.encode("utf-8")) % len(SOURCE_LINES)]
+    pool = [x for i, x in enumerate(SOURCE_LINES) if not (FIRST_TRADE[0] and i in NOT_FIRST)]
+    line = pool[zlib.crc32(key.encode("utf-8")) % len(pool)]
     if MARKET[0] == "energy":
         return line.replace("بورس کالا", "بورس انرژی")
     if MARKET[0] == "kish":
@@ -626,6 +631,7 @@ AUTO_FIX = [(re.compile(r"لازم به ذکر است(?: که)?\s*"), ""), (re.c
             (re.compile(r"\s*تعیین[‌ ]?شده توسط (?:شرکت )?[^،.]{0,40}?(?=[،.]| بود| است| به| در| را)"), ""),
             (re.compile(r"(?<![0-9۰-۹٫.])(?:یک|[1۱]) هزار"), "هزار"), (re.compile("[\u0660-\u0669]"), lambda m: chr(ord(m.group(0)) + 0x90)),
             # content agent 1405-07-23 (third review): tone words go, stock verbs become plain ones
+            (re.compile(r"([0-9۰-۹]{1,2} (?:فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند))(?: [0-9۰-۹]{4})?[،,]? \1(?![0-9۰-۹])"), r"\1"),
             (re.compile(r"خوشبختانه،?\s*"), ""), (re.compile(r"موفق به ([\u0600-\u06FF\u200c]+) (?:شد|شدند|گردید)"), r"\1 داشت"),
             (re.compile(r"در نهایت،?\s*"), ""), (re.compile(r"صورت گرفت"), "انجام شد"), (re.compile(r"به (?:اتمام|پایان) رسید"), "تمام شد"),
             (re.compile(r"به شمار می[‌ ]?رسد"), "است"), (re.compile(r"بوده بود"), "بود"), (re.compile(r"بورس کالای ام[‌ ]?اس[‌ ]?دیتا"), "بورس کالا")]
@@ -784,10 +790,11 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     must = [x for x in lines[10:] if re.search(r"از آخرین معامله|ارزش معامله", x)]  # content agent 1405-07-22
     brief = src.replace(LATIN_CODE.sub(lambda m: m.group(0) if re.fullmatch(r"[TF]\d{1,2}|title|columns|rows", m.group(0)) else "", facts), "\n".join(lines[:10] + must)) if facts and len(lines) > 10 else src
     key = (lines[0] + day) if lines else ""
+    FIRST_TRADE[0] = "نخستین معامله‌ی ثبت‌شده‌ی این کالا" in (facts or "")
     while calls < PAID_TRIES:
         raw = ask(STAGE1, brief + model_hint(name))
         d0 = as_dict(raw)
-        for check in ((STAGE2_NUM, STAGE2_MEANING) if FIVE_STEPS[0] else (STAGE2,)):  # step 2 (and 3 in the 5-step variant)
+        for check in ((STAGE2_MEANING, STAGE2_NUM) if FIVE_STEPS[0] else (STAGE2,)):  # step 2 (and 3 in the 5-step variant)
           if d0 and calls < PAID_TRIES:  # sentences the check calls wrong are cut by the code
             sents = [(pi, x) for pi, para in enumerate(d0["text"].split("\n\n")) for x in re.split(r"(?<=[.!؟])\s+", para.strip()) if x]
             ans = ask(check, "حقیقت‌ها:\n" + facts + "\n\nجمله‌ها:\n" + "\n".join(f"{n + 1}. {x}" for n, (_, x) in enumerate(sents)))
@@ -849,7 +856,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                     if len(kp) >= 3:
                         d["key_points"] = kp[:3]
                 if d.get("key_points"):  # content agent 2026-10-13: no «امروز»/«دیروز» in key_points either
-                    kp = [re.sub(r"(?<![0-9۰-۹٫.])(?:یک|۱) هزار", "هزار", readable(yesterday_words(today_words(x, day, [True]), day))) for x in d["key_points"]]
+                    kp = [re.sub(r"\s*-+\s*(?=[\s،.؛)]|$)", " ", round_words(re.sub(r"(?<![0-9۰-۹٫.])(?:یک|۱) هزار", "هزار", readable(yesterday_words(today_words(x, day, [True]), day))))).replace(" .", ".").strip() for x in d["key_points"]]
                     if any(ban.search(x) for x in kp):
                         d.pop("key_points")
                     else:
