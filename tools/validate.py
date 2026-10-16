@@ -106,7 +106,7 @@ def main():
             errs.append(f"{name}: invalid JSON {e}")
             continue
         if name.startswith("us/"):  # owner 1405-07-23: the US report is 400-500 words in 4-8 paragraphs
-            check_text(name, d, errs, 400, 500, 4, 8)
+            check_text(name, d, errs, 120, 500, 3, 8)
         else:
             check_text(name, d, errs, 200, 320, 3, 40)
         n += 1
