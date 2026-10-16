@@ -148,10 +148,11 @@ MARKET = ["kala"]  # set by main(): sentences 1, 7 and 13 name the energy exchan
 
 FIRST_TRADE = [False]  # set by staged(): the facts say this is the first trade on record
 NOT_FIRST = {2, 8, 16}  # content agent 1405-07-23: they talk about earlier sessions
+HAS_YTD = [True]  # set by staged(): sentence 13 names this year's value, only when the facts have it (content agent 1405-07-25)
 
 
 def source_pick(key):
-    pool = [x for i, x in enumerate(SOURCE_LINES) if not (FIRST_TRADE[0] and i in NOT_FIRST)]
+    pool = [x for i, x in enumerate(SOURCE_LINES) if not (FIRST_TRADE[0] and i in NOT_FIRST) and not (i == 13 and not HAS_YTD[0])]
     line = pool[zlib.crc32(key.encode("utf-8")) % len(pool)]
     if MARKET[0] == "energy":
         return line.replace("بورس کالا", "بورس انرژی")
@@ -634,9 +635,13 @@ AUTO_FIX = [(re.compile(r"لازم به ذکر است(?: که)?\s*"), ""), (re.c
             (re.compile(r"([0-9۰-۹]{1,2} (?:فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند))(?: [0-9۰-۹]{4})?[،,]? \1(?![0-9۰-۹])"), r"\1"),
             (re.compile(r"خوشبختانه،?\s*"), ""), (re.compile(r"موفق به ([\u0600-\u06FF\u200c]+) (?:شد|شدند|گردید)"), r"\1 داشت"),
             (re.compile(r"در نهایت،?\s*"), ""), (re.compile(r"صورت گرفت"), "انجام شد"), (re.compile(r"به (?:اتمام|پایان) رسید"), "تمام شد"),
-            (re.compile(r"به شمار می[‌ ]?رسد"), "است"), (re.compile(r"بوده بود"), "بود"), (re.compile(r"بورس کالای ام[‌ ]?اس[‌ ]?دیتا"), "بورس کالا")]
+            (re.compile(r"به شمار می[‌ ]?رسد"), "است"), (re.compile(r"بوده بود"), "بود"), (re.compile(r"بورس کالای ام[‌ ]?اس[‌ ]?دیتا"), "بورس کالا"),
+            (re.compile(r"را به ثبت رساند"), "داشت"), (re.compile(r"به ثبت رساند"), "داشت"), (re.compile(r"این بدان معناست که"), "یعنی"),
+            (re.compile(r"این بدان معناست"), "یعنی"), (re.compile(r"عرضه نمود"), "عرضه کرد"), (re.compile(r"(?<![\w‌])نمود(?![\w‌])"), "کرد"),
+            (re.compile(r"قابل[‌ ]توجهی"), "زیادی"), (re.compile(r"قابل[‌ ]توجه"), "زیاد"),
+            (re.compile(r"(درصد عرضه) (?:شد|گردید)(?=[،.\s]|$)"), r"\1 فروخته شد")]
 # sentences cut when the text stays long enough: fillers, a date alone, no verb at the end
-FILLER = re.compile(r"مورد توجه فعالان|به تصویر کشید|استقبال مناسب|قابل توجه|به این میزان استقبال کردند|شاهد|نشان می[‌ ]?داد|در حداقل سطح ممکن")
+FILLER = re.compile(r"مورد توجه فعالان|به تصویر کشید|استقبال مناسب|قابل توجه|به این میزان استقبال کردند|شاهد|نشان می[‌ ]?داد|در حداقل سطح ممکن|با کیفیت|نیاز صنایع|شرایط بازار باعث|استقبال (?:بالا|خوب)|واکنش خوب|در حالی که")
 ABOVE_BASE = re.compile(r"([0-9۰-۹]+(?:[٫.][0-9۰-۹]+)?) درصد بالاتر از قیمت پایه")
 DATE_ONLY = re.compile(r"^(?:(?:شنبه|یکشنبه|دوشنبه|سه‌شنبه|چهارشنبه|پنجشنبه|جمعه)\s+)?[0-9۰-۹]{1,2} \S+(?: [0-9۰-۹]{4})?[.!]?$")
 VERB_END = re.compile(r"(?:ت|د|است|ند|ید|یم)[.!؟]?$")
@@ -791,6 +796,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     brief = src.replace(LATIN_CODE.sub(lambda m: m.group(0) if re.fullmatch(r"[TF]\d{1,2}|title|columns|rows", m.group(0)) else "", facts), "\n".join(lines[:10] + must)) if facts and len(lines) > 10 else src
     key = (lines[0] + day) if lines else ""
     FIRST_TRADE[0] = "نخستین معامله‌ی ثبت‌شده‌ی این کالا" in (facts or "")
+    HAS_YTD[0] = "از ابتدای امسال" in (facts or "")
     while calls < PAID_TRIES:
         raw = ask(STAGE1, brief + model_hint(name))
         d0 = as_dict(raw)
@@ -851,16 +857,18 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 keep = set(re.findall(r"کد گرید: ([^()]+) \(", facts.splitlines()[0])[0].split("، ")) if facts and "کد گرید: " in facts.splitlines()[0] else ()
                 for k in ("title", "subtitle", "lead", "text"):  # Persian, readable digits are fixed here, not asked for
                     d[k] = round_words(re.sub(r"(?<![0-9۰-۹٫.])(?:یک|۱) هزار", "هزار", readable(d[k], keep)))
+                    d[k] = after_fix(d[k], facts)
                 if not d.get("key_points"):  # content agent 1405-07-23: 12 of 20 had none
-                    kp = [x for x in re.split(r"(?<=[.!؟])\s+", d["text"]) if NUM.search(DATE_WORDS.sub("", x)) and 5 <= len(x.split()) <= 15 and not MSD.search(x)]
+                    kp = [x for x in re.split(r"(?<=[.!؟])\s+", d["text"]) if NUM.search(DATE_WORDS.sub("", x)) and 5 <= len(x.split()) <= 25 and not MSD.search(x)]
                     if len(kp) >= 3:
                         d["key_points"] = kp[:3]
                 if d.get("key_points"):  # content agent 2026-10-13: no «امروز»/«دیروز» in key_points either
                     kp = [re.sub(r"\s*-+\s*(?=[\s،.؛)]|$)", " ", round_words(re.sub(r"(?<![0-9۰-۹٫.])(?:یک|۱) هزار", "هزار", readable(yesterday_words(today_words(x, day, [True]), day))))).replace(" .", ".").strip() for x in d["key_points"]]
-                    if any(ban.search(x) for x in kp):
-                        d.pop("key_points")
-                    else:
+                    kp = [x for x in kp if not ban.search(x)]
+                    if kp:
                         d["key_points"] = kp
+                    else:
+                        d.pop("key_points")
                 note(f"  staged {name}: accepted after {calls} calls")
                 return d
             except ValueError as e:
@@ -888,6 +896,27 @@ def day_parts(day_line):
     """«F1. روز: دوشنبه ۲۰ مهر ۱۴۰۵.» -> («دوشنبه», «دوشنبه ۲۰ مهر»)"""
     m = re.search(r"((?:یک|دو|سه|چهار|پنج)?[‌ ]?شنبه|جمعه)\s+([۰-۹0-9]+\s+\S+)", day_line or "")
     return (m.group(1), f"{m.group(1)} {m.group(2).rstrip('.،')}") if m else ("", "")
+
+
+DUP_DATE = re.compile(r"([0-9۰-۹]{1,2} (?:فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند))(?: [0-9۰-۹]{4})?[،,]? \1(?![0-9۰-۹])")
+MONTHS = "فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند"
+
+
+def after_fix(x, facts):
+    """content agent 1405-07-25, last pass on the final text: «۲۲ مهر ۲۲ مهر» once; the previous trade never gets today's date;
+    «تقاضا برابر عرضه» gets the ratio from the facts; a lead does not start with «. روز معامله:»."""
+    x = DUP_DATE.sub(r"\1", x)
+    x = re.sub(r"^[\s.،:؛]+", "", x)
+    x = re.sub(r"^روز معامله:\s*", "", x)
+    day = re.search(rf"روز معامله: \S+ ([0-9۰-۹]{{1,2}} (?:{MONTHS}))", facts or "")
+    last = re.search(rf"آخرین معامله‌ی قبلی در ([0-9۰-۹]{{1,2}} (?:{MONTHS}))", facts or "")
+    if day and last:
+        x = re.sub(rf"(آخرین معامله(?:‌ی)?(?: قبلی)?(?: این کالا)?(?: در| در تاریخ| روز)?) (?:(?:شنبه|یکشنبه|دوشنبه|سه‌شنبه|چهارشنبه|پنجشنبه|جمعه) )?{day.group(1)}(?: [0-9۰-۹]{{4}})?",
+                   lambda m: m.group(1) + " " + last.group(1), x)
+    ratio = re.search(r"تقاضا ([0-9۰-۹٫]+) برابر عرضه بود", facts or "")
+    if ratio:
+        x = re.sub(r"(تقاضا(?:ی)?) برابر عرضه", lambda m: m.group(1) + " " + ratio.group(1) + " برابر عرضه", x)
+    return x
 
 
 def day_of(facts):
@@ -1034,7 +1063,7 @@ def main():
     doc = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {"date_fa": date_fa, "date": date, "items": []}
     done = {i["symbol"] for i in doc["items"]}
     subs = {i["subtitle"] for i in doc["items"]}
-    todo = [r for r in rows if r.get("symbol") not in done]
+    todo = [r for r in rows if r.get("symbol") not in done and not ((r.get("traded_qty") or 0) > 0 and not r.get("weighted_price"))]
     provs = providers()
     if not provs:
         sys.exit("no model key found (GEMINI_API_KEY / OPENROUTER_API_KEY / GROQ_API_KEY / ...)")
