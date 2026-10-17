@@ -511,6 +511,7 @@ def parse(raw, facts="", tables=None):
 # rules, then corrects the same draft twice (accuracy, then wording), and every result still passes parse() like any other
 # news. A rejected text goes back with its errors; after 2 failed corrections a fresh draft starts. Up to PAID_TRIES calls.
 PAID_TRIES = 20
+FREE_TRIES = 8  # free models (1405-07-25): the 5 steps for every model, fewer calls per news for their daily quota
 JSON_KEYS = ("فقط یک JSON با کلیدهای title, slug, subtitle, lead, text, table, key_points برگردان و هیچ متن دیگری ننویس. "
              "slug همان تیتر با خط تیره به‌جای فاصله است. table فقط شناسه‌ی یکی از جدول‌های پیشنهادی است (مثلاً \"T2\"). ")
 # step 1 - draft: only the shape of the news; no wording rules (they come in later steps)
@@ -732,9 +733,10 @@ def off_topic(d, facts):
 
 
 def staged(name, call, prompt, facts, tables, market_rules=""):
-    """the paid model's own path: draft -> accuracy -> wording -> parse(); up to PAID_TRIES model calls for one news.
+    """the paid model's own path: draft -> accuracy -> wording -> parse(); up to tries model calls for one news.
     What a small model keeps getting wrong is repaired in small pieces: Latin product codes never reach it, a sentence with
     a number that is not in the facts is cut by the code, and a sentence with a banned phrase is rewritten alone."""
+    tries = PAID_TRIES if name in PAID else FREE_TRIES
     calls, err = 0, None
     ban = re.compile(BANNED.pattern + r"|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد|را تجربه کرد|امروز", re.I)  # stricter for this model (content agent 2026-10-12/-22)
     day = day_of(facts)
@@ -772,7 +774,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                     changed = True  # a sentence with an invented number is cut, never «corrected»
                     continue
                 hit = ban.search(s)
-                if hit and calls < PAID_TRIES:
+                if hit and calls < tries:
                     new = ask(STAGE_SENT, f"جمله: {s}\n\nایراد: عبارت «{hit.group(0)}» ممنوع است؛ جمله را بدون آن بنویس. اگر تاریخ لازم شد: {day}").strip().strip("«»\"")
                     if new and not ban.search(new) and set(NUM.findall(new)) <= set(NUM.findall(s) + NUM.findall(day)) and "\n" not in new:
                         s, changed = new, True
@@ -782,7 +784,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
         d["text"] = "\n\n".join(paras)
         for k in ("title", "subtitle", "lead"):
             hit = ban.search(d.get(k) or "")
-            if hit and calls < PAID_TRIES:
+            if hit and calls < tries:
                 new = ask(STAGE_SENT, f"جمله: {d[k]}\n\nایراد: عبارت «{hit.group(0)}» ممنوع است؛ جمله را بدون آن بنویس. اگر تاریخ لازم شد: {day}").strip().strip("«»\"")
                 if new and not ban.search(new) and set(NUM.findall(new)) <= set(NUM.findall(d[k]) + NUM.findall(day)) and "\n" not in new:
                     d[k], changed = new, True
@@ -803,11 +805,11 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     key = (lines[0] + day) if lines else ""
     FIRST_TRADE[0] = "نخستین معامله‌ی ثبت‌شده‌ی این کالا" in (facts or "")
     HAS_YTD[0] = "از ابتدای امسال" in (facts or "")
-    while calls < PAID_TRIES:
+    while calls < tries:
         raw = ask(STAGE1, brief + model_hint(name))
         d0 = as_dict(raw)
         for check in ((STAGE2_MEANING, STAGE2_NUM) if FIVE_STEPS[0] else (STAGE2,)):  # step 2 (and 3 in the 5-step variant)
-          if d0 and calls < PAID_TRIES:  # sentences the check calls wrong are cut by the code
+          if d0 and calls < tries:  # sentences the check calls wrong are cut by the code
             sents = [(pi, x) for pi, para in enumerate(d0["text"].split("\n\n")) for x in re.split(r"(?<=[.!؟])\s+", para.strip()) if x]
             ans = ask(check, "حقیقت‌ها:\n" + facts + "\n\nجمله‌ها:\n" + "\n".join(f"{n + 1}. {x}" for n, (_, x) in enumerate(sents)))
             m = re.search(r"\{.*\}", ans or "", re.S)
@@ -822,16 +824,16 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 if bad:
                     note(f"  staged {name}: check cut {len(bad)} sentence(s)")
             raw = json.dumps(d0, ensure_ascii=False)
-        if raw and calls < PAID_TRIES:  # step 3: wording; a result that changed the numbers is not used
+        if raw and calls < tries:  # step 3: wording; a result that changed the numbers is not used
             new = ask(STAGE3, head + "خبر:\n" + raw + "\n\nشناسه‌ی جدول‌های مجاز: " + ", ".join(tables or {}))
             d1, d0 = as_dict(new), as_dict(raw)
             if d1 and d0 and sorted(NUM.findall(d1["text"])) == sorted(NUM.findall(d0["text"])):
                 raw = new
         d0 = as_dict(raw)
-        if d0 and calls < PAID_TRIES:  # step 4: the title alone
+        if d0 and calls < tries:  # step 4: the title alone
             why = ""
             for _ in range(3):
-                if calls >= PAID_TRIES:
+                if calls >= tries:
                     break
                 t = ask(STAGE_TITLE, head + "\n".join(lines[:8]) + "\n\nلید خبر: " + d0["lead"] + (f"\n\nتیتر قبلی رد شد: {why}" if why else "")).strip().splitlines()
                 t = clean_title(t[0]) if t else ""
@@ -879,7 +881,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 return d
             except ValueError as e:
                 err = str(e)
-            if calls >= PAID_TRIES or fix == 3 or not raw:
+            if calls >= tries or fix == 3 or not raw:
                 break
             fixed = repair(raw, err) if re.search(r"«[^»]+» در |عدد بیرون از حقیقت‌ها", err) else None
             if fixed:
@@ -1097,6 +1099,28 @@ def main():
         rows = json.load(open(os.path.join(ROOT, "data", date, "today.json"), encoding="utf-8"))["rows"]
         # owner 1405-07-16: no news for the side hall («تالار فرعی»): those symbols have no price and no page on the site
         rows = [r for r in rows if "فرعی" not in (r.get("talar") or "")]
+        # content agent 1405-07-25: a symbol is offered several times a day and today.json sums them; the news was written from
+        # the first figure (KHCO 80 t, final 4040 t). A row is written only when unchanged across two data builds, or after the last fetch.
+        stab_path = os.path.join(ROOT, "data", date, "stable.json")
+        stab = json.load(open(stab_path, encoding="utf-8")) if os.path.exists(stab_path) else {}
+        ver = __import__("hashlib").md5(json.dumps(rows, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+        if stab.get("__ver__", [None])[0] != ver:
+            stab["__ver__"] = [ver, stab.get("__ver__", [None, 0])[1] + 1]
+        n_ver = stab["__ver__"][1]
+        teh = dt.datetime.now(dt.timezone(dt.timedelta(hours=3, minutes=30)))
+        closed = date < teh.date().isoformat() or teh.hour >= 19  # the last fetch is 18:30 Tehran
+        keep, unsettled = [], 0
+        for r in rows:
+            fp = "|".join(str(r.get(x)) for x in ("offered_qty", "traded_qty", "demand_qty", "weighted_price", "trade_value"))
+            if stab.get(r.get("symbol"), [None])[0] != fp:
+                stab[r.get("symbol")] = [fp, n_ver]
+            if closed or n_ver > stab[r.get("symbol")][1]:
+                keep.append(r)
+            else:
+                unsettled += 1
+        json.dump(stab, open(stab_path, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+        print(f"kala: {len(keep)} settled rows, {unsettled} wait for the next data build")
+        rows = keep
     out_dir = os.path.join(ROOT, a.out)
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, f"{date}.json")
@@ -1158,7 +1182,7 @@ def main():
                 continue
             t0 = time.time()
             try:
-                d = staged(name, call, prompt, facts, tables, STYLE_ENERGY if energy else STYLE_KISH if kish else "") if name in PAID else None
+                d = staged(name, call, prompt, facts, tables, STYLE_ENERGY if energy else STYLE_KISH if kish else "")  # owner 1405-07-25: every model writes in 5 steps
                 raw = retry(call, prompt + model_hint(name)) if d is None else ""
                 for attempt in range(3 if d is None else 0):  # section 6 of style.md: every hit goes back to the model, up to 2 rewrites
                     try:
