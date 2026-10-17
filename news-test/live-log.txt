@@ -132,3 +132,25 @@ OK BPCO-BI6070JEX-00 <- gapgpt:gemma-3-27b-it (83s)
 style-soft: lead>35w/1num, text 17 nums
   staged gapgpt:gemma-3-27b-it: accepted after 6 calls
 OK PGPS-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (44s)
+6 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  DSVTBCABEX0050802 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DLNKOFWBEX0050825 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  DIRTBCABEX0050802 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1792230943-Y9f5Yd7Eo1OghK300DFJ","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  DOXKOFWBEX0050825 groq:openai/gpt-oss-120b: 7s ValueError: no JSON
+  DOXKOFWBEX0050825 groq:openai/gpt-oss-20b: 2s ValueError: no JSON
+  DLNKOFWBEX0050825 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 17s ValueError: 79 words / 2 paragraphs
+  DLNKOFWBEX0050825 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1792230969-AgY8PGwtLOacTdVfEOWN","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  DIRTBCABEX0050802 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  DKFTBCABEX0050802 zai:glm-4.7-flash: 55s ValueError: 91 words / 3 paragraphs
+style-soft: ثبت شد
+OK DOXKOFWBEX0050825 <- ovh:Qwen3.5-397B-A17B (51s)
+  DIRTBCABEX0050802 openrouter:google/gemma-4-26b-a4b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate
+  DKFTBCABEX0050802 zai:glm-4.5-flash: 65s ValueError: 119 words / 2 paragraphs
+  DLWMICABEX0050728 llm7:DeepSeek-V4-Flash-0731: 125s ValueError: HTTP 524: error code: 524
+
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  DSVTBCABEX0050802 llm7:DeepSeek-V4-Flash-0731: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 82925 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":82925}}
+  DLWMICABEX0050728 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1792231086-fwkCE7hMdEWcRwSzEz5Q","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  DKFTBCABEX0050802 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 20s ValueError: 110 words / 2 paragraphs
+style-soft: ثبت شد
+OK DLNKOFWBEX0050825 <- ovh:Qwen3.5-397B-A17B (93s)
