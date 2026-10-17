@@ -527,7 +527,7 @@ STAGE2 = ("تو راستی‌آزما هستی. «حقیقت‌ها» و جمل�
           "یا پیش‌بینی، همکاری یا انبار بگوید. تفسیری که از عددهای حقیقت‌ها درمی‌آید درست است (مثل «تقاضا ۲٫۲ برابر بود و رقابت قیمت را ۱۱ درصد بالا برد»). "
           "فقط یک JSON مثل {\"bad\": [2, 5]} برگردان؛ اگر همه درست است {\"bad\": []}.")
 # 5-step variant (owner 1405-07-23, off until compared): the check above in two short questions
-FIVE_STEPS = [False]
+FIVE_STEPS = [True]  # owner 1405-07-25 after round 3 (content agent: 3.3 issues / 8 errors vs 3.4 / 9)
 STAGE2_NUM = ("تو راستی‌آزمای عدد هستی. «حقیقت‌ها» و جمله‌های شماره‌دار یک خبر را می‌گیری. فقط عدد و جهت هر جمله را بسنج. "
               "جمله غلط است اگر عددش با حقیقت‌ها نخواند، جهت را برعکس بگوید (بیشتر/کمتر، گران‌تر/ارزان‌تر)، حجم تقاضا را مقدار خرید بنامد، "
               "ارزش این جلسه را ارزش امسال یا ارزش کل بنامد، یا تعداد تولیدکننده‌ها را غلط بشمارد. "
@@ -641,7 +641,7 @@ AUTO_FIX = [(re.compile(r"لازم به ذکر است(?: که)?\s*"), ""), (re.c
             (re.compile(r"قابل[‌ ]توجهی"), "زیادی"), (re.compile(r"قابل[‌ ]توجه"), "زیاد"),
             (re.compile(r"(درصد عرضه) (?:شد|گردید)(?=[،.\s]|$)"), r"\1 فروخته شد")]
 # sentences cut when the text stays long enough: fillers, a date alone, no verb at the end
-FILLER = re.compile(r"مورد توجه فعالان|به تصویر کشید|استقبال مناسب|قابل توجه|به این میزان استقبال کردند|شاهد|نشان می[‌ ]?داد|در حداقل سطح ممکن|با کیفیت|نیاز صنایع|شرایط بازار باعث|استقبال (?:بالا|خوب)|واکنش خوب|در حالی که")
+FILLER = re.compile(r"مورد توجه فعالان|به تصویر کشید|استقبال مناسب|قابل توجه|به این میزان استقبال کردند|شاهد|نشان می[‌ ]?داد|در حداقل سطح ممکن|با کیفیت|نیاز صنایع|شرایط بازار باعث|استقبال (?:بالا|خوب)|واکنش خوب|در حالی که|نشان از|نشانه‌ی|استقبال کرد|اهمیت این محصول|در محدوده‌ی مشخصی|صبح |عصر |به ثبت برسد")
 ABOVE_BASE = re.compile(r"([0-9۰-۹]+(?:[٫.][0-9۰-۹]+)?) درصد بالاتر از قیمت پایه")
 DATE_ONLY = re.compile(r"^(?:(?:شنبه|یکشنبه|دوشنبه|سه‌شنبه|چهارشنبه|پنجشنبه|جمعه)\s+)?[0-9۰-۹]{1,2} \S+(?: [0-9۰-۹]{4})?[.!]?$")
 VERB_END = re.compile(r"(?:ت|د|است|ند|ید|یم)[.!؟]?$")
@@ -680,13 +680,19 @@ def autofix(raw, min_words=120, facts=""):
     sents = [(pi, y) for pi, para in enumerate(d["text"].split("\n\n")) for x in re.split(r"(?<=[.!؟])\s+", para.strip()) if x for y in split(x)]
     sents = [(pi, x) for pi, x in sents if not DATE_ONLY.match(x.strip())]
     total0 = sum(len(x.split()) for _, x in sents)
+    price_i = next((i for i, (_, x) in enumerate(sents) if "قیمت" in x and "ریال" in x), -1)
+    sents = [(pi, x, i == price_i) for i, (pi, x) in enumerate(sents)]
     keep = []
-    for pi, x in sents:
+    for pi, x, pin in sents:
+        if pin:
+            keep.append((pi, x, pin))
+            continue
         if (FILLER.search(x) or not VERB_END.search(x.strip()) or (not rival and "رقابت" in x)) and not MSD.search(x) and total0 - len(x.split()) >= min_words:
             total0 -= len(x.split())
             continue
-        keep.append((pi, x))
-    sents = keep
+        keep.append((pi, x, pin))
+    pinned = {i for i, (_, _, pin) in enumerate(keep) if pin}
+    sents = [(pi, x) for pi, x, _ in keep]
     total = sum(len(x.split()) for _, x in sents)
     nums = sum(cnt(x) for _, x in sents)
     drop = set()
@@ -694,7 +700,7 @@ def autofix(raw, min_words=120, facts=""):
         x = sents[i][1]
         if cnt(x) <= 2 and nums <= 15:
             break
-        if MSD.search(x) or total - len(x.split()) < min_words:
+        if MSD.search(x) or i in pinned or total - len(x.split()) < min_words:
             continue
         drop.add(i)
         total -= len(x.split())
@@ -913,10 +919,44 @@ def after_fix(x, facts):
     if day and last:
         x = re.sub(rf"(آخرین معامله(?:‌ی)?(?: قبلی)?(?: این کالا)?(?: در| در تاریخ| روز)?) (?:(?:شنبه|یکشنبه|دوشنبه|سه‌شنبه|چهارشنبه|پنجشنبه|جمعه) )?{day.group(1)}(?: [0-9۰-۹]{{4}})?",
                    lambda m: m.group(1) + " " + last.group(1), x)
+    if last:  # «آخرین معامله در چهارشنبه، ۲۲ مهر» and «معامله‌ی قبلی …» too
+        x = re.sub(rf"((?:آخرین معامله|معامله‌ی قبلی)[^.]{{0,25}}?) (?:(?:شنبه|یکشنبه|دوشنبه|سه‌شنبه|چهارشنبه|پنجشنبه|جمعه)،? )?{day.group(1) if day else '@@'}(?: [0-9۰-۹]{{4}})?",
+                   lambda m: m.group(1) + " " + last.group(1), x)
+    x = fix_weekdays(x, facts)
     ratio = re.search(r"تقاضا ([0-9۰-۹٫]+) برابر عرضه بود", facts or "")
     if ratio:
         x = re.sub(r"(تقاضا(?:ی)?) برابر عرضه", lambda m: m.group(1) + " " + ratio.group(1) + " برابر عرضه", x)
+    x = re.sub(r"(?<![0-9۰-۹٫])(?:یک|۱|1) برابر عرضه", "برابر عرضه", x)
+    sold = re.search(r"عرضه فروش رفت \(([0-9۰-۹]+) درصد\)", facts or "")
+    if sold:
+        x = re.sub(r"[0-9۰-۹]+(?= درصد عرضه(?: را)? (?:فروخت|فروخته شد|فروش رفت))", sold.group(1), x)
+    if YTD_LINE in x and not re.search(r"امسال[^.]{0,60}[0-9۰-۹]", x.replace(YTD_LINE, "")):
+        x = x.replace(YTD_LINE, SOURCE_LINES[0])
+    x = re.sub(r"(?:در )?روز جاری", "در این روز", x)
     return x
+
+
+YTD_LINE = SOURCE_LINES[13]
+WEEK = ["شنبه", "یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه"]
+FA_D = str.maketrans("۰۱۲۳۴۵۶۷۸۹", "0123456789")
+
+
+def _doy(d, mon):  # day of the Jalali year; months 1-6 have 31 days, 7-11 have 30
+    m = MONTHS.split("|").index(mon)
+    return (m * 31 if m < 6 else 186 + (m - 6) * 30) + d
+
+
+def fix_weekdays(x, facts):
+    """content agent 1405-07-25: «چهارشنبه ۲۱ مهر» for a Tuesday; the code names the day from today's date in the facts."""
+    m = re.search(rf"روز معامله: (\S+) ([0-9۰-۹]{{1,2}}) ({MONTHS})", facts or "")
+    if not m or m.group(1) not in WEEK:
+        return x
+    base, w0 = _doy(int(m.group(2).translate(FA_D)), m.group(3)), WEEK.index(m.group(1))
+
+    def name(t):
+        diff = _doy(int(t.group(3).translate(FA_D)), t.group(4)) - base
+        return t.group(0) if abs(diff) > 60 else WEEK[(w0 + diff) % 7] + t.group(2) + t.group(3) + " " + t.group(4)
+    return re.sub(rf"(شنبه|یکشنبه|دوشنبه|سه‌شنبه|چهارشنبه|پنجشنبه|جمعه)(،? )([0-9۰-۹]{{1,2}}) ({MONTHS})", name, x)
 
 
 def day_of(facts):
