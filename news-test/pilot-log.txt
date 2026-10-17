@@ -1,41 +1,12 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-5 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  MPC-HDBL3PP-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  KHCO-PCT2G42.5-B-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
-  HSR-LUSUACB-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"9dc691a9-2bb0-4e6e-b66d-ed0a65d9bd49","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  MPC-HDBL3PP-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"41374f14-543d-4875-a93c-fc6ce90a49ba","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  MPC-MEGB-00 llm7:DeepSeek-V4-Flash-0731: 125s ValueError: HTTP 524: error code: 524
-
-  KHCO-PCT2G42.5-B-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"28235708-60dc-4765-a663-df143e8f3f87","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
-  SHPC-OAVAMB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  HSR-LUSUACB-00 llm7:DeepSeek-V4-Flash-0731: 158s ValueError: HTTP 524: error code: 524
-
-  MPC-HDBL3PP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  KHCO-PCT2G42.5-B-00 llm7:DeepSeek-V4-Flash-0731: 85s ValueError: HTTP 503: {"error":{"message":"Upstream provider is temporarily unavailable.","type":"upstream_unavailable","param":null,"code":"upstream_unavailable"}}
-style-soft: text 13 nums
-OK MPC-MEGB-00 <- kilo:dots-studio/dots-3-note-preview:free (164s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-OK SHPC-OAVAMB-00 <- gapgpt:gemma-3-27b-it (41s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-OK MPC-HDBL3PP-00 <- gapgpt:gemma-3-27b-it (34s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  HSR-LUSUACB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
-OK KHCO-PCT2G42.5-B-00 <- gapgpt:gemma-3-27b-it (38s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: accepted after 10 calls
-OK HSR-LUSUACB-00 <- gapgpt:gemma-3-27b-it (54s)
-written 5/5; total in file 5
+2 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  THOR-GRSUSUB-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  IKRC-GRSUSUB-00 llm7:DeepSeek-V4-Flash-0731: 62s ValueError: no JSON
+style-soft: lead>35w/1num, text 18 nums
+OK THOR-GRSUSUB-00 <- llm7:DeepSeek-V4-Flash-0731 (105s)
+style-soft: lead>35w/1num, text 11 nums
+OK IKRC-GRSUSUB-00 <- zai:glm-4.7-flash (22s)
+written 2/2; total in file 7
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-written 0/0; total in file 5
+written 0/0; total in file 7
