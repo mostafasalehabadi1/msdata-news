@@ -91,7 +91,7 @@ jobs:
               if ! git diff --cached --quiet; then
                 git commit -qm "release: $(date -u +%H:%M)"
                 timeout 180 git pull -q --rebase && timeout 180 git push -q origin HEAD:main && timeout 180 git push -qf origin HEAD:refs/heads/published
-            fi
+              fi
             else
               git checkout -q -- news stats; git clean -qfd news  # stats/flow.json too: it stayed changed and every later pull failed (1405-07-25)
             fi
