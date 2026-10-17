@@ -12,7 +12,7 @@ on:
     branches: [main]
     paths: [".github/workflows/release.yml"]
 concurrency:
-  group: release-news-v2  # 1405-07-25: renamed so a fresh run starts beside a run stuck in the old group
+  group: release-news-v3  # 1405-07-25: renamed so a fresh run starts beside a run stuck in the old group
   cancel-in-progress: false
 permissions:
   contents: write
@@ -36,7 +36,8 @@ jobs:
           git config user.email bot@msdata.ir
           end=$(( $(date +%s) + 340*60 ))
           while [ "$(date +%s)" -lt "$end" ]; do
-            timeout 180 git pull -q --rebase || true
+            # a failed rebase left the checkout mid-rebase and every later commit failed (1405-07-25: nothing released for hours)
+            timeout 180 git pull -q --rebase || { git rebase --abort 2>/dev/null; git fetch -q origin main && git reset -q --hard origin/main; }
             # data fetch lives here too: GitHub's own schedule for fetch.yml silently skipped whole days
             h=$(TZ=Asia/Tehran date +%-H)
             if [ ! -f "/tmp/fetched-$h" ]; then
