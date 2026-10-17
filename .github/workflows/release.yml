@@ -91,9 +91,9 @@ jobs:
               if ! git diff --cached --quiet; then
                 git commit -qm "release: $(date -u +%H:%M)"
                 timeout 180 git pull -q --rebase && timeout 180 git push -q origin HEAD:main && timeout 180 git push -qf origin HEAD:refs/heads/published
-              fi
+            fi
             else
-              git checkout -- news
+              git checkout -q -- news stats; git clean -qfd news  # stats/flow.json too: it stayed changed and every later pull failed (1405-07-25)
             fi
             sleep $(( 240 + RANDOM % 121 ))  # 4-6 minutes, so releases are not clock-aligned
           done

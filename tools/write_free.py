@@ -868,6 +868,8 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 for k in ("title", "subtitle", "lead", "text"):  # Persian, readable digits are fixed here, not asked for
                     d[k] = round_words(re.sub(r"(?<![0-9۰-۹٫.])(?:یک|۱) هزار", "هزار", readable(d[k], keep)))
                     d[k] = after_fix(d[k], facts)
+                if words(d["text"]) < MIN_WORDS[0]:  # 1405-07-25: the fixes above can cut a 120-word text to 118, and validate.py then blocked every release
+                    raise ValueError(f"{words(d['text'])} words after fixes")
                 if not d.get("key_points"):  # content agent 1405-07-23: 12 of 20 had none
                     kp = [x for x in re.split(r"(?<=[.!؟])\s+", d["text"]) if NUM.search(DATE_WORDS.sub("", x)) and 5 <= len(x.split()) <= 25 and not MSD.search(x)]
                     if len(kp) >= 3:
