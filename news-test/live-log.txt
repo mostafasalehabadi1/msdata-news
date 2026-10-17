@@ -16,3 +16,15 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   ESC-PTLOOO000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1792229718-iNuTW2nqgiWwvr9gmSns","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
 style-soft: lead>35w/1num, text 13 nums
 OK PZB-SW5532-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (33s)
+  ASCO-SBNE03E-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s ValueError: bad response: '{"id":"gen-1792229724-qcV3Fxl4yCMROrSPAPZf","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ESC-MBNEN03B-00 cohere:command-a-reasoning-08-2025: 45s ValueError: HTTP 429: {"id":"c25541bc-df27-4df8-a174-508117962f75","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+  MRV-MEGB-00 cohere:command-a-03-2025: 45s ValueError: HTTP 429: {"id":"5cb5fd4c-5acb-4d45-9edf-2f43f92d27f1","message":"You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with 
+style-soft: lead>35w/1num, text 18 nums
+  ESC-IB00000N-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 23s ValueError: 85 words / 2 paragraphs
+style-soft: text 9 nums
+  ESC-PTLOOO000-00 groq:openai/gpt-oss-120b: 46s ValueError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 4370, Requested 490
+  ASCO-SBNE03E-00 openrouter:google/gemma-4-31b-it:free: 45s ValueError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate lim
+  ESC-PTLOOO000-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  ESC-IB00000-00 llm7:mistral-Nemo-Instruct-2407: 88s ValueError: 107 words / 1 paragraphs
+style-soft: lead>35w/1num, text 17 nums
+OK ASCO-SBEN03E-00 <- zai:glm-4.5-flash (76s)
