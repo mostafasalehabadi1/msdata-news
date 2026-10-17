@@ -91,7 +91,10 @@ def build(row, past, date_fa, date):
     if k == "usd" and row.get("total_value_usd"):
         F.append(f"ارزش این معامله {fa_int(round(row['total_value_usd']))} دلار بود.")
     elif row.get("total_value_rial"):
-        F.append(f"ارزش ریالی این معامله {fa_num(row['total_value_rial'] / 1e10, 0)} میلیارد تومان بود.")
+        # content agent 1405-07-25: «0 digits» made 0.954 billion «۱ میلیارد» and the model wrote «۹۵۴ میلیارد»; the unit is chosen here
+        t = row["total_value_rial"] / 10
+        F.append(f"ارزش ریالی این معامله حدود {fa_num(t / 1e9, 1)} میلیارد تومان بود." if t >= 1e9 else
+                 f"ارزش ریالی این معامله حدود {fa_int(round(t / 1e6))} میلیون تومان بود.")
     # owner 1405-07-15: no share-of-day figures and no same-day comparisons (the day may still change)
     same = [h for h in (past or []) if (h.get("trade_date") or "") < date_fa and kind(h) == k and (h.get("weighted_price") or 0)]
     tables = {}
