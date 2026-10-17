@@ -2,6 +2,7 @@ name: release-news
 # Drip publishing, fully on GitHub. GitHub's own */5 schedule proved unreliable (it never fired), so one run
 # stays alive ~5h50m and releases a few queued news about every 5 minutes, publishing each batch itself;
 # before it ends it starts the next run (workflow_dispatch with GITHUB_TOKEN is allowed to trigger workflows).
+# Every step has a timeout (1405-07-25: a run published nothing for 8 hours, stuck in one step).
 # The hourly schedule is only a safety net to restart the chain; concurrency keeps a single live run.
 on:
   schedule:
@@ -11,7 +12,7 @@ on:
     branches: [main]
     paths: [".github/workflows/release.yml"]
 concurrency:
-  group: release-news
+  group: release-news-v2  # 1405-07-25: renamed so a fresh run starts beside a run stuck in the old group
   cancel-in-progress: false
 permissions:
   contents: write
@@ -35,16 +36,16 @@ jobs:
           git config user.email bot@msdata.ir
           end=$(( $(date +%s) + 340*60 ))
           while [ "$(date +%s)" -lt "$end" ]; do
-            git pull -q --rebase || true
+            timeout 180 git  -q --rebase || true
             # data fetch lives here too: GitHub's own schedule for fetch.yml silently skipped whole days
             h=$(TZ=Asia/Tehran date +%-H)
             if [ ! -f "/tmp/fetched-$h" ]; then
               touch "/tmp/fetched-$h"
-              if python tools/fetch.py; then
+              if timeout 600 python tools/fetch.py; then
                 git add -A data
                 if ! git diff --cached --quiet; then
                   git commit -qm "data: $(python -c 'import json;print(json.load(open("data/latest.json"))["date_fa"])')"
-                  git pull -q --rebase && git push -q origin HEAD:main
+                  timeout 180 git  -q --rebase && timeout 180 git  -q origin HEAD:main
                 fi
               fi
             fi
@@ -57,7 +58,7 @@ jobs:
             if [ ! -f "/tmp/kish-$h" ]; then
               touch "/tmp/kish-$h"
               # read-only check (no file written here: data/kish is committed by write_kish only)
-              kleft=$(python tools/fetch_kish.py --left 2>/dev/null || echo 0)
+              kleft=$(timeout 600 python tools/fetch_kish.py --left 2>/dev/null || echo 0)
               if [ "${kleft:-0}" -gt 0 ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w write_kish.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w write_kish.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
                 gh workflow run write_kish.yml -R "$GITHUB_REPOSITORY" && echo "kish writer started ($kleft left)"
               fi
@@ -65,7 +66,7 @@ jobs:
             # Iran Energy Exchange news (owner 1405-07-16): same hourly check as Kish
             if [ ! -f "/tmp/energy-$h" ]; then
               touch "/tmp/energy-$h"
-              eleft=$(python tools/fetch_energy.py --left 2>/dev/null || echo 0)
+              eleft=$(timeout 600 python tools/fetch_energy.py --left 2>/dev/null || echo 0)
               if [ "${eleft:-0}" -gt 0 ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w write_energy.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w write_energy.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
                 gh workflow run write_energy.yml -R "$GITHUB_REPOSITORY" && echo "energy writer started ($eleft left)"
               fi
@@ -73,7 +74,7 @@ jobs:
             # macro news (اقتصاد کلان): once an hour look for new macro data (macro.yml writes and publishes it)
             if [ ! -f "/tmp/macro-$h" ] && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w macro.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)" ]; then
               touch "/tmp/macro-$h"
-              python tools/write_macro.py --dry | grep -q "^0 new" || { gh workflow run macro.yml -R "$GITHUB_REPOSITORY" && echo "macro news started"; }
+              timeout 600 python tools/write_macro.py --dry | grep -q "^0 new" || { gh workflow run macro.yml -R "$GITHUB_REPOSITORY" && echo "macro news started"; }
             fi
             # daily report: from 18:30 Tehran on a trading day, until it exists (also after midnight - a day never loses its report) (report.yml writes and publishes it)
             d=$(python -c "import json;print(json.load(open('data/latest.json'))['date'])")
@@ -82,13 +83,13 @@ jobs:
                && [ -z "$(gh run list -R "$GITHUB_REPOSITORY" -w report.yml -s in_progress -L 1 -q .[].databaseId --json databaseId)$(gh run list -R "$GITHUB_REPOSITORY" -w report.yml -s queued -L 1 -q .[].databaseId --json databaseId)" ]; then
               gh workflow run report.yml -R "$GITHUB_REPOSITORY" && echo "daily report started"
             fi
-            python tools/release.py
-            python tools/news_flow.py || echo "news flow failed"  # owner 1405-07-22: per-hour flow for the stats page
-            if python tools/validate.py; then
+            timeout 600 python tools/release.py
+            timeout 600 python tools/news_flow.py || echo "news flow failed"  # owner 1405-07-22: per-hour flow for the stats page
+            if timeout 600 python tools/validate.py; then
               git add news stats
               if ! git diff --cached --quiet; then
                 git commit -qm "release: $(date -u +%H:%M)"
-                git pull -q --rebase && git push -q origin HEAD:main && git push -qf origin HEAD:refs/heads/published
+                timeout 180 git  -q --rebase && timeout 180 git  -q origin HEAD:main && timeout 180 git  -qf origin HEAD:refs/heads/published
               fi
             else
               git checkout -- news
