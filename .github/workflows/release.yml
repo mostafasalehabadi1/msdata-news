@@ -36,7 +36,7 @@ jobs:
           git config user.email bot@msdata.ir
           end=$(( $(date +%s) + 340*60 ))
           while [ "$(date +%s)" -lt "$end" ]; do
-            timeout 180 git  -q --rebase || true
+            timeout 180 git pull -q --rebase || true
             # data fetch lives here too: GitHub's own schedule for fetch.yml silently skipped whole days
             h=$(TZ=Asia/Tehran date +%-H)
             if [ ! -f "/tmp/fetched-$h" ]; then
@@ -45,7 +45,7 @@ jobs:
                 git add -A data
                 if ! git diff --cached --quiet; then
                   git commit -qm "data: $(python -c 'import json;print(json.load(open("data/latest.json"))["date_fa"])')"
-                  timeout 180 git  -q --rebase && timeout 180 git  -q origin HEAD:main
+                  timeout 180 git pull -q --rebase && timeout 180 git push -q origin HEAD:main
                 fi
               fi
             fi
@@ -89,7 +89,7 @@ jobs:
               git add news stats
               if ! git diff --cached --quiet; then
                 git commit -qm "release: $(date -u +%H:%M)"
-                timeout 180 git  -q --rebase && timeout 180 git  -q origin HEAD:main && timeout 180 git  -qf origin HEAD:refs/heads/published
+                timeout 180 git pull -q --rebase && timeout 180 git push -q origin HEAD:main && timeout 180 git push -qf origin HEAD:refs/heads/published
               fi
             else
               git checkout -- news
