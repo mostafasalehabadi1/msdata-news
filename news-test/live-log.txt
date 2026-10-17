@@ -1,2 +1,17 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+16 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  TCHC-PCT2G42.5-B-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  AISC-BSO834X-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
+  ESC-IB00000-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
+  BISC-BSO494X-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  NFO-SW6549-00 hf:deepseek-ai/DeepSeek-V3.1: 0s ValueError: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits."}
+  ASCO-SBEN03E-00 zai:glm-4.7-flash: 14s ValueError: 102 words / 2 paragraphs
+  ESC-IB00000N-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 20s JSONDecodeError: Expecting value: line 5 column 11 (char 236)
+  ESC-IB00000N-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1792229712-T0ALJkbhZXoSbQdDdgog","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+  ASCO-SBNE03E-00 groq:openai/gpt-oss-120b: 26s ValueError: no JSON
+  ESC-PTLOOO000-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: 109 words / 1 paragraphs
+  ASCO-SBNE03E-00 groq:openai/gpt-oss-20b: 3s ValueError: no JSON
+  ESC-PTLOOO000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 1s ValueError: bad response: '{"id":"gen-1792229718-iNuTW2nqgiWwvr9gmSns","error":{"message":"Upstream error from Nvidia: Service temporarily overloaded","code":503,"metadata":{"error_type":"provider_overloaded"}}}'
+style-soft: lead>35w/1num, text 13 nums
+OK PZB-SW5532-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (33s)
