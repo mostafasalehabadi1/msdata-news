@@ -14,3 +14,8 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   KHCO-PCT2G42.5-B-00 llm7:DeepSeek-V4-Flash-0731: 85s ValueError: HTTP 503: {"error":{"message":"Upstream provider is temporarily unavailable.","type":"upstream_unavailable","param":null,"code":"upstream_unavailable"}}
 style-soft: text 13 nums
 OK MPC-MEGB-00 <- kilo:dots-studio/dots-3-note-preview:free (164s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+OK SHPC-OAVAMB-00 <- gapgpt:gemma-3-27b-it (41s)
