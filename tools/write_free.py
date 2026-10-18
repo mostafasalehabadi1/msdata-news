@@ -734,6 +734,19 @@ def off_topic(d, facts):
     return " | ".join(probs)
 
 
+def keep_rejected(name, facts, raw, err, calls):
+    """owner 1405-07-26: every dropped draft is kept in news-test/rejected/<date>.jsonl, to study later why it failed."""
+    try:
+        d = os.path.join(ROOT, "news-test", "rejected")
+        os.makedirs(d, exist_ok=True)
+        now = dt.datetime.now(dt.timezone.utc)
+        with open(os.path.join(d, now.strftime("%Y-%m-%d") + ".jsonl"), "a", encoding="utf-8") as f:
+            f.write(json.dumps({"at": now.isoformat(timespec="seconds"), "model": name, "calls": calls, "error": str(err),
+                                "facts_head": (facts or "").splitlines()[:3], "draft": raw}, ensure_ascii=False) + "\n")
+    except Exception as e:  # noqa: BLE001 - a log must never stop the writer
+        note(f"  keep_rejected failed: {e}")
+
+
 def staged(name, call, prompt, facts, tables, market_rules=""):
     """the paid model's own path: draft -> accuracy -> wording -> parse(); up to tries model calls for one news.
     What a small model keeps getting wrong is repaired in small pieces: Latin product codes never reach it, a sentence with
@@ -898,6 +911,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 err += f" (متن {short.group(1)} کلمه است؛ کم‌اهمیت‌ترین جمله‌ها را حذف کن تا به ۱۸۰ کلمه برسد)"
             raw = ask(STAGE_FIX, src + "\n\nخبر:\n" + raw + f"\n\nایرادها: {err}") or raw
         note(f"  staged {name}: draft dropped after {calls} calls: {str(err)[:160]}")
+        keep_rejected(name, facts, raw, err, calls)
     raise ValueError(f"staged: {calls} calls, last: {err}")
 
 
