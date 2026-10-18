@@ -734,6 +734,27 @@ def off_topic(d, facts):
     return " | ".join(probs)
 
 
+HOURS_URLS = ("https://riz-api.msdata.ir/kala-fizik/raw-data?hours=1", "https://riz-api2.msdata.ir/kala-fizik/raw-data?hours=1")
+
+
+def closed_halls(date_fa, teh):
+    """owner 1405-07-26: a hall's close time changes every day, so it is read from the kala agent's copy of IME GetMarketsInfo
+    (08e5951). Rows of a hall that is still open (or closed under 30 minutes ago) are not final. None = hours unknown."""
+    for url in HOURS_URLS:
+        try:
+            d = json.load(urllib.request.urlopen(url, timeout=20))
+        except Exception:  # noqa: BLE001 - no hours = the old rule (two unchanged builds)
+            continue
+        if d.get("trade_date") != date_fa:
+            return None
+        now = teh.strftime("%H:%M:%S")
+        late = (teh - dt.timedelta(minutes=30)).strftime("%H:%M:%S")
+        out = {m["talar"] for m in d.get("markets") or [] if m.get("status") == "closed" and (m.get("finish_time") or "99") <= min(now, late)}
+        print("kala: closed halls: " + ("، ".join(sorted(out)) or "none"))
+        return out
+    return None
+
+
 def keep_rejected(name, facts, raw, err, calls):
     """owner 1405-07-26: every dropped draft is kept in news-test/rejected/<date>.jsonl, to study later why it failed."""
     try:
@@ -1133,12 +1154,15 @@ def main():
         n_ver = stab["__ver__"][1]
         teh = dt.datetime.now(dt.timezone(dt.timedelta(hours=3, minutes=30)))
         closed = date < teh.date().isoformat() or teh.hour >= 19  # the last fetch is 18:30 Tehran
+        shut = closed_halls(date_fa, teh)
         keep, unsettled = [], 0
         for r in rows:
             fp = "|".join(str(r.get(x)) for x in ("offered_qty", "traded_qty", "demand_qty", "weighted_price", "trade_value"))
             if stab.get(r.get("symbol"), [None])[0] != fp:
                 stab[r.get("symbol")] = [fp, n_ver]
-            if closed or n_ver > stab[r.get("symbol")][1]:
+            # content agent 1405-07-26: 13 news were written from rows still filling up after a quiet build, so an open hall
+            # always waits; a closed hall still needs two unchanged builds (shut is None when the hours could not be read)
+            if closed or ((shut is None or r.get("talar") in shut) and n_ver > stab[r.get("symbol")][1]):
                 keep.append(r)
             else:
                 unsettled += 1
