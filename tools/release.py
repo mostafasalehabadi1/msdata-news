@@ -57,13 +57,20 @@ def main():
         npath = os.path.join(N, name)
         n = json.load(open(npath, encoding="utf-8")) if os.path.exists(npath) else {**q, "items": []}
         days[name] = (npath, n)
-        out = {i["symbol"] for i in n["items"]}
-        cands += [(name, i) for i in q["items"] if i["symbol"] not in out and fits(name, i, q)]
+        out = {i["symbol"]: i for i in n["items"]}
+        # a news rewritten after its data changed (write_free row_fp) replaces the released one
+        cands += [(name, i) for i in q["items"] if (i["symbol"] not in out or (i.get("row_fp") and out[i["symbol"]].get("row_fp") != i["row_fp"]))
+                  and fits(name, i, q)]
     cands.sort(key=lambda c: (imp.get(c[1]["symbol"], {}).get("tier", 1), -imp.get(c[1]["symbol"], {}).get("value", 0)))
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     touched = set()
     for name, i in cands[:budget]:
-        days[name][1]["items"].append({**i, "published_at": now})  # exact release moment, for the site's hot-news ranking
+        items = days[name][1]["items"]
+        was = next((k for k, x in enumerate(items) if x["symbol"] == i["symbol"]), None)
+        if was is None:
+            items.append({**i, "published_at": now})  # exact release moment, for the site's hot-news ranking
+        else:  # same page, corrected figures: first release time kept
+            items[was] = {**i, "published_at": items[was].get("published_at", now), "updated_at": now}
         touched.add(name)
         released.append(f"{name}:{i['symbol']}")
     for name in touched:

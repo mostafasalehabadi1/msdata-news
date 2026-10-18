@@ -741,6 +741,11 @@ def off_topic(d, facts):
 HOURS_URLS = ("https://riz-api.msdata.ir/kala-fizik/raw-data?hours=1", "https://riz-api2.msdata.ir/kala-fizik/raw-data?hours=1")
 
 
+def row_fp(r):
+    """the figures a kala news is written from; when they change, the news is written again."""
+    return "|".join(str(r.get(x)) for x in ("offered_qty", "traded_qty", "demand_qty", "weighted_price", "trade_value"))
+
+
 def closed_halls(date_fa, teh):
     """owner 1405-07-26: a hall's close time changes every day, so it is read from the kala agent's copy of IME GetMarketsInfo
     (08e5951). Rows of a hall that is still open (or closed under 30 minutes ago) are not final. None = hours unknown."""
@@ -1193,6 +1198,12 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, f"{date}.json")
     doc = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {"date_fa": date_fa, "date": date, "items": []}
+    if not kish:  # content agent 1405-07-26: a row that changed after its news was written gets a new news (release.py replaces the page)
+        now_fp = {r.get("symbol"): row_fp(r) for r in rows}
+        stale = [i for i in doc["items"] if i.get("row_fp") and i["symbol"] in now_fp and now_fp[i["symbol"]] != i["row_fp"]]
+        for i in stale:
+            note(f"rewrite {i['symbol']}: data changed after it was written ({i['row_fp']} -> {now_fp[i['symbol']]})")
+            doc["items"].remove(i)
     done = {i["symbol"] for i in doc["items"]}
     subs = {i["subtitle"] for i in doc["items"]}
     todo = [r for r in rows if r.get("symbol") not in done and not ((r.get("traded_qty") or 0) > 0 and not r.get("weighted_price"))]
@@ -1279,7 +1290,7 @@ def main():
                                              "currency": "USD" if r.get("is_usd") else "rial-export", **d, "model": name})
                     else:
                         doc["items"].append({"symbol": sym, "trade_date": date_fa, "commodity": r.get("goods_name", ""),
-                                             "hall": r.get("talar", ""), "producer": r.get("producer_name", ""), **d, "model": name})
+                                             "hall": r.get("talar", ""), "producer": r.get("producer_name", ""), **d, "model": name, "row_fp": row_fp(r)})
                     subs.add(d["subtitle"])
                     json.dump(doc, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
                     stats["ok"] += 1
