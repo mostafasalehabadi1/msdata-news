@@ -47,6 +47,8 @@ def clean_name(n):
 
 
 def build(row, series, day_rows, date_fa, date):
+    # content agent 1405-07-26: 47.5 dollars was written «۴۸»; a dollar price keeps one decimal
+    money = (lambda v: fa_num(v, 1) if abs(v - round(v)) > 1e-9 else fa_int(v)) if row.get("is_usd") else fa_int
     YEAR[0] = date_fa[:4]
     goods, prod = clean_name(row.get("goods_name")), row.get("producer") or ""
     usd = bool(row.get("is_usd"))
@@ -79,11 +81,11 @@ def build(row, series, day_rows, date_fa, date):
             F.append(f"تقاضا فقط {fa_num(r * 100, 0)} درصد عرضه بود.")
     if trd and off and trd < off - 1e-9:
         F.append(f"فقط {fa_num(trd / off * 100, 0)} درصد عرضه فروش رفت.")
-    F.append(f"قیمت میانگین معامله {fa_int(price)} {pu} بود و قیمت پایه {fa_int(base)} {pu}.")
+    F.append(f"قیمت میانگین معامله {money(price)} {pu} بود و قیمت پایه {money(base)} {pu}" + (" (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن)." if usd else "."))
     c = pct(price, base)
     if c is not None:
-        F.append("قیمت با قیمت پایه برابر بود." if abs(c) < 0.05 else
-                 f"رقابت قیمت را {signed(c)} بالاتر از قیمت پایه برد." if c > 0 else f"قیمت {signed(c)} پایین‌تر از قیمت پایه بود.")
+        F.append("نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست)." if abs(c) < 0.05 else
+                 f"نسبت به قیمت پایه: رقابت قیمت را {signed(c)} بالاتر از قیمت پایه برد." if c > 0 else f"نسبت به قیمت پایه: قیمت {signed(c)} پایین‌تر از قیمت پایه بود.")
     tv = row.get("total_value") or 0
     if usd:
         F.append(f"ارزش این معامله {fa_int(round(tv))} دلار بود.")
@@ -93,15 +95,15 @@ def build(row, series, day_rows, date_fa, date):
     # owner 1405-07-15: no same-day comparisons (other sellers, totals, ranks) - the day may still change; they go to the end-of-day report
     # history: only when the symbol has at least 5 past trades (content agent rule)
     past = [h for h in (series or []) if (h.get("trade_date") or "") < date_fa and (h.get("trade_volume") or 0) > 0
-            and bool(h.get("is_usd")) == usd]
+            and bool(h.get("is_usd")) == usd and (not h.get("delivery_place") or h["delivery_place"] == row.get("delivery_place"))]  # content agent 1405-07-26: same delivery only (once history carries it)
     tables = {}
     if len(past) >= 5:
         prices = [(h["trade_date"], h.get("weighted_price") or 0) for h in past]
         last_d, last_p = prices[-1]
         cl = pct(price, last_p)
         if cl is not None:
-            F.append(f"معامله‌ی قبلی همین نماد {fa_date(last_d)} با قیمت {fa_int(last_p)} {pu} بود؛ "
-                     + ("قیمت تغییری نکرد." if abs(cl) < 0.05 else f"قیمت این بار {signed(cl)} {'بالاتر' if cl > 0 else 'پایین‌تر'} است."))
+            F.append(f"نسبت به آخرین معامله در {fa_date(last_d)} (همین نماد): قیمت آن روز {money(last_p)} {pu} بود؛ "
+                     + ("قیمت ثابت ماند." if abs(cl) < 0.05 else f"قیمت این بار {signed(cl)} {'بالاتر' if cl > 0 else 'پایین‌تر'} است؛ «ثابت» ننویس."))
         hi = max(prices, key=lambda x: x[1])
         lo = min(prices, key=lambda x: x[1])
         first = prices[0][0]

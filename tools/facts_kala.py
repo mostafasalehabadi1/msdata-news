@@ -70,9 +70,10 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
                  f"قیمت میانگین معامله {fa_int(price)} ریال هر کیلوگرم بود (قیمت پایه در داده نیامده؛ از قیمت پایه حرف نزن).")
         c = pct(price, base)
         if c is not None:
-            F.append("قیمت معامله با قیمت پایه برابر بود و رقابتی بالاتر از پایه شکل نگرفت." if abs(c) < 0.05 else
-                     f"خریداران با رقابت، قیمت را {signed(c)} بالاتر از قیمت پایه بردند." if c > 0 else
-                     f"قیمت معامله {signed(c)} پایین‌تر از قیمت پایه بود.")
+            # content agent 1405-07-26: «برابر قیمت پایه» was written as «قیمت ثابت ماند»; each comparison carries its label
+            F.append("نسبت به قیمت پایه: قیمت معامله با قیمت پایه برابر بود و رقابتی بالاتر از پایه شکل نگرفت (این «ثابت ماندن قیمت» نیست)." if abs(c) < 0.05 else
+                     f"نسبت به قیمت پایه: خریداران با رقابت، قیمت را {signed(c)} بالاتر از قیمت پایه بردند." if c > 0 else
+                     f"نسبت به قیمت پایه: قیمت معامله {signed(c)} پایین‌تر از قیمت پایه بود.")
         F.append(f"ارزش معامله‌ی امروز {toman_billion(row.get('trade_value'))} بود.")
     # history
     past = [h for h in history if h.get("trade_date") != date_fa and (h.get("traded_qty") or 0) > 0 and h.get("weighted_price")]
@@ -85,8 +86,8 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
                  f"{fa_num(last.get('traded_qty'))} {unit} معامله.")
         c = pct(price, lp) if trd and price else None
         if c is not None:
-            F.append(f"قیمت امروز با آخرین معامله ({fa_date(last['trade_date'])}) برابر بود." if abs(c) < 0.05 else
-                     f"قیمت امروز {signed(c)} {'گران‌تر' if c > 0 else 'ارزان‌تر'} از آخرین معامله ({fa_date(last['trade_date'])}) بود.")
+            F.append(f"نسبت به آخرین معامله در {fa_date(last['trade_date'])}: قیمت ثابت ماند (برابر بود)." if abs(c) < 0.05 else
+                     f"نسبت به آخرین معامله در {fa_date(last['trade_date'])}: قیمت {signed(c)} {'گران‌تر' if c > 0 else 'ارزان‌تر'} شد؛ «ثابت» ننویس.")
         q = pct(trd, last.get("traded_qty"))
         if trd and q is not None and abs(q) >= 20:
             F.append(f"حجم معامله‌ی امروز {fa_num(q / 100 + 1)} برابر آخرین معامله بود." if q >= 100 else

@@ -521,7 +521,11 @@ STAGE1 = ("تو خبرنگار بورس کالای ام‌اس‌دیتا هست
           "- text: ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها.\n"
           "- key_points: ۳ جمله‌ی کوتاه با عددهای همین خبر.\n"
           "- تاریخ را فقط یک بار و فقط به این شکل بنویس: شنبه ۲۵ مهر. اگر تاریخ معامله‌ی قبلی را نداری، از آن حرف نزن و «در تاریخ» ننویس. "
-          "ارزش معامله را با همان عدد و واحدی که در حقیقت‌ها آمده بنویس. «صف خرید» فقط وقتی که تقاضا بیشتر از عرضه است.\n" + JSON_KEYS)
+          "ارزش معامله را با همان عدد و واحدی که در حقیقت‌ها آمده بنویس. «صف خرید» فقط وقتی که تقاضا بیشتر از عرضه است.\n"
+          # content agent 1405-07-26: «گران‌ترین فروشنده», «تقاضا برابر عرضه» at 5,500 of 22,000 t, a past day's volume as today's
+          "- هر عدد و هر مقایسه فقط از حقیقت‌ها. صفت عالی (گران‌ترین، بیشترین، کمترین، بالاترین) فقط اگر در حقیقت‌ها آمده باشد. "
+          "«ثابت ماند» فقط وقتی که حقیقت‌ها «نسبت به آخرین معامله: قیمت ثابت ماند» بگویند؛ برابری با قیمت پایه ثابت ماندن نیست. "
+          "حجم امروز را با حجم روزهای قبل قاطی نکن. جمله‌ی تفسیری با «یعنی» ننویس.\n" + JSON_KEYS)
 # step 2 - check: a closed yes/no question per sentence is easier for a small model than a rewrite (content agent 1405-07-22)
 STAGE2 = ("تو راستی‌آزما هستی. «حقیقت‌ها» و جمله‌های شماره‌دار یک خبر را می‌گیری. هر جمله را با حقیقت‌ها بسنج. "
           "جمله غلط است اگر: جهت را برعکس بگوید (بیشتر/کمتر، گران‌تر/ارزان‌تر)، بگوید تمام عرضه فروخته شد در حالی که بخشی ماند، "
@@ -890,7 +894,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 if extra:
                     raise ValueError("markers: " + " | ".join(extra))
                 d["title"] = clean_title(d["title"])
-                off = " | ".join(x for x in (off_topic(d, facts), sale_problem(d, facts)) if x)
+                off = " | ".join(x for x in (off_topic(d, facts), sale_problem(d, facts), claim_problem(d, facts)) if x)
                 if off:
                     raise ValueError(off)
                 soft = " | ".join(x for x in (title_problem(d["title"], facts), number_problem(d["text"]),
@@ -949,6 +953,19 @@ DUP_DATE = re.compile(r"([0-9۰-۹]{1,2} (?:فروردین|اردیبهشت|خر
 MONTHS = "فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند"
 
 
+def claim_problem(d, facts):
+    """content agent 1405-07-26: claims the facts do not carry - «ثابت ماند» after a price change, a superlative, «تقاضا برابر عرضه» at 25%."""
+    t, f, out = " ".join(d.get(k) or "" for k in ("title", "subtitle", "lead", "text")), facts or "", []
+    if re.search(r"ثابت (?:ماند|بود)|تغییری نکرد|بدون تغییر", t) and not re.search(r"ثابت ماند|تغییری نکرد|ثابت مانده", f):
+        out.append("«ثابت» نوشته شده ولی قیمت نسبت به آخرین معامله تغییر کرده")
+    for m in set(re.findall(r"(?:گران|ارزان|بیش|کم|بالا|پایین)[‌ ]?ترین", t)):
+        if m.replace(" ", "‌").replace("‌", "") not in f.replace("‌", ""):
+            out.append(f"«{m}» در حقیقت‌ها نیست")
+    if re.search(r"تقاضا(?:ی)? (?:برابر|معادل) (?:با )?عرضه", t) and re.search(r"تقاضا فقط [0-9۰-۹٫]+ درصد عرضه", f):
+        out.append("تقاضا کمتر از عرضه بود، نه برابر")
+    return " | ".join(out)
+
+
 def after_fix(x, facts):
     """content agent 1405-07-25, last pass on the final text: «۲۲ مهر ۲۲ مهر» once; the previous trade never gets today's date;
     «تقاضا برابر عرضه» gets the ratio from the facts; a lead does not start with «. روز معامله:»."""
@@ -980,6 +997,9 @@ def after_fix(x, facts):
     if YTD_LINE in x and not re.search(r"امسال[^.]{0,60}[0-9۰-۹]", x.replace(YTD_LINE, "")):
         x = x.replace(YTD_LINE, SOURCE_LINES[0])
     x = re.sub(r"(?:در )?روز جاری", "در این روز", x)
+    # content agent 1405-07-26 (~30 of 121): «این معامله یعنی تقاضای مناسب…» - a «یعنی» sentence with no number is filler and goes
+    x = "\n\n".join(" ".join(t for t in re.split(r"(?<=[.!؟])\s+", para) if not (re.match(r"(?:این(?: \S+){0,2} )?یعنی", t) and not NUM.search(t)))
+                    for para in x.split("\n\n")).strip()
     return x
 
 
