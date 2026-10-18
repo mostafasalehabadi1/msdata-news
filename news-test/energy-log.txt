@@ -1,819 +1,258 @@
-energy: 8 settled rows, 3 still changing (wait 20 min unchanged)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-8 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged groq:openai/gpt-oss-120b: call 1 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 1 calls: no JSON
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: draft dropped after 1 calls: no JSON
-  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 1 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 2 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged groq:openai/gpt-oss-120b: draft dropped after 1 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: draft dropped after 1 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 1 calls: no JSON
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 2 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 2 calls: no JSON
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: draft dropped after 2 calls: no JSON
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 3 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged groq:openai/gpt-oss-120b: draft dropped after 2 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"2e0b762d-5c0f-47ee-8e0f-baaeee209914","message":"You are using a Trial key, which is limited to 1000 AP
-  staged zai:glm-4.7-flash: draft dropped after 2 calls: no JSON
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 2 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 3 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 3 calls: no JSON
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: draft dropped after 3 calls: no JSON
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 4 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged groq:openai/gpt-oss-120b: draft dropped after 3 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 1 calls: no JSON
-  staged cohere:command-a-03-2025: draft dropped after 1 calls: no JSON
-  staged zai:glm-4.7-flash: draft dropped after 3 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 3 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 4 calls: no JSON
-  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 4 calls: no JSON
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: draft dropped after 4 calls: no JSON
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 5 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged groq:openai/gpt-oss-120b: draft dropped after 4 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 4 calls: no JSON
-  staged zai:glm-4.7-flash: draft dropped after 4 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 5 calls: no JSON
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: draft dropped after 5 calls: no JSON
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 6 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged groq:openai/gpt-oss-120b: draft dropped after 5 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 5 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"3ab2064f-d481-4849-a3f7-c5addb670832","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 5 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.7-flash: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 6 calls: no JSON
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: draft dropped after 6 calls: no JSON
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 7 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged groq:openai/gpt-oss-120b: draft dropped after 6 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 7 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 6 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged cohere:command-a-03-2025: draft dropped after 2 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 2 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 6 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.7-flash: draft dropped after 6 calls: no JSON
-  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 7 calls: no JSON
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: draft dropped after 7 calls: no JSON
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 8 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged groq:openai/gpt-oss-120b: draft dropped after 7 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 8 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 7 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: draft dropped after 8 calls: no JSON
-  DLNSECABEX0050802 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 161s ValueError: staged: 8 calls, last: no JSON
-  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 8 calls: no JSON
-  DSCBICABEX0050729 hf:deepseek-ai/DeepSeek-V3.1: 161s ValueError: staged: 8 calls, last: no JSON
-  staged groq:openai/gpt-oss-120b: draft dropped after 8 calls: no JSON
-  DOXSECABEX0050802 groq:openai/gpt-oss-120b: 162s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged groq:openai/gpt-oss-20b: call 1 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 164s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"b0dacc7a-132d-49bb-b954-15cb4b18499b","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 3 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 8 calls: no JSON
-  DSBBICABEX0050729 llm7:DeepSeek-V4-Flash-0731: 177s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: no JSON
-  DSBBICABEX1050729 zai:glm-4.7-flash: 184s ValueError: staged: 8 calls, last: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged groq:openai/gpt-oss-20b: draft dropped after 1 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 2 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 1 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 1 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 2 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged cohere:command-a-03-2025: draft dropped after 3 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 3 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 1 calls: no JSON
-  staged groq:openai/gpt-oss-20b: draft dropped after 2 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 2 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.5-flash: draft dropped after 1 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 2 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 3 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged zai:glm-4.5-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged groq:openai/gpt-oss-20b: draft dropped after 3 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 4 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 3 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 2 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 3 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 4 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged zai:glm-4.5-flash: draft dropped after 2 calls: no JSON
-  staged zai:glm-4.5-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 4 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: call 4 failed: HTTP 429: {"id":"9973eb20-a07a-4b88-9f62-dadeb2e9bc3c","message":"You are using a Trial key, which is limited to 1000 AP
-  staged groq:openai/gpt-oss-20b: draft dropped after 4 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 4 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 5 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 3 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 4 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 5 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged zai:glm-4.5-flash: draft dropped after 3 calls: no JSON
-  staged zai:glm-4.5-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 4 calls: no JSON
-  staged cohere:command-a-03-2025: draft dropped after 4 calls: no JSON
-  staged groq:openai/gpt-oss-20b: draft dropped after 5 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 5 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 4 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 5 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 6 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged zai:glm-4.5-flash: draft dropped after 4 calls: no JSON
-  staged zai:glm-4.5-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged groq:openai/gpt-oss-20b: draft dropped after 6 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 6 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-20b: call 7 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 5 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 6 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 7 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged zai:glm-4.5-flash: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.5-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 5 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 7 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-20b: draft dropped after 7 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 8 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"c185d69f-f53a-4a84-9756-b8e214e08355","message":"You are using a Trial key, which is limited to 1000 AP
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 6 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 8 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.5-flash: draft dropped after 6 calls: no JSON
-  staged zai:glm-4.5-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 5 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:google/gemma-4-31b-it:free: 161s ValueError: staged: 8 calls, last: no JSON
-  staged groq:openai/gpt-oss-20b: draft dropped after 8 calls: no JSON
-  DOXSECABEX0050802 groq:openai/gpt-oss-20b: 164s ValueError: staged: 8 calls, last: no JSON
-  staged cohere:command-a-03-2025: draft dropped after 5 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: no JSON
-  DLNSECABEX0050802 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 167s ValueError: staged: 8 calls, last: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 1 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 7 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.5-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 1 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 1 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 2 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 8 calls: no JSON
-  DSCBICABEX0050729 llm7:DeepSeek-V4-Flash-0731: 178s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: no JSON
-  DSBBICABEX1050729 zai:glm-4.5-flash: 179s ValueError: staged: 8 calls, last: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 2 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 6 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"25c96ea7-cd47-4442-a622-e51ccc1ba9eb","message":"You are using a Trial key, which is limited to 1000 AP
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 2 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 3 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 1 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 3 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 6 calls: no JSON
-  staged cohere:command-a-03-2025: draft dropped after 6 calls: no JSON
-  staged zai:glm-4.7-flash: draft dropped after 1 calls: no JSON
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 3 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 4 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 4 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 2 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.7-flash: draft dropped after 2 calls: no JSON
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 4 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 5 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 5 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 3 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.7-flash: draft dropped after 3 calls: no JSON
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 7 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"57a10380-1c8f-45d2-ab2c-a42ee2b6bb75","message":"You are using a Trial key, which is limited to 1000 AP
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 5 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 6 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 6 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 4 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.7-flash: draft dropped after 4 calls: no JSON
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 7 calls: no JSON
-  staged cohere:command-a-03-2025: draft dropped after 7 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 6 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 7 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 7 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 5 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.7-flash: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 7 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 8 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:google/gemma-4-26b-a4b-it:free: 161s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 6 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.7-flash: draft dropped after 6 calls: no JSON
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 8 calls: no JSON
-  DOXSECABEX0050802 ovh:Qwen3.5-397B-A17B: 167s ValueError: staged: 8 calls, last: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"b94fdf20-4db6-42be-aff8-c04d6c79a083","message":"You are using a Trial key, which is limited to 1000 AP
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 1 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 7 calls: no JSON
-  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: no JSON
-  DOXFQCABEX1050803 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 522s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cohere:command-a-03-2025: draft dropped after 8 calls: no JSON
-  DOCABCABEX0050729 cohere:command-a-03-2025: 526s ValueError: staged: 8 calls, last: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 1 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 1 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 2 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 2 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 8 calls: no JSON
-  DSBBICABEX1050729 llm7:DeepSeek-V4-Flash-0731: 170s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: no JSON
-  DLNSECABEX0050802 zai:glm-4.7-flash: 174s ValueError: staged: 8 calls, last: no JSON
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 1 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 2 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 2 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 3 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged zai:glm-4.5-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 3 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 2 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 3 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 4 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged zai:glm-4.5-flash: draft dropped after 1 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 3 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 4 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"b9d73cc1-02a3-49d5-a85d-bba5148bc40e","message":"You are using a Trial key, which is limited to 1000 AP
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 4 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 3 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 5 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged ovh:Qwen3.5-397B-A17B: call 4 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 5 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 2 calls: no JSON
-  staged cohere:command-a-03-2025: draft dropped after 1 calls: no JSON
-  staged zai:glm-4.5-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 5 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 6 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 4 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 5 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 6 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 3 calls: no JSON
-  staged zai:glm-4.5-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 6 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 7 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 5 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 6 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 7 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 4 calls: no JSON
-  staged zai:glm-4.5-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"525d7c71-734a-479e-9cb0-fc69ed0b8900","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 15 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 8 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 6 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:xingchen-agi/xing4.0-29b-a4b:free: 161s ValueError: staged: 8 calls, last: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 7 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.5-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-style-soft: lead>35w/1num, text 15 nums
-  staged cohere:command-a-03-2025: draft dropped after 2 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: no JSON
-  DOXSECABEX0050802 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 163s ValueError: staged: 8 calls, last: no JSON
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 7 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 8 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 1 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 6 calls: no JSON
-  staged zai:glm-4.5-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-style-soft: lead>35w/1num, text 15 nums
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 8 calls: no JSON
-  DOXFQCABEX1050803 ovh:Qwen3.5-397B-A17B: 166s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 2 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.5-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: markers: «نشان می‌دهد» در text
-  staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"2ccc0df0-9013-4516-9579-28c17d5be325","message":"You are using a Trial key, which is limited to 1000 AP
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 3 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 1 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 2 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: no JSON
-  DLNSECABEX0050802 zai:glm-4.5-flash: 173s ValueError: staged: 8 calls, last: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: call 1 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged cohere:command-a-03-2025: draft dropped after 3 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 4 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 2 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 3 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 1 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 1 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 2 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «در مجموع» در text
-  DSCBICABEX0050729 gapgpt:gemma-3-27b-it: 149s ValueError: staged: 20 calls, last: markers: «در مجموع» در text
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 5 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 3 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 4 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 2 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 3 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 6 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged cohere:command-a-03-2025: call 4 failed: HTTP 429: {"id":"01172615-281f-45a6-992d-ee3461bd6f13","message":"You are using a Trial key, which is limited to 1000 AP
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 4 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 5 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 3 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 4 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 7 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged cohere:command-a-03-2025: draft dropped after 4 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 5 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 6 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-OK DOCABCABEX0050729 <- gapgpt:gemma-3-27b-it (45s)
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 4 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 2 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 5 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:nvidia/nemotron-3.5-super-vl:free: 161s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 6 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 7 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 5 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 6 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 1 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: no JSON
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 8 failed: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"
-  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"3546f392-6cb7-4b13-b6e6-41ddb9032753","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-OK DSBBICABEX1050729 <- gapgpt:gemma-3-27b-it (44s)
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 6 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 7 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 3 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 2 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: no JSON
-  DOXFQCABEX1050803 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 163s ValueError: staged: 8 calls, last: no JSON
-  staged cohere:command-a-03-2025: draft dropped after 5 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 7 calls: no JSON
-  staged ovh:Qwen3.5-397B-A17B: call 8 failed: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 3 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 3 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 8 calls: no JSON
-  DLNSECABEX0050802 ovh:Qwen3.5-397B-A17B: 167s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 4 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"655f9b1c-86cf-43e1-b006-77f383b19d80","message":"You are using a Trial key, which is limited to 1000 AP
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 5 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 4 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: draft dropped after 6 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 6 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 4 calls: no JSON
-style-soft: در حالی که, lead>35w/1num, text 9 nums
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 7 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-style-soft: در حالی که, lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-OK DOXFQCABEX1050803 <- gapgpt:gemma-3-27b-it (109s)
-  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"c4651e8c-968e-4967-9afb-4139e9400741","message":"You are using a Trial key, which is limited to 1000 AP
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:dots-studio/dots-3-note-preview:free: 161s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 5 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.7-flash: draft dropped after 1 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged zai:glm-4.7-flash: draft dropped after 2 calls: no JSON
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"dd574b31-d443-4af5-836f-31d29e14e861","message":"You are using a Trial key, which is limited to 1000 AP
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 6 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged zai:glm-4.7-flash: draft dropped after 3 calls: no JSON
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cohere:command-a-03-2025: draft dropped after 8 calls: no JSON
-  DSBBICABEX0050729 cohere:command-a-03-2025: 531s ValueError: staged: 8 calls, last: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 6 calls: no JSON
-  staged zai:glm-4.7-flash: draft dropped after 4 calls: no JSON
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged zai:glm-4.7-flash: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-OK DLNSECABEX0050802 <- gapgpt:gemma-3-27b-it (119s)
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"9c53e80d-c42a-445e-848d-5e27dcc9a254","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 7 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged zai:glm-4.7-flash: draft dropped after 6 calls: no JSON
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged cohere:command-a-03-2025: draft dropped after 1 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 zai:glm-4.7-flash: 175s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.5-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-OK DSBBICABEX0050729 <- gapgpt:gemma-3-27b-it (62s)
-  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"44bd329d-4c51-47e3-8a74-a6dd375e50b0","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged zai:glm-4.5-flash: draft dropped after 1 calls: no JSON
-  staged zai:glm-4.5-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cohere:command-a-03-2025: draft dropped after 2 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: no JSON
-  DOXSECABEX0050802 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 522s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.5-flash: draft dropped after 2 calls: no JSON
-  staged zai:glm-4.5-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged zai:glm-4.5-flash: draft dropped after 3 calls: no JSON
-  staged zai:glm-4.5-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"fd4c7290-f388-4100-aa00-5272310ab200","message":"You are using a Trial key, which is limited to 1000 AP
-  staged zai:glm-4.5-flash: draft dropped after 4 calls: no JSON
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-OK DOXSECABEX0050802 <- gapgpt:gemma-3-27b-it (48s)
-  staged zai:glm-4.5-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cohere:command-a-03-2025: draft dropped after 3 calls: no JSON
-  staged zai:glm-4.5-flash: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.5-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged zai:glm-4.5-flash: draft dropped after 6 calls: no JSON
-  staged zai:glm-4.5-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cohere:command-a-03-2025: call 4 failed: HTTP 429: {"id":"99c319d0-17a6-4a97-9f6c-12f0f78a6276","message":"You are using a Trial key, which is limited to 1000 AP
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.5-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged cohere:command-a-03-2025: draft dropped after 4 calls: no JSON
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 zai:glm-4.5-flash: 177s ValueError: staged: 8 calls, last: no JSON
-  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"3c2d894d-5d90-417d-88d4-98bb62178c57","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 15 nums
-  staged cohere:command-a-03-2025: draft dropped after 5 calls: no JSON
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: markers: «نشان می‌دهد» در text
-  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"3485b5ac-1f03-4285-a0d8-49e6fdc129d4","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: draft dropped after 6 calls: no JSON
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: 119 words / 1 paragraphs
-  DGKGZCABEX0050802 gapgpt:gemma-3-27b-it: 138s ValueError: staged: 20 calls, last: 119 words / 1 paragraphs
-  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"77aa1a0a-ece5-4140-a27b-aa930af459b3","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: draft dropped after 7 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 1 calls: no JSON
-  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"8bfb5c93-c544-4da1-9961-a914be14f8c3","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: draft dropped after 8 calls: no JSON
-  DSCBICABEX0050729 cohere:command-a-03-2025: 527s ValueError: staged: 8 calls, last: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 2 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 3 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 3 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 4 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 4 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 5 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 5 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 6 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 6 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 7 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 7 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 522s ValueError: staged: 8 calls, last: no JSON
-written 6/8; total in file 6
-energy: 9 settled rows, 3 still changing (wait 20 min unchanged)
+energy: 12 settled rows, 1 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 3 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-120b: call 1 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 1 calls: no JSON
-  staged groq:openai/gpt-oss-120b: draft dropped after 1 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
   staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 1 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
   staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 2 calls: no JSON
-  staged groq:openai/gpt-oss-120b: draft dropped after 2 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 1 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
   staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 2 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
   staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 3 calls: no JSON
-  staged groq:openai/gpt-oss-120b: draft dropped after 3 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 2 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"e7b7f0aa-abc0-40d6-99ab-dfcb49b0575b","message":"You are using a Trial key, which is limited to 1000 AP
   staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 3 calls: no JSON
   staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 4 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-120b: draft dropped after 4 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 3 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: draft dropped after 1 calls: no JSON
   staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 4 calls: no JSON
   staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 5 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-120b: draft dropped after 5 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 4 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
   staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 5 calls: no JSON
   staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 6 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-120b: draft dropped after 6 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 7 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 5 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"e5eb7436-fbb1-4964-aaf7-1c8a3e09718b","message":"You are using a Trial key, which is limited to 1000 AP
   staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 6 calls: no JSON
   staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-120b: draft dropped after 7 calls: no JSON
-  staged groq:openai/gpt-oss-120b: call 8 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 6 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: draft dropped after 2 calls: no JSON
   staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 7 calls: no JSON
   staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 161s ValueError: staged: 8 calls, last: no JSON
-  staged groq:openai/gpt-oss-120b: draft dropped after 8 calls: no JSON
-  DOXFBCABEX0050729 groq:openai/gpt-oss-120b: 161s ValueError: staged: 8 calls, last: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 7 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
   staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 8 calls: no JSON
-  DSCBICABEX0050729 hf:deepseek-ai/DeepSeek-V3.1: 161s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-20b: call 1 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 1 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-20b: draft dropped after 1 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 2 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: draft dropped after 1 calls: no JSON
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 2 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-20b: draft dropped after 2 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: draft dropped after 2 calls: no JSON
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 3 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-20b: draft dropped after 3 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 4 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: draft dropped after 3 calls: no JSON
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 4 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-20b: draft dropped after 4 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 5 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: draft dropped after 4 calls: no JSON
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 5 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-20b: draft dropped after 5 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 6 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-20b: draft dropped after 6 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 7 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: draft dropped after 6 calls: no JSON
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 7 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged groq:openai/gpt-oss-20b: draft dropped after 7 calls: no JSON
-  staged groq:openai/gpt-oss-20b: call 8 failed: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: no JSON
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:google/gemma-4-31b-it:free: 161s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged groq:openai/gpt-oss-20b: draft dropped after 8 calls: no JSON
-  DOXFBCABEX0050729 groq:openai/gpt-oss-20b: 162s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: no JSON
-  DSCBICABEX0050729 zai:glm-4.7-flash: 174s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 1 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 2 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 1 calls: no JSON
-  staged zai:glm-4.5-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 3 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 2 calls: no JSON
-  staged zai:glm-4.5-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 4 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 3 calls: no JSON
-  staged zai:glm-4.5-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 5 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 4 calls: no JSON
-  staged zai:glm-4.5-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 6 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.5-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 7 calls: no JSON
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 6 calls: no JSON
-  staged zai:glm-4.5-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:google/gemma-4-26b-a4b-it:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:google/gemma-4-26b-a4b-it:free: 161s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.5-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 1 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: no JSON
-  DSCBICABEX0050729 zai:glm-4.5-flash: 168s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 2 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.7-flash: draft dropped after 1 calls: no JSON
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 3 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.7-flash: draft dropped after 2 calls: no JSON
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 4 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.7-flash: draft dropped after 3 calls: no JSON
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 5 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.7-flash: draft dropped after 4 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 6 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 7 calls: no JSON
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.7-flash: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:xingchen-agi/xing4.0-29b-a4b:free: 161s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.7-flash: draft dropped after 6 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 1 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-style-soft: lead>35w/1num, text 13 nums
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 2 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-OK DSCBICABEX0050729 <- gapgpt:gemma-3-27b-it (93s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: no JSON
-  DOXFBCABEX0050729 zai:glm-4.7-flash: 179s ValueError: staged: 8 calls, last: no JSON
-  staged zai:glm-4.5-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 3 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 1 calls: no JSON
-  staged zai:glm-4.5-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 4 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 2 calls: no JSON
-  staged zai:glm-4.5-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 5 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 3 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 6 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 7 calls: no JSON
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 4 calls: no JSON
-  staged zai:glm-4.5-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:nvidia/nemotron-3.5-super-vl:free: 161s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 5 calls: no JSON
-  staged zai:glm-4.5-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 1 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 6 calls: no JSON
-  staged zai:glm-4.5-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 2 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.5-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 3 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: no JSON
-  DOXFBCABEX0050729 zai:glm-4.5-flash: 179s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 4 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 5 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 6 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-style-soft: در حالی که, lead>35w/1num, text 12 nums
-style-soft: در حالی که, lead>35w/1num, text 12 nums
+  DIRTHCABEX0050729 hf:deepseek-ai/DeepSeek-V3.1: 161s ValueError: staged: 8 calls, last: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 8 calls: no JSON
+  DIRSRCABEX0050729 llm7:DeepSeek-V4-Flash-0731: 165s ValueError: staged: 8 calls, last: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"93c574bb-8b03-44d8-962e-e4bb85759920","message":"You are using a Trial key, which is limited to 1000 AP
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 1 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 1 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: draft dropped after 3 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 2 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 2 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 3 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 3 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: call 4 failed: HTTP 429: {"id":"3ca49bc3-301c-4012-9a65-925fb35ada5b","message":"You are using a Trial key, which is limited to 1000 AP
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 4 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 4 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: draft dropped after 4 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 5 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 5 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 6 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 6 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"44451523-8a51-4f34-9cfa-4134356fa3a2","message":"You are using a Trial key, which is limited to 1000 AP
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 7 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 7 calls: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: draft dropped after 5 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 8 calls: no JSON
+  DIRSRCABEX0050729 hf:deepseek-ai/DeepSeek-V3.1: 161s ValueError: staged: 8 calls, last: no JSON
+  staged llm7:DeepSeek-V4-Flash-0731: draft dropped after 8 calls: no JSON
+  DIRTHCABEX0050729 llm7:DeepSeek-V4-Flash-0731: 167s ValueError: staged: 8 calls, last: no JSON
+  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"91ca7b5c-4fd9-44c4-9c09-5d920da33d79","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 6 calls: no JSON
+  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"2ca55f71-7106-4129-9085-2b2c0c95dc4e","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 7 calls: no JSON
+  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"26cf5dd8-86fb-440f-add8-6c840b32354c","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 8 calls: no JSON
+  DSFSRCABEX0050729 cohere:command-a-03-2025: 523s ValueError: staged: 8 calls, last: no JSON
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"262327db-8634-4390-b639-581838c2dc86","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 1 calls: no JSON
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"b132807b-8215-42e8-a82c-c8a10883db1a","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 9 nums
   staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
   staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-OK DOXFBCABEX0050729 <- gapgpt:gemma-3-27b-it (63s)
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 7 calls: no JSON
-  staged openrouter:dots-studio/dots-3-note-preview:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: no JSON
-  DGKGZCABEX0050802 openrouter:dots-studio/dots-3-note-preview:free: 161s ValueError: staged: 8 calls, last: no JSON
+  DIRTHCABEX0050729 gapgpt:gemma-3-27b-it: 59s ValueError: repeated subtitle
+  staged cohere:command-a-03-2025: draft dropped after 2 calls: no JSON
+  staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"0a690230-505f-49f5-b03d-fff879f81079","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+OK DSFSRCABEX0050729 <- gapgpt:gemma-3-27b-it (56s)
+  staged cohere:command-a-03-2025: draft dropped after 3 calls: no JSON
+  staged cohere:command-a-03-2025: call 4 failed: HTTP 429: {"id":"a61027ae-137b-40bb-b47d-adea5d25e7ae","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 4 calls: no JSON
+  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"63cfbdbe-8767-416b-9824-eea1bc3891b1","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 5 calls: no JSON
+  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"2342c586-5ec8-4231-95c1-a103ff8fe58a","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 6 calls: no JSON
+  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"417f148e-8059-499b-9d9a-a12c502c8d12","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 7 calls: no JSON
+  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"36c30409-2310-48b7-aa24-cf4d5b7e09cb","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 8 calls: no JSON
+  DIRSRCABEX0050729 cohere:command-a-03-2025: 523s ValueError: staged: 8 calls, last: no JSON
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"7a9c16ad-cc9a-411e-99ee-8fb64f60a275","message":"You are using a Trial key, which is limited to 1000 AP
 style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: soft: نام کالا در تیتر باید «روغن سبک» باشد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-OK DGKGZCABEX0050802 <- gapgpt:gemma-3-27b-it (126s)
-written 3/3; total in file 9
-energy: 9 settled rows, 3 still changing (wait 20 min unchanged)
+  staged cohere:command-a-03-2025: draft dropped after 1 calls: no JSON
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+OK DIRSRCABEX0050729 <- gapgpt:gemma-3-27b-it (73s)
+  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"0a891108-eefe-409d-99ea-b2c451c277a5","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 2 calls: no JSON
+  staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"f30ba2c1-31ba-44a0-aafd-a4c4c36066e1","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 3 calls: no JSON
+  staged cohere:command-a-03-2025: call 4 failed: HTTP 429: {"id":"2285aca4-0324-42ea-aa77-3f99bd684f0d","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 4 calls: no JSON
+  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"5e5ec863-8074-43b3-a850-497c2a21ac48","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 5 calls: no JSON
+  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"711e88cc-33e4-4596-86d7-1a679d48e657","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 6 calls: no JSON
+  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"bd91b87b-35fd-46a8-917e-9c2e3101755e","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 7 calls: no JSON
+  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"807c7ed9-c7d5-4981-a037-2b8d3479c4ae","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: draft dropped after 8 calls: no JSON
+  DIRTHCABEX0050729 cohere:command-a-03-2025: 523s ValueError: staged: 8 calls, last: no JSON
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.7-flash: draft dropped after 1 calls: no JSON
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.7-flash: draft dropped after 2 calls: no JSON
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.7-flash: draft dropped after 3 calls: no JSON
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.7-flash: draft dropped after 4 calls: no JSON
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.7-flash: draft dropped after 5 calls: no JSON
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.7-flash: draft dropped after 6 calls: no JSON
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: no JSON
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: no JSON
+  DIRTHCABEX0050729 zai:glm-4.7-flash: 163s ValueError: staged: 8 calls, last: no JSON
+  staged zai:glm-4.5-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 1 calls: no JSON
+  staged zai:glm-4.5-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 2 calls: no JSON
+  staged zai:glm-4.5-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 3 calls: no JSON
+  staged zai:glm-4.5-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 4 calls: no JSON
+  staged zai:glm-4.5-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 5 calls: no JSON
+  staged zai:glm-4.5-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 6 calls: no JSON
+  staged zai:glm-4.5-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: no JSON
+  staged zai:glm-4.5-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: no JSON
+  DIRTHCABEX0050729 zai:glm-4.5-flash: 163s ValueError: staged: 8 calls, last: no JSON
+written 2/3; total in file 11
+energy: 13 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+2 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 1 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged zai:glm-4.7-flash: draft dropped after 1 calls: no JSON
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 2 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged zai:glm-4.7-flash: draft dropped after 2 calls: no JSON
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 3 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged zai:glm-4.7-flash: draft dropped after 3 calls: no JSON
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 4 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged zai:glm-4.7-flash: draft dropped after 4 calls: no JSON
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 5 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged zai:glm-4.7-flash: draft dropped after 5 calls: no JSON
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 6 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged zai:glm-4.7-flash: draft dropped after 6 calls: no JSON
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 7 calls: no JSON
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: no JSON
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: draft dropped after 8 calls: no JSON
+  DIRTHCABEX0050729 hf:deepseek-ai/DeepSeek-V3.1: 161s ValueError: staged: 8 calls, last: no JSON
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: no JSON
+  ISVTBFWBEX0050826 zai:glm-4.7-flash: 163s ValueError: staged: 8 calls, last: no JSON
+  staged zai:glm-4.5-flash: call 1 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 1 calls: no JSON
+  staged zai:glm-4.5-flash: call 2 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 2 calls: no JSON
+  staged zai:glm-4.5-flash: call 3 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged zai:glm-4.5-flash: draft dropped after 3 calls: no JSON
+  staged zai:glm-4.5-flash: call 4 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 1 calls: no JSON
+  staged zai:glm-4.5-flash: draft dropped after 4 calls: no JSON
+  staged zai:glm-4.5-flash: call 5 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 5 calls: no JSON
+  staged zai:glm-4.5-flash: call 6 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged zai:glm-4.5-flash: draft dropped after 6 calls: no JSON
+  staged zai:glm-4.5-flash: call 7 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 2 calls: no JSON
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: no JSON
+  staged zai:glm-4.5-flash: call 8 failed: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: no JSON
+  ISVTBFWBEX0050826 zai:glm-4.5-flash: 163s ValueError: staged: 8 calls, last: no JSON
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 3 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 3 calls: no JSON
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 4 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 4 calls: no JSON
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 5 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 5 calls: no JSON
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 6 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 6 calls: no JSON
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 7 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 7 calls: no JSON
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+OK ISVTBFWBEX0050826 <- gapgpt:gemma-3-27b-it (36s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: no JSON
+  DIRTHCABEX0050729 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 521s ValueError: staged: 8 calls, last: no JSON
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 11 calls
+OK DIRTHCABEX0050729 <- gapgpt:gemma-3-27b-it (54s)
+written 2/2; total in file 13
+energy: 13 settled rows, 0 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-written 0/0; total in file 9
+written 0/0; total in file 13
