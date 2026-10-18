@@ -25,6 +25,17 @@ def backlog():
     return total
 
 
+def fits(name, i, q):
+    """an item validate.py would reject stays in the queue (1405-07-26: one 118-word item blocked every release for 11 hours)."""
+    import validate
+    errs = []
+    v2 = q.get("date", "") >= "2026-10-04"
+    validate.check_text(f"{name}:{i.get('symbol')}", i, errs, 120 if v2 else 150, 220 if v2 else 200, 2, 4 if v2 else 3)
+    if errs:
+        print("held back:", "; ".join(errs))
+    return not errs
+
+
 def main():
     # >20 waiting: 7 | 7-20 waiting: random 3-7 | under 7 waiting: all of them
     waiting = backlog()
@@ -47,7 +58,7 @@ def main():
         n = json.load(open(npath, encoding="utf-8")) if os.path.exists(npath) else {**q, "items": []}
         days[name] = (npath, n)
         out = {i["symbol"] for i in n["items"]}
-        cands += [(name, i) for i in q["items"] if i["symbol"] not in out]
+        cands += [(name, i) for i in q["items"] if i["symbol"] not in out and fits(name, i, q)]
     cands.sort(key=lambda c: (imp.get(c[1]["symbol"], {}).get("tier", 1), -imp.get(c[1]["symbol"], {}).get("value", 0)))
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     touched = set()
