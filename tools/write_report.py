@@ -158,9 +158,30 @@ def main():
         m = re.search(r"^headline:\s*(.+)$", open(hp, encoding="utf-8").read(), re.M) if os.path.exists(hp) else None
         HEADLINE = m.group(1).strip() if m and force else ""
     # --market kish: the Kish export-market report, same rules and timing (owner 1405-07-15); files under queue|news/kish/
-    kish = "--market" in sys.argv and sys.argv[sys.argv.index("--market") + 1] == "kish"
-    sub = "kish" if kish else ""
-    if kish:
+    mkt = sys.argv[sys.argv.index("--market") + 1] if "--market" in sys.argv else ""
+    kish, energy = mkt == "kish", mkt == "energy"  # energy: Iran Energy Exchange report, 4 parts (owner 1405-07-27); files under queue|news/energy/
+    sub = mkt if kish or energy else ""
+    if energy:
+        en = {}
+        for p in ("energy", "energy-power", "energy-contracts", "energy-securities"):
+            for u in (f"https://msdata.ir/api/{p}/raw-data.json", f"https://riz-api.msdata.ir/{p}/raw-data"):
+                try:
+                    en[p] = json.load(urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": "msdata-news/1.0"}), timeout=60))
+                    break
+                except Exception:  # noqa: BLE001 - the next source
+                    continue
+        if not en.get("energy", {}).get("trade_date"):
+            print("energy report: no physical day file")
+            return
+        dfa = en["energy"]["trade_date"]
+        same = lambda d: d if d.get("trade_date") == dfa else {}  # noqa: E731 - a part with an older day counts as no trade
+        subprocess.run([sys.executable, os.path.join(ROOT, "tools", "fetch_energy.py")], check=False)  # data/energy/today.json carries the Gregorian date
+        k = json.load(open(os.path.join(ROOT, "data", "energy", "today.json"), encoding="utf-8"))
+        if k.get("trade_date") != dfa:
+            print(f"energy report: day file {k.get('trade_date')} != {dfa}")
+            return
+        latest = {"date": k["date"], "date_fa": dfa}
+    elif kish:
         subprocess.run([sys.executable, os.path.join(ROOT, "tools", "fetch_kish.py")], check=False)
         k = json.load(open(os.path.join(ROOT, "data", "kish", "today.json"), encoding="utf-8"))
         latest = {"date": k["date"], "date_fa": k["trade_date"]}
@@ -173,7 +194,20 @@ def main():
     out = os.path.join(ROOT, "queue", sub, f"report-{date}.json")
     if os.path.exists(out) or os.path.exists(os.path.join(ROOT, "news", sub, f"report-{date}.json")):
         return
-    if kish:
+    if energy:
+        import facts_report_energy
+        date_fa = latest["date_fa"]
+        rows = [{"symbol": r["symbol"], "goods_name": r.get("goods_name"), "trade_value": r.get("total_value_rial") or 0}
+                for r in en["energy"].get("items") or [] if (r.get("trade_volume") or 0) > 0]
+        if not rows:
+            return
+        ctx = news(rows)
+        fx, symmap, tables = facts_report_energy.build(en["energy"], same(en.get("energy-power", {})), same(en.get("energy-contracts", {})),
+                                                       same(en.get("energy-securities", {})), date_fa, date)
+        global REPORT_RULES
+        REPORT_RULES = REPORT_RULES.replace("گزارش پایان روز بازار فیزیکی بورس کالا", "گزارش پایان روز بورس انرژی") + \
+            "\n\nقواعد بورس انرژی:\n" + w.STYLE_ENERGY + "\n\nگزارش هر چهار بخش را دارد: بازار فیزیکی (رینگ داخلی و صادراتی)، برق، مشتقه، اوراق و صندوق‌ها؛ برای هر بخش یک میان‌تیتر."
+    elif kish:
         import facts_report_kish
         h = json.load(open(os.path.join(ROOT, "data", "kish", "history.json"), encoding="utf-8"))
         date_fa, items = k["trade_date"], k["items"]
@@ -184,7 +218,6 @@ def main():
                  "trade_value": r.get("total_value_usd") or 0} for r in items]  # for news() and links only
         ctx = news(rows)
         fx, symmap, tables = facts_report_kish.build(items, h.get("series", {}), h["days"].get(prev) if prev else None, date_fa, date)
-        global REPORT_RULES
         REPORT_RULES = REPORT_RULES.replace("گزارش پایان روز بازار فیزیکی بورس کالا", "گزارش پایان روز تالار صادراتی بورس کالا") + \
             "\n\nقواعد تالار صادراتی:\n" + w.STYLE_KISH
     else:
@@ -222,7 +255,7 @@ def main():
         try:
             if model == REPORT_MODEL or (model in w.PAID and "--model" in sys.argv and "--sections" in sys.argv):  # section by section (report_staged.py)
                 import report_staged
-                d = report_staged.write(call, fx, symmap, tables, "گزارش پایان روز تالار صادراتی بورس کالا" if kish else "گزارش پایان روز بازار فیزیکی بورس کالا",
+                d = report_staged.write(call, fx, symmap, tables, "گزارش پایان روز بورس انرژی" if energy else "گزارش پایان روز تالار صادراتی بورس کالا" if kish else "گزارش پایان روز بازار فیزیکی بورس کالا",
                                         lambda x: check(x, symbols, urls, tables, known), known)
                 raw = None
             elif model in w.PAID and "--model" in sys.argv:  # one full draft, then sentence-by-sentence repair (report_repair.py)
