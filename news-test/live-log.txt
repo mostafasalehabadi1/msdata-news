@@ -1,44 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged cohere:command-r-plus-08-2024: draft dropped after 7 calls: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 7 calls: no JSON
-  staged cohere:command-a-03-2025: draft dropped after 7 calls: no JSON
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: no JSON
-  DCSTZCABEX0050805 zai:glm-4.5-flash: 163s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 1 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-style-soft: lead>35w/1num
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 2 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-style-soft: lead>35w/1num, text 11 nums
-  staged cohere:command-r-plus-08-2024: call 8 failed: HTTP 429: {"id":"c62662e9-d13f-41c0-be52-f0b3eb6b4e6b","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"c204a857-e88c-4ca3-8cca-15dd9add9b75","message":"You are using a Trial key, which is limited to 1000 AP
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 3 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged cohere:command-r-plus-08-2024: draft dropped after 8 calls: no JSON
-  DLNTZCABEX0050805 cohere:command-r-plus-08-2024: 522s ValueError: staged: 8 calls, last: no JSON
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: no JSON
-  DBPPDCABEX1050802 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 522s ValueError: staged: 8 calls, last: no JSON
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۱۰۰۰
-  staged cohere:command-a-03-2025: draft dropped after 8 calls: no JSON
-  DMTSNCABFC0050803 cohere:command-a-03-2025: 522s ValueError: staged: 8 calls, last: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 4 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 5 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: accepted after 15 calls
-OK DPLBECABEX0050805 <- gapgpt:gemma-3-27b-it (110s)
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"27fda8be-d659-4207-993b-235897f8a0e3","message":"You are using a Trial key, which is limited to 1000 AP
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 6 calls: no JSON
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"bd167e50-d16e-4031-ade5-822a7af41d7a","message":"You are using a Trial key, which is limited to 1000 AP
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged cohere:command-a-reasoning-08-2025: draft dropped after 1 calls: no JSON
   staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: no JSON
   staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 1 calls: no JSON
@@ -200,3 +159,42 @@ style-soft: lead>35w/1num, text 10 nums
 style-soft: lead>35w/1num, text 10 nums
   staged gapgpt:gemma-3-27b-it: accepted after 7 calls
 OK DBTABCABEX0050802 <- gapgpt:gemma-3-27b-it (70s)
+  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 6 calls: no JSON
+  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cohere:command-r-plus-08-2024: call 3 failed: HTTP 429: {"id":"7549ef17-a6ab-44d3-b5fa-b32e05ef2509","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 7 calls: no JSON
+  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cohere:command-r-plus-08-2024: draft dropped after 3 calls: no JSON
+  staged openrouter:nvidia/nemotron-3.5-super-vl:free: draft dropped after 8 calls: no JSON
+  DPLHOCABEX0050805 openrouter:nvidia/nemotron-3.5-super-vl:free: 161s ValueError: staged: 8 calls, last: no JSON
+  staged openrouter:dots-studio/dots-3-note-preview:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 1 calls: no JSON
+  staged openrouter:dots-studio/dots-3-note-preview:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cohere:command-r-plus-08-2024: call 4 failed: HTTP 429: {"id":"c515571f-64e2-4b8c-a6ae-fc08a615cf4d","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 2 calls: no JSON
+  staged openrouter:dots-studio/dots-3-note-preview:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cohere:command-r-plus-08-2024: draft dropped after 4 calls: no JSON
+  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 3 calls: no JSON
+  staged openrouter:dots-studio/dots-3-note-preview:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 4 calls: no JSON
+  staged openrouter:dots-studio/dots-3-note-preview:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cohere:command-r-plus-08-2024: call 5 failed: HTTP 429: {"id":"491adda2-ce5a-495d-8313-97906efd2939","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 5 calls: no JSON
+  staged openrouter:dots-studio/dots-3-note-preview:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cohere:command-r-plus-08-2024: draft dropped after 5 calls: no JSON
+  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 6 calls: no JSON
+  staged openrouter:dots-studio/dots-3-note-preview:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 7 calls: no JSON
+  staged openrouter:dots-studio/dots-3-note-preview:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cohere:command-r-plus-08-2024: call 6 failed: HTTP 429: {"id":"8d5ea225-56ae-49c6-99aa-9027fe84c51f","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: no JSON
+  DPLHOCABEX0050805 openrouter:dots-studio/dots-3-note-preview:free: 161s ValueError: staged: 8 calls, last: no JSON
+  staged cohere:command-r-plus-08-2024: draft dropped after 6 calls: no JSON
+  staged cohere:command-r-plus-08-2024: call 7 failed: HTTP 429: {"id":"48deb377-a7c0-44c5-ac58-bc88a2c24df3","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 9 nums
+style-soft: lead>35w/1num
+  staged cohere:command-r-plus-08-2024: draft dropped after 7 calls: no JSON
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
+OK DPLHOCABEX0050805 <- gapgpt:gemma-3-27b-it (95s)
