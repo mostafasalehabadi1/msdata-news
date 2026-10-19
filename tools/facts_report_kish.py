@@ -27,8 +27,12 @@ def comp(r):
     return (r["weighted_price"] / r["base_price"] - 1) * 100 if r.get("weighted_price") and r.get("base_price") else 0
 
 
+DUP = set()  # symbols sold at more than one delivery today: their name carries the delivery (content agent 1405-07-27)
+
+
 def name(r):
-    return f"{clean_name(r.get('goods_name'))} شرکت {r.get('producer')}"
+    n = f"{clean_name(r.get('goods_name'))} شرکت {r.get('producer')}"
+    return n + f" ({delivery(r.get('delivery_place'))[0]})" if r.get("symbol") in DUP else n
 
 
 def sgn(x):
@@ -41,7 +45,7 @@ def country(r):
 
 def last_change(r, series, date_fa):
     past = [h for h in series.get(r["symbol"], []) if (h.get("trade_date") or "") < date_fa and (h.get("trade_volume") or 0) > 0
-            and h.get("is_usd")]
+            and h.get("is_usd") and (not h.get("delivery_place") or h["delivery_place"] == r.get("delivery_place"))]  # one price per delivery (content agent 1405-07-27)
     if not past or not past[-1].get("weighted_price"):
         return None, past
     return (r["weighted_price"] / past[-1]["weighted_price"] - 1) * 100, past
@@ -49,6 +53,11 @@ def last_change(r, series, date_fa):
 
 def build(items, series, prev_day, date_fa, date):
     YEAR[0] = date_fa[:4]
+    cnt = {}
+    for r in items:
+        if (r.get("trade_volume") or 0) > 0:
+            cnt[r.get("symbol")] = cnt.get(r.get("symbol"), 0) + 1
+    DUP.clear(); DUP.update(s for s, n in cnt.items() if n > 1)
     rows = [r for r in items if r.get("is_usd")]
     rial = [r for r in items if not r.get("is_usd")]
     traded = [r for r in rows if (r.get("trade_volume") or 0) > 0]

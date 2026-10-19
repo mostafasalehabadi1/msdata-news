@@ -1266,7 +1266,8 @@ def main():
             hall_done = dt.datetime.fromisoformat(lr) >= end + dt.timedelta(minutes=5)
         closed = hall_done or date < dt.date.today().isoformat() or             (dt.datetime.fromisoformat(now_utc) - dt.datetime.fromisoformat(stab["__day__"][1])).total_seconds() >= STABLE_MIN * 60
         unsettled = 0
-        for r in k["items"]:
+        # a symbol sold at two deliveries is two news; a fixed order keeps «-2» on the same delivery every round (content agent 1405-07-27)
+        for r in sorted(k["items"], key=lambda r: (r.get("symbol") or "", r.get("delivery_place") or "", r.get("contract_type") or "")):
             if (r.get("trade_volume") or 0) <= 0:
                 continue
             r["series_key"] = fetch_energy.key(r) if energy else r["symbol"]
