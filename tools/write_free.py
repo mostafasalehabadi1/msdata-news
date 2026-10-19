@@ -183,6 +183,8 @@ def post(url, key, model, prompt, extra=None, system=None):
         body["reasoning"] = {"enabled": False}  # 2026-10-12: with thinking it spent 1400-4900 tokens and 25-140s per news and still wrote short; off = 3s
     if "cloudflare.com" in url:
         body["max_tokens"] = 2048  # Cloudflare cuts answers at a 256-token default; a cap elsewhere starves reasoning models
+    if "gapgpt.app" in url and model.startswith("gemma"):
+        body["max_tokens"] = 4096  # content agent 1405-07-27: 48 kish drafts lost as «no JSON» after the 40 headline rules grew the prompt
     auth = {"Authorization": f"Bearer {key}"} if key else {}  # OVH AI Endpoints works anonymously (2 req/min per model)
     req = urllib.request.Request(url, json.dumps(body).encode(), {
         **auth, "Content-Type": "application/json", "User-Agent": "msdata-news/1.0", **(extra or {})})
@@ -435,7 +437,7 @@ def parse(raw, facts="", tables=None):
     m = re.search(r"\{.*\}", raw, re.S)
     d = loads_lenient(m.group(0)) if m else None
     if not isinstance(d, dict):
-        raise ValueError("no JSON")
+        raise ValueError("no JSON: " + raw[-80:].replace("\n", " "))  # the tail shows a cut answer vs. text outside the JSON
     if isinstance(d.get("title"), str) and d["title"].strip() and not (isinstance(d.get("slug"), str) and d["slug"].strip()):
         d["slug"] = d["title"]  # a missing slug is not worth a lost news: the title becomes the slug (cleaned below by SLUG_BAD)
     for k in ("title", "slug", "subtitle", "lead", "text"):
@@ -513,6 +515,7 @@ def parse(raw, facts="", tables=None):
 # rules, then corrects the same draft twice (accuracy, then wording), and every result still passes parse() like any other
 # news. A rejected text goes back with its errors; after 2 failed corrections a fresh draft starts. Up to PAID_TRIES calls.
 PAID_TRIES = 20
+KISH_TRIES = 8  # content agent 1405-07-27: 684 gemma calls for 20 kish symbols; after 8 the symbol waits for the next model
 FREE_TRIES = 8  # free models (1405-07-25): the 5 steps for every model, fewer calls per news for their daily quota
 JSON_KEYS = ("فقط یک JSON با کلیدهای title, slug, subtitle, lead, text, table, key_points برگردان و هیچ متن دیگری ننویس. "
              "slug همان تیتر با خط تیره به‌جای فاصله است. table فقط شناسه‌ی یکی از جدول‌های پیشنهادی است (مثلاً \"T2\"). ")
@@ -783,7 +786,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     """the paid model's own path: draft -> accuracy -> wording -> parse(); up to tries model calls for one news.
     What a small model keeps getting wrong is repaired in small pieces: Latin product codes never reach it, a sentence with
     a number that is not in the facts is cut by the code, and a sentence with a banned phrase is rewritten alone."""
-    tries = PAID_TRIES if name in PAID else FREE_TRIES
+    tries = (KISH_TRIES if MARKET[0] == "kish" else PAID_TRIES) if name in PAID else FREE_TRIES
     calls, err = 0, None
     ban = re.compile(BANNED.pattern + r"|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد|را تجربه کرد|امروز", re.I)  # stricter for this model (content agent 2026-10-12/-22)
     day = day_of(facts)
@@ -1159,7 +1162,7 @@ def main():
     MARKET[0] = a.market
     kish = a.market == "kish" or energy  # energy runs the Kish path (one news per settled traded row), with its own facts
     if kish:
-        MIN_WORDS[0] = 120
+        MIN_WORDS[0] = 80 if a.market == "kish" else 120  # content agent 1405-07-27: a kish news needs ~100 words
         global RULES
         import facts_kish
         import facts_energy
