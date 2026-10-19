@@ -58,7 +58,7 @@ jobs:
           # 2026-10-12: this step used to commit data/ and news/ and then rebase; the release loop pushes the same files every few
           # minutes, so the rebase hit a conflict and the job failed (a written report would have been lost). Now only the new
           # report files are kept, the checkout is reset to the newest main, and release + push are retried up to 3 times.
-          mkdir -p /tmp/rep/kish
+          mkdir -p /tmp/rep/kish /tmp/rep/energy
           for f in $(git status --porcelain queue | grep 'report-' | awk '{print $2}'); do cp "$f" "/tmp/rep/${f#queue/}"; done
           git diff --no-color data/scenarios.jsonl | grep '^+{' | cut -c2- > /tmp/rep/scenarios.txt || true
           # content agent 1405-07-27: no report by 22:00 Tehran -> a line in news-test/report-missing.log (it then writes it by hand)
