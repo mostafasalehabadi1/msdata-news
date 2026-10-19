@@ -841,6 +841,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
     a number that is not in the facts is cut by the code, and a sentence with a banned phrase is rewritten alone."""
     tries = PAID_TRIES if name in PAID else FREE_TRIES
     calls, err = 0, None
+    gw = [0]  # gateway errors of this news
     ban = re.compile(BANNED.pattern + r"|دیروز|نشانگر|نشان داد|نشان می[‌ ]?دهد|را تجربه کرد|امروز", re.I)  # stricter for this model (content agent 2026-10-12/-22)
     day = day_of(facts)
     fa_digits = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
@@ -856,6 +857,9 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
             raise
         except ValueError as e:  # a gateway hiccup (404 no channel, 5xx, timeout) costs one call, not the whole news
             note(f"  staged {name}: call {calls} failed: {str(e)[:120]}")
+            gw[0] += 1
+            if gw[0] <= 10:  # content agent 1405-07-27: a gateway error is not one of the 20 writing tries (up to 10 per news)
+                calls -= 1
             time.sleep(20)
             return ""
         return raw if isinstance(raw, str) else ""
