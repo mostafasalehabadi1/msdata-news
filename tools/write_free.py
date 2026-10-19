@@ -181,6 +181,8 @@ def post(url, key, model, prompt, extra=None, system=None):
         body["thinking"] = {"type": "disabled"}  # GLM thinks by default: slow (timeouts) and it spends the answer budget on reasoning
     if "gapgpt.app" in url and "deepseek" in model:
         body["reasoning"] = {"enabled": False}  # 2026-10-12: with thinking it spent 1400-4900 tokens and 25-140s per news and still wrote short; off = 3s
+    if "gapgpt.app" in url and model.startswith("gemma"):
+        body["max_tokens"] = 4096  # content agent 1405-07-27 (owner delegated): back to 4096, no cap showed no gain
     if "cloudflare.com" in url:
         body["max_tokens"] = 2048  # Cloudflare cuts answers at a 256-token default; a cap elsewhere starves reasoning models
     auth = {"Authorization": f"Bearer {key}"} if key else {}  # OVH AI Endpoints works anonymously (2 req/min per model)

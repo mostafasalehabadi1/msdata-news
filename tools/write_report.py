@@ -253,15 +253,15 @@ def main():
             continue
         t0 = time.time()
         try:
-            if model == REPORT_MODEL or (model in w.PAID and "--model" in sys.argv and "--sections" in sys.argv):  # section by section (report_staged.py)
+            if model in w.PAID and "--model" in sys.argv and "--sections" in sys.argv:  # section by section (report_staged.py), only when asked
                 import report_staged
                 d = report_staged.write(call, fx, symmap, tables, "گزارش پایان روز بورس انرژی" if energy else "گزارش پایان روز تالار صادراتی بورس کالا" if kish else "گزارش پایان روز بازار فیزیکی بورس کالا",
                                         lambda x: check(x, symbols, urls, tables, known), known)
                 raw = None
-            elif model in w.PAID and "--model" in sys.argv:  # one full draft, then sentence-by-sentence repair (report_repair.py)
-                import report_repair
+            elif model == REPORT_MODEL or (model in w.PAID and "--model" in sys.argv):  # one full draft, then up to 3 repair calls (report_repair.py)
+                import report_repair  # content agent 1405-07-27 (owner delegated): the 3 section-by-section reports of 27 Mehr were not publishable
                 raw = w.retry(call, prompt)
-                d = report_repair.repair(call, json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), lambda x: check(x, symbols, urls, tables, known), known, fx, symmap)
+                d = report_repair.repair(call, json.loads(raw[raw.index("{"):raw.rindex("}") + 1]), lambda x: check(x, symbols, urls, tables, known), known, fx, symmap, tries=3)
                 raw = None
             else:
                 raw = w.retry(call, prompt)
