@@ -1011,7 +1011,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 new = ask(STAGE_SENT, "حقیقت‌ها:\n" + "\n".join(lines[:12]) + "\n\nمتن خبر:\n" + d0["text"] +
                           "\n\nیک جمله‌ی تازه از حقیقت‌ها بنویس که در متن نیامده؛ فقط عددهای حقیقت‌ها. فقط خود جمله را برگردان.").strip().strip("«»\"")
                 if new and "\n" not in new and len(new.split()) >= 6:
-                    d0["text"] = d0["text"].rstrip() + "\n\n" + new
+                    d0["text"] = d0["text"].rstrip() + (" " if paragraphs(d0["text"]) >= 4 else "\n\n") + new
                     raw = json.dumps(d0, ensure_ascii=False)
                     continue
             if short and int(short.group(1)) < 140:
