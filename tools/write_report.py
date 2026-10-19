@@ -29,7 +29,8 @@ ROOT = w.ROOT
 HEADLINE = ""
 FX = [""]  # the facts and tables given to the model (names with Latin letters in them are allowed)
 TEHRAN = timezone(timedelta(hours=3, minutes=30))
-REPORT_MODEL = "gemini:gemma-4-31b-it"
+# content agent / owner 1405-07-27: the paid gemma (the news writer) writes the reports, section by section (report_staged)
+REPORT_MODEL = "gapgpt:gemma-3-27b-it"
 FALLBACK_FROM = (19, 30)
 # the owner's blind rating (2026-09-30/10-01), best first; models not listed come after them
 RANK = [REPORT_MODEL, "llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025",
@@ -47,6 +48,10 @@ REPORT_RULES = (
     "- links: برای هر معامله‌ای که در متن نام بردی {\"title\": عبارت دقیقاً همان‌طور که در متن آمده، \"symbol\": نماد از فکت‌شیت}.\n"
     "- sources: برای هر خبر بیرونی که استفاده کردی {\"title\": نام رسانه همان‌طور که در متن آمده، \"url\": آدرس همان خبر از فهرست}.\n"
     "- slug: فارسی با خط تیره، بدون فاصله و علامت.\n"
+    # content agent 1405-07-27 (reply_gemma_prompt_1027): the symbol-news rules hold for the report too
+    "- مقدار فروخته‌شده و تقاضا دو عدد جدا هستند: فعل فروش (فروخت، فروخته شد، معامله شد) فقط با عدد معامله؛ عدد تقاضا فقط با «خریداران … خواستند» یا «سفارش دادند».\n"
+    "- ادعای آینده، رتبه، صفت عالی (گران‌ترین، بیشترین) یا مقایسه با فروشنده‌ی دیگر فقط اگر همان عدد در حقیقت‌ها آمده باشد. «یعنی» حداکثر یک بار در کل متن.\n"
+    "- نام کالا را ساده بنویس، نه کد و رده: «سیمان کیسه‌ای تیپ ۲»، «سیمان فله‌ی تیپ ۱»، نه «سیمان پرتلند نوع 2 رده 42/5-کیسه50».\n"
     "فقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, scenarios, links, sources و هیچ متن دیگری.")
 
 
@@ -201,7 +206,7 @@ def main():
     known = set(w.NUM.findall(fx + json.dumps(tables, ensure_ascii=False) + ctx_txt)) | set("۰۱۲۳۴۵۶۷۸۹0123456789")
     symbols, urls = {r["symbol"] for r in rows}, {x["url"] for x in ctx}
     w.RULES = REPORT_RULES
-    w.RULES_GEMMA = REPORT_RULES.replace(w.style_for("ب"), w.compact_for("ب"))
+    w.RULES_GEMMA = REPORT_RULES  # content agent 1405-07-27: the full writing guide 2 (mode «کامل», template ب), not the short one
     if "--model" in sys.argv and "deepseek" in sys.argv[sys.argv.index("--model") + 1]:
         w.DEEPSEEK_ON = True  # the paid deepseek writes only when it is named (owner 2026-10-12)
     provs = w.providers()
@@ -215,7 +220,7 @@ def main():
             continue
         t0 = time.time()
         try:
-            if model in w.PAID and "--model" in sys.argv and "--sections" in sys.argv:  # section by section (report_staged.py)
+            if model == REPORT_MODEL or (model in w.PAID and "--model" in sys.argv and "--sections" in sys.argv):  # section by section (report_staged.py)
                 import report_staged
                 d = report_staged.write(call, fx, symmap, tables, "گزارش پایان روز تالار صادراتی بورس کالا" if kish else "گزارش پایان روز بازار فیزیکی بورس کالا",
                                         lambda x: check(x, symbols, urls, tables, known), known)

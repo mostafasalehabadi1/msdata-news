@@ -49,16 +49,26 @@ jobs:
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           HL="${{ inputs.headline }}"
-          python -u tools/write_report.py ${{ (inputs.now || github.event_name == 'push') && '--now' || '' }} ${HL:+--headline "$HL"}
+          # 1405-07-27: every run since 10-18 hit the 110-minute job limit and was cancelled; each market gets 45 minutes
+          timeout 2700 python -u tools/write_report.py ${{ (inputs.now || github.event_name == 'push') && '--now' || '' }} ${HL:+--headline "$HL"}
           # Kish export-market report: same rules and time (owner 1405-07-15)
-          python -u tools/write_report.py --market kish ${{ (inputs.now || github.event_name == 'push') && '--now' || '' }} || true
+          timeout 2700 python -u tools/write_report.py --market kish ${{ (inputs.now || github.event_name == 'push') && '--now' || '' }} || true
           # 2026-10-12: this step used to commit data/ and news/ and then rebase; the release loop pushes the same files every few
           # minutes, so the rebase hit a conflict and the job failed (a written report would have been lost). Now only the new
           # report files are kept, the checkout is reset to the newest main, and release + push are retried up to 3 times.
           mkdir -p /tmp/rep/kish
           for f in $(git status --porcelain queue | grep 'report-' | awk '{print $2}'); do cp "$f" "/tmp/rep/${f#queue/}"; done
           git diff --no-color data/scenarios.jsonl | grep '^+{' | cut -c2- > /tmp/rep/scenarios.txt || true
-          [ -n "$(find /tmp/rep -name 'report-*.json')" ] || exit 0
+          # content agent 1405-07-27: no report by 22:00 Tehran -> a line in news-test/report-missing.log (it then writes it by hand)
+          if [ -z "$(find /tmp/rep -name 'report-*.json')" ]; then
+            d=$(python -c 'import json;print(json.load(open("data/latest.json"))["date"])')
+            if [ "$(TZ=Asia/Tehran date +%H%M)" -ge 2200 ] && [ ! -e "news/report-$d.json" -o ! -e "news/kish/report-$d.json" ]; then
+              git fetch -q origin main && git reset -q --hard origin/main
+              grep -q "^$d " news-test/report-missing.log 2>/dev/null || { echo "$d $(TZ=Asia/Tehran date '+%F %H:%M') no report from any model (physical: $([ -e news/report-$d.json ] && echo ok || echo missing), kish: $([ -e news/kish/report-$d.json ] && echo ok || echo missing))" >> news-test/report-missing.log
+                git add news-test/report-missing.log && git commit -qm "report missing: $d" && git push -q origin HEAD:main || true; }
+            fi
+            exit 0
+          fi
           for try in 1 2 3; do
             git rebase --abort 2>/dev/null || true
             git fetch -q origin main && git reset -q --hard origin/main && git clean -qfd queue news
