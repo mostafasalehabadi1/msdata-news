@@ -968,7 +968,39 @@ def claim_problem(d, facts):
             out.append(f"«{m}» در حقیقت‌ها نیست")
     if re.search(r"تقاضا(?:ی)? (?:برابر|معادل) (?:با )?عرضه", t) and re.search(r"تقاضا فقط [0-9۰-۹٫]+ درصد عرضه", f):
         out.append("تقاضا کمتر از عرضه بود، نه برابر")
+    # content agent 1405-07-27: demand written as the sold amount (AAK 4,330 t «فروخته شد», real 900 t)
+    sold = re.search(r"مقدار فروخته‌شده (\S+(?: هزار(?: و \S+)?)?) ", f) or re.search(r"تمام عرضه \((\S+(?: هزار(?: و \S+)?)?) ", f)
+    if sold:
+        ok = fa_value(sold.group(1))
+        for m in re.finditer(r"([0-9۰-۹][0-9۰-۹٫.,]*(?: (?:هزار|میلیون))?(?: و [0-9۰-۹][0-9۰-۹٫.,]*)?) تن(?:[^.،؛]{0,30}?)(?:فروخت|فروخته شد|فروش رفت|معامله شد)", t):
+            v = fa_value(m.group(1))
+            if v is not None and ok is not None and abs(v - ok) > 1e-6:
+                out.append(f"«{m.group(1)} تن» با فعل فروش آمده ولی فروش {sold.group(1)} تن است")
+    if re.search(r"خواهد (?:شد|گذاشت|داشت|بود|کرد|رسید)|تاثیر خواهد|تأثیر خواهد", t):
+        out.append("پیش‌بینی آینده در حقیقت‌ها نیست")
+    for m in re.finditer(r"([0-9۰-۹]+) (?:تولیدکننده|عرضه‌کننده|فروشنده|شرکت)(?:‌ی)? دیگر", t):
+        if not re.search(rf"(?<![0-9۰-۹]){m.group(1)}(?![0-9۰-۹]) (?:تولیدکننده|عرضه‌کننده|فروشنده|شرکت)", f):
+            out.append(f"«{m.group(0)}» در حقیقت‌ها نیست")
+    streak = re.search(r"([0-9۰-۹]+) معامله‌ی پیاپی", f)
+    for m in re.finditer(r"([0-9۰-۹]+|یک|دو|سه|چهار|پنج|شش) (?:معامله|هفته|جلسه)(?:‌ی)? (?:پیاپی|متوالی)", t):
+        if not streak or fa_value(m.group(1)) != fa_value(streak.group(1)):
+            out.append(f"«{m.group(0)}» با شمار حقیقت‌ها نمی‌خواند")
     return " | ".join(out)
+
+
+WORDNUM = {"یک": 1, "دو": 2, "سه": 3, "چهار": 4, "پنج": 5, "شش": 6}
+
+
+def fa_value(x):
+    """«۴ هزار و ۳۳۰» -> 4330.0; «۳۹٫۶» -> 39.6; None when it is not a number."""
+    x = (x or "").strip().translate(str.maketrans("۰۱۲۳۴۵۶۷۸۹٫", "0123456789.")).replace(",", "")
+    if x in WORDNUM:
+        return float(WORDNUM[x])
+    m = re.fullmatch(r"([0-9.]+)(?: (هزار|میلیون))?(?: و ([0-9.]+))?", x)
+    if not m:
+        return None
+    v = float(m.group(1)) * {"هزار": 1e3, "میلیون": 1e6, None: 1}[m.group(2)]
+    return v + (float(m.group(3)) if m.group(3) else 0)
 
 
 def after_fix(x, facts):
@@ -1005,6 +1037,13 @@ def after_fix(x, facts):
     # content agent 1405-07-26 (~30 of 121): «این معامله یعنی تقاضای مناسب…» - a «یعنی» sentence with no number is filler and goes
     x = "\n\n".join(" ".join(t for t in re.split(r"(?<=[.!؟])\s+", para) if not (re.match(r"(?:این(?: \S+){0,2} )?یعنی", t) and not NUM.search(t)))
                     for para in x.split("\n\n")).strip()
+    # content agent 1405-07-27: «یعنی» at most once (writing guide 2, part 1) - a later sentence-initial «یعنی» is dropped from the sentence
+    seen = [0]
+
+    def once(m):
+        seen[0] += 1
+        return m.group(0) if seen[0] == 1 else m.group(1)
+    x = re.sub(r"(^|(?<=[.!؟] )|(?<=\n))(?:این(?: \S+){0,2} )?یعنی ", once, x)
     return x
 
 

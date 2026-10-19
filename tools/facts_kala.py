@@ -33,6 +33,17 @@ def days_between(d1, d2):
 
 GRADE = re.compile(r"(?<![0-9/٫.,-])[0-9]{4,}(?![0-9/٫.,%])")  # a bare number of 4+ digits inside a product name is a grade code
 
+def simple_name(g):
+    """content agent 1405-07-27 (title rule 25): «سیمان پرتلند نوع 2 رده 42/5-کیسه50» -> «سیمان کیسه‌ای تیپ ۲»."""
+    if "سیمان" not in g:
+        return g
+    pack = "کیسه‌ای" if "کیسه" in g else "فله‌ی" if "فله" in g else "جامبوبگ" if "جامبو" in g else ""
+    t = re.search(r"(?:نوع|تیپ)\s*([0-9۰-۹])", g)
+    kind = "پرتلند" if "پرتلند" in g and not t else ""
+    out = " ".join(x for x in ("سیمان", pack, kind, f"تیپ {t.group(1)}" if t else "") if x)
+    return out.translate(FA) if out != "سیمان" else g
+
+
 def build(row, history, peers, date_fa, date, ytd_value=None):
     YEAR[0] = date_fa[:4]
     unit = (history[-1].get("unit") if history else None) or "تن"
@@ -41,7 +52,8 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     off, dem, trd = row.get("offered_qty") or 0, row.get("demand_qty") or 0, row.get("traded_qty") or 0
     wd = WEEKDAYS[dt.date.fromisoformat(date).weekday()]
     codes = GRADE.findall(goods)  # content agent 1405-07-22: «52518» was spelled as «۵۲ هزار و ۵۱۸»
-    F = [f"نام کالا: {goods}؛ تولیدکننده: شرکت {prod}؛ {hall}." + (f" کد گرید: {'، '.join(codes)} (کد است، مقدار نیست؛ اگر آن را می‌نویسی عیناً همین رقم‌ها باشد، نه به حروف)." if codes else ""),
+    easy = simple_name(goods)
+    F = ([f"نام ساده‌ی کالا برای تیتر، لید و متن: {easy} (نام کامل «{goods}» را ننویس)."] if easy != goods else []) + [f"نام کالا: {goods}؛ تولیدکننده: شرکت {prod}؛ {hall}." + (f" کد گرید: {'، '.join(codes)} (کد است، مقدار نیست؛ اگر آن را می‌نویسی عیناً همین رقم‌ها باشد، نه به حروف)." if codes else ""),
          f"روز معامله: {wd} {fa_date(date_fa)} {date_fa[:4].translate(FA)}."]
     # today
     if off:
@@ -58,10 +70,12 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     elif not off:
         F.append(f"{fa_num(trd)} {unit} {goods} فروش رفت.")
     elif trd >= off - 1e-9:
-        F.append("تمام عرضه به فروش رفت.")
+        F.append(f"تمام عرضه ({fa_num(trd)} {unit}) به فروش رفت.")
     else:
         F.append(f"فقط {fa_num(trd)} {unit} از {fa_num(off)} {unit} عرضه فروش رفت ({fa_num(trd / off * 100, 0)} درصد) و "
                  f"{fa_num(off - trd)} {unit} بی‌خریدار ماند.")
+    if trd > 0 and dem and abs(dem - trd) > 1e-9:  # content agent 1405-07-27: 4,330 t of demand was written as «فروخته شد»
+        F.append(f"مقدار فروخته‌شده {fa_num(trd)} {unit} است، نه {fa_num(dem)} {unit}: عدد تقاضا را فقط با «سفارش دادند» یا «خواستند» بیاور، هرگز با «فروخت/فروخته شد/معامله شد».")
     if trd > 0 and not price:  # content agent 1405-07-15: an empty/zero weighted_price is missing data, never «صفر ریال»
         F.append(f"قیمت پایه‌ی عرضه {fa_int(base)} ریال هر کیلوگرم بود (قیمت معامله در داده نیامده؛ از قیمت معامله حرف نزن)." if base else
                  "قیمت معامله در داده نیامده؛ از قیمت معامله حرف نزن.")
@@ -114,6 +128,7 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
                 F.append(f"قیمت امروز {signed(c)} {'بالاتر' if c > 0 else 'پایین‌تر'} از میانگین {fa_int(len(k))} معامله‌ی اخیر ({fa_int(avg)} ریال) بود.")
         seq = prices + ([price] if trd else [])
         n, d0 = 0, None
+        dates = [h["trade_date"] for h in past] + ([date_fa] if trd else [])
         for a, b in zip(reversed(seq[:-1]), reversed(seq[1:])):
             d = (b > a) - (b < a)
             if d0 is None:
@@ -121,8 +136,8 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
             if d != d0 or d == 0:
                 break
             n += 1
-        if n >= 2:
-            F.append(f"قیمت این کالا {fa_int(n)} معامله‌ی پیاپی {'گران‌تر' if d0 > 0 else 'ارزان‌تر'} شده است.")
+        if n >= 2:  # content agent 1405-07-27: the model counted «۴ پیاپی» for 3 - the count and its start come from here only
+            F.append(f"قیمت این کالا {fa_int(n)} معامله‌ی پیاپی (از {fa_date(dates[-n - 1])}) {'گران‌تر' if d0 > 0 else 'ارزان‌تر'} شده است؛ عدد پیاپی را فقط همین بنویس.")
         flat = 0
         for a, b in zip(reversed(seq[:-1]), reversed(seq[1:])):
             if a != b:
@@ -130,11 +145,7 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
             flat += 1
         if flat >= 2:
             F.append(f"قیمت این کالا {fa_int(flat + 1)} معامله‌ی پیاپی ثابت مانده است.")
-        yr = [h for h in past if h["trade_date"][:4] == date_fa[:4]]
-        if len(yr) >= 2:
-            F.append(f"این کالا امسال (از فروردین {date_fa[:4].translate(FA)}) {fa_int(len(yr) + (1 if trd else 0))} بار معامله شده است.")
-    if ytd_value:
-        F.append(f"ارزش کل معاملات این کالا از ابتدای امسال {toman_billion(ytd_value)} است.")
+        # content agent 1405-07-27: «امسال ۳۰ بار، ۱۴۱ میلیارد» crowded out the day's news - year totals stay in the tables
     # same goods, other producers today
     same = [p for p in peers if (p.get("traded_qty") or 0) > 0 and p.get("weighted_price")]
     others = [p for p in same if p is not row and p.get("producer_name") != prod]
