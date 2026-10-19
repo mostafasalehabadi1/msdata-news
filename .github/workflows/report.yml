@@ -78,6 +78,7 @@ jobs:
             n=0
             for f in /tmp/rep/report-*.json; do b=$(basename "$f"); [ -e "$f" ] && [ ! -e "queue/$b" ] && [ ! -e "news/$b" ] && cp "$f" queue/ && n=$((n+1)); done
             for f in /tmp/rep/kish/report-*.json; do b=$(basename "$f"); [ -e "$f" ] && [ ! -e "queue/kish/$b" ] && [ ! -e "news/kish/$b" ] && mkdir -p queue/kish && cp "$f" queue/kish/ && n=$((n+1)); done
+            for f in /tmp/rep/energy/report-*.json; do b=$(basename "$f"); [ -e "$f" ] && [ ! -e "queue/energy/$b" ] && [ ! -e "news/energy/$b" ] && mkdir -p queue/energy && cp "$f" queue/energy/ && n=$((n+1)); done
             [ "$n" -gt 0 ] || { echo "the report is already there (content agent); nothing to publish"; exit 0; }
             cat /tmp/rep/scenarios.txt >> data/scenarios.jsonl
             git add queue data/scenarios.jsonl
