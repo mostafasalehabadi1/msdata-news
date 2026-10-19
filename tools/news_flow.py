@@ -84,7 +84,44 @@ def build(day):
     row["minutes"] = mins  # owner 1405-07-22: the exact minute, [[minute of the day in Tehran, count], ...]
     gap = lambda a, b: [(b[x] - a[x]).total_seconds() / 60 for x in b if x in a and b[x] >= a[x]]  # noqa: E731
     row["lag_min"] = {"write": median(gap(kala, wrote)), "publish": median(gap(wrote, pub)), "total": median(gap(kala, pub))}
-    return row if any(sum(row[k]) for k in ("kala", "written", "published")) else None
+    types = {"kala": typed(kala, wrote, pub, day)}  # designer stats-types-1028 (owner 1405-07-28): every news type
+    for m in ("kish", "energy"):  # one news per traded row, queue -> news like kala
+        arr = history(f"data/{m}/today.json", day, lambda j: {i["symbol"] for i in j.get("items") or [] if j.get("date") == day})
+        wr = history(f"queue/{m}/{day}.json", day, lambda j: {i["symbol"] for i in j["items"]})
+        types[m] = typed(arr, wr, published(f"news/{m}/{day}.json"), day)
+    for m in ("fx", "macro", "us"):  # written and published at once: arrival = the commit that wrote the file
+        first = {}
+        for f in sorted(os.listdir(os.path.join(ROOT, "news", m))) if os.path.isdir(os.path.join(ROOT, "news", m)) else []:
+            if f.startswith(day) and f.endswith(".json"):
+                t = git("log", "--diff-filter=A", "--format=%ct", "-1", "--", f"news/{m}/{f}").strip()
+                if t:
+                    first[f] = dt.datetime.fromtimestamp(int(t), TEHRAN)
+        types[m] = typed(first, first, first, day)
+    row["types"] = {k: v for k, v in types.items() if v}
+    return row if any(sum(row[k]) for k in ("kala", "written", "published")) or row["types"] else None
+
+
+def published(path):
+    try:
+        cur = json.load(open(os.path.join(ROOT, path), encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for it in cur.get("items") or []:
+        try:
+            out[it["symbol"]] = dt.datetime.fromisoformat(it["published_at"].replace("Z", "+00:00")).astimezone(TEHRAN)
+        except (KeyError, ValueError):
+            continue
+    return out
+
+
+def typed(arr, wr, pub, day):
+    """{"arrived","written","published": [[minute, count], ...], "lag_min": {...}} or None when the type had nothing that day"""
+    if not (arr or wr or pub):
+        return None
+    gap = lambda a, b: [(b[x] - a[x]).total_seconds() / 60 for x in b if x in a and b[x] >= a[x]]  # noqa: E731
+    return {"arrived": series(arr.values(), day)[1], "written": series(wr.values(), day)[1], "published": series(pub.values(), day)[1],
+            "lag_min": {"write": median(gap(arr, wr)), "publish": median(gap(wr, pub)), "total": median(gap(arr, pub))}}
 
 
 def main():
@@ -105,7 +142,7 @@ def main():
         print("news flow: no change")  # no new file, so the hourly release does not commit for a timestamp alone
         return
     doc["updated"] = now.isoformat(timespec="minutes")
-    doc["note"] = "kala market only; counts per Tehran hour, not cumulative; kala = traded commodities that reached the writer in that hour"
+    doc["note"] = "top level: kala market only (types: every news type); counts per Tehran hour, not cumulative; kala = traded commodities that reached the writer in that hour"
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(doc, open(OUT, "w", encoding="utf-8", newline="\n"), ensure_ascii=False, separators=(",", ":"))
     print(f"news flow: {len(doc['days'])} days")
