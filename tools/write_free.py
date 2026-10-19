@@ -41,7 +41,7 @@ OR_PREFER = ("nemotron-3-ultra", "gemma-4-31b", "nemotron-3-ultra", "deepseek", 
 
 # content agent 1405-07-27 (owner 1405-07-19): the 40 headline principles go with every writer, beside style.md
 HEADLINES = "\n\n" + open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "headline_rules_40.md"), encoding="utf-8").read()
-STYLE_FULL = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read() + HEADLINES
+STYLE_FULL = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read()
 
 
 def style_for(*templates):
@@ -61,7 +61,7 @@ def style_for(*templates):
 
 STYLE = style_for("الف")
 # Gemma's free tier caps input tokens per minute; it gets the same rules in short form (style_compact.md) + the templates
-STYLE_COMPACT = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_compact.md"), encoding="utf-8").read() + HEADLINES
+STYLE_COMPACT = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_compact.md"), encoding="utf-8").read()
 
 
 def compact_for(*templates):
@@ -70,7 +70,7 @@ def compact_for(*templates):
 
 
 RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (short style)
-STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read() + HEADLINES
+STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read()
 # symbol news (owner 2026-10-05): the old template without clichés; every fact and table is built in code (facts_kala.py)
 STABLE_MIN = 20  # Kish: the hall is «closed» once no row changed for 20 minutes (a session lasts ~12 min, e.g. 11:30-11:42) (owner 1405-07-15: write only after all trades)
 # «در یک نگاه» box of the news page (designer + content agent, owner 1405-07-21): optional, never a reason to reject a news
@@ -557,7 +557,7 @@ STAGE3 = ("تو ویراستار نثر هستی. یک خبر را می‌گیر
 # step 4 - the title alone, with a verb chosen from the data
 STAGE_TITLE = ("تو تیترنویس هستی. فقط یک تیتر فارسی بنویس، حدود ۱۰ کلمه: نام کالا و تولیدکننده، فقط یک عدد از حقیقت‌ها، "
                "و در آخر یک فعل که با حقیقت‌ها بخواند (مثل «فروخته شد»، «به … رسید»، «گران‌تر شد»، «ارزان‌تر شد»، «ثابت ماند»، "
-               "«بی‌خریدار ماند»، «… برابر عرضه شد»). فقط خود تیتر را برگردان؛ بدون گیومه و بدون توضیح." + HEADLINES)
+               "«بی‌خریدار ماند»، «… برابر عرضه شد»). فقط خود تیتر را برگردان؛ بدون گیومه و بدون توضیح.")
 STAGE_FIX = ("تو ویراستار هستی. یک خبر و فهرست ایرادهایش را می‌گیری. فقط همان ایرادها را رفع کن و بقیه‌ی متن را نگه دار. "
              "عددها فقط از حقیقت‌ها. text باید ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها باشد. " + JSON_KEYS)
 
@@ -621,6 +621,62 @@ def title_problem(t, facts):
             probs.append(f"نام کالا در تیتر باید «{' '.join(w)}» باشد")
     return " | ".join(probs)
 
+
+
+TODAY_TITLES = []  # titles of this market and day so far (stage 6: no repeated title or final verb)
+STAGE6 = ("تو تیترنویس ام‌اس‌دیتا هستی. برای خبری که متن نهایی‌اش را می‌بینی تیتر و سوتیتر تازه بنویس و فقط یک JSON "
+          'به شکل {"title": "...", "subtitle": "..."} برگردان. تیتر ۸ تا ۱۳ کلمه، با فعل، بدون حرف لاتین، و هر عددش در متن باشد.' + HEADLINES)
+
+
+def headline6(d, facts, ask, note=print, kind="news"):
+    """content agent / owner 1405-07-27: stage 6, the title alone with the 40 headline rules, up to 3 calls.
+    A rejected title keeps the stage-5 title; this stage never stops a news from being published."""
+    q = sum(t.rstrip().endswith("؟") for t in TODAY_TITLES)
+    ends = {t.split()[-1] for t in TODAY_TITLES if t.split()}
+    want_q = len(TODAY_TITLES) >= 4 and q * 5 < len(TODAY_TITLES) + 1
+    why, n = "", 0
+    for n in range(1, 4):
+        raw = ask(STAGE6, "حقیقت‌ها:\n" + facts[:2500] + "\n\nمتن نهایی:\n" + d.get("lead", "") + "\n\n" + d["text"]
+                  + "\n\nتیترهای امروز همین بازار:\n" + ("\n".join(TODAY_TITLES[-15:]) or "هنوز نیست")
+                  + f"\n\nتیترهای پرسشی امروز: {q} از {len(TODAY_TITLES)}" + ("؛ این تیتر پرسشی باشد و جوابش در لید آمده باشد." if want_q else "")
+                  + (f"\n\nتیتر قبلی رد شد: {why}" if why else ""))
+        m = re.search(r"\{.*\}", raw or "", re.S)
+        try:
+            j = loads_lenient(m.group(0)) if m else None
+        except ValueError:
+            j = None
+        t = clean_title(j["title"]) if isinstance(j, dict) and isinstance(j.get("title"), str) else ""
+        probs = []
+        if not t:
+            probs.append("JSON درست نبود")
+        else:
+            if re.search(r"[A-Za-z]", t):
+                probs.append("حرف لاتین")
+            if not 8 <= len(t.split()) <= 13:
+                probs.append(f"{len(t.split())} کلمه؛ ۸ تا ۱۳")
+            last = t.rstrip("؟").split()[-1] if t.split() else ""
+            if not t.endswith("؟") and not TITLE_VERB.search(last):
+                probs.append("فعل ندارد")
+            fa = lambda x: x.translate(str.maketrans("0123456789.", "۰۱۲۳۴۵۶۷۸۹٫"))  # noqa: E731
+            body = {fa(x) for x in NUM.findall(d.get("lead", "") + " " + d["text"])}
+            out = [x for x in NUM.findall(DATE_WORDS.sub("", t)) if fa(x) not in body]
+            if out:
+                probs.append("عدد بیرون از متن: " + "، ".join(out))
+            if last in ends:
+                probs.append(f"فعل «{last}» امروز تکرار شده")
+            if t in TODAY_TITLES:
+                probs.append("تیتر تکراری")
+            if kind == "news" and facts:
+                probs += [x for x in (sale_problem({"title": t, "lead": d.get("lead", ""), "text": d["text"]}, facts),) if x]
+        if not probs:
+            d["title"] = t
+            if isinstance(j.get("subtitle"), str) and j["subtitle"].strip() and not re.search(r"[A-Za-z]", j["subtitle"]):
+                d["subtitle"] = j["subtitle"].strip()
+            note(f"  stage6 {kind}: title in {n} calls")
+            return d
+        why = " | ".join(probs)
+    note(f"  stage6 {kind}: kept stage-5 title after {n} calls ({why[:80]})")
+    return d
 
 def number_problem(text):
     """content agent 1405-07-22: at most 2 numbers in a sentence and 15 in the text (dates are not counted)"""
@@ -927,6 +983,13 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                     else:
                         d.pop("key_points")
                 note(f"  staged {name}: accepted after {calls} calls")
+                try:
+                    old_title = d["title"]
+                    d = headline6(d, facts, ask, note)
+                    if d["title"] != old_title:
+                        d["slug"] = SLUG_BAD.sub("-", re.sub(r"[،,.A-Za-z]", " ", d["title"]).strip())
+                except QuotaError:
+                    pass
                 return d
             except ValueError as e:
                 err = str(e)
@@ -1247,6 +1310,7 @@ def main():
             doc["items"].remove(i)
     done = {i["symbol"] for i in doc["items"]}
     subs = {i["subtitle"] for i in doc["items"]}
+    TODAY_TITLES[:] = [i["title"] for i in doc["items"] if i.get("title")]
     todo = [r for r in rows if r.get("symbol") not in done and not ((r.get("traded_qty") or 0) > 0 and not r.get("weighted_price"))]
     provs = providers()
     if not provs:
@@ -1319,6 +1383,7 @@ def main():
                 with lock:
                     if d["subtitle"] in subs:
                         raise ValueError("repeated subtitle")
+                    TODAY_TITLES.append(d["title"])
                     if energy:
                         doc["items"].append({"symbol": sym, "trade_date": date_fa, "market": "energy",
                                              "commodity": facts_energy.clean(r.get("goods_name")), "producer": facts_energy.clean(r.get("producer")),

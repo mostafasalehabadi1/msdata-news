@@ -28,7 +28,6 @@ HEAD = ("تو سردبیر بورس کالای ام‌اس‌دیتا هستی. 
         "- title: ۸ تا ۱۲ کلمه، یک جمله‌ی خبری درباره‌ی مهم‌ترین اتفاق روز، با حداکثر یک عدد.\n"
         "- subtitle: یک جمله‌ی کوتاه با نکته‌ای غیر از تیتر.\n"
         "- lead: یک جمله‌ی ۲۵ تا ۳۵ کلمه‌ای با حداکثر یک عدد که کل گزارش را می‌گوید.\n"
-        + w.HEADLINES.replace("{", "{{").replace("}", "}}") + "\n"
         "عددها فقط از حقیقت‌ها. «امروز» ننویس؛ روز و تاریخ را بنویس. واژه‌های بیشترین، کمترین، بزرگ‌ترین و نشان‌دهنده ممنوع است.")
 SENT = w.STAGE_SENT
 CAP = 30  # numbers in the whole report text (owner 1405-07-21; check() uses the same limit)
@@ -174,6 +173,10 @@ def write(call, fx, symmap, tables, market, check, known, note=print, tries=90):
     # last guard: «امروز» that came in through a fact copied word for word (the fallback headline) is said as the day itself
     head3 = {x: re.sub(r"(?<![؀-ۿ])امروز", "این روز", v) for x, v in head3.items()}
     text = re.sub(r"(?<![؀-ۿ])امروز", "این روز", text)
+    if calls[0] < tries + 8:  # stage 6 (owner 1405-07-27): the title alone with the 40 headline rules; a rejected one keeps this title
+        w.TODAY_TITLES[:] = []
+        h6 = w.headline6({**head3, "text": text}, "\n".join(facts), ask, note, "report")
+        head3 = {x: h6[x] for x in ("title", "subtitle", "lead")}
     out = {**head3, "slug": head3["title"], "text": text, "table": list(tables)[:2], "scenarios": [], "links": links, "sources": []}
     note(f"  staged report: {calls[0]} calls, {len(text.split())} words, {state['nums']} numbers, {len(links)} links")
     return check(json.loads(json.dumps(out, ensure_ascii=False)))
