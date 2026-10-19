@@ -93,7 +93,7 @@ RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و �
 
 
 # content agent 1405-07-15 (252 news of 1405-07-14): the one main flaw of each model, appended to its prompt
-MODEL_HINTS = [(r"gapgpt:gemma", "۱) همه‌ی رقم‌ها و اعشارها فارسی و با «٫» (۷٫۲ نه 7.2)؛ در تیتر، متن و key_points. ۲) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه؛ روز و تاریخ را بنویس (مثل دوشنبه ۲۰ مهر). ۳) هر عدد را فقط یک بار و دقیقاً از حقیقت‌ها بنویس؛ عدد صفر یا عددی که در حقیقت‌ها نیست ننویس و ارزش معامله را خودت حساب نکن. ۴) text دست‌کم ۱۴۰ کلمه در ۲ یا ۳ پاراگراف باشد و پاراگراف‌ها با یک خط خالی جدا شوند؛ بیش از ۱۵ عدد نداشته باشد. ۵) هیچ حرف لاتین یا کد کالا (مثل نام گرید) در تیتر و متن نیاور؛ نام فارسی کالا کافی است. ۶) در تیتر «؛» نگذار و «نماد» ننویس. ۷) تیتر جمله‌ی کامل با فعل است، ۸ تا ۱۳ کلمه. ۸) نسبت تقاضا به عرضه را فقط به شکل «X برابر عرضه» بنویس؛ «X درصد بیشتر از عرضه» ننویس."),
+MODEL_HINTS = [(r"gapgpt:gemma", "۱) همه‌ی رقم‌ها و اعشارها فارسی و با «٫» (۷٫۲ نه 7.2)؛ در تیتر، متن و key_points. ۲) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه؛ روز و تاریخ را بنویس (مثل دوشنبه ۲۰ مهر). ۳) هر عدد را فقط یک بار و دقیقاً از حقیقت‌ها بنویس؛ عدد صفر یا عددی که در حقیقت‌ها نیست ننویس و ارزش معامله را خودت حساب نکن. ۴) text دست‌کم ۱۴۰ کلمه در ۲ یا ۳ پاراگراف باشد و پاراگراف‌ها با یک خط خالی جدا شوند؛ بیش از ۱۵ عدد نداشته باشد. ۵) هیچ حرف لاتین یا کد کالا (مثل نام گرید) در تیتر و متن نیاور؛ نام فارسی کالا کافی است. ۶) در تیتر «؛» نگذار و «نماد» ننویس. ۷) تیتر جمله‌ی کامل با فعل است، ۸ تا ۱۳ کلمه. ۸) نسبت تقاضا به عرضه را فقط به شکل «X برابر عرضه» بنویس؛ «X درصد بیشتر از عرضه» ننویس. ۹) صفت عالی (بالاترین، پایین‌ترین، بیشترین، کمترین، گران‌ترین، ارزان‌ترین) ممنوع است، مگر همان واژه در حقیقت‌ها آمده باشد."),
                (r"nemotron-3-super", "کلمه‌ی انگلیسی ننویس. «عرض» ننویس؛ «عرضه» بنویس."),
                (r"dots", "هیچ کلمه‌ی انگلیسی مثل Display یا faced در متن نیاور."),
                (r"command-a.*reason", "«امروز» ننویس؛ روز هفته و تاریخ را بنویس. «در حالی که» و «با این حال» ننویس."),
@@ -869,12 +869,17 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
         changed = False
         bad_nums = re.search(r"عدد بیرون از حقیقت‌ها: ([^|]*)", problem)
         nums = [n.strip() for n in bad_nums.group(1).split("،")] if bad_nums else []
+        # content agent 1405-07-27: a superlative or a wrong hall is one sentence's fault, not the draft's (480 + 330 calls lost)
+        terms = re.findall(r"«([^»]+)» در حقیقت‌ها نیست", problem) + ["تالار " + h for h in re.findall(r"تالار اشتباه: «([^»]+)»", problem)]
         paras = []
         for para in d["text"].split("\n\n"):
             keep = []
             for s in re.split(r"(?<=[.!؟])\s+", para.strip()):
                 if any(n and n in NUM.findall(s) for n in nums):
                     changed = True  # a sentence with an invented number is cut, never «corrected»
+                    continue
+                if any(x in s.replace("‌", " ") or x in s for x in terms):
+                    changed = True
                     continue
                 hit = ban.search(s)
                 if hit and calls < tries:
@@ -886,7 +891,7 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 paras.append(" ".join(keep))
         d["text"] = "\n\n".join(paras)
         for k in ("title", "subtitle", "lead"):
-            hit = ban.search(d.get(k) or "")
+            hit = ban.search(d.get(k) or "") or next((re.search(re.escape(x), d.get(k) or "") for x in terms if x in (d.get(k) or "")), None)
             if hit and calls < tries:
                 new = ask(STAGE_SENT, f"جمله: {d[k]}\n\nایراد: عبارت «{hit.group(0)}» ممنوع است؛ جمله را بدون آن بنویس. اگر تاریخ لازم شد: {day}").strip().strip("«»\"")
                 if new and not ban.search(new) and set(NUM.findall(new)) <= set(NUM.findall(d[k]) + NUM.findall(day)) and "\n" not in new:
@@ -957,7 +962,8 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 if extra:
                     raise ValueError("markers: " + " | ".join(extra))
                 d["title"] = clean_title(d["title"])
-                off = " | ".join(x for x in (off_topic(d, facts), sale_problem(d, facts), claim_problem(d, facts)) if x)
+                off = " | ".join(x for x in (off_topic(d, facts).replace("تیتر فعل ندارد؛ تیتر را با یک فعل تمام کن", "").strip(" |"),
+                                             sale_problem(d, facts), claim_problem(d, facts)) if x)
                 if off:
                     raise ValueError(off)
                 soft = " | ".join(x for x in (title_problem(d["title"], facts), number_problem(d["text"]),
@@ -1000,6 +1006,14 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
                 raw = fixed
                 continue
             short = re.match(r"(\d+) words", err)
+            d0 = as_dict(raw)
+            if short and int(short.group(1)) < MIN_WORDS[0] and d0 and calls < tries:  # content agent 1405-07-27: 900 calls on short texts
+                new = ask(STAGE_SENT, "حقیقت‌ها:\n" + "\n".join(lines[:12]) + "\n\nمتن خبر:\n" + d0["text"] +
+                          "\n\nیک جمله‌ی تازه از حقیقت‌ها بنویس که در متن نیامده؛ فقط عددهای حقیقت‌ها. فقط خود جمله را برگردان.").strip().strip("«»\"")
+                if new and "\n" not in new and len(new.split()) >= 6:
+                    d0["text"] = d0["text"].rstrip() + "\n\n" + new
+                    raw = json.dumps(d0, ensure_ascii=False)
+                    continue
             if short and int(short.group(1)) < 140:
                 err += f" (متن {short.group(1)} کلمه است؛ دست‌کم {150 - int(short.group(1))} کلمه‌ی دیگر از حقیقت‌ها اضافه کن و ۳ پاراگراف با \\n\\n بساز)"
             elif short and int(short.group(1)) > 220:
