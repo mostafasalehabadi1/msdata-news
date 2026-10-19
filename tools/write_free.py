@@ -39,7 +39,9 @@ MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
 GROQ_PREFER = ("kimi-k2", "gpt-oss-120b", "llama-4-maverick", "qwen3", "llama-3.3-70b", "llama-4-scout", "gpt-oss-20b")
 OR_PREFER = ("nemotron-3-ultra", "gemma-4-31b", "nemotron-3-ultra", "deepseek", "qwen", "gemma", "llama")  # better Persian first
 
-STYLE_FULL = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read()
+# content agent 1405-07-27 (owner 1405-07-19): the 40 headline principles go with every writer, beside style.md
+HEADLINES = "\n\n" + open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "headline_rules_40.md"), encoding="utf-8").read()
+STYLE_FULL = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.md"), encoding="utf-8").read() + HEADLINES
 
 
 def style_for(*templates):
@@ -59,7 +61,7 @@ def style_for(*templates):
 
 STYLE = style_for("الف")
 # Gemma's free tier caps input tokens per minute; it gets the same rules in short form (style_compact.md) + the templates
-STYLE_COMPACT = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_compact.md"), encoding="utf-8").read()
+STYLE_COMPACT = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_compact.md"), encoding="utf-8").read() + HEADLINES
 
 
 def compact_for(*templates):
@@ -68,7 +70,7 @@ def compact_for(*templates):
 
 
 RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (short style)
-STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read()
+STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read() + HEADLINES
 # symbol news (owner 2026-10-05): the old template without clichés; every fact and table is built in code (facts_kala.py)
 STABLE_MIN = 20  # Kish: the hall is «closed» once no row changed for 20 minutes (a session lasts ~12 min, e.g. 11:30-11:42) (owner 1405-07-15: write only after all trades)
 # «در یک نگاه» box of the news page (designer + content agent, owner 1405-07-21): optional, never a reason to reject a news
@@ -555,7 +557,7 @@ STAGE3 = ("تو ویراستار نثر هستی. یک خبر را می‌گیر
 # step 4 - the title alone, with a verb chosen from the data
 STAGE_TITLE = ("تو تیترنویس هستی. فقط یک تیتر فارسی بنویس، حدود ۱۰ کلمه: نام کالا و تولیدکننده، فقط یک عدد از حقیقت‌ها، "
                "و در آخر یک فعل که با حقیقت‌ها بخواند (مثل «فروخته شد»، «به … رسید»، «گران‌تر شد»، «ارزان‌تر شد»، «ثابت ماند»، "
-               "«بی‌خریدار ماند»، «… برابر عرضه شد»). فقط خود تیتر را برگردان؛ بدون گیومه و بدون توضیح.")
+               "«بی‌خریدار ماند»، «… برابر عرضه شد»). فقط خود تیتر را برگردان؛ بدون گیومه و بدون توضیح." + HEADLINES)
 STAGE_FIX = ("تو ویراستار هستی. یک خبر و فهرست ایرادهایش را می‌گیری. فقط همان ایرادها را رفع کن و بقیه‌ی متن را نگه دار. "
              "عددها فقط از حقیقت‌ها. text باید ۱۵۰ تا ۱۹۰ کلمه در ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها باشد. " + JSON_KEYS)
 
