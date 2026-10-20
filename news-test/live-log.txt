@@ -1,15 +1,3 @@
-  UCC-CEMENTPOLI-50L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 20s ValueError: staged: 8 calls, last: 96 words / 3 paragraphs
-style-soft: lead>35w/1num, text 9 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 10 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «یافت» امروز تکرار شده)
-OK KHCO-PCT2G42.5-B-00 <- gapgpt:gemma-3-27b-it (63s)
-  staged llm7:mistral-Nemo-Instruct-2407: draft dropped after 8 calls: 111 words / 3 paragraphs
-  AAC-CPCBNG42.5-B-00 llm7:mistral-Nemo-Instruct-2407: 97s ValueError: staged: 8 calls, last: 111 words / 3 paragraphs
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 94 words / 3 paragraphs
-  KSFN-MBNEN03E-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 39s ValueError: staged: 8 calls, last: 94 words / 3 paragraphs
   staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"ea7928c9-1eea-404c-a878-dc59a051c65a","message":"You are using a Trial key, which is limited to 1000 AP
   staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"120aa6c7-619f-49bb-ba22-991de09e8c95","message":"You are using a Trial key, which is limited to 1000 AP
   staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 524: error code: 524
@@ -229,3 +217,19 @@ style-soft: lead>35w/1num, text 17 nums
   staged gapgpt:gemma-3-27b-it: accepted after 17 calls
   stage6 news: title in 2 calls
 OK KSFN-MBENN03E-00 <- gapgpt:gemma-3-27b-it (246s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"9e839f0c-d18a-4d7f-a507-2c27893179ab","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"838ea90b-b495-4dc8-9691-e585f4b766d2","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged openrouter:google/gemma-4-26b-a4b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is 
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  stage6 news: kept stage-5 title after 3 calls (16 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
+OK PAM-LD2420DPP-00 <- gapgpt:gemma-3-27b-it (67s)
