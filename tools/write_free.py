@@ -11,6 +11,7 @@ usage: python tools/write_free.py [--limit N] [--out news]
 import random
 import argparse
 import datetime as dt
+import inspect
 import json
 import os
 import re
@@ -855,7 +856,9 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
         nonlocal calls
         calls += 1
         try:
-            raw = retry(lambda p: call(p, system), user)
+            # backend 1405-07-28: only wrappers with an `s` parameter take a system prompt; for the others (lambda p, m=m) a second
+            # positional argument replaced the MODEL name, so every free model got HTTP 400 «Model 'تو خبرنگار…'» and gemma wrote everything
+            raw = retry((lambda p: call(p, s=system)) if "s" in inspect.signature(call).parameters else (lambda p: call(system + "\n\n" + p)), user)
         except QuotaError:
             raise
         except ValueError as e:  # a gateway hiccup (404 no channel, 5xx, timeout) costs one call, not the whole news
