@@ -173,6 +173,9 @@ def apply_edits(root=None, ndir=None):
                 elif ndir is None:
                     from validate import check_text
                     check_text(sym, {**it, **{k: e[k] for k in EDITABLE if k in e}}, bad, 120, 220, 2, 4)
+                    # backend 1405-07-28: validate.py rejects a day with one subtitle on 3+ items, which blocked every release
+                    if "subtitle" in e and sum(x.get("subtitle") == e["subtitle"] for x in n["items"] if x is not it) >= 2:
+                        bad.append("subtitle repeated")
                 else:  # backend 1405-07-28: Kish/energy edits pass the same check validate.py now runs on them
                     from validate import check_text
                     check_text(sym, {**it, **{k: e[k] for k in EDITABLE if k in e}}, bad, floor, 260, 1, 6)
