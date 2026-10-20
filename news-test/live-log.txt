@@ -1,11 +1,3 @@
-rewrite SHPC-HDCRP100BPP-00: data changed after it was written (1100.0|1100.0|2920.0|2480576.4727272727|2728634120.0 -> 1100.0|1100.0|2920.0|2480576.0|2728633600.0)
-rewrite PTC-PETBG785J-00: data changed after it was written (1012.0|1012.0|2552.0|4348133.717391305|4400311322.0 -> 1012.0|1012.0|2552.0|4348134.0|4400311608.0)
-rewrite PTC-PETSBTG645J-00: data changed after it was written (506.0|506.0|858.0|4356439.608695652|2204358442.0 -> 506.0|506.0|858.0|4356440.0|2204358640.0)
-rewrite PAM-LD2420DPP-00: data changed after it was written (484.0|484.0|770.0|2620420.8181818184|1268283676.0 -> 484.0|484.0|770.0|2620421.0|1268283764.0)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-40 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
   JPC-HDCRP100NPP-00 llm7:DeepSeek-V4-Flash-0731: 3s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 85190 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":85190}}
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
@@ -198,3 +190,11 @@ style-soft: lead>35w/1num, text 16 nums
   staged gapgpt:gemma-3-27b-it: accepted after 7 calls
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۸.۴ | فعل «فروخت» امروز تکرار شده)
 OK LOR-MD3840UAPP-00 <- gapgpt:gemma-3-27b-it (54s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 15 nums
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"1c0fc696-2396-46ae-8224-be3e39709818","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: در حالی که, lead>35w/1num, text 18 nums
+  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
+OK ECC-CPCANG32.5-L50-00 <- gapgpt:gemma-3-27b-it (69s)
