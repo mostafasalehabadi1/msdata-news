@@ -1,26 +1,3 @@
-  staged cohere:command-a-reasoning-08-2025: call 2 failed: HTTP 429: {"id":"09ad68fb-fe36-44a7-a3e2-6f874bd5c557","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"612167d5-88ad-4ccf-a091-f0c9a96e1465","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 2 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  KHAC-CEMENTSP-50L-00 openrouter:xingchen-agi/xing4.0-29b-a4b:free: 299s IncompleteRead: IncompleteRead(440 bytes read)
-  staged kilo:thinkingmachines/inkling-small:free: call 7 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  openrouter:nvidia/nemotron-3.5-super-vl:free: quota used up - skipped for the rest of the day
-  KHAC-CEMENTSP-50L-00 openrouter:nvidia/nemotron-3.5-super-vl:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 19 calls
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۱۴۰۴)
-OK ESC-MBEEE03EN-00 <- gapgpt:gemma-3-27b-it (85s)
-  staged kilo:thinkingmachines/inkling-small:free: call 8 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-style-soft: lead>35w/1num, text 16 nums
-  staged ovh:Qwen3.5-397B-A17B: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged ovh:Qwen3.5-397B-A17B: accepted after 8 calls
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   OAC-CEM2-32.5R-50L-00 kilo:thinkingmachines/inkling-small:free: 366s ValueError: staged: 8 calls, last: no JSON: 
   staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
@@ -198,3 +175,26 @@ style-soft: lead>35w/1num, text 13 nums
   staged gapgpt:gemma-3-27b-it: accepted after 5 calls
   stage6 news: title in 1 calls
 OK OAC-CEM2-32.5R-50L-00 <- gapgpt:gemma-3-27b-it (42s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  BCC-PCT5G32.5-B-00 openrouter:minimax/minimax-m3.1-flash:free: 124s IncompleteRead: IncompleteRead(462 bytes read)
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"9b9c8e9a-cc50-4bb0-ba86-0e7fb2bd6da4","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"f137c2fb-eef2-4596-9e33-03538682aa70","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  groq:openai/gpt-oss-20b: quota used up - skipped for the rest of the day
+  BCCO-CPCANG42.5-L50-00 groq:openai/gpt-oss-20b: 245s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 195221, Requested 552
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"ef963967-e5d2-4c4b-ac8b-f757892db584","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 16 nums
+  staged requesty:mistral/leanstral-1-5: soft: متن 16 عدد دارد؛ حداکثر ۱۵ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged requesty:mistral/leanstral-1-5: accepted after 6 calls
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: 116 words / 3 paragraphs
+  WSH-CEMENTW-20L-00 kilo:kilo-auto/free: 97s ValueError: staged: 8 calls, last: 116 words / 3 paragraphs
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
+OK SHPC-HDCRP100BPP-00 <- gapgpt:gemma-3-27b-it (81s)
