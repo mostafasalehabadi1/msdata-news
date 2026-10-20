@@ -1,25 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
-  staged cohere:command-r-plus-08-2024: call 2 failed: HTTP 429: {"id":"1390463f-008b-40d0-ae36-60d1d367bc15","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 10 calls
-  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"043a0b1b-d3bf-46ed-a8ae-115d603a5982","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 2 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged llm7:mistral-Nemo-Instruct-2407: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
-OK AZGI-BI6070BEX-00-2 <- gapgpt:gemma-3-27b-it (110s)
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
-  staged llm7:mistral-Nemo-Instruct-2407: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
-  staged llm7:mistral-Nemo-Instruct-2407: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged openrouter:nvidia/nemotron-3.5-super-vl:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-style-soft: lead>35w/1num, text 10 nums
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
   staged cohere:command-r-plus-08-2024: call 3 failed: HTTP 429: {"id":"aa560dbc-2d32-4b34-9e45-78fe0096c454","message":"You are using a Trial key, which is limited to 1000 AP
   staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"4dbe80d5-4b34-4a1e-967d-8861e280ad53","message":"You are using a Trial key, which is limited to 1000 AP
   staged llm7:mistral-Nemo-Instruct-2407: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
@@ -200,3 +178,23 @@ style-soft: lead>35w/1num, text 17 nums
   staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
 OK AZGI-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (66s)
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"eebbe38a-e59b-49e3-8059-6f0127051cc7","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"3f797eed-67ef-4223-aaef-27e4c5322ef8","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
+  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
+OK SHCO-PCT1G42.5-JEX-00 <- gapgpt:gemma-3-27b-it (77s)
