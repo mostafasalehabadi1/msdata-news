@@ -87,7 +87,7 @@ jobs:
             timeout 600 python tools/release.py
             timeout 600 python tools/news_flow.py || echo "news flow failed"  # owner 1405-07-22: per-hour flow for the stats page
             if timeout 600 python tools/validate.py; then
-              git add news stats
+              git add news stats news-test/edits-skipped.log news-test/edits-applied.log 2>/dev/null || git add news stats  # backend 1405-07-28: edit logs for the content agent
               if ! git diff --cached --quiet; then
                 git commit -qm "release: $(date -u +%H:%M)"
                 timeout 180 git pull -q --rebase && timeout 180 git push -q origin HEAD:main && timeout 180 git push -qf origin HEAD:refs/heads/published

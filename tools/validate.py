@@ -88,6 +88,20 @@ def main():
                     errs.append(f"{name}: subtitle repeated {c} times: {s[:60]}")
         elif name != ".keep":
             errs.append(f"{name}: unexpected file name")
+    # owner 1405-07-28: «every news we publish is checked» - Kish (written with MIN_WORDS 80) and energy were never validated before
+    for market, low in (("kish", 80), ("energy", 120)):
+        for path in sorted(glob.glob(os.path.join(ROOT, market, "????-??-??.json"))):
+            if os.path.basename(path) < "2026-10-20.json":  # owner: from 1405-07-28 on; older days are not re-checked
+                continue
+            name = market + "/" + os.path.basename(path)
+            try:
+                d = json.load(open(path, encoding="utf-8"))
+            except Exception as e:  # noqa: BLE001
+                errs.append(f"{name}: invalid JSON {e}")
+                continue
+            for i, it in enumerate(d.get("items") or []):
+                check_text(f"{name}[{i}:{it.get('symbol')}]", it, errs, low, 260, 1, 6)
+                n += 1
     for path in sorted(glob.glob(os.path.join(ROOT, "macro", "*.json"))):  # «اقتصاد کلان» (tools/write_macro.py)
         name = "macro/" + os.path.basename(path)
         try:

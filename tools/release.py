@@ -88,6 +88,16 @@ def main():
 EDITABLE = ("title", "subtitle", "lead", "text", "slug", "table", "key_points")  # key_points: «در یک نگاه» box (owner 1405-07-21)
 
 
+def fits_market(market, i):
+    """backend 1405-07-28: validate.py now checks Kish/energy too; an item it would reject stays in the queue instead of blocking every release."""
+    import validate
+    errs = []
+    validate.check_text(f"{market}:{i.get('symbol')}", i, errs, 80 if market == "kish" else 120, 260, 1, 6)
+    if errs:
+        print("held back:", "; ".join(errs))
+    return not errs
+
+
 def release_kish(market="kish"):
     """Kish export market (owner 1405-07-15): queue/kish/<date>.json -> news/kish/<date>.json, every written item at once
     (a few dozen a day, no drip). Released items are never removed."""
@@ -104,11 +114,32 @@ def release_kish(market="kish"):
         npath = os.path.join(nk, os.path.basename(qpath))
         n = json.load(open(npath, encoding="utf-8")) if os.path.exists(npath) else {**q, "items": []}
         out = {i["symbol"] for i in n["items"]}
-        new = [{**i, "published_at": now} for i in q["items"] if i["symbol"] not in out]
+        new = [{**i, "published_at": now} for i in q["items"] if i["symbol"] not in out and fits_market(market, i)]
         if new:
             n["items"] += new
             json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             print(f"{market} released {len(new)}: {os.path.basename(qpath)}")
+
+
+SKIP_LOG = os.path.join(ROOT, "news-test", "edits-skipped.log")
+APPLIED_LOG = os.path.join(ROOT, "news-test", "edits-applied.log")
+
+
+def log_skip(day, market, sym, reason, path=SKIP_LOG):
+    """backend 1405-07-28 (content agent): every skipped edit is listed once in news-test/edits-skipped.log and every applied
+    one in news-test/edits-applied.log (date, market, symbol, reason or fields; applied lines carry the UTC time)."""
+    if day < "2026-10-20":  # owner 1405-07-28: from today on
+        return
+    line = f"{day}\t{market}\t{sym}\t{reason}"
+    try:
+        old = open(path, encoding="utf-8").read().splitlines() if os.path.exists(path) else []
+        if path == APPLIED_LOG:
+            line += "\t" + datetime.now(timezone.utc).isoformat(timespec="seconds")
+            open(path, "a", encoding="utf-8").write(line + "\n")
+        elif line not in old:
+            open(path, "a", encoding="utf-8").write(line + "\n")
+    except OSError as err:
+        print(f"edits-skipped.log: {err}")
 
 
 def apply_edits(root=None, ndir=None):
@@ -135,11 +166,16 @@ def apply_edits(root=None, ndir=None):
                 new = {k: e[k] for k in EDITABLE if k in e and isinstance(e[k], (str, dict, list)) and e[k] != it.get(k)}
                 # owner 1405-07-15: an edit may not shrink the text below 120 words - the short edit is skipped, the original stays
                 bad = []  # owner: 120 words minimum for all physical and Kish news; kala edits must also pass validate.py (or they block every release)
-                if len(str(e.get("text", it.get("text", ""))).split()) < 120:
-                    bad.append("under 120 words")
+                market = os.path.basename(root) if ndir else "kala"
+                floor = 80 if market == "kish" else 120  # backend 1405-07-28 (content agent): Kish is written with MIN_WORDS 80, so its edits use 80 too
+                if "text" in e and len(str(e["text"]).split()) < floor:  # an edit without text keeps the published text, already accepted at release
+                    bad.append(f"under {floor} words")
                 elif ndir is None:
                     from validate import check_text
                     check_text(sym, {**it, **{k: e[k] for k in EDITABLE if k in e}}, bad, 120, 220, 2, 4)
+                else:  # backend 1405-07-28: Kish/energy edits pass the same check validate.py now runs on them
+                    from validate import check_text
+                    check_text(sym, {**it, **{k: e[k] for k in EDITABLE if k in e}}, bad, floor, 260, 1, 6)
                 if bad:
                     # a short edit already applied earlier: bring the original written text back from the queue
                     qp = os.path.join(os.path.dirname(npath).replace(N, Q, 1), os.path.basename(npath))
@@ -149,8 +185,10 @@ def apply_edits(root=None, ndir=None):
                         it.pop("edited", None); it.pop("edited_at", None)
                         changed += 1
                     print(f"edit skipped ({'; '.join(bad)}) {ep}")
+                    log_skip(os.path.basename(day), market, sym, "; ".join(bad))
                     continue
                 if new:
+                    log_skip(os.path.basename(day), market, sym, "applied: " + ",".join(sorted(new)), APPLIED_LOG)
                     it.update(new)
                     it["edited"] = True
                     it["edited_at"] = e.get("edited_at") or datetime.now(timezone.utc).isoformat(timespec="seconds")
