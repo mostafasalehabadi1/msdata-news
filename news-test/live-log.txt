@@ -1,4 +1,3 @@
-rewrite MDC-HDHB6200BPP-00: data changed after it was written (2040.0|72.0|72.0|1823741.0|131309352.0 -> 2064.0|96.0|96.0|1823741.0|175079136.0)
 rewrite SHPC-HDCRP100BPP-00: data changed after it was written (1100.0|1100.0|2920.0|2480576.4727272727|2728634120.0 -> 1100.0|1100.0|2920.0|2480576.0|2728633600.0)
 rewrite PTC-PETBG785J-00: data changed after it was written (1012.0|1012.0|2552.0|4348133.717391305|4400311322.0 -> 1012.0|1012.0|2552.0|4348134.0|4400311608.0)
 rewrite PTC-PETSBTG645J-00: data changed after it was written (506.0|506.0|858.0|4356439.608695652|2204358442.0 -> 506.0|506.0|858.0|4356440.0|2204358640.0)
@@ -193,3 +192,9 @@ style-soft: lead>35w/1num, text 20 nums
   staged gapgpt:gemma-3-27b-it: accepted after 11 calls
   stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | فعل «فروخت» امروز تکرار شده)
 OK KHCO-PCT5G42.5-L50-00 <- gapgpt:gemma-3-27b-it (72s)
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"3913dcd8-5218-4697-80da-49fb8425fcfb","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: نام کالا در تیتر باید «پلی اتیلن» باشد | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۸.۴ | فعل «فروخت» امروز تکرار شده)
+OK LOR-MD3840UAPP-00 <- gapgpt:gemma-3-27b-it (54s)
