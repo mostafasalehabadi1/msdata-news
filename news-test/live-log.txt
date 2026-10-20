@@ -14,3 +14,17 @@ style-soft: lead>35w/1num, text 11 nums
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   stage6 news: title in 2 calls
 OK SRBK-CR08AB-00 <- gapgpt:gemma-3-27b-it (64s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"583a42aa-c861-41ff-9e61-b27f86d6cd6d","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.7-flash: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 7 calls
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+style-soft: lead>35w/1num, text 19 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 18 عدد دارد؛ حداکثر ۱۵ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۱۱۵۰ | فعل «بود» امروز تکرار شده | تیتر «بی)
+OK HAAL-PS10000-00 <- zai:glm-4.7-flash (135s)
