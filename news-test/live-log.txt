@@ -1,49 +1,84 @@
+rewrite MSC-HS40009-00: data changed after it was written (480040.0|258390.0|496760.0|1272694.4257130695|328851512660.0 -> 240020.0|240020.0|248380.0|1272709.0|305475614180.0)
+rewrite LOR-LLD22B01P-00: data changed after it was written (6000.0|4248.0|6576.0|2006110.0395480227|8521955448.0 -> 3000.0|3000.0|3288.0|2006301.0|6018903000.0)
+rewrite JPC-HD7000FPP-00: data changed after it was written (6380.0|2728.0|3916.0|1931151.0|5268179928.0 -> 3344.0|1936.0|2112.0|1931151.0|3738708336.0)
+rewrite UCC-CEMENTPOLI-50L-00: data changed after it was written (6000.0|3950.0|11020.0|40323.3417721519|159277200.0 -> 3000.0|3000.0|5510.0|40332.0|120996000.0)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-4 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: text 11 nums
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  KACC-PCT5G32.5-L50-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 362s ValueError: staged: 8 calls, last: no JSON: 
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+6 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 17 nums
-  staged zai:glm-4.7-flash: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 7 calls
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+style-soft: lead>35w/1num, text 14 nums
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words / 4 paragraphs
-style-soft: text 11 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-style-soft: text 11 nums
-  staged openrouter:minimax/minimax-m3.1-flash:free: accepted after 8 calls
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"14d7a62d-b5f0-495c-b0ee-c60ba28539bf","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 9 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+style-soft: در حالی که, lead>35w/1num, text 17 nums
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 17 nums
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+style-soft: در حالی که, lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
+  DCCO-PCT5G22.5-L50-00 gapgpt:gemma-3-27b-it: 108s ValueError: staged: 20 calls, last: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged gapgpt:gemma-3-27b-it: call 14 failed: HTTP 504: <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width">
-style-soft: lead>35w/1num, text 18 nums
-  stage6 news: kept stage-5 title after 3 calls (حرف لاتین | عدد بیرون از متن: 7000، ۶۱ | فعل «داشتند» امروز تکرار شده)
-OK JPC-HD7000FPP-00 <- zai:glm-4.7-flash (625s)
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"8c0d8172-c9ba-40b5-8c2b-70df2fb1100b","message":"You are using a Trial key, which is limited to 1000 AP
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: 119 words / 4 paragraphs
-  stage6 news: title in 3 calls
-OK UCC-CEMENTPOLI-50L-00 <- openrouter:minimax/minimax-m3.1-flash:free (682s)
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"bfaa6aaf-aa5a-4a9e-bbb5-fc75bdb257f5","message":"You are using a Trial key, which is limited to 1000 AP
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged openrouter:minimax/minimax-m3.1-flash:free: check cut 1 sentence(s)
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"23b5146b-7f08-4fb7-95d8-dc4f96c7b16f","message":"You are using a Trial key, which is limited to 1000 AP
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+style-soft: lead>35w/1num, text 15 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
+  DCCO-PCT5G22.5-L50-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 186s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"1de11064-0c4d-4f36-9323-c43015126c9b","message":"You are using a Trial key, which is limited to 1000 AP
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+style-soft: text 9 nums
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  LOR-LLD22B01P-00 hf:deepseek-ai/DeepSeek-V3.1: 362s ValueError: staged: 8 calls, last: no JSON: 
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"509c175c-ab86-490f-b2cd-f1d61bdee329","message":"You are using a Trial key, which is limited to 1000 AP
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 104 words / 4 paragraphs
+  MSC-HS40009-00 zai:glm-4.7-flash: 417s ValueError: staged: 8 calls, last: 104 words / 4 paragraphs
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"184aa3d4-3db2-4195-9168-3e4ae5a5b952","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: text 10 nums
+  staged openrouter:minimax/minimax-m3.1-flash:free: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
+  UCC-CEMENTPOLI-50L-00 openrouter:minimax/minimax-m3.1-flash:free: 445s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
+style-soft: lead>35w/1num, text 12 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 5 calls
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"c0fc2cc5-c4b3-4be7-a06b-cd94592ec5c3","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۶۰
+  MSC-HS40009-00 zai:glm-4.5-flash: 100s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۶۰
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"7b752f10-a469-47e6-982b-c69cd330affb","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK MSC-HS40009-00 <- gapgpt:gemma-3-27b-it (62s)
