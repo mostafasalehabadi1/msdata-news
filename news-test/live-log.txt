@@ -1,33 +1,31 @@
+rewrite MDC-HDHB6200BPP-00: data changed after it was written (2040.0|72.0|72.0|1823741.0|131309352.0 -> 2064.0|96.0|96.0|1823741.0|175079136.0)
+rewrite SHPC-HDCRP100BPP-00: data changed after it was written (1100.0|1100.0|2920.0|2480576.4727272727|2728634120.0 -> 1100.0|1100.0|2920.0|2480576.0|2728633600.0)
+rewrite PTC-PETBG785J-00: data changed after it was written (1012.0|1012.0|2552.0|4348133.717391305|4400311322.0 -> 1012.0|1012.0|2552.0|4348134.0|4400311608.0)
+rewrite PTC-PETSBTG645J-00: data changed after it was written (506.0|506.0|858.0|4356439.608695652|2204358442.0 -> 506.0|506.0|858.0|4356440.0|2204358640.0)
+rewrite PAM-LD2420DPP-00: data changed after it was written (484.0|484.0|770.0|2620420.8181818184|1268283676.0 -> 484.0|484.0|770.0|2620421.0|1268283764.0)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-17 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+40 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  kilo:inclusionai/ling-3.1-flash: quota used up - skipped for the rest of the day
-  SGS-BI6070BEX-00 kilo:inclusionai/ling-3.1-flash: 0s QuotaError: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"paid_model_auth_required"}
-  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
-  PGM-BI6070BEX-00 llm7:minimax-m2.7: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 84121 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":84121}}
   llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  GHCO-PCT2G42.5-L50EX-00 llm7:DeepSeek-V4-Flash-0731: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 60 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":60}}
-  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
-  PGM-BI6070BEX-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  JPC-HDCRP100NPP-00 llm7:DeepSeek-V4-Flash-0731: 3s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 85190 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":85190}}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  HJC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 24s JSONDecodeError: Expecting value: line 5 column 11 (char 218)
-  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants a news arti
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 11 nums
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"928b969f-c9e0-424b-9253-25ad7a10d113","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"016528fd-99f9-4129-a069-402ce20047d4","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 115 words / 4 paragraphs
+  LPC-LDEP1922TRP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 41s ValueError: staged: 8 calls, last: 115 words / 4 paragraphs
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"01987e44-2bea-4ba3-8ad9-f2135a7b075f","message":"You are using a Trial key, which is limited to 1000 AP
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"5fa8b4f1-ce99-4c1c-8f53-fb4ae4e68ce5","message":"You are using a Trial key, which is limited to 1000 AP
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
 style-soft: lead>35w/1num, text 20 nums
-  staged kilo:kilo-auto/free: accepted after 7 calls
-  PGM-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 23s JSONDecodeError: Expecting value: line 5 column 11 (char 222)
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: «نشان داد» در lead
+  MSC-HS40009-00 zai:glm-4.7-flash: 125s ValueError: staged: 8 calls, last: markers: «نشان داد» در lead
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  stage6 news: title in 2 calls
-OK SGS-BI6070BEX-00 <- kilo:kilo-auto/free (62s)
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"15f1737c-61ee-494a-ab83-7091a066697b","message":"You are using a Trial key, which is limited to 1000 AP
   PTC-PETBG785J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
@@ -178,3 +176,12 @@ style-soft: lead>35w/1num, text 10 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: title in 3 calls
 OK ASPC-HDHBM5510WP-00 <- gapgpt:gemma-3-27b-it (95s)
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"71a76bc4-eda5-44b1-90b0-9df5659204e9","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"3c35ac71-8b0b-43c3-8377-aa6104375136","message":"You are using a Trial key, which is limited to 1000 AP
+  stage6 news: kept stage-5 title after 3 calls (فعل «قیمت» امروز تکرار شده | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
+OK TABC-EPS221HSJ-00 <- gapgpt:gemma-3-27b-it (99s)
