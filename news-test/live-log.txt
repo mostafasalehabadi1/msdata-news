@@ -198,3 +198,119 @@ style-soft: lead>35w/1num, text 13 nums
   staged cohere:command-a-reasoning-08-2025: call 4 failed: HTTP 429: {"id":"8dad28a7-be6e-4b8f-a67f-1fcb04604fdc","message":"You are using a Trial key, which is limited to 1000 AP
   stage6 news: title in 1 calls
 OK ILCE-PCT5G42.5-B-00 <- gapgpt:gemma-3-27b-it (147s)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+7 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  hf:Qwen/Qwen3-235B-A22B-Instruct-2507: quota used up - skipped for the rest of the day
+  DLNROCABEX0050803 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 0s QuotaError: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
+  hf:deepseek-ai/DeepSeek-V3.1: quota used up - skipped for the rest of the day
+  DSVBACABEX0050803 hf:deepseek-ai/DeepSeek-V3.1: 0s QuotaError: HTTP 400: {"error":{"message":"the provider or policy you attempted to specify ' حدود ۱۰ کلمه. - subtitle' is not valid.","type":"invalid_request_error","param":"model","code":"model_not_supported"}}
+  zai:glm-4.7-flash: quota used up - skipped for the rest of the day
+  DISBACABEX0050803 zai:glm-4.7-flash: 1s QuotaError: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  groq:openai/gpt-oss-120b: quota used up - skipped for the rest of the day
+  DMTBRCABEX0050804 groq:openai/gpt-oss-120b: 2s QuotaError: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس. فقط از همین حقیقت‌ها بنویس و هیچ عدد، درصد یا مقایسه‌ای خودت نساز. هر جمله یک واقعیت از
+  zai:glm-4.5-flash: quota used up - skipped for the rest of the day
+  DISBACABEX0050803 zai:glm-4.5-flash: 0s QuotaError: HTTP 400: {"error":{"code":"1211","message":"Unknown Model, please check the model code."}}
+  groq:openai/gpt-oss-20b: quota used up - skipped for the rest of the day
+  DMTBRCABEX0050804 groq:openai/gpt-oss-20b: 0s QuotaError: HTTP 404: {"error":{"message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس. فقط از همین حقیقت‌ها بنویس و هیچ عدد، درصد یا مقایسه‌ای خودت نساز. هر جمله یک واقعیت از
+  ovh:Qwen3.5-397B-A17B: quota used up - skipped for the rest of the day
+  DLNROCABEX0050803 ovh:Qwen3.5-397B-A17B: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس. فقط از همین حقیقت‌ها بنویس و هیچ عدد، درصد یا مقایسه‌ای خودت ن
+  kilo:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
+  DMTBRCABEX0050804 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"paid_model_auth_required"}
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  DHUGZCABEX0050803 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 361s ValueError: staged: 8 calls, last: no JSON: 
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  DMESBCABEX0050803 llm7:DeepSeek-V4-Flash-0731: 367s ValueError: staged: 8 calls, last: no JSON: 
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+style-soft: lead>35w/1num
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۱۷۶۷
+  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+style-soft: lead>35w/1num
+  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+style-soft: lead>35w/1num
+  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: accepted after 16 calls
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged openrouter:google/gemma-4-31b-it:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۷۶۷ | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
+OK DISBACABEX0050803 <- gapgpt:gemma-3-27b-it (104s)
