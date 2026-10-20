@@ -359,6 +359,7 @@ class QuotaError(ValueError):
 
 
 QUOTA_RE = re.compile(r"quota|exceeded|per day|daily limit|RESOURCE_EXHAUSTED", re.I)
+DEAD_RE = re.compile(r"HTTP 40[0134].*(Unknown Model|model_not_found|sign in to use|Trial key|provider or policy you attempted)", re.I | re.S)
 EXHAUSTED_FILE = os.path.join(tempfile.gettempdir(), f"exhausted-{time.strftime('%Y-%m-%d', time.gmtime())}.txt")
 
 
@@ -858,6 +859,8 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
         except QuotaError:
             raise
         except ValueError as e:  # a gateway hiccup (404 no channel, 5xx, timeout) costs one call, not the whole news
+            if DEAD_RE.search(str(e)):  # backend 1405-07-28: a model that does not exist / needs sign-in / trial key is dropped for the day, not retried 1000 times
+                raise QuotaError(str(e)) from e
             note(f"  staged {name}: call {calls} failed: {str(e)[:120]}")
             gw[0] += 1
             if gw[0] <= 10:  # content agent 1405-07-27: a gateway error is not one of the 20 writing tries (up to 10 per news)
@@ -1025,8 +1028,9 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
             elif short and int(short.group(1)) > 220:
                 err += f" (متن {short.group(1)} کلمه است؛ کم‌اهمیت‌ترین جمله‌ها را حذف کن تا به ۱۸۰ کلمه برسد)"
             raw = ask(STAGE_FIX, src + "\n\nخبر:\n" + raw + f"\n\nایرادها: {err}") or raw
-        note(f"  staged {name}: draft dropped after {calls} calls: {str(err)[:160]}")
-        keep_rejected(name, facts, raw, err, calls)
+        if raw:  # backend 1405-07-28: no answer at all (gateway down) is not a rejected draft; 5,974 empty rows on 07-27 hid the real ones
+            note(f"  staged {name}: draft dropped after {calls} calls: {str(err)[:160]}")
+            keep_rejected(name, facts, raw, err, calls)
     raise ValueError(f"staged: {calls} calls, last: {err}")
 
 
