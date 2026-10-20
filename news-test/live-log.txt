@@ -181,3 +181,11 @@ OK TABC-ABSSD0150PP-00 <- gapgpt:gemma-3-27b-it (81s)
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۱)
   PAM-LD2420HPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
 OK PAM-LD2420DPP-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (553s)
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 8 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"f1768089-aaaa-49c5-9ad7-d93c9c50d098","message":"You are using a Trial key, which is limited to 1000 AP
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  UCC-CEMENTPOLI-50L-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 370s ValueError: staged: 8 calls, last: no JSON: 
+  stage6 news: title in 2 calls
+OK AAC-CPCANG32.5-B-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (585s)
