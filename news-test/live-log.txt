@@ -1,24 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-31 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"f0d9b3ea-c231-48b4-af3d-90073e7e6ce5","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"3d2dbbe5-2a25-4fec-8a7e-70003fe660e2","message":"You are using a Trial key, which is limited to 1000 AP
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK PPCO-OASTYB-00 <- gapgpt:gemma-3-27b-it (52s)
   staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
@@ -198,3 +177,24 @@ style-soft: lead>35w/1num, text 15 nums
   staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۴۰۴ | فعل «رسید» امروز تکرار شده)
 OK WSH-CEMENTW-25L-00 <- gapgpt:gemma-3-27b-it (50s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:mistral-Nemo-Instruct-2407: call 2 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 2 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
+  staged openrouter:google/gemma-4-31b-it:free: call 3 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+  staged llm7:mistral-Nemo-Instruct-2407: call 3 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 3 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  staged llm7:mistral-Nemo-Instruct-2407: call 4 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 500: {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"a526582c-273d-40c0-8440-ad4775863e91","message":"You are using a Trial key, which is limited to 1000 AP
+  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساد
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"86f0d21c-d233-43ca-9d29-d730d17947f7","message":"You are using a Trial key, which is limited to 1000 AP
+  stage6 news: title in 3 calls
+OK ILPE-HDF7000LMPJ-00 <- gapgpt:gemma-3-27b-it (56s)
