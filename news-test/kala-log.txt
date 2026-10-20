@@ -3058,3 +3058,304 @@ OK FSIC-EA005000-00 <- gapgpt:gemma-3-27b-it (57s)
   staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
   staged requesty:nvidia/muse-glimmer-30b: call 6 failed: HTTP 400: {"error":{"origin":"router","message":"Invalid model ID. See https://app.requesty.ai/model-library and https:/
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 8 failed: HTTP 400: {"error":{"message":"تو خبرنگار بورس کالای ام‌اس‌دیتا هستی. از روی «حقیقت‌ها» یک پیش‌نویس خبر فارسی ساده بنویس
+kala: closed halls: تالار خودرو، تالار سیمان، تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 174 settled rows, 51 wait for the next data build
+rewrite ILCE-CEMENTP-50L-00: data changed after it was written (500.0|225.0|225.0|38934.0|8760150.0 -> 525.0|250.0|250.0|38934.0|9733500.0)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+40 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
+  AAC-CPCBNG42.5-B-00 llm7:minimax-m2.7: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
+  KSFN-MBNEN03E-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 18s JSONDecodeError: Expecting value: line 5 column 11 (char 257)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 80 words / 4 paragraphs
+  KHCO-PCT2G42.5-B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: staged: 8 calls, last: 80 words / 4 paragraphs
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  MDC-HDF7000LMPJ-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 20s JSONDecodeError: Expecting value: line 2 column 12 (char 13)
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"f589e5a8-d9a1-4357-81ff-98e8fd801497","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"b0c09ee2-a2f9-4e8b-a9f0-9da9d2bac2ea","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 96 words / 3 paragraphs
+  UCC-CEMENTPOLI-50L-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 20s ValueError: staged: 8 calls, last: 96 words / 3 paragraphs
+style-soft: lead>35w/1num, text 9 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 10 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «یافت» امروز تکرار شده)
+OK KHCO-PCT2G42.5-B-00 <- gapgpt:gemma-3-27b-it (63s)
+  staged llm7:mistral-Nemo-Instruct-2407: draft dropped after 8 calls: 111 words / 3 paragraphs
+  AAC-CPCBNG42.5-B-00 llm7:mistral-Nemo-Instruct-2407: 97s ValueError: staged: 8 calls, last: 111 words / 3 paragraphs
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 94 words / 3 paragraphs
+  KSFN-MBNEN03E-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 39s ValueError: staged: 8 calls, last: 94 words / 3 paragraphs
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"ea7928c9-1eea-404c-a878-dc59a051c65a","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"120aa6c7-619f-49bb-ba22-991de09e8c95","message":"You are using a Trial key, which is limited to 1000 AP
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 524: error code: 524
+
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
+  IORC-OAVBB-00 llm7:DeepSeek-V4-Flash-0731: 176s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"48fa28f5-bd53-4bf7-a487-250a62b21a53","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"c997f76f-a40d-44a5-b17c-c4031580596d","message":"You are using a Trial key, which is limited to 1000 AP
+  AAC-CPCANG32.5-B-00 requesty:mistral/leanstral-1-5: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+  staged llm7:mistral-Nemo-Instruct-2407: accepted after 5 calls
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"e3fa26a6-7f80-4c26-bc68-d5b4b99bee73","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"9b2ea630-c1d7-47ea-8e11-4cb9d3849951","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 14 nums
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK MDC-HDF7000LMPJ-00 <- llm7:mistral-Nemo-Instruct-2407 (167s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"f2b264c5-8ac6-4c6a-8dd3-acce039fe048","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"e20e6cf0-5a50-44be-8a07-1e218c405d14","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 15 nums
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  UCC-CEMENTPOLI-50L-00 llm7:mistral-Nemo-Instruct-2407: 78s JSONDecodeError: Expecting ',' delimiter: line 6 column 193 (char 732)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+style-soft: lead>35w/1num, text 15 nums
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 118 words after fixes
+  MSC-HS40009-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 366s ValueError: staged: 8 calls, last: 118 words after fixes
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"14bc1667-892a-4400-9c80-2791569f1dca","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"d7d2f23b-92f2-4188-99f1-95de49d7fb00","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"5d6eae2c-479f-4079-8434-a19f454f5559","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"8105b4d9-b500-4ebb-930d-112ec60f6b56","message":"You are using a Trial key, which is limited to 1000 AP
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  KSFN-MBNEN03E-00 llm7:mistral-Nemo-Instruct-2407: 112s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 88917 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":88917}}
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"6cd23839-e2df-4661-a17e-5c995940a81b","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"f32cd975-1190-4d32-be8d-58d9507bc303","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"3a469f71-92c3-49ec-914b-5d3dd757dfc9","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"a110633e-89b9-4fba-8d12-37184de2bb31","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"a67c8a10-e086-4671-bba2-34ca804bd1ee","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"8a380bc6-d7de-499a-b586-cdd95a909098","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «رسید» امروز تکرار شده)
+OK ICII-LABB-00 <- gapgpt:gemma-3-27b-it (64s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"4cb18bad-3547-47bd-96ce-67d7444e5af8","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"275663b7-4981-4139-a901-6f8da50c80ec","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 13 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"8e17cdf4-5476-4a88-a97a-7dd43b1619a0","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 2 failed: HTTP 429: {"id":"ba8a7134-c3ab-4c5c-8bea-6293df552fd1","message":"You are using a Trial key, which is limited to 1000 AP
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۰٫۹ | فعل «شد» امروز تکرار شده)
+OK LOR-HD62N07UVPP-00 <- gapgpt:gemma-3-27b-it (92s)
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged cohere:command-a-reasoning-08-2025: call 3 failed: HTTP 429: {"id":"d473df07-0a29-4641-9a57-2c9bb45c3023","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"6b93f7d7-f6b9-4432-b6f7-7527196c41df","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  stage6 news: kept stage-5 title after 3 calls (فعل «یافت» امروز تکرار شده)
+OK SHPC-HDCRP100BPP-00 <- gapgpt:gemma-3-27b-it (65s)
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK PTC-PETBG785J-00 <- gapgpt:gemma-3-27b-it (47s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged cohere:command-a-reasoning-08-2025: call 4 failed: HTTP 429: {"id":"cb7e43b4-1345-488c-9617-a444417fa537","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 4 failed: HTTP 429: {"id":"b5e91f18-65e1-459e-be18-5440d8de6608","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 2 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 3 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 4 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+style-soft: lead>35w/1num, text 14 nums
+  staged cohere:command-a-reasoning-08-2025: call 5 failed: HTTP 429: {"id":"ae5923c4-9cd3-42b3-bb73-d49ebfbad226","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"6ead60cb-c22b-4bf5-8f10-6e40e0119e09","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 5 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: soft: 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 6 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۴۰۴ | فعل «شد» امروز تکرار شده)
+OK ESC-MBEEE03E-00 <- gapgpt:gemma-3-27b-it (116s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 7 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"52c5baaf-86f9-4a73-b34b-06875d7d7c60","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 6 failed: HTTP 429: {"id":"ecb0168f-c7a3-4fe2-bd8c-dd4889c7b879","message":"You are using a Trial key, which is limited to 1000 AP
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 8 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  AAC-CPCANG32.5-B-00 requesty:novita/inclusionai/ling-3.0-tiny: 873s ValueError: staged: 8 calls, last: no JSON: 
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+style-soft: lead>35w/1num, text 19 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 17 عدد دارد؛ حداکثر ۱۵ عدد بماند | 4 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"4e8010a2-4bf9-4850-b6a3-7572609cc837","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 7 failed: HTTP 429: {"id":"dad32eeb-1181-464a-bb44-7bd19f196350","message":"You are using a Trial key, which is limited to 1000 AP
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۴۰۴ | فعل «شد» امروز تکرار شده)
+OK ESC-MBEEN03E-00 <- gapgpt:gemma-3-27b-it (78s)
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+style-soft: lead>35w/1num, text 19 nums
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: soft: 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"7afa59ef-d433-49ab-b7ee-fbee8a9d698d","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 8 failed: HTTP 429: {"id":"ed06977c-7888-4ee0-86e2-00bcd118b838","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK ESC-MBENE03E-00 <- gapgpt:gemma-3-27b-it (67s)
+  BORC-LUBECUTHB-00 cohere:command-a-03-2025: 1177s ValueError: staged: 8 calls, last: no JSON: 
+  KHAC-CEMENTSP-50L-00 cohere:command-a-reasoning-08-2025: 1177s ValueError: staged: 8 calls, last: no JSON: 
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+style-soft: lead>35w/1num, text 19 nums
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"dedfecfd-4296-4b4c-bdbc-38ca754afd7b","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"2d09b5f6-c0d8-4495-b20c-3bc69424fbdd","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 19 nums
+  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 5 calls: «۲۴۰ هزار و ۲۰ تن» با فعل فروش آمده ولی فروش ۱۸ هزار و ۳۷۰ تن است
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: soft: 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 10 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۶۲ | فعل «زد» امروز تکرار شده)
+OK PTC-PETSBTG645J-00 <- gapgpt:gemma-3-27b-it (108s)
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"0b351873-5770-4b3b-87d1-ae4f8463579d","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:poolside/laguna-m.1: call 2 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"d26fae96-9204-4559-8cbf-d7d96396ec43","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:poolside/laguna-m.1: call 3 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged requesty:poolside/laguna-m.1: call 4 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged requesty:poolside/laguna-m.1: call 5 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"72abefd2-a3b7-459f-a42f-038e1eb2a98b","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"a9af6d2b-6130-4cf0-9914-b9e0d58f4be6","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 16 nums
+  staged requesty:poolside/laguna-m.1: call 6 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged requesty:poolside/laguna-m.1: call 7 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+style-soft: lead>35w/1num, text 16 nums
+  staged requesty:poolside/laguna-m.1: call 8 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"accf8f7a-4c29-43f2-9bb9-c175ba31c209","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"2ccce7b5-579c-4b35-8d74-5df275221867","message":"You are using a Trial key, which is limited to 1000 AP
+  AAC-CPCANG32.5-B-00 requesty:poolside/laguna-m.1: 376s ValueError: staged: 8 calls, last: no JSON: 
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged openrouter:google/gemma-4-31b-it:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  MSC-HS40009-00 openrouter:google/gemma-4-31b-it:free: 1094s ValueError: staged: 8 calls, last: no JSON: 
+style-soft: lead>35w/1num, text 16 nums
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"3ea3b018-fe2a-48b5-a51e-41542643c6fa","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: مقدار عرضه غلط است؛ عرضه ۳ هزار و ۷۵۰ بود
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"5795e352-de07-45ce-8b3c-a36ffa9ab0c1","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged openrouter:google/gemma-4-26b-a4b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is 
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 16 عدد دارد؛ حداکثر ۱۵ عدد بماند | 4 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 17 calls
+  stage6 news: title in 2 calls
+OK KSFN-MBENN03E-00 <- gapgpt:gemma-3-27b-it (246s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"9e839f0c-d18a-4d7f-a507-2c27893179ab","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"838ea90b-b495-4dc8-9691-e585f4b766d2","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged openrouter:google/gemma-4-26b-a4b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is 
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  stage6 news: kept stage-5 title after 3 calls (16 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
+OK PAM-LD2420DPP-00 <- gapgpt:gemma-3-27b-it (67s)
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"b41ef6e8-f2c3-4df9-8de8-84c7df8ed69c","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"8c63cecf-f24f-42c3-941f-e12d3d76f453","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged openrouter:google/gemma-4-26b-a4b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is 
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 2 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳)
+OK ENPC-PSSEF205J-089 <- gapgpt:gemma-3-27b-it (49s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 3 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"0b15250b-3597-4152-803d-fc422cd8c7fe","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"eb229ebe-970b-4ec4-95d1-436b30d0ebd8","message":"You are using a Trial key, which is limited to 1000 AP
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 4 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged openrouter:google/gemma-4-26b-a4b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is 
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 5 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 6 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+style-soft: lead>35w/1num, text 19 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 17 عدد دارد؛ حداکثر ۱۵ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"2c5e9ac7-0b0b-4fba-a557-0f2962d98af9","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 19 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 17 عدد دارد؛ حداکثر ۱۵ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: 111 words after fixes
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"9c9ec2a2-07f2-4070-a3d7-c28fb179ee70","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 7 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged openrouter:google/gemma-4-26b-a4b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is 
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 8 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
