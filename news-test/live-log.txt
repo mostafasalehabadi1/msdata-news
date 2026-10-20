@@ -263,3 +263,14 @@ style-soft: lead>35w/1num, text 9 nums
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
 OK HJC-BI6070BEX-00 <- kilo:cohere/north-mini-code:free (284s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+style-soft: lead>35w/1num, text 9 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صنعتی و معدنی»
+  CBA-BI6070BEX-00 zai:glm-4.5-flash: 68s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صنعتی و معدنی»
+style-soft: lead>35w/1num, text 18 nums
+  stage6 news: kept stage-5 title after 3 calls (فعل «قیمت» امروز تکرار شده)
+OK KBCC-PCT1G42.5-JEX-00 <- gapgpt:gemma-3-27b-it (65s)
