@@ -1336,7 +1336,8 @@ def main():
     done = {i["symbol"] for i in doc["items"]}
     subs = {i["subtitle"] for i in doc["items"]}
     TODAY_TITLES[:] = [i["title"] for i in doc["items"] if i.get("title")]
-    todo = [r for r in rows if r.get("symbol") not in done and not ((r.get("traded_qty") or 0) > 0 and not r.get("weighted_price"))]
+    todo = [r for r in rows if r.get("symbol") not in done and "فرعی" not in (r.get("talar") or "")  # owner 1405-07-28: no news for the side hall (no price/value in the source)
+            and not ((r.get("traded_qty") or 0) > 0 and not r.get("weighted_price"))]
     provs = providers()
     if not provs:
         sys.exit("no model key found (GEMINI_API_KEY / OPENROUTER_API_KEY / GROQ_API_KEY / ...)")
