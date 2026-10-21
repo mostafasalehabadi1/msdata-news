@@ -1,223 +1,32 @@
+rewrite SRBK-CR08AB-00: data changed after it was written (180.0|180.0|180.0|32905526.0|5922994680.0 -> 120.0|120.0|120.0|32905526.0|3948663120.0)
+rewrite HAAL-PS10000-00: data changed after it was written (150.0|150.0|150.0|1880330.0|282049500.0 -> 900.0|900.0|900.0|1880330.0|1692297000.0)
+rewrite MPC-HDBL3PP-00: data changed after it was written (440.0|440.0|440.0|1823741.0|802446040.0 -> 242.0|242.0|242.0|1823741.0|441345322.0)
+rewrite MPC-HDEX5PP-00: data changed after it was written (154.0|154.0|154.0|1931151.0|297397254.0 -> 88.0|88.0|88.0|1931151.0|169941288.0)
+rewrite MPC-MEGB-00: data changed after it was written (5000.0|2150.0|2400.0|1040361.0|2236776150.0 -> 5150.0|2300.0|2550.0|1040361.0|2392830300.0)
+rewrite THOR-GRSUSUB-00: data changed after it was written (210.0|210.0|210.0|1284937.0|269836770.0 -> 130.0|130.0|130.0|1284937.0|167041810.0)
+rewrite MSC-HSV00000-00: data changed after it was written (40590.0|34760.0|34760.0|1272709.0|44239364840.0 -> 35860.0|30030.0|30030.0|1272709.0|38219451270.0)
+rewrite HSR-LUSUACB-00: data changed after it was written (1200.0|1200.0|1200.0|1154332.0|1385198400.0 -> 700.0|700.0|700.0|1154332.0|808032400.0)
+rewrite KSC-BSO494X-00: data changed after it was written (10125.0|10125.0|10125.0|916263.0|9277162875.0 -> 6000.0|6000.0|6000.0|916263.0|5497578000.0)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+32 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK MPC-DEGB-00 <- gapgpt:gemma-3-27b-it (82s)
   staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:poolside/laguna-m.1: call 4 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"244a14a9-2ae7-4c8c-a68c-ff269ddb1075","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"e09bd22e-4ee6-4074-920d-7359766a4b70","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   stage6 news: title in 3 calls
-OK ETSS-BSG017OO-00 <- openrouter:minimax/minimax-m3.1-flash:free (908s)
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  JPPC-PPRP120LPP-00 ovh:gpt-oss-120b: 180s TimeoutError: The read operation timed out
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:poolside/laguna-m.1: call 5 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:poolside/laguna-m.1: call 6 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  RJCO-PPRG1104KRJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"25b0913f-d3d4-4ad3-99f1-9b1ab02e5a20","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 5 failed: HTTP 429: {"id":"cfdf1e5a-3c77-4fb0-bf05-5063f5299025","message":"You are using a Trial key, which is limited to 1000 AP
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:poolside/laguna-m.1: call 7 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-style-soft: text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: text 15 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:poolside/laguna-m.1: call 8 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
-
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  NGHS-BSG194X-00 zai:glm-4.7-flash: 180s TimeoutError: The read operation timed out
-  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۳۷ | فعل «شد» امروز تکرار شده)
-  SHPC-DEGB-00 gapgpt:gemma-3-27b-it: 102s ValueError: repeated subtitle
-  PBSC-BSO1720X-00 requesty:poolside/laguna-m.1: 371s ValueError: staged: 8 calls, last: no JSON: 
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged kilo:thinkingmachines/inkling-small:free: call 2 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"6872c899-e637-49a5-8402-da2d9fd14016","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 6 failed: HTTP 429: {"id":"9b6a44fe-7d9f-4a0e-bdc4-88c906843caa","message":"You are using a Trial key, which is limited to 1000 AP
-  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged kilo:thinkingmachines/inkling-small:free: call 3 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 13 nums
-  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-style-soft: lead>35w/1num, text 17 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 16 عدد دارد؛ حداکثر ۱۵ عدد بماند
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 5 calls
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged kilo:thinkingmachines/inkling-small:free: call 4 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK KPC-OAPMDIB-00 <- gapgpt:gemma-3-27b-it (48s)
-  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged kilo:thinkingmachines/inkling-small:free: call 5 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  SKS-BSG194X-00 ovh:Qwen3.5-397B-A17B: 430s TimeoutError: The read operation timed out
-  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"cec9a0ef-d77f-4ed1-88e0-d92a6c94454a","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 7 failed: HTTP 429: {"id":"e88b8c04-c4e4-49dc-a8ec-a0a19bc11258","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged kilo:thinkingmachines/inkling-small:free: call 6 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  IPC-XYLENEMIXB-00 hf:deepseek-ai/DeepSeek-V3.1: 361s ValueError: staged: 8 calls, last: no JSON: 
-  SDSM-BSG017OO-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 361s ValueError: staged: 8 calls, last: no JSON: 
-  JPPC-PPRP120LPP-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged kilo:thinkingmachines/inkling-small:free: call 7 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-style-soft: lead>35w/1num, text 21 nums
-style-soft: lead>35w/1num, text 22 nums
-  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged kilo:thinkingmachines/inkling-small:free: call 8 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-style-soft: lead>35w/1num, text 22 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 17 عدد دارد؛ حداکثر ۱۵ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  SHPC-NOBG-00 llm7:DeepSeek-V4-Flash-0731: 372s ValueError: staged: 8 calls, last: no JSON: 
-  stage6 news: title in 2 calls
-OK CHMI-BSG194X-00 <- gapgpt:gemma-3-27b-it (84s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 104 words / 4 paragraphs
-  NGHS-BSG194X-00 zai:glm-4.5-flash: 150s ValueError: staged: 8 calls, last: 104 words / 4 paragraphs
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  MNB-BSG194X-00 kilo:thinkingmachines/inkling-small:free: 366s ValueError: staged: 8 calls, last: no JSON: 
-  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"55d58038-3f66-4c46-9af3-f85b2d04437e","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 8 failed: HTTP 429: {"id":"ae8bab45-386f-4de4-85d2-b1e4933553c0","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  AISC-BSG194X-00 cohere:command-a-03-2025: 1174s ValueError: staged: 8 calls, last: no JSON: 
-  AZAS-BSG194X-00 cohere:command-a-reasoning-08-2025: 1174s ValueError: staged: 8 calls, last: no JSON: 
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"531a62bb-e0c6-47d7-a5fb-3cc253cf1da2","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 10 calls
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"fecb4086-fc18-48e6-84cf-36bdb4c6c96e","message":"You are using a Trial key, which is limited to 1000 AP
-  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 2 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK PPCO-OASTYB-00 <- gapgpt:gemma-3-27b-it (85s)
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 3 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 4 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"a931a4f4-4b62-4759-913f-4c458e63d83d","message":"You are using a Trial key, which is limited to 1000 AP
-  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۱۴۰۴)
-OK KSO-BSG194X-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (437s)
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"5c3c43b2-bf3e-46eb-aa48-3d9bbef06ed0","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 5 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 6 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 7 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-style-soft: lead>35w/1num, text 16 nums
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"e22ada53-28f5-4091-9899-0e30385c8ab0","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 8 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
-
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"22c65580-9a39-47ee-b433-23d67efd1320","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 18 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-  PBSC-BSO1720X-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 363s ValueError: staged: 8 calls, last: no JSON: 
-style-soft: lead>35w/1num, text 24 nums
-  staged openrouter:minimax/minimax-m3.1-flash:free: check cut 1 sentence(s)
-  staged kilo:cohere/north-mini-code:free: draft dropped after 7 calls: 37 words / 2 paragraphs
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK ARCO-CASOALB-00 <- gapgpt:gemma-3-27b-it (136s)
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"49b7d329-159f-4cfe-ac4d-63ed1e9173f9","message":"You are using a Trial key, which is limited to 1000 AP
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"3225bee2-dbb1-49a8-8e02-c4c3db5dd556","message":"You are using a Trial key, which is limited to 1000 AP
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"cea56fc6-039a-4f3a-84d1-8e7e6ec7a2a9","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 10 nums
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"5a756310-655d-41c6-bb0c-4784af6e7989","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: «۲۹۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۲۹۸ تن است
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"cb610664-16c7-448d-acc0-662b603bf3e6","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"d9922e2f-736c-4467-83ea-39a4e218d404","message":"You are using a Trial key, which is limited to 1000 AP
-  PBSC-BSO1720X-00 requesty:nvidia/muse-glimmer-30b: 180s TimeoutError: The read operation timed out
-  MNB-BSG194X-00 kilo:cohere/north-mini-code:free: 404s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 13 nums
-style-soft: text 9 nums
-style-soft: text 9 nums
-style-soft: lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 20 calls
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"6744a98b-96cc-4007-a574-1af752b5e120","message":"You are using a Trial key, which is limited to 1000 AP
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-  SHPC-OAEHB-00 gapgpt:gemma-3-27b-it: 227s ValueError: repeated subtitle
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"bfe11d99-8bbd-4716-a1a7-26c38a386fae","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants a news arti
-  staged kilo:kilo-auto/free: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"acf20485-e364-4ad9-b2bc-ff0c8b60c12c","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"7496bdfc-6a76-4709-b380-b44ded7652d1","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: text 14 nums
-  staged openrouter:minimax/minimax-m3.1-flash:free: accepted after 7 calls
-style-soft: text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK FPCO-ACTACB-00 <- gapgpt:gemma-3-27b-it (91s)
-style-soft: text 16 nums
-  staged ovh:Qwen3.5-397B-A17B: soft: لید بی‌عدد
-  staged ovh:Qwen3.5-397B-A17B: accepted after 6 calls
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"349110e9-ddae-4e1a-9b56-9bfbc1dfee56","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"cb8dd52b-d878-48b1-80a9-6dff55da20e7","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 19 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 16 عدد دارد؛ حداکثر ۱۵ عدد بماند | 4 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
-  stage6 news: title in 2 calls
-OK ATSC-BSG194X-00 <- openrouter:minimax/minimax-m3.1-flash:free (857s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳)
-OK NCI-SUACB-00 <- gapgpt:gemma-3-27b-it (70s)
-  stage6 news: title in 1 calls
-OK SJS-BSG194X-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (499s)
+OK MPC-HDBL3PP-00 <- gapgpt:gemma-3-27b-it (76s)
