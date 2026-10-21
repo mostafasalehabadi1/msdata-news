@@ -437,3 +437,24 @@ style-soft: lead>35w/1num, text 14 nums
   staged gapgpt:gemma-3-27b-it: accepted after 7 calls
   stage6 news: kept stage-5 title after 3 calls (حرف لاتین | عدد بیرون از متن: 1104 | فعل «شکست» امروز تکرار شده)
 OK RJCO-PPRG1104KRJ-00 <- gapgpt:gemma-3-27b-it (71s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  AISC-BSG194X-00 cohere:command-a-03-2025: 1174s ValueError: staged: 8 calls, last: no JSON: 
+  PBSC-BSO1720X-00 cohere:command-a-reasoning-08-2025: 1174s ValueError: staged: 8 calls, last: no JSON: 
+style-soft: lead>35w/1num
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 12 nums
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+style-soft: lead>35w/1num, text 16 nums
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"af9c874e-5f40-4dee-8aa6-9b8b322f0307","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"f8403bcd-4069-45af-aada-d8105c58e046","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 12 calls
+  stage6 news: kept stage-5 title after 3 calls (16 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
+OK SRBK-CR08AB-00 <- gapgpt:gemma-3-27b-it (77s)
