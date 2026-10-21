@@ -1,2 +1,9 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+2 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 10 nums
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
+OK DMTBRCABEX0050804 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (250s)
