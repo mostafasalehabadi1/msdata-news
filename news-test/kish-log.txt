@@ -1,947 +1,322 @@
 kish: 30 settled rows, 0 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-30 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+4 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
-  SGHC-CLINKERT2EX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  CJOV-PCT2G42.5-BEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   openrouter:google/gemma-4-31b-it:free: quota used up - skipped for the rest of the day
-  SGHC-CLINKERT2EX-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  kilo:inclusionai/ling-3.1-flash: quota used up - skipped for the rest of the day
-  DHO-BI6070BEX-00 kilo:inclusionai/ling-3.1-flash: 4s QuotaError: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"paid_model_auth_required"}
+  CJOV-PCT2G42.5-BEX-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
   openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped for the rest of the day
-  SGHC-CLINKERT2EX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  llm7:DeepSeek-V4-Flash-0731: quota used up - skipped for the rest of the day
-  PAC-BI6070BEX-00 llm7:DeepSeek-V4-Flash-0731: 5s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 57 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":57}}
+  CJOV-PCT2G42.5-BEX-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"d636936e-14fe-461a-bf2c-dbb4b135cdf5","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"cde98b45-a25e-4f39-b324-8c3bdb10702b","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 503: {"error":{"message":"This model is temporarily busy. Please try again shortly or choose another model.","type"
-style-soft: lead>35w/1num, text 13 nums
-  staged groq:openai/gpt-oss-120b: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 13 nums
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
-  ESTC-PCT2G32.5-L50EX-00 llm7:minimax-m2.7: 86s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 19537 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":19537}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
-  ESTC-PCT2G32.5-L50EX-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
-style-soft: lead>35w/1num, text 12 nums
-  staged kilo:kilo-auto/free: accepted after 7 calls
-  stage6 news: title in 1 calls
-OK DHO-BI6070BEX-00 <- kilo:kilo-auto/free (94s)
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"44a56ac3-2208-4b79-8220-1dd9ac297e95","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"12ddbb09-c8aa-426b-a405-7e9f2672c049","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 11 nums
-  staged kilo:kilo-auto/free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:kilo-auto/free: accepted after 5 calls
-  stage6 news: title in 1 calls
-OK JRC-BI6070BEX-00 <- kilo:kilo-auto/free (30s)
-style-soft: lead>35w/1num, text 10 nums
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"54bf78d5-d43d-494b-a986-ad4153803aa5","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"68b2dbba-4420-4f6d-b1b8-ddce18c5ea01","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  CJOV-PCT2G42.5-BEX-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  EACI-DSMLABSAEX-00 kilo:dots-studio/dots-3-note-preview:free: 183s TimeoutError: The read operation timed out
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 18 nums
-  staged kilo:kilo-auto/free: accepted after 6 calls
-style-soft: lead>35w/1num
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
-  stage6 news: title in 1 calls
-OK PACR-BI6070BEX-00 <- kilo:kilo-auto/free (81s)
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
-  CJOV-PCT2G42.5-BEX-00 ovh:Meta-Llama-3_3-70B-Instruct: 41s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"7af1c8136bb8d81a4b883b7f964c7a5f"
-}
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"b38a4bcb-63df-448b-8404-5e2170256c9b","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"23daac0d-b50c-4062-b96e-970bd5901e8c","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 10 nums
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 10 nums
-  staged groq:openai/gpt-oss-120b: draft dropped after 8 calls: no JSON: ۱۸۰ تن فروخته شد",   "slug": "قیر-6070-شرکت-قیر-برنت-پارس-۱۸۰-تن-فروخته-شد",   "
-  BPB-BI6070BEX-00 groq:openai/gpt-oss-120b: 266s ValueError: staged: 8 calls, last: no JSON: ۱۸۰ تن فروخته شد",   "slug": "قیر-6070-شرکت-قیر-برنت-پارس-۱۸۰-تن-فروخته-شد",   "
-style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 12 nums
-  staged kilo:kilo-auto/free: draft dropped after 8 calls: markers: تالار اشتباه: «صنعتی و معدنی»
-  PACS-BI6070BEX-00 kilo:kilo-auto/free: 54s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صنعتی و معدنی»
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"6f99a22a-e20e-4629-8972-6fbb19d583b8","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"97d006a1-36c2-4248-867d-36184347d268","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۰۰ | فعل «فروخت» امروز تکرار شده)
-OK CWD-CR08ABEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (337s)
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-style-soft: lead>35w/1num, text 11 nums
-  PACT-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 363s ValueError: staged: 8 calls, last: no JSON: 
-  CMN-PCT2G42.5-L50EX-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 363s ValueError: staged: 8 calls, last: no JSON: 
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  FART-DSMLABSAEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"703afbda-1dd1-4343-a56c-b6a7a1a75fac","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"57ce114b-5c5e-4058-9136-7d1925f5f36a","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  CJOV-PCT2G42.5-BEX-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged openrouter:minimax/minimax-m3.1-flash:free: check cut 1 sentence(s)
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"860ea44a-27b0-410b-80c5-9f15f3e1f297","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"2637a3de-1d37-4cf7-b6d9-6955d34d8eb9","message":"You are using a Trial key, which is limited to 1000 AP
-  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 2 sentence(s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for the rest of the day
-  CJOV-PCT2G42.5-BEX-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 32s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"da8dbd56a7122f0c4ce8e73f5550fe66"
-}
-  staged openrouter:minimax/minimax-m3.1-flash:free: check cut 1 sentence(s)
-  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for the rest of the day
-  CJOV-PCT2G42.5-BEX-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 74 words / 3 paragraphs
-  PACB-BI6070BEX-00 zai:glm-4.7-flash: 455s ValueError: staged: 8 calls, last: 74 words / 3 paragraphs
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 9 nums
-  staged zai:glm-4.5-flash: accepted after 6 calls
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"1189ad18-2826-4482-9741-0a115bcd9955","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"4e163567-0c24-41de-ac98-7ba9d22c6834","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳ | فعل «فروخت» امروز تکرار شده)
-OK PACB-BI6070BEX-00 <- zai:glm-4.5-flash (51s)
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 2 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 3 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 14 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 4 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  BEHD-DSMLABSAEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"9fd8795f-fd02-4faf-a75e-32dfd2efc193","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"3eada9c2-6830-4ee1-a02f-c6c8d02839a8","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 5 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  BPB-BI6070BEX-00 groq:openai/gpt-oss-20b: 310s ValueError: staged: 8 calls, last: no JSON: 
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 6 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  PBDC-INBPPBEX-00 ovh:Qwen3.5-397B-A17B: 610s TimeoutError: The read operation timed out
+  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 7 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  stage6 news: title in 2 calls
-OK ESTC-PCT2G32.5-L50EX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (277s)
+  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"c588358b-f685-402e-882c-d405768d12a2","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"3f9263c7-f0f4-47f2-8ad1-87d35dd20f54","message":"You are using a Trial key, which is limited to 1000 AP
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 8 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 9 nums
-style-soft: lead>35w/1num, text 9 nums
-  PACS-BI6070BEX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 374s ValueError: staged: 8 calls, last: no JSON: 
-style-soft: lead>35w/1num, text 17 nums
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۳۵
-  staged kilo:poolside/laguna-s-2.1:free: check cut 1 sentence(s)
-  staged kilo:poolside/laguna-s-2.1:free: check cut 2 sentence(s)
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"f9f97668-cd04-4b31-9e52-a7c754ac645e","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"1dca0bb7-a089-47f1-ae5c-44bca2639341","message":"You are using a Trial key, which is limited to 1000 AP
-  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for the rest of the day
-  PACS-BI6070BEX-00 kilo:poolside/laguna-s-2.1:free: 44s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-style-soft: lead>35w/1num
-  SSAC-DSMLABSAEX-00 hf:deepseek-ai/DeepSeek-V3.1: 363s ValueError: staged: 8 calls, last: no JSON: 
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 13 nums
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۳۵
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 2 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged cohere:command-a-reasoning-08-2025: call 2 failed: HTTP 429: {"id":"443edb20-1457-4f63-b1a4-c1888b4619e8","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"48840b28-9c8f-4603-810e-92b6034e5035","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: عدد بیرون از حقیقت‌ها: ۲٫۲۳۵ | تالار اشتباه: «صادراتی»
-  PSHG-DSMLABSAEX-00 gapgpt:gemma-3-27b-it: 167s ValueError: staged: 20 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲٫۲۳۵ | تالار اشتباه: «صادراتی»
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: text 9 nums
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 11 nums
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  CMN-PCT2G42.5-L50EX-00 ovh:gpt-oss-120b: 379s TimeoutError: The read operation timed out
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 3 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 3 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-reasoning-08-2025: call 3 failed: HTTP 429: {"id":"d6c0e4f7-a699-41b9-882d-2b27a2163b0f","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"199c5d14-54ce-431e-aee9-a44dc0af866b","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:mistral/leanstral-1-5: call 2 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 19 nums
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 19 nums
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-style-soft: lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: markers: تالار اشتباه: «صادراتی»
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 4 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 4 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-reasoning-08-2025: call 4 failed: HTTP 429: {"id":"e602713f-0777-4ef2-ab15-9e3a10681a23","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 4 failed: HTTP 429: {"id":"79846d9f-71e0-44df-8fba-2147fb152142","message":"You are using a Trial key, which is limited to 1000 AP
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num
-  staged requesty:mistral/leanstral-1-5: call 3 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-style-soft: lead>35w/1num
-style-soft: text 9 nums
-  staged openrouter:minimax/minimax-m3.1-flash:free: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
-  SGHC-CLINKERT2EX-00 openrouter:minimax/minimax-m3.1-flash:free: 911s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
-style-soft: lead>35w/1num, text 16 nums
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 16 nums
-  staged kilo:thinkingmachines/inkling-small:free: call 2 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: markers: تالار اشتباه: «صادراتی»
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
-  PBDC-INBPPBEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 320s ValueError: staged: 8 calls, last: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
-  staged kilo:thinkingmachines/inkling-small:free: call 3 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: تالار اشتباه: «صادراتی»
-  ECC-PCT2G42.5-L50EX-00 gapgpt:gemma-3-27b-it: 180s ValueError: staged: 20 calls, last: markers: تالار اشتباه: «صادراتی»
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 5 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 5 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged cohere:command-a-reasoning-08-2025: call 5 failed: HTTP 429: {"id":"6c5cf429-6505-4ee6-be39-67b31cf0df89","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"44229710-e4f5-4132-84b1-bf19fc2b7171","message":"You are using a Trial key, which is limited to 1000 AP
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged kilo:thinkingmachines/inkling-small:free: call 4 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged requesty:mistral/leanstral-1-5: call 4 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged kilo:thinkingmachines/inkling-small:free: call 5 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  CMN-PCT2G42.5-L50EX-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  staged kilo:thinkingmachines/inkling-small:free: call 6 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK CMN-PCT2G42.5-L50EX-00-2 <- gapgpt:gemma-3-27b-it (65s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 6 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 6 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-reasoning-08-2025: call 6 failed: HTTP 429: {"id":"79b63d69-c0d4-4e18-87fb-fe76ad772b03","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"25b739f5-0411-4d73-9dfc-2c0ea5e46ef2","message":"You are using a Trial key, which is limited to 1000 AP
-  staged kilo:thinkingmachines/inkling-small:free: call 7 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged requesty:mistral/leanstral-1-5: call 5 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:thinkingmachines/inkling-small:free: call 8 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  PACS-BI6070BEX-00 kilo:thinkingmachines/inkling-small:free: 368s ValueError: staged: 8 calls, last: no JSON: 
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 7 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 7 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK pakn-DSMLABSAEX-00 <- gapgpt:gemma-3-27b-it (61s)
-  staged cohere:command-a-reasoning-08-2025: call 7 failed: HTTP 429: {"id":"4370d03d-454f-4485-ace6-8c55bd8126cd","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"e3b57032-6f6b-4953-94b2-931a9042bfe0","message":"You are using a Trial key, which is limited to 1000 AP
-  ASHR-DSMLABSAEX-00 hf:deepseek-ai/DeepSeek-V3.1: 363s ValueError: staged: 8 calls, last: no JSON: 
-  BPB-BI6070BEX-00 ovh:Qwen3.5-397B-A17B: 503s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged requesty:mistral/leanstral-1-5: call 6 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 9 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 8 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-reasoning-08-2025: call 8 failed: HTTP 429: {"id":"ee48cc48-75c0-4119-88e7-1fc3edfba8c5","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"2f0c413e-f24b-46af-a487-6851d0093fd4","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 9 nums
-style-soft: lead>35w/1num, text 9 nums
-  GAC-PCT2G42.5-L50EX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 1177s ValueError: staged: 8 calls, last: no JSON: 
-  NFCO-PCT2G42.5-L50EX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 1177s ValueError: staged: 8 calls, last: no JSON: 
-  KHAC-PCT2G42.5-L50EX-00 cohere:command-a-reasoning-08-2025: 1178s ValueError: staged: 8 calls, last: no JSON: 
-  PQK-BI6070BEX-00 cohere:command-a-03-2025: 1178s ValueError: staged: 8 calls, last: no JSON: 
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged requesty:mistral/leanstral-1-5: call 7 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 5 calls
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"a903521f-27c9-4b39-8002-408ad3354ebb","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 10 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"2efaafa0-e57c-4231-8c7e-30f8eac8dc1a","message":"You are using a Trial key, which is limited to 1000 AP
-  staged ovh:gpt-oss-120b: check cut 4 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: markers: تالار اشتباه: «صادراتی»
-  staged requesty:mistral/leanstral-1-5: call 8 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  GSS-BSO068XEX-00 requesty:mistral/leanstral-1-5: 1280s ValueError: staged: 8 calls, last: no JSON: 
-  stage6 news: title in 2 calls
-OK CMN-PCT2G42.5-L50EX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (271s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"e12cf6d2-1f04-4609-aa3b-dcec3c9f7b5a","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  OAC-PCT2G42.5-JEX-00 gapgpt:gemma-3-27b-it: 195s ValueError: staged: 20 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"7f6453a3-3f49-4fd6-a9da-f93f07f0ce4a","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"b44e184a-3b90-473c-a393-828155205367","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"ebab728d-0186-4408-a35d-20525bcf9b8c","message":"You are using a Trial key, which is limited to 1000 AP
-  GAC-PCT2G42.5-L50EX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  stage6 news: title in 3 calls
-OK PAC-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (67s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: markers: تالار اشتباه: «صنعتی و معدنی» | تالار اشتباه: «صادراتی»
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"f253027a-4fd6-4788-a055-ef23c21c19f3","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"05dd11d2-802b-460d-9816-56273d7d55b2","message":"You are using a Trial key, which is limited to 1000 AP
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: تیتر 15 کلمه است؛ ۸ تا ۱۳ کلمه بنویس
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-  PBDC-INBPPBEX-00 ovh:gpt-oss-120b: 428s TimeoutError: The read operation timed out
-  stage6 news: kept stage-5 title after 3 calls (15 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
-OK EACI-DSMLABSAEX-00 <- gapgpt:gemma-3-27b-it (81s)
-style-soft: lead>35w/1num, text 16 nums
-  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: 000
-  PACS-BI6070BEX-00 kilo:cohere/north-mini-code:free: 387s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: 000
-style-soft: lead>35w/1num
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
-  CJOV-PCT2G42.5-BEX-00 zai:glm-4.7-flash: 950s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"6dd861ee-bc1c-4f61-ac81-812680ff8b07","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"c9386830-9db6-4822-be53-73a2b38d092d","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: title in 1 calls
-OK PACT-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (39s)
-style-soft: lead>35w/1num, text 9 nums
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged kilo:kilo-auto/free: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس
-  staged kilo:kilo-auto/free: accepted after 8 calls
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num, text 16 nums
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK GAC-PCT2G42.5-L50EX-00 <- kilo:kilo-auto/free (78s)
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"f859e550-842a-450e-8267-bcf65853b13d","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"0c44fe2b-dbbc-4207-87f6-8e41ab75781b","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۳۵
-style-soft: lead>35w/1num, text 16 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
-  CJOV-PCT2G42.5-BEX-00 zai:glm-4.5-flash: 127s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
-style-soft: lead>35w/1num, text 13 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"f0043dc2-ca3b-4190-803a-d382bfe53ad4","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"0ca0c998-3ee4-471d-86b1-cae08aeff366","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۳۵
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «نشان می‌دهد» در text
-  FART-DSMLABSAEX-00 gapgpt:gemma-3-27b-it: 156s ValueError: staged: 20 calls, last: markers: «نشان می‌دهد» در text
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"102b8310-6268-432c-bad1-36b9f445fb18","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"5c08f968-aec4-4716-8fa7-30e59a16641a","message":"You are using a Trial key, which is limited to 1000 AP
-  stage6 news: title in 2 calls
-OK NFCO-PCT2G42.5-L50EX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (401s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"c8bc4634-0bad-4ce4-ac96-2fd09d766478","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"d7ec17ee-9df5-47d3-b947-e8b3bb9dc035","message":"You are using a Trial key, which is limited to 1000 AP
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-style-soft: lead>35w/1num
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"81910a5c-8441-4939-9669-84b0fbc82fe3","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"dcfedb21-1fc2-4484-b279-adfa40b3f377","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس
-  staged gapgpt:gemma-3-27b-it: accepted after 10 calls
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"73d54eeb-6ed9-4b7e-a32f-2f8dc6a9020b","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"fec31100-c0b3-491f-a3c7-0866571f0aff","message":"You are using a Trial key, which is limited to 1000 AP
-  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۲۲۳۵)
-OK BEHD-DSMLABSAEX-00 <- gapgpt:gemma-3-27b-it (223s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 2 failed: HTTP 429: {"id":"fc8d3692-2162-42ef-80c9-e6ef9ed76234","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"02ed1dc8-b0be-48c1-a71b-753d780c142b","message":"You are using a Trial key, which is limited to 1000 AP
+  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  SSAC-DSMLABSAEX-00 hf:deepseek-ai/DeepSeek-V3.1: 362s ValueError: staged: 8 calls, last: no JSON: 
+  OAC-PCT2G42.5-JEX-00 llm7:DeepSeek-V4-Flash-0731: 365s ValueError: staged: 8 calls, last: no JSON: 
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
 style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 12 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 3 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-style-soft: lead>35w/1num, text 12 nums
-  staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"a083a143-8987-4a52-820b-49e44047eeea","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 3 failed: HTTP 429: {"id":"76d18d29-3718-423c-bee3-6dfbc7aee738","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۳۵
-style-soft: lead>35w/1num, text 11 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 4 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-style-soft: lead>35w/1num, text 10 nums
-  staged cohere:command-a-03-2025: call 4 failed: HTTP 429: {"id":"69009679-c1f6-4dde-bfd6-515c400297a4","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 4 failed: HTTP 429: {"id":"c094992c-e9b6-4c24-80b2-61b901135a13","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۳۵
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 2 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: عدد بیرون از حقیقت‌ها: ۲٫۲۳۵ | تالار اشتباه: «صادراتی»
-  SSAC-DSMLABSAEX-00 gapgpt:gemma-3-27b-it: 233s ValueError: staged: 20 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲٫۲۳۵ | تالار اشتباه: «صادراتی»
-  PBDC-INBPPBEX-00 ovh:Qwen3.6-27B: 690s TimeoutError: The read operation timed out
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 5 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"4840d535-097d-4017-952a-deef485c5765","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 5 failed: HTTP 429: {"id":"e9ff1796-1589-4766-8c20-1140e7698201","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 3 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  CJOV-PCT2G42.5-BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 466s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲٫۲۳۵، ۲۲۳۵ | تالار اشتباه: «صادراتی»
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 6 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-r-plus-08-2024: call 6 failed: HTTP 429: {"id":"c6c0f416-6a70-4241-94ce-d64cabce05ff","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"335ebca0-c9c1-45fd-8177-b371292da493","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 4 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 7 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: markers: تالار اشتباه: «صادراتی»
-  staged cohere:command-r-plus-08-2024: call 7 failed: HTTP 429: {"id":"e2fe61b8-b42f-4827-a09f-fe2dbbcc2c72","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"06d3c8a3-2eb9-4332-9fa4-77bcd22c476a","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: عدد بیرون از حقیقت‌ها: ۲٫۲۳۵، ۲۲۳٫۵۰۰ | تالار اشتباه: «صادراتی»
-  ASHR-DSMLABSAEX-00 gapgpt:gemma-3-27b-it: 171s ValueError: staged: 20 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲٫۲۳۵، ۲۲۳٫۵۰۰ | تالار اشتباه: «صادراتی»
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 5 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-style-soft: lead>35w/1num, text 12 nums
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged cohere:command-r-plus-08-2024: call 8 failed: HTTP 429: {"id":"a3b98026-7672-408a-bdfe-08f3a42bd172","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"9b3f6aa3-8bd5-4359-a517-1cf4b04dfd21","message":"You are using a Trial key, which is limited to 1000 AP
-  BPB-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 1176s ValueError: staged: 8 calls, last: no JSON: 
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num
-  staged zai:glm-4.7-flash: draft dropped after 6 calls: markers: تالار اشتباه: «صادراتی»
-  KHAC-PCT2G42.5-L50EX-00 cohere:command-r-plus-08-2024: 1187s ValueError: staged: 8 calls, last: no JSON: 
-  PSCP-DSMLABSAEX-00 cohere:command-a-03-2025: 1183s ValueError: staged: 8 calls, last: no JSON: 
-style-soft: lead>35w/1num, text 16 nums
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 6 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"3222babe-3a94-4770-a766-95c18743d963","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"1bdcb11a-c9b2-4ab0-97ff-226ef55adb17","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 72 words / 3 paragraphs
-  PACS-BI6070BEX-00 zai:glm-4.7-flash: 840s ValueError: staged: 8 calls, last: 72 words / 3 paragraphs
-style-soft: lead>35w/1num, text 14 nums
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 7 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: markers: تالار اشتباه: «صادراتی»
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"f8fa2674-a644-4a6d-a062-1d6d396e5b56","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"d4c3a3d4-5a6f-4b0e-bfcc-5c86df19c09f","message":"You are using a Trial key, which is limited to 1000 AP
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 8 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: تالار اشتباه: «صادراتی»
-  PQK-BI6070BEX-00 gapgpt:gemma-3-27b-it: 224s ValueError: staged: 20 calls, last: markers: تالار اشتباه: «صادراتی»
-style-soft: lead>35w/1num
-  staged zai:glm-4.5-flash: accepted after 6 calls
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  GSS-BSO068XEX-00 requesty:novita/inclusionai/ling-3.0-tiny: 1269s ValueError: staged: 8 calls, last: no JSON: 
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"acb03f95-9b45-4f0f-9af5-6cf88b3a354e","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"e7bf7896-a323-474b-a366-be4f512d32cb","message":"You are using a Trial key, which is limited to 1000 AP
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-  PACS-BI6070BEX-00 zai:glm-4.5-flash: 132s ValueError: repeated subtitle
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: markers: تالار اشتباه: «صادراتی»
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 66 words / 2 paragraphs
+  PQK-BI6070BEX-00 zai:glm-4.7-flash: 462s ValueError: staged: 8 calls, last: 66 words / 2 paragraphs
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
 style-soft: lead>35w/1num, text 9 nums
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
 style-soft: lead>35w/1num, text 9 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 16 nums
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
 style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: نام کالا در تیتر باید «سیمان پرتلند» باشد | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"4c6ea21c-5738-4852-8d89-1f091eff64ec","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"3c28f47e-6d9e-44af-87d2-d6989ab37874","message":"You are using a Trial key, which is limited to 1000 AP
-  stage6 news: title in 2 calls
-OK KHAC-PCT2G42.5-L50EX-00 <- gapgpt:gemma-3-27b-it (87s)
-style-soft: lead>35w/1num, text 16 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: markers: تالار اشتباه: «صنعتی و معدنی» | تالار اشتباه: «صادراتی»
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-style-soft: lead>35w/1num, text 9 nums
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"e04edc5f-518e-4206-b1f7-ae02681229ea","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"c9f57d5e-c16c-410c-88c1-22d20f927633","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 9 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
-  BPB-BI6070BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 326s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۳۵
-style-soft: lead>35w/1num, text 9 nums
-style-soft: lead>35w/1num, text 9 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 12 nums
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"9e034274-7312-4fe5-85be-b42a3e001d14","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"0126a64b-4792-438d-9469-43d8da62f7d4","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۳۵
-  PSCP-DSMLABSAEX-00 gapgpt:gemma-3-27b-it: 117s ValueError: staged: 20 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۲۳۵
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"b14b06d2-945b-4870-8b59-b1573f35cbc4","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"cceb40ab-096c-4cdf-be37-a123ec023c26","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"33d9ff92-b7e6-45d9-95a7-aec69d5653a7","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"c864c1f0-7261-4f2d-a2a5-0cb80bfe344e","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"bb295a4c-f0a3-4a08-9753-a0bedc15726f","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"030b6843-dfd6-48d9-82c2-ccf20c075649","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"c0dec4c0-2e17-409a-8bee-f7496608a52b","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"c68685c0-333a-4116-b58b-3c0e42a58859","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  stage6 news: kept stage-5 title after 3 calls (16 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۲۰ | فعل «شد» امروز تکرار شده)
-OK PACS-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (385s)
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"d2016b6e-22c9-4313-87b5-b709cbde31f7","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"ec2daee0-d428-4b7e-ab4a-fb69b3a235d2","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"565a0b68-bdb6-4903-a847-8fc6e58e18e4","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 2 failed: HTTP 429: {"id":"9b930c93-099d-4c4a-b8d5-af0391b84e35","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 3 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-03-2025: call 3 failed: HTTP 429: {"id":"be4751f1-9ebf-4504-b447-8b1380a9f286","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 3 failed: HTTP 429: {"id":"1524be7e-e61e-43e9-84c0-40471e5835f1","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 11 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 4 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 4 failed: HTTP 429: {"id":"6d75c28c-d9a8-4e88-bc73-a7db7144fcd7","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 4 failed: HTTP 429: {"id":"6b110a86-b774-4899-a2cf-572b61dcb488","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 12 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صنعتی و معدنی»
-  BPB-BI6070BEX-00 zai:glm-4.7-flash: 607s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صنعتی و معدنی»
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 5 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 5 failed: HTTP 429: {"id":"446d98aa-5f53-4ae4-96a8-6f115a37c37b","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 5 failed: HTTP 429: {"id":"35c43180-03e3-40f1-8710-bd054b8fadbc","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 10 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 6 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
 style-soft: lead>35w/1num, text 9 nums
   staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
-  BPB-BI6070BEX-00 zai:glm-4.5-flash: 89s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
-  staged cohere:command-a-reasoning-08-2025: call 6 failed: HTTP 429: {"id":"8c1292ab-ba5c-4352-a29c-31cd59c54ccd","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 6 failed: HTTP 429: {"id":"d88c88ac-54b1-44a0-bf6c-a695013c5d3c","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:poolside/laguna-m.1: call 2 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 11 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 7 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"1df67e92-0da2-491c-a241-c2496b929ef7","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 7 failed: HTTP 429: {"id":"fef82c0f-4ab6-41f0-8ebc-77594cd03e02","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:poolside/laguna-m.1: call 3 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 12 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged cohere:command-a-reasoning-08-2025: call 8 failed: HTTP 429: {"id":"7712e2e8-ea78-4e32-b7bf-92daca8145ce","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"b8c242c4-08f7-4c3a-b33b-c162eac0f019","message":"You are using a Trial key, which is limited to 1000 AP
-  PBDC-INBPPBEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 1177s ValueError: staged: 8 calls, last: no JSON: 
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged requesty:poolside/laguna-m.1: call 4 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  CJOV-PCT2G42.5-BEX-00 cohere:command-a-reasoning-08-2025: 1187s ValueError: staged: 8 calls, last: no JSON: 
-  PSHG-DSMLABSAEX-00 cohere:command-a-03-2025: 1187s ValueError: staged: 8 calls, last: no JSON: 
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  BPB-BI6070BEX-00 gapgpt:gemma-3-27b-it: 166s ValueError: staged: 20 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  PQK-BI6070BEX-00 zai:glm-4.5-flash: 81s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
 style-soft: lead>35w/1num
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"0348486e-5db2-436e-ad5e-fe9e8e570c02","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:poolside/laguna-m.1: call 5 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-  stage6 news: kept stage-5 title after 3 calls (حرف لاتین | 14 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
-  PBDC-INBPPBEX-00 gapgpt:gemma-3-27b-it: 94s ValueError: repeated subtitle
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"7cb3479b-4d04-45f7-9036-316921024846","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:poolside/laguna-m.1: call 6 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 4 sentence(s)
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"630b5202-0f91-4e81-9d69-48c35abaefb2","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:poolside/laguna-m.1: call 7 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"b6950d87-69cd-456a-a3dc-eb75aa272e64","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:poolside/laguna-m.1: call 8 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 15 nums
-  GSS-BSO068XEX-00 requesty:poolside/laguna-m.1: 1301s ValueError: staged: 8 calls, last: no JSON: 
-style-soft: lead>35w/1num, text 11 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: تیتر 16 کلمه است؛ ۸ تا ۱۳ کلمه بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"aead85c5-6927-43e8-8264-05d0d3736207","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"a0cfd7ce-35af-4877-82b8-4d4f69c08e38","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"5fc4787f-b859-494c-9e09-164efdcd87aa","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  stage6 news: title in 2 calls
-OK ECC-PCT2G42.5-L50EX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (487s)
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"bd4211fd-6937-4cc1-b76c-d64de72c58e2","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"7c3d80eb-1f27-4b27-bf95-23ba175c4577","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"add05cea-aa88-4eb7-ba92-02e60a6a8a3b","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 11 nums
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"f4da6b73-6581-4d6d-9d52-b3df754a9588","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 2 failed: HTTP 429: {"id":"c7a015fc-9274-41d6-b906-b87e2b97c0ba","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 11 nums
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 3 failed: HTTP 429: {"id":"434acfb5-9951-489d-b6bf-26fa08c663f8","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 11 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
-  OAC-PCT2G42.5-JEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 379s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
-  staged cohere:command-r-plus-08-2024: call 4 failed: HTTP 429: {"id":"bb168251-4bfa-46b6-944e-3e492a6d58d8","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  SGHC-CLINKERT2EX-00 openrouter:xingchen-agi/xing4.0-29b-a4b:free: 3604s IncompleteRead: IncompleteRead(5753 bytes read)
-  openrouter:nvidia/nemotron-3.5-super-vl:free: quota used up - skipped for the rest of the day
-  SGHC-CLINKERT2EX-00 openrouter:nvidia/nemotron-3.5-super-vl:free: 4s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  staged cohere:command-r-plus-08-2024: call 5 failed: HTTP 429: {"id":"73356f2a-80e6-449b-a407-ce4a0ebe8752","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
 style-soft: lead>35w/1num
-  staged cohere:command-r-plus-08-2024: call 6 failed: HTTP 429: {"id":"73ca382f-65d8-48c5-a15a-eee2b8443141","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num, text 15 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 5 calls
-style-soft: lead>35w/1num
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس
-  staged gapgpt:gemma-3-27b-it: accepted after 10 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
-OK SGHC-CLINKERT2EX-00 <- gapgpt:gemma-3-27b-it (105s)
-  staged cohere:command-r-plus-08-2024: call 7 failed: HTTP 429: {"id":"0d1ae941-2dff-4ca1-bdd9-accecd3b3723","message":"You are using a Trial key, which is limited to 1000 AP
-  stage6 news: title in 2 calls
-OK FART-DSMLABSAEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (223s)
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 2 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 8 failed: HTTP 429: {"id":"672616c8-0d68-4eda-8a43-29cdd8271267","message":"You are using a Trial key, which is limited to 1000 AP
-  CJOV-PCT2G42.5-BEX-00 cohere:command-r-plus-08-2024: 1183s ValueError: staged: 8 calls, last: no JSON: 
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 3 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"76ec5a46-5a87-414f-9024-669e8c482cb2","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 4 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: markers: تالار اشتباه: «صادراتی»
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"4fcfb6af-4a9e-43d9-94a6-617dd7012d55","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
-  SSAC-DSMLABSAEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 206s ValueError: staged: 8 calls, last: markers: نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 5 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
 style-soft: lead>35w/1num, text 9 nums
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"dd6db390-38c1-4628-b755-f5aa1e22ab80","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 18 nums
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+style-soft: lead>35w/1num
+  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num, text 11 nums
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
+  OAC-PCT2G42.5-JEX-00 hf:deepseek-ai/DeepSeek-V3.1: 361s ValueError: staged: 8 calls, last: no JSON: 
+  SSAC-DSMLABSAEX-00 llm7:DeepSeek-V4-Flash-0731: 366s ValueError: staged: 8 calls, last: no JSON: 
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 11 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
   staged gapgpt:gemma-3-27b-it: draft dropped after 19 calls: markers: تالار اشتباه: «صادراتی»
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 6 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «این در حالی است» در text | تالار اشتباه: «صادراتی»
-  CJOV-PCT2G42.5-BEX-00 gapgpt:gemma-3-27b-it: 216s ValueError: staged: 20 calls, last: markers: «این در حالی است» در text | تالار اشتباه: «صادراتی»
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"fff0211d-b9e2-4469-a677-73a6a84749e7","message":"You are using a Trial key, which is limited to 1000 AP
-  staged openrouter:minimax/minimax-m3.1-flash:free: accepted after 6 calls
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 7 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"b93ba52d-55e4-4da6-ba19-d7ef159f4eaa","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: در حالی که, lead>35w/1num, text 12 nums
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۶۰۷۰ | فعل «شد» امروز تکرار شده)
-OK BPB-BI6070BEX-00 <- openrouter:minimax/minimax-m3.1-flash:free (536s)
-  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 8 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  GSS-BSO068XEX-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 1259s ValueError: staged: 8 calls, last: no JSON: 
-style-soft: lead>35w/1num, text 11 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: تیتر 17 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"f0b09610-01ea-4254-9d9d-73ba148464d1","message":"You are using a Trial key, which is limited to 1000 AP
-  stage6 news: title in 2 calls
-OK ASHR-DSMLABSAEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (267s)
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"0b5973b5-3d1e-4143-949c-2576278b255d","message":"You are using a Trial key, which is limited to 1000 AP
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"f7df22a4-3287-4075-8e83-26f93262f080","message":"You are using a Trial key, which is limited to 1000 AP
-  staged openrouter:minimax/minimax-m3.1-flash:free: check cut 1 sentence(s)
-  staged openrouter:minimax/minimax-m3.1-flash:free: check cut 1 sentence(s)
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"d76690c9-4e54-4ffc-b3f2-b8ec8f7f7ad6","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 9 nums
 style-soft: lead>35w/1num
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"7976a702-364a-4fbe-8d5a-48be8bdb3d21","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 11 nums
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"3c1f6b34-8071-4e48-bbdc-ef5010d666bb","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 11 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: markers: تالار اشتباه: «صادراتی»
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 2 failed: HTTP 429: {"id":"19b24300-e7ca-46d5-a800-aefcd042cbf7","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
-  PQK-BI6070BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 371s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 3 failed: HTTP 429: {"id":"9c619a0e-1995-4a21-8d6a-fc008c3a8a6e","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: تیتر 15 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | لید بی‌عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
-  staged cohere:command-a-reasoning-08-2025: call 4 failed: HTTP 429: {"id":"0292b560-0693-4c25-b11a-44d28d853093","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 5 failed: HTTP 429: {"id":"4e0be634-ce19-4108-96d0-5f97ca4a801d","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-a-reasoning-08-2025: call 6 failed: HTTP 429: {"id":"8092401b-ab52-454c-ad60-771198762f2e","message":"You are using a Trial key, which is limited to 1000 AP
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: تالار اشتباه: «صادراتی»
+  PQK-BI6070BEX-00 gapgpt:gemma-3-27b-it: 218s ValueError: staged: 20 calls, last: markers: تالار اشتباه: «صادراتی»
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
 style-soft: text 13 nums
   staged openrouter:minimax/minimax-m3.1-flash:free: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
-  CJOV-PCT2G42.5-BEX-00 openrouter:minimax/minimax-m3.1-flash:free: 712s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۱.۷ | فعل «شد» امروز تکرار شده)
-OK PSCP-DSMLABSAEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (259s)
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  CJOV-PCT2G42.5-BEX-00 openrouter:minimax/minimax-m3.1-flash:free: 994s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged cohere:command-a-reasoning-08-2025: call 7 failed: HTTP 429: {"id":"981712f5-8ef0-43d4-ad5a-681ef2b9b6ac","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/muse-glimmer-30b: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged cohere:command-a-reasoning-08-2025: call 8 failed: HTTP 429: {"id":"90310c5b-94bb-4dda-ab80-1426cdcaa379","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/muse-glimmer-30b: call 2 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  PBDC-INBPPBEX-00 cohere:command-a-reasoning-08-2025: 1185s ValueError: staged: 8 calls, last: no JSON: 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n{"id":"gen-1792590667-dA16B7rZmy2yBd9Yg8H4","error":{"message":"xingchen-agi/xi
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n{"id":"gen-1792590693-XsXzQxxoXWvXvwbmflD3","error":{
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  SSAC-DSMLABSAEX-00 ovh:Qwen3.5-397B-A17B: 479s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
 style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"39a15199-799b-416a-9699-94d71c4d0b55","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/muse-glimmer-30b: call 3 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 18 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: تیتر 15 کلمه است؛ ۸ تا ۱۳ کلمه بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"1ea854ed-81bf-4e67-aabe-81bf7c3294e3","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/muse-glimmer-30b: call 4 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK PSHG-DSMLABSAEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (312s)
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"63f535a4-f00a-4613-8285-39b02e443086","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/muse-glimmer-30b: call 5 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"5a59dc15-e865-430b-a31c-db8f62d4f762","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/muse-glimmer-30b: call 6 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"2b1a73ab-6878-4c39-baa2-15e025f13dd4","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/muse-glimmer-30b: call 7 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"1a479dd3-1940-470d-91a0-e8e617caa84c","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:nvidia/muse-glimmer-30b: call 8 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  GSS-BSO068XEX-00 requesty:nvidia/muse-glimmer-30b: 1233s ValueError: staged: 8 calls, last: no JSON: 
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"56e90fa1-f409-48b7-b0bd-238b36d1935c","message":"You are using a Trial key, which is limited to 1000 AP
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  stage6 news: title in 2 calls
+OK SSAC-DSMLABSAEX-00 <- gapgpt:gemma-3-27b-it (65s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 3 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 4 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 5 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 6 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 7 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+style-soft: lead>35w/1num
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  OAC-PCT2G42.5-JEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 1178s ValueError: staged: 8 calls, last: no JSON: 
 style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK GSS-BSO068XEX-00 <- gapgpt:gemma-3-27b-it (76s)
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"a398842c-dffd-4d9e-bf64-fb75e7992910","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"88b7a7fa-4004-4e5e-9f2d-dbfc16838d99","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"6c867730-1842-4dfb-a776-8ae416d17f96","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"4af50087-419b-4249-a176-17d80dad7b09","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 2 failed: HTTP 429: {"id":"c6042079-392c-4bd6-a9f3-d09fe54f91f1","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 3 failed: HTTP 429: {"id":"f06a5555-9fc8-4074-bd04-505429cd2df5","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 4 failed: HTTP 429: {"id":"1526990d-ef42-4045-8fd9-a9bfcfb360c0","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 5 failed: HTTP 429: {"id":"ba459168-d66b-4e37-807f-a9d4b7c1c454","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 6 failed: HTTP 429: {"id":"a520cb5d-8d13-4614-b94c-fd627649dd40","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 7 failed: HTTP 429: {"id":"428dcb85-6527-499d-a204-953a3e589318","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-r-plus-08-2024: call 8 failed: HTTP 429: {"id":"52335c6f-f950-47f3-a8cd-dc4cb227df6c","message":"You are using a Trial key, which is limited to 1000 AP
-  PBDC-INBPPBEX-00 cohere:command-r-plus-08-2024: 1186s ValueError: staged: 8 calls, last: no JSON: 
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 9 nums
+style-soft: lead>35w/1num, text 9 nums
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  OAC-PCT2G42.5-JEX-00 gapgpt:gemma-3-27b-it: 189s ValueError: staged: 20 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 10 nums
+  staged ovh:Qwen3.5-397B-A17B: accepted after 8 calls
+  PQK-BI6070BEX-00 ovh:Qwen3.5-397B-A17B: 1307s TimeoutError: The read operation timed out
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  OAC-PCT2G42.5-JEX-00 ovh:Qwen3.5-397B-A17B: 837s TimeoutError: The read operation timed out
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: lead>35w/1num, text 9 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: lead>35w/1num, text 9 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: lead>35w/1num, text 9 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: lead>35w/1num, text 9 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 6 calls: markers: تالار اشتباه: «صادراتی» | کد کالا یا حروف لاتین وسط متن
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: bad response: '\n         \n\n         \n\n         \n{"id":"gen-1792593152-E6JQHxSvLl7YuO3Ey1vd","error":{"message":"xi
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
 style-soft: lead>35w/1num, text 13 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: 760 | تالار اشتباه: «صادراتی»
-  CJOV-PCT2G42.5-BEX-00 openrouter:xingchen-agi/xing4.0-29b-a4b:free: 7036s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: 760 | تالار اشتباه: «صادراتی»
-  staged openrouter:minimax/minimax-m3.1-flash:free: accepted after 6 calls
-  stage6 news: kept stage-5 title after 3 calls (تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
-OK PBDC-INBPPBEX-00 <- openrouter:minimax/minimax-m3.1-flash:free (414s)
-written 26/30; total in file 26
+style-soft: lead>35w/1num, text 18 nums
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: lead>35w/1num
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: lead>35w/1num
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: soft: نام کالا در تیتر باید «سیمان پرتلند» باشد
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: accepted after 6 calls
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 9 failed: bad response: '\n         \n\n         \n\n         \n{"id":"gen-1792594276-O2ZaVsxO5xPXbINAm88c","error":{"message":"xi
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK CJOV-PCT2G42.5-BEX-00 <- openrouter:xingchen-agi/xing4.0-29b-a4b:free (3732s)
+written 2/4; total in file 28
+kish: 30 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+2 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  PQK-BI6070BEX-00 hf:deepseek-ai/DeepSeek-V3.1: 361s ValueError: staged: 8 calls, last: no JSON: 
+  OAC-PCT2G42.5-JEX-00 llm7:DeepSeek-V4-Flash-0731: 378s ValueError: staged: 8 calls, last: no JSON: 
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num, text 9 nums
+  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num, text 9 nums
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num, text 9 nums
+  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num, text 9 nums
+style-soft: lead>35w/1num, text 9 nums
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «نشان داد» در text
+  OAC-PCT2G42.5-JEX-00 gapgpt:gemma-3-27b-it: 137s ValueError: staged: 20 calls, last: markers: «نشان داد» در text
+  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  PQK-BI6070BEX-00 llm7:DeepSeek-V4-Flash-0731: 381s ValueError: staged: 8 calls, last: no JSON: 
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
+OK PQK-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (88s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  OAC-PCT2G42.5-JEX-00 zai:glm-4.7-flash: 628s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 77 words / 3 paragraphs
+  OAC-PCT2G42.5-JEX-00 zai:glm-4.5-flash: 120s ValueError: staged: 8 calls, last: 77 words / 3 paragraphs
+written 1/2; total in file 29
+kish: 30 settled rows, 0 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  OAC-PCT2G42.5-JEX-00 hf:deepseek-ai/DeepSeek-V3.1: 362s ValueError: staged: 8 calls, last: no JSON: 
+  OAC-PCT2G42.5-JEX-00 zai:glm-4.7-flash: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صنعتی و معدنی»
+  OAC-PCT2G42.5-JEX-00 zai:glm-4.5-flash: 62s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صنعتی و معدنی»
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: markers: تالار اشتباه: «صادراتی»
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: 69 words / 3 paragraphs
+  OAC-PCT2G42.5-JEX-00 gapgpt:gemma-3-27b-it: 177s ValueError: staged: 20 calls, last: 69 words / 3 paragraphs
+written 0/1; total in file 29
