@@ -1,8 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 8 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: تالار اشتباه: «صادراتی»
   PQK-BI6070BEX-00 gapgpt:gemma-3-27b-it: 224s ValueError: staged: 20 calls, last: markers: تالار اشتباه: «صادراتی»
 style-soft: lead>35w/1num
   staged zai:glm-4.5-flash: accepted after 6 calls
@@ -200,3 +195,6 @@ style-soft: lead>35w/1num
   staged gapgpt:gemma-3-27b-it: accepted after 10 calls
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
 OK SGHC-CLINKERT2EX-00 <- gapgpt:gemma-3-27b-it (105s)
+  staged cohere:command-r-plus-08-2024: call 7 failed: HTTP 429: {"id":"0d1ae941-2dff-4ca1-bdd9-accecd3b3723","message":"You are using a Trial key, which is limited to 1000 AP
+  stage6 news: title in 2 calls
+OK FART-DSMLABSAEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (223s)
