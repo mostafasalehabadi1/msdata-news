@@ -1,7 +1,3 @@
-rewrite ATSC-BSG194X-00: data changed after it was written (200.0|200.0|300.0|844158.25|168831650.0 -> 200.0|200.0|300.0|844158.0|168831600.0)
-rewrite SJS-BSG324X-00: data changed after it was written (3000.0|3000.0|6000.0|933650.6666666666|2800952000.0 -> 3000.0|3000.0|6000.0|933651.0|2800953000.0)
-rewrite SDSM-BSG017OO-00: data changed after it was written (200.0|200.0|275.0|873105.5|174621100.0 -> 200.0|200.0|275.0|873106.0|174621200.0)
-rewrite KDSC-BSG194X-00: data changed after it was written (950.0|950.0|1700.0|892726.8684210526|848090525.0 -> 950.0|950.0|1700.0|892727.0|848090650.0)
 rewrite ANF-BSG194X-00: data changed after it was written (500.0|500.0|775.0|912799.6|456399800.0 -> 500.0|500.0|775.0|912800.0|456400000.0)
 rewrite IMID-BSG194X-616: data changed after it was written (1000.0|1000.0|2075.0|899039.5|899039500.0 -> 1000.0|1000.0|2075.0|899040.0|899040000.0)
 rewrite JAST-BSG017OO-00: data changed after it was written (250.0|250.0|450.0|879223.8|219805950.0 -> 250.0|250.0|450.0|879224.0|219806000.0)
@@ -165,3 +161,51 @@ style-soft: lead>35w/1num, text 16 nums
   staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK SIS-BSG324X-00 <- kilo:dots-studio/dots-3-note-preview:free (394s)
+style-soft: lead>35w/1num, text 12 nums
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 19 calls: مقدار عرضه غلط است؛ عرضه ۱ هزار بود | «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  SKS-BSG324X-00 zai:glm-4.7-flash: 412s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «نشان می‌دهد» در text
+  GSS-BSG194X-00 gapgpt:gemma-3-27b-it: 163s ValueError: staged: 20 calls, last: markers: «نشان می‌دهد» در text
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"f6d2aaf8-d7c8-4934-b877-521103d8bea7","message":"You are using a Trial key, which is limited to 1000 AP
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"2aeaaa49-e3e4-4bd7-b963-b574b832626a","message":"You are using a Trial key, which is limited to 1000 AP
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: 107 words / 4 paragraphs
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۲۳ | فعل «شد» امروز تکرار شده)
+OK MBSI-BSG194X-00 <- gapgpt:gemma-3-27b-it (69s)
