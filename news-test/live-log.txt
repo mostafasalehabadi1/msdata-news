@@ -412,3 +412,28 @@ style-soft: lead>35w/1num, text 17 nums
   staged cohere:command-a-reasoning-08-2025: call 7 failed: HTTP 429: {"id":"5d3c76bf-9de6-464f-a819-04a49d92e64d","message":"You are using a Trial key, which is limited to 1000 AP
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK AZAS-BSG194X-00 <- gapgpt:gemma-3-27b-it (62s)
+  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  HSR-LUSUACB-00 hf:deepseek-ai/DeepSeek-V3.1: 361s ValueError: staged: 8 calls, last: no JSON: 
+  MNB-BSG194X-00 hf:Qwen/Qwen3-235B-A22B-Instruct-2507: 361s ValueError: staged: 8 calls, last: no JSON: 
+  PAGL-DEGB-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: markers: «نشان داد» در text
+  SDSM-BSG017OO-00 kilo:cohere/north-mini-code:free: 163s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
+  IMID-BSG194X-616 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  MSC-HSV00000-00 llm7:DeepSeek-V4-Flash-0731: 372s ValueError: staged: 8 calls, last: no JSON: 
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"60f9306d-033d-478f-b9d9-e469889e0a83","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 8 failed: HTTP 429: {"id":"e3b5d9e1-ef43-46a1-b842-d9d85bebf5a3","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (حرف لاتین | عدد بیرون از متن: 1104 | فعل «شکست» امروز تکرار شده)
+OK RJCO-PPRG1104KRJ-00 <- gapgpt:gemma-3-27b-it (71s)
