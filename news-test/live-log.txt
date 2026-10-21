@@ -1,15 +1,55 @@
+rewrite ATSC-BSG194X-00: data changed after it was written (200.0|200.0|300.0|844158.25|168831650.0 -> 200.0|200.0|300.0|844158.0|168831600.0)
+rewrite SJS-BSG324X-00: data changed after it was written (3000.0|3000.0|6000.0|933650.6666666666|2800952000.0 -> 3000.0|3000.0|6000.0|933651.0|2800953000.0)
+rewrite SDSM-BSG017OO-00: data changed after it was written (200.0|200.0|275.0|873105.5|174621100.0 -> 200.0|200.0|275.0|873106.0|174621200.0)
+rewrite KDSC-BSG194X-00: data changed after it was written (950.0|950.0|1700.0|892726.8684210526|848090525.0 -> 950.0|950.0|1700.0|892727.0|848090650.0)
+rewrite ANF-BSG194X-00: data changed after it was written (500.0|500.0|775.0|912799.6|456399800.0 -> 500.0|500.0|775.0|912800.0|456400000.0)
+rewrite IMID-BSG194X-616: data changed after it was written (1000.0|1000.0|2075.0|899039.5|899039500.0 -> 1000.0|1000.0|2075.0|899040.0|899040000.0)
+rewrite JAST-BSG017OO-00: data changed after it was written (250.0|250.0|450.0|879223.8|219805950.0 -> 250.0|250.0|450.0|879224.0|219806000.0)
+rewrite KSC-BSG194X-00: data changed after it was written (10000.0|10000.0|14700.0|917693.4475|9176934475.0 -> 10000.0|10000.0|14700.0|917693.0|9176930000.0)
+rewrite SIS-BSG324X-00: data changed after it was written (4000.0|4000.0|7100.0|934183.51875|3736734075.0 -> 4000.0|4000.0|7100.0|934184.0|3736736000.0)
+rewrite SJS-BSG194X-00: data changed after it was written (5000.0|5000.0|8250.0|932759.85|4663799250.0 -> 5000.0|5000.0|8250.0|932760.0|4663800000.0)
+rewrite NGHS-BSG194X-00: data changed after it was written (5000.0|5000.0|12575.0|977988.96|4889944800.0 -> 5000.0|5000.0|12575.0|977989.0|4889945000.0)
+rewrite MBSI-BSG194X-00: data changed after it was written (2000.0|2000.0|3400.0|906291.75|1812583500.0 -> 2000.0|2000.0|3400.0|906292.0|1812584000.0)
+rewrite MNB-BSG194X-00: data changed after it was written (200.0|200.0|260.0|787125.7|157425140.0 -> 200.0|200.0|260.0|787126.0|157425200.0)
+rewrite SKS-BSG324X-00: data changed after it was written (6000.0|6000.0|8650.0|892791.5416666666|5356749250.0 -> 6000.0|6000.0|8650.0|892792.0|5356752000.0)
+rewrite SIS-BSG194X-00: data changed after it was written (6000.0|6000.0|9675.0|931102.75|5586616500.0 -> 6000.0|6000.0|9675.0|931103.0|5586618000.0)
+rewrite ETSS-BSG017OO-00: data changed after it was written (200.0|200.0|300.0|862533.875|172506775.0 -> 200.0|200.0|300.0|862534.0|172506800.0)
+rewrite KSO-BSG194X-00: data changed after it was written (2500.0|2500.0|4500.0|908927.25|2272318125.0 -> 2500.0|2500.0|4500.0|908927.0|2272317500.0)
+rewrite AISC-BSG194X-00: data changed after it was written (7000.0|7000.0|15980.0|955806.3714285714|6690644600.0 -> 7000.0|7000.0|15980.0|955806.5714285715|6690646000.0)
+rewrite CHMI-BSG194X-00: data changed after it was written (5000.0|5000.0|7700.0|903616.72|4518083600.0 -> 5000.0|5000.0|7700.0|903617.0|4518085000.0)
+rewrite SKS-BSG194X-00: data changed after it was written (8000.0|8000.0|11650.0|895976.00625|7167808050.0 -> 8000.0|8000.0|11650.0|895976.0|7167808000.0)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-2 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged openrouter:minimax/minimax-m3.1-flash:free: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-style-soft: text 9 nums
-  staged openrouter:minimax/minimax-m3.1-flash:free: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  PAGL-DEGB-00 openrouter:minimax/minimax-m3.1-flash:free: 482s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  SHPC-DEAFG-00 zai:glm-4.7-flash: 559s TimeoutError: The read operation timed out
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.5-flash: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK SHPC-DEAFG-00 <- zai:glm-4.5-flash (109s)
+40 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 95 words / 2 paragraphs
+  SKS-BSG194X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 20s ValueError: staged: 8 calls, last: 95 words / 2 paragraphs
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  PAGL-DEGB-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 20s JSONDecodeError: Expecting value: line 2 column 12 (char 13)
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"ee08cc35-b1f5-42ae-9ffe-8fce5834338d","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"5bb83c59-2310-4829-a603-0c0b61d24c5f","message":"You are using a Trial key, which is limited to 1000 AP
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  HWI-PTACJ-000 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 24s JSONDecodeError: Expecting value: line 5 column 11 (char 192)
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+style-soft: lead>35w/1num, text 21 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۳
+  NGHS-BSG194X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 40s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۳
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  SDSM-BSG017OO-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 22s JSONDecodeError: Expecting value: line 2 column 12 (char 13)
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged requesty:mistral/leanstral-1-5: check cut 2 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۲۷ | فعل «شد» امروز تکرار شده)
+OK KSC-BSG194X-00 <- gapgpt:gemma-3-27b-it (83s)
