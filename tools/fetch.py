@@ -91,6 +91,13 @@ def main():
     jy, jm, jd = (int(x) for x in date_fa.split("/"))
     date = jalali_to_gregorian(jy, jm, jd)
     rows = [r for r in today.get("today", []) if (r.get("traded_qty") or 0) > 0]
+    # backend 1405-07-29 (content agent): values are qty x price, i.e. thousand rial for rial/kg goods but rial for the car
+    # hall (price per unit) - the Arisan 2 report said 32,576 billion toman instead of 32.6; history total_value is already right
+    for r in rows:
+        if r.get("talar") == "تالار خودرو":
+            for k in ("trade_value", "demand_value", "supply_value"):
+                if r.get(k):
+                    r[k] = r[k] / 1000
     day_dir = os.path.join(ROOT, date)
     write(os.path.join(day_dir, "today.json"),
           {"date_fa": date_fa, "date": date, "source": src, "rows": rows})
