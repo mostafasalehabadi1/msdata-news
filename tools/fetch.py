@@ -94,7 +94,8 @@ def main():
     # backend 1405-07-29 (content agent): values are qty x price, i.e. thousand rial for rial/kg goods but rial for the car
     # hall (price per unit) - the Arisan 2 report said 32,576 billion toman instead of 32.6; history total_value is already right
     for r in rows:
-        if r.get("talar") == "تالار خودرو":
+        q, pr, v = r.get("traded_qty") or 0, r.get("weighted_price") or 0, r.get("trade_value") or 0
+        if r.get("talar") == "تالار خودرو" and q and pr and abs(v - q * pr) <= 0.01 * v:  # only while the source still sends rial
             for k in ("trade_value", "demand_value", "supply_value"):
                 if r.get(k):
                     r[k] = r[k] / 1000
