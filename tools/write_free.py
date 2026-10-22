@@ -213,6 +213,7 @@ BACKUP_WAIT = 2 * 3600
 # owner 2026-10-12: a paid model writes a symbol (any tier) only after the free models had 10 minutes for it and it is still unwritten
 PAID = {"gapgpt:gemma-3-27b-it", "gapgpt:deepseek-v4-flash"}
 PAID_WAIT = 600
+GIVE_UP = 2  # failed runs before a symbol waits for new data (backend 1405-07-30)
 DEEPSEEK_ON = False  # owner 2026-10-12: GapGPT deepseek-v4-flash stays ready but writes nothing until this is True
 
 
@@ -376,6 +377,8 @@ def retry(call, prompt):
         try:
             return call(prompt)
         except ValueError as e:
+            if re.search(r"HTTP 40[23]", str(e)) and QUOTA_RE.search(str(e)):  # backend 1405-07-30: gapgpt «pre-consume quota failed» (credit gone) was retried 20 times per news
+                raise QuotaError(str(e)) from e
             if re.search(r"HTTP 429", str(e)) and QUOTA_RE.search(str(e)) and not re.search(r"PerMinute|per minute|PerSecond", str(e), re.I):
                 raise QuotaError(str(e)) from e
             if not re.search(r"HTTP (429|500|502|503)", str(e)) or wait == 30:
@@ -1366,6 +1369,15 @@ def main():
         value = {s: e["value"] for s, e in table.items()}
         seen_t = {s: e.get("seen_t", 0) for s, e in table.items()}
     todo.sort(key=lambda r: (tier.get(r["symbol"], 1), -value.get(r["symbol"], 0)))  # most important first
+    # backend 1405-07-30: one symbol no model could write was tried again by every run all night (gemma: 20 calls a run, 10x the
+    # owner's token bill); after GIVE_UP failed runs it waits until its row changes or the next day
+    give_path = os.path.join(ROOT, "news-test", f"giveup-{a.market}-{date}.json")
+    give = json.load(open(give_path, encoding="utf-8")) if os.path.exists(give_path) else {}
+    fp_of = {r["symbol"]: row_fp(r) if not kish else json.dumps(r, sort_keys=True, ensure_ascii=False)[:4000] for r in todo}
+    skip = [r for r in todo if give.get(r["symbol"], {}).get("fp") == fp_of[r["symbol"]] and give[r["symbol"]]["runs"] >= GIVE_UP]
+    if skip:
+        note(f"given up for today (failed {GIVE_UP} runs, row unchanged): {', '.join(r['symbol'] for r in skip)}")
+        todo[:] = [r for r in todo if r not in skip]
     del todo[a.limit or len(todo):]
     note(f"{len(todo)} symbols to write; {len(groups)} parallel workers: {', '.join(groups)}")
     lock = threading.Lock()
@@ -1489,6 +1501,14 @@ def main():
     for t in threads:
         t.join()
     ok = stats["ok"]
+    written = {i["symbol"] for i in doc["items"]}
+    for sym in tried:
+        if tried[sym] and sym not in written:
+            e = give.get(sym, {})
+            give[sym] = {"fp": fp_of[sym], "runs": (e.get("runs", 0) if e.get("fp") == fp_of[sym] else 0) + 1}
+    if give:
+        os.makedirs(os.path.dirname(give_path), exist_ok=True)
+        json.dump(give, open(give_path, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
     print(f"written {ok}/{len(tried)}; total in file {len(doc['items'])}")
 
 
