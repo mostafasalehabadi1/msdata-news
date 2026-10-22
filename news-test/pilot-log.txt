@@ -1,398 +1,416 @@
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: closed halls: none
 kala: 84 settled rows, 0 wait for the next data build
+rewrite KHP-MCJ-00: data changed after it was written (300.0|290.0|405.0|6030083.0|1748724070.0 -> 300.0|300.0|405.0|6034081.0|1810224300.0)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+2 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   staged zai:glm-4.7-flash: check cut 3 sentence(s)
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 75 words / 4 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 256s ValueError: staged: 8 calls, last: 75 words / 4 paragraphs
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 17 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: 105 words / 3 paragraphs
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 97 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 119s ValueError: staged: 8 calls, last: 97 words / 3 paragraphs
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 117 words / 4 paragraphs
+  MSC-HSV00000-00 zai:glm-4.7-flash: 164s ValueError: staged: 8 calls, last: 117 words / 4 paragraphs
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 zai:glm-4.5-flash: 180s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
 style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
 style-soft: lead>35w/1num, text 12 nums
 style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: نام تولیدکننده («فولاد مبارکه اصفهان») در خبر نیست؛ خبر باید درباره‌ی همین کالا و همین تولیدکننده باشد | «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها 
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 189s ValueError: staged: 20 calls, last: نام تولیدکننده («فولاد مبارکه اصفهان») در خبر نیست؛ خبر باید درباره‌ی همین کالا و همین تولیدکننده باشد | «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-written 0/1; total in file 83
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 101s ValueError: staged: 20 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 2 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 3 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 4 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 5 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 6 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 7 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  KHP-MCJ-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 1175s ValueError: staged: 8 calls, last: no JSON: 
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+style-soft: در حالی که, lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK KHP-MCJ-00 <- gapgpt:gemma-3-27b-it (58s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+kala: closed halls: none
 kala: 84 settled rows, 0 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 17 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 zai:glm-4.7-flash: 470s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 17 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: markers: لید عیناً در متن تکرار شده
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 101 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 61s ValueError: staged: 8 calls, last: 101 words / 3 paragraphs
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 281s RemoteDisconnected: Remote end closed connection without response
-written 0/1; total in file 83
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 84 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 19 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 zai:glm-4.7-flash: 522s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 17 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 102 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 50s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 23 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: 115 words / 3 paragraphs
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 215s ValueError: staged: 20 calls, last: 115 words / 3 paragraphs
-written 0/1; total in file 83
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 84 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 24 nums
-style-soft: lead>35w/1num, text 24 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 73 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 92s ValueError: staged: 8 calls, last: 73 words / 3 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 114 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 50s ValueError: staged: 8 calls, last: 114 words / 3 paragraphs
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: مقدار عرضه غلط است؛ عرضه ۳۵ هزار و ۸۶۰ بود | «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «نشان می‌دهد» در text
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 310s ValueError: staged: 20 calls, last: markers: «نشان می‌دهد» در text
-written 0/1; total in file 83
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 84 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 19 nums
-style-soft: lead>35w/1num, text 19 nums
-  staged zai:glm-4.7-flash: draft dropped after 5 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 72 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 349s ValueError: staged: 8 calls, last: 72 words / 3 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 zai:glm-4.5-flash: 53s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 18 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 92 words / 4 paragraphs
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 114 words / 2 paragraphs
+  MSC-HSV00000-00 zai:glm-4.7-flash: 376s ValueError: staged: 8 calls, last: 114 words / 2 paragraphs
 style-soft: lead>35w/1num, text 14 nums
 style-soft: lead>35w/1num, text 14 nums
 style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 558s RemoteDisconnected: Remote end closed connection without response
-written 0/1; total in file 83
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 84 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-style-soft: lead>35w/1num, text 19 nums
-style-soft: lead>35w/1num, text 21 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 98 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 446s ValueError: staged: 8 calls, last: 98 words / 3 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
   staged zai:glm-4.5-flash: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 108 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 62s ValueError: staged: 8 calls, last: 108 words / 3 paragraphs
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 101 words / 3 paragraphs
+  MSC-HSV00000-00 zai:glm-4.5-flash: 69s ValueError: staged: 8 calls, last: 101 words / 3 paragraphs
 style-soft: lead>35w/1num, text 13 nums
 style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
 style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 13 nums
   staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 154s ValueError: staged: 20 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 108s ValueError: staged: 20 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
 written 0/1; total in file 83
 kala: closed halls: none
 kala: 84 settled rows, 0 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-style-soft: lead>35w/1num, text 18 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 zai:glm-4.7-flash: 23s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 18 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 zai:glm-4.5-flash: 67s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 231s ValueError: staged: 20 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-written 0/1; total in file 83
-kala: closed halls: none
-kala: 84 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-style-soft: lead>35w/1num, text 19 nums
-style-soft: lead>35w/1num, text 19 nums
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 23 nums
+style-soft: lead>35w/1num, text 23 nums
   staged zai:glm-4.7-flash: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 89 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 49s ValueError: staged: 8 calls, last: 89 words / 3 paragraphs
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 86 words / 3 paragraphs
+  MSC-HSV00000-00 zai:glm-4.7-flash: 372s ValueError: staged: 8 calls, last: 86 words / 3 paragraphs
   staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
 style-soft: lead>35w/1num, text 16 nums
   staged zai:glm-4.5-flash: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
   MSC-HSV00000-00 zai:glm-4.5-flash: 39s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: call 2 failed: HTTP 504: <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width">
 style-soft: lead>35w/1num, text 15 nums
 style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 18 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
 style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 135s ValueError: staged: 20 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+written 0/1; total in file 83
+kala: closed halls: none
+kala: 84 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 21 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 zai:glm-4.7-flash: 473s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: 110 words / 3 paragraphs
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 98 words / 3 paragraphs
+  MSC-HSV00000-00 zai:glm-4.5-flash: 93s ValueError: staged: 8 calls, last: 98 words / 3 paragraphs
+style-soft: lead>35w/1num, text 13 nums
+style-soft: lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 18 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
   staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
 style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: مقدار عرضه غلط است؛ عرضه ۳۵ هزار و ۸۶۰ بود | «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 312s ValueError: staged: 20 calls, last: مقدار عرضه غلط است؛ عرضه ۳۵ هزار و ۸۶۰ بود | «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 84s ValueError: staged: 20 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
 written 0/1; total in file 83
 kala: closed halls: none
 kala: 84 settled rows, 0 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   staged zai:glm-4.7-flash: check cut 4 sentence(s)
-style-soft: lead>35w/1num, text 23 nums
-style-soft: lead>35w/1num, text 23 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 84 words / 1 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 35s ValueError: staged: 8 calls, last: 84 words / 1 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: 107 words / 3 paragraphs
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 103 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 56s ValueError: staged: 8 calls, last: 103 words / 3 paragraphs
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 10s URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
-written 0/1; total in file 83
-kala: closed halls: none
-kala: 84 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 114 words / 4 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 33s ValueError: staged: 8 calls, last: 114 words / 4 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 16 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 112 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 55s ValueError: staged: 8 calls, last: 112 words / 3 paragraphs
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 10s URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
-written 0/1; total in file 83
-kala: closed halls: none
-kala: 84 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-style-soft: lead>35w/1num, text 19 nums
-style-soft: lead>35w/1num, text 19 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 90 words / 2 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 66s ValueError: staged: 8 calls, last: 90 words / 2 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 17 nums
-style-soft: lead>35w/1num, text 17 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: 101 words / 3 paragraphs
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 116 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 61s ValueError: staged: 8 calls, last: 116 words / 3 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: 108 words / 3 paragraphs
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 192s ValueError: staged: 20 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-written 0/1; total in file 83
-kala: closed halls: none
-kala: 84 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 116 words / 4 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 218s ValueError: staged: 8 calls, last: 116 words / 4 paragraphs
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 16 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 71 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 39s ValueError: staged: 8 calls, last: 71 words / 3 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 21 nums
-style-soft: lead>35w/1num, text 21 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 145s ValueError: staged: 20 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-written 0/1; total in file 83
-kala: closed halls: none
-kala: 84 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 87 words / 4 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 51s ValueError: staged: 8 calls, last: 87 words / 4 paragraphs
-style-soft: lead>35w/1num, text 18 nums
-style-soft: lead>35w/1num, text 18 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: 98 words / 3 paragraphs
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 103 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 61s ValueError: staged: 8 calls, last: 103 words / 3 paragraphs
-style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 167s ValueError: staged: 20 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-written 0/1; total in file 83
-kala: closed halls: none
-kala: 84 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
 style-soft: lead>35w/1num, text 19 nums
 style-soft: lead>35w/1num, text 19 nums
   staged zai:glm-4.7-flash: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 111 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 58s ValueError: staged: 8 calls, last: 111 words / 3 paragraphs
-style-soft: lead>35w/1num, text 16 nums
-style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 20 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۳۵ هزار و ۸۶۰ بود | «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 zai:glm-4.7-flash: 170s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۳۵ هزار و ۸۶۰ بود | «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
   staged zai:glm-4.5-flash: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 zai:glm-4.5-flash: 78s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 zai:glm-4.5-flash: 153s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 17 nums
+style-soft: lead>35w/1num, text 17 nums
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 130s ValueError: staged: 20 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+written 0/1; total in file 83
+kala: closed halls: none
+kala: 84 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 111 words / 3 paragraphs
+  MSC-HSV00000-00 zai:glm-4.7-flash: 277s ValueError: staged: 8 calls, last: 111 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 18 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 90 words / 3 paragraphs
+  MSC-HSV00000-00 zai:glm-4.5-flash: 166s ValueError: staged: 8 calls, last: 90 words / 3 paragraphs
 style-soft: lead>35w/1num, text 14 nums
 style-soft: lead>35w/1num, text 14 nums
 style-soft: lead>35w/1num, text 14 nums
 style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 18 nums
+style-soft: lead>35w/1num, text 18 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
 style-soft: lead>35w/1num, text 14 nums
   staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 119s ValueError: staged: 20 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 180s ValueError: staged: 20 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
 written 0/1; total in file 83
 kala: closed halls: none
 kala: 84 settled rows, 0 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 91 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.7-flash: 42s ValueError: staged: 8 calls, last: 91 words / 3 paragraphs
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 116 words / 3 paragraphs
+  MSC-HSV00000-00 zai:glm-4.7-flash: 662s ValueError: staged: 8 calls, last: 116 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 17 nums
+style-soft: lead>35w/1num, text 17 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: 96 words / 3 paragraphs
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 97 words / 3 paragraphs
+  MSC-HSV00000-00 zai:glm-4.5-flash: 86s ValueError: staged: 8 calls, last: 97 words / 3 paragraphs
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
 style-soft: lead>35w/1num, text 16 nums
 style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: عدد بیرون از حقیقت‌ها: ۳۸۰۰
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 197s ValueError: staged: 20 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۸۰۰
+written 0/1; total in file 83
+kala: closed halls: none
+kala: 84 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 118 words / 4 paragraphs
+  MSC-HSV00000-00 zai:glm-4.7-flash: 505s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 20 nums
+style-soft: lead>35w/1num, text 20 nums
+style-soft: lead>35w/1num, text 20 nums
+style-soft: lead>35w/1num, text 20 nums
   staged zai:glm-4.5-flash: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 107 words / 3 paragraphs
-  MSC-HSV00000-00 zai:glm-4.5-flash: 141s ValueError: staged: 8 calls, last: 107 words / 3 paragraphs
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 119 words / 3 paragraphs
+  MSC-HSV00000-00 zai:glm-4.5-flash: 139s ValueError: staged: 8 calls, last: 119 words / 3 paragraphs
 style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 10 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
 style-soft: lead>35w/1num, text 14 nums
 style-soft: lead>35w/1num, text 15 nums
 style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 19 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «این در حالی است» در text | «حاکی از» در text
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 104s ValueError: staged: 20 calls, last: markers: «این در حالی است» در text | «حاکی از» در text
+written 0/1; total in file 83
+kala: closed halls: none
+kala: 84 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 zai:glm-4.7-flash: 570s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 118 words / 3 paragraphs
+  MSC-HSV00000-00 zai:glm-4.5-flash: 104s ValueError: staged: 8 calls, last: 118 words / 3 paragraphs
+style-soft: lead>35w/1num, text 17 nums
+style-soft: lead>35w/1num, text 19 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 17 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
 style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «نشان می‌دهد» در text
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 164s ValueError: staged: 20 calls, last: markers: «نشان می‌دهد» در text
+written 0/1; total in file 83
+kala: closed halls: none
+kala: 84 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 23 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است | «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 19 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: لید عیناً در متن تکرار شده
+  MSC-HSV00000-00 zai:glm-4.7-flash: 728s ValueError: staged: 8 calls, last: markers: لید عیناً در متن تکرار شده
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 20 nums
+style-soft: lead>35w/1num, text 20 nums
+style-soft: lead>35w/1num, text 20 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 103 words / 3 paragraphs
+  MSC-HSV00000-00 zai:glm-4.5-flash: 130s ValueError: staged: 8 calls, last: 103 words / 3 paragraphs
 style-soft: lead>35w/1num, text 17 nums
 style-soft: lead>35w/1num, text 17 nums
 style-soft: lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 16 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 11 nums
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 12 nums
 style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: markers: «امروز» در lead | «نشان می‌دهد» در text
-  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 122s ValueError: staged: 20 calls, last: markers: «امروز» در lead | «نشان می‌دهد» در text
+  staged gapgpt:gemma-3-27b-it: draft dropped after 15 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 20 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 134s ValueError: staged: 20 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+written 0/1; total in file 83
+kala: closed halls: none
+kala: 84 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 112 words / 4 paragraphs
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 75 words / 2 paragraphs
+  MSC-HSV00000-00 zai:glm-4.7-flash: 390s ValueError: staged: 8 calls, last: 75 words / 2 paragraphs
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+  MSC-HSV00000-00 zai:glm-4.5-flash: 212s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 10 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 11 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 12 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 13 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 14 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 15 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 16 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 17 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 18 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 19 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 20 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 570s ValueError: staged: 20 calls, last: no JSON: 
+written 0/1; total in file 83
+kala: closed halls: none
+kala: 84 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 16 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 105 words / 3 paragraphs
+style-soft: lead>35w/1num, text 18 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۳۵ هزار و ۸۶۰ بود | «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 zai:glm-4.7-flash: 813s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۳۵ هزار و ۸۶۰ بود | «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 118 words / 4 paragraphs
+  MSC-HSV00000-00 zai:glm-4.5-flash: 36s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 1 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 2 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 3 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 4 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 5 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 6 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 7 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 8 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 9 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 10 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 11 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 12 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 13 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 14 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 15 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 16 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 17 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 18 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 19 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  staged gapgpt:gemma-3-27b-it: call 20 failed: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0
+  MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 627s ValueError: staged: 20 calls, last: no JSON: 
 written 0/1; total in file 83
