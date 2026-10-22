@@ -59,3 +59,17 @@ style-soft: lead>35w/1num, text 18 nums
   gapgpt:gemma-3-27b-it: quota used up - skipped for the rest of the day
   MSC-HSV00000-00 gapgpt:gemma-3-27b-it: 2s QuotaError: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0.000986 (request id: 202610220625093309185668268d9d6UfwmnQsJ)","type":"gap_api_error","param":"","co
 written 0/1; total in file 83
+kala: closed halls: none
+kala: 84 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+1 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 17 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 zai:glm-4.7-flash: 549s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 18 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  MSC-HSV00000-00 zai:glm-4.5-flash: 54s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+written 0/1; total in file 83
