@@ -1384,6 +1384,7 @@ def main():
     run_t0 = time.time()  # kish and energy keep no first-seen time: their 10 minutes start with the run
     tried = {r["symbol"]: set() for r in todo}
     stats = {"ok": 0}
+    seen_facts = {}
 
     def write_one(r, models):
         sym = r["symbol"]
@@ -1399,6 +1400,8 @@ def main():
             hist = sd.get("history", [])
             peers = [p for p in rows if p.get("goods_name") == r.get("goods_name")]
             facts, tables = facts_kala.build(r, hist, peers, date_fa, date, sd.get("ytd_value"))
+        with lock:
+            seen_facts[sym] = (facts, tables)  # backend 1405-07-30: a symbol given up on goes to the content agent with its facts
         prompt = ("حقیقت‌ها (فقط از این‌ها انتخاب کن؛ عددها را عیناً بنویس):\n" + facts +
                   "\n\nجدول‌های پیشنهادی (یکی را انتخاب کن):\n" + json.dumps(tables, ensure_ascii=False) +
                   f"\n\nزاویه‌ی خبرهای قبلی امروز را تکرار نکن. سوتیترهای قبلی: {' | '.join(recent)}")
@@ -1506,6 +1509,8 @@ def main():
         if tried[sym] and sym not in written:
             e = give.get(sym, {})
             give[sym] = {"fp": fp_of[sym], "runs": (e.get("runs", 0) if e.get("fp") == fp_of[sym] else 0) + 1}
+            if sym in seen_facts:
+                give[sym]["facts"], give[sym]["tables"] = seen_facts[sym]
     if give:
         os.makedirs(os.path.dirname(give_path), exist_ok=True)
         json.dump(give, open(give_path, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
