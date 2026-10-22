@@ -519,7 +519,7 @@ def parse(raw, facts="", tables=None):
 # A small model loses half of a long rule sheet. So it never gets all rules at once: it writes a draft with the general
 # rules, then corrects the same draft twice (accuracy, then wording), and every result still passes parse() like any other
 # news. A rejected text goes back with its errors; after 2 failed corrections a fresh draft starts. Up to PAID_TRIES calls.
-PAID_TRIES = 20
+PAID_TRIES = 8  # owner 1405-07-30: was 20; the token bill went 10x
 FREE_TRIES = 8  # free models (1405-07-25): the 5 steps for every model, fewer calls per news for their daily quota
 JSON_KEYS = ("فقط یک JSON با کلیدهای title, slug, subtitle, lead, text, table, key_points برگردان و هیچ متن دیگری ننویس. "
              "slug همان تیتر با خط تیره به‌جای فاصله است. table فقط شناسه‌ی یکی از جدول‌های پیشنهادی است (مثلاً \"T2\"). ")
