@@ -71,6 +71,7 @@ def compact_for(*templates):
 
 
 RULES_GEMMA = None  # set by a writer: the system prompt for gemma-* models (short style)
+# content agent 1405-08-01 (owner approved): item news (kala, kish, energy) get only style_kala.md v3 + the 40 headline rules
 STYLE_KALA = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kala.md"), encoding="utf-8").read()
 # symbol news (owner 2026-10-05): the old template without clichés; every fact and table is built in code (facts_kala.py)
 STABLE_MIN = 20  # Kish: the hall is «closed» once no row changed for 20 minutes (a session lasts ~12 min, e.g. 11:30-11:42) (owner 1405-07-15: write only after all trades)
@@ -78,17 +79,15 @@ STABLE_MIN = 20  # Kish: the hall is «closed» once no row changed for 20 minut
 KEY_POINTS = ("key_points آرایه‌ای از دقیقاً ۳ جمله‌ی کوتاه است (هر کدام کمتر از ۱۵ کلمه) که مهم‌ترین نکته‌های همین خبر را "
               "فقط با عددهای خود خبر می‌گوید. ")
 MIN_WORDS = [120]  # owner 1405-07-15: 120 words minimum for all physical and Kish news (same as validate.py)
-RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
+RULES = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک نماد بازار فیزیکی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA + HEADLINES +
          "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, key_points و هیچ متن دیگری. " + KEY_POINTS +
          "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
 STYLE_KISH = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_kish.md"), encoding="utf-8").read()
-RULES_KISH = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک معامله‌ی تالار صادراتی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
-              "\n\n" + STYLE_KISH +
+RULES_KISH = ("تو خبرنگار بورس کالای msdata.ir هستی و برای یک معامله‌ی تالار صادراتی بورس کالا یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA + HEADLINES +
               "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, key_points و هیچ متن دیگری. " + KEY_POINTS +
               "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
 STYLE_ENERGY = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "style_energy.md"), encoding="utf-8").read()
-RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و برای یک معامله‌ی بورس انرژی ایران یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA +
-                "\n\n" + STYLE_ENERGY +
+RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و برای یک معامله‌ی بورس انرژی ایران یک خبر فارسی می‌نویسی.\n\n" + STYLE_KALA + HEADLINES +
                 "\n\nفقط یک JSON برگردان با کلیدهای title, slug, subtitle, lead, text, table, key_points و هیچ متن دیگری. " + KEY_POINTS +
                 "slug فارسی با خط تیره، بدون فاصله و علامت. table فقط شناسه‌ی جدول انتخابی (مثلاً \"T2\").")
 
@@ -1410,7 +1409,7 @@ def main():
                 continue
             t0 = time.time()
             try:
-                d = staged(name, call, prompt, facts, tables, STYLE_ENERGY if energy else STYLE_KISH if kish else "")  # owner 1405-07-25: every model writes in 5 steps
+                d = staged(name, call, prompt, facts, tables)  # owner 1405-07-25: every model writes in 5 steps; 1405-08-01: no market rules beside style_kala.md v3
                 raw = retry(call, prompt + model_hint(name)) if d is None else ""
                 for attempt in range(3 if d is None else 0):  # section 6 of style.md: every hit goes back to the model, up to 2 rewrites
                     try:
