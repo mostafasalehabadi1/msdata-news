@@ -690,11 +690,11 @@ def headline6(d, facts, ask, note=print, kind="news"):
     return d
 
 def number_problem(text):
-    """content agent 1405-07-22: at most 2 numbers in a sentence and 15 in the text (dates are not counted)"""
+    """content agent 1405-07-22: at most 2 numbers in a sentence and 6 in the text (content agent 1405-08-02: was 15) (dates are not counted)"""
     t = DATE_WORDS.sub("", text)
     probs = []
-    if len(NUM.findall(t)) > 15:
-        probs.append(f"متن {len(NUM.findall(t))} عدد دارد؛ حداکثر ۱۵ عدد بماند")
+    if len(NUM.findall(t)) > 6:
+        probs.append(f"متن {len(NUM.findall(t))} عدد دارد؛ حداکثر ۶ عدد بماند")
     many = [x for x in re.split(r"(?<=[.!؟])\s+", t) if len(NUM.findall(x)) > 2]
     if many:
         probs.append(f"{len(many)} جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد")
@@ -725,7 +725,7 @@ VERB_END = re.compile(r"(?:ت|د|است|ند|ید|یم)[.!؟]?$")
 
 def autofix(raw, min_words=120, facts=""):
     """what gemma could not fix in 20 calls is fixed here: stock phrases replaced, lone Latin letters removed, and sentences
-    with more than 2 numbers (dates not counted) cut while the text keeps min_words; at most 15 numbers in the text."""
+    with more than 2 numbers (dates not counted) cut while the text keeps min_words; at most 6 numbers in the text."""
     m = re.search(r"\{.*\}", raw or "", re.S)
     d = loads_lenient(m.group(0)) if m else None
     if not isinstance(d, dict) or not all(isinstance(d.get(k), str) for k in ("title", "lead", "text")):
@@ -774,7 +774,7 @@ def autofix(raw, min_words=120, facts=""):
     drop = set()
     for i in sorted(range(len(sents)), key=lambda i: -cnt(sents[i][1])):
         x = sents[i][1]
-        if cnt(x) <= 2 and nums <= 15:
+        if cnt(x) <= 2 and nums <= 6:
             break
         if MSD.search(x) or i in pinned or total - len(x.split()) < min_words:
             continue
