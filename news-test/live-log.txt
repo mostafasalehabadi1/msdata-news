@@ -1,5 +1,4 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
 37 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
@@ -152,3 +151,27 @@ style-soft: lead>35w/1num, text 12 nums
 style-soft: lead>35w/1num, text 12 nums
   staged ovh:gpt-oss-120b: accepted after 6 calls
 OK GHHA-BI6070BEX-00 <- ovh:gpt-oss-120b (367s)
+  SABC-CLINKERT1EX-00 llm7:DeepSeek-V4-Flash-0731: 367s ValueError: staged: 8 calls, last: no JSON: 
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  ovh:gpt-oss-120b: quota used up - skipped for the rest of the day
+  AZGI-BI6070BEX-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"9167a90dd7804d4b4927bb6b08e6247f"
+}
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"4b4e011d-fdd3-4e94-88be-2b37a084790b","message":"You are using a Trial key, which is limited to 1000 AP
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"1c8c806f-fdb9-4c21-b81e-86e840ca1025","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for the rest of the day
+  AZGI-BI6070BEX-00 ovh:Meta-Llama-3_3-70B-Instruct: 14s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"885c6d499f68f433474bab0ddf5f6c03"
+}
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۴۲۲۰)
+OK KAZJ-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (396s)
