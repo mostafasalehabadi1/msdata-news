@@ -364,8 +364,19 @@ DEAD_RE = re.compile(r"HTTP 40[0134].*(Unknown Model|model_not_found|sign in to 
 EXHAUSTED_FILE = os.path.join(tempfile.gettempdir(), f"exhausted-{time.strftime('%Y-%m-%d', time.gmtime())}.txt")
 
 
+QUOTA_RETRY = 3600  # content agent 1405-08-02: a used-up quota (e.g. gapgpt credit, recharged later) is tried again after an hour
+
+
 def exhausted():
-    return set(open(EXHAUSTED_FILE, encoding="utf-8").read().split()) if os.path.exists(EXHAUSTED_FILE) else set()
+    """models whose quota ran out less than QUOTA_RETRY seconds ago; lines are «name epoch» (a bare name = the whole day)."""
+    if not os.path.exists(EXHAUSTED_FILE):
+        return set()
+    out = set()
+    for line in open(EXHAUSTED_FILE, encoding="utf-8").read().splitlines():
+        parts = line.split()
+        if parts and (len(parts) < 2 or time.time() - float(parts[1]) < QUOTA_RETRY):
+            out.add(parts[0])
+    return out
 
 
 def retry(call, prompt):
@@ -1451,8 +1462,8 @@ def main():
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model of this provider
                 if isinstance(e, QuotaError):
                     with lock:
-                        open(EXHAUSTED_FILE, "a", encoding="utf-8").write(name + "\n")
-                    note(f"  {name}: quota used up - skipped for the rest of the day")
+                        open(EXHAUSTED_FILE, "a", encoding="utf-8").write(f"{name} {time.time():.0f}\n")
+                    note(f"  {name}: quota used up - skipped for an hour")
                 note(f"  {sym} {name}: {time.time() - t0:.0f}s {type(e).__name__}: {str(e)[:220]}")
                 time.sleep(2)
         return False
