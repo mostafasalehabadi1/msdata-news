@@ -1027,8 +1027,13 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
             short = re.match(r"(\d+) words", err)
             d0 = as_dict(raw)
             if short and int(short.group(1)) < MIN_WORDS[0] and d0 and calls < tries:  # content agent 1405-07-27: 900 calls on short texts
+                # content agent 1405-08-02: with 6 numbers in the text already, the new sentence comes from a fact without numbers
+                full = len(NUM.findall(DATE_WORDS.sub("", d0["text"]))) >= 6
                 new = ask(STAGE_SENT, "حقیقت‌ها:\n" + "\n".join(lines[:12]) + "\n\nمتن خبر:\n" + d0["text"] +
-                          "\n\nیک جمله‌ی تازه از حقیقت‌ها بنویس که در متن نیامده؛ فقط عددهای حقیقت‌ها. فقط خود جمله را برگردان.").strip().strip("«»\"")
+                          "\n\nیک جمله‌ی تازه از حقیقت‌ها بنویس که در متن نیامده؛ فقط عددهای حقیقت‌ها. " +
+                          ("متن به ۶ عدد رسیده است: جمله را از حقیقتی بساز که عدد ندارد (مثل «همه‌ی عرضه فروش رفت» یا «پیشنهادی بالاتر از پایه نیامد»)؛ "
+                           "اگر چنین حقیقتی نمانده، کم‌عددترین جمله را بنویس. " if full else "") +
+                          "فقط خود جمله را برگردان.").strip().strip("«»\"")
                 if new and "\n" not in new and len(new.split()) >= 6:
                     d0["text"] = d0["text"].rstrip() + (" " if paragraphs(d0["text"]) >= 4 else "\n\n") + new
                     raw = json.dumps(d0, ensure_ascii=False)
