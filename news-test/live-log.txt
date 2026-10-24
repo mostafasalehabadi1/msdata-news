@@ -1,21 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"285800f0-1eb7-4586-954a-b89be9b53b09","message":"You are using a Trial key, which is limited to 1000 AP
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  KHP-UREAPL-00 llm7:DeepSeek-V4-Flash-0731: 378s ValueError: staged: 8 calls, last: no JSON: 
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  stage6 news: kept stage-5 title after 3 calls (فعل «ماند» امروز تکرار شده)
-OK SHPC-OAVAMB-00 <- gapgpt:gemma-3-27b-it (72s)
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 82 words / 2 paragraphs
-  FAAS-MREEEEA3B-00 zai:glm-4.7-flash: 107s ValueError: staged: 8 calls, last: 82 words / 2 paragraphs
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged zai:glm-4.5-flash: check cut 1 sentence(s)
   KHCO-PCT2G42.5-B-00 ovh:Qwen3.5-397B-A17B: 414s TimeoutError: The read operation timed out
   staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
@@ -200,3 +182,19 @@ style-soft: lead>35w/1num, text 16 nums
   staged gapgpt:gemma-3-27b-it: accepted after 5 calls
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۱۴)
 OK KZPC-EREE12WP-00 <- gapgpt:gemma-3-27b-it (65s)
+  staged ovh:Qwen3.5-397B-A17B: soft: لید بی‌عدد
+  staged ovh:Qwen3.5-397B-A17B: accepted after 7 calls
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"4ea974a7-e93d-41a0-97f3-7614502bc675","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"cb3761f0-0181-49f8-b64a-977055b96512","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"d4aaa13a-0eb2-4587-8aea-5a0e31aeb624","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"37cc208a-8405-4b57-bef5-a6ab423a189b","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"3754fa79-fbce-4fce-8f17-8879e105baac","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"ec7a8e83-15be-48cb-977a-3bad520e3b71","message":"You are using a Trial key, which is limited to 1000 AP
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK SJS-HREEEEA3B-00 <- ovh:Qwen3.5-397B-A17B (658s)
