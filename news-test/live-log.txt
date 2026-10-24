@@ -1,15 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-37 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  kilo:inclusionai/ling-3.1-flash: quota used up - skipped for the rest of the day
-  NACE-PCT2G42.5-L50EX-00 kilo:inclusionai/ling-3.1-flash: 0s QuotaError: HTTP 401: {"error":{"code":"PAID_MODEL_AUTH_REQUIRED","message":"You need to sign in to use this model."},"error_type":"paid_model_auth_required"}
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 9 nums
-  AZRC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 20s JSONDecodeError: Expecting value: line 6 column 11 (char 323)
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
 style-soft: lead>35w/1num, text 9 nums
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
@@ -175,3 +163,55 @@ OK GHHA-BI6070BEX-00 <- ovh:gpt-oss-120b (367s)
   staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۴۲۲۰)
 OK KAZJ-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (396s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+style-soft: lead>35w/1num
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
+  BACC-PCT2G42.5-L50EX-00 zai:glm-4.7-flash: 420s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 2 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 524: error code: 524
+
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"c951c745-2004-4166-be03-4cd5d797c3b5","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"886f41c2-af64-4e6a-8cee-bbdbcd45b5ec","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 3 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 4 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged llm7:minimax-m2.7: draft dropped after 6 calls: markers: عدد بیرون از حقیقت‌ها: 60، 70
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  llm7:minimax-m2.7: quota used up - skipped for the rest of the day
+  BPCO-BI6070GEX-00 llm7:minimax-m2.7: 470s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: soft: تیتر 7 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | نام کالا در تیتر باید «سیمان پرتلند» باشد | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 5 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for the rest of the day
+  BPCO-BI6070GEX-00 llm7:mistral-Nemo-Instruct-2407: 25s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 40697 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":40697}}
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK BACC-PCT2G42.5-L50EX-00 <- zai:glm-4.5-flash (79s)
