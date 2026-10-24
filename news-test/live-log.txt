@@ -43,3 +43,21 @@ style-soft: lead>35w/1num, text 12 nums
   staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   stage6 news: title in 2 calls
 OK PKAD-BI6070BEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (25s)
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  PSD-BIMC250BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 9s JSONDecodeError: Invalid \escape: line 6 column 76 (char 533)
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+  PPBC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 27s JSONDecodeError: Expecting value: line 2 column 12 (char 13)
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"aa4921ce-6469-4b33-ae52-0fdf498e472c","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"a16245ef-d482-40be-a43c-8a359001b883","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
+  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
+style-soft: lead>35w/1num, text 11 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK RPA-BI6070BEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (28s)
