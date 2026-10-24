@@ -65,15 +65,14 @@ jobs:
           # content agent 1405-07-27: no report by 22:00 Tehran -> a line in news-test/report-missing.log (it then writes it by hand)
           if [ -z "$(find /tmp/rep -name 'report-*.json')" ]; then
             d=$(python -c 'import json;print(json.load(open("data/latest.json"))["date"])')
-            # content agent 1405-08-02: every failed try goes to news-test/report-log.txt; after 2 failed runs of a day release.yml stops starting this
+            # content agent 1405-08-02: every failed try goes to news-test/report-log.txt; no cap (owner): release.yml stops once the report is in queue/ or news/
             touch /tmp/rep-log.txt; cp news-test/report-log.txt /tmp/rep-log.txt 2>/dev/null || true
             git fetch -q origin main && git reset -q --hard origin/main
             if [ -s /tmp/rep-log.txt ]; then
               touch news-test/report-log.txt; grep -vxFf news-test/report-log.txt /tmp/rep-log.txt >> news-test/report-log.txt || true
               git add news-test/report-log.txt && git commit -qm "report failed: $d" && git push -q origin HEAD:main || true
             fi
-            runs=$(grep "^$d " news-test/report-log.txt 2>/dev/null | awk '{print $2}' | sort -u | wc -l)
-            if { [ "$runs" -ge 2 ] || [ "$(TZ=Asia/Tehran date +%H%M)" -ge 2200 ]; } && [ ! -e "news/report-$d.json" -o ! -e "news/kish/report-$d.json" ]; then
+            if [ "$(TZ=Asia/Tehran date +%H%M)" -ge 2200 ] && [ ! -e "news/report-$d.json" -o ! -e "news/kish/report-$d.json" ]; then
               git fetch -q origin main && git reset -q --hard origin/main
               grep -q "^$d " news-test/report-missing.log 2>/dev/null || { echo "$d $(TZ=Asia/Tehran date '+%F %H:%M') no report from any model (physical: $([ -e news/report-$d.json ] && echo ok || echo missing), kish: $([ -e news/kish/report-$d.json ] && echo ok || echo missing))" >> news-test/report-missing.log
                 git add news-test/report-missing.log && git commit -qm "report missing: $d" && git push -q origin HEAD:main || true; }
