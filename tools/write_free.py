@@ -1184,7 +1184,7 @@ def day_of(facts):
 
 def today_words(text, day_line, seen=None):
     """owner 2026-10-12: «امروز» becomes the weekday and date the first time and only the weekday after that."""
-    week, full = day_parts(day_line)
+    week, full = (x.strip() for x in day_parts(day_line))  # 1405-08-02: day_parts keeps a leading space, so the check below never matched
     if not week or not text:
         return text
     seen = seen if seen is not None else [full in text]
@@ -1196,7 +1196,9 @@ def today_words(text, day_line, seen=None):
         out = week if seen[0] else full
         seen[0] = True
         return out
-    return re.sub(r"  +", " ", TODAY.sub(one, text)).strip()
+    out = re.sub(r"  +", " ", TODAY.sub(one, text)).strip()
+    # content agent 1405-08-02: «شنبه ۲ آبان شنبه ۲ آبان» in 3 news (the model's date next to the replaced «امروز»)
+    return re.sub(rf"({re.escape(full)})(?:[\s،,(]*{re.escape(full)}\)?)+", r"\1", out) if full else out
 
 
 WEEK = ["شنبه", "یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنجشنبه", "جمعه"]
