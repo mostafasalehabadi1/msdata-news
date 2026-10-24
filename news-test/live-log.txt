@@ -1,19 +1,3 @@
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 8 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged kilo:thinkingmachines/inkling-small:free: call 1 failed: HTTP 404: {"error":"The requested model is currently unavailable. Please choose a different model.","error_type":"unavai
-  ASCO-SBEN03E-00 cohere:command-r-plus-08-2024: 1176s ValueError: staged: 8 calls, last: no JSON: 
-  ESC-SBEE03E-00 cohere:command-a-03-2025: 1176s ValueError: staged: 8 calls, last: no JSON: 
-  ESC-HBEEE03E-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 1178s ValueError: staged: 8 calls, last: no JSON: 
-  TIDA-MREEEEA2B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 1178s ValueError: staged: 8 calls, last: no JSON: 
-  staged requesty:poolside/laguna-m.1: call 3 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  kilo:thinkingmachines/inkling-small:free: quota used up - skipped for an hour
-  ESC-MBNEN03B-00 kilo:thinkingmachines/inkling-small:free: 82s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
-  kilo:cohere/north-mini-code:free: quota used up - skipped for an hour
-  ESC-MBNEN03B-00 kilo:cohere/north-mini-code:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
-  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: 80 words / 2 paragraphs
-  SPRM-LRNENA2B-00 ovh:Qwen3.6-27B: 656s ValueError: staged: 8 calls, last: 80 words / 2 paragraphs
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 115 words / 4 paragraphs
-  ZBS-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 81s ValueError: staged: 8 calls, last: 115 words / 4 paragraphs
   kilo:kilo-auto/free: quota used up - skipped for an hour
   IMID-BARILUMP-00 kilo:kilo-auto/free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
   kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
@@ -198,3 +182,19 @@ style-soft: lead>35w/1num, text 12 nums
   staged gapgpt:gemma-3-27b-it: accepted after 7 calls
   stage6 news: title in 1 calls
 OK HGST-MREEEEA2B-00 <- gapgpt:gemma-3-27b-it (50s)
+  staged cohere:command-a-reasoning-08-2025: call 8 failed: HTTP 429: {"id":"12b232f1-e52a-4bc5-975d-29228fb71785","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"a8d6a7ae-3303-4930-a29e-0eda054e5759","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 8 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: call 8 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  KDTS-HRNENNA3B-00 cohere:command-a-reasoning-08-2025: 1176s ValueError: staged: 8 calls, last: no JSON: 
+  FAAS-HREENNA3B-00 cohere:command-a-03-2025: 1176s ValueError: staged: 8 calls, last: no JSON: 
+  FSIC-LRENNA2B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 1177s ValueError: staged: 8 calls, last: no JSON: 
+  ESC-IB00000-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 1179s ValueError: staged: 8 calls, last: no JSON: 
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 3 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"00debcee-3da5-4ca3-b06e-b06db6ee6f12","message":"You are using a Trial key, which is limited to 1000 AP
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 4 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK HAAL-PS10000-00 <- gapgpt:gemma-3-27b-it (110s)
