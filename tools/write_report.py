@@ -252,6 +252,14 @@ def main():
         if model in w.exhausted():
             continue
         t0 = time.time()
+        use = [0, 0, 0]  # calls, chars in, chars out - for news-test/report-log.txt (content agent 1405-08-02: gemma use must be visible)
+
+        def call(*a, _c=call, **k):
+            use[0] += 1
+            use[1] += sum(len(str(x)) for x in a)
+            r = _c(*a, **k)
+            use[2] += len(str(r))
+            return r
         try:
             if model in w.PAID and "--model" in sys.argv and "--sections" in sys.argv:  # section by section (report_staged.py), only when asked
                 import report_staged
@@ -284,6 +292,9 @@ def main():
             return
         except Exception as e:  # noqa: BLE001 - try the next model
             print(f"  report {model}: {type(e).__name__}: {str(e)[:200]}")
+            with open(os.path.join(ROOT, "news-test", "report-log.txt"), "a", encoding="utf-8") as f:
+                f.write(f"{date} run={os.environ.get('GITHUB_RUN_ID', '-')} {'energy' if energy else 'kish' if kish else 'physical'} {model} "
+                        f"calls={use[0]} tokens~{(use[1] + use[2]) // 3} {time.time() - t0:.0f}s {type(e).__name__}: {str(e)[:150]!r}\n")
     print("report: no model answered; next round tries again")
 
 
