@@ -1,60 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for the rest of the day
-  AZGI-BI6070BEX-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 16s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"3b9e0804122eee706de108058dfcbc56"
-}
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 2 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for the rest of the day
-  AZGI-BI6070BEX-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
-  staged llm7:DeepSeek-V4-Flash-0731: call 2 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  gapgpt:gemma-3-27b-it: quota used up - skipped for the rest of the day
-  BSBI-BI6070BEX-00 gapgpt:gemma-3-27b-it: 2s QuotaError: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.000838, required pre-consume quota: ＄0.000950 (request id: 202610240943288551864278268d9d6oXahcj1f)","type":"gap_api_error","param":"","co
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 3 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 3 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged llm7:DeepSeek-V4-Flash-0731: call 3 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged kilo:poolside/laguna-s-2.1:free: check cut 1 sentence(s)
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 4 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 4 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"ef6d4583-bd3f-4383-87c6-b515d2006de6","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"5add4c23-1d16-4e41-912f-60b6dfc1d161","message":"You are using a Trial key, which is limited to 1000 AP
-  stage6 news: kept stage-5 title after 3 calls (تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
-OK ABCO-BI6070BEX-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (637s)
-  staged llm7:DeepSeek-V4-Flash-0731: call 4 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-style-soft: lead>35w/1num, text 11 nums
-  staged kilo:poolside/laguna-s-2.1:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:poolside/laguna-s-2.1:free: accepted after 8 calls
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 5 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 5 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK NACE-PCT2G42.5-L50EX-00 <- kilo:poolside/laguna-s-2.1:free (84s)
-  staged llm7:DeepSeek-V4-Flash-0731: call 5 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 6 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 6 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 1 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
-  staged llm7:DeepSeek-V4-Flash-0731: call 6 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 7 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 7 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged llm7:DeepSeek-V4-Flash-0731: call 7 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"1c0610cd-abe4-4b38-93d0-a8a10e1a145a","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"0f06ae9f-54e2-4c1e-ac46-73823662c2d9","message":"You are using a Trial key, which is limited to 1000 AP
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 8 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
-
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged hf:Qwen/Qwen3-235B-A22B-Instruct-2507: call 8 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged llm7:DeepSeek-V4-Flash-0731: call 8 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   NACE-PCT2G42.5-L50EX-00-2 requesty:novita/inclusionai/ling-3.0-tiny: 415s ValueError: staged: 8 calls, last: no JSON: 
@@ -235,3 +178,58 @@ style-soft: lead>35w/1num, text 12 nums
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 4 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۶۰۷۰)
 OK AZRC-BI6070BEX-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (625s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 3 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"c381023c-8909-4450-9734-b168aabae27a","message":"You are using a Trial key, which is limited to 1000 AP
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 4 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"8bf20fb6-fec0-4eb2-8d61-b40622eaf2c1","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 5 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 5 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 2 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 6 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 3 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged ovh:Qwen3.6-27B: soft: لید بی‌عدد
+  staged ovh:Qwen3.6-27B: accepted after 6 calls
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 7 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"22f7b6f2-1705-40ae-9cfe-122fb84ca4f9","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"1c1e452c-5d6d-48f1-82cd-d04f19163333","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 4 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 8 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 5 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: call 6 failed: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please
+  ADG-BI6070BEX-00 ovh:Qwen3.5-397B-A17B: 285s IncompleteRead: IncompleteRead(12015 bytes read, 16403 more expected)
+  AZGI-BI6070BEX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 369s ValueError: staged: 8 calls, last: no JSON: 
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 6 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged kilo:poolside/laguna-s-2.1:free: check cut 3 sentence(s)
+  staged kilo:poolside/laguna-s-2.1:free: check cut 1 sentence(s)
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for the rest of the day
+  AZGI-BI6070BEX-00 kilo:poolside/laguna-s-2.1:free: 21s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  kilo:thinkingmachines/inkling-small:free: quota used up - skipped for the rest of the day
+  AZGI-BI6070BEX-00 kilo:thinkingmachines/inkling-small:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  kilo:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for the rest of the day
+  APKC-BI6070BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 274s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"8f628fae-f253-40b4-a1bb-a2ffa11a4333","message":"You are using a Trial key, which is limited to 1000 AP
+  kilo:cohere/north-mini-code:free: quota used up - skipped for the rest of the day
+  AZGI-BI6070BEX-00 kilo:cohere/north-mini-code:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"768ee4df-f44c-4ed6-9300-795a5f55378e","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 7 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  kilo:kilo-auto/free: quota used up - skipped for the rest of the day
+  ADG-BI6070BEX-00 kilo:kilo-auto/free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for the rest of the day
+  ADG-BI6070BEX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  staged kilo:dots-studio/dots-3-note-preview:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 8 calls
+OK ACC-PCT2G42.5-L50EX-00 <- kilo:dots-studio/dots-3-note-preview:free (308s)
