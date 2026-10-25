@@ -353,12 +353,17 @@ def providers():
 LOG = []
 
 
+# backend 1405-08-03: kala and energy both wrote news-test/live-log.txt; from 20:32 every kala push hit a rebase conflict on it,
+# was aborted, and 2 hours of gemma news never left the runner. Each market now has its own file.
+LIVE_LOG = "live-log-" + next((sys.argv[i + 1] for i, a in enumerate(sys.argv[:-1]) if a == "--market"), "kala") + ".txt"
+
+
 def note(line):
     print(line, flush=True)
     LOG.append(line)
     if os.environ.get("PUSH_EACH"):
         os.makedirs(os.path.join(ROOT, "news-test"), exist_ok=True)
-        open(os.path.join(ROOT, "news-test", "live-log.txt"), "w", encoding="utf-8").write("\n".join(LOG[-200:]))
+        open(os.path.join(ROOT, "news-test", LIVE_LOG), "w", encoding="utf-8").write("\n".join(LOG[-200:]))
 
 
 class QuotaError(ValueError):
