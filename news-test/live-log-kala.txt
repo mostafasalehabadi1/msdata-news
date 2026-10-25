@@ -29,3 +29,27 @@ style-soft: در حالی که, lead>35w/1num, text 13 nums
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
   stage6 news: title in 1 calls
 OK CHMI-PELL-00 <- gapgpt:gemma-3-27b-it (52s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 107 words after fixes
+  SJS-DRI-00 gapgpt:gemma-3-27b-it: 54s ValueError: staged: 8 calls, last: 107 words after fixes
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۰
+  NCI-OACCAA-00 zai:glm-4.7-flash: 296s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۰
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 113 words / 4 paragraphs
+  SMO-PELL-00 gapgpt:gemma-3-27b-it: 56s ValueError: staged: 8 calls, last: 113 words / 4 paragraphs
+style-soft: lead>35w/1num, text 17 nums
+  staged zai:glm-4.5-flash: soft: متن 16 عدد دارد؛ حداکثر ۶ عدد بماند | 4 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK NCI-OACCAA-00 <- zai:glm-4.5-flash (48s)
