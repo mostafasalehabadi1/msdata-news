@@ -1,17 +1,3 @@
-  openrouter:recursive/flint-v1.0:free: quota used up - skipped until tomorrow
-  DSCESCABEX0050806 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"c70a2722-cca9-49bd-bdb6-15bae9d4fa14","message":"You are using a Trial key, which is limited to 1000 AP
-  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
-  DSVTBCABEX0050810 groq:openai/gpt-oss-120b: 60s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198772, Requested 37
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
-  DSVTBCABEX0050810 groq:openai/gpt-oss-20b: 3s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197632, Requested 570
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
@@ -198,3 +184,17 @@ style-soft: lead>35w/1num, text 16 nums
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
   stage6 news: title in 2 calls
 OK DSCESCABEX0050806 <- openrouter:xingchen-agi/xing4.0-29b-a4b:free (1372s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 97 words / 3 paragraphs
+  DHCPICABEX0050806 gapgpt:gemma-3-27b-it: 80s ValueError: staged: 8 calls, last: 97 words / 3 paragraphs
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"3b336ad6-68dc-4965-a011-b2bade1d0643","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"9ebe1426-9fec-4aa9-b3c0-7b3ad72a280a","message":"You are using a Trial key, which is limited to 1000 AP
+  DSVTBCABEX0050810 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"577d8fd8-8c18-4bca-bf87-07bf61185e99","message":"You are using a Trial key, which is limited to 1000 AP
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"6e75df2a-9307-42d2-80c0-e64c12b2bd55","message":"You are using a Trial key, which is limited to 1000 AP
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: 1.5 | فعل «شد» امروز تکرار شده)
+OK DSVTBCABEX0050810 <- gapgpt:gemma-3-27b-it (104s)
