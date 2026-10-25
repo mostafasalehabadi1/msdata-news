@@ -112,3 +112,20 @@ style-soft: در حالی که, lead>35w/1num, text 11 nums
   SOC-HPW05B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 642s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۵۳ | فعل «یافت» امروز تکرار شده)
 OK KECE-PCT2G42.5-B-00 <- gapgpt:gemma-3-27b-it (75s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در text | «نشان می‌دهد» در text
+  SCC-PCT1G42.5-B-00 gapgpt:gemma-3-27b-it: 61s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text | «نشان می‌دهد» در text
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: در حالی که, در حالی که, lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 21 nums
+  staged zai:glm-4.7-flash: soft: متن 19 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 8 calls
+  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: 118 words / 3 paragraphs
+  ZATC-PCT2G42.5-B-00 gapgpt:gemma-3-27b-it: 71s ValueError: staged: 9 calls, last: 118 words / 3 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK KZCO-PCT2G42.5-B-00 <- zai:glm-4.7-flash (721s)
