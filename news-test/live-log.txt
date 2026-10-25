@@ -577,3 +577,27 @@ style-soft: lead>35w/1num, text 12 nums
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
 OK CMN-PCT2G32.5-L50-00 <- kilo:kilo-auto/free (106s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged cohere:command-r-plus-08-2024: call 1 failed: HTTP 429: {"id":"dde49193-594c-4c38-9b2f-148ce044bd4e","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"25f3c710-fa54-49c7-8a47-40d598696ce9","message":"You are using a Trial key, which is limited to 1000 AP
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+  staged kilo:kilo-auto/free: check cut 2 sentence(s)
+  kilo:kilo-auto/free: quota used up - skipped for an hour
+  AAK-PCT2G42.5-J-00 kilo:kilo-auto/free: 26s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 48 words / 1 paragraphs
+  IZS-ZIE1-00 zai:glm-4.7-flash: 766s ValueError: staged: 8 calls, last: 48 words / 1 paragraphs
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  AAK-PCT2G42.5-J-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  kilo:thinkingmachines/inkling-small:free: quota used up - skipped for an hour
+  AAK-PCT2G42.5-J-00 kilo:thinkingmachines/inkling-small:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  FZI-ARGAB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 364s TimeoutError: The read operation timed out
+  kilo:cohere/north-mini-code:free: quota used up - skipped for an hour
+  AAK-PCT2G42.5-J-00 kilo:cohere/north-mini-code:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | فعل «کرد» امروز تکرار شده)
+OK SACE-PCT2G42.5-B-00 <- gapgpt:gemma-3-27b-it (69s)
