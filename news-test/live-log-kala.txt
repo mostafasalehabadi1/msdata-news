@@ -136,3 +136,34 @@ style-soft: در حالی که, lead>35w/1num, text 11 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK MACC-PCT2G42.5-L50-00 <- gapgpt:gemma-3-27b-it (79s)
+style-soft: lead>35w/1num
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴.۷، ۴۹.۸۲۱
+  ZATC-PCT2G42.5-L50-00 ovh:Qwen3.6-27B: 918s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴.۷، ۴۹.۸۲۱
+style-soft: در حالی که, lead>35w/1num, text 20 nums
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 105 words / 4 paragraphs
+  GAC-PCT2G42.5-L50-00 gapgpt:gemma-3-27b-it: 42s ValueError: staged: 8 calls, last: 105 words / 4 paragraphs
+  staged requesty:mistral/leanstral-1-5: call 5 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+style-soft: در حالی که, text 10 nums
+  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 7 calls
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 16 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 114 words after fixes
+  GAC-PCT2G42.5-B-00 gapgpt:gemma-3-27b-it: 51s ValueError: staged: 8 calls, last: 114 words after fixes
+  staged requesty:mistral/leanstral-1-5: call 6 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: در حالی که, در حالی که, ام‌اس‌دیتا!=1, lead>35w/1num, text 10 nums
+style-soft: در حالی که, در حالی که, lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  PTC-POY250D48FBWP-00 gapgpt:gemma-3-27b-it: 45s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+style-soft: lead>35w/1num, text 14 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۶ هزار و ۶ بود
+  NGC-PCT2G32.5-B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 461s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۶ هزار و ۶ بود
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 117 words / 3 paragraphs
+  PTJP-PSGPPSG1161PPP-00 zai:glm-4.7-flash: 511s ValueError: staged: 8 calls, last: 117 words / 3 paragraphs
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۶ | فعل «رفت» امروز تکرار شده)
+OK ZCC-PCT2G42.5-L50-00 <- kilo:dots-studio/dots-3-note-preview:free (478s)
