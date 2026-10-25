@@ -1475,8 +1475,10 @@ def main():
                     stats["ok"] += 1
                     note(f"OK {sym} <- {name} ({time.time() - t0:.0f}s)")
                     if os.environ.get("PUSH_EACH"):
-                        subprocess.run('git add -A news-test queue data/importance.json data/scenarios.jsonl && git commit -qm "queue: progress" && (git pull -q --rebase --autostash || git rebase --abort) && git push -q',
-                                       shell=True, cwd=ROOT, check=False, capture_output=True)
+                        p = subprocess.run('bash tools/safe_push.sh "queue: progress" news-test queue data/importance.json data/scenarios.jsonl',
+                                           shell=True, cwd=ROOT, check=False, capture_output=True, text=True)
+                        if p.returncode:  # backend 1405-08-03: a failed push is said in the log, not swallowed
+                            note(f"  PUSH FAILED after {sym}: {(p.stdout + p.stderr)[-200:]}")
                 return True
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model of this provider
                 if isinstance(e, QuotaError):
