@@ -8,6 +8,7 @@ env (any subset): GITHUB_TOKEN (GitHub Models, free in Actions), GEMINI_API_KEY,
 GROQ_API_KEY, MISTRAL_API_KEY.
 usage: python tools/write_free.py [--limit N] [--out news]
 """
+import signal
 import random
 import argparse
 import datetime as dt
@@ -1509,22 +1510,34 @@ def main():
     def lvl_of(g):
         return 0 if g.endswith("/strong") else 1
 
-    threads = [threading.Thread(target=worker, args=(g, m, lvl_of(g))) for g, m in groups.items()]
+    def save_give():
+        written = {i["symbol"] for i in doc["items"]}
+        for sym in tried:
+            if tried[sym] and sym not in written:
+                e = give.get(sym, {})
+                give[sym] = {"fp": fp_of[sym], "runs": (e.get("runs", 0) if e.get("fp") == fp_of[sym] else 0) + 1}
+                if sym in seen_facts:
+                    give[sym]["facts"], give[sym]["tables"] = seen_facts[sym]
+        if give:
+            os.makedirs(os.path.dirname(give_path), exist_ok=True)
+            json.dump(give, open(give_path, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+
+    # backend 1405-08-03: every package of the night hit the 30-min timeout before this point, so the give-up file was never
+    # written and gemma retried the same symbols all night; a timeout (SIGTERM) now saves it before the process ends
+    def on_term(*_):
+        with lock:
+            save_give()
+        print("timeout: give-up file saved", flush=True)
+        os._exit(0)
+    signal.signal(signal.SIGTERM, on_term)
+    threads = [threading.Thread(target=worker, args=(g, m, lvl_of(g)), daemon=True) for g, m in groups.items()]
     for t in threads:
         t.start()
     for t in threads:
-        t.join()
+        while t.is_alive():
+            t.join(1)
     ok = stats["ok"]
-    written = {i["symbol"] for i in doc["items"]}
-    for sym in tried:
-        if tried[sym] and sym not in written:
-            e = give.get(sym, {})
-            give[sym] = {"fp": fp_of[sym], "runs": (e.get("runs", 0) if e.get("fp") == fp_of[sym] else 0) + 1}
-            if sym in seen_facts:
-                give[sym]["facts"], give[sym]["tables"] = seen_facts[sym]
-    if give:
-        os.makedirs(os.path.dirname(give_path), exist_ok=True)
-        json.dump(give, open(give_path, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+    save_give()
     print(f"written {ok}/{len(tried)}; total in file {len(doc['items'])}")
 
 
