@@ -48,3 +48,17 @@ style-soft: lead>35w/1num
   AAC-PCT2G42.5-JEX-00 gapgpt:gemma-3-27b-it: 70s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۶۰۰
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
 OK PIM-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (500s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num, text 12 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی» | نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
+  AAC-PCT2G42.5-JEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 523s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی» | نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: text 12 nums
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: accepted after 4 calls
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK ESCO-PCT2G42.5-L50EX-00 <- openrouter:xingchen-agi/xing4.0-29b-a4b:free (2673s)
