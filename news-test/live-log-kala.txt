@@ -25,3 +25,33 @@ style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 15 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: title in 3 calls
 OK DCC-PCT2G32.5-L50-00 <- gapgpt:gemma-3-27b-it (102s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
+  SKC-PCT2G42.5-L50-00 gapgpt:gemma-3-27b-it: 70s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 12 nums
+style-soft: در حالی که, lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «امروز» در text
+  NEYC-PCT2G42.5-B-00 gapgpt:gemma-3-27b-it: 49s ValueError: staged: 8 calls, last: markers: «امروز» در text
+  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان داد» در text
+  EFGZ-DRI-00 gapgpt:gemma-3-27b-it: 58s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
+style-soft: text 10 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+style-soft: lead>35w/1num, text 13 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: title in 2 calls
+OK CTM-PCT2G42.5-B-00 <- gapgpt:gemma-3-27b-it (53s)
