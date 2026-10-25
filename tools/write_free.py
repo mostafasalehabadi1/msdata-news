@@ -214,6 +214,7 @@ BACKUP_WAIT = 2 * 3600
 # owner 2026-10-12: a paid model writes a symbol (any tier) only after the free models had 10 minutes for it and it is still unwritten
 PAID = {"gapgpt:gemma-3-27b-it", "gapgpt:deepseek-v4-flash"}
 PAID_WAIT = 600
+PAID_STOP = 10  # owner 1405-08-03: 10 symbols in a row with no accepted news stop the paid model for the run («هزینه بالا برای هیچ کار»)
 GIVE_UP = 2  # failed runs before a symbol waits for new data (backend 1405-07-30)
 DEEPSEEK_ON = False  # owner 2026-10-12: GapGPT deepseek-v4-flash stays ready but writes nothing until this is True
 
@@ -1489,7 +1490,7 @@ def main():
 
     def worker(gname, models, lvl):
         fails = 0
-        while fails < 3 or gname.endswith("/paid"):  # a provider that fails 3 symbols in a row (quota / broken) stops; the paid one never does (owner 2026-10-12)
+        while (fails < 3 or gname.endswith("/paid")) and not (gname.endswith("/paid") and fails >= PAID_STOP):  # a provider that fails 3 symbols in a row (quota / broken) stops; the paid one never does (owner 2026-10-12)
             with lock:
                 live = [m for m in models if m[0] not in exhausted()]
                 pick = [r for r in todo if gname not in tried[r["symbol"]] and tier.get(r["symbol"], 1) == lvl]
@@ -1519,6 +1520,10 @@ def main():
                 fails = 0
             else:
                 fails += 1
+                if gname.endswith("/paid") and fails >= PAID_STOP:
+                    note(f"STOP {gname}: {fails} symbols in a row without one accepted news - the paid model rests for an hour")
+                    with lock:  # the next 30-min package would start it again; the hour mark in the exhausted file carries over
+                        open(EXHAUSTED_FILE, "a", encoding="utf-8").write("".join(f"{m[0]} {time.time():.0f}\n" for m in models))
                 with lock:
                     if any(g not in tried[r["symbol"]] and (lvl_of(g) == tier.get(r["symbol"], 1) or g.endswith(("/backup", "/paid"))) for g in groups):
                         todo.append(r)  # another provider may still write it
