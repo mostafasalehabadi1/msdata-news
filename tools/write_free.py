@@ -95,6 +95,7 @@ RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و �
 
 # content agent 1405-07-15 (252 news of 1405-07-14): the one main flaw of each model, appended to its prompt
 MODEL_HINTS = [(r"gapgpt:gemma", "۱) همه‌ی رقم‌ها و اعشارها فارسی و با «٫» (۷٫۲ نه 7.2)؛ در تیتر، متن و key_points. ۲) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه؛ تاریخ فقط یک بار (مثل دوشنبه ۲۰ مهر)، و لید با روز یا تاریخ شروع نشود. ۳) هر عدد را فقط یک بار و دقیقاً از حقیقت‌ها بنویس؛ عدد صفر یا عددی که در حقیقت‌ها نیست ننویس و ارزش معامله را خودت حساب نکن. ۴) text دست‌کم ۱۴۰ کلمه در ۲ یا ۳ پاراگراف باشد و پاراگراف‌ها با یک خط خالی جدا شوند؛ حداکثر ۶ عدد در متن داشته باشد. ۵) هیچ حرف لاتین یا کد کالا (مثل نام گرید) در تیتر و متن نیاور؛ نام فارسی کالا کافی است. ۶) در تیتر «؛» نگذار و «نماد» ننویس. ۷) تیتر جمله‌ی کامل با فعل است، ۸ تا ۱۳ کلمه. ۸) نسبت تقاضا به عرضه را فقط به شکل «X برابر عرضه» بنویس؛ «X درصد بیشتر از عرضه» ننویس. ۹) صفت عالی (بالاترین، پایین‌ترین، بیشترین، کمترین، گران‌ترین، ارزان‌ترین) ممنوع است، مگر همان واژه در حقیقت‌ها آمده باشد."),
+               (r"^zai:", "text حتماً دست‌کم ۱۳۰ کلمه باشد (کمتر از ۱۲۰ کلمه رد می‌شود)، در ۲ یا ۳ پاراگراف با یک خط خالی بین آن‌ها؛ پیش از برگرداندن کلمه‌ها را بشمار."),  # content agent 1405-08-04: 15 zai drafts were 76-91 words
                (r"nemotron-3-super", "کلمه‌ی انگلیسی ننویس. «عرض» ننویس؛ «عرضه» بنویس."),
                (r"dots", "هیچ کلمه‌ی انگلیسی مثل Display یا faced در متن نیاور."),
                (r"command-a.*reason", "«امروز» ننویس؛ روز هفته و تاریخ را بنویس. «در حالی که» و «با این حال» ننویس."),
@@ -203,7 +204,7 @@ def post(url, key, model, prompt, extra=None, system=None):
 STRONG_GEMINI = ("gemma-4-31b-it",)
 # gemma-4-31b-it is kept for the daily report only (write_report.py) and writes no symbol news
 REPORT_ONLY = {"gemini:gemma-4-31b-it"}
-STRONG = {"llm7:DeepSeek-V4-Flash-0731", "cohere:command-a-03-2025", "kilo:dots-studio/dots-3-note-preview:free",
+STRONG = {"llm7:deepseek-v4-flash:0731", "cohere:command-a-03-2025", "kilo:dots-studio/dots-3-note-preview:free",
           "hf:deepseek-ai/DeepSeek-V3.1"}  # kilo:stepfun/step-3.7-flash:free removed 2026-10-10: Kilo answers 404 (model no longer exists)
 # the next three by rating: write the important half too, but only when every strong model is out or a symbol waited 2h
 # ovh:Qwen3.5 added by the owner on 2026-10-10: every strong/backup model was out of quota and 30 important symbols stayed unwritten
@@ -268,7 +269,7 @@ def providers():
                              ("CF_API_TOKEN", f"https://api.cloudflare.com/client/v4/accounts/{os.environ.get('CF_ACCOUNT_ID', '')}/ai/v1/chat/completions",
                               ("@cf/meta/llama-3.3-70b-instruct-fp8-fast", "@cf/qwen/qwen2.5-coder-32b-instruct")),
                              ("NVIDIA_API_KEY","https://integrate.api.nvidia.com/v1/chat/completions", ("deepseek-ai/deepseek-v3.1", "qwen/qwen3-235b-a22b", "meta/llama-3.3-70b-instruct")),
-                             ("LLM7_API_KEY", "https://api.llm7.io/v1/chat/completions", ("DeepSeek-V4-Flash-0731", "minimax-m2.7", "mistral-Nemo-Instruct-2407")),
+                             ("LLM7_API_KEY", "https://api.llm7.io/v1/chat/completions", ("deepseek-v4-flash:0731", "minimax-m2.7", "mistral-Nemo-Instruct-2407")),
                              ("COHERE_API_KEY", "https://api.cohere.ai/compatibility/v1/chat/completions", ("command-a-03-2025", "command-a-reasoning-08-2025", "command-r-plus-08-2024"))):
         if os.environ.get(env):
             for m in models:
@@ -285,8 +286,8 @@ def providers():
     for m in ("dots-studio/dots-3-note-preview:free", "nvidia/nemotron-3-ultra-550b-a55b:free"):  # Kilo gateway: no signup, 200 req/h per IP
         out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
     # added 2026-10-06 after the 20-model bench (passed or only rate-limited); LLM7 big models were paid-only (402) and dropped
-    for m in ("inclusionai/ling-3.1-flash", "kilo-auto/free", "nvidia/nemotron-3-super-120b-a12b:free", "poolside/laguna-s-2.1:free",
-              "thinkingmachines/inkling-small:free", "cohere/north-mini-code:free"):
+    # 1405-08-04: ling-3.1-flash and inkling-small are gone from the Kilo model list (404 all night)
+    for m in ("kilo-auto/free", "nvidia/nemotron-3-super-120b-a12b:free", "poolside/laguna-s-2.1:free", "cohere/north-mini-code:free"):
         out.append(("kilo:" + m, lambda p, m=m: post("https://api.kilo.ai/api/gateway/chat/completions", "", m, p)))
     for m in ("Qwen3.6-27B", "Mistral-Small-3.2-24B-Instruct-2506", "Qwen3-Coder-30B-A3B-Instruct"):
         out.append(("ovh:" + m, lambda p, m=m: post("https://oai.endpoints.kepler.ai.cloud.ovh.net/v1/chat/completions", "", m, p)))
@@ -342,6 +343,10 @@ def providers():
                 out.append(("cohere:" + m, lambda p, m=m: post("https://api.cohere.ai/compatibility/v1/chat/completions", os.environ["COHERE_API_KEY"], m, p)))
         if os.environ.get("ZAI_API_KEY"):
             out.append(("zai:glm-4.6v-flash", lambda p: post("https://api.z.ai/api/paas/v4/chat/completions", os.environ["ZAI_API_KEY"], "glm-4.6v-flash", p)))
+    # content agent 1405-08-04: hf (402, credit gone) and cohere (429, trial key 1000/month used) failed every call all night;
+    # out of the rotation until their accounts are fixed (model_bench still sees them with BENCH_NEW)
+    if not os.environ.get("BENCH_NEW"):
+        out = [x for x in out if not x[0].startswith(("hf:", "cohere:"))]
     return out
 
 
