@@ -1,17 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 18 parallel workers: openrouter, groq, zai/backup, hf/strong, hf, cf/backup, cf, llm7/strong, llm7, cohere/strong, cohere, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged cohere:command-a-reasoning-08-2025: call 2 failed: HTTP 429: {"id":"31e08783-eb88-4889-89af-c49fb691395f","message":"You are using a Trial key, which is limited to 1000 AP
-  staged cohere:command-a-03-2025: call 2 failed: HTTP 429: {"id":"d9ea0d27-2784-49ca-8800-d47bcab57c65","message":"You are using a Trial key, which is limited to 1000 AP
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
-  staged groq:openai/gpt-oss-20b: call 8 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:DeepSeek-V4-Flash-0731: call 1 failed: HTTP 400: {"error":{"message":"Model 'DeepSeek-V4-Flash-0731' is currently unavailable.","type":"invalid_request_error",
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 98 words / 3 paragraphs
   DGKGZCABEX0050806 gapgpt:gemma-3-27b-it: 54s ValueError: staged: 8 calls, last: 98 words / 3 paragraphs
   staged hf:deepseek-ai/DeepSeek-V3.1: call 1 failed: HTTP 402: {"error":"You have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alte
   DSCESCABEX0050806 groq:openai/gpt-oss-20b: 408s ValueError: staged: 8 calls, last: no JSON: 
@@ -200,3 +186,15 @@ style-soft: lead>35w/1num
   staged cohere:command-a-03-2025: call 7 failed: HTTP 429: {"id":"8375e66f-6698-4fe6-a965-4402bd5481f4","message":"You are using a Trial key, which is limited to 1000 AP
   stage6 news: title in 1 calls
 OK DSTESCABEX2050806 <- ovh:Qwen3.5-397B-A17B (542s)
+  staged cohere:command-r-plus-08-2024: call 8 failed: HTTP 429: {"id":"9d71d4f4-36c1-47be-8288-17bb4aa9cf33","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 8 failed: HTTP 429: {"id":"c96ac4cb-db05-4bd1-82a8-d0f4f5314274","message":"You are using a Trial key, which is limited to 1000 AP
+  DLNFBCABEX0050809 cohere:command-r-plus-08-2024: 1179s ValueError: staged: 8 calls, last: no JSON: 
+  DHXIOCABEX0050806 cohere:command-a-03-2025: 1178s ValueError: staged: 8 calls, last: no JSON: 
+style-soft: در حالی که
+  staged gapgpt:gemma-3-27b-it: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+  staged cohere:command-a-reasoning-08-2025: call 1 failed: HTTP 429: {"id":"b0c485a5-5d11-4c87-9196-bcbffb254d00","message":"You are using a Trial key, which is limited to 1000 AP
+  staged cohere:command-a-03-2025: call 1 failed: HTTP 429: {"id":"9b09550c-d061-40ad-88ed-790ee526643f","message":"You are using a Trial key, which is limited to 1000 AP
+  DGKGZCABEX0050806 zai:glm-4.7-flash: 449s TimeoutError: The read operation timed out
+  stage6 news: kept stage-5 title after 3 calls (تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
+OK DLNFBCABEX0050809 <- gapgpt:gemma-3-27b-it (68s)
