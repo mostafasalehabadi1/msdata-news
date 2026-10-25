@@ -165,3 +165,17 @@ style-soft: در حالی که, lead>35w/1num, text 12 nums
   staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
   stage6 news: title in 3 calls
 OK KMC-PCT2G42.5-L50-00 <- gapgpt:gemma-3-27b-it (71s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: در حالی که, ام‌اس‌دیتا!=1, lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words after fixes
+  CACO-ZIF1-00 gapgpt:gemma-3-27b-it: 59s ValueError: staged: 8 calls, last: 118 words after fixes
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: text 11 nums
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «رسید» امروز تکرار شده)
+OK KHAC-PCT2G42.5-L50-00 <- gapgpt:gemma-3-27b-it (61s)
