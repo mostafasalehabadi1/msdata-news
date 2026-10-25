@@ -360,7 +360,8 @@ class QuotaError(ValueError):
     pass
 
 
-QUOTA_RE = re.compile(r"quota|exceeded|per day|daily limit|RESOURCE_EXHAUSTED", re.I)
+QUOTA_RE = re.compile(r"quota|exceeded|per day|daily limit|daily free allocation|RESOURCE_EXHAUSTED", re.I)
+DAILY_RE = re.compile(r"daily free allocation|per day|daily limit|free-models-per-day", re.I)  # content agent 1405-08-03: cf 429 «daily free allocation» -> out until tomorrow
 DEAD_RE = re.compile(r"HTTP 40[0134].*(Unknown Model|model_not_found|sign in to use|Trial key|provider or policy you attempted)", re.I | re.S)
 EXHAUSTED_FILE = os.path.join(tempfile.gettempdir(), f"exhausted-{time.strftime('%Y-%m-%d', time.gmtime())}.txt")
 
@@ -1464,8 +1465,9 @@ def main():
             except Exception as e:  # noqa: BLE001 - any failure means: try the next model of this provider
                 if isinstance(e, QuotaError):
                     with lock:
-                        open(EXHAUSTED_FILE, "a", encoding="utf-8").write(f"{name} {time.time():.0f}\n")
-                    note(f"  {name}: quota used up - skipped for an hour")
+                        daily = bool(DAILY_RE.search(str(e)))  # a bare name = the whole day (see exhausted())
+                        open(EXHAUSTED_FILE, "a", encoding="utf-8").write(f"{name}\n" if daily else f"{name} {time.time():.0f}\n")
+                    note(f"  {name}: quota used up - skipped " + ("until tomorrow" if daily else "for an hour"))
                 note(f"  {sym} {name}: {time.time() - t0:.0f}s {type(e).__name__}: {str(e)[:220]}")
                 time.sleep(2)
         return False
