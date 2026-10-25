@@ -39,3 +39,17 @@ style-soft: lead>35w/1num, text 19 nums
   staged kilo:kilo-auto/free: check cut 2 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
 OK NAC-PCT2G42.5-L50-00 <- zai:glm-4.7-flash (67s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 105 words / 3 paragraphs
+  KHCE-PCT2G32.5-B-00 zai:glm-4.7-flash: 43s ValueError: staged: 8 calls, last: 105 words / 3 paragraphs
+style-soft: text 12 nums
+  staged kilo:kilo-auto/free: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged kilo:kilo-auto/free: accepted after 8 calls
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: 119 words / 4 paragraphs
+  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 83 words / 2 paragraphs
+  KHCE-PCT2G32.5-B-00 zai:glm-4.5-flash: 52s ValueError: staged: 8 calls, last: 83 words / 2 paragraphs
+  stage6 news: kept stage-5 title after 3 calls (فعل «برد» امروز تکرار شده)
+OK SCC-PCT1G32.5-B-00 <- kilo:kilo-auto/free (192s)
