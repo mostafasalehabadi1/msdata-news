@@ -84,3 +84,24 @@ style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 16 nums
   staged zai:glm-4.5-flash: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
 OK BACC-PCT2G42.5-B-00 <- zai:glm-4.5-flash (38s)
+  staged requesty:mistral/leanstral-1-5: call 7 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged requesty:mistral/leanstral-1-5: call 8 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  HCC-PCT1G42.5-B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  kilo:dots-studio/dots-3-note-preview:free: quota used up - skipped for an hour
+  NGC-PCT2G32.5-B-00 kilo:dots-studio/dots-3-note-preview:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  KBCC-PCT1G42.5-L50-00 requesty:mistral/leanstral-1-5: 1190s ValueError: staged: 8 calls, last: no JSON: 
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.7-flash: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 7 calls
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+style-soft: text 13 nums
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۰
+  ZCC-PCT2G42.5-B-00 ovh:Qwen3.6-27B: 616s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۰
+style-soft: lead>35w/1num, text 15 nums
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 7 calls: مقدار عرضه غلط است؛ عرضه ۳ هزار و ۲۰۰ بود | «۲۰۰ تن» با فعل فروش آمده ولی فروش ۳ هزار و ۲۰۰ تن است
+  stage6 news: kept stage-5 title after 3 calls (فعل «نبرد» امروز تکرار شده)
+OK NEYC-PCT2G42.5-L50-00 <- zai:glm-4.7-flash (328s)
