@@ -120,3 +120,19 @@ style-soft: lead>35w/1num, text 18 nums
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK SCC-PCT2G32.5-L50-00 <- gapgpt:gemma-3-27b-it (127s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 119 words after fixes
+  ALCO-ARCK15B-00 zai:glm-4.7-flash: 282s ValueError: staged: 8 calls, last: 119 words after fixes
+style-soft: در حالی که, در حالی که, lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۷۵۲۵
+  SGHC-PCT2G42.5-L50-00 gapgpt:gemma-3-27b-it: 64s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۷۵۲۵
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 7 calls
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۶ | فعل «شد» امروز تکرار شده)
+OK ALCO-ARCK15B-00 <- zai:glm-4.5-flash (40s)
