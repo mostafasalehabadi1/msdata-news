@@ -167,3 +167,23 @@ style-soft: lead>35w/1num, text 14 nums
   PTJP-PSGPPSG1161PPP-00 zai:glm-4.7-flash: 511s ValueError: staged: 8 calls, last: 117 words / 3 paragraphs
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۶ | فعل «رفت» امروز تکرار شده)
 OK ZCC-PCT2G42.5-L50-00 <- kilo:dots-studio/dots-3-note-preview:free (478s)
+  staged ovh:Qwen3.6-27B: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: text 21 nums
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 3 calls: markers: لید عیناً در متن تکرار شده
+  staged requesty:mistral/leanstral-1-5: call 7 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 98 words / 4 paragraphs
+  PTJP-PSGPPSG1161PPP-00 zai:glm-4.5-flash: 25s ValueError: staged: 8 calls, last: 98 words / 4 paragraphs
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۶۰۰، ۲۱۴۰
+  KBCC-PCT1G42.5-L50-00 gapgpt:gemma-3-27b-it: 48s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۶۰۰، ۲۱۴۰
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged requesty:mistral/leanstral-1-5: call 8 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+style-soft: در حالی که, lead>35w/1num, text 19 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 16 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «یافت» امروز تکرار شده)
+OK NAC-PCT2G42.5-B-00 <- gapgpt:gemma-3-27b-it (53s)
