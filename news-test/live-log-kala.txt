@@ -42,3 +42,19 @@ style-soft: lead>35w/1num
   staged ovh:Qwen3.5-397B-A17B: accepted after 7 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK MAS-PCT2G42.5-L50-00 <- zai:glm-4.7-flash (737s)
+  staged requesty:mistral/leanstral-1-5: call 2 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+style-soft: lead>35w/1num, text 9 nums
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
+  GAC-PCT2G42.5-B-00 ovh:Qwen3.6-27B: 786s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  ZCC-PCT2G42.5-B-00 ovh:Meta-Llama-3_3-70B-Instruct: 15s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"df18c94feb729333992d755a05c49817"
+}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 2 failed: bad response: '{"id":"gen-1792969888-nya9gM71xeuAnfKVJnhC","error":{"message":"Upstream idle timeout exceeded","code":50
+  staged requesty:mistral/leanstral-1-5: call 3 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 18 nums
+  stage6 news: kept stage-5 title after 3 calls (فعل «رفت» امروز تکرار شده)
+OK UCC-PCT1G42.5-L50-00 <- ovh:Qwen3.5-397B-A17B (894s)
