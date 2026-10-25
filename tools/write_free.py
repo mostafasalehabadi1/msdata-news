@@ -1036,13 +1036,18 @@ def staged(name, call, prompt, facts, tables, market_rules=""):
             if short and int(short.group(1)) < MIN_WORDS[0] and d0 and calls < tries:  # content agent 1405-07-27: 900 calls on short texts
                 # content agent 1405-08-02: with 6 numbers in the text already, the new sentence comes from a fact without numbers
                 full = len(NUM.findall(DATE_WORDS.sub("", d0["text"]))) >= 6
+                # content agent 1405-08-03: one sentence (~15 words) rarely lifted a 72-106 word text over 120, so 25 of 37 gemma
+                # drafts were dropped after all 8 calls; one call now asks for as many sentences as the text is short of
+                n = max(1, -(-(MIN_WORDS[0] + 15 - int(short.group(1))) // 15))
                 new = ask(STAGE_SENT, "حقیقت‌ها:\n" + "\n".join(lines[:12]) + "\n\nمتن خبر:\n" + d0["text"] +
-                          "\n\nیک جمله‌ی تازه از حقیقت‌ها بنویس که در متن نیامده؛ فقط عددهای حقیقت‌ها. " +
-                          ("متن به ۶ عدد رسیده است: جمله را از حقیقتی بساز که عدد ندارد (مثل «همه‌ی عرضه فروش رفت» یا «پیشنهادی بالاتر از پایه نیامد»)؛ "
-                           "اگر چنین حقیقتی نمانده، کم‌عددترین جمله را بنویس. " if full else "") +
-                          "فقط خود جمله را برگردان.").strip().strip("«»\"")
-                if new and "\n" not in new and len(new.split()) >= 6:
-                    d0["text"] = d0["text"].rstrip() + (" " if paragraphs(d0["text"]) >= 4 else "\n\n") + new
+                          f"\n\n{n} جمله‌ی تازه از حقیقت‌ها بنویس که در متن نیامده؛ فقط عددهای حقیقت‌ها. " +
+                          ("متن به ۶ عدد رسیده است: جمله‌ها را از حقیقت‌هایی بساز که عدد ندارند (مثل «همه‌ی عرضه فروش رفت» یا «پیشنهادی بالاتر از پایه نیامد»)؛ "
+                           "اگر چنین حقیقتی نمانده، کم‌عددترین جمله‌ها را بنویس. " if full else "") +
+                          "هر جمله در یک خط؛ فقط خود جمله‌ها را برگردان.")
+                add = [re.sub(r"^(?:[-•*]|[0-9۰-۹]{1,2}[.)-])\s*", "", x.strip()).strip("«»\"") for x in (new or "").splitlines()]
+                add = [x for x in add if len(x.split()) >= 6 and not ban.search(x)]
+                if add:
+                    d0["text"] = d0["text"].rstrip() + (" " if paragraphs(d0["text"]) >= 4 else "\n\n") + " ".join(add)
                     raw = json.dumps(d0, ensure_ascii=False)
                     continue
             if short and int(short.group(1)) < 140:
