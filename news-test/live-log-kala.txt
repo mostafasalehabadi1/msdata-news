@@ -94,3 +94,14 @@ style-soft: lead>35w/1num, text 24 nums
   KHCE-PCT2G32.5-L50-00 kilo:dots-studio/dots-3-note-preview:free: 608s ValueError: staged: 9 calls, last: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است
   stage6 news: title in 2 calls
 OK CICE-PCT2G42.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (617s)
+style-soft: در حالی که, lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 110 words after fixes
+  NEYC-PCT2G42.5-L50-00 gapgpt:gemma-3-27b-it: 56s ValueError: staged: 8 calls, last: 110 words after fixes
+  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 16 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «گرفت» امروز تکرار شده)
+OK TCHC-PCT2G42.5-L50-00 <- gapgpt:gemma-3-27b-it (59s)
