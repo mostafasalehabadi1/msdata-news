@@ -59,9 +59,9 @@ jobs:
             end=$(( $(date +%s) + 330*60 ))
             while [ "$(date +%s)" -lt "$end" ]; do
               git pull -q --rebase --autostash || git rebase --abort || true  # a failed rebase must not leave the checkout detached (kish 2026-10-12: 2h of news never pushed)
-              out=$(timeout 1800 python tools/write_free.py --limit 40 --out queue | tee -a pilot-log.txt | tail -1)  # 1405-07-27: one hung call stopped kala news from 18:26 to 21:45 Tehran; a package now ends after 30 min
+              out=$(timeout 1800 python tools/write_free.py --limit 40 --out queue | tee -a pilot-log.txt news-test/kala-log-$(date -u +%F).txt | tail -1)  # 1405-07-27: one hung call stopped kala news from 18:26 to 21:45 Tehran; a package now ends after 30 min
               # the log of each package is pushed so a stuck backlog can be read without the Actions UI (backend 2026-10-10: 55 symbols unwritten for hours, no visible reason)
-              cp pilot-log.txt news-test/kala-log.txt && bash tools/safe_push.sh "kala: writer log" news-test/kala-log.txt $(ls data/*/stable.json 2>/dev/null) || true
+              cp pilot-log.txt news-test/kala-log.txt && bash tools/safe_push.sh "kala: writer log" news-test/kala-log.txt news-test/kala-log-*.txt $(ls data/*/stable.json 2>/dev/null) || true # content agent 1405-08-05: kala-log-<date>.txt keeps every package of the day (kala-log.txt = the current run only)
               case "$out" in *"/0;"*) break ;; esac          # nothing left to write
               case "$out" in "written 0/"*) sleep 900 ;; *) sleep 60 ;; esac  # all models busy -> wait 15 min
             done

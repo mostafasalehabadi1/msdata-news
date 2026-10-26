@@ -1413,6 +1413,7 @@ def main():
     lock = threading.Lock()
     run_t0 = time.time()  # kish and energy keep no first-seen time: their 10 minutes start with the run
     tried = {r["symbol"]: set() for r in todo}
+    reasons = {}  # content agent 1405-08-05: why each symbol failed (model + rejection or API error) goes into the give-up file
     stats = {"ok": 0}
     seen_facts = {}
 
@@ -1488,6 +1489,9 @@ def main():
                         open(EXHAUSTED_FILE, "a", encoding="utf-8").write(f"{name}\n" if daily else f"{name} {time.time():.0f}\n")
                     note(f"  {name}: quota used up - skipped " + ("until tomorrow" if daily else "for an hour"))
                 note(f"  {sym} {name}: {time.time() - t0:.0f}s {type(e).__name__}: {str(e)[:220]}")
+                with lock:
+                    reasons.setdefault(sym, []).append({"model": name, "at": time.strftime("%H:%M", time.gmtime()),
+                                                        "error": f"{type(e).__name__}: {str(e)[:300]}"})
                 time.sleep(2)
         return False
 
@@ -1542,7 +1546,9 @@ def main():
         for sym in tried:
             if tried[sym] and sym not in written:
                 e = give.get(sym, {})
-                give[sym] = {"fp": fp_of[sym], "runs": (e.get("runs", 0) if e.get("fp") == fp_of[sym] else 0) + 1}
+                same = e.get("fp") == fp_of[sym]
+                give[sym] = {"fp": fp_of[sym], "runs": (e.get("runs", 0) if same else 0) + 1}
+                give[sym]["reasons"] = ((e.get("reasons") or []) if same else [])[-30:] + [dict(x, run=give[sym]["runs"]) for x in reasons.get(sym, [])]
                 if sym in seen_facts:
                     give[sym]["facts"], give[sym]["tables"] = seen_facts[sym]
         if give:
