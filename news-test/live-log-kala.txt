@@ -48,3 +48,17 @@ style-soft: lead>35w/1num, text 12 nums
 style-soft: lead>35w/1num, text 14 nums
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۱.۱۶۳)
 OK PGIL-LUSUACB-00 <- gapgpt:gemma-3-27b-it (60s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.7-flash: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 119 words after fixes
+  POCO-BOSN500B-00 zai:glm-4.7-flash: 653s ValueError: staged: 8 calls, last: 119 words after fixes
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۳۴۸ بود
+  RJCO-PPRG1102XKRJ-00 gapgpt:gemma-3-27b-it: 42s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۳۴۸ بود
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: در حالی که, در حالی که, در حالی که, lead>35w/1num, text 12 nums
+  staged zai:glm-4.5-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK POCO-BOSN500B-00 <- zai:glm-4.5-flash (106s)
