@@ -95,7 +95,7 @@ RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و �
 
 # content agent 1405-07-15 (252 news of 1405-07-14): the one main flaw of each model, appended to its prompt
 MODEL_HINTS = [(r"gapgpt:gemma", "۱) همه‌ی رقم‌ها و اعشارها فارسی و با «٫» (۷٫۲ نه 7.2)؛ در تیتر، متن و key_points. ۲) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه؛ تاریخ فقط یک بار (مثل دوشنبه ۲۰ مهر)، و لید با روز یا تاریخ شروع نشود. ۳) هر عدد را فقط یک بار و دقیقاً از حقیقت‌ها بنویس؛ عدد صفر یا عددی که در حقیقت‌ها نیست ننویس و ارزش معامله را خودت حساب نکن. ۴) text دست‌کم ۱۴۰ کلمه در ۲ یا ۳ پاراگراف باشد و پاراگراف‌ها با یک خط خالی جدا شوند؛ حداکثر ۶ عدد در متن داشته باشد. ۵) هیچ حرف لاتین یا کد کالا (مثل نام گرید) در تیتر و متن نیاور؛ نام فارسی کالا کافی است. ۶) در تیتر «؛» نگذار و «نماد» ننویس. ۷) تیتر جمله‌ی کامل با فعل است، ۸ تا ۱۳ کلمه. ۸) نسبت تقاضا به عرضه را فقط به شکل «X برابر عرضه» بنویس؛ «X درصد بیشتر از عرضه» ننویس. ۹) صفت عالی (بالاترین، پایین‌ترین، بیشترین، کمترین، گران‌ترین، ارزان‌ترین) ممنوع است، مگر همان واژه در حقیقت‌ها آمده باشد."),
-               (r"^zai:", "text حتماً دست‌کم ۱۳۰ کلمه باشد (کمتر از ۱۲۰ کلمه رد می‌شود)، در ۲ یا ۳ پاراگراف با یک خط خالی بین آن‌ها؛ پیش از برگرداندن کلمه‌ها را بشمار."),  # content agent 1405-08-04: 15 zai drafts were 76-91 words
+               (r"^zai:", "text حتماً دست‌کم ۱۴۰ کلمه باشد (کمتر از ۱۲۰ کلمه رد می‌شود)، در ۲ یا ۳ پاراگراف با یک خط خالی بین آن‌ها؛ پیش از برگرداندن کلمه‌ها را بشمار."),  # content agent 1405-08-04: 15 zai drafts were 76-91 words
                (r"nemotron-3-super", "کلمه‌ی انگلیسی ننویس. «عرض» ننویس؛ «عرضه» بنویس."),
                (r"dots", "هیچ کلمه‌ی انگلیسی مثل Display یا faced در متن نیاور."),
                (r"command-a.*reason", "«امروز» ننویس؛ روز هفته و تاریخ را بنویس. «در حالی که» و «با این حال» ننویس."),
@@ -577,13 +577,13 @@ STAGE3 = ("تو ویراستار نثر هستی. یک خبر را می‌گیر
           "۲) جمله‌ها کوتاه (۱۵ تا ۲۰ کلمه) و فعل در آخر جمله.\n"
           "۳) «قیمت» بنویس، نه «نرخ». «نماد» و «سهم» ننویس؛ «کالا» بنویس. «امروز» و «دیروز» ننویس.\n"
           "۴) «ام‌اس‌دیتا» را ننویس؛ جمله‌ی منبع را خود سامانه می‌گذارد.\n"
-          "۵) text همچنان ۱۲۰ تا ۱۸۰ کلمه در ۲ یا ۳ پاراگراف بماند، حداکثر ۶ عدد، بدون ترتیب ثابت پاراگراف‌ها.\n" + JSON_KEYS)
+          "۵) text همچنان دست‌کم ۱۴۰ و حداکثر ۱۸۰ کلمه در ۲ یا ۳ پاراگراف بماند، حداکثر ۶ عدد، بدون ترتیب ثابت پاراگراف‌ها.\n" + JSON_KEYS)
 # step 4 - the title alone, with a verb chosen from the data
 STAGE_TITLE = ("تو تیترنویس هستی. فقط یک تیتر فارسی بنویس، حدود ۱۰ کلمه: نام کالا و تولیدکننده، فقط یک عدد از حقیقت‌ها، "
                "و در آخر یک فعل که با حقیقت‌ها بخواند (مثل «فروخته شد»، «به … رسید»، «گران‌تر شد»، «ارزان‌تر شد»، «ثابت ماند»، "
                "«بی‌خریدار ماند»، «… برابر عرضه شد»). فقط خود تیتر را برگردان؛ بدون گیومه و بدون توضیح.")
 STAGE_FIX = ("تو ویراستار هستی. یک خبر و فهرست ایرادهایش را می‌گیری. فقط همان ایرادها را رفع کن و بقیه‌ی متن را نگه دار. "
-             "عددها فقط از حقیقت‌ها. text باید ۱۲۰ تا ۱۸۰ کلمه در ۲ یا ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها باشد. " + JSON_KEYS)
+             "عددها فقط از حقیقت‌ها. text باید دست‌کم ۱۴۰ و حداکثر ۱۸۰ کلمه در ۲ یا ۳ پاراگراف با یک خط خالی (\\n\\n) بین آن‌ها باشد. " + JSON_KEYS)
 
 
 LATIN_CODE = re.compile(r"[A-Za-z][A-Za-z0-9./+-]*")
@@ -1413,6 +1413,7 @@ def main():
     lock = threading.Lock()
     run_t0 = time.time()  # kish and energy keep no first-seen time: their 10 minutes start with the run
     tried = {r["symbol"]: set() for r in todo}
+    infra = set()  # content agent 1405-08-05: a free model's timeout / 429 is not a writing failure, so Gemma takes it without the wait
     reasons = {}  # content agent 1405-08-05: why each symbol failed (model + rejection or API error) goes into the give-up file
     stats = {"ok": 0}
     seen_facts = {}
@@ -1490,6 +1491,8 @@ def main():
                     note(f"  {name}: quota used up - skipped " + ("until tomorrow" if daily else "for an hour"))
                 note(f"  {sym} {name}: {time.time() - t0:.0f}s {type(e).__name__}: {str(e)[:220]}")
                 with lock:
+                    if isinstance(e, QuotaError) or re.search(r"timed out|Timeout|429|RemoteDisconnected|Connection", f"{type(e).__name__} {e}"):
+                        infra.add(sym)
                     reasons.setdefault(sym, []).append({"model": name, "at": time.strftime("%H:%M", time.gmtime()),
                                                         "error": f"{type(e).__name__}: {str(e)[:300]}"})
                 time.sleep(2)
@@ -1510,7 +1513,7 @@ def main():
                 # model fails on come back to the list minutes later, and the backups had already left by then (kish 2026-10-11)
                 if gname.endswith("/paid"):
                     pick = [r for r in todo if gname not in tried[r["symbol"]]
-                            and time.time() - (seen_t.get(r["symbol"]) or run_t0) > PAID_WAIT]
+                            and (r["symbol"] in infra or time.time() - (seen_t.get(r["symbol"]) or run_t0) > PAID_WAIT)]
                     others = any(t.is_alive() for g, t in zip(groups, threads) if not g.endswith("/paid"))
                     if others:  # owner 1405-08-04: half the news from free models, so Gemma takes only what a free model already failed
                         pick = [r for r in pick if any(not g.endswith("/paid") for g in tried[r["symbol"]])]
