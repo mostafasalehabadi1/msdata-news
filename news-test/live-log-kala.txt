@@ -81,3 +81,120 @@ style-soft: lead>35w/1num, text 17 nums
   SRM-BSG017OO-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK ETSS-BSG017OO-00 <- gapgpt:gemma-3-27b-it (59s)
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  SRM-BSG017OO-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 23s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"14aa532c2733097670357155ad8c2c48"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  SRM-BSG017OO-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged kilo:kilo-auto/free: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۹۱
+  MBSI-BSG194X-00 gapgpt:gemma-3-27b-it: 43s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۹۱
+style-soft: در حالی که, lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 95 words / 4 paragraphs
+  JPPC-PPRP345SPP-00 zai:glm-4.5-flash: 207s ValueError: staged: 8 calls, last: 95 words / 4 paragraphs
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 12 nums
+style-soft: در حالی که, lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words after fixes
+  SRM-BSG017OO-00 gapgpt:gemma-3-27b-it: 66s ValueError: staged: 8 calls, last: 119 words after fixes
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 16 nums
+style-soft: در حالی که, lead>35w/1num, text 18 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text | «در مجموع» در text
+  JPPC-PPRP345SPP-00 gapgpt:gemma-3-27b-it: 61s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text | «در مجموع» در text
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 2 sentence(s)
+  JPPC-PPEP6540GJ-089 kilo:kilo-auto/free: 274s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+style-soft: lead>35w/1num, text 17 nums
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 101 words / 3 paragraphs
+  SHPC-PPHP510LPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 630s ValueError: staged: 8 calls, last: 101 words / 3 paragraphs
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+style-soft: lead>35w/1num, text 17 nums
+style-soft: در حالی که, lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
+  SHPC-PPHP510LPP-00 gapgpt:gemma-3-27b-it: 37s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 86 words / 3 paragraphs
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: text 16 nums
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 109 words / 2 paragraphs
+  DAP-PPZ30SJ-00 zai:glm-4.7-flash: 271s ValueError: staged: 8 calls, last: 109 words / 2 paragraphs
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+style-soft: text 17 nums
+style-soft: text 15 nums
+  staged ovh:Qwen3.5-397B-A17B: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged ovh:Qwen3.5-397B-A17B: accepted after 7 calls
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 2 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.5-flash: call 5 failed: HTTP 429: {"error":{"code":"1113","message":"Insufficient balance or no resource package. Please recharge."}}
+style-soft: lead>35w/1num, text 17 nums
+  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳.۸
+  AGIC-PPHP500MJ-00 kilo:dots-studio/dots-3-note-preview:free: 487s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳.۸
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 3 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 4 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 5 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۵۰، ۶۸
+  AGIC-PPHP500MJ-00 gapgpt:gemma-3-27b-it: 51s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۵۰، ۶۸
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 6 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged zai:glm-4.5-flash: call 7 failed: HTTP 429: {"error":{"code":"1113","message":"Insufficient balance or no resource package. Please recharge."}}
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 7 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 8 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
+style-soft: lead>35w/1num, text 15 nums
+  JPPC-PPEP6540GJ-089 kilo:nvidia/nemotron-3-super-120b-a12b:free: 376s ValueError: staged: 8 calls, last: no JSON: 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged kilo:poolside/laguna-s-2.1:free: check cut 1 sentence(s)
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  JPPC-PPEP6540GJ-089 kilo:poolside/laguna-s-2.1:free: 18s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
+  staged zai:glm-4.5-flash: call 8 failed: HTTP 429: {"error":{"code":"1113","message":"Insufficient balance or no resource package. Please recharge."}}
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۸۸
+  staged zai:glm-4.5-flash: call 8 failed: HTTP 429: {"error":{"code":"1113","message":"Insufficient balance or no resource package. Please recharge."}}
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 75 words / 2 paragraphs
+  DAP-PPZ30SJ-00 zai:glm-4.5-flash: 361s ValueError: staged: 8 calls, last: 75 words / 2 paragraphs
+  RJCO-PPRG1102XKRJ-00 ovh:Qwen3.5-397B-A17B: 1119s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 19 nums
+style-soft: lead>35w/1num, text 19 nums
+  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 17 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 7 calls
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 17 nums
+style-soft: در حالی که, lead>35w/1num, text 18 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words after fixes
+  DAP-PPZ30SJ-00 gapgpt:gemma-3-27b-it: 40s ValueError: staged: 8 calls, last: 119 words after fixes
+  stage6 news: kept stage-5 title after 3 calls (فعل «کرد» امروز تکرار شده)
+OK DAP-PPHP552RJ-00 <- kilo:dots-studio/dots-3-note-preview:free (324s)
