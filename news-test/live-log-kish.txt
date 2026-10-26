@@ -132,3 +132,30 @@ OK NEYC-PCT1G42.5-JEX-00 <- gapgpt:gemma-3-27b-it (86s)
   staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
   stage6 news: kept stage-5 title after 3 calls (17 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۱٫۸ | فعل «شد» امروز تکرار شده)
 OK CJOV-PCT2G42.5-L50EX-00 <- kilo:kilo-auto/free (256s)
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.7-flash: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 3 calls
+  staged requesty:mistral/leanstral-1-5: call 2 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged groq:openai/gpt-oss-20b: call 7 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged kilo:kilo-auto/free: check cut 3 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+  KAZJ-BI6070BEX-00 zai:glm-4.7-flash: 279s ValueError: repeated subtitle
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 2 sentence(s)
+  staged requesty:mistral/leanstral-1-5: call 3 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  SACE-PCT1G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 198s JSONDecodeError: Extra data: line 1 column 947 (char 946)
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۷۶۵
+  DNJC-BI6070BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 352s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۷۶۵
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  KGJ-BI6070BEX-00 ovh:gpt-oss-120b: 180s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-20b: call 8 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  stage6 news: title in 3 calls
+OK AAC-PCT2G42.5-BEX-00 <- gapgpt:gemma-3-27b-it (198s)
