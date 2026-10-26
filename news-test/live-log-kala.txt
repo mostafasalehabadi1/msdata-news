@@ -60,3 +60,22 @@ style-soft: lead>35w/1num
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
   staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
 OK GAC-PCT1G32.5-B-00 <- kilo:kilo-auto/free (229s)
+style-soft: lead>35w/1num, text 16 nums
+  kilo:kilo-auto/free: quota used up - skipped for an hour
+  SGHC-PCT1G42.5-B-00 kilo:kilo-auto/free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  SGHC-PCT1G42.5-B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  SGHC-PCT1G42.5-B-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  kilo:cohere/north-mini-code:free: quota used up - skipped for an hour
+  SGHC-PCT1G42.5-B-00 kilo:cohere/north-mini-code:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
+  KHCE-PCT2G32.5-B-00 groq:openai/gpt-oss-120b: 242s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 193969, Requested 90
+style-soft: lead>35w/1num, text 18 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۴
+  ACC-PCT1G32.5-B-00 gapgpt:gemma-3-27b-it: 56s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۴
+  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+style-soft: lead>35w/1num, text 10 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 8 calls
+OK ZZKI-ZII1-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (256s)
