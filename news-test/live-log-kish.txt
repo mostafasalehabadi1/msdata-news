@@ -1,20 +1,3 @@
-  stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳)
-OK BCC-CLINKERT2EX-00-2 <- gapgpt:gemma-3-27b-it (68s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged requesty:mistral/leanstral-1-5: call 8 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 2 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
   SACE-PCT2G42.5-L50EX-00 requesty:mistral/leanstral-1-5: 1190s ValueError: staged: 8 calls, last: no JSON: 
   staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 3 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
   stage6 news: title in 2 calls
@@ -201,3 +184,20 @@ style-soft: lead>35w/1num, text 11 nums
   staged zai:glm-4.7-flash: check cut 3 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
 OK SHCO-PCT2G42.5-L50EX-00 <- gapgpt:gemma-3-27b-it (95s)
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+style-soft: lead>35w/1num
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: accepted after 7 calls
+style-soft: lead>35w/1num, text 16 nums
+  staged zai:glm-4.7-flash: soft: متن 16 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 6 calls
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:poolside/laguna-m.1: call 2 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK CASC-PCT2G42.5-L50EX-00 <- zai:glm-4.7-flash (393s)
