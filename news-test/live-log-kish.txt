@@ -1,18 +1,3 @@
-  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
-  stage6 news: title in 3 calls
-OK SACE-PCT1G42.5-JEX-00 <- gapgpt:gemma-3-27b-it (58s)
-  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  ovh:gpt-oss-120b: quota used up - skipped for an hour
-  ABCO-BI6070BEX-00 ovh:gpt-oss-120b: 382s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"d090e517b9b2dc537ec254086355b42c"
-}
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
-  KGJ-BI6070BEX-00 groq:openai/gpt-oss-120b: 103s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 195112, Requested 55
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
 style-soft: lead>35w/1num, text 15 nums
   staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
   staged gapgpt:gemma-3-27b-it: accepted after 7 calls
@@ -201,3 +186,15 @@ style-soft: lead>35w/1num
   staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 4 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
   stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳ | فعل «فروخت» امروز تکرار شده)
 OK MAJD-PCT2G42.5-L50EX-00 <- zai:glm-4.5-flash (73s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 5 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 6 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 7 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 8 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  MAJD-PCT2G42.5-L50EX-00-2 zai:glm-4.7-flash: 245s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  SACE-PCT2G42.5-L50EX-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 1190s ValueError: staged: 8 calls, last: no JSON: 
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: soft: نام کالا در تیتر باید «سیمان پرتلند» باشد
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  stage6 news: title in 1 calls
+OK MAJD-PCT2G42.5-L50EX-00-2 <- zai:glm-4.5-flash (48s)
