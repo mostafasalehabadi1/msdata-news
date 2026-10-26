@@ -32,3 +32,24 @@ style-soft: lead>35w/1num, text 15 nums
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 6 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK MKL-TISSDLGR18-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (29s)
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 112 words / 4 paragraphs
+  MKL-TISSDLGR14-00 zai:glm-4.7-flash: 176s ValueError: staged: 8 calls, last: 112 words / 4 paragraphs
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 108 words / 4 paragraphs
+  MKL-TISSDLGR14-00 zai:glm-4.5-flash: 72s ValueError: staged: 8 calls, last: 108 words / 4 paragraphs
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 78 words / 4 paragraphs
+  MKL-TISSDLGR14-00 gapgpt:gemma-3-27b-it: 55s ValueError: staged: 8 calls, last: 78 words / 4 paragraphs
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 9 nums
+  staged zai:glm-4.7-flash: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 7 calls
+  stage6 news: title in 1 calls
+OK KZC-CR08AB-00 <- zai:glm-4.7-flash (990s)
