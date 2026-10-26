@@ -79,3 +79,17 @@ style-soft: lead>35w/1num, text 13 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: title in 2 calls
 OK GSS-BSG194X-00 <- gapgpt:gemma-3-27b-it (76s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 10 nums
+  staged ovh:Qwen3.5-397B-A17B: draft dropped after 7 calls: 113 words / 4 paragraphs
+  ARCO-OAEPVC6834PP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: call 8 failed: HTTP 429: {"error":{"code":"1113","message":"Insufficient balance or no resource package. Please recharge."}}
+style-soft: در حالی که, lead>35w/1num, text 13 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 102 words / 3 paragraphs
+  JPPC-PPRP345SPP-00 zai:glm-4.5-flash: 200s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
+style-soft: در حالی که, lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۱۳ | فعل «یافت» امروز تکرار شده)
+OK ARCO-OAEPVC6834PP-00 <- gapgpt:gemma-3-27b-it (81s)
