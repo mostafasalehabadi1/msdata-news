@@ -64,3 +64,42 @@ style-soft: lead>35w/1num, text 11 nums
 OK ALSU-AP0610A1-00 <- gapgpt:gemma-3-27b-it (73s)
   stage6 news: title in 2 calls
 OK ALM-AP06101-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (601s)
+style-soft: lead>35w/1num, text 17 nums
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 17 nums
+style-soft: lead>35w/1num, text 16 nums
+  staged zai:glm-4.7-flash: draft dropped after 5 calls: «۴۰۰ تن» با فعل فروش آمده ولی فروش ۵۵۰ تن است
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 102 words / 2 paragraphs
+  CWD-CR08AB-00 zai:glm-4.7-flash: 1093s ValueError: staged: 8 calls, last: 102 words / 2 paragraphs
+  staged zai:glm-4.5-flash: call 3 failed: HTTP 429: {"error":{"code":"1113","message":"Insufficient balance or no resource package. Please recharge."}}
+  staged zai:glm-4.5-flash: call 3 failed: HTTP 429: {"error":{"code":"1113","message":"Insufficient balance or no resource package. Please recharge."}}
+style-soft: lead>35w/1num, text 11 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۰۰، ۸۰
+  DAP-PPHP510LJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 429s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۰۰، ۸۰
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  DAP-PPHP510LJ-00 gapgpt:gemma-3-27b-it: 38s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.5-flash: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: draft dropped after 6 calls: 117 words after fixes
+  staged zai:glm-4.5-flash: call 7 failed: HTTP 429: {"error":{"code":"1113","message":"Insufficient balance or no resource package. Please recharge."}}
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 60 words / 3 paragraphs
+  CWD-CR08AB-00 zai:glm-4.5-flash: 294s ValueError: staged: 8 calls, last: 60 words / 3 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: title in 2 calls
+OK CWD-CR08AB-00 <- gapgpt:gemma-3-27b-it (44s)
