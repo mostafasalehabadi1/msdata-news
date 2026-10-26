@@ -21,3 +21,14 @@ style-soft: text 12 nums
   MKL-TISSDLGR18-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 6 column 11 (char 316)
   stage6 news: title in 1 calls
 OK ATSC-BSG017OO-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (37s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 10 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۰۳
+  KZC-CR08AB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 28s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۰۳
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK MKL-TISSDLGR18-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (29s)
