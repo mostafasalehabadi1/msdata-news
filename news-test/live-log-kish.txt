@@ -1,8 +1,3 @@
-  SACE-PCT2G42.5-L50EX-00 requesty:mistral/leanstral-1-5: 1190s ValueError: staged: 8 calls, last: no JSON: 
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 3 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  stage6 news: title in 2 calls
-OK CBA-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (52s)
-  stage6 news: title in 1 calls
 OK BOCO-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (343s)
   staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
   staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 4 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
@@ -201,3 +196,8 @@ style-soft: lead>35w/1num, text 16 nums
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
 OK CASC-PCT2G42.5-L50EX-00 <- zai:glm-4.7-flash (393s)
+  staged requesty:poolside/laguna-m.1: call 3 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK AZGI-BI6070BEX-00 <- openrouter:xingchen-agi/xing4.0-29b-a4b:free (1770s)
