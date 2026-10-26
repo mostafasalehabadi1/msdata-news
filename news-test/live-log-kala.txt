@@ -95,3 +95,40 @@ style-soft: text 14 nums
   staged ovh:gpt-oss-120b: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
   staged ovh:gpt-oss-120b: accepted after 8 calls
 OK MFSY-BSO003X-00 <- ovh:gpt-oss-120b (606s)
+  ovh:gpt-oss-120b: quota used up - skipped for an hour
+  MKL-TISSSLGR20-00 ovh:gpt-oss-120b: 1s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"3cbd9c551055501927a0f972da49d15b"
+}
+  JPPC-PPEP548TPP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: call 4 failed: HTTP 429: {"error":{"code":"1113","message":"Insufficient balance or no resource package. Please recharge."}}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۹
+  JPPC-PPEP548TPP-00 gapgpt:gemma-3-27b-it: 48s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۹
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  MKL-TISSSLGR20-00 ovh:Meta-Llama-3_3-70B-Instruct: 88s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"2c31a25be9dd0839e7f708280da5731f"
+}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: 98 words / 3 paragraphs
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 91 words / 3 paragraphs
+  JPPC-PPEP3130UVPP-00 zai:glm-4.5-flash: 307s ValueError: staged: 8 calls, last: 91 words / 3 paragraphs
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+style-soft: text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۶۷)
+OK JPPC-PPEP3130UVPP-00 <- gapgpt:gemma-3-27b-it (57s)
