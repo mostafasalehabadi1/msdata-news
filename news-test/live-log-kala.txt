@@ -109,3 +109,20 @@ style-soft: در حالی که, lead>35w/1num, text 13 nums
   staged zai:glm-4.5-flash: check cut 1 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK AAK-PCT1G42.5-B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (358s)
+  staged kilo:cohere/north-mini-code:free: check cut 4 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۰
+  CMK-PCT2G42.5-L50-00 zai:glm-4.5-flash: 27s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۰
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 111 words / 4 paragraphs
+  ESTC-PCT2G32.5-B-00 gapgpt:gemma-3-27b-it: 71s ValueError: staged: 8 calls, last: 111 words / 4 paragraphs
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۹۷ | فعل «شد» امروز تکرار شده)
+OK SIS-ARGAB-00 <- gapgpt:gemma-3-27b-it (58s)
