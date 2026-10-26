@@ -12,3 +12,51 @@ style-soft: lead>35w/1num, text 15 nums
   staged llm7:minimax-m2.7: check cut 2 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (فعل «ماند» امروز تکرار شده)
 OK POCO-SW30B-00 <- gapgpt:gemma-3-27b-it (42s)
+  staged kilo:kilo-auto/free: check cut 3 sentence(s)
+  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged kilo:kilo-auto/free: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در text | «امروز» در text
+  NACE-PCT2G42.5-L50-00 gapgpt:gemma-3-27b-it: 48s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text | «امروز» در text
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 94 words / 4 paragraphs
+  KCC-PCT1G42.5-B-00 gapgpt:gemma-3-27b-it: 38s ValueError: staged: 8 calls, last: 94 words / 4 paragraphs
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  llm7:minimax-m2.7: quota used up - skipped for an hour
+  CJOV-PCT2G42.5-L50-00 llm7:minimax-m2.7: 167s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 39314 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":39314}}
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for an hour
+  CJOV-PCT2G42.5-L50-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  KCC-PCT2G42.5-B-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
+  CASC-PCT2G32.5-L50-00 gapgpt:gemma-3-27b-it: 37s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+style-soft: lead>35w/1num
+  staged kilo:kilo-auto/free: accepted after 8 calls
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  KCC-PCT2G42.5-B-00 ovh:Meta-Llama-3_3-70B-Instruct: 17s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"24416e395bd79552660e92602ad3e330"
+}
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+OK GAC-PCT1G32.5-B-00 <- kilo:kilo-auto/free (229s)
