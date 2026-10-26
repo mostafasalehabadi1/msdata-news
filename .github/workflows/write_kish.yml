@@ -51,7 +51,7 @@ jobs:
           while [ "$(date +%s)" -lt "$end" ]; do
             git pull -q --rebase --autostash || git rebase --abort || true  # a failed rebase must not leave the checkout detached (kish 2026-10-12: 2h of news never pushed)
             python tools/fetch_kish.py || true  # fresh rows each round: a row is written only once it stopped changing (owner 1405-07-15)
-            out=$(python tools/write_free.py --market kish --limit 40 --out queue/kish | tee -a pilot-log.txt | tail -1)
+            out=$(timeout 1800 python tools/write_free.py --market kish --limit 40 --out queue/kish | tee -a pilot-log.txt | tail -1)
             # log of each round pushed so a stuck run can be read without the Actions UI (backend 2026-10-10)
             # content agent 1405-07-27: the day's data (today.json + stable file) goes with every round, not at the end of the run
             cp pilot-log.txt news-test/kish-live-log.txt && git add -f data/kish/today.json data/kish/stable-*.json 2>/dev/null; bash tools/safe_push.sh "kish: writer log" news-test/kish-live-log.txt || true
