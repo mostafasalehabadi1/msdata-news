@@ -1372,7 +1372,8 @@ def main():
     subs = {i["subtitle"] for i in doc["items"]}
     TODAY_TITLES[:] = [i["title"] for i in doc["items"] if i.get("title")]
     todo = [r for r in rows if r.get("symbol") not in done and "فرعی" not in (r.get("talar") or "")  # owner 1405-07-28: no news for the side hall (no price/value in the source)
-            and not ((r.get("traded_qty") or 0) > 0 and not r.get("weighted_price"))]
+            and not ((r.get("traded_qty") or 0) > 0 and not r.get("weighted_price"))
+            and not (MARKET[0] == "kala" and "سیمان" in (r.get("talar") or r.get("hall") or ""))]  # owner 1405-08-03: the domestic cement hall only in the daily report (Kish cement/clinker keep their news)
     provs = providers()
     if not provs:
         sys.exit("no model key found (GEMINI_API_KEY / OPENROUTER_API_KEY / GROQ_API_KEY / ...)")
@@ -1507,6 +1508,8 @@ def main():
                     pick = [r for r in todo if gname not in tried[r["symbol"]]
                             and time.time() - (seen_t.get(r["symbol"]) or run_t0) > PAID_WAIT]
                     others = any(t.is_alive() for g, t in zip(groups, threads) if not g.endswith("/paid"))
+                    if others:  # owner 1405-08-04: half the news from free models, so Gemma takes only what a free model already failed
+                        pick = [r for r in pick if any(not g.endswith("/paid") for g in tried[r["symbol"]])]
                     if not live or (not pick and not others and not any(gname not in tried[r["symbol"]] for r in todo)):
                         return
                 elif not live or (not pick and (not gname.endswith("/backup") or strong_out)):
