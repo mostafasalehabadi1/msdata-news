@@ -1,27 +1,3 @@
-style-soft: lead>35w/1num, text 9 nums
-  KGJ-BI6070BEX-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
-  AZGI-BI6070BEX-00 gapgpt:gemma-3-27b-it: 59s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
-style-soft: lead>35w/1num, text 9 nums
-  staged zai:glm-4.5-flash: accepted after 6 calls
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK KAZJ-BI6070BEX-00 <- zai:glm-4.5-flash (266s)
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged requesty:mistral/leanstral-1-5: call 7 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-style-soft: lead>35w/1num
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged kilo:nvidia/nemotron-3-super-120b-a12b:free: call 1 failed: HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"status\":404,\"title\":\"Not Fo
   stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳)
 OK BCC-CLINKERT2EX-00-2 <- gapgpt:gemma-3-27b-it (68s)
   staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
@@ -201,3 +177,27 @@ style-soft: lead>35w/1num, text 14 nums
   staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK AZGI-BI6070BEX-00-2 <- zai:glm-4.7-flash (212s)
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 18 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
+  SHCO-PCT2G42.5-L50EX-00 zai:glm-4.7-flash: 39s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: در حالی که
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
+  SHCO-PCT2G42.5-L50EX-00 zai:glm-4.5-flash: 64s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
+OK SHCO-PCT2G42.5-L50EX-00 <- gapgpt:gemma-3-27b-it (95s)
