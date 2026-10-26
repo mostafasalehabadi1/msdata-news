@@ -1,17 +1,3 @@
-  staged groq:openai/gpt-oss-120b: call 8 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  SZCE-PCT2G32.5-L50EX-00 groq:openai/gpt-oss-120b: 415s ValueError: staged: 8 calls, last: no JSON: 
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 9 nums
-  staged kilo:kilo-auto/free: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged kilo:kilo-auto/free: accepted after 8 calls
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
-  BCC-CLINKERT2EX-00-2 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num
-  staged zai:glm-4.7-flash: accepted after 5 calls
-  staged groq:openai/gpt-oss-20b: call 2 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-  stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
-OK AZRC-BI6070BEX-00 <- kilo:kilo-auto/free (214s)
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
   SESH-INBPPBEX-00 ovh:Meta-Llama-3_3-70B-Instruct: 109s QuotaError: HTTP 429: {
   "message":"API rate limit exceeded",
   "request_id":"f15592559711376b2ed8471eca33d336"
@@ -204,3 +190,20 @@ style-soft: lead>35w/1num
   staged gapgpt:gemma-3-27b-it: accepted after 5 calls
   stage6 news: title in 3 calls
 OK SACE-PCT1G42.5-JEX-00 <- gapgpt:gemma-3-27b-it (58s)
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+  ovh:gpt-oss-120b: quota used up - skipped for an hour
+  ABCO-BI6070BEX-00 ovh:gpt-oss-120b: 382s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"d090e517b9b2dc537ec254086355b42c"
+}
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
+  KGJ-BI6070BEX-00 groq:openai/gpt-oss-120b: 103s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 195112, Requested 55
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: title in 1 calls
+OK SZCE-PCT2G32.5-L50EX-00 <- gapgpt:gemma-3-27b-it (78s)
