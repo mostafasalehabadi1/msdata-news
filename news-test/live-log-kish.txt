@@ -1,7 +1,3 @@
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 6 calls: 74 words / 3 paragraphs
-  staged groq:openai/gpt-oss-120b: call 7 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  SESH-INBPPBEX-00 ovh:gpt-oss-120b: 377s TimeoutError: The read operation timed out
-  staged requesty:mistral/leanstral-1-5: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
   staged groq:openai/gpt-oss-120b: call 8 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
   SZCE-PCT2G32.5-L50EX-00 groq:openai/gpt-oss-120b: 415s ValueError: staged: 8 calls, last: no JSON: 
   staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
@@ -204,3 +200,7 @@ style-soft: lead>35w/1num
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
 OK PND-INBPPBEX-00 <- zai:glm-4.7-flash (306s)
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+  stage6 news: title in 3 calls
+OK SACE-PCT1G42.5-JEX-00 <- gapgpt:gemma-3-27b-it (58s)
