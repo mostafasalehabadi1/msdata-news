@@ -71,3 +71,13 @@ style-soft: lead>35w/1num, text 20 nums
   staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (15 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
 OK ARP-HS30109-00 <- kilo:kilo-auto/free (314s)
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  ETSS-BSG017OO-00 groq:openai/gpt-oss-20b: 168s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 195832, Requested 787
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  MBSI-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 348s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 16 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  SRM-BSG017OO-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK ETSS-BSG017OO-00 <- gapgpt:gemma-3-27b-it (59s)
