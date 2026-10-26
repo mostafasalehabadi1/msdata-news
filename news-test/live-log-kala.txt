@@ -62,3 +62,20 @@ style-soft: lead>35w/1num, text 17 nums
   staged gapgpt:gemma-3-27b-it: accepted after 6 calls
   stage6 news: title in 2 calls
 OK KSC-BSG194X-00 <- gapgpt:gemma-3-27b-it (59s)
+  SHPC-MEAFG-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  SHPC-MEAFG-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 11s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"1c940775f5dc55196067ef73a4c05c77"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  SHPC-MEAFG-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 0s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.7-flash: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 5 calls
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK SRBK-CR08AB-00 <- zai:glm-4.7-flash (557s)
