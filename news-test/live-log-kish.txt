@@ -1,10 +1,3 @@
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  KGJ-BI6070BEX-00 ovh:gpt-oss-120b: 180s TimeoutError: The read operation timed out
-  staged groq:openai/gpt-oss-20b: call 8 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-  stage6 news: title in 3 calls
-OK AAC-PCT2G42.5-BEX-00 <- gapgpt:gemma-3-27b-it (198s)
-  SZCE-PCT2G32.5-L50EX-00 groq:openai/gpt-oss-20b: 482s ValueError: staged: 8 calls, last: no JSON: 
   staged requesty:mistral/leanstral-1-5: call 4 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
 style-soft: lead>35w/1num
   staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
@@ -201,3 +194,10 @@ style-soft: lead>35w/1num
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: title in 1 calls
 OK ABCO-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (71s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 5 failed: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a p
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK BSBI-BIPG6422BEX-00 <- zai:glm-4.5-flash (110s)
