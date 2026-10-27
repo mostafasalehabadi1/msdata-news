@@ -20,3 +20,33 @@ style-soft: lead>35w/1num, text 12 nums
   staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۸۹ | فعل «شد» امروز تکرار شده)
 OK JPC-HDF7000LMPJ-00 <- kilo:kilo-auto/free (137s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  BISP-LABB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  ESC-MBEEN03EN-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+  ATSC-MBEEN03E-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  ESC-MBEEN03EN-00 ovh:Meta-Llama-3_3-70B-Instruct: 14s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"cd0d7b4000d2972d276c6f7dd82ebf3e"
+}
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 115 words / 2 paragraphs
+  BISP-LABB-00 gapgpt:gemma-3-27b-it: 57s ValueError: staged: 8 calls, last: 115 words / 2 paragraphs
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: 106 words / 3 paragraphs
+  DRG-GS00101-00 kilo:kilo-auto/free: 129s ValueError: staged: 8 calls, last: 106 words / 3 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  DRG-GS00101-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  DRG-GS00101-00 kilo:poolside/laguna-s-2.1:free: 19s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: title in 3 calls
+OK ATSC-MBEEN03E-00 <- gapgpt:gemma-3-27b-it (68s)
