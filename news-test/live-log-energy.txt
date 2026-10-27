@@ -54,3 +54,14 @@ style-soft: lead>35w/1num, text 11 nums
   staged zai:glm-4.5-flash: accepted after 7 calls
   stage6 news: title in 1 calls
 OK DMTBRCABEX0050811 <- zai:glm-4.5-flash (40s)
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+style-soft: در حالی که, lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  DMTMJCABFC0050812 gapgpt:gemma-3-27b-it: 59s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+  DBPBBCABEX0050813 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 365s TimeoutError: The read operation timed out
+  DMTMJCABFC0050812 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  staged ovh:Qwen3.5-397B-A17B: soft: لید بی‌عدد
+  staged ovh:Qwen3.5-397B-A17B: accepted after 6 calls
+  stage6 news: title in 1 calls
+OK DC6AKCABEX0050813 <- ovh:Qwen3.5-397B-A17B (730s)
