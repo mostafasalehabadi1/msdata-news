@@ -138,3 +138,17 @@ style-soft: lead>35w/1num, text 12 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۳۳)
 OK LOR-HD6040UVPP-00 <- gapgpt:gemma-3-27b-it (181s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  FNT-EA005000-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged requesty:mistral/leanstral-1-5: call 6 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants a headline 
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «شاید» در text | «منتظر» در text
+  RSS-EA013000-00 gapgpt:gemma-3-27b-it: 60s ValueError: staged: 8 calls, last: markers: «شاید» در text | «منتظر» در text
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: نام کالا در تیتر باید «پلی اتیلن» باشد | متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK MDC-HDHB6200BPP-00 <- gapgpt:gemma-3-27b-it (108s)
