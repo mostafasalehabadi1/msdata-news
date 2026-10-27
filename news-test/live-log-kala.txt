@@ -148,3 +148,25 @@ style-soft: lead>35w/1num
   staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
 OK IAC-AB6063BC-00 <- zai:glm-4.7-flash (1067s)
+  staged kilo:cohere/north-mini-code:free: check cut 3 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  PSNS-PAFJ-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  FNT-EA007000-00 requesty:mistral/leanstral-1-5: 361s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 116 words after fixes
+  PSNS-PAFJ-00 gapgpt:gemma-3-27b-it: 73s ValueError: staged: 8 calls, last: 116 words after fixes
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  staged kilo:cohere/north-mini-code:free: accepted after 7 calls
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ESC-MBENE03E-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 461s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit s
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۹ | فعل «یافت» امروز تکرار شده)
+OK FNT-EA013000-00 <- kilo:cohere/north-mini-code:free (412s)
