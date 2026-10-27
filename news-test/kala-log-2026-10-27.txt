@@ -869,3 +869,36 @@ style-soft: در حالی که, lead>35w/1num, text 11 nums
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (1 کلمه؛ ۸ تا ۱۳)
 OK BAN-PSESE2000J-00 <- requesty:mistral/leanstral-1-5 (622s)
+style-soft: lead>35w/1num, text 11 nums
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۲ هزار و ۹۰۴ بود | «۴۱۶ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۴۱۶ تن است
+  ASPC-HDHFI5110WP-00 gapgpt:gemma-3-27b-it: 105s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۲ هزار و ۹۰۴ بود | «۴۱۶ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۴۱۶ تن است
+  LOR-HD6040UVPP-00 ovh:Qwen3.6-27B: 475s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است
+  MDC-HDHB6200BPP-00 zai:glm-4.7-flash: 697s ValueError: staged: 8 calls, last: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است
+  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write
+style-soft: lead>35w/1num, text 15 nums
+  staged kilo:cohere/north-mini-code:free: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num, text 13 nums
+  staged kilo:cohere/north-mini-code:free: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:cohere/north-mini-code:free: accepted after 7 calls
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num, text 11 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۱۰۰ بود | «بالاترین» در حقیقت‌ها نیست
+  RSS-EA013000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 359s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۱۰۰ بود | «بالاترین» در حقیقت‌ها نیست
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 111 words after fixes
+  ENPC-PSSEF400J-089 gapgpt:gemma-3-27b-it: 69s ValueError: staged: 8 calls, last: 111 words after fixes
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 96 words / 3 paragraphs
+  MDC-HDHB6200BPP-00 zai:glm-4.5-flash: 40s ValueError: staged: 8 calls, last: 96 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  stage6 news: title in 2 calls
+OK LAE-EA007000-00 <- kilo:cohere/north-mini-code:free (211s)
