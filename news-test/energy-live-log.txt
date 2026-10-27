@@ -1,4 +1,57 @@
-energy: 1 settled rows, 10 still changing (wait 20 min unchanged)
+energy: 10 settled rows, 3 still changing (wait 20 min unchanged)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-written 0/0; total in file 5
+given up for today (failed 2 runs, row unchanged): DRFBOCABEX0050813, DMTMJCABFC0050812
+3 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
+  DOXFZCABEX0050810 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
+  DOXFZCABEX0050810 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
+  DOXFZCABEX0050810 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:recursive/flint-v1.0:free: quota used up - skipped until tomorrow
+  DOXFZCABEX0050810 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
+  DLNFZCABEX0050810 groq:openai/gpt-oss-120b: 7s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198125, Requested 53
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  DLNFZCABEX0050810 groq:openai/gpt-oss-20b: 53s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 194679, Requested 552
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+style-soft: lead>35w/1num
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «ثابت» نوشته شده ولی قیمت نسبت به آخرین معامله تغییر کرده
+  DLNFZCABEX0050810 gapgpt:gemma-3-27b-it: 64s ValueError: staged: 8 calls, last: «ثابت» نوشته شده ولی قیمت نسبت به آخرین معامله تغییر کرده
+  DUHPICABEX0050810 zai:glm-4.7-flash: 180s TimeoutError: The read operation timed out
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 96 words / 4 paragraphs
+  DUHPICABEX0050810 zai:glm-4.5-flash: 37s ValueError: staged: 8 calls, last: 96 words / 4 paragraphs
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words / 4 paragraphs
+  DUHPICABEX0050810 gapgpt:gemma-3-27b-it: 111s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 51 words / 2 paragraphs
+  DLNFZCABEX0050810 zai:glm-4.7-flash: 1096s ValueError: staged: 8 calls, last: 51 words / 2 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 9 calls: 88 words / 3 paragraphs
+  DLNFZCABEX0050810 zai:glm-4.5-flash: 267s ValueError: staged: 9 calls, last: 88 words / 3 paragraphs
+timeout: give-up file saved
