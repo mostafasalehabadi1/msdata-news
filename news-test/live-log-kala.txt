@@ -84,3 +84,32 @@ style-soft: در حالی که, lead>35w/1num, text 11 nums
   ALSU-AB6063BC-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۱۵۳)
 OK DRG-GS00101-00 <- kilo:cohere/north-mini-code:free (267s)
+style-soft: lead>35w/1num, text 18 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۳۲۲ تن» با فعل فروش آمده ولی فروش ۵۰۶ تن است
+  ESC-MBEEN03EN-00 gapgpt:gemma-3-27b-it: 83s ValueError: staged: 8 calls, last: «۳۲۲ تن» با فعل فروش آمده ولی فروش ۵۰۶ تن است
+  ESC-MBEEN03E-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  JBC-EA009000-00 ovh:gpt-oss-120b: 180s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 110 words / 4 paragraphs
+  ALSU-AB6063BC-00 gapgpt:gemma-3-27b-it: 56s ValueError: staged: 8 calls, last: 110 words / 4 paragraphs
+style-soft: در حالی که, lead>35w/1num
+  staged kilo:kilo-auto/free: draft dropped after 7 calls: 100 words / 4 paragraphs
+style-soft: lead>35w/1num, text 22 nums
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: text 16 nums
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: 84 words / 3 paragraphs
+  ZYSF-PTFOOO000-00 kilo:kilo-auto/free: 98s ValueError: staged: 8 calls, last: 84 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: text 16 nums
+  staged requesty:mistral/leanstral-1-5: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged requesty:mistral/leanstral-1-5: accepted after 8 calls
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: 99 words / 4 paragraphs
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: title in 2 calls
+OK ESC-MBEEN03E-00 <- gapgpt:gemma-3-27b-it (91s)
