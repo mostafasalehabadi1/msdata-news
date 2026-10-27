@@ -98,3 +98,14 @@ style-soft: lead>35w/1num, text 11 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
 OK CTM-PCT2G42.5-L50EX-00 <- gapgpt:gemma-3-27b-it (85s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 10 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۷۶۵
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۷۴۶، ۷۶۵
+  PGPC-BI6070BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 732s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۷۴۶، ۷۶۵
+  stage6 news: title in 2 calls
+OK TPA-BI6070BEX-00 <- requesty:mistral/leanstral-1-5 (758s)
