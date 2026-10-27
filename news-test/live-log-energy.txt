@@ -1,9 +1,12 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): DRFBOCABEX0050813, DBPBBCABEX0050813, DOCABCABEX1050810, DMTMJCABFC0050812, DLNFZCABEX0050810
+given up for today (failed 2 runs, row unchanged): IGONDPRBEX1050812, DRFBOCABEX0050813, DBPBBCABEX0050813, DOCABCABEX1050810, DMTMJCABFC0050812, DLNFZCABEX0050810
 1 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  IGONDPRBEX1050812 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: در حالی که, lead>35w/1num
-style-soft: در حالی که, lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱٫۲
-  IGONDPRBEX1050812 gapgpt:gemma-3-27b-it: 63s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱٫۲
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+  staged zai:glm-4.7-flash: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 6 calls
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK IGONDPRBEX0050812 <- zai:glm-4.7-flash (710s)
