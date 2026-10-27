@@ -1,55 +1,16 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): IKRC-OAVBB-00, NCI-OAMOOX-00, ASPC-HDHFI5110WP-00, NCI-OANMMSB-00, BSRC-EA005000-00, RSS-EA013000-00, STGI-CR018OO-00, FNT-EA005000-00
-40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  llm7:deepseek-v4-flash:0731: quota used up - skipped for an hour
-  CHG-GS00101-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: text 18 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 17 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۱.۳)
-OK CHG-GS00101-00 <- gapgpt:gemma-3-27b-it (78s)
-  KEPE-HDBL3PP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۴
-  KEPE-HDBL3PP-00 gapgpt:gemma-3-27b-it: 64s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۴
-  ILPE-HD7000FPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+given up for today (failed 2 runs, row unchanged): IKRC-OAVBB-00, NCI-OAMOOX-00, ICII-LABB-00, NCI-OANMMSB-00, PPCO-OASTYB-00, BSRC-EA005000-00, RSS-EA013000-00, STGI-CR018OO-00, FNT-EA005000-00
+35 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:minimax-m2.7: quota used up - skipped for an hour
+  JPC-HD60507UVPP-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 33284 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":33284}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for an hour
+  JPC-HD60507UVPP-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 96 words / 4 paragraphs
-  ILPE-HD7000FPP-00 gapgpt:gemma-3-27b-it: 75s ValueError: staged: 8 calls, last: 96 words / 4 paragraphs
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  KRD-LD2420E02PP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
 style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 19 nums
-style-soft: lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۷۷۶
-  KRD-LD2420E02PP-00 gapgpt:gemma-3-27b-it: 104s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۷۷۶
-  ICII-LABB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write
 style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-  staged zai:glm-4.7-flash: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 7 calls
-style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۸۰۰، ۱۹۷۵
-  ICII-LABB-00 gapgpt:gemma-3-27b-it: 95s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۸۰۰، ۱۹۷۵
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged ovh:Qwen3.5-397B-A17B: check cut 6 sentence(s)
-  stage6 news: title in 2 calls
-OK HAAL-PS10000-00 <- zai:glm-4.7-flash (946s)
-  AKSC-GS00101-00 ovh:Qwen3.5-397B-A17B: 350s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: title in 1 calls
-OK AKSC-GS00101-00 <- gapgpt:gemma-3-27b-it (71s)
+  stage6 news: title in 3 calls
+OK JPC-HD60507UVPP-00 <- gapgpt:gemma-3-27b-it (96s)

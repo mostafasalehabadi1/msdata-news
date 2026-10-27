@@ -1031,3 +1031,21 @@ style-soft: lead>35w/1num, text 15 nums
   staged ovh:Qwen3.5-397B-A17B: check cut 6 sentence(s)
   stage6 news: title in 2 calls
 OK HAAL-PS10000-00 <- zai:glm-4.7-flash (946s)
+kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 175 settled rows, 62 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): IKRC-OAVBB-00, NCI-OAMOOX-00, ICII-LABB-00, NCI-OANMMSB-00, PPCO-OASTYB-00, BSRC-EA005000-00, RSS-EA013000-00, STGI-CR018OO-00, FNT-EA005000-00
+35 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:minimax-m2.7: quota used up - skipped for an hour
+  JPC-HD60507UVPP-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 33284 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":33284}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for an hour
+  JPC-HD60507UVPP-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write
+style-soft: lead>35w/1num, text 12 nums
+  stage6 news: title in 3 calls
+OK JPC-HD60507UVPP-00 <- gapgpt:gemma-3-27b-it (96s)
