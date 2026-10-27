@@ -1246,3 +1246,59 @@ style-soft: lead>35w/1num, text 19 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «یافت» امروز تکرار شده)
 OK MAPE-LLD22B02P-00 <- gapgpt:gemma-3-27b-it (68s)
+kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 237 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): KEPE-HDBL3PP-00, ILPE-HD7000FPP-00, IKRC-OAVBB-00, NCI-OAMOOX-00, KRD-LD2420E02PP-00, ICII-LABB-00, ASPC-HDHFI5110WP-00, NCI-OANMMSB-00, PPCO-OASTYB-00, BISP-LABB-00, ESC-MBEEE03E-00, ESC-MBENE03E-00, HSR-LUSUACB-00, ESC-MBNEE03E-00, SPSG-MBENN03E-00, FSIC-EA005000-00, ESC-MBEEN03EN-00, BSRC-EA005000-00, RSS-EA013000-00, JBC-EA009000-00, STGI-CR018OO-00, PSNS-PAFJ-00, FNT-EA007000-00, FNT-EA005000-00
+40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:deepseek-v4-flash:0731: quota used up - skipped for an hour
+  PAM-LLD0209AAPP-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  gapgpt:gemma-3-27b-it: quota used up - skipped for an hour
+  PAM-LLD0209AAPP-00 gapgpt:gemma-3-27b-it: 2s QuotaError: HTTP 403: {"error":{"message":"pre-consume quota failed, remaining user quota: ＄0.001042, required pre-consume quota: ＄0.001182 (request id: 202610271643523436569688268d9d6jOZhY4mt)","type":"gap_api_error","param":"","co
+style-soft: lead>35w/1num, text 12 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 7 calls: 99 words / 3 paragraphs
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 55 words / 2 paragraphs
+  LOR-HD62N07UVPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 77s ValueError: staged: 8 calls, last: 55 words / 2 paragraphs
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: markers: «این در حالی است» در text
+  PAM-HDEX3J-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 53s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 19 nums
+  PTC-PETBG785J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  JPC-HD52518PP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 112 words / 1 paragraphs
+  TABC-MD3840UAPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 58s ValueError: staged: 8 calls, last: 112 words / 1 paragraphs
+  LPC-LD2102TX00RP-00 ovh:Qwen3.5-397B-A17B: 278s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 117 words / 4 paragraphs
+  ASPC-LDLFI2119WP-00 zai:glm-4.7-flash: 438s ValueError: staged: 8 calls, last: 117 words / 4 paragraphs
+  HAAL-PS10000-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  SHPC-LLD0209AAPP-00 kilo:dots-studio/dots-3-note-preview:free: 288s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 13 nums
+style-soft: lead>35w/1num, text 13 nums
+  PAM-LD2420HPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 325s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: «۹۶۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۹۶۸ تن است | «۲۷۲ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۹۶۸ تن است
+  ASPC-LDLFI2119WP-00 zai:glm-4.5-flash: 74s ValueError: staged: 8 calls, last: «۹۶۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۹۶۸ تن است | «۲۷۲ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۹۶۸ تن است
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 114 words / 2 paragraphs
+  PAM-HDEX3L-00 zai:glm-4.7-flash: 83s ValueError: staged: 8 calls, last: 114 words / 2 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 83 words / 3 paragraphs
+  PAM-HDEX3L-00 zai:glm-4.5-flash: 25s ValueError: staged: 8 calls, last: 83 words / 3 paragraphs
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  ASPC-HDHBM5510WP-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  PTC-PETBG821J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 114 words / 2 paragraphs
+  LOR-LLD22B01P-00 zai:glm-4.7-flash: 194s ValueError: staged: 8 calls, last: 114 words / 2 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 13 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۵
+  LOR-LLD22B01P-00 zai:glm-4.5-flash: 37s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۵
+style-soft: lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 87 words / 3 paragraphs
+  IPC-HDHB0035PP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 720s ValueError: staged: 8 calls, last: 87 words / 3 paragraphs
+written 0/40; total in file 29
