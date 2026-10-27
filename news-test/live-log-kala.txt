@@ -133,3 +133,18 @@ style-soft: lead>35w/1num, text 18 nums
   JBC-EA009000-00 gapgpt:gemma-3-27b-it: 89s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۳۰
   stage6 news: title in 2 calls
 OK ZYSF-PTFOOO000-00 <- kilo:cohere/north-mini-code:free (213s)
+  SPSG-MBENN03E-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 892s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 112 words after fixes
+  SPSG-MBENN03E-00 gapgpt:gemma-3-27b-it: 50s ValueError: staged: 8 calls, last: 112 words after fixes
+style-soft: lead>35w/1num
+  PSNS-PAFJ-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۶۰ بود
+  FNT-EA013000-00 kilo:kilo-auto/free: 75s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۶۰ بود
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK IAC-AB6063BC-00 <- zai:glm-4.7-flash (1067s)
