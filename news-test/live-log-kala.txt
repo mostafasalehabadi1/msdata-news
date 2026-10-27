@@ -152,3 +152,18 @@ style-soft: lead>35w/1num, text 14 nums
   staged gapgpt:gemma-3-27b-it: accepted after 7 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK MDC-HDHB6200BPP-00 <- gapgpt:gemma-3-27b-it (108s)
+style-soft: lead>35w/1num, text 13 nums
+  staged requesty:mistral/leanstral-1-5: soft: نام کالا در تیتر باید «پلی اتیلن» باشد | متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged requesty:mistral/leanstral-1-5: accepted after 8 calls
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  BSRC-EA005000-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+style-soft: در حالی که, lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۵۱۲ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۵۱۲ تن است
+  PPCO-OASTYB-00 gapgpt:gemma-3-27b-it: 101s ValueError: staged: 8 calls, last: «۵۱۲ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۵۱۲ تن است
+  stage6 news: title in 3 calls
+OK KEPE-HDEX5PWDJ-00 <- requesty:mistral/leanstral-1-5 (659s)
