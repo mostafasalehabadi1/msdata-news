@@ -109,3 +109,20 @@ style-soft: lead>35w/1num
   PGPC-BI6070BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 732s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۷۴۶، ۷۶۵
   stage6 news: title in 2 calls
 OK TPA-BI6070BEX-00 <- requesty:mistral/leanstral-1-5 (758s)
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
+  PBDC-INBPPBEX-00 gapgpt:gemma-3-27b-it: 122s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
+  OAC-CLINKERT2EX-00 gapgpt:gemma-3-27b-it: 95s ValueError: staged: 8 calls, last: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  stage6 news: title in 2 calls
+OK PNSA-BI5070BEX-00 <- gapgpt:gemma-3-27b-it (46s)
