@@ -116,3 +116,25 @@ style-soft: lead>35w/1num, text 12 nums
   staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
   stage6 news: title in 2 calls
 OK LAE-EA007000-00 <- kilo:cohere/north-mini-code:free (211s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  NCI-OANMMSB-00 gapgpt:gemma-3-27b-it: 68s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  kilo:kilo-auto/free: quota used up - skipped for an hour
+  JPC-HD60507UVPP-00 kilo:kilo-auto/free: 65s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  kilo:cohere/north-mini-code:free: quota used up - skipped for an hour
+  JPC-HD60507UVPP-00 kilo:cohere/north-mini-code:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  FNT-EA005000-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+  kilo:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for an hour
+  PPCO-OASTYB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 119s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  MPC-HDCRP100NPP-00 ovh:Qwen3.5-397B-A17B: 756s TimeoutError: The read operation timed out
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۳۳)
+OK LOR-HD6040UVPP-00 <- gapgpt:gemma-3-27b-it (181s)
