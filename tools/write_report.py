@@ -42,7 +42,7 @@ REPORT_RULES = (
     "چارچوب نگارش زیر را مو به مو رعایت کن، در «حالت کامل» (بخش ۲-۱۴) و با «قالب ب»:\n\n" + w.style_for("ب") + "\n\n"
     "- همه‌ی حقیقت‌ها را کد حساب کرده (F1، F2، …). هیچ حساب، درصد، مقایسه یا رتبه‌ای خودت نساز؛ عددها را عیناً از حقیقت‌ها بنویس. "
     "لازم نیست همه را بیاوری؛ مهم‌ترین‌ها را انتخاب کن. علت‌ها فقط از «خبرهای رسانه‌ها» با نام رسانه در متن؛ اگر علتی نیست، حدس نزن.\n"
-    "- text: ۴۵۰ تا ۶۵۰ کلمه؛ پاراگراف‌ها جدا با یک خط خالی؛ دست‌کم ۲ میان‌تیتر، هر میان‌تیتر یک خط کوتاه جدا (۲ تا ۷ کلمه، بدون نقطه). لینک، آدرس اینترنتی و HTML در متن نگذار.\n"
+    "- text: ۴۵۰ تا ۶۵۰ کلمه در ۶ تا ۱۲ پاراگراف (زیر ۴۰۰ یا بالای ۷۵۰ کلمه، یا کمتر از ۵ یا بیشتر از ۱۸ پاراگراف، رد می‌شود؛ هر میان‌تیتر یک پاراگراف حساب می‌شود)؛ پاراگراف‌ها جدا با یک خط خالی؛ دست‌کم ۲ میان‌تیتر، هر میان‌تیتر یک خط کوتاه جدا (۲ تا ۷ کلمه، بدون نقطه). لینک، آدرس اینترنتی و HTML در متن نگذار.\n"
     "- table: فهرست ۱ تا ۳ شناسه از «جدول‌های پیشنهادی» (مثلاً [\"T2\", \"T4\"]) که با متن جور است؛ همان جدول‌ها کنار گزارش منتشر می‌شوند و می‌توانی در متن به آن‌ها اشاره کنی.\n"
     "- scenarios: ۲ یا ۳ سناریوی قابل‌بررسی به شکل JSON بخش ۲-۱۵.\n"
     "- links: برای هر معامله‌ای که در متن نام بردی {\"title\": عبارت دقیقاً همان‌طور که در متن آمده، \"symbol\": نماد از فکت‌شیت}.\n"
@@ -224,6 +224,10 @@ def main():
         subprocess.run([sys.executable, os.path.join(ROOT, "tools", "fetch.py")], check=False)  # the day's final numbers
         latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
         date, date_fa = latest["date"], latest["date_fa"]
+        # content agent 1405-08-05: fetch.py may roll latest.json to today's unfinished day (the 5 Aban report began at 11:27); same gate again
+        out = os.path.join(ROOT, "queue", sub, f"report-{date}.json")
+        if not force and (date > today or (date == today and (now.hour, now.minute) < (18, 30))) or os.path.exists(out)                 or os.path.exists(os.path.join(ROOT, "news", sub, f"report-{date}.json")):
+            return
         rows = json.load(open(os.path.join(ROOT, "data", date, "today.json"), encoding="utf-8"))["rows"]
         if not rows:
             return
@@ -248,6 +252,11 @@ def main():
         provs = [p for p in provs if p[0] == sys.argv[sys.argv.index("--model") + 1]]
     if date == today and (now.hour, now.minute) < FALLBACK_FROM and not force:
         provs = [p for p in provs if p[0] == REPORT_MODEL]  # the report's own model; others only after 19:30
+    # content agent 1405-08-05: 34 failed gemma drafts for one day's reports; at most 3 gemma tries per market per day
+    lp, tag = os.path.join(ROOT, "news-test", "report-log.txt"), "energy" if energy else "kish" if kish else "physical"
+    if os.path.exists(lp) and sum(1 for x in open(lp, encoding="utf-8") if x.startswith(f"{date} ") and f" {tag} {REPORT_MODEL} " in x) >= 3:
+        provs = [p for p in provs if p[0] != REPORT_MODEL]
+        print(f"report {tag} {date}: gemma already failed 3 times today")
     for model, call in provs:
         if model in w.exhausted():
             continue
