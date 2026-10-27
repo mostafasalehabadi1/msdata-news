@@ -1,0 +1,93 @@
+{
+"DMTBRCABEX0050811": {
+"fp": "{\"base_price\": 643279.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت پتروشیمی بوشهر|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 25.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 643279.0, \"min_price\": 643279.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشیمی بوشهر\", \"series_key\": \"متانول|شرکت پتروشیمی بوشهر|داخلی\", \"supplier\": \"شرکت پتروشیمی بوشهر\", \"symbol\": \"DMTBRCABEX0050811\", \"symbol_code\": \"DMTBRCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 16081975000.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/05\", \"trade_volume\": 25.0, \"volume_unit\": \"تن\", \"weighted_price\": 643279.0}",
+"runs": 1,
+"reasons": [
+{
+"model": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "09:14",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793145600000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:google/gemma-4-31b-it:free",
+"at": "09:14",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793145600000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:google/gemma-4-26b-a4b-it:free",
+"at": "09:14",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793145600000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:recursive/flint-v1.0:free",
+"at": "09:14",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793145600000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+}
+],
+"facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت پتروشیمی بوشهر.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۵ آبان.\n4. ۲۵ تن متانول شرکت پتروشیمی بوشهر فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۶۴۳ هزار و ۲۷۹ ریال در هر کیلوگرم بود و قیمت پایه ۶۴۳ هزار و ۲۷۹ ریال در هر کیلوگرم.\n6. قیمت با قیمت پایه برابر بود.\n7. ارزش ریالی این معامله حدود ۱٫۶ میلیارد تومان بود.\n8. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۴ آبان با قیمت ۶۴۳ هزار و ۲۷۹ ریال در هر کیلوگرم بود؛ قیمت تغییری نکرد.\n9. این کالا از ۱۲ مرداد تا امروز ۱۹ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت متانول در معامله‌های اخیر (ریال در هر کیلوگرم)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۲۷ مهر",
+"۵۸۹ هزار و ۱۳۰"
+],
+[
+"۲۷ مهر",
+"۵۸۹ هزار و ۱۳۰"
+],
+[
+"۲۸ مهر",
+"۵۸۹ هزار و ۱۳۰"
+],
+[
+"۲۹ مهر",
+"۵۸۹ هزار و ۱۳۰"
+],
+[
+"۴ آبان",
+"۶۴۳ هزار و ۲۷۹"
+],
+[
+"۵ آبان",
+"۶۴۳ هزار و ۲۷۹"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی متانول شرکت پتروشیمی بوشهر",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"فروش (تن)",
+"۲۵"
+],
+[
+"قیمت پایه (ریال در هر کیلوگرم)",
+"۶۴۳ هزار و ۲۷۹"
+],
+[
+"قیمت معامله (ریال در هر کیلوگرم)",
+"۶۴۳ هزار و ۲۷۹"
+],
+[
+"بازار",
+"رینگ داخلی"
+]
+]
+}
+}
+}
+}
