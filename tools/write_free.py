@@ -39,7 +39,7 @@ GH_AZURE_URL = "https://models.inference.ai.azure.com/chat/completions"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 MISTRAL_URL = "https://api.mistral.ai/v1/chat/completions"
 GROQ_PREFER = ("kimi-k2", "gpt-oss-120b", "llama-4-maverick", "qwen3", "llama-3.3-70b", "llama-4-scout", "gpt-oss-20b")
-OR_PREFER = ("nemotron-3-ultra", "gemma-4-31b", "nemotron-3-ultra", "deepseek", "qwen", "gemma", "llama")  # better Persian first
+OR_PREFER = ("gemma-4-31b", "deepseek", "qwen", "nemotron-3-ultra", "gemma", "llama")  # better Persian first
 
 # content agent 1405-07-27 (owner 1405-07-19): the 40 headline principles go with every writer, beside style.md
 HEADLINES = "\n\n" + open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "headline_rules_40.md"), encoding="utf-8").read()
