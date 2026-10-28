@@ -86,3 +86,40 @@ style-soft: lead>35w/1num, text 10 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۹۰)
 OK IPC-HDHB0035PP-00 <- gapgpt:gemma-3-27b-it (170s)
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.7-flash: soft: نام کالا در تیتر باید «پلی اتیلن» باشد | متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 119 words after fixes
+  ILPE-HD7000FPP-00 zai:glm-4.7-flash: 161s ValueError: staged: 8 calls, last: 119 words after fixes
+  AGS-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 402s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۹۳
+  ILPE-HD7000FPP-00 zai:glm-4.5-flash: 52s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۹۳
+  ASPC-HDHFI5110WP-00 ovh:Qwen3.5-397B-A17B: 728s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «دیروز» در text
+  ASPC-HDHFI5110WP-00 gapgpt:gemma-3-27b-it: 76s ValueError: staged: 8 calls, last: markers: «دیروز» در text
+style-soft: lead>35w/1num, text 11 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 8 calls
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 104 words / 3 paragraphs
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 99 words / 2 paragraphs
+  MRV-MEGB-00 zai:glm-4.7-flash: 223s ValueError: staged: 8 calls, last: 99 words / 2 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: 109 words / 4 paragraphs
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 76 words / 2 paragraphs
+  MRV-MEGB-00 zai:glm-4.5-flash: 62s ValueError: staged: 8 calls, last: 76 words / 2 paragraphs
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 113 words / 3 paragraphs
+  THOR-GRSUSUB-00 zai:glm-4.7-flash: 35s ValueError: staged: 8 calls, last: 113 words / 3 paragraphs
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 109 words / 4 paragraphs
+  THOR-GRSUSUB-00 zai:glm-4.5-flash: 51s ValueError: staged: 8 calls, last: 109 words / 4 paragraphs
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (فعل «رسید» امروز تکرار شده)
+OK SHPC-DEAB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (997s)
