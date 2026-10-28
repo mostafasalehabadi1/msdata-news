@@ -58,3 +58,49 @@ style-soft: lead>35w/1num, text 10 nums
   PSAC-MRNEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
   stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
 OK NCI-SLG-00 <- zai:glm-4.7-flash (885s)
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words after fixes
+  PSAC-MRNEEEA3B-00 gapgpt:gemma-3-27b-it: 50s ValueError: staged: 8 calls, last: 119 words after fixes
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
+  FATC-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words / 3 paragraphs
+  FATC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 37s ValueError: staged: 8 calls, last: 119 words / 3 paragraphs
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: soft: نام کالا در تیتر باید «سیم و» باشد
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: accepted after 4 calls
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
+  FAKH-HS00000-00 ovh:Qwen3.5-397B-A17B: 771s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+style-soft: text 12 nums
+style-soft: text 12 nums
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۹۹
+style-soft: text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۳۰۰ تن» با فعل فروش آمده ولی فروش ۱۵۰ تن است
+  FAKH-HS00000-00 gapgpt:gemma-3-27b-it: 85s ValueError: staged: 8 calls, last: «۳۰۰ تن» با فعل فروش آمده ولی فروش ۱۵۰ تن است
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  TIDA-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 12 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 79 words / 3 paragraphs
+  AJSC-SSG09XROA-00 zai:glm-4.7-flash: 700s ValueError: staged: 8 calls, last: 79 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words / 4 paragraphs
+  TIDA-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 77s ValueError: staged: 8 calls, last: 119 words / 4 paragraphs
+  AJSC-SSG09XROA-00 zai:glm-4.5-flash: 68s JSONDecodeError: Expecting value: line 6 column 10 (char 279)
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK SEFA-CR018OO-00 <- openrouter:xingchen-agi/xing4.0-29b-a4b:free (1685s)
