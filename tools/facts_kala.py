@@ -56,6 +56,10 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     easy = simple_name(goods)
     F = ([f"نام ساده‌ی کالا برای تیتر، لید و متن: {easy} (نام کامل «{goods}» را ننویس)."] if easy != goods else []) + [f"نام کالا: {goods}؛ تولیدکننده: شرکت {prod}؛ {hall}." + (f" کد گرید: {'، '.join(codes)} (کد است، مقدار نیست؛ اگر آن را می‌نویسی عیناً همین رقم‌ها باشد، نه به حروف)." if codes else ""),
          f"روز معامله: {wd} {fa_date(date_fa)} {date_fa[:4].translate(FA)}."]
+    # content agent 1405-08-06: gemma took offered/traded/sold-% from the previous session's row (AGS 9% instead of 91%)
+    F.append(f"[امروز] عددهای امروز ({fa_date(date_fa)})، فقط این‌ها برای عرضه، تقاضا، معامله و درصد فروش: "
+             f"عرضه (total_arze) {fa_num(off) + ' ' + unit if off else 'نامعلوم'}؛ تقاضا (total_taghaza) {fa_num(dem)} {unit}؛ "
+             f"معامله‌شده (traded_qty) {fa_num(trd)} {unit}" + (f"؛ درصد فروش {fa_num(trd / off * 100, 0)} درصد." if off else "."))
     # today
     if off:
         F.append(f"شرکت {prod} امروز {fa_num(off)} {unit} {goods} عرضه کرد و خریداران {fa_num(dem)} {unit} سفارش دادند.")
@@ -97,7 +101,7 @@ def build(row, history, peers, date_fa, date, ytd_value=None):
     else:
         last = past[-1]
         lp, gap = last["weighted_price"], days_between(last["trade_date"], date_fa)
-        F.append(f"آخرین معامله‌ی قبلی در {fa_date(last['trade_date'])} بود ({"دیروز" if gap == 1 else fa_int(gap) + " روز پیش"}) با قیمت {fa_int(lp)} ریال و "
+        F.append(f"[جلسه‌ی قبل، نه امروز] آخرین معامله‌ی قبلی در {fa_date(last['trade_date'])} بود ({"دیروز" if gap == 1 else fa_int(gap) + " روز پیش"}) با قیمت {fa_int(lp)} ریال و "
                  f"{fa_num(last.get('traded_qty'))} {unit} معامله.")
         c = pct(price, lp) if trd and price else None
         if c is not None:
