@@ -152,3 +152,43 @@ style-soft: lead>35w/1num, text 13 nums
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (16 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۲۴)
 OK SPSG-HREENNA3B-00 <- kilo:cohere/north-mini-code:free (455s)
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 96 words / 3 paragraphs
+  OSC-HS00000-00 zai:glm-4.5-flash: 40s ValueError: staged: 8 calls, last: 96 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  OSC-HS00000-00 gapgpt:gemma-3-27b-it: 43s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+  staged kilo:kilo-auto/free: check cut 1 sentence(s)
+  staged ovh:Qwen3.6-27B: check cut 3 sentence(s)
+  staged kilo:kilo-auto/free: check cut 1 sentence(s)
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: 94 words / 3 paragraphs
+  SPRM-LRNENA2B-00 kilo:kilo-auto/free: 182s ValueError: staged: 8 calls, last: 94 words / 3 paragraphs
+  ZBS-HREENNA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 385s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words after fixes
+  ZBS-HREENNA3B-00 gapgpt:gemma-3-27b-it: 59s ValueError: staged: 8 calls, last: 118 words after fixes
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  SMC-MRNNEEA3B-00 ovh:Qwen3.6-27B: 464s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: text 11 nums
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: markers: «نشان داد» در text
+  SPRM-LRNENA2B-00 kilo:cohere/north-mini-code:free: 209s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
+style-soft: در حالی که, lead>35w/1num, text 13 nums
+style-soft: در حالی که, lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۶۰۰ تن» با فعل فروش آمده ولی فروش ۵۰ تن است
+  SMC-MRNNEEA3B-00 gapgpt:gemma-3-27b-it: 82s ValueError: staged: 8 calls, last: «۶۰۰ تن» با فعل فروش آمده ولی فروش ۵۰ تن است
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:kilo-auto/free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  NCI-SLG-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+  staged kilo:kilo-auto/free: soft: لید بی‌عدد
+  staged kilo:kilo-auto/free: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۲۰ | فعل «شد» امروز تکرار شده)
+OK PSAC-MREEEEA3B-00 <- kilo:kilo-auto/free (244s)
