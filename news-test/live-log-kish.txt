@@ -68,3 +68,22 @@ OK CTM-PCT2G42.5-L50EX-00 <- gapgpt:gemma-3-27b-it (84s)
 style-soft: lead>35w/1num
   stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
 OK PSCP-DSMLABSAEX-00 <- zai:glm-4.7-flash (594s)
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: 2920، ۲۹۲۰
+  SGPE-BI6070BEX-00 gapgpt:gemma-3-27b-it: 68s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: 2920، ۲۹۲۰
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 5 calls
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 9 nums
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۵۷۰۰
+  LCC-PCT1G42.5-BEX-00 gapgpt:gemma-3-27b-it: 75s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۵۷۰۰
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+style-soft: lead>35w/1num, text 15 nums
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۶۰۷۰)
+OK KAZJ-BI6070BEX-00 <- kilo:kilo-auto/free (776s)
