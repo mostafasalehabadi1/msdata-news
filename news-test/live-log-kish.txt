@@ -125,3 +125,11 @@ OK PGPS-BI6070BEX-00 <- zai:glm-4.7-flash (362s)
   staged zai:glm-4.5-flash: check cut 3 sentence(s)
   stage6 news: title in 1 calls
 OK BEHD-DSMLABSAEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (504s)
+style-soft: lead>35w/1num, text 10 nums
+  staged kilo:cohere/north-mini-code:free: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged kilo:cohere/north-mini-code:free: accepted after 7 calls
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: soft: نام کالا در تیتر باید «‌سیمان پرتلند» باشد
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳ | فعل ندارد)
+OK ZCCO-PPC-BEX-00 <- zai:glm-4.5-flash (64s)
