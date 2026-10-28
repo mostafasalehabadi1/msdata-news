@@ -1,21 +1,3 @@
-  SZCE-PCT2G32.5-L50EX-00 requesty:nvidia/muse-glimmer-30b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a paid model, which requires a positive account balance"}}
-
-  llm7:minimax-m2.7: quota used up - skipped until tomorrow
-  AZGI-BI6070BEX-00-2 llm7:minimax-m2.7: 11s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 8597 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":8597}}
-  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
-  AZGI-BI6070BEX-00-2 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 10 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: در حالی که, lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: 3500
-  PACT-BI6070BEX-00 gapgpt:gemma-3-27b-it: 56s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: 3500
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «امروز» در subtitle
-  GHHA-BI6070BEX-00 gapgpt:gemma-3-27b-it: 56s ValueError: staged: 8 calls, last: markers: «امروز» در subtitle
   staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
   staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
 style-soft: lead>35w/1num
@@ -202,3 +184,20 @@ style-soft: lead>35w/1num, text 9 nums
   staged zai:glm-4.5-flash: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK SSAC-DSMLABSAEX-00 <- zai:glm-4.5-flash (278s)
+  staged groq:openai/gpt-oss-20b: call 4 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
+  staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-20b: call 7 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged kilo:kilo-auto/free: soft: لید بی‌عدد
+  staged kilo:kilo-auto/free: accepted after 6 calls
+  BEHD-DSMLABSAEX-00 zai:glm-4.7-flash: 196s TimeoutError: The read operation timed out
+  CBA-BI6070BEX-00 groq:openai/gpt-oss-20b: 371s ValueError: staged: 8 calls, last: no JSON: 
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: text 11 nums
+  staged zai:glm-4.5-flash: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 6 calls
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  stage6 news: title in 1 calls
+OK CBA-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (84s)
