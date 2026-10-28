@@ -442,5 +442,129 @@
 ]
 }
 }
+},
+"ILGABPRBFO0050813": {
+"fp": "{\"base_price\": -230.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"گاز مایع|شركت پالايش نفت آبادان|بین الملل\", \"contract_type\": \"پریمیوم\", \"demand_volume\": 1750.0, \"goods_name\": \"گاز مایع\", \"is_premium\": true, \"is_usd\": false, \"max_price\": -230.0, \"min_price\": -230.0, \"offer_volume\": 3500.0, \"offers\": 1, \"price_unit\": \"پریمیوم دلاری(مرکز مبادله- مطابق مکانیزم مصوب هیئت مدیره بورس انرژی ایران)\", \"producer\": \"شركت پالايش نفت آبادان\", \"series_key\": \"گاز مایع|شركت پالايش نفت آبادان|بین الملل\", \"supplier\": \"شرکت پالایش نفت آبادان\", \"symbol\": \"ILGABPRBFO0050813\", \"symbol_code\": \"ILGABPRBFO0\", \"target_market\": \"بین الملل\", \"total_value_rial\": 1571975816250.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/06\", \"trade_volume\": 1750.0, \"volume_unit\": \"تن\", \"weighted_price\": -230.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+"at": "13:13",
+"error": "QuotaError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8bcea67f-5b86-48ec-85c7-25c13e998337)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
+"run": 1
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "13:14",
+"error": "ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۷۵۰، ۳۵۰۰",
+"run": 1
+},
+{
+"model": "llm7:deepseek-v4-flash:0731",
+"at": "13:44",
+"error": "QuotaError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
+"run": 2
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "13:45",
+"error": "ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۷۵۰",
+"run": 2
+}
+],
+"facts": "1. نام کالا: گاز مایع؛ عرضه‌کننده: شرکت پالایش نفت آبادان.\n2. بازار: رینگ بین‌الملل بورس انرژی ایران؛ نوع قرارداد: پریمیوم.\n3. روز معامله: چهارشنبه ۶ آبان.\n4. شرکت پالایش نفت آبادان ۳ هزار و ۵۰۰ تن گاز مایع عرضه کرد و ۱ هزار و ۷۵۰ تن آن فروش رفت.\n5. خریداران ۱ هزار و ۷۵۰ تن تقاضا ثبت کردند؛ تقاضا فقط ۵۰ درصد عرضه بود.\n6. ۵۰ درصد عرضه فروش رفت.\n7. این معامله با پریمیوم انجام شد: قیمت نهایی ۲۳۰ دلار زیر قیمت مرجع جهانی است (در هر تن). پریمیوم پایه ۲۳۰ دلار زیر قیمت مرجع جهانی بود. پریمیوم اختلاف با قیمت مرجع است، نه قیمت مطلق؛ قیمت نهایی را عدد مطلق ننویس.\n8. ارزش ریالی این معامله حدود ۱۵۷ میلیارد تومان بود.",
+"tables": {
+"T2": {
+"title": "معامله‌ی گاز مایع شرکت پالایش نفت آبادان",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۳ هزار و ۵۰۰"
+],
+[
+"فروش (تن)",
+"۱ هزار و ۷۵۰"
+],
+[
+"پریمیوم پایه (دلار در هر تن)",
+"-۲۳۰"
+],
+[
+"پریمیوم معامله (دلار در هر تن)",
+"-۲۳۰"
+],
+[
+"بازار",
+"رینگ بین‌الملل"
+]
+]
+}
+}
+},
+"IPAPDCABFC0050813": {
+"fp": "{\"base_price\": 465.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"برش پروپان (به جز بنزین و گازوئیل)(حاصل از پالایشگاه نفت و پتروشیمی)|شرکت پتروپالایش دهلران|بین الملل\", \"contract_type\": \"نقدی\", \"demand_volume\": 3000.0, \"goods_name\": \"برش پروپان (به جز بنزین و گازوئیل)(حاصل از پالایشگاه نفت و پتروشیمی)\", \"is_premium\": false, \"is_usd\": true, \"max_price\": 507.0, \"min_price\": 497.0, \"offer_volume\": 1000.0, \"offers\": 1, \"price_unit\": \"دلار(مرکز مبادله- مطابق مکانیزم مصوب هیئت مدیره بورس انرژی ایران)\", \"producer\": \"شرکت پتروپالایش دهلران\", \"series_key\": \"برش پروپان (به جز بنزین و گازوئیل)(حاصل از پالایشگاه نفت و پتروشیمی)|شرکت پتروپالایش دهلران|بین الملل\", \"supplier\": \"شرکت پتروپالایش دهلران\", \"symbol\": \"IPAPDCABFC0050813\", \"symbol_code\": \"IPAPDCABFC0\", \"target_market\": \"بین الملل\", \"total_value_rial\": 929757714000.0, \"total_value_usd\": 502000.0, \"trade_count\": 2, \"trade_date\": \"1405/08/06\", \"trade_volume\": 1000.0, \"volume_unit\": \"تن\", \"weighted_price\": 502.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "13:13",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793232000000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:google/gemma-4-31b-it:free",
+"at": "13:13",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793232000000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:google/gemma-4-26b-a4b-it:free",
+"at": "13:13",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793232000000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:recursive/flint-v1.0:free",
+"at": "13:13",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793232000000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+}
+],
+"facts": "1. نام کالا: برش پروپان (به جز بنزین و گازوئیل)(حاصل از پالایشگاه نفت و پتروشیمی)؛ عرضه‌کننده: شرکت پتروپالایش دهلران.\n2. بازار: رینگ بین‌الملل بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: چهارشنبه ۶ آبان.\n4. شرکت پتروپالایش دهلران ۱ هزار تن برش پروپان (به جز بنزین و گازوئیل)(حاصل از پالایشگاه نفت و پتروشیمی) عرضه کرد و ۱ هزار تن آن فروش رفت.\n5. خریداران ۳ هزار تن تقاضا ثبت کردند؛ تقاضا ۳ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۵۰۲ دلار در هر تن بود و قیمت پایه ۴۶۵ دلار در هر تن.\n8. رقابت قیمت را ۸ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۲ معامله فروخته شد.\n10. ارزش این معامله ۵۰۲ هزار دلار بود.",
+"tables": {
+"T2": {
+"title": "معامله‌ی برش پروپان (به جز بنزین و گازوئیل)(حاصل از پالایشگاه نفت و پتروشیمی) شرکت پتروپالایش دهلران",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۱ هزار"
+],
+[
+"فروش (تن)",
+"۱ هزار"
+],
+[
+"قیمت پایه (دلار در هر تن)",
+"۴۶۵"
+],
+[
+"قیمت معامله (دلار در هر تن)",
+"۵۰۲"
+],
+[
+"بازار",
+"رینگ بین‌الملل"
+]
+]
+}
+}
 }
 }
