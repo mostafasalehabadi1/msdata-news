@@ -960,3 +960,29 @@ style-soft: lead>35w/1num, text 13 nums
   PAGL-MEGB-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۳۸)
 OK KSO-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (69s)
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  PAGL-MEGB-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 47s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"52c83e7a32cccb3fcd4b596702a16f06"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  PAGL-MEGB-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 0s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  SJS-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  KSCO-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 105 words / 4 paragraphs
+  PAGL-MEGB-00 gapgpt:gemma-3-27b-it: 137s ValueError: staged: 8 calls, last: 105 words / 4 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  stage6 news: title in 1 calls
+OK SJS-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (54s)
