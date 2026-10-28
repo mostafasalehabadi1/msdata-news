@@ -66,3 +66,19 @@ style-soft: lead>35w/1num, text 19 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK KSO-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (49s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ASC-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 333s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 110 words after fixes
+  ASC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 76s ValueError: staged: 8 calls, last: 110 words after fixes
+style-soft: lead>35w/1num, text 16 nums
+  staged zai:glm-4.7-flash: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK TAA-TS11112-00 <- zai:glm-4.7-flash (891s)
