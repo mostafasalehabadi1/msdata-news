@@ -1,5 +1,39 @@
-kala: closed halls: تالار صادراتی کیش
-kala: 0 settled rows, 48 wait for the next data build
+kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی
+kala: 2 settled rows, 46 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+2 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  HAAL-PS10000-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 116 words / 3 paragraphs
+  HAAL-PS10000-00 gapgpt:gemma-3-27b-it: 53s ValueError: staged: 8 calls, last: 116 words / 3 paragraphs
+  FROJ-HREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | فعل ندارد | عدد بیرون از متن: ۷۹)
+OK FROJ-HREEEEA3B-00 <- gapgpt:gemma-3-27b-it (50s)
+  HAAL-PS10000-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 6 calls: 116 words / 3 paragraphs
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 89 words / 2 paragraphs
+  HAAL-PS10000-00 zai:glm-4.7-flash: 660s ValueError: staged: 8 calls, last: 89 words / 2 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.5-flash: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.5-flash: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۴۰)
+OK HAAL-PS10000-00 <- zai:glm-4.5-flash (37s)
+written 2/2; total in file 2
+kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی
+kala: 2 settled rows, 46 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 0 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-written 0/0; total in file 0
+written 0/0; total in file 2
