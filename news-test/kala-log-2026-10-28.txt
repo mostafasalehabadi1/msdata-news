@@ -989,3 +989,26 @@ OK SJS-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (54s)
 style-soft: lead>35w/1num, text 13 nums
   staged zai:glm-4.7-flash: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
   staged zai:glm-4.7-flash: accepted after 4 calls
+kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 30 settled rows, 73 wait for the next data build
+rewrite KHS-HS00000-00: data changed after it was written (600.0|500.0|600.0|1281138.0|640569000.0 -> 700.0|600.0|700.0|1281138.0|768682800.0)
+rewrite RSP-HS00000-00: data changed after it was written (500.0|300.0|350.0|1281138.0|384341400.0 -> 700.0|500.0|550.0|1281138.0|640569000.0)
+rewrite OSC-HS00000-00: data changed after it was written (4000.0|3700.0|4200.0|1424562.0|5270879400.0 -> 4300.0|4000.0|4500.0|1424562.0|5698248000.0)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00
+20 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:kilo-auto/free: check cut 2 sentence(s)
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  TAA-TS11112-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  PAGL-MEGB-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+style-soft: در حالی که, text 10 nums
+  staged kilo:kilo-auto/free: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | لید بی‌عدد
+  staged kilo:kilo-auto/free: accepted after 8 calls
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  stage6 news: title in 2 calls
+OK SHPC-DEAFG-00 <- kilo:kilo-auto/free (224s)
