@@ -1,1472 +1,363 @@
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی
-kala: 22 settled rows, 60 wait for the next data build
+kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 103 settled rows, 0 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-21 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
-  HSSC-LRNENA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4de4388f-d7a4-446d-
+given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00, ARCO-CASOALB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, ESC-MRNEEEA3B-00, FPCO-ACTACB-00, PPCO-OASTYB-00, SHPC-MEGB-00, PTC-PETSBTG645J-00, KHP-MCJ-00, SHS-MRNEEEA3B-00, AJSC-SSG09XROA-00, SJS-HREEEEA3B-00, MPC-MEGB-00, JPPC-PPRP120LPP-00, ESC-MRNENNA3B-00, ESC-MRNNENA3B-00, STPA-HREEEEA3B-00, KHS-HS00000-00, RSP-HS00000-00, MPC-HDCRP100NPP-00, SPRM-LRNENA2B-00, PAGL-MEGB-00
+25 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
-  SEFA-CR018OO-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  cf:@cf/qwen/qwen2.5-coder-32b-instruct: quota used up - skipped until tomorrow
-  SPRM-LRNENA2B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (98b1e964-75a6-4ffb-
-  requesty:mistral/leanstral-1-5: quota used up - skipped until tomorrow
-  AZF-MREEEEA3BN-00 requesty:mistral/leanstral-1-5: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a paid model, which requires a positive account balance"}}
-
-  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
-  HSSC-LRNNEA3B-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
-  llm7:minimax-m2.7: quota used up - skipped until tomorrow
-  NCI-SLG-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 1460 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":1460}}
+  SPSG-HREENNA3B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
   openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
-  SEFA-CR018OO-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  requesty:novita/inclusionai/ling-3.0-tiny: quota used up - skipped until tomorrow
-  AZF-MREEEEA3BN-00 requesty:novita/inclusionai/ling-3.0-tiny: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a paid model, which requires a positive account balance"}}
-
+  SPSG-HREENNA3B-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  TIDA-MREEEEA3B-00 llm7:deepseek-v4-flash:0731: 3s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
   openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
-  SEFA-CR018OO-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  requesty:poolside/laguna-m.1: quota used up - skipped until tomorrow
-  AZF-MREEEEA3BN-00 requesty:poolside/laguna-m.1: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a paid model, which requires a positive account balance"}}
-
-  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
-  NCI-SLG-00 llm7:mistral-Nemo-Instruct-2407: 2s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 57 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":57}}
+  SPSG-HREENNA3B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
   openrouter:recursive/flint-v1.0:free: quota used up - skipped until tomorrow
-  SEFA-CR018OO-00 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  requesty:nvidia/nemotron-3-nano-30b-a3b: quota used up - skipped until tomorrow
-  AZF-MREEEEA3BN-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a paid model, which requires a positive account balance"}}
-
-  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
-  ESME-HS00000-00 groq:openai/gpt-oss-120b: 7s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 200000, Requested 61
-  requesty:nvidia/muse-glimmer-30b: quota used up - skipped until tomorrow
-  AZF-MREEEEA3BN-00 requesty:nvidia/muse-glimmer-30b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"You've hit the rate limit for free models. Retry later or switch to a paid model, which requires a positive account balance"}}
-
-  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
-  ESME-HS00000-00 groq:openai/gpt-oss-20b: 3s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199131, Requested 623
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n{"id":"gen-1793187363-6B4c5
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n{"id":"gen-1793187401-Sja01pTVvkKr4UGP2oga","error":{"message":"xi
-  staged kilo:kilo-auto/free: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 107 words / 3 paragraphs
-  HSSC-LRNENA3B-00 gapgpt:gemma-3-27b-it: 88s ValueError: staged: 8 calls, last: 107 words / 3 paragraphs
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  SPSG-HREENNA3B-00 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 102 words / 3 paragraphs
+  ZBS-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
   staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
-  SPRM-LRNENA2B-00 gapgpt:gemma-3-27b-it: 68s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  KHS-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  ZBS-HREENNA3B-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
-  SMC-MRNNEEA3B-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
-  ZBS-HREENNA3B-00 ovh:Meta-Llama-3_3-70B-Instruct: 36s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"ca227f0793f7a9037e4a244e46337d1a"
-}
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
-  HSSC-LRNNEA3B-00 gapgpt:gemma-3-27b-it: 47s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
-style-soft: lead>35w/1num, text 15 nums
-  staged kilo:kilo-auto/free: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:kilo-auto/free: draft dropped after 8 calls: 118 words after fixes
-  SPSG-HREENNA3B-00 kilo:kilo-auto/free: 228s ValueError: staged: 8 calls, last: 118 words after fixes
-  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
-  SPSG-HREENNA3B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged kilo:poolside/laguna-s-2.1:free: check cut 1 sentence(s)
-  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
-  SPSG-HREENNA3B-00 kilo:poolside/laguna-s-2.1:free: 34s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: soft: نام کالا در تیتر باید «میلگرد طول» باشد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK AZF-MREEEEA3BN-00 <- gapgpt:gemma-3-27b-it (81s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  PSAC-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 348s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  AGS-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 11 nums
-  NCI-SLG-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
-  stage6 news: title in 1 calls
-OK ESME-HS00000-00 <- gapgpt:gemma-3-27b-it (83s)
-  ZBS-HREENNA3B-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
-  ZBS-HREENNA3B-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 19s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"66acf0485206d401ccc66b20d7db0166"
-}
-  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
-  ZBS-HREENNA3B-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 0s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
   staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 9 nums
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
-OK KHS-HS00000-00 <- gapgpt:gemma-3-27b-it (70s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 18 nums
-  staged zai:glm-4.7-flash: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 12 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-  stage6 news: title in 2 calls
-OK AGS-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (47s)
-  SPRM-LRNENA2B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 17 nums
-  staged zai:glm-4.7-flash: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: 113 words after fixes
-  RSP-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  PSAC-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 105 words / 3 paragraphs
-  NCI-SLG-00 gapgpt:gemma-3-27b-it: 59s ValueError: staged: 8 calls, last: 105 words / 3 paragraphs
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  SMC-MRNNEEA3B-00 ovh:gpt-oss-120b: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-style-soft: در حالی که, lead>35w/1num, text 14 nums
-  staged kilo:cohere/north-mini-code:free: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged kilo:cohere/north-mini-code:free: accepted after 7 calls
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: title in 1 calls
-OK RSP-HS00000-00 <- gapgpt:gemma-3-27b-it (62s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 114 words / 3 paragraphs
-  PSAC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 35s ValueError: staged: 8 calls, last: 114 words / 3 paragraphs
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 100 words / 3 paragraphs
-  OSC-HS00000-00 zai:glm-4.7-flash: 705s ValueError: staged: 8 calls, last: 100 words / 3 paragraphs
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
-  stage6 news: kept stage-5 title after 3 calls (16 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۲۴)
-OK SPSG-HREENNA3B-00 <- kilo:cohere/north-mini-code:free (455s)
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 96 words / 3 paragraphs
-  OSC-HS00000-00 zai:glm-4.5-flash: 40s ValueError: staged: 8 calls, last: 96 words / 3 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
-  OSC-HS00000-00 gapgpt:gemma-3-27b-it: 43s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  staged ovh:Qwen3.6-27B: check cut 3 sentence(s)
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  staged kilo:kilo-auto/free: draft dropped after 8 calls: 94 words / 3 paragraphs
-  SPRM-LRNENA2B-00 kilo:kilo-auto/free: 182s ValueError: staged: 8 calls, last: 94 words / 3 paragraphs
-  ZBS-HREENNA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 385s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words after fixes
-  ZBS-HREENNA3B-00 gapgpt:gemma-3-27b-it: 59s ValueError: staged: 8 calls, last: 118 words after fixes
-  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
-  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
-  SMC-MRNNEEA3B-00 ovh:Qwen3.6-27B: 464s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: text 11 nums
-  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: markers: «نشان داد» در text
-  SPRM-LRNENA2B-00 kilo:cohere/north-mini-code:free: 209s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۶۰۰ تن» با فعل فروش آمده ولی فروش ۵۰ تن است
-  SMC-MRNNEEA3B-00 gapgpt:gemma-3-27b-it: 82s ValueError: staged: 8 calls, last: «۶۰۰ تن» با فعل فروش آمده ولی فروش ۵۰ تن است
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:kilo-auto/free: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  NCI-SLG-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
-  staged kilo:kilo-auto/free: soft: لید بی‌عدد
-  staged kilo:kilo-auto/free: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۲۰ | فعل «شد» امروز تکرار شده)
-OK PSAC-MREEEEA3B-00 <- kilo:kilo-auto/free (244s)
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۱ هزار و ۴۳۰ بود
-  FROJ-MREEEEA3B-00 zai:glm-4.7-flash: 671s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۱ هزار و ۴۳۰ بود
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  NCI-SLG-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 108 words / 3 paragraphs
-  FROJ-MREEEEA3B-00 zai:glm-4.5-flash: 46s ValueError: staged: 8 calls, last: 108 words / 3 paragraphs
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: title in 2 calls
-OK FROJ-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (47s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-  staged kilo:kilo-auto/free: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (17 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۱۷)
-OK ZBS-HREENNA3B-00 <- kilo:kilo-auto/free (275s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی
-kala: 22 settled rows, 60 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-12 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged kilo:kilo-auto/free: check cut 2 sentence(s)
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  OSC-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  staged kilo:kilo-auto/free: draft dropped after 8 calls: 115 words / 3 paragraphs
-  SMC-MRNNEEA3B-00 kilo:kilo-auto/free: 252s ValueError: staged: 8 calls, last: 115 words / 3 paragraphs
-  stage6 news: title in 2 calls
-OK OSC-HS00000-00 <- gapgpt:gemma-3-27b-it (69s)
-  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
-  SPRM-LRNENA2B-00 ovh:Qwen3.5-397B-A17B: 360s TimeoutError: The read operation timed out
-  HSSC-LRNENA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words / 4 paragraphs
-  SPRM-LRNENA2B-00 gapgpt:gemma-3-27b-it: 43s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۶۴۰۴۱۶
-  HSSC-LRNENA3B-00 gapgpt:gemma-3-27b-it: 43s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۶۴۰۴۱۶
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  HSSC-LRNNEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: 118 words / 4 paragraphs
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
-  HSSC-LRNNEA3B-00 gapgpt:gemma-3-27b-it: 58s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
-  SMC-MRNNEEA3B-00 kilo:cohere/north-mini-code:free: 394s TimeoutError: The read operation timed out
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 1 sentence(s)
-  SPRM-LRNENA2B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 288s TimeoutError: The read operation timed out
-style-soft: در حالی که, lead>35w/1num
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
 style-soft: در حالی که, lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست | «۶۰۰ تن» با فعل فروش آمده ولی فروش ۵۰ تن است
-  SMC-MRNNEEA3B-00 gapgpt:gemma-3-27b-it: 62s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست | «۶۰۰ تن» با فعل فروش آمده ولی فروش ۵۰ تن است
-style-soft: lead>35w/1num, text 10 nums
-  staged zai:glm-4.7-flash: soft: نام کالا در تیتر باید «مس کم» باشد | متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 6 calls
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged zai:glm-4.7-flash: call 9 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  PSAC-MRNEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
-OK NCI-SLG-00 <- zai:glm-4.7-flash (885s)
-  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words after fixes
-  PSAC-MRNEEEA3B-00 gapgpt:gemma-3-27b-it: 50s ValueError: staged: 8 calls, last: 119 words after fixes
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  FATC-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words / 3 paragraphs
-  FATC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 37s ValueError: staged: 8 calls, last: 119 words / 3 paragraphs
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: soft: نام کالا در تیتر باید «سیم و» باشد
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: accepted after 4 calls
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  FAKH-HS00000-00 ovh:Qwen3.5-397B-A17B: 771s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-style-soft: text 12 nums
-style-soft: text 12 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۹۹
-style-soft: text 12 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۳۰۰ تن» با فعل فروش آمده ولی فروش ۱۵۰ تن است
-  FAKH-HS00000-00 gapgpt:gemma-3-27b-it: 85s ValueError: staged: 8 calls, last: «۳۰۰ تن» با فعل فروش آمده ولی فروش ۱۵۰ تن است
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  TIDA-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 12 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 79 words / 3 paragraphs
-  AJSC-SSG09XROA-00 zai:glm-4.7-flash: 700s ValueError: staged: 8 calls, last: 79 words / 3 paragraphs
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words / 4 paragraphs
-  TIDA-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 77s ValueError: staged: 8 calls, last: 119 words / 4 paragraphs
-  AJSC-SSG09XROA-00 zai:glm-4.5-flash: 68s JSONDecodeError: Expecting value: line 6 column 10 (char 279)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
-OK SEFA-CR018OO-00 <- openrouter:xingchen-agi/xing4.0-29b-a4b:free (1685s)
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
-  AJSC-SSG09XROA-00 gapgpt:gemma-3-27b-it: 35s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 60 settled rows, 42 wait for the next data build
-rewrite HAAL-PS10000-00: data changed after it was written (300.0|300.0|300.0|2162337.0|648701100.0 -> 400.0|400.0|400.0|2162337.0|864934800.0)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): HSSC-LRNENA3B-00, HSSC-LRNNEA3B-00, SPRM-LRNENA2B-00, SMC-MRNNEEA3B-00
-40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  NCI-OANMGODSD-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  HSTC-SSG09XROA-00 kilo:dots-studio/dots-3-note-preview:free: 33s JSONDecodeError: Expecting value: line 3 column 10 (char 73)
+  staged groq:openai/gpt-oss-120b: check cut 1 sentence(s)
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
 style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۸
-  NCI-OANMGODSD-00 gapgpt:gemma-3-27b-it: 51s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۸
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  AHM-BIPG6422B-00 ovh:Qwen3.5-397B-A17B: 538s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
-style-soft: lead>35w/1num, text 9 nums
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 107 words after fixes
-  AHM-BIPG6422B-00 gapgpt:gemma-3-27b-it: 70s ValueError: staged: 8 calls, last: 107 words after fixes
-style-soft: lead>35w/1num, text 12 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: markers: کد کالا یا حروف لاتین وسط متن
-  KSO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 399s ValueError: staged: 8 calls, last: markers: کد کالا یا حروف لاتین وسط متن
-  NSIC-MRNENNA3B-00 zai:glm-4.7-flash: 640s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «امروز» در subtitle
-  HSTC-SSG09XROA-00 gapgpt:gemma-3-27b-it: 69s ValueError: staged: 8 calls, last: markers: «امروز» در subtitle
-  staged zai:glm-4.5-flash: check cut 4 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: 113 words / 4 paragraphs
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 92 words / 3 paragraphs
-  NSIC-MRNENNA3B-00 zai:glm-4.5-flash: 94s ValueError: staged: 8 calls, last: 92 words / 3 paragraphs
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۷ هزار و ۷۰۰ بود
-  KSO-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 54s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۷ هزار و ۷۰۰ بود
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۳۹ | فعل «شد» امروز تکرار شده)
-OK NSIC-MRNENNA3B-00 <- gapgpt:gemma-3-27b-it (65s)
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  AHM-BIPG6422B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 313s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  ASC-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 327s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK ASC-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (75s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  SSC-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «بیانگر» در text
-  SSC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 67s ValueError: staged: 8 calls, last: markers: «بیانگر» در text
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: در حالی که, text 11 nums
-  staged zai:glm-4.7-flash: draft dropped after 3 calls: 74 words / 4 paragraphs
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: در حالی که
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 8 failed: bad response: '{"id":"gen-1793192768-Z5SqlTNwy4kHbhVNo7s7","error":{"message":"Upstream error from Nvidia: Service tempo
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 60 settled rows, 42 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): HSSC-LRNENA3B-00, HSSC-LRNNEA3B-00, SPRM-LRNENA2B-00, SMC-MRNNEEA3B-00
-40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  NCI-OANMGODSD-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged ovh:gpt-oss-120b: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 18 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۸
-  NCI-OANMGODSD-00 gapgpt:gemma-3-27b-it: 71s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۸
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  HSTC-SSG09XROA-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  PAGL-MEGB-00 ovh:gpt-oss-120b: 390s TimeoutError: The read operation timed out
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
-  PAGL-MEGB-00 ovh:Meta-Llama-3_3-70B-Instruct: 33s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"7ec8d11dcb48e5761cef17611f1cba6e"
-}
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 112 words / 3 paragraphs
-  HSTC-SSG09XROA-00 gapgpt:gemma-3-27b-it: 61s ValueError: staged: 8 calls, last: 112 words / 3 paragraphs
-  AHM-BIPG6422B-00 ovh:Qwen3.5-397B-A17B: 476s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «داشت» امروز تکرار شده)
-OK AHM-BIPG6422B-00 <- gapgpt:gemma-3-27b-it (61s)
-  KSO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  PAGL-MEGB-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۳۸)
-OK KSO-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (69s)
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
-  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
-  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
-  PAGL-MEGB-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 47s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"52c83e7a32cccb3fcd4b596702a16f06"
-}
-  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
-  PAGL-MEGB-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 0s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  SJS-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  KSCO-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 105 words / 4 paragraphs
-  PAGL-MEGB-00 gapgpt:gemma-3-27b-it: 137s ValueError: staged: 8 calls, last: 105 words / 4 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: title in 1 calls
-OK SJS-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (54s)
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.7-flash: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 4 calls
-  stage6 news: title in 1 calls
-OK HAAL-PS10000-00 <- zai:glm-4.7-flash (866s)
-  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند
-  ESC-MRNEEEA3B-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 18 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: title in 1 calls
-OK KSCO-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (106s)
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 106 words / 3 paragraphs
-  ESC-MRNEEEA3B-00 gapgpt:gemma-3-27b-it: 60s ValueError: staged: 8 calls, last: 106 words / 3 paragraphs
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  SSC-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 535s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: 118 words / 3 paragraphs
-  SSC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 88s ValueError: staged: 9 calls, last: 118 words / 3 paragraphs
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: 111 words / 4 paragraphs
-  STPA-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 74 words / 1 paragraphs
-  BIMC-MREEEEA3B-00 zai:glm-4.7-flash: 615s ValueError: staged: 8 calls, last: 74 words / 1 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۶، ۹۹
-  BIMC-MREEEEA3B-00 zai:glm-4.5-flash: 38s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۶، ۹۹
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۱۰۰، ۳۱۷۱
-  STPA-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 88s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۱۰۰، ۳۱۷۱
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words after fixes
-  BIMC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 67s ValueError: staged: 8 calls, last: 119 words after fixes
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 30 settled rows, 73 wait for the next data build
-rewrite KHS-HS00000-00: data changed after it was written (600.0|500.0|600.0|1281138.0|640569000.0 -> 700.0|600.0|700.0|1281138.0|768682800.0)
-rewrite RSP-HS00000-00: data changed after it was written (500.0|300.0|350.0|1281138.0|384341400.0 -> 700.0|500.0|550.0|1281138.0|640569000.0)
-rewrite OSC-HS00000-00: data changed after it was written (4000.0|3700.0|4200.0|1424562.0|5270879400.0 -> 4300.0|4000.0|4500.0|1424562.0|5698248000.0)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00
-20 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:kilo-auto/free: check cut 2 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  TAA-TS11112-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  PAGL-MEGB-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
-style-soft: در حالی که, text 10 nums
-  staged kilo:kilo-auto/free: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | لید بی‌عدد
-  staged kilo:kilo-auto/free: accepted after 8 calls
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  stage6 news: title in 2 calls
-OK SHPC-DEAFG-00 <- kilo:kilo-auto/free (224s)
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 14 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۲ هزار بود
-  TAA-TS11112-00 gapgpt:gemma-3-27b-it: 73s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۲ هزار بود
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  KHS-HS00000-00 ovh:Qwen3.5-397B-A17B: 349s TimeoutError: The read operation timed out
-  PAGL-MEGB-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-  ESC-MRNEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 113 words after fixes
-  KHS-HS00000-00 gapgpt:gemma-3-27b-it: 60s ValueError: staged: 8 calls, last: 113 words after fixes
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words / 3 paragraphs
-  PAGL-MEGB-00 gapgpt:gemma-3-27b-it: 43s ValueError: staged: 8 calls, last: 118 words / 3 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  OSC-HS00000-00 zai:glm-4.7-flash: 497s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 102 words / 3 paragraphs
-  OSC-HS00000-00 zai:glm-4.5-flash: 34s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words after fixes
-  ESC-MRNEEEA3B-00 gapgpt:gemma-3-27b-it: 102s ValueError: staged: 8 calls, last: 119 words after fixes
-style-soft: text 16 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: text 13 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 119 words after fixes
-  RSP-HS00000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 622s ValueError: staged: 8 calls, last: 119 words after fixes
-  PSAC-MRNEEEA3B-00 ovh:Qwen3.5-397B-A17B: 290s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words after fixes
-  OSC-HS00000-00 gapgpt:gemma-3-27b-it: 77s ValueError: staged: 8 calls, last: 119 words after fixes
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: title in 2 calls
-OK PSAC-MRNEEEA3B-00 <- gapgpt:gemma-3-27b-it (60s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  RSP-HS00000-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 115 words / 4 paragraphs
-  RSP-HS00000-00 gapgpt:gemma-3-27b-it: 49s ValueError: staged: 8 calls, last: 115 words / 4 paragraphs
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  FPCO-ACTACB-00 kilo:dots-studio/dots-3-note-preview:free: 624s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۸ تن است | «۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۸ تن است
-  FPCO-ACTACB-00 gapgpt:gemma-3-27b-it: 69s ValueError: staged: 8 calls, last: «۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۸ تن است | «۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۸ تن است
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
-  KHS-HS00000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 497s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-  STPA-HREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 360s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 48 words / 2 paragraphs
-  AJSC-SSG09XROA-00 zai:glm-4.7-flash: 1035s ValueError: staged: 8 calls, last: 48 words / 2 paragraphs
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
-  STPA-HREEEEA3B-00 gapgpt:gemma-3-27b-it: 82s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست | «۱۰ هزار تن» با فعل فروش آمده ولی فروش ۱۰۰ تن است | «۱۰ هزار تن» با فعل فروش آمده ولی فروش ۱۰۰ تن 
-  AJSC-SSG09XROA-00 zai:glm-4.5-flash: 46s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست | «۱۰ هزار تن» با فعل فروش آمده ولی فروش ۱۰۰ تن است | «۱۰ هزار تن» با فعل فروش آمده ولی فروش ۱۰۰ تن است
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست | «۱۴۰۵ تن» با فعل فروش آمده ولی فروش ۱۰۰ تن است | «۱۱ هزار و ۶۰۰ تن» با فعل فروش آمده ولی فروش ۱۰۰ 
-  AJSC-SSG09XROA-00 gapgpt:gemma-3-27b-it: 45s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست | «۱۴۰۵ تن» با فعل فروش آمده ولی فروش ۱۰۰ تن است | «۱۱ هزار و ۶۰۰ تن» با فعل فروش آمده ولی فروش ۱۰۰ تن است
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 10 nums
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 84 settled rows, 19 wait for the next data build
-rewrite AZF-MREEEEA3BN-00: data changed after it was written (96.0|24.0|24.0|1032484.0|24779616.0 -> 120.0|48.0|48.0|1032484.0|49559232.0)
-rewrite AGS-MREEEEA3B-00: data changed after it was written (504.0|456.0|456.0|1064416.0|485373696.0 -> 552.0|504.0|504.0|1064416.0|536465664.0)
-rewrite SPSG-HREENNA3B-00: data changed after it was written (96.0|24.0|120.0|1064416.0|25545984.0 -> 168.0|96.0|192.0|1064416.0|102183936.0)
-rewrite ZBS-HREENNA3B-00: data changed after it was written (288.0|48.0|48.0|1064416.0|51091968.0 -> 528.0|288.0|288.0|1064416.0|306551808.0)
-rewrite ASC-MREEEEA3B-00: data changed after it was written (4650.0|4650.0|7125.0|1098022.6236559139|5105805200.0 -> 4650.0|4650.0|7125.0|1098022.5913978494|5105805050.0)
-rewrite KSO-MREEEEA3B-00: data changed after it was written (7700.0|7700.0|8725.0|1072795.155844156|8260522700.000001 -> 7700.0|5700.0|8725.0|1073048.2105263157|6116374800.0)
-rewrite SJS-MREEEEA3B-00: data changed after it was written (4000.0|4000.0|8300.0|1193166.19375|4772664775.0 -> 4000.0|4000.0|8300.0|1193166.0|4772664000.0)
-rewrite KSCO-MREEEEA3B-00: data changed after it was written (3872.0|3872.0|4224.0|1205251.1363636365|4666732400.0 -> 3872.0|3872.0|4224.0|1205251.0|4666731872.0)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00, ESC-MRNEEEA3B-00, PAGL-MEGB-00
-40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  NCI-SUACB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  HSSC-LRNENA3B-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۳۰ هزار و ۲۴ بود
-  NCI-SUACB-00 gapgpt:gemma-3-27b-it: 53s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۳۰ هزار و ۲۴ بود
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 3 failed: bad response: '{"id":"gen-1793196943-4ozOcLBHqzfcBA2vpjPQ","error":{"message":"Upstream error from Nvidia: Service tempo
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: 93 words / 4 paragraphs
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 113 words / 3 paragraphs
-  HSSC-LRNENA3B-00 gapgpt:gemma-3-27b-it: 72s ValueError: staged: 8 calls, last: 113 words / 3 paragraphs
-  PTC-PETTG645J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 15 nums
-  staged zai:glm-4.7-flash: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: title in 3 calls
-OK PTC-PETTG645J-00 <- gapgpt:gemma-3-27b-it (70s)
-  KHS-HS00000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 463s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند
-style-soft: lead>35w/1num, text 15 nums
-  staged zai:glm-4.7-flash: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged zai:glm-4.7-flash: accepted after 7 calls
-  ARCO-CASOALB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  HSSC-LRNENA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «امروز» در lead
-  ARCO-CASOALB-00 gapgpt:gemma-3-27b-it: 110s ValueError: staged: 8 calls, last: markers: «امروز» در lead
-  stage6 news: title in 3 calls
-OK OSC-HS00000-00 <- zai:glm-4.7-flash (760s)
-  KHS-HS00000-00 ovh:Qwen3.5-397B-A17B: 332s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
-  KHS-HS00000-00 gapgpt:gemma-3-27b-it: 47s ValueError: staged: 8 calls, last: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | متن 18 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK KSO-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (49s)
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  ASC-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 333s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
-style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 110 words after fixes
-  ASC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 76s ValueError: staged: 8 calls, last: 110 words after fixes
-style-soft: lead>35w/1num, text 16 nums
-  staged zai:glm-4.7-flash: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK TAA-TS11112-00 <- zai:glm-4.7-flash (891s)
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 84 settled rows, 19 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00, ESC-MRNEEEA3B-00, KHS-HS00000-00, PAGL-MEGB-00
-40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: bad response: '{"id":"gen-1793198529-xPiwLmuiqLYgxyZnJs2Q","error":{"message":"Upstream error from Nvidia: Service tempo
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: bad response: '{"id":"gen-1793198549-bgyut8XTTTFqsA6JF1p3","error":{"message":"Upstream error from Nvidia: Service tempo
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  NCI-SUACB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SJS-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 183s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  KSCO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 222s TimeoutError: The read operation timed out
-style-soft: در حالی که, lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-  stage6 news: title in 1 calls
-OK NCI-SUACB-00 <- gapgpt:gemma-3-27b-it (54s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
-  SJS-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 106s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
-  KSCO-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 118s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
-  ARCO-CASOALB-00 kilo:dots-studio/dots-3-note-preview:free: 321s TimeoutError: The read operation timed out
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  BIMC-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 290s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 14 nums
-style-soft: در حالی که, lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  ARCO-CASOALB-00 gapgpt:gemma-3-27b-it: 133s ValueError: staged: 9 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-style-soft: lead>35w/1num, text 22 nums
-  SSC-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 499s TimeoutError: The read operation timed out
-  FPCO-ACTACB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  STPA-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 22 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۵۰
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 114 words / 4 paragraphs
-  BIMC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 117s ValueError: staged: 8 calls, last: 114 words / 4 paragraphs
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 81 words / 2 paragraphs
-  ASC-MREEEEA3B-00 zai:glm-4.7-flash: 787s ValueError: staged: 8 calls, last: 81 words / 2 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  BMIS-MRENEEA3B-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.5-flash: draft dropped after 9 calls: 95 words / 4 paragraphs
-  ASC-MREEEEA3B-00 zai:glm-4.5-flash: 102s ValueError: staged: 9 calls, last: 95 words / 4 paragraphs
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 108 words after fixes
-  SSC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 133s ValueError: staged: 8 calls, last: 108 words after fixes
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۸ تن است | «۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۸ تن است
-  FPCO-ACTACB-00 gapgpt:gemma-3-27b-it: 71s ValueError: staged: 8 calls, last: «۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۸ تن است | «۸ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۸ تن است
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان داد» در text
-  STPA-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 66s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-style-soft: در حالی که, در حالی که, lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۱۶
-  BMIS-MRENEEA3B-00 gapgpt:gemma-3-27b-it: 111s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۱۶
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
 style-soft: در حالی که, lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 112 words after fixes
-  ASC-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 62s ValueError: staged: 8 calls, last: 112 words after fixes
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 66 words / 2 paragraphs
-  IPC-XYLENEMIXB-00 zai:glm-4.7-flash: 635s ValueError: staged: 8 calls, last: 66 words / 2 paragraphs
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 117 words / 4 paragraphs
-  IPC-XYLENEMIXB-00 zai:glm-4.5-flash: 40s ValueError: staged: 8 calls, last: 117 words / 4 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۵۶۰
+  TIDA-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 59s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۵۶۰
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK IPC-XYLENEMIXB-00 <- gapgpt:gemma-3-27b-it (69s)
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 84 settled rows, 19 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00, ARCO-CASOALB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, ESC-MRNEEEA3B-00, FPCO-ACTACB-00, KHS-HS00000-00, PAGL-MEGB-00
-40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  BIMC-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  SSC-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۲۲۲۲، ۳.۲ | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
-OK BIMC-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (104s)
-  PPCO-OASTYB-00 kilo:dots-studio/dots-3-note-preview:free: 330s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+OK FROJ-MREEEEA3B-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (41s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  STPA-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  BMIS-MRENEEA3B-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: 109 words / 3 paragraphs
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 6 calls
-style-soft: در حالی که, lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: title in 1 calls
-OK SSC-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (193s)
-  SHPC-MEGB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  SHS-MRNEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-style-soft: text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: 115 words / 3 paragraphs
-  PPCO-OASTYB-00 gapgpt:gemma-3-27b-it: 131s ValueError: staged: 9 calls, last: 115 words / 3 paragraphs
-  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  PTC-PETSBTG645J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: در حالی که, lead>35w/1num, text 10 nums
-style-soft: در حالی که, lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK KSCO-MREEEEA3B-00 <- zai:glm-4.7-flash (714s)
-style-soft: در حالی که, در حالی که, lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: title in 2 calls
-OK STPA-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (94s)
-  KSCO-HREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 433s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: check cut 6 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۲۱۶ | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش ن)
-OK BMIS-MRENEEA3B-00 <- gapgpt:gemma-3-27b-it (186s)
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان داد» در text
-  SHPC-MEGB-00 gapgpt:gemma-3-27b-it: 70s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: soft: نام کالا در تیتر باید «میلگرد متوسط» باشد | متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 117 words after fixes
-  SHS-MRNEEEA3B-00 gapgpt:gemma-3-27b-it: 79s ValueError: staged: 8 calls, last: 117 words after fixes
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.7-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged zai:glm-4.7-flash: accepted after 5 calls
-style-soft: در حالی که, lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words / 2 paragraphs
-  PTC-PETSBTG645J-00 gapgpt:gemma-3-27b-it: 49s ValueError: staged: 8 calls, last: 118 words / 2 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 109 words / 4 paragraphs
-  KSCO-HREEEEA3B-00 gapgpt:gemma-3-27b-it: 85s ValueError: staged: 8 calls, last: 109 words / 4 paragraphs
-  stage6 news: title in 3 calls
-OK MPC-PPHP525JPP-00 <- zai:glm-4.7-flash (563s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 111 words / 4 paragraphs
-  KHP-MCJ-00 zai:glm-4.7-flash: 253s ValueError: staged: 8 calls, last: 111 words / 4 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 116 words / 4 paragraphs
-  KHP-MCJ-00 zai:glm-4.5-flash: 95s ValueError: staged: 8 calls, last: 116 words / 4 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: در حالی که, text 17 nums
-style-soft: در حالی که, text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  KHP-MCJ-00 gapgpt:gemma-3-27b-it: 85s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 103 settled rows, 0 wait for the next data build
-rewrite FROJ-MREEEEA3B-00: data changed after it was written (1430.0|286.0|308.0|1064416.0|304422976.0 -> 1650.0|506.0|528.0|1064416.0|538594496.0)
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00, ARCO-CASOALB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, ESC-MRNEEEA3B-00, FPCO-ACTACB-00, PPCO-OASTYB-00, KHS-HS00000-00, PAGL-MEGB-00
-40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  KSC-SSG09XROA-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: 106 words / 3 paragraphs
-style-soft: در حالی که, lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
-  KSC-SSG09XROA-00 gapgpt:gemma-3-27b-it: 77s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
-  KSCO-HREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 325s TimeoutError: The read operation timed out
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-style-soft: text 13 nums
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK KSCO-HREEEEA3B-00 <- gapgpt:gemma-3-27b-it (127s)
-style-soft: text 12 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 119 words after fixes
-  HSSC-LRNENA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 503s ValueError: staged: 8 calls, last: 119 words after fixes
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: 119 words after fixes
-  KAS-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 358s ValueError: staged: 8 calls, last: 119 words after fixes
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۵۰۰، ۲۱۰۰
-  SHS-MRNEEEA3B-00 zai:glm-4.7-flash: 554s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۵۰۰، ۲۱۰۰
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: title in 1 calls
-OK HSSC-LRNENA3B-00 <- gapgpt:gemma-3-27b-it (77s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 96 words / 4 paragraphs
-  SHS-MRNEEEA3B-00 zai:glm-4.5-flash: 42s ValueError: staged: 8 calls, last: 96 words / 4 paragraphs
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۴۳۰ تن» با فعل فروش آمده ولی فروش ۲ هزار و ۳۱۰ تن است
-  KAS-HS00000-00 gapgpt:gemma-3-27b-it: 70s ValueError: staged: 8 calls, last: «۴۳۰ تن» با فعل فروش آمده ولی فروش ۲ هزار و ۳۱۰ تن است
-  AJSC-SSG09XROA-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 110 words / 3 paragraphs
-  SHS-MRNEEEA3B-00 gapgpt:gemma-3-27b-it: 50s ValueError: staged: 8 calls, last: 110 words / 3 paragraphs
-  SHPC-MEGB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۱۰۰ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۱۰۰ تن است | «۱۰۰ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۱۰۰ تن است
-  AJSC-SSG09XROA-00 gapgpt:gemma-3-27b-it: 65s ValueError: staged: 8 calls, last: «۱۰۰ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۱۰۰ تن است | «۱۰۰ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۱۰۰ تن است
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۹۸، ۲۳۹۸، ۲۹۹، ۳۲۲
-  SHPC-MEGB-00 gapgpt:gemma-3-27b-it: 66s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۹۸، ۲۳۹۸، ۲۹۹، ۳۲۲
-  MPC-MEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num, text 12 nums
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۱۵۰ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۱۵۰ تن است
-  MPC-MEGB-00 gapgpt:gemma-3-27b-it: 66s ValueError: staged: 8 calls, last: «۱۵۰ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۱۵۰ تن است
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: text 19 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: soft: متن 16 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 6 calls: 117 words after fixes
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  YSC-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 924s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  SJS-HREEEEA3B-00 zai:glm-4.7-flash: 690s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: title in 3 calls
-OK YSC-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (85s)
-  staged zai:glm-4.5-flash: draft dropped after 9 calls: 111 words / 3 paragraphs
-  SJS-HREEEEA3B-00 zai:glm-4.5-flash: 67s ValueError: staged: 9 calls, last: 111 words / 3 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: text 10 nums
-style-soft: text 9 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
-  SJS-HREEEEA3B-00 gapgpt:gemma-3-27b-it: 46s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  PTC-PETSBTG645J-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  PTC-PETSBTG645J-00 gapgpt:gemma-3-27b-it: 52s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  KHP-MCJ-00 zai:glm-4.7-flash: 293s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 3 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  KHP-MCJ-00 zai:glm-4.5-flash: 71s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 103 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00, ARCO-CASOALB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, ESC-MRNEEEA3B-00, FPCO-ACTACB-00, PPCO-OASTYB-00, SHPC-MEGB-00, PTC-PETSBTG645J-00, KHP-MCJ-00, SHS-MRNEEEA3B-00, KHS-HS00000-00, MPC-HDCRP100NPP-00, PAGL-MEGB-00
-40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  AJSC-SSG09XROA-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  KPC-OAPMDIB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  PAGL-DEGB-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: bad response: '{"id":"gen-1793204301-y7HaxBMuQNhKNyJQENfv","error":{"message":"Upstream error from Nvidia: Service tempo
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست | «۱۱ هزار تن» با فعل فروش آمده ولی فروش ۱ هزار و ۱۰۰ تن است
-  AJSC-SSG09XROA-00 gapgpt:gemma-3-27b-it: 44s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست | «۱۱ هزار تن» با فعل فروش آمده ولی فروش ۱ هزار و ۱۰۰ تن است
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged kilo:kilo-auto/free: draft dropped after 8 calls: 108 words / 2 paragraphs
-  AAIM-LRNENA2B-00 kilo:kilo-auto/free: 275s ValueError: staged: 8 calls, last: 108 words / 2 paragraphs
-  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
-  AAIM-LRNENA2B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
-  PAGL-DEGB-00 ovh:Meta-Llama-3_3-70B-Instruct: 110s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"eb1807073277925f0640f81674856e68"
-}
-style-soft: lead>35w/1num, text 12 nums
-  RJCO-PPRG1104KRJ-00 zai:glm-4.7-flash: 293s TimeoutError: The read operation timed out
-  staged kilo:poolside/laguna-s-2.1:free: check cut 1 sentence(s)
-  staged kilo:poolside/laguna-s-2.1:free: check cut 1 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 99 words / 3 paragraphs
-  KPC-OAPMDIB-00 gapgpt:gemma-3-27b-it: 79s ValueError: staged: 8 calls, last: 99 words / 3 paragraphs
-style-soft: lead>35w/1num, text 16 nums
-  staged kilo:poolside/laguna-s-2.1:free: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 17 nums
-  staged kilo:poolside/laguna-s-2.1:free: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:poolside/laguna-s-2.1:free: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (16 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
-OK AAIM-LRNENA2B-00 <- kilo:poolside/laguna-s-2.1:free (79s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 118 words / 4 paragraphs
-  RJCO-PPRG1104KRJ-00 zai:glm-4.5-flash: 108s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  KSC-SSG09XROA-00 kilo:dots-studio/dots-3-note-preview:free: 448s TimeoutError: The read operation timed out
-style-soft: در حالی که, lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 18 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 19 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 18 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  PAGL-DEGB-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
-  stage6 news: title in 1 calls
-OK RJCO-PPRG1104KRJ-00 <- gapgpt:gemma-3-27b-it (72s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
-  PAGL-DEGB-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 28s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"5930372f5826960020aafb534fc06648"
-}
-  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
-  PAGL-DEGB-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 12 عدد دارد؛ حداکثر ۶ عدد بماند
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 13 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (حرف لاتین | 14 کلمه؛ ۸ تا ۱۳ | فعل ندارد | عدد بیرون از متن: ۱٫۷۷)
-OK KSC-SSG09XROA-00 <- gapgpt:gemma-3-27b-it (39s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-style-soft: text 12 nums
-style-soft: text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words after fixes
-  PAGL-DEGB-00 gapgpt:gemma-3-27b-it: 44s ValueError: staged: 8 calls, last: 119 words after fixes
-  MPC-MEGB-00 ovh:Qwen3.5-397B-A17B: 395s TimeoutError: The read operation timed out
-  JPPC-PPRP120LPP-00 zai:glm-4.7-flash: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  KAS-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: draft dropped after 9 calls: 111 words / 3 paragraphs
-  JPPC-PPRP120LPP-00 zai:glm-4.5-flash: 48s ValueError: staged: 9 calls, last: 111 words / 3 paragraphs
-  staged kilo:kilo-auto/free: draft dropped after 8 calls: 114 words / 4 paragraphs
-  SPRM-LRNENA2B-00 kilo:kilo-auto/free: 280s ValueError: staged: 8 calls, last: 114 words / 4 paragraphs
-  staged kilo:poolside/laguna-s-2.1:free: check cut 1 sentence(s)
-  staged kilo:poolside/laguna-s-2.1:free: check cut 1 sentence(s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-style-soft: text 24 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: markers: «این در حالی است» در text | عدد بیرون از حقیقت‌ها: ۲۹۷۵
-  MPC-MEGB-00 gapgpt:gemma-3-27b-it: 101s ValueError: staged: 9 calls, last: markers: «این در حالی است» در text | عدد بیرون از حقیقت‌ها: ۲۹۷۵
-  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
-  SPRM-LRNENA2B-00 kilo:poolside/laguna-s-2.1:free: 39s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged ovh:gpt-oss-120b: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-  staged ovh:gpt-oss-120b: check cut 1 sentence(s)
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۵.۷ | فعل «یافت» امروز تکرار شده)
-OK KAS-HS00000-00 <- gapgpt:gemma-3-27b-it (72s)
-  ESC-MRNENNA3B-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 112 words / 4 paragraphs
-  JPPC-PPRP120LPP-00 gapgpt:gemma-3-27b-it: 64s ValueError: staged: 8 calls, last: 112 words / 4 paragraphs
-  ESC-MRNNNEA3B-00 zai:glm-4.7-flash: 196s TimeoutError: The read operation timed out
-  AZF-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 232s TimeoutError: The read operation timed out
-style-soft: در حالی که, text 10 nums
-  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۰۶۴ | کد کالا یا حروف لاتین وسط متن
-  SPRM-LRNENA2B-00 kilo:cohere/north-mini-code:free: 202s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۰۶۴ | کد کالا یا حروف لاتین وسط متن
-style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 10 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: 104 words / 4 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 79 words / 2 paragraphs
-  ESC-MRNNNEA3B-00 zai:glm-4.5-flash: 90s ValueError: staged: 8 calls, last: 79 words / 2 paragraphs
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 2 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
-  SJS-HREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 788s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  ovh:gpt-oss-120b: quota used up - skipped for an hour
-  SMC-MRNNEEA3B-00 ovh:gpt-oss-120b: 480s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"4a4356343d98e746d25b65515dedfb14"
-}
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: markers: «نشان می‌دهد» در text
-  ESC-MRNENNA3B-00 gapgpt:gemma-3-27b-it: 159s ValueError: staged: 9 calls, last: markers: «نشان می‌دهد» در text
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 98 words / 4 paragraphs
-  AZF-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 64s ValueError: staged: 8 calls, last: 98 words / 4 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: text 11 nums
-  staged kilo:kilo-auto/free: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged kilo:kilo-auto/free: accepted after 7 calls
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 9 nums
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
-  SPRM-LRNENA2B-00 gapgpt:gemma-3-27b-it: 56s ValueError: staged: 8 calls, last: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  SMC-MRNNEEA3B-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-  stage6 news: kept stage-5 title after 3 calls (15 کلمه؛ ۸ تا ۱۳ | فعل «برد» امروز تکرار شده)
-OK PAGL-DEGB-00 <- kilo:kilo-auto/free (282s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK ESC-MRNNNEA3B-00 <- gapgpt:gemma-3-27b-it (69s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged kilo:kilo-auto/free: check cut 2 sentence(s)
-  kilo:kilo-auto/free: quota used up - skipped for an hour
-  SMC-MRNNEEA3B-00 kilo:kilo-auto/free: 62s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
-  kilo:cohere/north-mini-code:free: quota used up - skipped for an hour
-  SMC-MRNNEEA3B-00 kilo:cohere/north-mini-code:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
-  SJS-HREEEEA3B-00 gapgpt:gemma-3-27b-it: 82s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  SPRM-LRNENA2B-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  stage6 news: title in 3 calls
-OK SMC-MRNNEEA3B-00 <- gapgpt:gemma-3-27b-it (112s)
-style-soft: lead>35w/1num, text 19 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: accepted after 4 calls
-  ESC-MRNNENA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 442s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words / 4 paragraphs
-  ESC-MRNNENA3B-00 gapgpt:gemma-3-27b-it: 48s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۲۲، ۲۵)
-OK ZBS-HREENNA3B-00 <- openrouter:xingchen-agi/xing4.0-29b-a4b:free (1703s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 103 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00, ARCO-CASOALB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, ESC-MRNEEEA3B-00, FPCO-ACTACB-00, PPCO-OASTYB-00, SHPC-MEGB-00, PTC-PETSBTG645J-00, KHP-MCJ-00, SHS-MRNEEEA3B-00, AJSC-SSG09XROA-00, SJS-HREEEEA3B-00, MPC-MEGB-00, KHS-HS00000-00, MPC-HDCRP100NPP-00, PAGL-MEGB-00
-39 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 115 words / 3 paragraphs
-  KPC-OAPMDIB-00 zai:glm-4.7-flash: 82s ValueError: staged: 8 calls, last: 115 words / 3 paragraphs
-style-soft: lead>35w/1num, text 17 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۷
-  KPC-OAPMDIB-00 zai:glm-4.5-flash: 64s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۷
-  SPSG-HREENNA3B-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-  JPPC-PPRP120LPP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 21 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 20 عدد دارد؛ حداکثر ۶ عدد بماند | 4 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 117 words after fixes
+  AGS-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: staged: 8 calls, last: 117 words after fixes
 style-soft: lead>35w/1num, text 15 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
-OK KPC-OAPMDIB-00 <- gapgpt:gemma-3-27b-it (89s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 102 words after fixes
-  SPSG-HREENNA3B-00 gapgpt:gemma-3-27b-it: 50s ValueError: staged: 8 calls, last: 102 words after fixes
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x برابر عرضه بود)
+  BIMC-HREEEEA3B-00 zai:glm-4.7-flash: 117s ValueError: staged: 8 calls, last: در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x برابر عرضه بود)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
 style-soft: lead>35w/1num, text 14 nums
   staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 13 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
 style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words after fixes
-  JPPC-PPRP120LPP-00 gapgpt:gemma-3-27b-it: 45s ValueError: staged: 8 calls, last: 118 words after fixes
-  ESC-HRENNNA3B-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  AZF-MREEEEA3BN-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num
-  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 7 calls: 119 words / 4 paragraphs
+  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+style-soft: lead>35w/1num, text 9 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 96 words / 4 paragraphs
+  BIMC-HREEEEA3B-00 zai:glm-4.5-flash: 33s ValueError: staged: 8 calls, last: 96 words / 4 paragraphs
+  stage6 news: kept stage-5 title after 3 calls (16 کلمه؛ ۸ تا ۱۳ | فعل «ماند» امروز تکرار شده | تیتر «بی‌خریدار» نوشته ولی کالا )
+OK FAKH-HS00000-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (39s)
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK ZBS-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (86s)
+  staged groq:openai/gpt-oss-120b: draft dropped after 8 calls: 110 words / 3 paragraphs
+  SHPC-MEGKG-00 groq:openai/gpt-oss-120b: 164s ValueError: staged: 8 calls, last: 110 words / 3 paragraphs
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 2 sentence(s)
+  DAP-PPHP520HJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 10 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK SHPC-DEGB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (30s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: text 13 nums
+style-soft: text 16 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
+style-soft: lead>35w/1num, text 17 nums
+  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+  THOR-GRSUSUB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 33s ValueError: repeated subtitle
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 10 nums
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 16 nums
+  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+style-soft: lead>35w/1num, text 10 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 9 calls: 109 words after fixes
+  ILPE-HD7000FPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 39s ValueError: staged: 9 calls, last: 109 words after fixes
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 115 words / 3 paragraphs
+  AGS-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 117s ValueError: staged: 8 calls, last: 115 words / 3 paragraphs
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۹۰
+  IPC-HDHB0035PP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۹۰
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged groq:openai/gpt-oss-20b: call 4 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK BSPC-OAXYLENEB-00 <- kilo:dots-studio/dots-3-note-preview:free (350s)
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۶۴، ۱۷۱۶، ۱۸۰
+  BIMC-HREEEEA3B-00 gapgpt:gemma-3-27b-it: 88s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۶۴، ۱۷۱۶، ۱۸۰
+  staged groq:openai/gpt-oss-20b: call 5 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+  staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  MPC-DEGB-00 zai:glm-4.7-flash: 313s TimeoutError: The read operation timed out
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK DAP-PPHP520HJ-00 <- gapgpt:gemma-3-27b-it (100s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  SHPC-MEGKG-00 groq:openai/gpt-oss-20b: 327s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 195570, Requested 757
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: لید عیناً در متن تکرار شده
+  MPC-DEGB-00 zai:glm-4.5-flash: 38s ValueError: staged: 8 calls, last: markers: لید عیناً در متن تکرار شده
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  THOR-GRSUSUB-00 gapgpt:gemma-3-27b-it: 71s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: text 15 nums
+style-soft: text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در lead
+  ILPE-HD7000FPP-00 gapgpt:gemma-3-27b-it: 60s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در lead
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  MRV-MEGB-00 ovh:Qwen3.5-397B-A17B: 481s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 52 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 112 words / 3 paragraphs
+  FSIC-LRENNA2B-00 zai:glm-4.7-flash: 210s ValueError: staged: 8 calls, last: 112 words / 3 paragraphs
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words / 3 paragraphs
+  IPC-HDHB0035PP-00 gapgpt:gemma-3-27b-it: 97s ValueError: staged: 8 calls, last: 119 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num
   staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
   staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱.۵ | فعل «شد» امروز تکرار شده)
-OK ESC-HRENNNA3B-00 <- gapgpt:gemma-3-27b-it (78s)
-  ESC-MRNNENA3B-00 zai:glm-4.7-flash: 300s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-style-soft: در حالی که, lead>35w/1num, text 10 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
-  stage6 news: title in 1 calls
-OK AZF-MREEEEA3BN-00 <- gapgpt:gemma-3-27b-it (42s)
-style-soft: در حالی که, در حالی که, lead>35w/1num
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۳
-  ESC-MRNNENA3B-00 zai:glm-4.5-flash: 82s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۳
-  STPA-HREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  ESC-MRNENNA3B-00 kilo:dots-studio/dots-3-note-preview:free: 559s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
-  ESC-MRNNENA3B-00 gapgpt:gemma-3-27b-it: 50s ValueError: staged: 9 calls, last: مقدار عرضه غلط است؛ عرضه ۱ هزار بود
-  staged ovh:Qwen3.6-27B: check cut 3 sentence(s)
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: در حالی که
+  stage6 news: title in 3 calls
+OK SHPC-MEGKG-00 <- gapgpt:gemma-3-27b-it (76s)
+  staged zai:glm-4.5-flash: draft dropped after 9 calls: 111 words / 3 paragraphs
+  FSIC-LRENNA2B-00 zai:glm-4.5-flash: 91s ValueError: staged: 9 calls, last: 111 words / 3 paragraphs
+style-soft: در حالی که
+  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 8 calls
+  HSR-LUSUACB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 75 words / 2 paragraphs
+  SNMY-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 869s ValueError: staged: 8 calls, last: 75 words / 2 paragraphs
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
+OK SPSG-MREEEEA3B-00 <- kilo:dots-studio/dots-3-note-preview:free (524s)
   staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  stage6 news: kept stage-5 title after 3 calls (فعل «یافت» امروز تکرار شده)
-OK AZF-MREEEEA3B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (650s)
-  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-style-soft: lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۰۰۰
-  STPA-HREEEEA3B-00 gapgpt:gemma-3-27b-it: 120s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۰۰۰
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: در حالی که, lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 117 words after fixes
-  ESC-MRNENNA3B-00 gapgpt:gemma-3-27b-it: 52s ValueError: staged: 8 calls, last: 117 words after fixes
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num, text 15 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
+OK MPC-DEGB-00 <- gapgpt:gemma-3-27b-it (229s)
+  ASPC-HDHFI5110WP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: draft dropped after 4 calls: 110 words / 3 paragraphs
 style-soft: lead>35w/1num, text 13 nums
-  SHPC-DEGKG-00 ovh:Qwen3.6-27B: 458s TimeoutError: The read operation timed out
-  ZBS-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۱.۵، ۵۵۰، ۷۳، ۹۱۰، ۹۴۰
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: bad response: '{"id":"gen-1793206821-h64aZG5WDu1Tf3eZLsAu","error":{"message":"Upstream error from Nvidia: Service tempo
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۹۵۰ تن» با فعل فروش آمده ولی فروش ۴۰۰ تن است
+  MRV-MEGB-00 gapgpt:gemma-3-27b-it: 57s ValueError: staged: 8 calls, last: «۹۵۰ تن» با فعل فروش آمده ولی فروش ۴۰۰ تن است
   staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
   staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK SHPC-DEGKG-00 <- gapgpt:gemma-3-27b-it (90s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: در حالی که, lead>35w/1num, text 12 nums
-  HSSC-LRNNEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 456s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 117 words / 3 paragraphs
-  ZBS-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 98s ValueError: staged: 8 calls, last: 117 words / 3 paragraphs
-  FAAS-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 202s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «رفت» امروز تکرار شده)
-OK HSSC-LRNNEA3B-00 <- gapgpt:gemma-3-27b-it (57s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
 style-soft: lead>35w/1num, text 13 nums
   staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words after fixes
+  FSIC-LRENNA2B-00 gapgpt:gemma-3-27b-it: 43s ValueError: staged: 8 calls, last: 119 words after fixes
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+style-soft: text 10 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK FAAS-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (75s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 4 failed: bad response: '{"id":"gen-1793207229-F9qRKQaFVTEBY6y4oLm1","error":{"message":"Upstream error from Nvidia: Service tempo
-style-soft: text 9 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 8 calls
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  stage6 news: title in 2 calls
-OK SHPC-OAVAMB-00 <- kilo:dots-studio/dots-3-note-preview:free (494s)
-style-soft: lead>35w/1num, text 13 nums
-  BIMC-HREEEEA3B-00 zai:glm-4.7-flash: 1104s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 116 words / 4 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 105 words / 4 paragraphs
-  BIMC-HREEEEA3B-00 zai:glm-4.5-flash: 104s ValueError: staged: 8 calls, last: 105 words / 4 paragraphs
+OK HSR-LUSUACB-00 <- gapgpt:gemma-3-27b-it (45s)
   staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  IKRC-GRSUSUB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۲۷۲
+  SNMY-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 35s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۲۷۲
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  ASPC-HDHFI5110WP-00 gapgpt:gemma-3-27b-it: 45s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+  FATC-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 450s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 111 words / 2 paragraphs
+  IKRC-GRSUSUB-00 gapgpt:gemma-3-27b-it: 31s ValueError: staged: 8 calls, last: 111 words / 2 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: title in 1 calls
+OK FATC-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (52s)
+  ILPE-HDPE7700MPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 103 words / 4 paragraphs
+  ILPE-HDPE7700MPP-00 gapgpt:gemma-3-27b-it: 73s ValueError: staged: 8 calls, last: 103 words / 4 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
 timeout: give-up file saved
+kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 103 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00, ARCO-CASOALB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, ESC-MRNEEEA3B-00, FPCO-ACTACB-00, PPCO-OASTYB-00, SHPC-MEGB-00, PTC-PETSBTG645J-00, KHP-MCJ-00, SHS-MRNEEEA3B-00, AJSC-SSG09XROA-00, SJS-HREEEEA3B-00, MPC-MEGB-00, JPPC-PPRP120LPP-00, ESC-MRNENNA3B-00, ESC-MRNNENA3B-00, STPA-HREEEEA3B-00, BIMC-HREEEEA3B-00, KHS-HS00000-00, RSP-HS00000-00, TIDA-MREEEEA3B-00, MPC-HDCRP100NPP-00, SPRM-LRNENA2B-00, SPSG-HREENNA3B-00, PAGL-MEGB-00
+11 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
+  AGS-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c9fadcec-30f8-4e87-
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 116 words / 4 paragraphs
+  AGS-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 56s ValueError: staged: 8 calls, last: 116 words / 4 paragraphs
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۷۱
+  SNMY-MREEEEA3B-00 zai:glm-4.7-flash: 142s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۷۱
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  ILPE-HD7000FPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: draft dropped after 9 calls: 119 words / 3 paragraphs
+  SNMY-MREEEEA3B-00 zai:glm-4.5-flash: 53s ValueError: staged: 9 calls, last: 119 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 10 nums
+style-soft: در حالی که, lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۲ هزار و ۵۵۲ تن» با فعل فروش آمده ولی فروش ۱۷۶ تن است
+  ILPE-HD7000FPP-00 gapgpt:gemma-3-27b-it: 56s ValueError: staged: 8 calls, last: «۲ هزار و ۵۵۲ تن» با فعل فروش آمده ولی فروش ۱۷۶ تن است
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 115 words / 3 paragraphs
+  FSIC-LRENNA2B-00 zai:glm-4.7-flash: 43s ValueError: staged: 8 calls, last: 115 words / 3 paragraphs
+  MRV-MEGB-00 ovh:Qwen3.5-397B-A17B: 272s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: در حالی که, lead>35w/1num
+  staged zai:glm-4.5-flash: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  stage6 news: title in 2 calls
+OK FSIC-LRENNA2B-00 <- zai:glm-4.5-flash (33s)
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان داد» در text
+  SNMY-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 47s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 119 words / 3 paragraphs
+  IKRC-GRSUSUB-00 zai:glm-4.7-flash: 79s ValueError: staged: 8 calls, last: 119 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۵۵۰
+  MRV-MEGB-00 gapgpt:gemma-3-27b-it: 96s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۵۵۰
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۷۰
+  IKRC-GRSUSUB-00 zai:glm-4.5-flash: 32s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۷۰
+style-soft: lead>35w/1num, text 15 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱.۲۷
+  THOR-GRSUSUB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 429s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱.۲۷
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+style-soft: در حالی که, text 12 nums
+style-soft: text 10 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  IKRC-GRSUSUB-00 gapgpt:gemma-3-27b-it: 82s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+style-soft: text 13 nums
+  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۴، ۹۰
+  IPC-HDHB0035PP-00 kilo:dots-studio/dots-3-note-preview:free: 306s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۴، ۹۰
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words / 4 paragraphs
+  THOR-GRSUSUB-00 gapgpt:gemma-3-27b-it: 123s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 19 nums
+  staged zai:glm-4.7-flash: soft: نام کالا در تیتر باید «پلی اتیلن» باشد | متن 17 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 8 calls
+  stage6 news: title in 3 calls
+OK ILPE-HDPE7700MPP-00 <- zai:glm-4.7-flash (315s)
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۹۰)
+OK IPC-HDHB0035PP-00 <- gapgpt:gemma-3-27b-it (170s)
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.7-flash: soft: نام کالا در تیتر باید «پلی اتیلن» باشد | متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 119 words after fixes
+  ILPE-HD7000FPP-00 zai:glm-4.7-flash: 161s ValueError: staged: 8 calls, last: 119 words after fixes
+  AGS-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 402s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۹۳
+  ILPE-HD7000FPP-00 zai:glm-4.5-flash: 52s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۹۳
+  ASPC-HDHFI5110WP-00 ovh:Qwen3.5-397B-A17B: 728s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «دیروز» در text
+  ASPC-HDHFI5110WP-00 gapgpt:gemma-3-27b-it: 76s ValueError: staged: 8 calls, last: markers: «دیروز» در text
+style-soft: lead>35w/1num, text 11 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 8 calls
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 104 words / 3 paragraphs
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 99 words / 2 paragraphs
+  MRV-MEGB-00 zai:glm-4.7-flash: 223s ValueError: staged: 8 calls, last: 99 words / 2 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: 109 words / 4 paragraphs
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 76 words / 2 paragraphs
+  MRV-MEGB-00 zai:glm-4.5-flash: 62s ValueError: staged: 8 calls, last: 76 words / 2 paragraphs
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 113 words / 3 paragraphs
+  THOR-GRSUSUB-00 zai:glm-4.7-flash: 35s ValueError: staged: 8 calls, last: 113 words / 3 paragraphs
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 109 words / 4 paragraphs
+  THOR-GRSUSUB-00 zai:glm-4.5-flash: 51s ValueError: staged: 8 calls, last: 109 words / 4 paragraphs
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (فعل «رسید» امروز تکرار شده)
+OK SHPC-DEAB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (997s)
+  SNMY-MREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 547s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+timeout: give-up file saved
+kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 103 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00, ARCO-CASOALB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, ESC-MRNEEEA3B-00, FPCO-ACTACB-00, PPCO-OASTYB-00, SHPC-MEGB-00, PTC-PETSBTG645J-00, KHP-MCJ-00, SHS-MRNEEEA3B-00, AJSC-SSG09XROA-00, SJS-HREEEEA3B-00, MPC-MEGB-00, JPPC-PPRP120LPP-00, ESC-MRNENNA3B-00, ESC-MRNNENA3B-00, STPA-HREEEEA3B-00, BIMC-HREEEEA3B-00, KHS-HS00000-00, RSP-HS00000-00, TIDA-MREEEEA3B-00, SNMY-MREEEEA3B-00, AGS-MREEEEA3B-00, MRV-MEGB-00, THOR-GRSUSUB-00, ILPE-HD7000FPP-00, MPC-HDCRP100NPP-00, SPRM-LRNENA2B-00, SPSG-HREENNA3B-00, ASPC-HDHFI5110WP-00, IKRC-GRSUSUB-00, PAGL-MEGB-00
+0 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+written 0/0; total in file 56
