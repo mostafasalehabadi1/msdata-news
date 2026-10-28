@@ -34,7 +34,7 @@ jobs:
           DAY_FA: ${{ inputs.day_fa }}
           SYMS: ${{ inputs.symbols }}
         run: |
-          [ -z "$DAY_FA" ] && DAY_FA=$(sed -n 1p backfill.txt | tr -d ' ') && SYMS=$(sed -n 2p backfill.txt | tr -d ' ')
+          [ -z "$DAY_FA" ] && DAY_FA=$(sed -n 1p backfill.txt | tr -dc "0-9/") && SYMS=$(sed -n 2p backfill.txt | tr -dc "A-Z0-9,-")
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           python tools/fetch.py --day "$DAY_FA" | tee fetch-log.txt
