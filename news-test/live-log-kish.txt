@@ -19,3 +19,32 @@ style-soft: lead>35w/1num
   staged gapgpt:gemma-3-27b-it: accepted after 5 calls
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
 OK GHHA-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (70s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «در مجموع» در text | «این در حالی است» در text
+  PACT-BI6070BEX-00 gapgpt:gemma-3-27b-it: 94s ValueError: staged: 8 calls, last: markers: «در مجموع» در text | «این در حالی است» در text
+  APKC-BI6070BEX-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+  SGPE-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  LCC-PCT1G42.5-BEX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  APKC-BI6070BEX-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 20s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"0a16bd1f5d648218189a764a05bf4969"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  APKC-BI6070BEX-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: accepted after 5 calls
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 10 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۶۰)
+OK DNJC-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (82s)
