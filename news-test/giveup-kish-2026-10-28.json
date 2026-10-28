@@ -1460,7 +1460,7 @@
 },
 "ADYC-BI6070BEX-00": {
 "fp": "{\"base_price\": 415.0, \"contract_type\": \"نقدی ($)\", \"currency\": \"دلار\", \"delivery_place\": \"FCA-انبار کارخانه\", \"demand_volume\": 500.0, \"goods_name\": \"قیر 6070 - صادراتی\", \"is_usd\": true, \"max_price\": 415.0, \"min_price\": 415.0, \"offer_volume\": 500.0, \"offers\": 1, \"price_unit\": \"دلار / 1000 کیلوگرم\", \"producer\": \"آذر دوام یول\", \"series_key\": \"ADYC-BI6070BEX-00\", \"symbol\": \"ADYC-BI6070BEX-00\", \"total_value\": 207500.0, \"total_value_usd\": 207500.0, \"trade_date\": \"1405/08/06\", \"trade_volume\": 500.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 415.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "zai:glm-4.7-flash",
@@ -1479,6 +1479,24 @@
 "at": "11:05",
 "error": "ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست",
 "run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "11:13",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "11:16",
+"error": "ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "11:30",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: قیر 6070؛ تولیدکننده: شرکت آذر دوام یول.\n2. روز معامله: چهارشنبه ۶ آبان.\n3. شرط تحویل: تحویل درِ کارخانه.\n4. کشور مقصد مشخص نیست؛ در تیتر کشوری نیاور.\n5. قیمت‌های این معامله دلاری است.\n6. شرکت آذر دوام یول ۵۰۰ تن قیر 6070 عرضه کرد و خریداران ۵۰۰ تن خواستند؛ ۵۰۰ تن فروش رفت.\n7. قیمت میانگین معامله ۴۱۵ دلار در هر تن بود و قیمت پایه ۴۱۵ دلار در هر تن (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن).\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۲۰۷ هزار و ۵۰۰ دلار بود.\n10. نسبت به آخرین معامله در ۲۸ مهر (همین نماد): قیمت آن روز ۴۱۰ دلار در هر تن بود؛ قیمت این بار ۱٫۲ درصد بالاتر است؛ «ثابت» ننویس.\n11. این کالا از ۲۳ اسفند ۱۴۰۴ تا امروز ۹ بار معامله شده است.",
@@ -1553,7 +1571,7 @@
 },
 "SACE-WHITECLINKEREX-00": {
 "fp": "{\"base_price\": 41.0, \"contract_type\": \"نقدی ($)\", \"currency\": \"دلار\", \"delivery_place\": \"FCA-حاج عمران\", \"demand_volume\": 5000.0, \"goods_name\": \"کلینکر سیمان سفید - صادراتی\", \"is_usd\": true, \"max_price\": 41.0, \"min_price\": 41.0, \"offer_volume\": 5000.0, \"offers\": 1, \"price_unit\": \"دلار / 1000 کیلوگرم\", \"producer\": \"سیمان ساوه\", \"series_key\": \"SACE-WHITECLINKEREX-00\", \"symbol\": \"SACE-WHITECLINKEREX-00\", \"total_value\": 205000.0, \"total_value_usd\": 205000.0, \"trade_date\": \"1405/08/06\", \"trade_volume\": 5000.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 41.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "ovh:Qwen3.5-397B-A17B",
@@ -1566,6 +1584,24 @@
 "at": "11:00",
 "error": "ValueError: staged: 8 calls, last: markers: «امروز» در subtitle",
 "run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "11:16",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "11:18",
+"error": "ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۶۰۷۰",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "11:26",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: کلینکر سیمان سفید؛ تولیدکننده: شرکت سیمان ساوه.\n2. روز معامله: چهارشنبه ۶ آبان.\n3. شرط تحویل: تحویل در مرز حاج عمران، مرز عراق. مرز فقط مقصد اول است؛ از مصرف کالا در آن کشور حرفی نزن.\n4. مرز و کشور برای تیتر: مرز حاج عمران، مرز عراق (در تیتر «برای مرز عراق» یا «تحویل در مرز …» بیاور، نه «صادرات به عراق»).\n5. قیمت‌های این معامله دلاری است.\n6. شرکت سیمان ساوه ۵ هزار تن کلینکر سیمان سفید عرضه کرد و خریداران ۵ هزار تن خواستند؛ ۵ هزار تن فروش رفت.\n7. قیمت میانگین معامله ۴۱ دلار در هر تن بود و قیمت پایه ۴۱ دلار در هر تن (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن).\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۲۰۵ هزار دلار بود.",
@@ -1607,8 +1643,27 @@
 },
 "NAC-CLINKERT2EX-00": {
 "fp": "{\"base_price\": 22.0, \"contract_type\": \"نقدی ($)\", \"currency\": \"دلار\", \"delivery_place\": \"FCA-شلمچه\", \"demand_volume\": 8000.0, \"goods_name\": \"کلینکر تیپ 2 - صادراتی\", \"is_usd\": true, \"max_price\": 22.0, \"min_price\": 22.0, \"offer_volume\": 8000.0, \"offers\": 1, \"price_unit\": \"دلار / 1000 کیلوگرم\", \"producer\": \"صنایع سیمان نهاوند\", \"series_key\": \"NAC-CLINKERT2EX-00\", \"symbol\": \"NAC-CLINKERT2EX-00\", \"total_value\": 176000.0, \"total_value_usd\": 176000.0, \"trade_date\": \"1405/08/06\", \"trade_volume\": 8000.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 22.0}",
-"runs": 1,
-"reasons": [],
+"runs": 2,
+"reasons": [
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "11:19",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "11:21",
+"error": "ValueError: staged: 8 calls, last: markers: «این در حالی است» در text",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "11:29",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+}
+],
 "facts": "1. نام کالا: کلینکر تیپ 2؛ تولیدکننده: شرکت صنایع سیمان نهاوند.\n2. روز معامله: چهارشنبه ۶ آبان.\n3. شرط تحویل: تحویل در مرز شلمچه، مرز عراق. مرز فقط مقصد اول است؛ از مصرف کالا در آن کشور حرفی نزن.\n4. مرز و کشور برای تیتر: مرز شلمچه، مرز عراق (در تیتر «برای مرز عراق» یا «تحویل در مرز …» بیاور، نه «صادرات به عراق»).\n5. قیمت‌های این معامله دلاری است.\n6. شرکت صنایع سیمان نهاوند ۸ هزار تن کلینکر تیپ 2 عرضه کرد و خریداران ۸ هزار تن خواستند؛ ۸ هزار تن فروش رفت.\n7. قیمت میانگین معامله ۲۲ دلار در هر تن بود و قیمت پایه ۲۲ دلار در هر تن (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن).\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۱۷۶ هزار دلار بود.",
 "tables": {
 "T2": {
