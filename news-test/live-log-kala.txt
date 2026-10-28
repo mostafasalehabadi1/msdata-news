@@ -95,3 +95,15 @@ style-soft: lead>35w/1num, text 15 nums
   staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK BSPC-OAXYLENEB-00 <- kilo:dots-studio/dots-3-note-preview:free (350s)
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۶۴، ۱۷۱۶، ۱۸۰
+  BIMC-HREEEEA3B-00 gapgpt:gemma-3-27b-it: 88s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۶۴، ۱۷۱۶، ۱۸۰
+  staged groq:openai/gpt-oss-20b: call 5 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 5 calls
+  staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  MPC-DEGB-00 zai:glm-4.7-flash: 313s TimeoutError: The read operation timed out
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK DAP-PPHP520HJ-00 <- gapgpt:gemma-3-27b-it (100s)
