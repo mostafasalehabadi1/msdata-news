@@ -86,7 +86,11 @@ def write(path, obj):
 
 
 def main():
-    today, src = fetch()
+    # content agent 1405-08-06: «--day 1405/08/05» = a past day for a back-written batch; latest.json and today's folder stay untouched
+    day = sys.argv[sys.argv.index("--day") + 1] if "--day" in sys.argv else ""
+    today, src = fetch("?date=" + urllib.parse.quote(day) if day else "")
+    if day and today.get("trade_date") != day:
+        raise RuntimeError(f"asked {day}, got {today.get('trade_date')}")
     date_fa = today["trade_date"]
     jy, jm, jd = (int(x) for x in date_fa.split("/"))
     date = jalali_to_gregorian(jy, jm, jd)
@@ -108,6 +112,9 @@ def main():
         full = h.get("history", [])
         ytd = sum(x.get("total_value") or 0 for x in full if (x.get("trade_date") or "") >= f"{jy}/01/01")
         write(os.path.join(day_dir, "symbols", sym + ".json"), {"symbol": sym, "ytd_value": ytd, "history": full[-HISTORY_ROWS:]})
+    if day:
+        print(f"ok {date_fa} ({date}) symbols={len(rows)} source={src} (past day)")
+        return
     write(os.path.join(ROOT, "latest.json"), {"date_fa": date_fa, "date": date, "symbols": len(rows)})
     # keep only the latest day in the snapshot
     for d in os.listdir(ROOT):

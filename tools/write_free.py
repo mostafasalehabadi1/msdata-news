@@ -371,8 +371,8 @@ class QuotaError(ValueError):
     pass
 
 
-QUOTA_RE = re.compile(r"quota|exceeded|per day|daily limit|daily free allocation|RESOURCE_EXHAUSTED", re.I)
-DAILY_RE = re.compile(r"daily free allocation|per day|daily limit|free-models-per-day", re.I)  # content agent 1405-08-03: cf 429 «daily free allocation» -> out until tomorrow
+QUOTA_RE = re.compile(r"quota|exceeded|per day|daily limit|daily free allocation|RESOURCE_EXHAUSTED|insufficient|balance|payment required", re.I)
+DAILY_RE = re.compile(r"daily free allocation|per day|daily limit|free-models-per-day|insufficient|balance|payment required", re.I)  # content agent 1405-08-06: 402 «insufficient balance» (54 tries on 5 Aban) -> out for the day  # content agent 1405-08-03: cf 429 «daily free allocation» -> out until tomorrow
 DEAD_RE = re.compile(r"HTTP 40[0134].*(Unknown Model|model_not_found|sign in to use|Trial key|provider or policy you attempted)", re.I | re.S)
 EXHAUSTED_FILE = os.path.join(tempfile.gettempdir(), f"exhausted-{time.strftime('%Y-%m-%d', time.gmtime())}.txt")
 
@@ -1275,6 +1275,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--out", default="news")
+    ap.add_argument("--date", default="")  # content agent 1405-08-06: a past day (data/<date>/ from fetch.py --day), for a back-written batch
+    ap.add_argument("--only", default="")  # comma-separated symbols; their giveup is ignored for this run
     ap.add_argument("--market", default="kala", choices=("kala", "kish", "energy"))  # kish = export market (owner 1405-07-15), energy = Iran Energy Exchange (owner 1405-07-16)
     a = ap.parse_args()
     energy = a.market == "energy"
@@ -1328,7 +1330,7 @@ def main():
         json.dump(stab, open(stab_path, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
         print(f"{a.market}: {len(rows)} settled rows, {unsettled} still changing (wait {STABLE_MIN} min unchanged)")
     else:
-        latest = json.load(open(os.path.join(ROOT, "data", "latest.json"), encoding="utf-8"))
+        latest = json.load(open(os.path.join(ROOT, "data", a.date or "", "today.json" if a.date else "latest.json"), encoding="utf-8"))
         date, date_fa = latest["date"], latest["date_fa"]
         rows = json.load(open(os.path.join(ROOT, "data", date, "today.json"), encoding="utf-8"))["rows"]
         # owner 1405-07-16: no news for the side hall («تالار فرعی»): those symbols have no price and no page on the site
@@ -1398,13 +1400,17 @@ def main():
         tier = {s: e["tier"] for s, e in table.items()}
         value = {s: e["value"] for s, e in table.items()}
         seen_t = {s: e.get("seen_t", 0) for s, e in table.items()}
-    todo.sort(key=lambda r: (tier.get(r["symbol"], 1), -value.get(r["symbol"], 0)))  # most important first
+    # content agent 1405-08-06: by the day's trade value, largest first, so the important goods are written when time runs short
+    todo.sort(key=lambda r: -float(r.get("trade_value") or r.get("total_value_usd") or r.get("total_value_rial") or value.get(r["symbol"], 0) or 0))
+    only = {x.strip() for x in a.only.split(",") if x.strip()}
+    if only:
+        todo[:] = [r for r in todo if r["symbol"] in only]
     # backend 1405-07-30: one symbol no model could write was tried again by every run all night (gemma: 20 calls a run, 10x the
     # owner's token bill); after GIVE_UP failed runs it waits until its row changes or the next day
     give_path = os.path.join(ROOT, "news-test", f"giveup-{a.market}-{date}.json")
     give = json.load(open(give_path, encoding="utf-8")) if os.path.exists(give_path) else {}
     fp_of = {r["symbol"]: row_fp(r) if not kish else json.dumps(r, sort_keys=True, ensure_ascii=False)[:4000] for r in todo}
-    skip = [r for r in todo if give.get(r["symbol"], {}).get("fp") == fp_of[r["symbol"]] and give[r["symbol"]]["runs"] >= GIVE_UP]
+    skip = [] if only else [r for r in todo if give.get(r["symbol"], {}).get("fp") == fp_of[r["symbol"]] and give[r["symbol"]]["runs"] >= GIVE_UP]
     if skip:
         note(f"given up for today (failed {GIVE_UP} runs, row unchanged): {', '.join(r['symbol'] for r in skip)}")
         todo[:] = [r for r in todo if r not in skip]

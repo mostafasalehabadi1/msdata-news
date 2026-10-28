@@ -1,0 +1,47 @@
+name: write-backfill
+# content agent 1405-08-06: news for chosen symbols of a past day (their giveup is ignored). Run by hand:
+# day_fa = 1405/08/05, symbols = comma-separated. The live writer (write_free.yml) is not touched.
+on:
+  workflow_dispatch:
+    inputs:
+      day_fa:
+        description: "past trading day, e.g. 1405/08/05"
+        required: true
+      symbols:
+        description: "comma-separated symbols"
+        required: true
+concurrency:
+  group: write-backfill
+  cancel-in-progress: false
+permissions:
+  contents: write
+  models: read
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: write the past day's news
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DAY_FA: ${{ inputs.day_fa }}
+          SYMS: ${{ inputs.symbols }}
+        run: |
+          git config user.name msdata-news-bot
+          git config user.email bot@msdata.ir
+          python tools/fetch.py --day "$DAY_FA" | tee fetch-log.txt
+          D=$(sed -n 's/^ok [^ ]* (\([0-9-]*\)).*/\1/p' fetch-log.txt)
+          [ -n "$D" ] || exit 1
+          end=$(( $(date +%s) + 220*60 ))
+          while [ "$(date +%s)" -lt "$end" ]; do
+            out=$(timeout 1800 python tools/write_free.py --date "$D" --only "$SYMS" --limit 40 --out queue | tee -a news-test/backfill-log-$D.txt | tail -1)
+            git add queue news-test data/scenarios.jsonl
+            git diff --cached --quiet || git commit -qm "backfill: $DAY_FA news"
+            git pull -q --rebase --autostash && git push -q || true
+            case "$out" in *"/0;"*) break ;; esac
+            case "$out" in "written 0/"*) sleep 600 ;; *) sleep 30 ;; esac
+          done
