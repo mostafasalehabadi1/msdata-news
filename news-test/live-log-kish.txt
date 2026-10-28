@@ -111,3 +111,17 @@ style-soft: lead>35w/1num, text 11 nums
 OK PACR-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (77s)
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
 OK PGPS-BI6070BEX-00 <- zai:glm-4.7-flash (362s)
+  staged kilo:kilo-auto/free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  PFTB-BI6070BEX-00 kilo:kilo-auto/free: 415s TimeoutError: The read operation timed out
+  staged kilo:cohere/north-mini-code:free: check cut 3 sentence(s)
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: لید بی‌عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 5 calls
+  staged ovh:Qwen3.6-27B: draft dropped after 7 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  ZCCO-PPC-BEX-00 zai:glm-4.7-flash: 384s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  stage6 news: title in 1 calls
+OK BEHD-DSMLABSAEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (504s)
