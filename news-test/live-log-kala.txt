@@ -1,21 +1,3 @@
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMGODSD-00, HSTC-SSG09XROA-00, ARCO-CASOALB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, ESC-MRNEEEA3B-00, FPCO-ACTACB-00, PPCO-OASTYB-00, SHPC-MEGB-00, PTC-PETSBTG645J-00, KHP-MCJ-00, SHS-MRNEEEA3B-00, AJSC-SSG09XROA-00, SJS-HREEEEA3B-00, MPC-MEGB-00, JPPC-PPRP120LPP-00, ESC-MRNENNA3B-00, ESC-MRNNENA3B-00, STPA-HREEEEA3B-00, KHS-HS00000-00, RSP-HS00000-00, MPC-HDCRP100NPP-00, SPRM-LRNENA2B-00, PAGL-MEGB-00
-25 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
-  SPSG-HREENNA3B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
-  SPSG-HREENNA3B-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
-  TIDA-MREEEEA3B-00 llm7:deepseek-v4-flash:0731: 3s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
-  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
-  SPSG-HREENNA3B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  openrouter:recursive/flint-v1.0:free: quota used up - skipped until tomorrow
-  SPSG-HREENNA3B-00 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 102 words / 3 paragraphs
-  ZBS-MREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
 style-soft: در حالی که, lead>35w/1num, text 12 nums
   staged groq:openai/gpt-oss-120b: check cut 1 sentence(s)
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
@@ -192,3 +174,27 @@ style-soft: text 10 nums
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK HSR-LUSUACB-00 <- gapgpt:gemma-3-27b-it (45s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  IKRC-GRSUSUB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 13 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۲۷۲
+  SNMY-MREEEEA3B-00 gapgpt:gemma-3-27b-it: 35s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۲۷۲
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  ASPC-HDHFI5110WP-00 gapgpt:gemma-3-27b-it: 45s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+  FATC-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 450s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 111 words / 2 paragraphs
+  IKRC-GRSUSUB-00 gapgpt:gemma-3-27b-it: 31s ValueError: staged: 8 calls, last: 111 words / 2 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: بیش از یک ویرگول در تیتر | متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: title in 1 calls
+OK FATC-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (52s)
