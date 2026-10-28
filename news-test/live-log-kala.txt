@@ -93,3 +93,19 @@ style-soft: lead>35w/1num, text 10 nums
   staged gapgpt:gemma-3-27b-it: accepted after 9 calls
   stage6 news: title in 1 calls
 OK ESME-HS00000-00 <- gapgpt:gemma-3-27b-it (83s)
+  ZBS-HREENNA3B-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  ZBS-HREENNA3B-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 19s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"66acf0485206d401ccc66b20d7db0166"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  ZBS-HREENNA3B-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 0s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
+OK KHS-HS00000-00 <- gapgpt:gemma-3-27b-it (70s)
