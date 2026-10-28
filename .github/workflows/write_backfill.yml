@@ -10,6 +10,9 @@ on:
       symbols:
         description: "comma-separated symbols"
         required: true
+  push:  # or edit backfill.txt from the manager VPS: line 1 = day_fa, line 2 = symbols
+    branches: [main]
+    paths: [backfill.txt]
 concurrency:
   group: write-backfill
   cancel-in-progress: false
@@ -31,6 +34,7 @@ jobs:
           DAY_FA: ${{ inputs.day_fa }}
           SYMS: ${{ inputs.symbols }}
         run: |
+          [ -z "$DAY_FA" ] && DAY_FA=$(sed -n 1p backfill.txt | tr -d ' ') && SYMS=$(sed -n 2p backfill.txt | tr -d ' ')
           git config user.name msdata-news-bot
           git config user.email bot@msdata.ir
           python tools/fetch.py --day "$DAY_FA" | tee fetch-log.txt
