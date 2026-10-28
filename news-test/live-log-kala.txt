@@ -52,3 +52,17 @@ style-soft: lead>35w/1num, text 16 nums
   ARCO-CASOALB-00 gapgpt:gemma-3-27b-it: 110s ValueError: staged: 8 calls, last: markers: «امروز» در lead
   stage6 news: title in 3 calls
 OK OSC-HS00000-00 <- zai:glm-4.7-flash (760s)
+  KHS-HS00000-00 ovh:Qwen3.5-397B-A17B: 332s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  KSO-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
+  KHS-HS00000-00 gapgpt:gemma-3-27b-it: 47s ValueError: staged: 8 calls, last: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 19 nums
+  staged gapgpt:gemma-3-27b-it: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | متن 18 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK KSO-MREEEEA3B-00 <- gapgpt:gemma-3-27b-it (49s)
