@@ -127,8 +127,7 @@ def write(name, subject, long, key, facts, first_seen):
     w.RULES_GEMMA = w.RULES.replace(w.style_for("ه", "ج"), w.compact_for("ه", "ج"))
     provs = w.providers()
     provs.sort(key=lambda p: RANK.index(p[0]) if p[0] in RANK else len(RANK))
-    if time.time() - first_seen < GEMMA_ONLY:
-        provs = [p for p in provs if p[0] == REPORT_MODEL]
+    provs = [p for p in provs if p[0] != REPORT_MODEL]  # owner 1405-08-07: gemma never writes reports (11 paid failed calls on cpi 1405/07)
     for model, call in provs:
         if model in w.exhausted():
             continue

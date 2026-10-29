@@ -250,8 +250,7 @@ def main():
     provs.sort(key=lambda p: RANK.index(p[0]) if p[0] in RANK else len(RANK))
     if "--model" in sys.argv:  # owner 2026-10-12: a report by one named model only (e.g. gapgpt:gemma-3-27b-it)
         provs = [p for p in provs if p[0] == sys.argv[sys.argv.index("--model") + 1]]
-    if date == today and (now.hour, now.minute) < FALLBACK_FROM and not force:
-        provs = [p for p in provs if p[0] == REPORT_MODEL]  # the report's own model; others only after 19:30
+    provs = [p for p in provs if p[0] != REPORT_MODEL]  # owner 1405-08-07: gemma never writes reports; the others write from the start
     # content agent 1405-08-05: 34 failed gemma drafts for one day's reports; at most 3 gemma tries per market per day
     lp, tag = os.path.join(ROOT, "news-test", "report-log.txt"), "energy" if energy else "kish" if kish else "physical"
     if os.path.exists(lp) and sum(1 for x in open(lp, encoding="utf-8") if x.startswith(f"{date} ") and f" {tag} {REPORT_MODEL} " in x) >= 3:
