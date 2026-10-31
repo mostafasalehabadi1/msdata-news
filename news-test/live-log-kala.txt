@@ -125,3 +125,16 @@ style-soft: lead>35w/1num, text 11 nums
 style-soft: lead>35w/1num, text 13 nums
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK HSSC-LRNNEA3B-00 <- gapgpt:gemma-3-27b-it (88s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num
+  staged kilo:cohere/north-mini-code:free: accepted after 6 calls
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 11 nums
+  staged requesty:mistral/leanstral-1-5: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۹۴ | کد کالا یا حروف لاتین وسط متن
+  FSAA-SW6549-00 requesty:mistral/leanstral-1-5: 521s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۹۴ | کد کالا یا حروف لاتین وسط متن
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  stage6 news: title in 3 calls
+OK FROJ-ARCK45B-00 <- kilo:cohere/north-mini-code:free (164s)
