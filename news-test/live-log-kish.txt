@@ -101,3 +101,24 @@ style-soft: lead>35w/1num
   SZCE-PCT2G42.5-BEX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
 OK QORP-BI4060BEX-00 <- requesty:mistral/leanstral-1-5 (372s)
+  DCC-CLINKERT2EX-00 groq:openai/gpt-oss-120b: 382s ValueError: staged: 8 calls, last: no JSON: 
+  LCC-PCT1G42.5-BEX-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  LCC-PCT1G42.5-BEX-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 10s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"f536221ea18b2b6aae4c7600c835522e"
+}
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  LCC-PCT1G42.5-BEX-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+style-soft: در حالی که, lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
+style-soft: lead>35w/1num, text 9 nums
+  staged llm7:mistral-Nemo-Instruct-2407: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged llm7:mistral-Nemo-Instruct-2407: accepted after 7 calls
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK SACE-PCT2G42.5-L50EX-00 <- llm7:mistral-Nemo-Instruct-2407 (154s)
