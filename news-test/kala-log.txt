@@ -1,5 +1,30 @@
-kala: closed halls: تالار صادراتی کیش
-kala: 0 settled rows, 7 wait for the next data build
+kala: 5 settled rows, 2 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-written 0/0; total in file 0
+2 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  HSSC-LRNNEA3B-00 llm7:deepseek-v4-flash:0731: 0s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  gapgpt:gemma-3-27b-it: quota used up - skipped for an hour
+  HSSC-LRNNEA3B-00 gapgpt:gemma-3-27b-it: 4s QuotaError: HTTP 404: {"error":{"message":"No available channel for this model on the current token (request id: 202610310901369206320278268d9d6ptWiMyLN)","type":"gap_api_error","param":"","code":"model_not_found"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 117 words / 3 paragraphs
+  KAS-HS00000-00 zai:glm-4.7-flash: 755s ValueError: staged: 8 calls, last: 117 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 93 words / 3 paragraphs
+  KAS-HS00000-00 zai:glm-4.5-flash: 106s ValueError: staged: 8 calls, last: 93 words / 3 paragraphs
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.7-flash: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 78 words / 3 paragraphs
+  HSSC-LRNNEA3B-00 zai:glm-4.7-flash: 277s ValueError: staged: 8 calls, last: 78 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 114 words / 4 paragraphs
+  HSSC-LRNNEA3B-00 zai:glm-4.5-flash: 36s ValueError: staged: 8 calls, last: 114 words / 4 paragraphs
+written 0/2; total in file 0
