@@ -1,206 +1,65 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-25 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
-  SMPC-BI6070BEX-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  gapgpt:gemma-3-27b-it: quota used up - skipped for an hour
-  SMPC-BI6070BEX-00 gapgpt:gemma-3-27b-it: 3s QuotaError: HTTP 404: {"error":{"message":"No available channel for this model on the current token (request id: 202610310935208970639728268d9d6GUE6ZNou)","type":"gap_api_error","param":"","code":"model_not_found"}}
-  ADG-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 6 column 11 (char 372)
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-style-soft: lead>35w/1num, text 14 nums
-style-soft: lead>35w/1num, text 9 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
-  stage6 news: title in 1 calls
-OK PBDC-INBPPBEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (27s)
-  SZCE-PCT2G42.5-BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid \escape: line 7 column 72 (char 558)
-  SGS-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 18s JSONDecodeError: Expecting value: line 5 column 11 (char 215)
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+12 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  SZCE-PCT2G42.5-BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 6 column 11 (char 379)
-style-soft: lead>35w/1num, text 13 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
-  staged kilo:kilo-auto/free: check cut 2 sentence(s)
-  stage6 news: title in 1 calls
-OK ADG-BI6070BEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (24s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-style-soft: lead>35w/1num, text 13 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 6 calls
-  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK SGS-BI6070BEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (35s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
   staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
   staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  NEYC-PCT1G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  LCC-PCT1G42.5-BEX-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
-  BPCO-BI6070GEX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
-  LCC-PCT1G42.5-BEX-00 ovh:Meta-Llama-3_3-70B-Instruct: 17s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"a91d8f5f580f36171922ba70d6591f15"
-}
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-style-soft: در حالی که, lead>35w/1num
-style-soft: lead>35w/1num, text 12 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK BPCO-BI6070GEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (30s)
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-style-soft: lead>35w/1num
-  staged kilo:kilo-auto/free: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
-  NACE-PCT2G42.5-L50EX-00 kilo:kilo-auto/free: 268s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
-  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
-  NACE-PCT2G42.5-L50EX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
-style-soft: lead>35w/1num
-  staged requesty:mistral/leanstral-1-5: accepted after 6 calls
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:minimax-m2.7: call 5 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged kilo:poolside/laguna-s-2.1:free: check cut 1 sentence(s)
-  staged kilo:poolside/laguna-s-2.1:free: check cut 2 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  SMPC-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
   staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged llm7:minimax-m2.7: call 6 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
   staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
-  NACE-PCT2G42.5-L50EX-00 kilo:poolside/laguna-s-2.1:free: 50s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"{\"error\":\"Rate limit exceeded\"}\n","provider_name":"Poolside","is_byok":true,"limit_source":"upstream_provider_account","remedy_hi
-  staged requesty:mistral/leanstral-1-5: call 8 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to act a
-  staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
   staged groq:openai/gpt-oss-120b: call 7 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-style-soft: lead>35w/1num
-  staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   staged groq:openai/gpt-oss-120b: call 8 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  SACE-PCT2G42.5-L50EX-00 llm7:minimax-m2.7: 366s ValueError: staged: 8 calls, last: no JSON: 
-  PESA-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SZCE-PCT2G42.5-BEX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK QORP-BI4060BEX-00 <- requesty:mistral/leanstral-1-5 (372s)
-  DCC-CLINKERT2EX-00 groq:openai/gpt-oss-120b: 382s ValueError: staged: 8 calls, last: no JSON: 
-  LCC-PCT1G42.5-BEX-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
-  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
-  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
-  LCC-PCT1G42.5-BEX-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 10s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"f536221ea18b2b6aae4c7600c835522e"
-}
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
-  LCC-PCT1G42.5-BEX-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-style-soft: در حالی که, lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
-style-soft: lead>35w/1num, text 9 nums
-  staged llm7:mistral-Nemo-Instruct-2407: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged llm7:mistral-Nemo-Instruct-2407: accepted after 7 calls
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
-OK SACE-PCT2G42.5-L50EX-00 <- llm7:mistral-Nemo-Instruct-2407 (154s)
-  staged requesty:mistral/leanstral-1-5: check cut 2 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  LCC-PCT1G42.5-BEX-00 groq:openai/gpt-oss-120b: 379s ValueError: staged: 8 calls, last: no JSON: 
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   staged groq:openai/gpt-oss-20b: call 4 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  stage6 news: title in 3 calls
-OK SAEN-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (554s)
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.7-flash: soft: تیتر 7 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | نام کالا در تیتر باید «سیمان پرتلند» باشد | متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر
-  staged zai:glm-4.7-flash: accepted after 5 calls
-  LCC-PCT1G42.5-BEX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-style-soft: lead>35w/1num, text 14 nums
-  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: markers: «MSdata» در text | عدد بیرون از حقیقت‌ها: 000، 22.6 | لید عیناً در متن تکرار شده
-  NACE-PCT2G42.5-L50EX-00 kilo:cohere/north-mini-code:free: 291s ValueError: staged: 8 calls, last: markers: «MSdata» در text | عدد بیرون از حقیقت‌ها: 000، 22.6 | لید عیناً در متن تکرار شده
-  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
-  NACE-PCT2G42.5-L50EX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (0f1431ea-d79a-4050-
-  stage6 news: title in 1 calls
-OK SCC-PCT1G42.5-JEX-00 <- zai:glm-4.7-flash (630s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  NEYC-PCT1G42.5-JEX-00 kilo:dots-studio/dots-3-note-preview:free: 446s TimeoutError: The read operation timed out
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-20b: call 7 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  LCC-PCT1G42.5-BEX-00 groq:openai/gpt-oss-20b: 423s ValueError: staged: 8 calls, last: no JSON: 
+  PESA-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged openrouter:google/gemma-4-31b-it:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-style-soft: text 9 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  ZATC-PCT2G42.5-L50EX-00 kilo:dots-studio/dots-3-note-preview:free: 335s TimeoutError: The read operation timed out
-style-soft: text 15 nums
-  staged requesty:mistral/leanstral-1-5: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged requesty:mistral/leanstral-1-5: accepted after 8 calls
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  DCC-CLINKERT2EX-00 groq:openai/gpt-oss-20b: 378s ValueError: staged: 8 calls, last: no JSON: 
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 3 calls: 50 words / 3 paragraphs
-style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  stage6 news: kept stage-5 title after 3 calls (حرف لاتین | عدد بیرون از متن: 3 | فعل «شد» امروز تکرار شده)
-OK SZCE-PCT2G42.5-BEX-00 <- requesty:mistral/leanstral-1-5 (458s)
-  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write
-style-soft: lead>35w/1num, text 14 nums
-  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
-  NACE-PCT2G42.5-L50EX-00 zai:glm-4.7-flash: 327s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  LCC-PCT1G42.5-BEX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   staged openrouter:google/gemma-4-31b-it:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 8 calls: 54 words / 3 paragraphs
-  AAK-PCT1G42.5-JEX-00 openrouter:google/gemma-4-31b-it:free: 1019s ValueError: staged: 8 calls, last: 54 words / 3 paragraphs
-style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
-  staged zai:glm-4.5-flash: soft: نام کالا در تیتر باید «سیمان پرتلند» باشد
-  staged zai:glm-4.5-flash: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x برابر عرضه بود))
-OK NACE-PCT2G42.5-L50EX-00 <- zai:glm-4.5-flash (75s)
-  LCC-PCT1G42.5-BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 452s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 8 calls: 48 words / 2 paragraphs
+  AAK-PCT1G42.5-JEX-00 openrouter:google/gemma-4-31b-it:free: 1139s ValueError: staged: 8 calls, last: 48 words / 2 paragraphs
+  KACC-CLINKERT2EX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
 style-soft: lead>35w/1num
-  staged requesty:mistral/leanstral-1-5: call 6 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to act a
   staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-style-soft: lead>35w/1num
-  staged requesty:mistral/leanstral-1-5: call 6 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to act a
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 5 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی» | لید عیناً در متن تکرار شده
+  ZATC-PCT2G42.5-L50EX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 474s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی» | لید عیناً در متن تکرار شده
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  PSP-BI6070BEX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 17 nums
+  staged zai:glm-4.7-flash: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 7 calls
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 8 calls
-style-soft: lead>35w/1num, text 13 nums
-  staged requesty:mistral/leanstral-1-5: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged requesty:mistral/leanstral-1-5: accepted after 6 calls
-style-soft: lead>35w/1num
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK DCC-CLINKERT2EX-00 <- requesty:mistral/leanstral-1-5 (555s)
-style-soft: lead>35w/1num, text 13 nums
-  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: تیتر 15 کلمه است؛ ۸ تا ۱۳ کلمه بنویس
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «ماند» امروز تکرار شده)
-OK SCC-PCT1G42.5-L50EX-00 <- zai:glm-4.7-flash (405s)
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
-  AAK-PCT1G42.5-JEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 464s ValueError: staged: 8 calls, last: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت
-  staged openrouter:google/gemma-4-26b-a4b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-26b-a4b-it:free is 
-  stage6 news: title in 3 calls
-OK SCC-CLINKERT1EX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (515s)
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.7-flash: call 10 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 15 nums
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۵۰۰
+  AAK-PCT1G42.5-JEX-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 427s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۵۰۰
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK BSBI-BI6070BEX-00 <- zai:glm-4.7-flash (744s)
