@@ -1156,3 +1156,71 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 given up for today (failed 2 runs, row unchanged): IKRC-OAVBB-00, ASPC-HDHFI5110WP-00, TJPC-PBR1220WWP-00, SHPC-PBR1220WWP-00, JPC-HDPE5000SPP-00, AHM-BIPG6422B-00, HSR-LUSUACB-00, KHP-UREAPL-00, KRPT-UREAGRB-00, THOR-GRSUSUB-00, KZPC-ERE1X75LCG-603, PGIL-LUSUACB-00, KZPC-EREE12WP-00, HSR-LUSUFEB-00, KHP-UREANONUFJ-00
 0 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
 written 0/0; total in file 12
+kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 65 settled rows, 0 wait for the next data build
+rewrite MPC-MEGB-00: data changed after it was written (25.0|25.0|25.0|1019832.0|25495800.0 -> 50.0|50.0|50.0|1019832.0|50991600.0)
+rewrite MSPI-AMMONIAB-00: data changed after it was written (300.0|20.0|20.0|486806.0|9736120.0 -> 400.0|120.0|120.0|486806.0|58416720.0)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): IKRC-OAVBB-00, ASPC-HDHFI5110WP-00, TJPC-PBR1220WWP-00, SHPC-PBR1220WWP-00, JPC-HDPE5000SPP-00, AHM-BIPG6422B-00, HSR-LUSUACB-00, KHP-UREAPL-00, KRPT-UREAGRB-00, THOR-GRSUSUB-00, KZPC-ERE1X75LCG-603, PGIL-LUSUACB-00, KZPC-EREE12WP-00, KAS-HS00000-00, HSR-LUSUFEB-00, KHP-UREANONUFJ-00
+33 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
+  cf:@cf/qwen/qwen2.5-coder-32b-instruct: quota used up - skipped until tomorrow
+  FROJ-AR70CR2B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (f2d1d923-2401-4c60-
+  AISC-BSO834X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (015feef6-6c25-409c-
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
+  ESC-MBNEN03B-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  ALCO-BSO834X-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
+  ESC-MBNEN03B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
+  ESC-MBNEN03B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:recursive/flint-v1.0:free: quota used up - skipped until tomorrow
+  ESC-MBNEN03B-00 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 19 nums
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 13 nums
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  AISC-BSO834X-00 gapgpt:gemma-3-27b-it: 80s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged kilo:kilo-auto/free: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 19 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 116 words / 3 paragraphs
+  staged ovh:gpt-oss-120b: check cut 1 sentence(s)
+  MPC-MEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  HSSC-LRNNEA3B-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 95 words / 2 paragraphs
+  KSC-SSG09XROA-00 zai:glm-4.7-flash: 182s ValueError: staged: 8 calls, last: 95 words / 2 paragraphs
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
+  ALSC-SW6518A-00 groq:openai/gpt-oss-120b: 221s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 193825, Requested 69
+  staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
+  KSC-SSG09XROA-00 zai:glm-4.5-flash: 68s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  stage6 news: title in 1 calls
+OK FROJ-AR70CR2B-00 <- gapgpt:gemma-3-27b-it (184s)
