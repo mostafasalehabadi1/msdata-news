@@ -37,3 +37,18 @@ style-soft: در حالی که, lead>35w/1num, text 13 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
 OK ESC-SBNE03E-00 <- gapgpt:gemma-3-27b-it (93s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 117 words after fixes
+  ESC-HBEEE03E-00 gapgpt:gemma-3-27b-it: 79s ValueError: staged: 8 calls, last: 117 words after fixes
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 107 words / 3 paragraphs
+  ALCO-ARCK45B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 627s ValueError: staged: 8 calls, last: 107 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: text 15 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK ALCO-ARCK45B-00 <- gapgpt:gemma-3-27b-it (147s)
