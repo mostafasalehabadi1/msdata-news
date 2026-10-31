@@ -1,3 +1,14 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): SACE-WHITECLINKEREX-00, NAC-CLINKERT2EX-00, LCC-PCT1G42.5-BEX-00
-0 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+25 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  SMPC-BI6070BEX-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  gapgpt:gemma-3-27b-it: quota used up - skipped for an hour
+  SMPC-BI6070BEX-00 gapgpt:gemma-3-27b-it: 3s QuotaError: HTTP 404: {"error":{"message":"No available channel for this model on the current token (request id: 202610310935208970639728268d9d6GUE6ZNou)","type":"gap_api_error","param":"","code":"model_not_found"}}
+  ADG-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 6 column 11 (char 372)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 14 nums
+style-soft: lead>35w/1num, text 9 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
+  stage6 news: title in 1 calls
+OK PBDC-INBPPBEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (27s)
