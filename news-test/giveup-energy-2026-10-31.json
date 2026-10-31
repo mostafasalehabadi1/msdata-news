@@ -1,7 +1,7 @@
 {
 "DSVTBCABEX0050816": {
 "fp": "{\"base_price\": 1757797.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 402|شرکت پالایش نفت تبریز|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 390000.0, \"goods_name\": \"حلال 402\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 1795999.0, \"min_price\": 1759000.0, \"offer_volume\": 300000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت تبریز\", \"series_key\": \"حلال 402|شرکت پالایش نفت تبریز|داخلی\", \"supplier\": \"شرکت پالایش نفت تبریز\", \"symbol\": \"DSVTBCABEX0050816\", \"symbol_code\": \"DSVTBCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 534279600000.0, \"total_value_usd\": null, \"trade_count\": 8, \"trade_date\": \"1405/08/09\", \"trade_volume\": 300000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 1780932.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "zai:glm-4.7-flash",
@@ -20,6 +20,24 @@
 "at": "11:50",
 "error": "ValueError: staged: 8 calls, last: 111 words / 3 paragraphs",
 "run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "12:09",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "12:11",
+"error": "ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۰",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "12:21",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: حلال 402؛ عرضه‌کننده: شرکت پالایش نفت تبریز.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: شنبه ۹ آبان.\n4. شرکت پالایش نفت تبریز ۳۰۰ هزار لیتر حلال 402 عرضه کرد و ۳۰۰ هزار لیتر آن فروش رفت.\n5. خریداران ۳۹۰ هزار لیتر تقاضا ثبت کردند.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۱ میلیون و ۷۸۰ هزار و ۹۳۲ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۷۵۷ هزار و ۷۹۷ ریال در هر لیتر.\n8. رقابت قیمت را ۱٫۳ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۸ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۵۳٫۴ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۳ آبان با قیمت ۱ میلیون و ۷۹۶ هزار و ۶۲۵ ریال در هر لیتر بود؛ قیمت این بار ۰٫۹ درصد پایین‌تر است.\n12. این کالا از ۱۸ مرداد تا امروز ۹ بار از همین عرضه‌کننده معامله شده است.",
@@ -90,7 +108,7 @@
 },
 "DSTESCABEX2050806": {
 "fp": "{\"base_price\": 1418546.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 410|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 30000.0, \"goods_name\": \"حلال 410\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 1418546.0, \"min_price\": 1418546.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 410|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSTESCABEX2050806\", \"symbol_code\": \"DSTESCABEX2\", \"target_market\": \"داخلی\", \"total_value_rial\": 42556380000.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/09\", \"trade_volume\": 30000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 1418546.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "openrouter:google/gemma-4-31b-it:free",
@@ -103,6 +121,30 @@
 "at": "12:03",
 "error": "ValueError: staged: 8 calls, last: 86 words / 3 paragraphs",
 "run": 1
+},
+{
+"model": "openrouter:google/gemma-4-31b-it:free",
+"at": "12:23",
+"error": "ValueError: staged: 8 calls, last: 57 words / 3 paragraphs",
+"run": 2
+},
+{
+"model": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "12:25",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793491200000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 2
+},
+{
+"model": "openrouter:google/gemma-4-26b-a4b-it:free",
+"at": "12:25",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793491200000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 2
+},
+{
+"model": "openrouter:recursive/flint-v1.0:free",
+"at": "12:25",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793491200000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: حلال 410؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: شنبه ۹ آبان.\n4. ۳۰ هزار لیتر حلال 410 شرکت پالایش نفت اصفهان فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۱ میلیون و ۴۱۸ هزار و ۵۴۶ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۴۱۸ هزار و ۵۴۶ ریال در هر لیتر.\n6. قیمت با قیمت پایه برابر بود.\n7. ارزش ریالی این معامله حدود ۴٫۳ میلیارد تومان بود.\n8. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۴ آبان با قیمت ۱ میلیون و ۴۱۸ هزار و ۵۴۶ ریال در هر لیتر بود؛ قیمت تغییری نکرد.\n9. این کالا از ۱۴ شهریور تا امروز ۶ بار از همین عرضه‌کننده معامله شده است.",
@@ -169,7 +211,7 @@
 },
 "DOXAICABEX0050813": {
 "fp": "{\"base_price\": 150000.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"اکسیژن مایع|شرکت فولاد آلیاژی ایران|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 560.0, \"goods_name\": \"اکسیژن مایع\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 224456.0, \"min_price\": 224456.0, \"offer_volume\": 140.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت فولاد آلیاژی ایران\", \"series_key\": \"اکسیژن مایع|شرکت فولاد آلیاژی ایران|داخلی\", \"supplier\": \"شرکت فولاد آلیاژی ایران\", \"symbol\": \"DOXAICABEX0050813\", \"symbol_code\": \"DOXAICABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 31423840000.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/09\", \"trade_volume\": 140.0, \"volume_unit\": \"تن\", \"weighted_price\": 224456.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "groq:openai/gpt-oss-120b",
@@ -188,6 +230,36 @@
 "at": "11:50",
 "error": "ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۱",
 "run": 1
+},
+{
+"model": "groq:openai/gpt-oss-120b",
+"at": "12:11",
+"error": "ValueError: staged: 8 calls, last: no JSON: ",
+"run": 2
+},
+{
+"model": "groq:openai/gpt-oss-20b",
+"at": "12:11",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197669, Requested 6386. Please try again in 29m11.76s. Need more tokens? Upgrade to Dev Tier today at",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "12:14",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "12:17",
+"error": "ValueError: staged: 8 calls, last: در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x برابر عرضه بود)",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "12:28",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: اکسیژن مایع؛ عرضه‌کننده: شرکت فولاد آلیاژی ایران.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: شنبه ۹ آبان.\n4. شرکت فولاد آلیاژی ایران ۱۴۰ تن اکسیژن مایع عرضه کرد و ۱۴۰ تن آن فروش رفت.\n5. خریداران ۵۶۰ تن تقاضا ثبت کردند؛ تقاضا ۴ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۲۲۴ هزار و ۴۵۶ ریال در هر کیلوگرم بود و قیمت پایه ۱۵۰ هزار ریال در هر کیلوگرم.\n8. رقابت قیمت را ۴۹٫۶ درصد بالاتر از قیمت پایه برد.\n9. ارزش ریالی این معامله حدود ۳٫۱ میلیارد تومان بود.\n10. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲ آبان با قیمت ۲۲۰ هزار و ۹۹۹ ریال در هر کیلوگرم بود؛ قیمت این بار ۱٫۶ درصد بالاتر است.\n11. این بالاترین قیمت این کالا از ۴ شهریور (آغاز داده‌ها) است؛ بالاترین قبلی ۲۲۰ هزار و ۹۹۹ در ۲ آبان بود.\n12. این کالا از ۴ شهریور تا امروز ۶ بار از همین عرضه‌کننده معامله شده است.",
