@@ -70,3 +70,29 @@ style-soft: lead>35w/1num, text 9 nums
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
 OK KRPT-AMMONIAB-00 <- gapgpt:gemma-3-27b-it (70s)
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+style-soft: lead>35w/1num, text 17 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words after fixes
+  KZPC-EREE12WP-00 gapgpt:gemma-3-27b-it: 41s ValueError: staged: 8 calls, last: 118 words after fixes
+  HSR-LUSUACB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  KZPC-EREPIRAN06EXCG-603 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 306s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 96 words / 2 paragraphs
+  PGIL-LUSUACB-00 zai:glm-4.7-flash: 871s ValueError: staged: 8 calls, last: 96 words / 2 paragraphs
+style-soft: lead>35w/1num, text 11 nums
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «۲۰۰ تن» با فعل فروش آمده ولی فروش ۳۰۰ تن است
+  HSR-LUSUACB-00 gapgpt:gemma-3-27b-it: 63s ValueError: staged: 8 calls, last: «۲۰۰ تن» با فعل فروش آمده ولی فروش ۳۰۰ تن است
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 118 words / 4 paragraphs
+  PGIL-LUSUACB-00 zai:glm-4.5-flash: 54s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
+style-soft: در حالی که, lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۴۴ | فعل «رسید» امروز تکرار شده)
+OK KZPC-EREPIRAN06EXCG-603 <- gapgpt:gemma-3-27b-it (63s)
