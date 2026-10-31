@@ -51,3 +51,23 @@ style-soft: lead>35w/1num, text 14 nums
 style-soft: lead>35w/1num, text 11 nums
   stage6 news: title in 2 calls
 OK KSC-SSG09XROA-00 <- kilo:dots-studio/dots-3-note-preview:free (321s)
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: در حالی که, lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text | عدد بیرون از حقیقت‌ها: ۱۲۴۷۷۰۲
+  ALIS-SBEN03E-00 gapgpt:gemma-3-27b-it: 82s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text | عدد بیرون از حقیقت‌ها: ۱۲۴۷۷۰۲
+  WSC-LBNE03E-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  ALSC-SW6518A-00 llm7:minimax-m2.7: 367s ValueError: staged: 8 calls, last: no JSON: 
+style-soft: lead>35w/1num, text 11 nums
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 17 nums
+  staged kilo:cohere/north-mini-code:free: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:cohere/north-mini-code:free: accepted after 7 calls
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
+OK WSC-SBEN03E-00 <- kilo:cohere/north-mini-code:free (227s)
