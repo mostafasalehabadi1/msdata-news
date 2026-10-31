@@ -1055,3 +1055,30 @@ style-soft: lead>35w/1num, text 17 nums
   staged gapgpt:gemma-3-27b-it: accepted after 7 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK SPC-AMMONIAB-00 <- gapgpt:gemma-3-27b-it (50s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان داد» در text | «نشان می‌دهد» در text
+  KZPC-ERE1X75LCG-603 gapgpt:gemma-3-27b-it: 39s ValueError: staged: 8 calls, last: markers: «نشان داد» در text | «نشان می‌دهد» در text
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  KHP-UREAPL-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  KRPT-UREAGRB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 64 words / 1 paragraphs
+  PGIL-LUSUACB-00 zai:glm-4.7-flash: 1271s ValueError: staged: 8 calls, last: 64 words / 1 paragraphs
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۳
+  PGIL-LUSUACB-00 zai:glm-4.5-flash: 103s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۳
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 94 words / 2 paragraphs
+  PGIL-LUSUACB-00 gapgpt:gemma-3-27b-it: 52s ValueError: staged: 8 calls, last: 94 words / 2 paragraphs
+style-soft: در حالی که, lead>35w/1num, text 12 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۴۰۰، ۴۰۰
+  ASPC-HDHFI5110WP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 616s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۴۰۰، ۴۰۰
+  KHP-UREAPL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+timeout: give-up file saved
