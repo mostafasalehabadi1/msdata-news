@@ -42,8 +42,71 @@ def check_text(where, d, errs, min_w, max_w, min_p, max_p):
         errs.append(f"{where}: bad slug")
 
 
+IMG_FROM = "2026-11-01"  # owner 1405-08-10: news images go out with the news itself; from today on, old news untouched
+IMG_MAX = 200 * 1024
+
+
+def webp_size(p):
+    """(width, height) of a .webp file, or None."""
+    b = open(p, "rb").read(30)
+    if b[:4] != b"RIFF" or b[8:12] != b"WEBP":
+        return None
+    if b[12:16] == b"VP8X":
+        return 1 + int.from_bytes(b[24:27], "little"), 1 + int.from_bytes(b[27:30], "little")
+    if b[12:16] == b"VP8 ":
+        return int.from_bytes(b[26:28], "little") & 0x3FFF, int.from_bytes(b[28:30], "little") & 0x3FFF
+    if b[12:16] == b"VP8L":
+        v = int.from_bytes(b[21:25], "little")
+        return 1 + (v & 0x3FFF), 1 + ((v >> 14) & 0x3FFF)
+    return None
+
+
+def check_images(name, d, errs):
+    """content agent 1405-08-10: images [{src: /assets/news/<date>/<slug>.webp, alt}], the file in news/images/<date>/<slug>.webp,
+    1200x675, at most 200 KB, alt required; a «[عکس]» paragraph needs an image. Hold the news (error) otherwise."""
+    ims = [i for i in (d.get("images") or []) if isinstance(i, dict)]
+    marker = any(p.strip() == "[عکس]" for p in re.split(r"\n\s*\n", str(d.get("text", ""))))
+    if marker and not ims:
+        errs.append(f"{name}: [عکس] without images")
+    for i in ims:
+        src = str(i.get("src", ""))
+        if not str(i.get("alt", "")).strip():
+            errs.append(f"{name}: image without alt {src}")
+        if not src.startswith("/assets/news/"):
+            continue  # older layout (hand-placed /assets/ files) is not checked here
+        p = os.path.join(ROOT, "images", *src[len("/assets/news/"):].split("/"))
+        if not os.path.isfile(p):
+            errs.append(f"{name}: image file missing news/images/{src[len('/assets/news/'):]}")
+        elif os.path.getsize(p) > IMG_MAX:
+            errs.append(f"{name}: image over 200 KB {src}")
+        elif webp_size(p) != (1200, 675):
+            errs.append(f"{name}: image not 1200x675 webp {src} {webp_size(p)}")
+
+
+def all_images(errs):
+    """every news file dated IMG_FROM or later, and each item of a day file."""
+    for path in sorted(glob.glob(os.path.join(ROOT, "**", "*.json"), recursive=True)):
+        rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+        if rel.startswith("images/"):
+            continue
+        try:
+            d = json.load(open(path, encoding="utf-8"))
+        except Exception:  # noqa: BLE001 - reported by the checks below
+            continue
+        if not isinstance(d, dict):
+            continue
+        day = str(d.get("date") or d.get("published_at") or "")[:10]
+        if day < IMG_FROM:
+            continue
+        check_images(rel, d, errs)
+        for k, it in enumerate(d.get("items") or []):
+            if isinstance(it, dict):
+                check_images(f"{rel}[{k}]", it, errs)
+
+
 def main():
     errs, n = [], 0
+    all_images(errs)
     for path in sorted(glob.glob(os.path.join(ROOT, "*.json"))):
         name = os.path.basename(path)
         try:
