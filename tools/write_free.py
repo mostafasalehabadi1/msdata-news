@@ -459,7 +459,19 @@ def loads_lenient(t):
     t2 = re.sub(r"^```(?:json)?|```$", "", t.strip(), flags=re.M)
     t2 = re.sub(r",\s*([}\]])", r"\1", t2)
     t2 = re.sub(r"[\u201c\u201d](\w+)[\u201c\u201d]\s*:", r'"\1":', t2)
-    return json.loads(t2, strict=False)
+    try:
+        return json.loads(t2, strict=False)
+    except ValueError:
+        # owner 1405-08-10: Gemini's free Gemma writes words in braces before the JSON, so \u00abfirst { to last }\u00bb was not JSON;
+        # try each later {"... start up to the last }
+        for m in re.finditer(r'\{\s*"', t2):
+            if m.start() == 0:
+                continue
+            try:
+                return json.loads(t2[m.start():], strict=False)
+            except ValueError:
+                continue
+        raise
 
 
 def parse(raw, facts="", tables=None):
