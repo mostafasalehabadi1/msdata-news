@@ -51,3 +51,27 @@ style-soft: lead>35w/1num, text 11 nums
   SRI-ZIC1-00 llm7:mistral-Nemo-Instruct-2407: 68s JSONDecodeError: Extra data: line 16 column 1 (char 1315)
   stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
 OK CHMI-PELL-00 <- gapgpt:gemma-3-27b-it (78s)
+  SNRZ-ZIB1-000 ovh:gpt-oss-120b: 451s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  IAC-AP15351-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 503s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 116 words / 3 paragraphs
+  TORC-OAVBB-00 gapgpt:gemma-3-27b-it: 52s ValueError: staged: 8 calls, last: 116 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  SNRZ-ZIB1-000 ovh:Meta-Llama-3_3-70B-Instruct: 98s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"35800571dcceb96739a0e56ec21dcb63"
+}
+  ALSU-AP06101-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 18 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 18 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+style-soft: lead>35w/1num, text 12 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۰
+  ALM-AP06101-00 zai:glm-4.7-flash: 605s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۰
+  stage6 news: title in 1 calls
+OK SRI-ZIC1-00 <- gapgpt:gemma-3-27b-it (97s)
