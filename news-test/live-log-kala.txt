@@ -108,3 +108,26 @@ style-soft: lead>35w/1num, text 18 nums
   staged kilo:dots-studio/dots-3-note-preview:free: accepted after 9 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK ALM-AP15201-00 <- kilo:dots-studio/dots-3-note-preview:free (420s)
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 109 words after fixes
+  PTC-POY250D48FCWP-00 gapgpt:gemma-3-27b-it: 78s ValueError: staged: 8 calls, last: 109 words after fixes
+style-soft: lead>35w/1num, text 24 nums
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: soft: متن 21 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: accepted after 2 calls
+style-soft: در حالی که, lead>35w/1num, text 13 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۵
+  ZRB-ZIF1-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 843s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۲۵
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words / 4 paragraphs
+  IMCO-ZIE1-00 gapgpt:gemma-3-27b-it: 98s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
+  IAC-AP06101-00 zai:glm-4.7-flash: 930s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 9 nums
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 11 nums
+  staged zai:glm-4.5-flash: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK IAC-AP06101-00 <- zai:glm-4.5-flash (40s)
