@@ -1,187 +1,122 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): SJS-DRI-00, GHIR-DRI-00, EFGZ-DRI-00, ALM-AP06101-00, IMID-DRI-616, IMID-DRI-271, BSC-DRI-00, ALSU-AP0610A1-00, IAC-AP15351-00, THOR-OAVBB-00, TORC-OAVBB-00, ALSU-AP06101-00, IALC-ALOX-00, IKRC-OAVBB-00, EHS-OAIOC-00, AISC-BSO834X-00, IALC-AP10201-00, BMIS-DRI-00, IAC-AP13001-00, ISEI-OAIOC-00, PTC-POY500D96FAWP-00, TABC-PSGPPS1160PP-00, SNRZ-ZIB1-000, HAAL-PS10000-00, NMC-OAIOC-00, DKPC-OAIOC-00, PTC-POYDWP-00, SHPC-MEAFG-00, TIOC-SW40B-00, MBIG-PSHIPS4512L-00, PORC-SW10B-00, SHPC-TEAKG-00
-40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
-  SIS-PELL-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e0c9b073-af9b-43d0-
-  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
-  RTZ-ZII1-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  cf:@cf/qwen/qwen2.5-coder-32b-instruct: quota used up - skipped until tomorrow
-  TIOC-SW10B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4b3f0682-d0b0-4f11-
-  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
-  EPC-PAFJ-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
-  RTZ-ZII1-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
-  RTZ-ZII1-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
-  openrouter:recursive/flint-v1.0:free: quota used up - skipped until tomorrow
-  RTZ-ZII1-00 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+given up for today (failed 2 runs, row unchanged): SJS-DRI-00, GHIR-DRI-00, EFGZ-DRI-00, ALM-AP06101-00, IMID-DRI-616, IMID-DRI-271, BSC-DRI-00, ALSU-AP0610A1-00, IAC-AP15351-00, THOR-OAVBB-00, TORC-OAVBB-00, ALSU-AP06101-00, IALC-ALOX-00, IKRC-OAVBB-00, EHS-OAIOC-00, AISC-BSO834X-00, IALC-AP10201-00, BMIS-DRI-00, IAC-AP13001-00, EPC-PAFJ-00, PTC-POY250D48FAWP-00, ZRB-ZIF1-00, ISEI-OAIOC-00, PTC-POY500D96FAWP-00, TABC-PSGPPS1160PP-00, SNRZ-ZIB1-000, HAAL-PS10000-00, NMC-OAIOC-00, DKPC-OAIOC-00, PTC-POYDWP-00, SHPC-MEAFG-00, TIOC-SW40B-00, MBIG-PSHIPS4512L-00, PORC-SW10B-00, SHPC-TEAKG-00
+38 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
   staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
   staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
   staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
   staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-style-soft: lead>35w/1num
+  staged kilo:kilo-auto/free: check cut 3 sentence(s)
   staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-style-soft: lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
   staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۴۵)
-OK SIS-PELL-00 <- gapgpt:gemma-3-27b-it (142s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
   staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  EITC-OAIOC-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  PTC-POY250D48FAWP-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
   staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  GOLG-OAIOC-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  PTJP-PSGPPSG1551PPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  POCO-SW30B-00 ovh:gpt-oss-120b: 180s TimeoutError: The read operation timed out
+  NAFA-OACCAAL-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
   staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp2
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  POCO-SW30B-00 ovh:Meta-Llama-3_3-70B-Instruct: 14s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"253a8128eebc76361770ab2bd745d67f"
+}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
   staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-style-soft: در حالی که, lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: title in 2 calls
-OK TIOC-SW10B-00 <- gapgpt:gemma-3-27b-it (83s)
-  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
   staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  PTC-POY500D96FBWP-00 gemini:gemma-4-26b-a4b-it: 265s RemoteDisconnected: Remote end closed connection without response
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
   staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+style-soft: در حالی که, lead>35w/1num, text 14 nums
   staged llm7:minimax-m2.7: call 5 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
-  PTC-POY500D96FBWP-00 groq:openai/gpt-oss-120b: 304s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196628, Requested 59
   staged llm7:minimax-m2.7: call 6 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+style-soft: در حالی که, lead>35w/1num, text 16 nums
   staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 99 words / 3 paragraphs
-  EPC-PAFJ-00 gapgpt:gemma-3-27b-it: 97s ValueError: staged: 8 calls, last: 99 words / 3 paragraphs
   staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  PTJP-PSGPPSG1161PPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  TSK-ZII1-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  PTC-POY250D48FCWP-00 llm7:minimax-m2.7: 368s ValueError: staged: 8 calls, last: no JSON: 
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
-  PTC-POY250D48FCWP-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 60999 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":60999}}
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-style-soft: lead>35w/1num
-  staged gapgpt:gemma-3-27b-it: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  stage6 news: title in 3 calls
-OK EITC-OAIOC-00 <- gapgpt:gemma-3-27b-it (83s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged groq:openai/gpt-oss-20b: call 5 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 115 words / 3 paragraphs
-  PTC-POY250D48FAWP-00 gapgpt:gemma-3-27b-it: 91s ValueError: staged: 8 calls, last: 115 words / 3 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  IMCO-ZIE1-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
-  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
-  PTC-POY500D96FBWP-00 groq:openai/gpt-oss-20b: 285s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 194443, Requested 769
-  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۲.۸)
-OK PTJP-PSGPPSG1161PPP-00 <- gapgpt:gemma-3-27b-it (84s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 15 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 82 words / 4 paragraphs
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «حاکی از» در text | «این در حالی است» در text
-  TSK-ZII1-00 gapgpt:gemma-3-27b-it: 94s ValueError: staged: 8 calls, last: markers: «حاکی از» در text | «این در حالی است» در text
+  FZI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  NIMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  ESC-CIB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  ESC-AMSULL-00 llm7:minimax-m2.7: 373s ValueError: staged: 8 calls, last: no JSON: 
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: bad response: '{"id":"gen-1793554465-ooUrf01xRRouVyTJT928","error":{"message":"Upstream error from Nvidia: Service tempo
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  ESC-ARGAB-00 kilo:kilo-auto/free: 386s TimeoutError: The read operation timed out
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  ESC-ARGAB-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
 style-soft: lead>35w/1num, text 18 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 9 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK ALM-AP15201-00 <- kilo:dots-studio/dots-3-note-preview:free (420s)
-style-soft: lead>35w/1num, text 11 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 109 words after fixes
-  PTC-POY250D48FCWP-00 gapgpt:gemma-3-27b-it: 78s ValueError: staged: 8 calls, last: 109 words after fixes
-style-soft: lead>35w/1num, text 24 nums
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: soft: متن 21 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: accepted after 2 calls
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۵
-  ZRB-ZIF1-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 843s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۲۵
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 118 words / 4 paragraphs
-  IMCO-ZIE1-00 gapgpt:gemma-3-27b-it: 98s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
-  IAC-AP06101-00 zai:glm-4.7-flash: 930s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 9 nums
-style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 11 nums
-  staged zai:glm-4.5-flash: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged zai:glm-4.5-flash: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK IAC-AP06101-00 <- zai:glm-4.5-flash (40s)
-  GOLG-OAIOC-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 17 nums
+  staged requesty:mistral/leanstral-1-5: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۷۳
+  CHMI-ARGAB-00 requesty:mistral/leanstral-1-5: 390s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۷۳
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  ESC-ARGAB-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:cohere/north-mini-code:free: check cut 5 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  SPC-ARGAB-00 gemini:gemma-4-26b-a4b-it: 253s JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  TABC-PSGPPS1540PP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  MAI-OASOSULJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 202s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
 style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در text | «امروز» در text
-  PTC-POY500D96FBWP-00 gapgpt:gemma-3-27b-it: 81s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text | «امروز» در text
-  NAFA-OACCAAL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 16 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 119 words after fixes
-  ZRB-ZIF1-00 gapgpt:gemma-3-27b-it: 93s ValueError: staged: 8 calls, last: 119 words after fixes
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
-OK RTZ-ZII1-00 <- openrouter:xingchen-agi/xing4.0-29b-a4b:free (1135s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  FZI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: در حالی که, lead>35w/1num, text 9 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «حاکی از» در text
-  GOLG-OAIOC-00 gapgpt:gemma-3-27b-it: 94s ValueError: staged: 8 calls, last: markers: «حاکی از» در text
-  IMCO-ZIF1-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
-  staged zai:glm-4.7-flash: check cut 4 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-style-soft: lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۴۰ بود
-  NAFA-OACCAAL-00 gapgpt:gemma-3-27b-it: 90s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۴۰ بود
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
-  TABC-PSHIPS7240PP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: در حالی که, lead>35w/1num, text 10 nums
-  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  FZI-PELL-00 gapgpt:gemma-3-27b-it: 80s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
-  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 17 nums
-style-soft: در حالی که, lead>35w/1num, text 17 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 9 calls
+  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 4 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 5 calls
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 2 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 3 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 4 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK IMCO-ZIF1-00 <- gapgpt:gemma-3-27b-it (194s)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged gapgpt:gemma-3-27b-it: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
-  PTJP-PSGPPSG1551PPP-00 zai:glm-4.7-flash: 695s TimeoutError: The read operation timed out
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK TABC-PSHIPS7240PP-00 <- gapgpt:gemma-3-27b-it (99s)
+OK IZE-ZII1-00 <- kilo:dots-studio/dots-3-note-preview:free (287s)
