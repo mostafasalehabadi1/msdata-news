@@ -1,16 +1,3 @@
-  PAGH-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 32s ValueError: staged: 8 calls, last: 50 words / 2 paragraphs
-  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
-OK KSA-BI6070BEX-00 <- cf:@cf/qwen/qwen2.5-coder-32b-instruct (51s)
-style-soft: lead>35w/1num
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num
-  PPBC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 18s JSONDecodeError: Expecting value: line 2 column 12 (char 13)
-style-soft: lead>35w/1num
-  staged kilo:kilo-auto/free: accepted after 6 calls
-  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
 style-soft: lead>35w/1num, text 11 nums
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: تیتر 15 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
@@ -198,3 +185,16 @@ style-soft: lead>35w/1num
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
 OK FAFI-PCT2G42.5-L50EX-00 <- gapgpt:gemma-3-27b-it (74s)
+  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  PKAD-BI6070BEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 689s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged groq:openai/gpt-oss-120b: draft dropped after 5 calls: no JSON: ران می‌توانند برنامه‌ریزی دقیق‌تری برای خریدهای بعدی داشته باشند و فروشنده نیز ا
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+style-soft: lead>35w/1num, text 9 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 7 calls
+  stage6 news: title in 1 calls
+OK PKAD-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (48s)
