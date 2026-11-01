@@ -464,13 +464,14 @@ def loads_lenient(t):
     except ValueError:
         # owner 1405-08-10: Gemini's free Gemma writes words in braces before the JSON, so \u00abfirst { to last }\u00bb was not JSON;
         # try each later {"... start up to the last }
+        # (raw_decode: words after the JSON are left out too)
         for m in re.finditer(r'\{\s*"', t2):
-            if m.start() == 0:
-                continue
             try:
-                return json.loads(t2[m.start():], strict=False)
+                d = json.JSONDecoder(strict=False).raw_decode(t2, m.start())[0]
             except ValueError:
                 continue
+            if isinstance(d, dict) and len(d) > 1:
+                return d
         raise
 
 
