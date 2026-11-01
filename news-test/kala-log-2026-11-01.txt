@@ -1940,3 +1940,21 @@ style-soft: lead>35w/1num, text 9 nums
   PGIL-LUSUACB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK MRV-MEGB-00 <- zai:glm-4.7-flash (550s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 8 failed: bad response: '{"id":"gen-1793560984-pDRBx8TYbiYm16NHJz7X","error":{"message":"Upstream error from Nvidia: Service tempo
+  RPC-UREAGRB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  SPC-UREAGRJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 752s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: «۲۰۰ تن» با فعل فروش آمده ولی فروش ۱۰۰ تن است
+  PGIL-LUSUACB-00 zai:glm-4.7-flash: 707s ValueError: staged: 8 calls, last: «۲۰۰ تن» با فعل فروش آمده ولی فروش ۱۰۰ تن است
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 91 words / 4 paragraphs
+  PGIL-LUSUACB-00 zai:glm-4.5-flash: 27s ValueError: staged: 8 calls, last: 91 words / 4 paragraphs
+style-soft: lead>35w/1num, text 13 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۹۶
+  RPC-UREAGRB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 593s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۹۶
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: bad response: '{"id":"gen-1793561965-6FAEanAlZRSORAcu3djo","error":{"message":"Upstream error from Nvidia: Service tempo
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+timeout: give-up file saved
