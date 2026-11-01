@@ -157,3 +157,22 @@ style-soft: lead>35w/1num, text 10 nums
 style-soft: lead>35w/1num, text 10 nums
   stage6 news: title in 1 calls
 OK DNJC-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (431s)
+  staged groq:openai/gpt-oss-120b: draft dropped after 8 calls: 58 words / 1 paragraphs
+  FAFI-PCT2G42.5-L50EX-00 groq:openai/gpt-oss-120b: 433s ValueError: staged: 8 calls, last: 58 words / 1 paragraphs
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۷۴۸
+  SHCO-PCT2G42.5-L50EX-00 gapgpt:gemma-3-27b-it: 52s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۷۴۸
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  PAGH-BI6070BEX-00 zai:glm-4.7-flash: 227s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+  staged kilo:kilo-auto/free: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۴۰۶
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: 54 words / 3 paragraphs
+  AZRC-BI6070BEX-00 kilo:kilo-auto/free: 145s ValueError: staged: 8 calls, last: 54 words / 3 paragraphs
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  AZRC-BI6070BEX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK PAGH-BI6070BEX-00 <- zai:glm-4.5-flash (50s)
