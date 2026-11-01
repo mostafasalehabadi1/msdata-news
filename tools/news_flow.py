@@ -73,9 +73,8 @@ BACK = 10  # days: a news file of an older day written or published today counts
 def jalali(day):
     """2026-11-01 -> 1405/08/10 (for a day with no news file of its own)"""
     gy, gm, gd = map(int, day.split("-"))
-    days = 365 * gy + (gy + 3) // 4 - (gy + 99) // 100 + (gy + 399) // 400 - 80 + gd + [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][gm - 1]
-    if gm > 2 and (gy % 4 == 0 and gy % 100 or gy % 400 == 0):
-        days += 1
+    g2 = gy + 1 if gm > 2 else gy
+    days = 355666 + 365 * gy + (g2 + 3) // 4 - (g2 + 99) // 100 + (g2 + 399) // 400 + gd + [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][gm - 1]
     jy = -1595 + 33 * (days // 12053); days %= 12053
     jy += 4 * (days // 1461); days %= 1461
     if days > 365:
