@@ -94,7 +94,7 @@ RULES_ENERGY = ("تو خبرنگار بورس انرژی msdata.ir هستی و �
 
 
 # content agent 1405-07-15 (252 news of 1405-07-14): the one main flaw of each model, appended to its prompt
-MODEL_HINTS = [(r"gapgpt:gemma", "۱) همه‌ی رقم‌ها و اعشارها فارسی و با «٫» (۷٫۲ نه 7.2)؛ در تیتر، متن و key_points. ۲) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه؛ تاریخ فقط یک بار (مثل دوشنبه ۲۰ مهر)، و لید با روز یا تاریخ شروع نشود. ۳) هر عدد را فقط یک بار و دقیقاً از حقیقت‌ها بنویس؛ عدد صفر یا عددی که در حقیقت‌ها نیست ننویس و ارزش معامله را خودت حساب نکن. ۴) text دست‌کم ۱۴۰ کلمه در ۲ یا ۳ پاراگراف باشد و پاراگراف‌ها با یک خط خالی جدا شوند؛ حداکثر ۶ عدد در متن داشته باشد. ۵) هیچ حرف لاتین یا کد کالا (مثل نام گرید) در تیتر و متن نیاور؛ نام فارسی کالا کافی است. ۶) در تیتر «؛» نگذار و «نماد» ننویس. ۷) تیتر جمله‌ی کامل با فعل است، ۸ تا ۱۳ کلمه. ۸) نسبت تقاضا به عرضه را فقط به شکل «X برابر عرضه» بنویس؛ «X درصد بیشتر از عرضه» ننویس. ۹) صفت عالی (بالاترین، پایین‌ترین، بیشترین، کمترین، گران‌ترین، ارزان‌ترین) ممنوع است، مگر همان واژه در حقیقت‌ها آمده باشد."),
+MODEL_HINTS = [(r"(gapgpt|gemini):gemma", "۱) همه‌ی رقم‌ها و اعشارها فارسی و با «٫» (۷٫۲ نه 7.2)؛ در تیتر، متن و key_points. ۲) «امروز» و «دیروز» را هیچ‌جا ننویس، در key_points هم نه؛ تاریخ فقط یک بار (مثل دوشنبه ۲۰ مهر)، و لید با روز یا تاریخ شروع نشود. ۳) هر عدد را فقط یک بار و دقیقاً از حقیقت‌ها بنویس؛ عدد صفر یا عددی که در حقیقت‌ها نیست ننویس و ارزش معامله را خودت حساب نکن. ۴) text دست‌کم ۱۴۰ کلمه در ۲ یا ۳ پاراگراف باشد و پاراگراف‌ها با یک خط خالی جدا شوند؛ حداکثر ۶ عدد در متن داشته باشد. ۵) هیچ حرف لاتین یا کد کالا (مثل نام گرید) در تیتر و متن نیاور؛ نام فارسی کالا کافی است. ۶) در تیتر «؛» نگذار و «نماد» ننویس. ۷) تیتر جمله‌ی کامل با فعل است، ۸ تا ۱۳ کلمه. ۸) نسبت تقاضا به عرضه را فقط به شکل «X برابر عرضه» بنویس؛ «X درصد بیشتر از عرضه» ننویس. ۹) صفت عالی (بالاترین، پایین‌ترین، بیشترین، کمترین، گران‌ترین، ارزان‌ترین) ممنوع است، مگر همان واژه در حقیقت‌ها آمده باشد."),
                (r"^zai:", "text حتماً دست‌کم ۱۴۰ کلمه باشد (کمتر از ۱۲۰ کلمه رد می‌شود)، در ۲ یا ۳ پاراگراف با یک خط خالی بین آن‌ها؛ پیش از برگرداندن کلمه‌ها را بشمار."),  # content agent 1405-08-04: 15 zai drafts were 76-91 words
                (r"nemotron-3-super", "کلمه‌ی انگلیسی ننویس. «عرض» ننویس؛ «عرضه» بنویس."),
                (r"dots", "هیچ کلمه‌ی انگلیسی مثل Display یا faced در متن نیاور."),
@@ -204,7 +204,7 @@ def post(url, key, model, prompt, extra=None, system=None):
 STRONG_GEMINI = ("gemma-4-31b-it",)
 # gemma-4-31b-it is kept for the daily report only (write_report.py) and writes no symbol news
 REPORT_ONLY = {"gemini:gemma-4-31b-it"}
-STRONG = {"llm7:deepseek-v4-flash:0731", "cohere:command-a-03-2025", "kilo:dots-studio/dots-3-note-preview:free",
+STRONG = {"gemini:gemma-4-31b-it", "llm7:deepseek-v4-flash:0731", "cohere:command-a-03-2025", "kilo:dots-studio/dots-3-note-preview:free",
           "hf:deepseek-ai/DeepSeek-V3.1"}  # kilo:stepfun/step-3.7-flash:free removed 2026-10-10: Kilo answers 404 (model no longer exists)
 # the next three by rating: write the important half too, but only when every strong model is out or a symbol waited 2h
 # ovh:Qwen3.5 added by the owner on 2026-10-10: every strong/backup model was out of quota and 30 important symbols stayed unwritten
@@ -240,7 +240,7 @@ def providers():
             tier = 3 if "lite" in m else 0 if "pro" in m else 1 if "flash" in m else 2
             return (tier, -(float(v.group(1)) if v else 99.0))
         gem.sort(key=quality)
-        for m in list(dict.fromkeys(gem[:10] + [x for x in gem if x in STRONG_GEMINI])):
+        for m in list(dict.fromkeys(gem[:10] + [x for x in gem if x in STRONG_GEMINI or x.startswith("gemma-")])):
             out.append(("gemini:" + m, lambda p, m=m: post(GEMINI_URL, os.environ["GEMINI_API_KEY"], m, p)))
     key = os.environ.get("OPENROUTER_API_KEY")
     if key:
@@ -277,7 +277,8 @@ def providers():
                 out.append((env.split("_")[0].lower() + ":" + m, lambda p, m=m, u=url, e=env: post(u, os.environ[e], m, p)))
     if os.environ.get("GAPGPT_API_KEY"):  # GapGPT gateway (paid, owner 2026-10-12): gemma wrote 2 of 3 test news in ~12s; deepseek-v4-flash wrote 0 of 3 and is off (owner: gemma only for now)
         # deepseek is wired but off: set DEEPSEEK_ON = True below to let it write
-        for m in ("gemma-3-27b-it",) + (("deepseek-v4-flash",) if DEEPSEEK_ON else ()):
+        # owner 1405-08-10: GapGPT removed gemma-3-27b-it (404 «No available channel») and its successor gapgpt-gemma-26b-a4b costs ~6x: off
+        for m in (("deepseek-v4-flash",) if DEEPSEEK_ON else ()):
             out.append(("gapgpt:" + m, lambda p, s=None, m=m: post("https://api.gapgpt.app/v1/chat/completions", os.environ["GAPGPT_API_KEY"], m, p, system=s)))
     if os.environ.get("ARAD_API_KEY"):  # Arad AI gateway (paid, owner 2026-10-12); the key is tied to DeepSeek V4 Flash 0423
         out.append(("arad:deepseek-v4-flash-0423", lambda p: post("https://llm.aradai.ir/v1/chat/completions", os.environ["ARAD_API_KEY"],
@@ -1384,8 +1385,8 @@ def main():
     # the owner's blind rating (5 best of 12 models, 2026-09-30/10-01) writes the important half; every other model the rest
     groups = {}
     for name, call in provs:
-        if name in REPORT_ONLY or name.startswith("gemini:"):  # every Gemini model is kept for the daily report and macro news (owner 2026-10-05)
-            continue
+        if name.startswith("gemini:") and not name.startswith("gemini:gemma-"):  # Gemini flash/pro stay for the daily report and macro news (owner 2026-10-05)
+            continue  # owner 1405-08-10: GapGPT gemma-3-27b is gone, «every free model works»: the free Gemma models of the Gemini key write news too
         groups.setdefault(name.split(":")[0] + ("/paid" if name in PAID else "/strong" if name in STRONG else "/backup" if name in BACKUP else ""), []).append((name, call))
     # importance tiers come from data/importance.json (tools/importance.py): 0 important (top half by value this year), 1 the rest.
     # A strong-model worker writes only important symbols, every other worker only the rest.
