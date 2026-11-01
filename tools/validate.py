@@ -104,6 +104,18 @@ def all_images(errs):
                 check_images(f"{rel}[{k}]", it, errs)
 
 
+def check_table(name, d, errs):
+    """content agent 1405-08-10: the us/fx/macro page builders read only a list of flat rows [{"col": "value", ...}, ...];
+    a {title, columns, rows} table was printed raw on 8 US pages, so any other shape holds the push."""
+    t = d.get("table")
+    if t is None:
+        return
+    flat = lambda r: isinstance(r, dict) and r and not {"title", "columns", "rows"} & set(r) and all(  # noqa: E731
+        isinstance(v, (str, int, float)) and not isinstance(v, bool) for v in r.values())
+    if not (isinstance(t, list) and t and all(flat(r) for r in t)):
+        errs.append(f"{name}: table must be a list of flat rows [{{\"column\": value}}, ...], not {{title, columns, rows}}")
+
+
 def main():
     errs, n = [], 0
     all_images(errs)
@@ -172,6 +184,7 @@ def main():
         except Exception as e:  # noqa: BLE001
             errs.append(f"{name}: invalid JSON {e}")
             continue
+        check_table(name, d, errs)
         long = d.get("kind") in ("report", "analysis")  # «تحلیل» (owner 1405-07-16): same length rule as a report
         check_text(name, d, errs, 550 if long else 230, 1000 if long else 470, 3, 40)
         n += 1
@@ -182,6 +195,7 @@ def main():
         except Exception as e:  # noqa: BLE001
             errs.append(f"{name}: invalid JSON {e}")
             continue
+        check_table(name, d, errs)
         if name.startswith("us/"):  # owner 1405-07-23: the US report is 400-500 words in 4-8 paragraphs
             check_text(name, d, errs, 120, 500, 3, 8)
         else:
