@@ -22,7 +22,9 @@ def main():
     provs = [x for x in w.providers() if x[0].startswith(tuple(only.split(",")))]
     # batch 5 (1405-07-16): an explicit list "prov:model,..." of never-tested models (memory reference_tested_news_models)
     urls = {"hf": ("HF_TOKEN", "https://router.huggingface.co/v1/chat/completions"),
-            "mistral": ("MISTRAL_API_KEY", w.MISTRAL_URL)}
+            "mistral": ("MISTRAL_API_KEY", w.MISTRAL_URL),
+            "gapgpt": ("GAPGPT_API_KEY", "https://api.gapgpt.app/v1/chat/completions"),  # owner 1405-08-10: jev and glm-4-flash on GapGPT
+            "zai": ("ZAI_API_KEY", "https://api.z.ai/api/paas/v4/chat/completions")}
     if os.environ.get("BENCH_LIST"):
         provs = [(x, lambda p, x=x: w.post(urls[x.split(":")[0]][1], os.environ[urls[x.split(":")[0]][0]], x.split(":", 1)[1], p))
                  for x in open(os.environ["BENCH_LIST"], encoding="utf-8").read().split() if x.split(":")[0] in urls]
