@@ -91,3 +91,39 @@ style-soft: lead>35w/1num, text 12 nums
   staged gapgpt:gemma-3-27b-it: accepted after 7 calls
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: 100 | فعل «شد» امروز تکرار شده)
 OK NCI-OACCAA-00 <- gapgpt:gemma-3-27b-it (122s)
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 18 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 7 calls: 111 words / 4 paragraphs
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 106 words / 3 paragraphs
+  IAC-AP15351-00 gapgpt:gemma-3-27b-it: 52s ValueError: staged: 8 calls, last: 106 words / 3 paragraphs
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 14 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 9 calls: markers: «امروز» در text
+  THOR-OAVBB-00 gapgpt:gemma-3-27b-it: 61s ValueError: staged: 9 calls, last: markers: «امروز» در text
+  ALSU-AP0610A1-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 472s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۱۰۰، ۱۶۷۵، ۵۰
+  ALSU-AP0610A1-00 gapgpt:gemma-3-27b-it: 48s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۱۰۰، ۱۶۷۵، ۵۰
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 110 words / 3 paragraphs
+  SND-OAIOC-00 zai:glm-4.7-flash: 350s ValueError: staged: 8 calls, last: 110 words / 3 paragraphs
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 102 words / 3 paragraphs
+  SND-OAIOC-00 zai:glm-4.5-flash: 115s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 4 sentence(s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 6 calls
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
+OK SND-OAIOC-00 <- gapgpt:gemma-3-27b-it (92s)
