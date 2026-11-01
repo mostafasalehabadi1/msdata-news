@@ -1,24 +1,3 @@
-  KAZJ-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 14s JSONDecodeError: Expecting value: line 2 column 12 (char 13)
-  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-style-soft: lead>35w/1num, text 11 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 6 calls
-  stage6 news: title in 1 calls
-OK APKC-BI6070BEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (27s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-style-soft: lead>35w/1num, text 15 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 9 nums
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: accepted after 8 calls
-  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 50 words / 2 paragraphs
   PAGH-BI6070BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 32s ValueError: staged: 8 calls, last: 50 words / 2 paragraphs
   stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
 OK KSA-BI6070BEX-00 <- cf:@cf/qwen/qwen2.5-coder-32b-instruct (51s)
@@ -198,3 +177,24 @@ style-soft: lead>35w/1num
   staged gapgpt:gemma-3-27b-it: accepted after 7 calls
   stage6 news: title in 1 calls
 OK AZGI-BI6070BEX-00 <- gapgpt:gemma-3-27b-it (56s)
+  staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged openrouter:google/gemma-4-31b-it:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-20b: call 8 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  FAFI-PCT2G42.5-L50EX-00 groq:openai/gpt-oss-20b: 495s ValueError: staged: 8 calls, last: no JSON: 
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK FAFI-PCT2G42.5-L50EX-00 <- gapgpt:gemma-3-27b-it (74s)
