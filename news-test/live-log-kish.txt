@@ -54,3 +54,10 @@ style-soft: lead>35w/1num
   staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۰٫۷ | فعل «شد» امروز تکرار شده)
 OK JRC-BI6070BEX-00 <- kilo:kilo-auto/free (123s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  PAGH-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 14s JSONDecodeError: Expecting value: line 5 column 11 (char 215)
+style-soft: lead>35w/1num, text 17 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (16 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده | تیتر «تمام/کامل» نوشته ولی همه‌ی ع)
+OK KAZJ-BI6070BEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (26s)
