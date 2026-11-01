@@ -1296,3 +1296,59 @@ style-soft: lead>35w/1num, text 14 nums
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۴۹ | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
 OK SPSC-DRI-00 <- gapgpt:gemma-3-27b-it (76s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 12 nums
+style-soft: در حالی که, lead>35w/1num, text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  SJS-DRI-00 gapgpt:gemma-3-27b-it: 88s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+style-soft: text 22 nums
+  IMID-DRI-271 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: text 15 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۵۰
+  IMID-DRI-271 gapgpt:gemma-3-27b-it: 79s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۵۰
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 112 words / 4 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 6 failed: bad response: '{"id":"gen-1793548266-EuZcz1a9KmstahGPBSu7","error":{"message":"Upstream error from Nvidia: Service tempo
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 90 words / 2 paragraphs
+  GISD-DRI-00 zai:glm-4.7-flash: 494s ValueError: staged: 8 calls, last: 90 words / 2 paragraphs
+  IMID-DRI-616 kilo:dots-studio/dots-3-note-preview:free: 355s TimeoutError: The read operation timed out
+  BSC-DRI-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 107 words / 3 paragraphs
+  GISD-DRI-00 zai:glm-4.5-flash: 78s ValueError: staged: 8 calls, last: 107 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 3 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 16 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۵
+  IMID-DRI-616 gapgpt:gemma-3-27b-it: 100s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۵
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  TORC-OAVBB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+style-soft: lead>35w/1num, text 11 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۶۲
+  BSC-DRI-00 gapgpt:gemma-3-27b-it: 135s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۶۲
+  GHIR-DRI-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 832s TimeoutError: The read operation timed out
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: bad response: '{"id":"gen-1793548623-X8Ul8OyWtQTHwvaVvavP","error":{"message":"Upstream error from Nvidia: Service tempo
+  gapgpt:gemma-3-27b-it: quota used up - skipped for an hour
+  GISD-DRI-00 gapgpt:gemma-3-27b-it: 64s QuotaError: HTTP 404: {"error":{"message":"No available channel for this model on the current token (request id: 202611011557106137270138268d9d6It1EMqeq)","type":"gap_api_error","param":"","code":"model_not_found"}}
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IALC-ALOX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 201s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 111 words / 3 paragraphs
+  IKRC-OAVBB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 69 words / 4 paragraphs
+  ALSU-AP06101-00 zai:glm-4.7-flash: 691s ValueError: staged: 8 calls, last: 69 words / 4 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: 71، ۱.۲، ۶.۷، ۷.۵
+  ALSU-AP06101-00 zai:glm-4.5-flash: 102s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: 71، ۱.۲، ۶.۷، ۷.۵
+  IALC-AP10201-00 zai:glm-4.7-flash: 362s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+timeout: give-up file saved
