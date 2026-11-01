@@ -589,3 +589,14 @@ style-soft: lead>35w/1num
   staged zai:glm-4.5-flash: accepted after 8 calls
   stage6 news: title in 1 calls
 OK SHPC-OAVAMB-00 <- zai:glm-4.5-flash (68s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 12 nums
+  THOR-GRSUSUB-00 zai:glm-4.7-flash: 672s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: draft dropped after 9 calls: 80 words / 3 paragraphs
+  THOR-GRSUSUB-00 zai:glm-4.5-flash: 71s ValueError: staged: 9 calls, last: 80 words / 3 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+style-soft: text 12 nums
+style-soft: text 12 nums
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: markers: «این در حالی است» در text
+  THOR-GRSUSUB-00 gapgpt:gemma-3-27b-it: 75s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
+written 1/2; total in file 1
