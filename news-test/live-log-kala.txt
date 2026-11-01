@@ -1,21 +1,182 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): AISC-BSO834X-00, SIS-PELL-00, HAAL-PS10000-00, NMC-OAIOC-00
-40 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+given up for today (failed 2 runs, row unchanged): SJS-DRI-00, GHIR-DRI-00, AISC-BSO834X-00, HAAL-PS10000-00, NMC-OAIOC-00
+38 symbols to write; 14 parallel workers: openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, gapgpt/paid, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: bad response: '{"id":"gen-1793538477-JnfV5HhGp5bJqJPmzo2o","error":{"message":"Upstream error from Nvidia: Service tempo
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:kilo-auto/free: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 9 nums
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۴ | تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است)
-OK GHZ-PELL-00 <- kilo:dots-studio/dots-3-note-preview:free (509s)
+style-soft: lead>35w/1num
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است | مقدار عرضه غلط است؛ عرضه ۴۴ بود
+  PPMZ-PSGPPS1028PP-00 kilo:kilo-auto/free: 121s ValueError: staged: 8 calls, last: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است | مقدار عرضه غلط است؛ عرضه ۴۴ بود
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  PPMZ-PSGPPS1028PP-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  PPMZ-PSGPPS1028PP-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  EFGZ-DRI-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  MRV-MEGB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:mistral/leanstral-1-5: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 15 nums
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: 96 words / 3 paragraphs
+  PPMZ-PSGPPS1028PP-00 kilo:cohere/north-mini-code:free: 108s ValueError: staged: 8 calls, last: 96 words / 3 paragraphs
+  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:gpt-oss-120b: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 5 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 6 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  TIOC-SW40B-00 kilo:kilo-auto/free: 74s JSONDecodeError: Extra data: line 3 column 1 (char 974)
+  staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  SPSC-DRI-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  PTZ-ZIF1-00 llm7:minimax-m2.7: 367s ValueError: staged: 8 calls, last: no JSON: 
+  KIPE-GPPSG324L-089 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged kilo:cohere/north-mini-code:free: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+style-soft: lead>35w/1num, text 9 nums
+  ovh:gpt-oss-120b: quota used up - skipped for an hour
+  PTC-POYDWP-00 ovh:gpt-oss-120b: 413s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"d1c41630d4f9671228d04d6f85816463"
+}
+style-soft: lead>35w/1num, text 20 nums
+  staged requesty:mistral/leanstral-1-5: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست
+  SHPC-MEAFG-00 requesty:mistral/leanstral-1-5: 444s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  PTC-POYDWP-00 ovh:Meta-Llama-3_3-70B-Instruct: 33s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"0844780716fa2a6af7298475961ba83f"
+}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped for an hour
+  PTZ-ZIF1-00 llm7:mistral-Nemo-Instruct-2407: 95s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded. Retry after 1 seconds.","type":"rate_limit_error","param":null,"code":"rate_limit_exceeded","retry_after":1}}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: 110 words / 3 paragraphs
-  SJS-DRI-00 kilo:dots-studio/dots-3-note-preview:free: 404s ValueError: staged: 8 calls, last: 110 words / 3 paragraphs
-  ABRO-OAVBB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 11 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 7 calls
-  stage6 news: title in 1 calls
-OK GISD-DRI-00 <- kilo:dots-studio/dots-3-note-preview:free (198s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  IMID-DRI-616 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  MBIG-PSHIPS4512L-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 12 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۸
+  DKPC-OAIOC-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 586s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۸
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 4 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 10 nums
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: 000، 024
+  TIOC-SW40B-00 kilo:cohere/north-mini-code:free: 346s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: 000، 024
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 2 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged ovh:Qwen3.6-27B: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 3 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 4 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 5 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 6 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 5 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 7 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+style-soft: lead>35w/1num
+  staged llm7:minimax-m2.7: call 6 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۸۹
+  FPC-ARGAB-00 kilo:kilo-auto/free: 112s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۸۹
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 8 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  SHPC-MEAFG-00 requesty:novita/inclusionai/ling-3.0-tiny: 366s ValueError: staged: 8 calls, last: no JSON: 
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  PORC-SW10B-00 llm7:minimax-m2.7: 369s ValueError: staged: 8 calls, last: no JSON: 
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  PTC-POYDWP-00 ovh:Qwen3.6-27B: 405s TimeoutError: The read operation timed out
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  PTC-POYDWP-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 15s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"068e8f299f1f3477ea0ad10953a5c447"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  PTC-POYDWP-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: text 16 nums
+  staged kilo:cohere/north-mini-code:free: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:cohere/north-mini-code:free: accepted after 6 calls
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}\n"}}
+
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۸۹ | فعل «رفت» امروز تکرار شده)
+OK FPC-ARGAB-00 <- kilo:cohere/north-mini-code:free (134s)
