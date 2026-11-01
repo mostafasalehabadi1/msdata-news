@@ -29,6 +29,19 @@ def main():
         provs = [(x, lambda p, x=x: w.post(urls[x.split(":")[0]][1], os.environ[urls[x.split(":")[0]][0]], x.split(":", 1)[1], p))
                  for x in open(os.environ["BENCH_LIST"], encoding="utf-8").read().split() if x.split(":")[0] in urls]
 
+    def responses(model, prompt):  # owner 1405-08-10: GapGPT Jev answers only the Responses API («does not support OpenAI chat requests»)
+        import urllib.request
+        body = {"model": model, "instructions": w.RULES, "input": prompt}
+        req = urllib.request.Request("https://api.gapgpt.app/v1/responses", json.dumps(body).encode(), {
+            "Authorization": "Bearer " + os.environ["GAPGPT_API_KEY"], "Content-Type": "application/json", "User-Agent": "msdata-news/1.0"})
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                d = json.load(r)
+        except urllib.error.HTTPError as e:
+            raise ValueError(f"HTTP {e.code}: {e.read().decode('utf-8', 'replace')[:800]}") from None
+        return d.get("output_text") or "".join(c.get("text", "") for o in d.get("output", []) for c in o.get("content", []) or [])
+    provs = [(x, (lambda p, m=x.split(":", 1)[1]: responses(m, p)) if x.startswith("gapgpt:typesafe/") else c) for x, c in provs]
+
     def run(name, call):
         t0, res = time.time(), {"model": name}
         try:
