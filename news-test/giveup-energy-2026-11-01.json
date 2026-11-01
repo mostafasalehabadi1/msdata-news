@@ -375,7 +375,7 @@
 },
 "DSBESCABEX0050813": {
 "fp": "{\"base_price\": 1994524.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 502|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 990000.0, \"goods_name\": \"حلال 502\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2105666.0, \"min_price\": 2056666.0, \"offer_volume\": 300000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 502|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSBESCABEX0050813\", \"symbol_code\": \"DSBESCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 622231140000.0, \"total_value_usd\": null, \"trade_count\": 4, \"trade_date\": \"1405/08/10\", \"trade_volume\": 300000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 2074104.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "openrouter:google/gemma-4-31b-it:free",
@@ -400,6 +400,30 @@
 "at": "10:35",
 "error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793577600000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
 "run": 1
+},
+{
+"model": "openrouter:google/gemma-4-31b-it:free",
+"at": "11:21",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793577600000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 2
+},
+{
+"model": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "11:21",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793577600000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 2
+},
+{
+"model": "openrouter:google/gemma-4-26b-a4b-it:free",
+"at": "11:21",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793577600000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 2
+},
+{
+"model": "openrouter:recursive/flint-v1.0:free",
+"at": "11:21",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793577600000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: حلال 502؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۱۰ آبان.\n4. شرکت پالایش نفت اصفهان ۳۰۰ هزار لیتر حلال 502 عرضه کرد و ۳۰۰ هزار لیتر آن فروش رفت.\n5. خریداران ۹۹۰ هزار لیتر تقاضا ثبت کردند؛ تقاضا ۳٫۳ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۲ میلیون و ۷۴ هزار و ۱۰۴ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۹۹۴ هزار و ۵۲۴ ریال در هر لیتر.\n8. رقابت قیمت را ۴ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۴ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۶۲٫۲ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۳ آبان با قیمت ۲ میلیون و ۱۲ هزار و ۴۵۳ ریال در هر لیتر بود؛ قیمت این بار ۳٫۱ درصد بالاتر است.\n12. این بالاترین قیمت این کالا از ۱۸ مرداد (آغاز داده‌ها) است؛ بالاترین قبلی ۲ میلیون و ۱۲ هزار و ۴۵۳ در ۳ آبان بود.\n13. این کالا از ۱۸ مرداد تا امروز ۱۷ بار از همین عرضه‌کننده معامله شده است.",
@@ -470,7 +494,7 @@
 },
 "DLNSECABEX0050816": {
 "fp": "{\"base_price\": 136000.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"نیتروژن مایع|شرکت فولاد سیرجان ایرانیان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 280.0, \"goods_name\": \"نیتروژن مایع\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 180999.0, \"min_price\": 166599.0, \"offer_volume\": 80.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت فولاد سیرجان ایرانیان\", \"series_key\": \"نیتروژن مایع|شرکت فولاد سیرجان ایرانیان|داخلی\", \"supplier\": \"شرکت فولاد سیرجان ایرانیان\", \"symbol\": \"DLNSECABEX0050816\", \"symbol_code\": \"DLNSECABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 13903920000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/10\", \"trade_volume\": 80.0, \"volume_unit\": \"تن\", \"weighted_price\": 173799.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
@@ -495,6 +519,42 @@
 "at": "10:17",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "groq:openai/gpt-oss-120b",
+"at": "11:21",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 194690, Requested 5512. Please try again in 1m27.264s. Need more tokens? Upgrade to Dev Tier today a",
+"run": 2
+},
+{
+"model": "groq:openai/gpt-oss-20b",
+"at": "11:21",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196230, Requested 5659. Please try again in 13m36.048s. Need more tokens? Upgrade to Dev Tier today a",
+"run": 2
+},
+{
+"model": "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+"at": "11:21",
+"error": "QuotaError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (cc7be8fd-701f-4220-aa7c-307dc879811b)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "11:24",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "11:35",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "11:36",
+"error": "ValueError: staged: 9 calls, last: 113 words after fixes",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: نیتروژن مایع؛ عرضه‌کننده: شرکت فولاد سیرجان ایرانیان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۱۰ آبان.\n4. شرکت فولاد سیرجان ایرانیان ۸۰ تن نیتروژن مایع عرضه کرد و ۸۰ تن آن فروش رفت.\n5. خریداران ۲۸۰ تن تقاضا ثبت کردند؛ تقاضا ۳٫۵ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۱۷۳ هزار و ۷۹۹ ریال در هر کیلوگرم بود و قیمت پایه ۱۳۶ هزار ریال در هر کیلوگرم.\n8. رقابت قیمت را ۲۷٫۸ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۲ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۱٫۴ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۳ آبان با قیمت ۱۳۰ هزار ریال در هر کیلوگرم بود؛ قیمت این بار ۳۳٫۷ درصد بالاتر است.\n12. این کالا از ۲۵ مرداد تا امروز ۷ بار از همین عرضه‌کننده معامله شده است.",
@@ -554,6 +614,285 @@
 [
 "قیمت معامله (ریال در هر کیلوگرم)",
 "۱۷۳ هزار و ۷۹۹"
+],
+[
+"بازار",
+"رینگ داخلی"
+]
+]
+}
+}
+},
+"DSBESCABEX1050813": {
+"fp": "{\"base_price\": 1994524.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 502|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 3780000.0, \"goods_name\": \"حلال 502\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2082889.0, \"min_price\": 2058888.0, \"offer_volume\": 2100000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 502|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSBESCABEX1050813\", \"symbol_code\": \"DSBESCABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 4348740060000.0, \"total_value_usd\": null, \"trade_count\": 5, \"trade_date\": \"1405/08/10\", \"trade_volume\": 2100000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 2070829.0}",
+"runs": 1,
+"reasons": [
+{
+"model": "llm7:deepseek-v4-flash:0731",
+"at": "11:21",
+"error": "QuotaError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
+"run": 1
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "11:22",
+"error": "JSONDecodeError: Extra data: line 4 column 1 (char 14)",
+"run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "11:35",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "11:42",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+}
+],
+"facts": "1. نام کالا: حلال 502؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۱۰ آبان.\n4. شرکت پالایش نفت اصفهان ۲ میلیون و ۱۰۰ هزار لیتر حلال 502 عرضه کرد و ۲ میلیون و ۱۰۰ هزار لیتر آن فروش رفت.\n5. خریداران ۳ میلیون و ۷۸۰ هزار لیتر تقاضا ثبت کردند؛ تقاضا ۱٫۸ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۲ میلیون و ۷۰ هزار و ۸۲۹ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۹۹۴ هزار و ۵۲۴ ریال در هر لیتر.\n8. رقابت قیمت را ۳٫۸ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۵ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۴۳۵ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۳ آبان با قیمت ۲ میلیون و ۱۲ هزار و ۴۵۳ ریال در هر لیتر بود؛ قیمت این بار ۲٫۹ درصد بالاتر است.\n12. این بالاترین قیمت این کالا از ۱۸ مرداد (آغاز داده‌ها) است؛ بالاترین قبلی ۲ میلیون و ۱۲ هزار و ۴۵۳ در ۳ آبان بود.\n13. این کالا از ۱۸ مرداد تا امروز ۱۷ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت حلال 502 در معامله‌های اخیر (ریال در هر لیتر)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۵ مهر",
+"۱ میلیون و ۷۱۲ هزار و ۲۴۵"
+],
+[
+"۲۲ مهر",
+"۱ میلیون و ۸۲۶ هزار و ۶۹۲"
+],
+[
+"۲۲ مهر",
+"۱ میلیون و ۷۴۰ هزار و ۹۶۱"
+],
+[
+"۳ آبان",
+"۱ میلیون و ۹۹۴ هزار و ۵۲۴"
+],
+[
+"۳ آبان",
+"۲ میلیون و ۱۲ هزار و ۴۵۳"
+],
+[
+"۱۰ آبان",
+"۲ میلیون و ۷۰ هزار و ۸۲۹"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی حلال 502 شرکت پالایش نفت اصفهان",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (لیتر)",
+"۲ میلیون و ۱۰۰ هزار"
+],
+[
+"فروش (لیتر)",
+"۲ میلیون و ۱۰۰ هزار"
+],
+[
+"قیمت پایه (ریال در هر لیتر)",
+"۱ میلیون و ۹۹۴ هزار و ۵۲۴"
+],
+[
+"قیمت معامله (ریال در هر لیتر)",
+"۲ میلیون و ۷۰ هزار و ۸۲۹"
+],
+[
+"بازار",
+"رینگ داخلی"
+]
+]
+}
+}
+},
+"DHOGZCABEX0050813": {
+"fp": "{\"base_price\": 978220.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"روغن سنگین قطرانی|شرکت پالایش قطران ذغالسنگ|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 1000.0, \"goods_name\": \"روغن سنگین قطرانی\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 978220.0, \"min_price\": 978220.0, \"offer_volume\": 1000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش قطران ذغالسنگ\", \"series_key\": \"روغن سنگین قطرانی|شرکت پالایش قطران ذغالسنگ|داخلی\", \"supplier\": \"پالایش قطران ذغالسنگ\", \"symbol\": \"DHOGZCABEX0050813\", \"symbol_code\": \"DHOGZCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 978220000000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/10\", \"trade_volume\": 1000.0, \"volume_unit\": \"تن\", \"weighted_price\": 978220.0}",
+"runs": 1,
+"reasons": [
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "11:29",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "11:31",
+"error": "ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست",
+"run": 1
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "11:41",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+}
+],
+"facts": "1. نام کالا: روغن سنگین قطرانی؛ عرضه‌کننده: شرکت پالایش قطران ذغالسنگ.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۱۰ آبان.\n4. شرکت پالایش قطران ذغالسنگ ۱ هزار تن روغن سنگین قطرانی عرضه کرد و ۱ هزار تن آن فروش رفت.\n5. خریداران ۱ هزار تن تقاضا ثبت کردند.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۹۷۸ هزار و ۲۲۰ ریال در هر کیلوگرم بود و قیمت پایه ۹۷۸ هزار و ۲۲۰ ریال در هر کیلوگرم.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۲ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۹۷٫۸ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲ آبان با قیمت ۹۷۸ هزار و ۲۲۰ ریال در هر کیلوگرم بود؛ قیمت تغییری نکرد.\n12. این کالا از ۲۸ مرداد تا امروز ۵ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت روغن سنگین قطرانی در معامله‌های اخیر (ریال در هر کیلوگرم)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۲۸ مرداد",
+"۶۰۱ هزار و ۱۰۰"
+],
+[
+"۳ شهریور",
+"۶۲۹ هزار"
+],
+[
+"۷ مهر",
+"۷۴۸ هزار و ۱۰۰"
+],
+[
+"۱۴ مهر",
+"۷۸۵ هزار و ۵۰۵"
+],
+[
+"۲ آبان",
+"۹۷۸ هزار و ۲۲۰"
+],
+[
+"۱۰ آبان",
+"۹۷۸ هزار و ۲۲۰"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی روغن سنگین قطرانی شرکت پالایش قطران ذغالسنگ",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۱ هزار"
+],
+[
+"فروش (تن)",
+"۱ هزار"
+],
+[
+"قیمت پایه (ریال در هر کیلوگرم)",
+"۹۷۸ هزار و ۲۲۰"
+],
+[
+"قیمت معامله (ریال در هر کیلوگرم)",
+"۹۷۸ هزار و ۲۲۰"
+],
+[
+"بازار",
+"رینگ داخلی"
+]
+]
+}
+}
+},
+"DSVESCABEX1050813": {
+"fp": "{\"base_price\": 1976240.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 402|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 810000.0, \"goods_name\": \"حلال 402\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2361888.0, \"min_price\": 2100999.0, \"offer_volume\": 300000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 402|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSVESCABEX1050813\", \"symbol_code\": \"DSVESCABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 657383190000.0, \"total_value_usd\": null, \"trade_count\": 6, \"trade_date\": \"1405/08/10\", \"trade_volume\": 300000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 2191277.0}",
+"runs": 1,
+"reasons": [
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "11:32",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "gapgpt:gemma-3-27b-it",
+"at": "11:33",
+"error": "JSONDecodeError: Extra data: line 4 column 1 (char 14)",
+"run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "11:38",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "11:44",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+}
+],
+"facts": "1. نام کالا: حلال 402؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۱۰ آبان.\n4. شرکت پالایش نفت اصفهان ۳۰۰ هزار لیتر حلال 402 عرضه کرد و ۳۰۰ هزار لیتر آن فروش رفت.\n5. خریداران ۸۱۰ هزار لیتر تقاضا ثبت کردند؛ تقاضا ۲٫۷ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۲ میلیون و ۱۹۱ هزار و ۲۷۷ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۹۷۶ هزار و ۲۴۰ ریال در هر لیتر.\n8. رقابت قیمت را ۱۰٫۹ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۶ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۶۵٫۷ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۳ آبان با قیمت ۱ میلیون و ۹۲۴ هزار و ۶۷۹ ریال در هر لیتر بود؛ قیمت این بار ۱۳٫۹ درصد بالاتر است.\n12. این بالاترین قیمت این کالا از ۱۸ مرداد (آغاز داده‌ها) است؛ بالاترین قبلی ۱ میلیون و ۹۷۶ هزار و ۲۴۰ در ۳ آبان بود.\n13. این کالا از ۱۸ مرداد تا امروز ۲۳ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت حلال 402 در معامله‌های اخیر (ریال در هر لیتر)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۲۲ مهر",
+"۱ میلیون و ۶۷۲ هزار و ۷۶۴"
+],
+[
+"۲۹ مهر",
+"۱ میلیون و ۹۵۳ هزار و ۵۹۹"
+],
+[
+"۲۹ مهر",
+"۱ میلیون و ۹۵۳ هزار و ۵۹۹"
+],
+[
+"۳ آبان",
+"۱ میلیون و ۹۷۶ هزار و ۲۴۰"
+],
+[
+"۳ آبان",
+"۱ میلیون و ۹۲۴ هزار و ۶۷۹"
+],
+[
+"۱۰ آبان",
+"۲ میلیون و ۱۹۱ هزار و ۲۷۷"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی حلال 402 شرکت پالایش نفت اصفهان",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (لیتر)",
+"۳۰۰ هزار"
+],
+[
+"فروش (لیتر)",
+"۳۰۰ هزار"
+],
+[
+"قیمت پایه (ریال در هر لیتر)",
+"۱ میلیون و ۹۷۶ هزار و ۲۴۰"
+],
+[
+"قیمت معامله (ریال در هر لیتر)",
+"۲ میلیون و ۱۹۱ هزار و ۲۷۷"
 ],
 [
 "بازار",
