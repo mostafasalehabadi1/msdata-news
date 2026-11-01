@@ -137,3 +137,22 @@ style-soft: lead>35w/1num, text 9 nums
   staged gapgpt:gemma-3-27b-it: accepted after 8 calls
   stage6 news: title in 2 calls
 OK TIOC-SW10B-00 <- gapgpt:gemma-3-27b-it (83s)
+  staged gapgpt:gemma-3-27b-it: check cut 4 sentence(s)
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+  staged gapgpt:gemma-3-27b-it: draft dropped after 8 calls: 116 words / 2 paragraphs
+  TIOC-SW40B-00 gapgpt:gemma-3-27b-it: 93s ValueError: staged: 8 calls, last: 116 words / 2 paragraphs
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 79 words / 2 paragraphs
+  PSNS-PAFJ-00 zai:glm-4.7-flash: 1314s ValueError: staged: 8 calls, last: 79 words / 2 paragraphs
+  staged ovh:gpt-oss-120b: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 109 words / 4 paragraphs
+  PSNS-PAFJ-00 zai:glm-4.5-flash: 77s ValueError: staged: 8 calls, last: 109 words / 4 paragraphs
+  staged gapgpt:gemma-3-27b-it: check cut 2 sentence(s)
+  staged gapgpt:gemma-3-27b-it: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: text 11 nums
+  staged gapgpt:gemma-3-27b-it: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged gapgpt:gemma-3-27b-it: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK PSNS-PAFJ-00 <- gapgpt:gemma-3-27b-it (128s)
