@@ -105,15 +105,20 @@ def all_images(errs):
 
 
 def check_table(name, d, errs):
-    """content agent 1405-08-10: the us/fx/macro page builders read only a list of flat rows [{"col": "value", ...}, ...];
-    a {title, columns, rows} table was printed raw on 8 US pages, so any other shape holds the push."""
-    t = d.get("table")
-    if t is None:
-        return
-    flat = lambda r: isinstance(r, dict) and r and not {"title", "columns", "rows"} & set(r) and all(  # noqa: E731
-        isinstance(v, (str, int, float)) and not isinstance(v, bool) for v in r.values())
-    if not (isinstance(t, list) and t and all(flat(r) for r in t)):
-        errs.append(f"{name}: table must be a list of flat rows [{{\"column\": value}}, ...], not {{title, columns, rows}}")
+    """content agent 1405-08-10: a table the page builder cannot read was printed raw on 8 US pages. The builder (designer
+    report-tpl-1410, 1405-08-11) reads: a list of flat rows [{"col": value}], one {title, columns, rows}, or a list of those;
+    `tables` = a list of such tables. Any other shape holds the push."""
+    val = lambda v: isinstance(v, (str, int, float)) and not isinstance(v, bool)  # noqa: E731
+    flat = lambda t: isinstance(t, list) and t and all(isinstance(r, dict) and r and not {"title", "columns", "rows"} & set(r) and all(val(v) for v in r.values()) for r in t)  # noqa: E731
+    tcr = lambda t: isinstance(t, dict) and isinstance(t.get("columns"), list) and t["columns"] and isinstance(t.get("rows"), list) and t["rows"] and all(  # noqa: E731
+        isinstance(r, list) and len(r) == len(t["columns"]) and all(val(v) for v in r) for r in t["rows"])
+    one = lambda t: flat(t) or tcr(t) or (isinstance(t, list) and t and all(tcr(x) for x in t))  # noqa: E731
+    for k in ("table", "tables"):
+        t = d.get(k)
+        if t is None:
+            continue
+        if not (one(t) if k == "table" else isinstance(t, list) and t and all(one(x) for x in t)):
+            errs.append(f"{name}: {k} must be flat rows [{{\"column\": value}}] or {{title, columns, rows}} with rows of the same length")
 
 
 def main():
