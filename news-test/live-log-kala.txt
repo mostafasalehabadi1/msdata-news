@@ -1,9 +1,35 @@
+rewrite KZC-CR08AB-00: data changed after it was written (20.0|10.0|10.0|33300441.0|333004410.0 -> 30.0|20.0|20.0|33300441.0|666008820.0)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): SIS-PELL-00
-6 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  BISC-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  BISC-BSG324X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SRBK-CR08AB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+given up for today (failed 2 runs, row unchanged): SIS-BSG324X-00, BISC-BSG194X-00, BISC-BSG324X-00, SRBK-CR08AB-00, SIS-PELL-00
+39 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  ZAI-BSO1720X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid \escape: line 7 column 29 (char 332)
+  NGFA-BSG194X-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 15s JSONDecodeError: Expecting value: line 5 column 11 (char 202)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  SHPC-TEAKG-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 14s JSONDecodeError: Expecting value: line 5 column 11 (char 195)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 92 words / 3 paragraphs
+  PBSC-BSO1720X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 27s ValueError: staged: 8 calls, last: 92 words / 3 paragraphs
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  PORC-SW10B-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 5 column 11 (char 180)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 4 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 113 words / 4 paragraphs
+  NGFA-BSG194X-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 34s ValueError: staged: 8 calls, last: 113 words / 4 paragraphs
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  llm7:minimax-m2.7: quota used up - skipped until tomorrow
+  KZC-CR08AB-00 llm7:minimax-m2.7: 179s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 1039 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":1039}}
+  CHMI-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SRM-BSG017OO-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+  ATSC-BSG194X-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
+  KZC-CR08AB-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
   "error": {
     "code": 500,
@@ -12,10 +38,80 @@ given up for today (failed 2 runs, row unchanged): SIS-PELL-00
   }
 }
 
-  AKSS-BSG324X-00 gemini:gemma-4-26b-a4b-it: 600s TimeoutError: The read operation timed out
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «رفت» امروز تکرار شده)
-OK AKSS-BSG324X-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (35s)
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 2 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  SRM-BSG017OO-00 ovh:Meta-Llama-3_3-70B-Instruct: 163s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"c81356148bcd0b771ff6863d5ea8bc23"
+}
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: 107 words / 2 paragraphs
+  BOC-BOSN500B-00 kilo:kilo-auto/free: 349s ValueError: staged: 8 calls, last: 107 words / 2 paragraphs
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  BOC-BOSN500B-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 1s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  BOC-BOSN500B-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
+  SKS-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  ZAI-BSO1720X-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 12 nums
+  staged zai:glm-4.7-flash: draft dropped after 5 calls: 86 words / 2 paragraphs
+style-soft: در حالی که, lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 85 words / 3 paragraphs
+  SSTC-BSG194X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 413s ValueError: staged: 8 calls, last: 85 words / 3 paragraphs
+  SHPC-PPV30GAPP-00 gemini:gemma-4-26b-a4b-it: 447s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num, text 18 nums
+  staged requesty:mistral/leanstral-1-5: draft dropped after 9 calls: markers: عدد بیرون از حقیقت‌ها: ۲۴
+  AKSS-BSG194X-00 requesty:mistral/leanstral-1-5: 456s ValueError: staged: 9 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۴
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:cohere/north-mini-code:free: check cut 3 sentence(s)
+  IORC-OAVBB-00 gemini:gemma-4-31b-it: 499s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  SRM-BSG017OO-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  SRM-BSG017OO-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 10s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"603d4546302a6b385a277c189f2f7b46"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  SRM-BSG017OO-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  NGHS-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SHPC-TEAKG-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 74 words / 2 paragraphs
+  YBSC-BSG194X-00 zai:glm-4.7-flash: 629s ValueError: staged: 8 calls, last: 74 words / 2 paragraphs
+style-soft: text 10 nums
+style-soft: text 10 nums
+  staged kilo:cohere/north-mini-code:free: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged kilo:cohere/north-mini-code:free: accepted after 6 calls
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۴۹)
+OK BOC-BOSN500B-00 <- kilo:cohere/north-mini-code:free (321s)
