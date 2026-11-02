@@ -123,3 +123,40 @@ style-soft: lead>35w/1num
   staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱)
 OK NFCO-PCT2G42.5-L50EX-00 <- kilo:kilo-auto/free (525s)
+  PBDC-INBPPBEX-00 gemini:gemma-4-26b-a4b-it: 274s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  ZCC-PCT1G42.5-JEX-00 ovh:Qwen3.6-27B: 663s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  ZCC-PCT1G42.5-JEX-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 12s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"ec3d9c2a41b103135c34367c5977cf06"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  ZCC-PCT1G42.5-JEX-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 5 calls: 53 words / 2 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  SPSC-DIREX-00 gemini:gemma-4-31b-it: 201s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num, text 9 nums
+  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 72 words / 3 paragraphs
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+  staged groq:openai/gpt-oss-120b: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged groq:openai/gpt-oss-120b: accepted after 8 calls
+  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 8 calls: 40 words / 2 paragraphs
+  SGHC-CLINKERT2EX-00 openrouter:google/gemma-4-31b-it:free: 1063s ValueError: staged: 8 calls, last: 40 words / 2 paragraphs
+  staged kilo:kilo-auto/free: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست
+  BPCO-BI6070GEX-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 235s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست
+  PSP-BI6070BEX-00 ovh:gpt-oss-120b: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  stage6 news: title in 3 calls
+OK CJOV-PCT2G42.5-L50EX-00 <- groq:openai/gpt-oss-120b (290s)
