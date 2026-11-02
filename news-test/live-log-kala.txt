@@ -1,61 +1,23 @@
+rewrite MKL-TISSSLGR20-00: data changed after it was written (42.0|42.0|42.0|2430000.0|102060000.0 -> 52.0|42.0|48.0|2430000.0|102060000.0)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): SIS-BSG324X-00, BISC-BSG194X-00, BISC-BSG324X-00, SRBK-CR08AB-00, SIS-PELL-00
-37 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
-  SHPC-TEAKG-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d8333b9b-026b-41bd-
-  cf:@cf/qwen/qwen2.5-coder-32b-instruct: quota used up - skipped until tomorrow
-  NGFA-BSG194X-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (263c2ee3-fd9e-4b7b-
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n{"id":"gen-1793628644-5sHMlmIHsIrc3ASIrUgd","error":{"message":"xi
+given up for today (failed 2 runs, row unchanged): IORC-OAVBB-00, SIS-BSG324X-00, BISC-BSG194X-00, BISC-BSG324X-00, SRBK-CR08AB-00, SIS-PELL-00, PBSC-BSO1720X-00, SHPC-TEAKG-00, PORC-SW10B-00
+17 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
   staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  PBSC-BSO1720X-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  CHMI-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SRM-BSG017OO-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  SSTC-BSG194X-00 ovh:gpt-oss-120b: 180s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 4 sentence(s)
-  YBSC-BSG194X-00 gemini:gemma-4-26b-a4b-it: 315s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  SSTC-BSG194X-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-  SKS-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  PORC-SW10B-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  ZAI-BSO1720X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 408s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  IORC-OAVBB-00 gemini:gemma-4-31b-it: 437s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  PBSC-BSO1720X-00 kilo:cohere/north-mini-code:free: 262s TimeoutError: The read operation timed out
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 100 words / 4 paragraphs
-  AKSS-BSG194X-00 zai:glm-4.7-flash: 526s ValueError: staged: 8 calls, last: 100 words / 4 paragraphs
-  NGFA-BSG194X-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
-  YBSC-BSG194X-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  SHPC-TEAKG-00 gemini:gemma-4-26b-a4b-it: 291s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  SSTC-BSG194X-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  NGFA-BSG194X-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
-style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 11 nums
-style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 10 nums
-  staged zai:glm-4.5-flash: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۲۴، ۹۲۴
-  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
-  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 73 words / 3 paragraphs
-  AKSS-BSG194X-00 zai:glm-4.5-flash: 234s ValueError: staged: 8 calls, last: 73 words / 3 paragraphs
-  SRM-BSG017OO-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 400s TimeoutError: The read operation timed out
-style-soft: text 21 nums
-  staged kilo:cohere/north-mini-code:free: soft: متن 19 عدد دارد؛ حداکثر ۶ عدد بماند | 4 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:cohere/north-mini-code:free: accepted after 6 calls
-  stage6 news: title in 3 calls
-OK SSTC-BSG194X-00 <- kilo:cohere/north-mini-code:free (253s)
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  SHPC-PPV30GAPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  SHPC-MEAFG-00 zai:glm-4.7-flash: 326s TimeoutError: The read operation timed out
+  CWD-CR08AB-00 gemini:gemma-4-31b-it: 336s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  JPPC-PPEP548RPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+style-soft: lead>35w/1num, text 12 nums
+  staged zai:glm-4.5-flash: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳)
+OK SHPC-MEAFG-00 <- zai:glm-4.5-flash (76s)
