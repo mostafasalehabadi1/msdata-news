@@ -87,9 +87,7 @@ def check_images(name, d, errs):
 def check_marks(name, d, errs):
     """owner 1405-08-11: the place of images and tables is always stated. The builder puts all tables at one point, in list order,
     so one «[جدول]» covers all of them."""
-    paras = [p.strip() for p in re.split(r"
-\s*
-", str(d.get("text", "")))]
+    paras = [p.strip() for p in re.split(r"\n\s*\n", str(d.get("text", "")))]
     ims, tbl = paras.count("[عکس]"), paras.count("[جدول]") + paras.count("[جدول‌ها]")
     if d.get("images") and ims != 1:
         errs.append(f"{name}: images need exactly one [عکس], found {ims}")
