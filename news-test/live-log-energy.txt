@@ -29,3 +29,31 @@ style-soft: lead>35w/1num, text 13 nums
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (6 کلمه؛ ۸ تا ۱۳ | فعل «فروخت» امروز تکرار شده)
 OK DMTKVCABEX0050816 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (45s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  ILGNDPRBEX1050818 gemini:gemma-4-31b-it: 872s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  ILGNDPRBEX0050818 gemini:gemma-4-31b-it: 382s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num, text 9 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۶
+  ILGNDPRBEX1050818 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 36s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۶
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged zai:glm-4.7-flash: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 8 calls
+  staged zai:glm-4.7-flash: call 10 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  stage6 news: kept stage-5 title after 3 calls (فعل «رفت» امروز تکرار شده)
+OK ILGNDPRBEX0050818 <- zai:glm-4.7-flash (250s)
