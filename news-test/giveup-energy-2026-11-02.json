@@ -335,13 +335,25 @@
 },
 "DMTMJCABFC1050819": {
 "fp": "{\"base_price\": 605635.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت پتروشیمی مرجان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 525.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 605635.0, \"min_price\": 605635.0, \"offer_volume\": 1000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشیمی مرجان\", \"series_key\": \"متانول|شرکت پتروشیمی مرجان|داخلی\", \"supplier\": \"شرکت پتروشیمی مرجان\", \"symbol\": \"DMTMJCABFC1050819\", \"symbol_code\": \"DMTMJCABFC1\", \"target_market\": \"داخلی\", \"total_value_rial\": 317958375000.0, \"total_value_usd\": null, \"trade_count\": 4, \"trade_date\": \"1405/08/11\", \"trade_volume\": 525.0, \"volume_unit\": \"تن\", \"weighted_price\": 605635.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "kilo:dots-studio/dots-3-note-preview:free",
 "at": "10:14",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "11:11",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "11:29",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت پتروشیمی مرجان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۱ آبان.\n4. شرکت پتروشیمی مرجان ۱ هزار تن متانول عرضه کرد و ۵۲۵ تن آن فروش رفت.\n5. خریداران ۵۲۵ تن تقاضا ثبت کردند؛ تقاضا فقط ۵۲ درصد عرضه بود.\n6. ۵۲ درصد عرضه فروش رفت.\n7. قیمت میانگین معامله ۶۰۵ هزار و ۶۳۵ ریال در هر کیلوگرم بود و قیمت پایه ۶۰۵ هزار و ۶۳۵ ریال در هر کیلوگرم.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۴ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۳۱٫۸ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۶ آبان با قیمت ۶۴۳ هزار و ۲۷۹ ریال در هر کیلوگرم بود؛ قیمت این بار ۵٫۹ درصد پایین‌تر است.\n12. این کالا از ۱۹ مرداد تا امروز ۱۲ بار از همین عرضه‌کننده معامله شده است.",
@@ -412,13 +424,19 @@
 },
 "DHCJMCABEX0050816": {
 "fp": "{\"base_price\": 1040553.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"برش سنگین|شرکت پتروشیمی جم|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 300.0, \"goods_name\": \"برش سنگین\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 1040553.0, \"min_price\": 1040553.0, \"offer_volume\": 300.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشیمی جم\", \"series_key\": \"برش سنگین|شرکت پتروشیمی جم|داخلی\", \"supplier\": \"شرکت پتروشیمی جم\", \"symbol\": \"DHCJMCABEX0050816\", \"symbol_code\": \"DHCJMCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 312165900000.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/11\", \"trade_volume\": 300.0, \"volume_unit\": \"تن\", \"weighted_price\": 1040553.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "gemini:gemma-4-31b-it",
 "at": "10:24",
 "error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
 "run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "11:14",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: برش سنگین؛ عرضه‌کننده: شرکت پتروشیمی جم.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۱ آبان.\n4. شرکت پتروشیمی جم ۳۰۰ تن برش سنگین عرضه کرد و ۳۰۰ تن آن فروش رفت.\n5. خریداران ۳۰۰ تن تقاضا ثبت کردند.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۱ میلیون و ۴۰ هزار و ۵۵۳ ریال در هر کیلوگرم بود و قیمت پایه ۱ میلیون و ۴۰ هزار و ۵۵۳ ریال در هر کیلوگرم.\n8. قیمت با قیمت پایه برابر بود.\n9. ارزش ریالی این معامله حدود ۳۱٫۲ میلیارد تومان بود.\n10. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۴ آبان با قیمت ۹۷۴ هزار و ۸۲۸ ریال در هر کیلوگرم بود؛ قیمت این بار ۶٫۷ درصد بالاتر است.\n11. این بالاترین قیمت این کالا از ۲۶ مرداد (آغاز داده‌ها) است؛ بالاترین قبلی ۹۷۴ هزار و ۸۲۸ در ۴ آبان بود.\n12. این کالا از ۲۶ مرداد تا امروز ۷ بار از همین عرضه‌کننده معامله شده است.",
@@ -931,8 +949,21 @@
 },
 "DMESBCABEX0050816": {
 "fp": "{\"base_price\": 3977738.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"MTBE|شرکت پتروشیمی شیمی بافت|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 1260.0, \"goods_name\": \"MTBE\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 3977750.0, \"min_price\": 3977738.0, \"offer_volume\": 400.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشیمی شیمی بافت\", \"series_key\": \"MTBE|شرکت پتروشیمی شیمی بافت|داخلی\", \"supplier\": \"شرکت شیمی بافت\", \"symbol\": \"DMESBCABEX0050816\", \"symbol_code\": \"DMESBCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 1591096880000.0, \"total_value_usd\": null, \"trade_count\": 5, \"trade_date\": \"1405/08/11\", \"trade_volume\": 400.0, \"volume_unit\": \"تن\", \"weighted_price\": 3977742.0}",
-"runs": 1,
-"reasons": [],
+"runs": 2,
+"reasons": [
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "11:14",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "11:17",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+}
+],
 "facts": "1. نام کالا: MTBE؛ عرضه‌کننده: شرکت پتروشیمی شیمی بافت.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۱ آبان.\n4. شرکت پتروشیمی شیمی بافت ۴۰۰ تن MTBE عرضه کرد و ۴۰۰ تن آن فروش رفت.\n5. خریداران ۱ هزار و ۲۶۰ تن تقاضا ثبت کردند؛ تقاضا ۳٫۱ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۳ میلیون و ۹۷۷ هزار و ۷۴۲ ریال در هر کیلوگرم بود و قیمت پایه ۳ میلیون و ۹۷۷ هزار و ۷۳۸ ریال در هر کیلوگرم.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۵ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۱۵۹ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲۸ مهر با قیمت ۵ میلیون و ۹۲۹ هزار و ۹۹۹ ریال در هر کیلوگرم بود؛ قیمت این بار ۳۲٫۹ درصد پایین‌تر است.\n12. این پایین‌ترین قیمت این کالا از ۲۰ مرداد (آغاز داده‌ها) است؛ پایین‌ترین قبلی ۵ میلیون و ۷۶۳ هزار و ۹۹۱ در ۴ شهریور بود.\n13. این کالا از ۲۰ مرداد تا امروز ۶ بار از همین عرضه‌کننده معامله شده است.",
 "tables": {
 "T1": {
@@ -1001,7 +1032,7 @@
 },
 "DMTFACABEX0050816": {
 "fp": "{\"base_price\": 605635.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت پتروشيمي فن آوران|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 96.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 605635.0, \"min_price\": 605635.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشيمي فن آوران\", \"series_key\": \"متانول|شرکت پتروشيمي فن آوران|داخلی\", \"supplier\": \"شرکت پتروشیمی فن آوران\", \"symbol\": \"DMTFACABEX0050816\", \"symbol_code\": \"DMTFACABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 58140960000.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/11\", \"trade_volume\": 96.0, \"volume_unit\": \"تن\", \"weighted_price\": 605635.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "cf:@cf/qwen/qwen2.5-coder-32b-instruct",
@@ -1032,6 +1063,30 @@
 "at": "11:04",
 "error": "ValueError: staged: 9 calls, last: 96 words / 3 paragraphs",
 "run": 1
+},
+{
+"model": "openrouter:google/gemma-4-31b-it:free",
+"at": "11:27",
+"error": "ValueError: staged: 8 calls, last: 59 words / 3 paragraphs",
+"run": 2
+},
+{
+"model": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "11:33",
+"error": "ValueError: staged: 8 calls, last: markers: «این در حالی است» در text | عدد بیرون از حقیقت‌ها: ۶۰۶ | کد کالا یا حروف لاتین وسط متن | نویسه‌ی غیرفارسی (چینی/سیریلیک/…)",
+"run": 2
+},
+{
+"model": "openrouter:google/gemma-4-26b-a4b-it:free",
+"at": "11:33",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793664000000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 2
+},
+{
+"model": "openrouter:recursive/flint-v1.0:free",
+"at": "11:33",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1793664000000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت پتروشیمی فن آوران.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۱ آبان.\n4. ۹۶ تن متانول شرکت پتروشیمی فن آوران فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۶۰۵ هزار و ۶۳۵ ریال در هر کیلوگرم بود و قیمت پایه ۶۰۵ هزار و ۶۳۵ ریال در هر کیلوگرم.\n6. قیمت با قیمت پایه برابر بود.\n7. ارزش ریالی این معامله حدود ۵٫۸ میلیارد تومان بود.\n8. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۴ آبان با قیمت ۶۴۳ هزار و ۲۷۹ ریال در هر کیلوگرم بود؛ قیمت این بار ۵٫۹ درصد پایین‌تر است.\n9. این کالا از ۱۹ مرداد تا امروز ۱۴ بار از همین عرضه‌کننده معامله شده است.",
