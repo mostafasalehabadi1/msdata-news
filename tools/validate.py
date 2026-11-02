@@ -43,6 +43,7 @@ def check_text(where, d, errs, min_w, max_w, min_p, max_p):
 
 
 IMG_FROM = "2026-11-01"  # owner 1405-08-10: news images go out with the news itself; from today on, old news untouched
+MARK_FROM = "2026-11-03"  # owner 1405-08-11: from tomorrow on, every image set and table set has exactly one marker; older news untouched
 IMG_MAX = 200 * 1024
 
 
@@ -83,6 +84,21 @@ def check_images(name, d, errs):
             errs.append(f"{name}: image not 1200x675 webp {src} {webp_size(p)}")
 
 
+def check_marks(name, d, errs):
+    """owner 1405-08-11: the place of images and tables is always stated. The builder puts all tables at one point, in list order,
+    so one «[جدول]» covers all of them."""
+    paras = [p.strip() for p in re.split(r"
+\s*
+", str(d.get("text", "")))]
+    ims, tbl = paras.count("[عکس]"), paras.count("[جدول]") + paras.count("[جدول‌ها]")
+    if d.get("images") and ims != 1:
+        errs.append(f"{name}: images need exactly one [عکس], found {ims}")
+    if (d.get("table") or d.get("tables")) and tbl != 1:
+        errs.append(f"{name}: tables need exactly one [جدول], found {tbl}")
+    if tbl and not (d.get("table") or d.get("tables")):
+        errs.append(f"{name}: [جدول] without a table")
+
+
 def all_images(errs):
     """every news file dated IMG_FROM or later, and each item of a day file."""
     for path in sorted(glob.glob(os.path.join(ROOT, "**", "*.json"), recursive=True)):
@@ -99,9 +115,13 @@ def all_images(errs):
         if day < IMG_FROM:
             continue
         check_images(rel, d, errs)
+        if day >= MARK_FROM:
+            check_marks(rel, d, errs)
         for k, it in enumerate(d.get("items") or []):
             if isinstance(it, dict):
                 check_images(f"{rel}[{k}]", it, errs)
+                if day >= MARK_FROM:
+                    check_marks(f"{rel}[{k}]", it, errs)
 
 
 def check_table(name, d, errs):
