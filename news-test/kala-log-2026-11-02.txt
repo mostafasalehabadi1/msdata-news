@@ -823,3 +823,26 @@ OK MKL-TISSDLGR18-00 <- zai:glm-4.7-flash (819s)
   staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   stage6 news: title in 3 calls
 OK AHB-BSG194X-00 <- openrouter:xingchen-agi/xing4.0-29b-a4b:free (1500s)
+kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی
+kala: 11 settled rows, 63 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): SIS-PELL-00
+6 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  BISC-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  BISC-BSG324X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SRBK-CR08AB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  AKSS-BSG324X-00 gemini:gemma-4-26b-a4b-it: 600s TimeoutError: The read operation timed out
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «رفت» امروز تکرار شده)
+OK AKSS-BSG324X-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (35s)
