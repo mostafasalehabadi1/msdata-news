@@ -1,3 +1,70 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): SGPE-BI6070BEX-00, PGPS-BI6070BEX-00, SHCO-PCT2G42.5-L50EX-00, SECO-PCT2G42.5-L50EX-00, SACE-PCT2G42.5-L50EX-00, AZRC-BI6070BEX-00
-0 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+28 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
+  GHCO-PCT2G42.5-BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (86e2fa25-4151-40da-
+  cf:@cf/qwen/qwen2.5-coder-32b-instruct: quota used up - skipped until tomorrow
+  OAC-PCT2G42.5-L50EX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ac7a37d0-7716-466a-
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  PACB-BI6070BEX-00 llm7:deepseek-v4-flash:0731: 0s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  llm7:minimax-m2.7: quota used up - skipped until tomorrow
+  NFCO-PCT2G42.5-L50EX-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 1534 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":1534}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
+  NFCO-PCT2G42.5-L50EX-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 57 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":57}}
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged kilo:kilo-auto/free: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  BPCO-BI6070GEX-00 requesty:mistral/leanstral-1-5: 180s TimeoutError: The read operation timed out
+  KHCO-CLINKERT5EX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  PBDC-INBPPBEX-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  ZCC-PCT1G42.5-JEX-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+  requesty:novita/inclusionai/ling-3.0-tiny: quota used up - skipped until tomorrow
+  BPCO-BI6070GEX-00 requesty:novita/inclusionai/ling-3.0-tiny: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  requesty:poolside/laguna-m.1: quota used up - skipped until tomorrow
+  BPCO-BI6070GEX-00 requesty:poolside/laguna-m.1: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  requesty:nvidia/nemotron-3-nano-30b-a3b: quota used up - skipped until tomorrow
+  BPCO-BI6070GEX-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  staged groq:openai/gpt-oss-120b: draft dropped after 5 calls: no JSON: {   "title": "قیمت قیر 6070 پتروعایق اسپادانا ۰٫۵ درصد پایین آمد
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  requesty:nvidia/muse-glimmer-30b: quota used up - skipped until tomorrow
+  BPCO-BI6070GEX-00 requesty:nvidia/muse-glimmer-30b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  requesty:mistral/leanstral-1-5: quota used up - skipped until tomorrow
+  HJC-BI6070BEX-00 requesty:mistral/leanstral-1-5: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  ZCC-PCT1G42.5-JEX-00 ovh:Meta-Llama-3_3-70B-Instruct: 38s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"4dd79126f7f9773cd6aba651394f882d"
+}
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 6 calls
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  stage6 news: title in 1 calls
+OK SRFZ-BI6070BEX-00 <- zai:glm-4.7-flash (279s)
