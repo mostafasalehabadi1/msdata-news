@@ -95,8 +95,8 @@ def check_marks(name, d, errs):
             errs.append(f"{name}: images need one [عکس] each, found {ims} for {len(d['images'])}")
     elif d.get("images") and ims != 1:
         errs.append(f"{name}: images need exactly one [عکس], found {ims}")
-    if (d.get("table") or d.get("tables")) and tbl != 1:
-        errs.append(f"{name}: tables need exactly one [جدول], found {tbl}")
+    if (d.get("table") or d.get("tables")) and tbl > 1:  # owner 1405-08-12: the table marker is optional; when a writer puts one, the table goes there
+        errs.append(f"{name}: tables take at most one [جدول], found {tbl}")
     if tbl and not (d.get("table") or d.get("tables")):
         errs.append(f"{name}: [جدول] without a table")
 
