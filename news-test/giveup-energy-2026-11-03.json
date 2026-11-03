@@ -130,13 +130,31 @@
 },
 "DOXFQCABEX0050819": {
 "fp": "{\"base_price\": 150000.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"اکسیژن مایع|شرکت فولاد غدیر نی ریز|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 180.0, \"goods_name\": \"اکسیژن مایع\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 192899.0, \"min_price\": 189899.0, \"offer_volume\": 40.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت فولاد غدیر نی ریز\", \"series_key\": \"اکسیژن مایع|شرکت فولاد غدیر نی ریز|داخلی\", \"supplier\": \"شرکت فولاد غدیر نی ریز\", \"symbol\": \"DOXFQCABEX0050819\", \"symbol_code\": \"DOXFQCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 7655960000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/12\", \"trade_volume\": 40.0, \"volume_unit\": \"تن\", \"weighted_price\": 191399.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "gemini:gemma-4-26b-a4b-it",
 "at": "09:41",
 "error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
 "run": 1
+},
+{
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "10:00",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+},
+{
+"model": "zai:glm-4.7-flash",
+"at": "10:17",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "zai:glm-4.5-flash",
+"at": "10:19",
+"error": "ValueError: staged: 9 calls, last: 108 words / 3 paragraphs",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: اکسیژن مایع؛ عرضه‌کننده: شرکت فولاد غدیر نی ریز.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۱۲ آبان.\n4. شرکت فولاد غدیر نی ریز ۴۰ تن اکسیژن مایع عرضه کرد و ۴۰ تن آن فروش رفت.\n5. خریداران ۱۸۰ تن تقاضا ثبت کردند؛ تقاضا ۴٫۵ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۱۹۱ هزار و ۳۹۹ ریال در هر کیلوگرم بود و قیمت پایه ۱۵۰ هزار ریال در هر کیلوگرم.\n8. رقابت قیمت را ۲۷٫۶ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۲ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۷۶۶ میلیون تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲۶ مهر با قیمت ۱۹۲ هزار و ۸۹۹ ریال در هر کیلوگرم بود؛ قیمت این بار ۰٫۸ درصد پایین‌تر است.\n12. این کالا از ۲۹ شهریور تا امروز ۴ بار از همین عرضه‌کننده معامله شده است.",
