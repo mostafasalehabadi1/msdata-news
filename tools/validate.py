@@ -89,8 +89,8 @@ def check_marks(name, d, errs):
     so one «[جدول]» covers all of them."""
     paras = [p.strip() for p in re.split(r"\n\s*\n", str(d.get("text", "")))]
     ims, tbl = paras.count("[عکس]"), paras.count("[جدول]") + paras.count("[جدول‌ها]")
-    # macro and fx: report_page.js fills each marker with the next image, so one marker per image. Other builders fill every marker with the first image.
-    if name.startswith(("macro/", "fx/")):
+    # macro, fx and codal: report_page.js fills each marker with the next image, so one marker per image. Other builders fill every marker with the first image.
+    if name.startswith(("macro/", "fx/", "codal/")):
         if d.get("images") and ims != len(d["images"]):
             errs.append(f"{name}: images need one [عکس] each, found {ims} for {len(d['images'])}")
     elif d.get("images") and ims != 1:
@@ -214,6 +214,19 @@ def main():
         check_table(name, d, errs)
         long = d.get("kind") in ("report", "analysis")  # «تحلیل» (owner 1405-07-16): same length rule as a report
         check_text(name, d, errs, 550 if long else 230, 1000 if long else 470, 3, 40)
+        n += 1
+    for path in sorted(glob.glob(os.path.join(ROOT, "codal", "*.json"))):  # codal reports (owner 1405-08-12), same length rule as a macro report
+        name = "codal/" + os.path.basename(path)
+        if not re.fullmatch(r"[A-Za-z0-9_-]+\.json", os.path.basename(path)):
+            errs.append(f"{name}: file name must be latin letters, digits, - or _")
+            continue
+        try:
+            d = json.load(open(path, encoding="utf-8"))
+        except Exception as e:  # noqa: BLE001
+            errs.append(f"{name}: invalid JSON {e}")
+            continue
+        check_table(name, d, errs)
+        check_text(name, d, errs, 550, 1000, 3, 40)
         n += 1
     for path in sorted(glob.glob(os.path.join(ROOT, "fx", "*.json")) + glob.glob(os.path.join(ROOT, "us", "*.json"))):  # «ارز و طلا» (tools/write_fx.py) and the daily US elections report (content agent, 1405-07-23)
         name = os.path.basename(os.path.dirname(path)) + "/" + os.path.basename(path)
