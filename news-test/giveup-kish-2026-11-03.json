@@ -1,13 +1,19 @@
 {
 "SMPC-BI6070BEX-00": {
 "fp": "{\"base_price\": 413.0, \"contract_type\": \"نقدی ($)\", \"currency\": \"دلار\", \"delivery_place\": \"FCA-انبار کارخانه\", \"demand_volume\": 4000.0, \"goods_name\": \"قیر 6070 - صادراتی\", \"is_usd\": true, \"max_price\": 413.0, \"min_price\": 413.0, \"offer_volume\": 4000.0, \"offers\": 1, \"price_unit\": \"دلار / 1000 کیلوگرم\", \"producer\": \"سانیار موتور پارسیان\", \"series_key\": \"SMPC-BI6070BEX-00\", \"symbol\": \"SMPC-BI6070BEX-00\", \"total_value\": 1652000.0, \"total_value_usd\": 1652000.0, \"trade_date\": \"1405/08/12\", \"trade_volume\": 4000.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 413.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "gemini:gemma-4-31b-it",
 "at": "09:22",
 "error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
 "run": 1
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "09:51",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: قیر 6070؛ تولیدکننده: شرکت سانیار موتور پارسیان.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل درِ کارخانه.\n4. کشور مقصد مشخص نیست؛ در تیتر کشوری نیاور.\n5. قیمت‌های این معامله دلاری است.\n6. شرکت سانیار موتور پارسیان ۴ هزار تن قیر 6070 عرضه کرد و خریداران ۴ هزار تن خواستند؛ ۴ هزار تن فروش رفت.\n7. قیمت میانگین معامله ۴۱۳ دلار در هر تن بود و قیمت پایه ۴۱۳ دلار در هر تن (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن).\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۱ میلیون و ۶۵۲ هزار دلار بود.\n10. نسبت به آخرین معامله در ۹ آبان (همین نماد): قیمت آن روز ۴۱۵ دلار در هر تن بود؛ قیمت این بار ۰٫۵ درصد پایین‌تر است؛ «ثابت» ننویس.\n11. این کالا از ۲۱ اردیبهشت تا امروز ۱۸ بار معامله شده است.",
@@ -82,13 +88,19 @@
 },
 "PNSA-BI5070BEX-00": {
 "fp": "{\"base_price\": 413.0, \"contract_type\": \"نقدی ($)\", \"currency\": \"دلار\", \"delivery_place\": \"FCA-انبار کارخانه\", \"demand_volume\": 650.0, \"goods_name\": \"قیر 5070 - صادراتی\", \"is_usd\": true, \"max_price\": 413.0, \"min_price\": 413.0, \"offer_volume\": 650.0, \"offers\": 1, \"price_unit\": \"دلار / 1000 کیلوگرم\", \"producer\": \"پالایش نگین سیاه آذربایجان\", \"series_key\": \"PNSA-BI5070BEX-00\", \"symbol\": \"PNSA-BI5070BEX-00\", \"total_value\": 268450.0, \"total_value_usd\": 268450.0, \"trade_date\": \"1405/08/12\", \"trade_volume\": 650.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 413.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "llm7:deepseek-v4-flash:0731",
 "at": "09:12",
 "error": "QuotaError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
 "run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "09:46",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: قیر 5070؛ تولیدکننده: شرکت پالایش نگین سیاه آذربایجان.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل درِ کارخانه.\n4. کشور مقصد مشخص نیست؛ در تیتر کشوری نیاور.\n5. قیمت‌های این معامله دلاری است.\n6. شرکت پالایش نگین سیاه آذربایجان ۶۵۰ تن قیر 5070 عرضه کرد و خریداران ۶۵۰ تن خواستند؛ ۶۵۰ تن فروش رفت.\n7. قیمت میانگین معامله ۴۱۳ دلار در هر تن بود و قیمت پایه ۴۱۳ دلار در هر تن (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن).\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۲۶۸ هزار و ۴۵۰ دلار بود.\n10. نسبت به آخرین معامله در ۵ آبان (همین نماد): قیمت آن روز ۴۱۵ دلار در هر تن بود؛ قیمت این بار ۰٫۵ درصد پایین‌تر است؛ «ثابت» ننویس.\n11. این کالا از ۲۴ مرداد تا امروز ۸ بار معامله شده است.",
@@ -163,13 +175,19 @@
 },
 "ILCE-CLINKERT2EX-00": {
 "fp": "{\"base_price\": 22.0, \"contract_type\": \"نقدی ($)\", \"currency\": \"دلار\", \"delivery_place\": \"FCA-سومار\", \"demand_volume\": 10000.0, \"goods_name\": \"کلینکر تیپ 2 - صادراتی\", \"is_usd\": true, \"max_price\": 22.0, \"min_price\": 22.0, \"offer_volume\": 10000.0, \"offers\": 1, \"price_unit\": \"دلار / 1000 کیلوگرم\", \"producer\": \"سیمان ایلام\", \"series_key\": \"ILCE-CLINKERT2EX-00\", \"symbol\": \"ILCE-CLINKERT2EX-00\", \"total_value\": 220000.0, \"total_value_usd\": 220000.0, \"trade_date\": \"1405/08/12\", \"trade_volume\": 10000.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 22.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "kilo:dots-studio/dots-3-note-preview:free",
 "at": "09:15",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "09:49",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: کلینکر تیپ 2؛ تولیدکننده: شرکت سیمان ایلام.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل در مرز سومار، مرز عراق. مرز فقط مقصد اول است؛ از مصرف کالا در آن کشور حرفی نزن.\n4. مرز و کشور برای تیتر: مرز سومار، مرز عراق (در تیتر «برای مرز عراق» یا «تحویل در مرز …» بیاور، نه «صادرات به عراق»).\n5. قیمت‌های این معامله دلاری است.\n6. شرکت سیمان ایلام ۱۰ هزار تن کلینکر تیپ 2 عرضه کرد و خریداران ۱۰ هزار تن خواستند؛ ۱۰ هزار تن فروش رفت.\n7. قیمت میانگین معامله ۲۲ دلار در هر تن بود و قیمت پایه ۲۲ دلار در هر تن (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن).\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۲۲۰ هزار دلار بود.",
@@ -211,13 +229,19 @@
 },
 "ZATC-PCT2G42.5-L50EX-00": {
 "fp": "{\"base_price\": 42.0, \"contract_type\": \"نقدی ($)\", \"currency\": \"دلار\", \"delivery_place\": \"FCA-دوغارون\", \"demand_volume\": 5000.0, \"goods_name\": \"سیمان پرتلند نوع 2 رده 42/5-کیسه50 - صادراتی\", \"is_usd\": true, \"max_price\": 42.0, \"min_price\": 42.0, \"offer_volume\": 5000.0, \"offers\": 1, \"price_unit\": \"دلار / 1000 کیلوگرم\", \"producer\": \"سیمان زاوه تربت\", \"series_key\": \"ZATC-PCT2G42.5-L50EX-00\", \"symbol\": \"ZATC-PCT2G42.5-L50EX-00\", \"total_value\": 210000.0, \"total_value_usd\": 210000.0, \"trade_date\": \"1405/08/12\", \"trade_volume\": 5000.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 42.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "kilo:dots-studio/dots-3-note-preview:free",
 "at": "09:18",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "09:54",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: سیمان پرتلند نوع 2 رده 42/5-کیسه50؛ تولیدکننده: شرکت سیمان زاوه تربت.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل در مرز دوغارون، مرز افغانستان. مرز فقط مقصد اول است؛ از مصرف کالا در آن کشور حرفی نزن.\n4. مرز و کشور برای تیتر: مرز دوغارون، مرز افغانستان (در تیتر «برای مرز افغانستان» یا «تحویل در مرز …» بیاور، نه «صادرات به افغانستان»).\n5. قیمت‌های این معامله دلاری است.\n6. شرکت سیمان زاوه تربت ۵ هزار تن سیمان پرتلند نوع 2 رده 42/5-کیسه50 عرضه کرد و خریداران ۵ هزار تن خواستند؛ ۵ هزار تن فروش رفت.\n7. قیمت میانگین معامله ۴۲ دلار در هر تن بود و قیمت پایه ۴۲ دلار در هر تن (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن).\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۲۱۰ هزار دلار بود.\n10. نسبت به آخرین معامله در ۹ آبان (همین نماد): قیمت آن روز ۴۲ دلار در هر تن بود؛ قیمت ثابت ماند.\n11. این کالا از ۲۷ بهمن ۱۴۰۴ تا امروز ۳۵ بار معامله شده است.",
@@ -292,13 +316,19 @@
 },
 "PND-INBPPBEX-00": {
 "fp": "{\"base_price\": 413.0, \"contract_type\": \"نقدی ($)\", \"currency\": \"دلار\", \"delivery_place\": \"FCA-انبار کارخانه\", \"demand_volume\": 360.0, \"goods_name\": \"عایق رطوبتی BPP - صادراتی\", \"is_usd\": true, \"max_price\": 413.0, \"min_price\": 413.0, \"offer_volume\": 360.0, \"offers\": 1, \"price_unit\": \"دلار / 1000 کیلوگرم\", \"producer\": \"پشم شیشه نور دلیجان\", \"series_key\": \"PND-INBPPBEX-00\", \"symbol\": \"PND-INBPPBEX-00\", \"total_value\": 148680.0, \"total_value_usd\": 148680.0, \"trade_date\": \"1405/08/12\", \"trade_volume\": 360.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 413.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "kilo:dots-studio/dots-3-note-preview:free",
 "at": "09:21",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "10:03",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: عایق رطوبتی BPP؛ تولیدکننده: شرکت پشم شیشه نور دلیجان.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل درِ کارخانه.\n4. کشور مقصد مشخص نیست؛ در تیتر کشوری نیاور.\n5. قیمت‌های این معامله دلاری است.\n6. شرکت پشم شیشه نور دلیجان ۳۶۰ تن عایق رطوبتی BPP عرضه کرد و خریداران ۳۶۰ تن خواستند؛ ۳۶۰ تن فروش رفت.\n7. قیمت میانگین معامله ۴۱۳ دلار در هر تن بود و قیمت پایه ۴۱۳ دلار در هر تن (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن).\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۱۴۸ هزار و ۶۸۰ دلار بود.\n10. نسبت به آخرین معامله در ۱۰ آبان (همین نماد): قیمت آن روز ۴۱۵ دلار در هر تن بود؛ قیمت این بار ۰٫۵ درصد پایین‌تر است؛ «ثابت» ننویس.\n11. این کالا از ۴ بهمن ۱۴۰۴ تا امروز ۵۲ بار معامله شده است.",
@@ -373,13 +403,19 @@
 },
 "CMN-CLINKERT2EX-00": {
 "fp": "{\"base_price\": 19.0, \"contract_type\": \"نقدی ($)\", \"currency\": \"دلار\", \"delivery_place\": \"FOB-پارسیان\", \"demand_volume\": 7500.0, \"goods_name\": \"کلینکر تیپ 2 - صادراتی\", \"is_usd\": true, \"max_price\": 19.0, \"min_price\": 19.0, \"offer_volume\": 7500.0, \"offers\": 1, \"price_unit\": \"دلار / 1000 کیلوگرم\", \"producer\": \"سیمان منددشتی\", \"series_key\": \"CMN-CLINKERT2EX-00\", \"symbol\": \"CMN-CLINKERT2EX-00\", \"total_value\": 142500.0, \"total_value_usd\": 142500.0, \"trade_date\": \"1405/08/12\", \"trade_volume\": 7500.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 19.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "gemini:gemma-4-31b-it",
 "at": "09:31",
 "error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
 "run": 1
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "10:12",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: کلینکر تیپ 2؛ تولیدکننده: شرکت سیمان منددشتی.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل روی کشتی در بندر پارسیان.\n4. کشور مقصد مشخص نیست؛ در تیتر کشوری نیاور.\n5. قیمت‌های این معامله دلاری است.\n6. شرکت سیمان منددشتی ۷ هزار و ۵۰۰ تن کلینکر تیپ 2 عرضه کرد و خریداران ۷ هزار و ۵۰۰ تن خواستند؛ ۷ هزار و ۵۰۰ تن فروش رفت.\n7. قیمت میانگین معامله ۱۹ دلار در هر تن بود و قیمت پایه ۱۹ دلار در هر تن (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن).\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۱۴۲ هزار و ۵۰۰ دلار بود.\n10. نسبت به آخرین معامله در ۱۳ مهر (همین نماد): قیمت آن روز ۱۹ دلار در هر تن بود؛ قیمت ثابت ماند.\n11. این کالا از ۳ اسفند ۱۴۰۴ تا امروز ۱۱ بار معامله شده است.",
@@ -495,7 +531,7 @@
 },
 "SZCE-PCT2G32.5-L50EX-00": {
 "fp": "{\"base_price\": 52.0, \"contract_type\": \"نقدی ($)\", \"currency\": \"دلار\", \"delivery_place\": \"FCA-میل78\", \"demand_volume\": 500.0, \"goods_name\": \"سیمان پرتلند نوع 2 رده 32/5-کیسه50 - صادراتی\", \"is_usd\": true, \"max_price\": 52.0, \"min_price\": 52.0, \"offer_volume\": 1000.0, \"offers\": 1, \"price_unit\": \"دلار / 1000 کیلوگرم\", \"producer\": \"سیمان لار سبزوار\", \"series_key\": \"SZCE-PCT2G32.5-L50EX-00\", \"symbol\": \"SZCE-PCT2G32.5-L50EX-00\", \"total_value\": 26000.0, \"total_value_usd\": 26000.0, \"trade_date\": \"1405/08/12\", \"trade_volume\": 500.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 52.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "gemini:gemma-4-26b-a4b-it",
@@ -508,6 +544,36 @@
 "at": "09:28",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "09:47",
+"error": "RemoteDisconnected: Remote end closed connection without response",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "09:59",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "10:01",
+"error": "QuotaError: HTTP 429: {\"error\":{\"code\":\"PROMOTION_MODEL_LIMIT_REACHED\",\"message\":\"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later.\"},\"error_type\":\"rate_limit_exceeded\",\"message\":\"Sign up for free to continue and explore 500 other models. Ta",
+"run": 2
+},
+{
+"model": "kilo:kilo-auto/free",
+"at": "10:01",
+"error": "QuotaError: HTTP 429: {\"error\":{\"code\":\"PROMOTION_MODEL_LIMIT_REACHED\",\"message\":\"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later.\"},\"error_type\":\"rate_limit_exceeded\",\"message\":\"Sign up for free to continue and explore 500 other models. Ta",
+"run": 2
+},
+{
+"model": "groq:openai/gpt-oss-120b",
+"at": "10:07",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 192877, Requested 8440. Please try again in 9m28.944s. Need more tokens? Upgrade to Dev Tier today a",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: سیمان پرتلند نوع 2 رده 32/5-کیسه50؛ تولیدکننده: شرکت سیمان لار سبزوار.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل در مرز میل ۷۸، مرز افغانستان. مرز فقط مقصد اول است؛ از مصرف کالا در آن کشور حرفی نزن.\n4. مرز و کشور برای تیتر: مرز میل ۷۸، مرز افغانستان (در تیتر «برای مرز افغانستان» یا «تحویل در مرز …» بیاور، نه «صادرات به افغانستان»).\n5. قیمت‌های این معامله دلاری است.\n6. شرکت سیمان لار سبزوار ۱ هزار تن سیمان پرتلند نوع 2 رده 32/5-کیسه50 عرضه کرد و خریداران ۵۰۰ تن خواستند؛ ۵۰۰ تن فروش رفت.\n7. تقاضا فقط ۵۰ درصد عرضه بود.\n8. فقط ۵۰ درصد عرضه فروش رفت.\n9. قیمت میانگین معامله ۵۲ دلار در هر تن بود و قیمت پایه ۵۲ دلار در هر تن (عدد دلاری را همین‌طور با اعشار بنویس، گرد نکن).\n10. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n11. ارزش این معامله ۲۶ هزار دلار بود.\n12. نسبت به آخرین معامله در ۶ آبان (همین نماد): قیمت آن روز ۵۲ دلار در هر تن بود؛ قیمت ثابت ماند.\n13. این کالا از ۱ بهمن ۱۴۰۴ تا امروز ۶۲ بار معامله شده است.",
@@ -582,7 +648,7 @@
 },
 "APKC-BI6070BEX-00": {
 "fp": "{\"base_price\": 811659000.0, \"contract_type\": \"نسیه (صادراتی - ریالی)\", \"currency\": \"ریال صادراتی\", \"delivery_place\": \"Exwork\", \"demand_volume\": 2260.0, \"goods_name\": \"قیر 6070 - صادراتی\", \"is_usd\": false, \"max_price\": 811659000.0, \"min_price\": 811659000.0, \"offer_volume\": 2260.0, \"offers\": 1, \"price_unit\": \"ریال صادراتی / 1000 کیلوگرم\", \"producer\": \"آرتا پالایش کارا\", \"series_key\": \"APKC-BI6070BEX-00\", \"symbol\": \"APKC-BI6070BEX-00\", \"total_value\": 1834349340000.0, \"total_value_usd\": null, \"trade_date\": \"1405/08/12\", \"trade_volume\": 2260.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 811659000.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "openrouter:google/gemma-4-31b-it:free",
@@ -595,6 +661,36 @@
 "at": "09:39",
 "error": "ValueError: staged: 8 calls, last: 122 words / 1 paragraphs",
 "run": 1
+},
+{
+"model": "groq:openai/gpt-oss-120b",
+"at": "09:48",
+"error": "ValueError: staged: 8 calls, last: no JSON: title\": \"قیر 6070 شرکت آرتا پالایش کارا ۲۲۶۰ تن فروخته شد\",   \"slug\": \"قیر-6070-",
+"run": 2
+},
+{
+"model": "groq:openai/gpt-oss-20b",
+"at": "09:54",
+"error": "ValueError: staged: 8 calls, last: no JSON: ",
+"run": 2
+},
+{
+"model": "kilo:kilo-auto/free",
+"at": "09:59",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "kilo:cohere/north-mini-code:free",
+"at": "10:01",
+"error": "QuotaError: HTTP 429: {\"error\":{\"code\":\"PROMOTION_MODEL_LIMIT_REACHED\",\"message\":\"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later.\"},\"error_type\":\"rate_limit_exceeded\",\"message\":\"Sign up for free to continue and explore 500 other models. Ta",
+"run": 2
+},
+{
+"model": "ovh:gpt-oss-120b",
+"at": "10:10",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: قیر 6070؛ تولیدکننده: شرکت آرتا پالایش کارا.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل درِ کارخانه.\n4. کشور مقصد مشخص نیست؛ در تیتر کشوری نیاور.\n5. این قرارداد «ریال صادراتی» است؛ صریح بنویس «با نرخ ریال صادراتی» و آن را با معامله‌های دلاری مقایسه یا جمع نکن.\n6. شرکت آرتا پالایش کارا ۲ هزار و ۲۶۰ تن قیر 6070 عرضه کرد و خریداران ۲ هزار و ۲۶۰ تن خواستند؛ ۲ هزار و ۲۶۰ تن فروش رفت.\n7. قیمت میانگین معامله ۸۱۱ میلیون و ۶۵۹ هزار ریال صادراتی در هر تن بود و قیمت پایه ۸۱۱ میلیون و ۶۵۹ هزار ریال صادراتی در هر تن.\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۱ هزار میلیارد و ۸۳۴ میلیارد و ۳۴۹ میلیون و ۳۴۰ هزار ریال صادراتی بود.\n10. نسبت به آخرین معامله در ۱۰ آبان (همین نماد): قیمت آن روز ۸۱۱ میلیون و ۶۵۹ هزار ریال صادراتی در هر تن بود؛ قیمت ثابت ماند.\n11. این کالا از ۲۴ دی ۱۴۰۴ تا امروز ۱۵ بار معامله شده است.",
@@ -762,7 +858,7 @@
 },
 "CBA-BI6070BEX-00": {
 "fp": "{\"base_price\": 811659000.0, \"contract_type\": \"نسیه (صادراتی - ریالی)\", \"currency\": \"ریال صادراتی\", \"delivery_place\": \"Exwork\", \"demand_volume\": 180.0, \"goods_name\": \"قیر 6070 - صادراتی\", \"is_usd\": false, \"max_price\": 811659000.0, \"min_price\": 811659000.0, \"offer_volume\": 180.0, \"offers\": 1, \"price_unit\": \"ریال صادراتی / 1000 کیلوگرم\", \"producer\": \"چتر بام عایق\", \"series_key\": \"CBA-BI6070BEX-00\", \"symbol\": \"CBA-BI6070BEX-00\", \"total_value\": 146098620000.0, \"total_value_usd\": null, \"trade_date\": \"1405/08/12\", \"trade_volume\": 180.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 811659000.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "zai:glm-4.7-flash",
@@ -787,6 +883,30 @@
 "at": "09:36",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "09:46",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "09:52",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+},
+{
+"model": "groq:openai/gpt-oss-120b",
+"at": "10:02",
+"error": "ValueError: staged: 8 calls, last: no JSON: ",
+"run": 2
+},
+{
+"model": "groq:openai/gpt-oss-20b",
+"at": "10:05",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198973, Requested 7455. Please try again in 46m16.896s. Need more tokens? Upgrade to Dev Tier today a",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: قیر 6070؛ تولیدکننده: شرکت چتر بام عایق.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل درِ کارخانه.\n4. کشور مقصد مشخص نیست؛ در تیتر کشوری نیاور.\n5. این قرارداد «ریال صادراتی» است؛ صریح بنویس «با نرخ ریال صادراتی» و آن را با معامله‌های دلاری مقایسه یا جمع نکن.\n6. شرکت چتر بام عایق ۱۸۰ تن قیر 6070 عرضه کرد و خریداران ۱۸۰ تن خواستند؛ ۱۸۰ تن فروش رفت.\n7. قیمت میانگین معامله ۸۱۱ میلیون و ۶۵۹ هزار ریال صادراتی در هر تن بود و قیمت پایه ۸۱۱ میلیون و ۶۵۹ هزار ریال صادراتی در هر تن.\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۱۴۶ میلیارد و ۹۸ میلیون و ۶۲۰ هزار ریال صادراتی بود.\n10. نسبت به آخرین معامله در ۱۰ آبان (همین نماد): قیمت آن روز ۸۱۱ میلیون و ۶۵۹ هزار ریال صادراتی در هر تن بود؛ قیمت ثابت ماند.\n11. این کالا از ۲ مهر ۱۴۰۴ تا امروز ۳۵ بار معامله شده است.",
@@ -1047,7 +1167,7 @@
 },
 "NACE-PCT2G42.5-L50EX-00": {
 "fp": "{\"base_price\": 78767000.0, \"contract_type\": \"نقدی (صادراتی - ریالی)\", \"currency\": \"ریال صادراتی\", \"delivery_place\": \"EXW-میل78\", \"demand_volume\": 500.0, \"goods_name\": \"سیمان پرتلند نوع 2 رده 42/5-کیسه50 - صادراتی\", \"is_usd\": false, \"max_price\": 78767000.0, \"min_price\": 78767000.0, \"offer_volume\": 500.0, \"offers\": 1, \"price_unit\": \"ریال صادراتی / 1000 کیلوگرم\", \"producer\": \"سیمان نائین\", \"series_key\": \"NACE-PCT2G42.5-L50EX-00\", \"symbol\": \"NACE-PCT2G42.5-L50EX-00\", \"total_value\": 39383500000.0, \"total_value_usd\": null, \"trade_date\": \"1405/08/12\", \"trade_volume\": 500.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 78767000.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "ovh:Qwen3.5-397B-A17B",
@@ -1066,6 +1186,18 @@
 "at": "09:30",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "openrouter:google/gemma-4-31b-it:free",
+"at": "10:01",
+"error": "ValueError: staged: 8 calls, last: no JSON: ",
+"run": 2
+},
+{
+"model": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "10:08",
+"error": "ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۷۸.۸",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: سیمان پرتلند نوع 2 رده 42/5-کیسه50؛ تولیدکننده: شرکت سیمان نائین.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل در مرز میل ۷۸، مرز افغانستان. مرز فقط مقصد اول است؛ از مصرف کالا در آن کشور حرفی نزن.\n4. مرز و کشور برای تیتر: مرز میل ۷۸، مرز افغانستان (در تیتر «برای مرز افغانستان» یا «تحویل در مرز …» بیاور، نه «صادرات به افغانستان»).\n5. این قرارداد «ریال صادراتی» است؛ صریح بنویس «با نرخ ریال صادراتی» و آن را با معامله‌های دلاری مقایسه یا جمع نکن.\n6. شرکت سیمان نائین ۵۰۰ تن سیمان پرتلند نوع 2 رده 42/5-کیسه50 عرضه کرد و خریداران ۵۰۰ تن خواستند؛ ۵۰۰ تن فروش رفت.\n7. قیمت میانگین معامله ۷۸ میلیون و ۷۶۷ هزار ریال صادراتی در هر تن بود و قیمت پایه ۷۸ میلیون و ۷۶۷ هزار ریال صادراتی در هر تن.\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۳۹ میلیارد و ۳۸۳ میلیون و ۵۰۰ هزار ریال صادراتی بود.",
@@ -1200,7 +1332,7 @@
 },
 "SESA-BI6070BEX-00": {
 "fp": "{\"base_price\": 811659000.0, \"contract_type\": \"نسیه (صادراتی - ریالی)\", \"currency\": \"ریال صادراتی\", \"delivery_place\": \"Exwork\", \"demand_volume\": 45.0, \"goods_name\": \"قیر 6070 - صادراتی\", \"is_usd\": false, \"max_price\": 811659000.0, \"min_price\": 811659000.0, \"offer_volume\": 45.0, \"offers\": 1, \"price_unit\": \"ریال صادراتی / 1000 کیلوگرم\", \"producer\": \"صنایع تولیدی قیر سفت سامان\", \"series_key\": \"SESA-BI6070BEX-00\", \"symbol\": \"SESA-BI6070BEX-00\", \"total_value\": 36524655000.0, \"total_value_usd\": null, \"trade_date\": \"1405/08/12\", \"trade_volume\": 45.0, \"unit\": \"1000 کیلوگرم\", \"weighted_price\": 811659000.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "ovh:Qwen3.5-397B-A17B",
@@ -1219,6 +1351,12 @@
 "at": "09:28",
 "error": "ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text",
 "run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "09:49",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: قیر 6070؛ تولیدکننده: شرکت صنایع تولیدی قیر سفت سامان.\n2. روز معامله: سه‌شنبه ۱۲ آبان.\n3. شرط تحویل: تحویل درِ کارخانه.\n4. کشور مقصد مشخص نیست؛ در تیتر کشوری نیاور.\n5. این قرارداد «ریال صادراتی» است؛ صریح بنویس «با نرخ ریال صادراتی» و آن را با معامله‌های دلاری مقایسه یا جمع نکن.\n6. شرکت صنایع تولیدی قیر سفت سامان ۴۵ تن قیر 6070 عرضه کرد و خریداران ۴۵ تن خواستند؛ ۴۵ تن فروش رفت.\n7. قیمت میانگین معامله ۸۱۱ میلیون و ۶۵۹ هزار ریال صادراتی در هر تن بود و قیمت پایه ۸۱۱ میلیون و ۶۵۹ هزار ریال صادراتی در هر تن.\n8. نسبت به قیمت پایه: قیمت با قیمت پایه برابر بود (این «ثابت ماندن قیمت» نیست).\n9. ارزش این معامله ۳۶ میلیارد و ۵۲۴ میلیون و ۶۵۵ هزار ریال صادراتی بود.",
