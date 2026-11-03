@@ -180,3 +180,28 @@ style-soft: lead>35w/1num
   PGPC-BI6070BEX-00 groq:openai/gpt-oss-120b: 385s ValueError: staged: 8 calls, last: no JSON: 
   stage6 news: title in 1 calls
 OK NACE-PCT2G42.5-L50EX-00-2 <- zai:glm-4.5-flash (59s)
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  staged groq:openai/gpt-oss-20b: call 4 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  CBA-BI6070BEX-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+  KGJ-BI85100BEX-00 zai:glm-4.7-flash: 196s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+style-soft: lead>35w/1num
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۶۰
+style-soft: در حالی که, lead>35w/1num
+  staged zai:glm-4.5-flash: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK KGJ-BI85100BEX-00 <- zai:glm-4.5-flash (42s)
