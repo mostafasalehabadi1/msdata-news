@@ -93,3 +93,17 @@ style-soft: در حالی که, lead>35w/1num, text 9 nums
   staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است)
 OK AAGP-APDC122-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (360s)
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+style-soft: در حالی که
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۷.۱۵
+  AAGP-APS9U32-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 426s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۷.۱۵
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK ZNKM-CR018OO-00 <- gemini:gemma-4-31b-it (1034s)
