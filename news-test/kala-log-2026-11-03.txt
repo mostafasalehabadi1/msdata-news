@@ -1525,3 +1525,64 @@ style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
   staged zai:glm-4.5-flash: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK HAAL-PS10000-00 <- zai:glm-4.5-flash (75s)
+kala: closed halls: تالار سیمان، تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی، تالار پریمیوم
+kala: 249 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): BORC-LUBECUTHB-00, CHG-GS00101-00, NCI-OAMOOX-00, AKSC-GS00101-00, PPCO-OASTYB-00, KAVE-OAIOC-00, SRBK-CR08AB-00, IKRC-OAVBB-00, ESC-MBEEN03E-00, PSM-PTIOOO000-00, ESC-MBNEE03E-00, ESC-MBEEE03E-00, ESC-MBENE03E-00, ZNKM-CR018OO-00, ICII-LABLABSAB-00, ATSC-MBEEN03E-00, BISP-LABLABSAB-00, JSNW-CR018OO-00, CWD-CR018OO-00, JPC-HDF7000LMPJ-00, NFK-PTGOOO000-00, YAS-PTGOOO000-00, KABS-EA003000-00, BAN-PSESE2000J-00, AAGP-APS9U32-00, FSIC-EA005000-00, NFST-PTDOOO000-00, PAM-LD2420FPP-00, SSSE-PTIOOO000-00, MDC-HDHB6200BPP-00, SKHC-PETHY01J-000, BSRC-EA003000-00, BSRC-EA009000-00, ENPC-PSSER400J-089, ANT-EA007000-00, ANT-EA005000-00, FNT-EA007000-00, FNT-EA005000-00, JBC-EA009000-00, MPC-HDCRP100NPP-00, LOR-HD6040UVPP-00, MSBS-BI6070B-00, ENPC-PSSEF400J-089, NFSH-BIMC250B-00, MKL-TISSDLGR14-00
+40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Qwen3.5-397B-A17B: check cut 6 sentence(s)
+  JPC-HD52518PP-00 zai:glm-4.7-flash: 247s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 86 words / 4 paragraphs
+  JPC-HD52518PP-00 zai:glm-4.5-flash: 29s ValueError: staged: 8 calls, last: 86 words / 4 paragraphs
+  MAPE-LLD22B02P-00 gemini:gemma-4-31b-it: 288s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  PTC-PETTG645J-00 gemini:gemma-4-31b-it: 353s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  LPC-LD2102TX00RP-00 ovh:Qwen3.5-397B-A17B: 682s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ASPC-HDHFI5110WP-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 119 words / 4 paragraphs
+  IPC-HDHB0035PP-00 zai:glm-4.7-flash: 617s ValueError: staged: 8 calls, last: 119 words / 4 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 75 words / 3 paragraphs
+  IPC-HDHB0035PP-00 zai:glm-4.5-flash: 51s ValueError: staged: 8 calls, last: 75 words / 3 paragraphs
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  JPC-HDCRP100NPP-00 gemini:gemma-4-31b-it: 802s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged ovh:Qwen3.5-397B-A17B: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged ovh:Qwen3.5-397B-A17B: accepted after 6 calls
+  stage6 news: title in 1 calls
+OK KRD-LD2420F8PP-00 <- ovh:Qwen3.5-397B-A17B (694s)
