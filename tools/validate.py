@@ -89,7 +89,11 @@ def check_marks(name, d, errs):
     so one «[جدول]» covers all of them."""
     paras = [p.strip() for p in re.split(r"\n\s*\n", str(d.get("text", "")))]
     ims, tbl = paras.count("[عکس]"), paras.count("[جدول]") + paras.count("[جدول‌ها]")
-    if d.get("images") and ims != 1:
+    # macro and fx: report_page.js fills each marker with the next image, so one marker per image. Other builders fill every marker with the first image.
+    if name.startswith(("macro/", "fx/")):
+        if d.get("images") and ims != len(d["images"]):
+            errs.append(f"{name}: images need one [عکس] each, found {ims} for {len(d['images'])}")
+    elif d.get("images") and ims != 1:
         errs.append(f"{name}: images need exactly one [عکس], found {ims}")
     if (d.get("table") or d.get("tables")) and tbl != 1:
         errs.append(f"{name}: tables need exactly one [جدول], found {tbl}")
