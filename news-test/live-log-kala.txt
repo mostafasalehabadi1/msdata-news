@@ -1,118 +1,58 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMMSA-00, SRBK-CR08AB-00, KSO-MREEEEA3B-00, NCI-OANMMSB-00, TAA-TS11112-00, ICII-LABB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, FPCO-ACTACB-00, KSCO-MREEEEA3B-00, SSC-MREEEEA3B-00, NCI-CR08AB-00, SHPC-OAEHB-00, AWS-CS21101-00, BIMC-MREEEEA3B-00, MPC-MEGB-00, IPC-XYLENEMIXB-00, PPCO-OASTYB-00, SMC-MRNNEEA3B-00, SHPC-MEGB-00, BMIS-MRENEEA3B-00, MPC-PPHP525JPP-00, CWD-CR018OO-00, KHP-MCJ-00, HGST-MREEEEA2B-00, STPA-MREEEEA3B-00, BIMC-HREEEEA3B-00, AZF-MREEEEA3B-00, AKST-MRNENNA3B-00, RJCO-PPRG1104KRJ-00, FROJ-MREEEEA3B-00, HAAL-PS10000-00
+given up for today (failed 2 runs, row unchanged): NCI-OANMMSA-00, SRBK-CR08AB-00, KSO-MREEEEA3B-00, NCI-OANMMSB-00, TAA-TS11112-00, ICII-LABB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, FPCO-ACTACB-00, KSCO-MREEEEA3B-00, SSC-MREEEEA3B-00, NCI-CR08AB-00, SHPC-OAEHB-00, AWS-CS21101-00, BIMC-MREEEEA3B-00, MPC-MEGB-00, IPC-XYLENEMIXB-00, PPCO-OASTYB-00, SMC-MRNNEEA3B-00, SHPC-MEGB-00, BMIS-MRENEEA3B-00, MPC-PPHP525JPP-00, CWD-CR018OO-00, KHP-MCJ-00, HGST-MREEEEA2B-00, STPA-MREEEEA3B-00, BIMC-HREEEEA3B-00, AZF-MREEEEA3B-00, AKST-MRNENNA3B-00, RJCO-PPRG1104KRJ-00, FROJ-MREEEEA3B-00, SHPC-NOBG-00, YSC-MREEEEA3B-00, JPC-HDCRP100NPP-00, SHS-MRNEEEA3B-00, STPA-HREEEEA3B-00, HAAL-PS10000-00
 40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
-  SHS-MRNEEEA3B-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 115 words / 4 paragraphs
-  JPC-HDCRP100NPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 22s ValueError: staged: 8 calls, last: 115 words / 4 paragraphs
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged gemini:gemma-4-26b-a4b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-style-soft: lead>35w/1num, text 15 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK ALIS-MREEEEA3B-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (48s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-style-soft: lead>35w/1num, text 12 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
-  stage6 news: title in 1 calls
-OK MRV-MEGB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (25s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 92 words / 2 paragraphs
-  FROJ-HREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 34s ValueError: staged: 8 calls, last: 92 words / 2 paragraphs
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 94 words / 3 paragraphs
-  KHS-HS00000-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: staged: 8 calls, last: 94 words / 3 paragraphs
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
+  TIDA-HREEEEA3B-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9986263c-fb2d-419e-
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
+  TIDA-HREEEEA3B-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
+  TIDA-HREEEEA3B-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:recursive/flint-v1.0:free: quota used up - skipped until tomorrow
+  TIDA-HREEEEA3B-00 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 503: {"error":{"message":"This model is temporarily busy. Please try again shortly or choose another model.","type"
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 403: {"error":{"message":"Upstream provider refused the request.","type":"upstream_forbidden","param":null,"code":"
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 503: {"error":{"message":"This model is temporarily busy. Please try again shortly or choose another model.","type"
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp2
+  SPSG-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-120b: draft dropped after 4 calls: no JSON: ن جلسه شرکت مجتمع فولاد ظفر بناب میلگرد ۲۲ و ۲۵ به میزان حدود ۱۲۰ تن عرضه کرد. خ
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 503: {"error":{"message":"This model is temporarily busy. Please try again shortly or choose another model.","type"
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged ovh:gpt-oss-120b: check cut 2 sentence(s)
+  llm7:minimax-m2.7: quota used up - skipped until tomorrow
+  DTS-HREENNA3B-00 llm7:minimax-m2.7: 222s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 202 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":202}}
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
+  DTS-HREENNA3B-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid \escape: line 7 column 46 (char 359)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-style-soft: lead>35w/1num, text 15 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 80 words / 4 paragraphs
-  YSC-MREEEEA3B-00 zai:glm-4.7-flash: 387s ValueError: staged: 8 calls, last: 80 words / 4 paragraphs
-  ALIS-HREENNA3B-00 gemini:gemma-4-26b-a4b-it: 430s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 102 words / 3 paragraphs
-  YSC-MREEEEA3B-00 zai:glm-4.5-flash: 95s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
-style-soft: lead>35w/1num
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 8 calls
-style-soft: lead>35w/1num, text 9 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 66 words / 3 paragraphs
-  SHPC-NOBG-00 gemini:gemma-4-31b-it: 561s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-style-soft: lead>35w/1num, text 12 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۴۲، ۲۷، ۷۲
-  STPA-HREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 578s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۴۲، ۲۷، ۷۲
-  staged ovh:Qwen3.5-397B-A17B: soft: لید بی‌عدد
-  staged ovh:Qwen3.5-397B-A17B: accepted after 7 calls
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-  stage6 news: title in 1 calls
-OK SHPC-OAVAMB-00 <- kilo:dots-studio/dots-3-note-preview:free (614s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  stage6 news: title in 1 calls
-OK SJS-HREEEEA3B-00 <- ovh:Qwen3.5-397B-A17B (676s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 101 words / 3 paragraphs
-  FAAS-MREEEEA3B-00 zai:glm-4.7-flash: 404s ValueError: staged: 8 calls, last: 101 words / 3 paragraphs
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 96 words / 3 paragraphs
-  FAAS-MREEEEA3B-00 zai:glm-4.5-flash: 73s ValueError: staged: 8 calls, last: 96 words / 3 paragraphs
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
 style-soft: lead>35w/1num, text 16 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۶۹
-  ESC-MRNNNEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 417s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۶۹
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  staged requesty:mistral/leanstral-1-5: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged requesty:mistral/leanstral-1-5: accepted after 8 calls
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  ESC-MRNENNA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
   "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 3 sentence(s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  stage6 news: title in 1 calls
-OK AGS-MREEEEA3B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (634s)
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged groq:openai/gpt-oss-120b: call 7 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 8 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  ZBS-HREENNA3B-00 groq:openai/gpt-oss-120b: 444s ValueError: staged: 8 calls, last: no JSON: 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 119 words / 2 paragraphs
+  ESC-MRNNNEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 460s ValueError: staged: 8 calls, last: 119 words / 2 paragraphs
+  stage6 news: title in 2 calls
+OK SKHC-PETHY01J-000 <- requesty:mistral/leanstral-1-5 (488s)
