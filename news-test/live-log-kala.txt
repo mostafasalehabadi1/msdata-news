@@ -31,3 +31,43 @@ style-soft: lead>35w/1num, text 12 nums
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
   stage6 news: title in 1 calls
 OK MRV-MEGB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (25s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 92 words / 2 paragraphs
+  FROJ-HREEEEA3B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 34s ValueError: staged: 8 calls, last: 92 words / 2 paragraphs
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 94 words / 3 paragraphs
+  KHS-HS00000-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 29s ValueError: staged: 8 calls, last: 94 words / 3 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  IKRC-OAVBB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 6s JSONDecodeError: Invalid \escape: line 7 column 46 (char 359)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 80 words / 4 paragraphs
+  YSC-MREEEEA3B-00 zai:glm-4.7-flash: 387s ValueError: staged: 8 calls, last: 80 words / 4 paragraphs
+  ALIS-HREENNA3B-00 gemini:gemma-4-26b-a4b-it: 430s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 102 words / 3 paragraphs
+  YSC-MREEEEA3B-00 zai:glm-4.5-flash: 95s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
+style-soft: lead>35w/1num
+  staged kilo:dots-studio/dots-3-note-preview:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 8 calls
+style-soft: lead>35w/1num, text 9 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 66 words / 3 paragraphs
+  SHPC-NOBG-00 gemini:gemma-4-31b-it: 561s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num, text 12 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۴۲، ۲۷، ۷۲
+  STPA-HREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 578s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۴۲، ۲۷، ۷۲
+  staged ovh:Qwen3.5-397B-A17B: soft: لید بی‌عدد
+  staged ovh:Qwen3.5-397B-A17B: accepted after 7 calls
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  stage6 news: title in 1 calls
+OK SHPC-OAVAMB-00 <- kilo:dots-studio/dots-3-note-preview:free (614s)
