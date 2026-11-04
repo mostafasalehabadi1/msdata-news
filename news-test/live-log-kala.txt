@@ -70,3 +70,24 @@ style-soft: lead>35w/1num
   ALIS-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 614s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK KSCO-HREEEEA3B-00 <- zai:glm-4.5-flash (776s)
+  staged gemini:gemma-4-31b-it: call 6 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 6 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  MRV-MEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK EPC-XYLENEMIXB-00 <- gemini:gemma-4-31b-it (1319s)
