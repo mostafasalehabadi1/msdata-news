@@ -176,3 +176,65 @@ style-soft: lead>35w/1num
 
   stage6 news: kept stage-5 title after 3 calls (15 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
 OK PKAD-BI6070BEX-00 <- kilo:kilo-auto/free (169s)
+  PPBC-BI6070BEX-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  CASC-PCT2G42.5-L50EX-00 groq:openai/gpt-oss-20b: 401s ValueError: staged: 8 calls, last: no JSON: 
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 2 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 3 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged kilo:kilo-auto/free: check cut 3 sentence(s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 4 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  FART-DSMLABSAEX-00 gemini:gemma-4-31b-it: 838s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  PBDC-INBPPBEX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 5 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 6 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  PPBC-BI6070BEX-00 ovh:Meta-Llama-3_3-70B-Instruct: 123s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"ad0f8e0fa045c10069a86f5e6f530859"
+}
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 7 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 8 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 5 calls: 76 words / 4 paragraphs
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  PBDJ-BI6070BEX-00 gemini:gemma-4-26b-a4b-it: 423s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  EGHP-BI6070BEX-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 368s ValueError: staged: 8 calls, last: no JSON: 
+style-soft: lead>35w/1num
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: markers: «نشان داد» در text
+  PGOC-PCT2G42.5-L50EX-00 kilo:kilo-auto/free: 178s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  PGOC-PCT2G42.5-L50EX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  PGOC-PCT2G42.5-L50EX-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
+style-soft: lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
+  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  stage6 news: title in 2 calls
+OK PSD-BIMC250BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (466s)
