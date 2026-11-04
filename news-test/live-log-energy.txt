@@ -1,24 +1,49 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 given up for today (failed 2 runs, row unchanged): DHNSACABEX0050818, DSVSZCABEX0050818, DSOSZCABEX0050818, DOCSZCABEX0050818, DNHSZCABEX0050818, DC6MDCABEX0050818, DBEZSCABEX0050818, DLNPFCABEX0050823
-2 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ISVTBFWBEX0050914 gemini:gemma-4-26b-a4b-it: 300s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  IIGBECABFC0050825 gemini:gemma-4-31b-it: 508s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.7-flash: draft dropped after 6 calls: 75 words / 3 paragraphs
-style-soft: text 9 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۲۰۰، ۲۰۰۰، ۴۲۵۰، ۵۹۹
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 102 words / 2 paragraphs
-  ISVTBFWBEX0050914 zai:glm-4.7-flash: 688s ValueError: staged: 8 calls, last: 102 words / 2 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-  staged zai:glm-4.5-flash: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged zai:glm-4.5-flash: accepted after 7 calls
-  stage6 news: title in 2 calls
-OK ISVTBFWBEX0050914 <- zai:glm-4.5-flash (61s)
+1 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+style-soft: lead>35w/1num
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
+  staged gemini:gemma-4-31b-it: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged gemini:gemma-4-31b-it: accepted after 4 calls
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۴)
+OK IIGBECABFC0050825 <- gemini:gemma-4-31b-it (1679s)
