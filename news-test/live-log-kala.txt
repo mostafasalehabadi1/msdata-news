@@ -74,3 +74,45 @@ OK SHPC-OAVAMB-00 <- kilo:dots-studio/dots-3-note-preview:free (614s)
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
   stage6 news: title in 1 calls
 OK SJS-HREEEEA3B-00 <- ovh:Qwen3.5-397B-A17B (676s)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 101 words / 3 paragraphs
+  FAAS-MREEEEA3B-00 zai:glm-4.7-flash: 404s ValueError: staged: 8 calls, last: 101 words / 3 paragraphs
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 96 words / 3 paragraphs
+  FAAS-MREEEEA3B-00 zai:glm-4.5-flash: 73s ValueError: staged: 8 calls, last: 96 words / 3 paragraphs
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 16 nums
+  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۶۹
+  ESC-MRNNNEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 417s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۶۹
+style-soft: lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 3 sentence(s)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
+  stage6 news: title in 1 calls
+OK AGS-MREEEEA3B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (634s)
