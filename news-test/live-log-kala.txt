@@ -1,93 +1,19 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 given up for today (failed 2 runs, row unchanged): NCI-OANMMSA-00, SRBK-CR08AB-00, KSO-MREEEEA3B-00, NCI-OANMMSB-00, TAA-TS11112-00, ICII-LABB-00, ASC-MREEEEA3B-00, SJS-MREEEEA3B-00, FPCO-ACTACB-00, KSCO-MREEEEA3B-00, SSC-MREEEEA3B-00, NCI-CR08AB-00, SHPC-OAEHB-00, AWS-CS21101-00, BIMC-MREEEEA3B-00, MPC-MEGB-00, IPC-XYLENEMIXB-00, PPCO-OASTYB-00, SMC-MRNNEEA3B-00, SHPC-MEGB-00, BMIS-MRENEEA3B-00, MPC-PPHP525JPP-00, CWD-CR018OO-00, KHP-MCJ-00, HGST-MREEEEA2B-00, STPA-MREEEEA3B-00, BIMC-HREEEEA3B-00, AZF-MREEEEA3B-00, AKST-MRNENNA3B-00, RJCO-PPRG1104KRJ-00, FROJ-MREEEEA3B-00, HAAL-PS10000-00
 40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  SHS-MRNEEEA3B-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 115 words / 4 paragraphs
+  JPC-HDCRP100NPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 22s ValueError: staged: 8 calls, last: 115 words / 4 paragraphs
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged gemini:gemma-4-26b-a4b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
   staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  JPC-HDCRP100NPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SHPC-NOBG-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  SHS-MRNEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SJS-HREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 110 words / 4 paragraphs
-  KSCO-HREEEEA3B-00 zai:glm-4.7-flash: 391s ValueError: staged: 8 calls, last: 110 words / 4 paragraphs
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  ALIS-HREENNA3B-00 gemini:gemma-4-26b-a4b-it: 436s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  YSC-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 502s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 17 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 17 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: 119 words after fixes
-  SHPC-OAVAMB-00 kilo:dots-studio/dots-3-note-preview:free: 267s ValueError: staged: 8 calls, last: 119 words after fixes
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-  staged zai:glm-4.5-flash: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | لید بی‌عدد
-  staged zai:glm-4.5-flash: accepted after 7 calls
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged gemini:gemma-4-31b-it: accepted after 5 calls
-  staged gemini:gemma-4-31b-it: call 6 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  STPA-HREEEEA3B-00 ovh:Qwen3.5-397B-A17B: 723s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 102 words / 3 paragraphs
-  ALIS-MREEEEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 614s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK KSCO-HREEEEA3B-00 <- zai:glm-4.5-flash (776s)
-  staged gemini:gemma-4-31b-it: call 6 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gemini:gemma-4-31b-it: call 6 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  MRV-MEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
-OK EPC-XYLENEMIXB-00 <- gemini:gemma-4-31b-it (1319s)
+OK ALIS-MREEEEA3B-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (48s)
