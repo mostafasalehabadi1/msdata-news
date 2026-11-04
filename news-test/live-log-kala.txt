@@ -39,3 +39,14 @@ OK HSR-LUSUACB-00 <- zai:glm-4.7-flash (497s)
   ASPC-HDHBM5510WP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 867s TimeoutError: The read operation timed out
   stage6 news: title in 1 calls
 OK PAGL-MEGB-00 <- ovh:Qwen3.5-397B-A17B (416s)
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 67 words / 3 paragraphs
+  JPC-HD52518PP-00 zai:glm-4.7-flash: 537s ValueError: staged: 8 calls, last: 67 words / 3 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged zai:glm-4.5-flash: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۹۶ | فعل «فروخت» امروز تکرار شده)
+OK JPC-HD52518PP-00 <- zai:glm-4.5-flash (56s)
