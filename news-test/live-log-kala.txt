@@ -34,3 +34,46 @@ style-soft: lead>35w/1num, text 16 nums
   staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
   stage6 news: title in 3 calls
 OK FROJ-ARCK45B-00 <- zai:glm-4.7-flash (286s)
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+style-soft: text 9 nums
+  ovh:gpt-oss-120b: quota used up - skipped for an hour
+  ASCO-SBEN03E-00 ovh:gpt-oss-120b: 297s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"3185356521ab033a269d9716399ba727"
+}
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  ASCO-SBEN03E-00 ovh:Meta-Llama-3_3-70B-Instruct: 12s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"f15bfb2c167c542991dbb918c7327611"
+}
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  ALCO-BSO384X-00 gemini:gemma-4-26b-a4b-it: 345s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged groq:openai/gpt-oss-120b: call 7 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  ALCO-ARCK45B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: call 8 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  ESC-MBNEN03B-00 groq:openai/gpt-oss-120b: 395s ValueError: staged: 8 calls, last: no JSON: 
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  ESC-HBENN03E-00 gemini:gemma-4-31b-it: 198s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  ASCO-SBEN03E-00 ovh:Qwen3.6-27B: 180s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  ASCO-SBEN03E-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 9s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"bf094962cd1c4d3181eb7308470d0d45"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  ASCO-SBEN03E-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۵ | فعل «شد» امروز تکرار شده)
+OK ASCO-SBEN03E-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (24s)
