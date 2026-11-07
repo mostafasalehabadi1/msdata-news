@@ -76,3 +76,14 @@ style-soft: text 12 nums
   ALCO-ARCK45B-00 zai:glm-4.5-flash: 193s ValueError: staged: 8 calls, last: 103 words / 4 paragraphs
   stage6 news: kept stage-5 title after 3 calls (فعل «ماند» امروز تکرار شده)
 OK ALCO-ARCK15B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (457s)
+  staged ovh:Qwen3.5-397B-A17B: draft dropped after 8 calls: 104 words / 3 paragraphs
+  ALCO-ARC15CA-00 ovh:Qwen3.5-397B-A17B: 664s ValueError: staged: 8 calls, last: 104 words / 3 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  KHP-UREAPL-00 gemini:gemma-4-31b-it: 320s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: در حالی که, lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
+  KRPT-AMMONIAB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  stage6 news: title in 2 calls
+OK ALCO-ARCK45B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (280s)
