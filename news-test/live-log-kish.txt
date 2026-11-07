@@ -89,3 +89,20 @@ style-soft: lead>35w/1num, text 13 nums
   AAC-PCT2G42.5-L50EX-00 groq:openai/gpt-oss-120b: 428s ValueError: staged: 8 calls, last: no JSON: 
   stage6 news: title in 1 calls
 OK KGJ-BI6070BEX-00 <- kilo:kilo-auto/free (435s)
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+  staged ovh:gpt-oss-120b: draft dropped after 8 calls: پیش‌بینی آینده در حقیقت‌ها نیست
+  JRC-BI6070BEX-00 ovh:gpt-oss-120b: 477s ValueError: staged: 8 calls, last: پیش‌بینی آینده در حقیقت‌ها نیست
+  staged groq:openai/gpt-oss-20b: call 2 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  JRC-BI6070BEX-00 ovh:Meta-Llama-3_3-70B-Instruct: 14s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"c4a58109d8ee8c48dd25f975af6f0e01"
+}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 11 nums
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 1 sentence(s)
+  stage6 news: title in 3 calls
+OK SESH-INBPPBEX-00 <- zai:glm-4.7-flash (541s)
