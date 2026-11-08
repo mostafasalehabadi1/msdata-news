@@ -103,3 +103,17 @@ style-soft: lead>35w/1num, text 13 nums
 OK ESTC-PCT2G32.5-L50EX-00 <- kilo:kilo-auto/free (210s)
   stage6 news: title in 3 calls
 OK SGS-BI6070BEX-00 <- requesty:mistral/leanstral-1-5 (457s)
+style-soft: lead>35w/1num
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
+  UCC-PCT1G42.5-L50EX-00 llm7:mistral-Nemo-Instruct-2407: 106s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 11919 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":11919}}
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
+  PBDC-INBPPBEX-00 zai:glm-4.7-flash: 475s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: تیتر 18 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
+  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK UCC-PCT1G42.5-L50EX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (28s)
