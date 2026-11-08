@@ -44,3 +44,65 @@ style-soft: lead>35w/1num, text 17 nums
   staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
   stage6 news: kept stage-5 title after 3 calls (تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است)
 OK SRI-ZIF1-00 <- kilo:kilo-auto/free (232s)
+  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged ovh:Qwen3.6-27B: check cut 4 sentence(s)
+  staged llm7:minimax-m2.7: call 5 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 6 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  BISC-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  PTZ-ZIE1-00 llm7:minimax-m2.7: 371s ValueError: staged: 8 calls, last: no JSON: 
+  TSK-ZIE1-00 gemini:gemma-4-26b-a4b-it: 441s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num, text 9 nums
+  staged requesty:mistral/leanstral-1-5: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۰۰، ۳۶۳
+  ZZKI-ZII1-00 requesty:mistral/leanstral-1-5: 501s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۰۰، ۳۶۳
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  IAC-AP06101-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: در حالی که, lead>35w/1num, text 10 nums
+  TSK-ZIE1-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 119 words / 3 paragraphs
+  SPC-UREAGRJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 450s ValueError: staged: 8 calls, last: 119 words / 3 paragraphs
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  IMID-DRI-271 gemini:gemma-4-31b-it: 746s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: 116 words / 4 paragraphs
+  KRPT-AMMONIAB-00 ovh:Qwen3.6-27B: 687s ValueError: staged: 8 calls, last: 116 words / 4 paragraphs
+  ZZKI-ZII1-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  KRPT-AMMONIAB-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 9s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"43c3403c3526f3533dcb1817080c8741"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  KRPT-AMMONIAB-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+style-soft: lead>35w/1num, text 19 nums
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 19 nums
+style-soft: lead>35w/1num, text 20 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۴۰، ۶۵۷
+  TSK-ZIE1-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 266s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۴۰، ۶۵۷
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 64 words / 1 paragraphs
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 71 words / 3 paragraphs
+  PTZ-ZIE1-00 zai:glm-4.7-flash: 790s ValueError: staged: 8 calls, last: 71 words / 3 paragraphs
+  CHMI-PELL-00 gemini:gemma-4-31b-it: 487s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 117 words / 4 paragraphs
+  KRPT-AMMONIAB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 344s ValueError: staged: 8 calls, last: 117 words / 4 paragraphs
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.5-flash: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳ | فعل ندارد)
+OK PTZ-ZIE1-00 <- zai:glm-4.5-flash (178s)
