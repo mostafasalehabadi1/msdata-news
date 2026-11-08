@@ -36,3 +36,44 @@ style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 10 nums
   GHZ-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 396s TimeoutError: The read operation timed out
   stage6 news: title in 1 calls
 OK EHS-OAIOC-00 <- zai:glm-4.5-flash (193s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+style-soft: lead>35w/1num, text 10 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۲۵ هزار بود
+  NIMI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 406s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۲۵ هزار بود
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  SJS-DRI-00 gemini:gemma-4-31b-it: 400s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  FZI-PELL-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 99 words / 3 paragraphs
+  IMCO-ZIE1-00 zai:glm-4.7-flash: 87s ValueError: staged: 8 calls, last: 99 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 93 words / 4 paragraphs
+  IMCO-ZIE1-00 zai:glm-4.5-flash: 57s ValueError: staged: 8 calls, last: 93 words / 4 paragraphs
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  ISEI-OAIOC-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: در حالی که, text 14 nums
+  ALSU-AP0610A1-00 gemini:gemma-4-31b-it: 370s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 101 words / 3 paragraphs
+  ZRB-ZIF1-00 zai:glm-4.7-flash: 333s ValueError: staged: 8 calls, last: 101 words / 3 paragraphs
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.5-flash: soft: نام کالا در تیتر باید «شمش روی» باشد | متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  stage6 news: title in 1 calls
+OK ZRB-ZIF1-00 <- zai:glm-4.5-flash (68s)
