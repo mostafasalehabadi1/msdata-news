@@ -790,3 +790,21 @@ style-soft: در حالی که, در حالی که, lead>35w/1num, text 10 nums
   staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
 OK PTC-POY500D96FBWP-00 <- cf:@cf/qwen/qwen2.5-coder-32b-instruct (54s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 84 words / 3 paragraphs
+  SIS-ARGAB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 24s ValueError: staged: 8 calls, last: 84 words / 3 paragraphs
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  FANA-ARGAB-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 16s JSONDecodeError: Expecting value: line 5 column 11 (char 224)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: check cut 4 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+style-soft: lead>35w/1num, text 14 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۹۶ | فعل «فروخت» امروز تکرار شده)
+OK FANA-ARGAB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (30s)
