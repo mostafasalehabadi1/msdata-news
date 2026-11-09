@@ -1,5 +1,697 @@
-kala: closed halls: تالار فرعی
-kala: 0 settled rows, 59 wait for the next data build
+kala: closed halls: تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 140 settled rows, 0 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): CHMI-BSG194X-00, KSC-BSG194X-00, NGHS-BSG194X-00, GOLG-PELL-00, AISC-BSG194X-00, SMO-PELL-00, SKS-BSG194X-00, SJS-BSG194X-00, ARCO-PVCS65PP-00, ARCO-PVCS65J-00, SKS-BSG324X-00, GPC-PVCS65J-00, MPC-PPHP552RPP-00, JPPC-PPHP510LPP-00, DAP-PPHP510LJ-00, MPC-PPZ30SPP-00, SSMI-PELL-00, MPC-PPC30SPP-00, RJCO-PPRG3212ERJ-00, SIS-BSG194X-00, MPC-PPMR230CPP-00, PNCO-PPSF060J-00, KSO-BSG194X-00, JPPC-PPEP548RPP-00, SHPC-PPHP552RPP-00, JPPC-PPEP440LJ-00, AGIC-PPHP510LJ-00, MPC-PPRP340RP-00, ARCO-OAEPVC6834PP-00, FANA-BSG194X-00, FZI-BSG194X-00, SJS-BSG324X-00, TIOC-BOSN500B-00, JPPC-PPHP552RPP-00, DAP-PPHP552RJ-00, FZI-PELL-00, RJCO-PPRG1102XKRJ-00, DAP-PPHP550JJ-00, ALM-AP06101-00, YBSC-BSG194X-00, BOC-BOSN150B-00, JPPC-PPEP6540GJ-089
+40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
+  TIOC-BOSN150B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (6e432bbb-0676-4bb0-
+  cf:@cf/qwen/qwen2.5-coder-32b-instruct: quota used up - skipped until tomorrow
+  ZAI-BSO1720X-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (09fa9b8d-4574-41e8-
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
+  MPC-PPZ30SVPP-603 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  DAP-PPZ30SJ-00 llm7:deepseek-v4-flash:0731: 0s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
+  MPC-PPZ30SVPP-603 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
+  MPC-PPZ30SVPP-603 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:liquid/lfm-3-1.7b:free: quota used up - skipped until tomorrow
+  MPC-PPZ30SVPP-603 openrouter:liquid/lfm-3-1.7b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:recursive/flint-v1.0:free: quota used up - skipped until tomorrow
+  MPC-PPZ30SVPP-603 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  JPPC-PPRP345SPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  PGIL-LUSUACB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  AGIC-PPHP500KJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged ovh:gpt-oss-120b: check cut 2 sentence(s)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
+  staged ovh:gpt-oss-120b: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 5 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 6 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۹، ۶۳
+  AGIC-PPHP550JJ-00 zai:glm-4.7-flash: 321s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۹، ۶۳
+  staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  PNCO-PPI110J-00 groq:openai/gpt-oss-120b: 342s ValueError: staged: 8 calls, last: no JSON: 
+  JPPC-PPEP548TJ-00 gemini:gemma-4-26b-a4b-it: 343s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  BOC-BOSN500B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  BISC-BSG324X-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  SRM-BSG017OO-00 llm7:minimax-m2.7: 368s ValueError: staged: 8 calls, last: no JSON: 
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
+  SRM-BSG017OO-00 llm7:mistral-Nemo-Instruct-2407: 2s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58618 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58618}}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 117 words / 4 paragraphs
+  AGIC-PPHP550JJ-00 zai:glm-4.5-flash: 60s ValueError: staged: 8 calls, last: 117 words / 4 paragraphs
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  ovh:gpt-oss-120b: quota used up - skipped for an hour
+  NGFA-BSG194X-00 ovh:gpt-oss-120b: 473s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"4622205d69062c3edb39aa39fc82415b"
+}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 1 sentence(s)
+  JPPC-PPRP340RP-00 gemini:gemma-4-31b-it: 484s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  NGFA-BSG194X-00 ovh:Meta-Llama-3_3-70B-Instruct: 11s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"54b44c1a815d5854b42d1c661658261b"
+}
+  staged groq:openai/gpt-oss-20b: call 4 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  SIS-BSG324X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  NZCH-PPZR230CJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-20b: call 5 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  BISC-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 440s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 108 words / 3 paragraphs
+  APCO-PVCS57RPP-00 zai:glm-4.7-flash: 247s ValueError: staged: 8 calls, last: 108 words / 3 paragraphs
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  PNCO-PPI110J-00 groq:openai/gpt-oss-20b: 306s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 194691, Requested 578
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
+  SRM-BSG017OO-00 groq:openai/gpt-oss-120b: 8s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196573, Requested 61
+  staged llm7:minimax-m2.7: call 5 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 97 words / 4 paragraphs
+  APCO-PVCS57RPP-00 zai:glm-4.5-flash: 38s ValueError: staged: 8 calls, last: 97 words / 4 paragraphs
+  staged llm7:minimax-m2.7: call 6 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged ovh:Qwen3.6-27B: check cut 4 sentence(s)
+  staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  ZAI-BSO1720X-00 gemini:gemma-4-26b-a4b-it: 376s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  JPPC-PPEP548TJ-00 llm7:minimax-m2.7: 367s ValueError: staged: 8 calls, last: no JSON: 
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 5 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  PNCO-PPI110J-00 gemini:gemma-4-26b-a4b-it: 312s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: 93 words / 3 paragraphs
+  IMID-BSG194X-616 kilo:dots-studio/dots-3-note-preview:free: 417s ValueError: staged: 8 calls, last: 93 words / 3 paragraphs
+  staged llm7:minimax-m2.7: call 6 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 83 words / 2 paragraphs
+  SHPC-PPEPC40RPP-00 zai:glm-4.7-flash: 385s ValueError: staged: 8 calls, last: 83 words / 2 paragraphs
+  staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: در حالی که, text 9 nums
+  staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 118 words / 4 paragraphs
+  SHPC-PPEPC40RPP-00 zai:glm-4.5-flash: 41s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
+  ZAI-BSO1720X-00 llm7:minimax-m2.7: 370s ValueError: staged: 8 calls, last: no JSON: 
+  GSS-BSG194X-00 gemini:gemma-4-31b-it: 665s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: در حالی که
+  staged ovh:Qwen3.6-27B: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | لید بی‌عدد
+  staged ovh:Qwen3.6-27B: accepted after 8 calls
+style-soft: text 19 nums
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: soft: متن 16 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: accepted after 7 calls
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  stage6 news: title in 2 calls
+OK NGFA-BSG194X-00 <- ovh:Qwen3.6-27B (1031s)
+  PBIG-BSG194X-00 gemini:gemma-4-31b-it: 370s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
+timeout: give-up file saved
+kala: closed halls: تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 140 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): CHMI-BSG194X-00, KSC-BSG194X-00, NGHS-BSG194X-00, GOLG-PELL-00, AISC-BSG194X-00, SMO-PELL-00, SKS-BSG194X-00, SJS-BSG194X-00, ARCO-PVCS65PP-00, ARCO-PVCS65J-00, SKS-BSG324X-00, GPC-PVCS65J-00, MPC-PPHP552RPP-00, JPPC-PPHP510LPP-00, DAP-PPHP510LJ-00, MPC-PPZ30SPP-00, SSMI-PELL-00, MPC-PPC30SPP-00, RJCO-PPRG3212ERJ-00, SIS-BSG194X-00, MPC-PPMR230CPP-00, PNCO-PPSF060J-00, KSO-BSG194X-00, JPPC-PPEP548RPP-00, SHPC-PPHP552RPP-00, JPPC-PPEP440LJ-00, AGIC-PPHP510LJ-00, MPC-PPRP340RP-00, ARCO-OAEPVC6834PP-00, FANA-BSG194X-00, FZI-BSG194X-00, SJS-BSG324X-00, TIOC-BOSN500B-00, JPPC-PPHP552RPP-00, DAP-PPHP552RJ-00, FZI-PELL-00, RJCO-PPRG1102XKRJ-00, DAP-PPHP550JJ-00, JPPC-PPRP340RP-00, AGIC-PPHP550JJ-00, ALM-AP06101-00, TIOC-BOSN150B-00, YBSC-BSG194X-00, BOC-BOSN500B-00, BOC-BOSN150B-00, JPPC-PPEP6540GJ-089
+39 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged requesty:mistral/leanstral-1-5: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  SRM-BSG017OO-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  BISC-BSG194X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  ZAI-BSO1720X-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+  JPPC-PPRP345SPP-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  SRM-BSG017OO-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  SRM-BSG017OO-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  ZAI-BSO1720X-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 16s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"abdcdf2af118bd3cb12b1566e98b2b53"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  ZAI-BSO1720X-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 11 nums
+  staged llm7:minimax-m2.7: call 5 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: در حالی که, lead>35w/1num
+  staged kilo:cohere/north-mini-code:free: accepted after 7 calls
+style-soft: text 13 nums
+  staged llm7:minimax-m2.7: call 6 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: text 15 nums
+  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  PGIL-LUSUACB-00 kilo:dots-studio/dots-3-note-preview:free: 323s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
+  staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  DAP-PPZ30SJ-00 gemini:gemma-4-31b-it: 328s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK SRM-BSG017OO-00 <- kilo:cohere/north-mini-code:free (149s)
+  staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  BISC-BSG324X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  SIS-BSG324X-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  PNCO-PPI110J-00 llm7:minimax-m2.7: 368s ValueError: staged: 8 calls, last: no JSON: 
+  staged requesty:mistral/leanstral-1-5: draft dropped after 8 calls: 107 words / 3 paragraphs
+  KSKC-BSG194X-00 requesty:mistral/leanstral-1-5: 421s ValueError: staged: 8 calls, last: 107 words / 3 paragraphs
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  AGIC-PPHP500KJ-00 zai:glm-4.7-flash: 481s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged ovh:Qwen3.6-27B: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  NZCH-PPZR230CJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  ZAI-BSO1720X-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged zai:glm-4.5-flash: draft dropped after 9 calls: 102 words / 3 paragraphs
+  AGIC-PPHP500KJ-00 zai:glm-4.5-flash: 52s ValueError: staged: 9 calls, last: 102 words / 3 paragraphs
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  GSS-BSG194X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  IMID-BSG194X-616 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+style-soft: lead>35w/1num, text 12 nums
+style-soft: lead>35w/1num, text 22 nums
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 2 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 86 words / 4 paragraphs
+  PBIG-BSG194X-00 zai:glm-4.7-flash: 110s ValueError: staged: 8 calls, last: 86 words / 4 paragraphs
+style-soft: lead>35w/1num, text 21 nums
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: markers: لید عیناً در متن تکرار شده
+  ZAI-BSO1720X-00 kilo:cohere/north-mini-code:free: 142s ValueError: staged: 8 calls, last: markers: لید عیناً در متن تکرار شده
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 3 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 4 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  SHPC-PPEPC40RPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
+  staged zai:glm-4.5-flash: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱٫۷ | فعل «کرد» امروز تکرار شده)
+OK PBIG-BSG194X-00 <- zai:glm-4.5-flash (55s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 5 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  MKL-TISSSLGR20-00 ovh:Qwen3.6-27B: 516s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 6 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 1 sentence(s)
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 7 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 8 failed: HTTP 404: {"error":{"origin":"provider","message":"Not Found"}}
+
+  KSKC-BSG194X-00 requesty:novita/inclusionai/ling-3.0-tiny: 370s ValueError: staged: 8 calls, last: no JSON: 
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  PNCO-PPI110J-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged kilo:cohere/north-mini-code:free: check cut 3 sentence(s)
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: 113 words / 4 paragraphs
+  PNCO-PPI110J-00 kilo:cohere/north-mini-code:free: 132s ValueError: staged: 8 calls, last: 113 words / 4 paragraphs
+  JPPC-PPEP548TJ-00 gemini:gemma-4-26b-a4b-it: 1000s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged requesty:poolside/laguna-m.1: call 1 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged requesty:poolside/laguna-m.1: call 2 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged requesty:poolside/laguna-m.1: call 3 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged requesty:poolside/laguna-m.1: call 4 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged requesty:poolside/laguna-m.1: call 5 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:poolside/laguna-m.1: call 6 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged requesty:poolside/laguna-m.1: call 7 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  staged requesty:poolside/laguna-m.1: call 8 failed: HTTP 404: {"error":{"origin":"provider","message":"{\"error\":\"please check the model you provided\"}"}}
+
+  KSKC-BSG194X-00 requesty:poolside/laguna-m.1: 373s ValueError: staged: 8 calls, last: no JSON: 
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  MKL-TISSSLGR20-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: 107 words / 2 paragraphs
+  MKL-TISSSLGR20-00 kilo:cohere/north-mini-code:free: 79s ValueError: staged: 8 calls, last: 107 words / 2 paragraphs
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  SHPC-PPRP270GPP-00 zai:glm-4.7-flash: 573s TimeoutError: The read operation timed out
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 100 words / 3 paragraphs
+  SHPC-PPRP270GPP-00 zai:glm-4.5-flash: 55s ValueError: staged: 8 calls, last: 100 words / 3 paragraphs
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 1 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 2 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 3 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 4 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 5 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  ZAI-BSO1720X-00 gemini:gemma-4-26b-a4b-it: 455s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 6 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 7 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged requesty:nvidia/nemotron-3-nano-30b-a3b: call 8 failed: HTTP 410: {"error":{"origin":"provider","message":"Gone"}}
+
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  KSKC-BSG194X-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 367s ValueError: staged: 8 calls, last: no JSON: 
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  PNCO-PPI110J-00 gemini:gemma-4-26b-a4b-it: 284s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+timeout: give-up file saved
+kala: closed halls: تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 140 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): GOLG-PELL-00, SMO-PELL-00, SJS-BSG194X-00, ARCO-PVCS65PP-00, ARCO-PVCS65J-00, SKS-BSG324X-00, GPC-PVCS65J-00, MPC-PPHP552RPP-00, JPPC-PPHP510LPP-00, DAP-PPHP510LJ-00, MPC-PPZ30SPP-00, SSMI-PELL-00, MPC-PPC30SPP-00, RJCO-PPRG3212ERJ-00, SIS-BSG194X-00, MPC-PPMR230CPP-00, PNCO-PPSF060J-00, KSO-BSG194X-00, JPPC-PPEP548RPP-00, SHPC-PPHP552RPP-00, JPPC-PPEP440LJ-00, AGIC-PPHP510LJ-00, MPC-PPRP340RP-00, ARCO-OAEPVC6834PP-00, FANA-BSG194X-00, FZI-BSG194X-00, SJS-BSG324X-00, TIOC-BOSN500B-00, JPPC-PPHP552RPP-00, DAP-PPHP552RJ-00, FZI-PELL-00, RJCO-PPRG1102XKRJ-00, DAP-PPHP550JJ-00, JPPC-PPRP340RP-00, AGIC-PPHP550JJ-00, ALM-AP06101-00, TIOC-BOSN150B-00, DAP-PPZ30SJ-00, YBSC-BSG194X-00, AGIC-PPHP500KJ-00, PGIL-LUSUACB-00, JPPC-PPRP345SPP-00, BOC-BOSN500B-00, BISC-BSG194X-00, BISC-BSG324X-00, SIS-BSG324X-00, NZCH-PPZR230CJ-00, APCO-PVCS57RPP-00, GSS-BSG194X-00, IMID-BSG194X-616, SHPC-PPEPC40RPP-00, BOC-BOSN150B-00, SHPC-PPRP270GPP-00, JPPC-PPEP6540GJ-089, JPPC-PPEP548TJ-00, MPC-PPZ30SVPP-603, PNCO-PPI110J-00, ZAI-BSO1720X-00
+20 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  PNCO-PPPYI250J-00 kilo:dots-studio/dots-3-note-preview:free: 181s TimeoutError: The read operation timed out
+  JPPC-PPEP3130UVPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 181s TimeoutError: The read operation timed out
+  NZCH-PPZH550JJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  NZCH-PPZH510LJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  AGIC-PPHP500NJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: text 14 nums
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+style-soft: text 9 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲، ۲۳
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 54 words / 1 paragraphs
+  ZAJT-BSG194X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 319s ValueError: staged: 8 calls, last: 54 words / 1 paragraphs
+  DAP-PPHP500KJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  DAP-PPHP500MJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  KSKC-BSG194X-00 gemini:gemma-4-26b-a4b-it: 589s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: text 11 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 72 words / 2 paragraphs
+  TABC-PPH-XD-045POWDERTJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 99s ValueError: staged: 8 calls, last: 72 words / 2 paragraphs
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 78 words / 2 paragraphs
+  MKL-TISSDLGR14-00 zai:glm-4.7-flash: 1052s ValueError: staged: 8 calls, last: 78 words / 2 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 12 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: «۲۶۷ تن» با فعل فروش آمده ولی فروش ۲۴۲ تن است | «۲۶۷ تن» با فعل فروش آمده ولی فروش ۲۴۲ تن است
+  MKL-TISSDLGR14-00 zai:glm-4.5-flash: 60s ValueError: staged: 8 calls, last: «۲۶۷ تن» با فعل فروش آمده ولی فروش ۲۴۲ تن است | «۲۶۷ تن» با فعل فروش آمده ولی فروش ۲۴۲ تن است
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 43 words / 3 paragraphs
+  NZCH-PPZH515MAJ-00 zai:glm-4.7-flash: 313s ValueError: staged: 8 calls, last: 43 words / 3 paragraphs
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 94 words / 4 paragraphs
+  NZCH-PPZH515MAJ-00 zai:glm-4.5-flash: 126s ValueError: staged: 8 calls, last: 94 words / 4 paragraphs
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: draft dropped after 5 calls: markers: عدد بیرون از حقیقت‌ها: ۶۱
+style-soft: lead>35w/1num, text 18 nums
+  staged zai:glm-4.7-flash: soft: متن 17 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 7 calls
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"xingchen-agi/xing4.0-29b-a4b:free 
+  staged gemini:gemma-4-31b-it: call 6 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+timeout: give-up file saved
+kala: closed halls: تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 140 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): GOLG-PELL-00, SMO-PELL-00, SJS-BSG194X-00, ARCO-PVCS65PP-00, ARCO-PVCS65J-00, SKS-BSG324X-00, GPC-PVCS65J-00, MPC-PPHP552RPP-00, JPPC-PPHP510LPP-00, DAP-PPHP510LJ-00, MPC-PPZ30SPP-00, SSMI-PELL-00, MPC-PPC30SPP-00, RJCO-PPRG3212ERJ-00, SIS-BSG194X-00, MPC-PPMR230CPP-00, PNCO-PPSF060J-00, KSO-BSG194X-00, JPPC-PPEP548RPP-00, SHPC-PPHP552RPP-00, JPPC-PPEP440LJ-00, AGIC-PPHP510LJ-00, MPC-PPRP340RP-00, ARCO-OAEPVC6834PP-00, FANA-BSG194X-00, FZI-BSG194X-00, SJS-BSG324X-00, TIOC-BOSN500B-00, JPPC-PPHP552RPP-00, DAP-PPHP552RJ-00, FZI-PELL-00, RJCO-PPRG1102XKRJ-00, DAP-PPHP550JJ-00, JPPC-PPRP340RP-00, AGIC-PPHP550JJ-00, ALM-AP06101-00, TIOC-BOSN150B-00, DAP-PPZ30SJ-00, YBSC-BSG194X-00, AGIC-PPHP500KJ-00, PGIL-LUSUACB-00, JPPC-PPRP345SPP-00, BOC-BOSN500B-00, BISC-BSG194X-00, BISC-BSG324X-00, SIS-BSG324X-00, NZCH-PPZR230CJ-00, APCO-PVCS57RPP-00, GSS-BSG194X-00, IMID-BSG194X-616, SHPC-PPEPC40RPP-00, BOC-BOSN150B-00, SHPC-PPRP270GPP-00, JPPC-PPEP6540GJ-089, DAP-PPV30SJ-00, JPPC-PPEP548TJ-00, MPC-PPZ30SVPP-603, PNCO-PPI110J-00, ZAI-BSO1720X-00, KSKC-BSG194X-00, MKL-TISSSLGR20-00
+17 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+style-soft: lead>35w/1num, text 16 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۴۰، ۳۵۰، ۶۳
+  JPPC-PPEP3130UVPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 65s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۴۰، ۳۵۰، ۶۳
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 16 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 46 words / 2 paragraphs
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 67 words / 3 paragraphs
+  ZAJT-BSG194X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 85s ValueError: staged: 8 calls, last: 67 words / 3 paragraphs
+  NZCH-PPZH510LJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  PNCO-PPPYI250J-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged kilo:dots-studio/dots-3-note-preview:free: call 1 failed: HTTP 400: {"error":{"message":"Provider returned error","code":400,"metadata":{"raw":"{\"code\":400,\"msg\":\"bad reques
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۵۲، ۷۰۰
+  AGIC-PPHP500NJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 93s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۵۲، ۷۰۰
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 103 words / 3 paragraphs
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 79 words / 2 paragraphs
+  NZCH-PPZH550JJ-00 zai:glm-4.7-flash: 320s ValueError: staged: 8 calls, last: 79 words / 2 paragraphs
+  MKL-TISSDLGR14-00 gemini:gemma-4-31b-it: 322s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  DAP-PPHP500MJ-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 110 words / 4 paragraphs
+  NZCH-PPZH550JJ-00 zai:glm-4.5-flash: 74s ValueError: staged: 8 calls, last: 110 words / 4 paragraphs
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.7-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 8 calls
+  NZCH-PPZH515MAJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | فعل ندارد)
+OK JAST-BSG017OO-00 <- zai:glm-4.7-flash (229s)
+  DAP-PPHP500KJ-00 kilo:dots-studio/dots-3-note-preview:free: 454s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 72 words / 2 paragraphs
+  HAK-TISSDLGR17-00 zai:glm-4.7-flash: 180s ValueError: staged: 8 calls, last: 72 words / 2 paragraphs
+  THOR-OAVBB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 9 nums
+  staged zai:glm-4.5-flash: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 6 calls
+  TABC-PPH-XD-045POWDERTJ-00 gemini:gemma-4-31b-it: 531s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK HAK-TISSDLGR17-00 <- zai:glm-4.5-flash (47s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 117 words / 2 paragraphs
+  SHPC-OAVAMB-00 zai:glm-4.7-flash: 158s ValueError: staged: 8 calls, last: 117 words / 2 paragraphs
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده | در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x براب)
+OK SHPC-OAVAMB-00 <- zai:glm-4.5-flash (95s)
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  ALCO-ARC15CA-00 zai:glm-4.7-flash: 394s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  MFNI-BSG194X-00 gemini:gemma-4-31b-it: 692s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۸۶)
+OK ALCO-ARC15CA-00 <- zai:glm-4.5-flash (46s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+timeout: give-up file saved
+kala: closed halls: none
+kala: 140 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): GOLG-PELL-00, SMO-PELL-00, SJS-BSG194X-00, ARCO-PVCS65PP-00, ARCO-PVCS65J-00, SKS-BSG324X-00, GPC-PVCS65J-00, MPC-PPHP552RPP-00, JPPC-PPHP510LPP-00, DAP-PPHP510LJ-00, MPC-PPZ30SPP-00, SSMI-PELL-00, MPC-PPC30SPP-00, RJCO-PPRG3212ERJ-00, SIS-BSG194X-00, MPC-PPMR230CPP-00, PNCO-PPSF060J-00, KSO-BSG194X-00, JPPC-PPEP548RPP-00, SHPC-PPHP552RPP-00, JPPC-PPEP440LJ-00, AGIC-PPHP510LJ-00, MPC-PPRP340RP-00, ARCO-OAEPVC6834PP-00, FANA-BSG194X-00, FZI-BSG194X-00, SJS-BSG324X-00, TIOC-BOSN500B-00, JPPC-PPHP552RPP-00, DAP-PPHP552RJ-00, FZI-PELL-00, RJCO-PPRG1102XKRJ-00, DAP-PPHP550JJ-00, JPPC-PPRP340RP-00, AGIC-PPHP550JJ-00, ALM-AP06101-00, TIOC-BOSN150B-00, DAP-PPZ30SJ-00, YBSC-BSG194X-00, AGIC-PPHP500KJ-00, PGIL-LUSUACB-00, JPPC-PPRP345SPP-00, BOC-BOSN500B-00, BISC-BSG194X-00, BISC-BSG324X-00, SIS-BSG324X-00, NZCH-PPZR230CJ-00, APCO-PVCS57RPP-00, GSS-BSG194X-00, IMID-BSG194X-616, SHPC-PPEPC40RPP-00, BOC-BOSN150B-00, SHPC-PPRP270GPP-00, JPPC-PPEP6540GJ-089, DAP-PPV30SJ-00, MKL-TISSDLGR14-00, NZCH-PPZH550JJ-00, PNCO-PPPYI250J-00, JPPC-PPEP3130UVPP-00, NZCH-PPZH510LJ-00, ZAJT-BSG194X-00, AGIC-PPHP500NJ-00, JPPC-PPEP548TJ-00, DAP-PPHP500KJ-00, DAP-PPHP500MJ-00, TABC-PPH-XD-045POWDERTJ-00, NZCH-PPZH515MAJ-00, MPC-PPZ30SVPP-603, PNCO-PPI110J-00, THOR-OAVBB-00, ZAI-BSO1720X-00, KSKC-BSG194X-00, MKL-TISSSLGR20-00
+1 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  MFNI-BSG194X-00 gemini:gemma-4-31b-it: 657s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت | «بالاترین» در حقیقت‌ها نیست
+  MFNI-BSG194X-00 zai:glm-4.7-flash: 479s ValueError: staged: 8 calls, last: تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت | «بالاترین» در حقیقت‌ها نیست
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 118 words / 4 paragraphs
+  MFNI-BSG194X-00 zai:glm-4.5-flash: 43s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
+written 0/1; total in file 36
+kala: closed halls: none
+kala: 140 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): GOLG-PELL-00, SMO-PELL-00, SJS-BSG194X-00, ARCO-PVCS65PP-00, ARCO-PVCS65J-00, SKS-BSG324X-00, GPC-PVCS65J-00, MPC-PPHP552RPP-00, JPPC-PPHP510LPP-00, DAP-PPHP510LJ-00, MPC-PPZ30SPP-00, SSMI-PELL-00, MPC-PPC30SPP-00, RJCO-PPRG3212ERJ-00, SIS-BSG194X-00, MPC-PPMR230CPP-00, PNCO-PPSF060J-00, KSO-BSG194X-00, JPPC-PPEP548RPP-00, SHPC-PPHP552RPP-00, JPPC-PPEP440LJ-00, AGIC-PPHP510LJ-00, MPC-PPRP340RP-00, ARCO-OAEPVC6834PP-00, FANA-BSG194X-00, FZI-BSG194X-00, SJS-BSG324X-00, TIOC-BOSN500B-00, JPPC-PPHP552RPP-00, DAP-PPHP552RJ-00, FZI-PELL-00, RJCO-PPRG1102XKRJ-00, DAP-PPHP550JJ-00, JPPC-PPRP340RP-00, AGIC-PPHP550JJ-00, ALM-AP06101-00, TIOC-BOSN150B-00, DAP-PPZ30SJ-00, YBSC-BSG194X-00, AGIC-PPHP500KJ-00, PGIL-LUSUACB-00, JPPC-PPRP345SPP-00, BOC-BOSN500B-00, BISC-BSG194X-00, BISC-BSG324X-00, SIS-BSG324X-00, NZCH-PPZR230CJ-00, APCO-PVCS57RPP-00, GSS-BSG194X-00, IMID-BSG194X-616, SHPC-PPEPC40RPP-00, BOC-BOSN150B-00, SHPC-PPRP270GPP-00, JPPC-PPEP6540GJ-089, DAP-PPV30SJ-00, MKL-TISSDLGR14-00, NZCH-PPZH550JJ-00, PNCO-PPPYI250J-00, JPPC-PPEP3130UVPP-00, NZCH-PPZH510LJ-00, ZAJT-BSG194X-00, AGIC-PPHP500NJ-00, JPPC-PPEP548TJ-00, DAP-PPHP500KJ-00, DAP-PPHP500MJ-00, TABC-PPH-XD-045POWDERTJ-00, NZCH-PPZH515MAJ-00, MPC-PPZ30SVPP-603, PNCO-PPI110J-00, THOR-OAVBB-00, MFNI-BSG194X-00, ZAI-BSO1720X-00, KSKC-BSG194X-00, MKL-TISSSLGR20-00
 0 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-written 0/0; total in file 0
+written 0/0; total in file 36
