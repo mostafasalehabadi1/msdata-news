@@ -1,58 +1,28 @@
 {
 "DSVTHCABEX0050820": {
-"fp": "{\"base_price\": 1725275.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 402|شرکت پالایش نفت تهران|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 90000.0, \"goods_name\": \"حلال 402\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 1725275.0, \"min_price\": 1725275.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت تهران\", \"series_key\": \"حلال 402|شرکت پالایش نفت تهران|داخلی\", \"supplier\": \"پالایش نفت تهران\", \"symbol\": \"DSVTHCABEX0050820\", \"symbol_code\": \"DSVTHCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 155274750000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/18\", \"trade_volume\": 90000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 1725275.0}",
+"fp": "{\"base_price\": 1725275.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 402|شرکت پالایش نفت تهران|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 120000.0, \"goods_name\": \"حلال 402\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 1725275.0, \"min_price\": 1725275.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت تهران\", \"series_key\": \"حلال 402|شرکت پالایش نفت تهران|داخلی\", \"supplier\": \"پالایش نفت تهران\", \"symbol\": \"DSVTHCABEX0050820\", \"symbol_code\": \"DSVTHCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 207033000000.0, \"total_value_usd\": null, \"trade_count\": 3, \"trade_date\": \"1405/08/18\", \"trade_volume\": 120000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 1725275.0}",
 "runs": 2,
 "reasons": [
 {
-"model": "openrouter:google/gemma-4-31b-it:free",
-"at": "10:12",
-"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794268800000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "13:49",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
 "run": 1
 },
 {
-"model": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
-"at": "10:12",
-"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794268800000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "13:53",
+"error": "TimeoutError: The read operation timed out",
 "run": 1
-},
-{
-"model": "openrouter:google/gemma-4-26b-a4b-it:free",
-"at": "10:12",
-"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794268800000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
-"run": 1
-},
-{
-"model": "openrouter:liquid/lfm-3-1.7b:free",
-"at": "10:12",
-"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794268800000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
-"run": 1
-},
-{
-"model": "openrouter:recursive/flint-v1.0:free",
-"at": "10:12",
-"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794268800000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
-"run": 1
-},
-{
-"model": "groq:openai/gpt-oss-120b",
-"at": "10:51",
-"error": "ValueError: staged: 8 calls, last: no JSON: ",
-"run": 2
-},
-{
-"model": "groq:openai/gpt-oss-20b",
-"at": "10:58",
-"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 193484, Requested 7347. Please try again in 5m58.991999999s. Need more tokens? Upgrade to Dev Tier to",
-"run": 2
 },
 {
 "model": "gemini:gemma-4-26b-a4b-it",
-"at": "11:07",
+"at": "14:20",
 "error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
 "run": 2
 }
 ],
-"facts": "1. نام کالا: حلال 402؛ عرضه‌کننده: شرکت پالایش نفت تهران.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. ۹۰ هزار لیتر حلال 402 شرکت پالایش نفت تهران فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۱ میلیون و ۷۲۵ هزار و ۲۷۵ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۷۲۵ هزار و ۲۷۵ ریال در هر لیتر.\n6. قیمت با قیمت پایه برابر بود.\n7. این حجم در ۲ معامله فروخته شد.\n8. ارزش ریالی این معامله حدود ۱۵٫۵ میلیارد تومان بود.\n9. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۷ آبان با قیمت ۱ میلیون و ۷۲۵ هزار و ۲۷۵ ریال در هر لیتر بود؛ قیمت تغییری نکرد.\n10. این کالا از ۲۷ مرداد تا امروز ۹ بار از همین عرضه‌کننده معامله شده است.",
+"facts": "1. نام کالا: حلال 402؛ عرضه‌کننده: شرکت پالایش نفت تهران.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. ۱۲۰ هزار لیتر حلال 402 شرکت پالایش نفت تهران فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۱ میلیون و ۷۲۵ هزار و ۲۷۵ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۷۲۵ هزار و ۲۷۵ ریال در هر لیتر.\n6. قیمت با قیمت پایه برابر بود.\n7. این حجم در ۳ معامله فروخته شد.\n8. ارزش ریالی این معامله حدود ۲۰٫۷ میلیارد تومان بود.\n9. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۷ آبان با قیمت ۱ میلیون و ۷۲۵ هزار و ۲۷۵ ریال در هر لیتر بود؛ قیمت تغییری نکرد.\n10. این کالا از ۲۷ مرداد تا امروز ۹ بار از همین عرضه‌کننده معامله شده است.",
 "tables": {
 "T1": {
 "title": "قیمت حلال 402 در معامله‌های اخیر (ریال در هر لیتر)",
@@ -96,7 +66,7 @@
 "rows": [
 [
 "فروش (لیتر)",
-"۹۰ هزار"
+"۱۲۰ هزار"
 ],
 [
 "قیمت پایه (ریال در هر لیتر)",
@@ -198,29 +168,35 @@
 }
 },
 "DSVESCABEX1050823": {
-"fp": "{\"base_price\": 1725275.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 402|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 840000.0, \"goods_name\": \"حلال 402\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 1725275.0, \"min_price\": 1725275.0, \"offer_volume\": 2100000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 402|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSVESCABEX1050823\", \"symbol_code\": \"DSVESCABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 1449231000000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/18\", \"trade_volume\": 840000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 1725275.0}",
+"fp": "{\"base_price\": 1725275.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 402|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 1260000.0, \"goods_name\": \"حلال 402\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 1725275.0, \"min_price\": 1725275.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 402|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSVESCABEX1050823\", \"symbol_code\": \"DSVESCABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 2173846500000.0, \"total_value_usd\": null, \"trade_count\": 3, \"trade_date\": \"1405/08/18\", \"trade_volume\": 1260000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 1725275.0}",
 "runs": 2,
 "reasons": [
 {
-"model": "llm7:deepseek-v4-flash:0731",
-"at": "10:12",
-"error": "QuotaError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
-"run": 1
-},
-{
 "model": "gemini:gemma-4-31b-it",
-"at": "10:30",
+"at": "13:17",
 "error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
 "run": 1
 },
 {
-"model": "kilo:dots-studio/dots-3-note-preview:free",
-"at": "10:48",
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "13:24",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "13:47",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "13:50",
 "error": "TimeoutError: The read operation timed out",
 "run": 2
 }
 ],
-"facts": "1. نام کالا: حلال 402؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. شرکت پالایش نفت اصفهان ۲ میلیون و ۱۰۰ هزار لیتر حلال 402 عرضه کرد و ۸۴۰ هزار لیتر آن فروش رفت.\n5. خریداران ۸۴۰ هزار لیتر تقاضا ثبت کردند؛ تقاضا فقط ۴۰ درصد عرضه بود.\n6. ۴۰ درصد عرضه فروش رفت.\n7. قیمت میانگین معامله ۱ میلیون و ۷۲۵ هزار و ۲۷۵ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۷۲۵ هزار و ۲۷۵ ریال در هر لیتر.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۲ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۱۴۵ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۰ آبان با قیمت ۲ میلیون و ۱۹۱ هزار و ۲۷۷ ریال در هر لیتر بود؛ قیمت این بار ۲۱٫۳ درصد پایین‌تر است.\n12. این کالا از ۲۸ مرداد تا امروز ۲۲ بار از همین عرضه‌کننده معامله شده است.",
+"facts": "1. نام کالا: حلال 402؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. ۱ میلیون و ۲۶۰ هزار لیتر حلال 402 شرکت پالایش نفت اصفهان فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۱ میلیون و ۷۲۵ هزار و ۲۷۵ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۷۲۵ هزار و ۲۷۵ ریال در هر لیتر.\n6. قیمت با قیمت پایه برابر بود.\n7. این حجم در ۳ معامله فروخته شد.\n8. ارزش ریالی این معامله حدود ۲۱۷ میلیارد تومان بود.\n9. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۰ آبان با قیمت ۲ میلیون و ۱۹۱ هزار و ۲۷۷ ریال در هر لیتر بود؛ قیمت این بار ۲۱٫۳ درصد پایین‌تر است.\n10. این کالا از ۲۸ مرداد تا امروز ۲۲ بار از همین عرضه‌کننده معامله شده است.",
 "tables": {
 "T1": {
 "title": "قیمت حلال 402 در معامله‌های اخیر (ریال در هر لیتر)",
@@ -263,12 +239,8 @@
 ],
 "rows": [
 [
-"عرضه (لیتر)",
-"۲ میلیون و ۱۰۰ هزار"
-],
-[
 "فروش (لیتر)",
-"۸۴۰ هزار"
+"۱ میلیون و ۲۶۰ هزار"
 ],
 [
 "قیمت پایه (ریال در هر لیتر)",
@@ -881,7 +853,7 @@
 },
 "DMTMJCABFC0050826": {
 "fp": "{\"base_price\": 598643.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت پتروشیمی مرجان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 75.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 598643.0, \"min_price\": 598643.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشیمی مرجان\", \"series_key\": \"متانول|شرکت پتروشیمی مرجان|داخلی\", \"supplier\": \"شرکت پتروشیمی مرجان\", \"symbol\": \"DMTMJCABFC0050826\", \"symbol_code\": \"DMTMJCABFC0\", \"target_market\": \"داخلی\", \"total_value_rial\": 44898225000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/18\", \"trade_volume\": 75.0, \"volume_unit\": \"تن\", \"weighted_price\": 598643.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "zai:glm-4.7-flash",
@@ -906,6 +878,30 @@
 "at": "12:20",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "zai:glm-4.7-flash",
+"at": "12:57",
+"error": "ValueError: staged: 8 calls, last: 48 words / 1 paragraphs",
+"run": 2
+},
+{
+"model": "zai:glm-4.5-flash",
+"at": "13:00",
+"error": "ValueError: staged: 9 calls, last: 75 words / 3 paragraphs",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "13:03",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "13:06",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت پتروشیمی مرجان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. ۷۵ تن متانول شرکت پتروشیمی مرجان فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم بود و قیمت پایه ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم.\n6. قیمت با قیمت پایه برابر بود.\n7. این حجم در ۲ معامله فروخته شد.\n8. ارزش ریالی این معامله حدود ۴٫۵ میلیارد تومان بود.\n9. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۱ آبان با قیمت ۶۰۵ هزار و ۶۳۵ ریال در هر کیلوگرم بود؛ قیمت این بار ۱٫۲ درصد پایین‌تر است.\n10. این کالا از ۱۶ شهریور تا امروز ۱۳ بار از همین عرضه‌کننده معامله شده است.",
@@ -1505,13 +1501,25 @@
 },
 "DSBESCABEX1050823": {
 "fp": "{\"base_price\": 1807431.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 502|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 7560000.0, \"goods_name\": \"حلال 502\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2170170.0, \"min_price\": 2038868.0, \"offer_volume\": 2100000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 502|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSBESCABEX1050823\", \"symbol_code\": \"DSBESCABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 4370747220000.0, \"total_value_usd\": null, \"trade_count\": 5, \"trade_date\": \"1405/08/18\", \"trade_volume\": 2100000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 2081308.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "kilo:dots-studio/dots-3-note-preview:free",
 "at": "11:55",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "12:42",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "12:47",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: حلال 502؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. شرکت پالایش نفت اصفهان ۲ میلیون و ۱۰۰ هزار لیتر حلال 502 عرضه کرد و ۲ میلیون و ۱۰۰ هزار لیتر آن فروش رفت.\n5. خریداران ۷ میلیون و ۵۶۰ هزار لیتر تقاضا ثبت کردند؛ تقاضا ۳٫۶ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۲ میلیون و ۸۱ هزار و ۳۰۸ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۸۰۷ هزار و ۴۳۱ ریال در هر لیتر.\n8. رقابت قیمت را ۱۵٫۲ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۵ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۴۳۷ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۰ آبان با قیمت ۲ میلیون و ۷۰ هزار و ۸۲۹ ریال در هر لیتر بود؛ قیمت این بار ۰٫۵ درصد بالاتر است.\n12. این بالاترین قیمت این کالا از ۲ شهریور (آغاز داده‌ها) است؛ بالاترین قبلی ۲ میلیون و ۷۴ هزار و ۱۰۴ در ۱۰ آبان بود.\n13. این کالا از ۲ شهریور تا امروز ۱۷ بار از همین عرضه‌کننده معامله شده است.",
@@ -1582,13 +1590,25 @@
 },
 "DMTSHCABEX1050823": {
 "fp": "{\"base_price\": 598643.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت پتروشيمي شيراز|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 3200.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 624999.0, \"min_price\": 620026.0, \"offer_volume\": 1500.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشيمي شيراز\", \"series_key\": \"متانول|شرکت پتروشيمي شيراز|داخلی\", \"supplier\": \"شرکت پتروشیمی شیراز\", \"symbol\": \"DMTSHCABEX1050823\", \"symbol_code\": \"DMTSHCABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 930707180000.0, \"total_value_usd\": null, \"trade_count\": 8, \"trade_date\": \"1405/08/18\", \"trade_volume\": 1500.0, \"volume_unit\": \"تن\", \"weighted_price\": 620471.453}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "kilo:dots-studio/dots-3-note-preview:free",
 "at": "11:59",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "llm7:deepseek-v4-flash:0731",
+"at": "12:37",
+"error": "QuotaError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
+"run": 2
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "12:44",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت پتروشیمی شیراز.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. شرکت پتروشیمی شیراز ۱ هزار و ۵۰۰ تن متانول عرضه کرد و ۱ هزار و ۵۰۰ تن آن فروش رفت.\n5. خریداران ۳ هزار و ۲۰۰ تن تقاضا ثبت کردند؛ تقاضا ۲٫۱ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۶۲۰ هزار و ۴۷۱ ریال در هر کیلوگرم بود و قیمت پایه ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم.\n8. رقابت قیمت را ۳٫۶ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۸ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۹۳٫۱ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۱ آبان با قیمت ۶۱۲ هزار و ۶۹۴ ریال در هر کیلوگرم بود؛ قیمت این بار ۱٫۳ درصد بالاتر است.\n12. این کالا از ۲۶ مرداد تا امروز ۱۲ بار از همین عرضه‌کننده معامله شده است.",
@@ -1658,17 +1678,35 @@
 }
 },
 "DMTKVCABEX0050823": {
-"fp": "{\"base_price\": 598643.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت متانول کاوه|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 1275.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 598643.0, \"min_price\": 598643.0, \"offer_volume\": 3675.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت متانول کاوه\", \"series_key\": \"متانول|شرکت متانول کاوه|داخلی\", \"supplier\": \"شرکت متانول کاوه\", \"symbol\": \"DMTKVCABEX0050823\", \"symbol_code\": \"DMTKVCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 763269825000.0, \"total_value_usd\": null, \"trade_count\": 13, \"trade_date\": \"1405/08/18\", \"trade_volume\": 1275.0, \"volume_unit\": \"تن\", \"weighted_price\": 598643.0}",
-"runs": 1,
+"fp": "{\"base_price\": 598643.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت متانول کاوه|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 50.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 598643.0, \"min_price\": 598643.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت متانول کاوه\", \"series_key\": \"متانول|شرکت متانول کاوه|داخلی\", \"supplier\": \"شرکت متانول کاوه\", \"symbol\": \"DMTKVCABEX0050823\", \"symbol_code\": \"DMTKVCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 29932150000.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/18\", \"trade_volume\": 50.0, \"volume_unit\": \"تن\", \"weighted_price\": 598643.0}",
+"runs": 2,
 "reasons": [
 {
-"model": "kilo:dots-studio/dots-3-note-preview:free",
-"at": "12:10",
+"model": "cf:@cf/qwen/qwen2.5-coder-32b-instruct",
+"at": "13:08",
+"error": "JSONDecodeError: Expecting value: line 6 column 11 (char 367)",
+"run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "13:12",
 "error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "zai:glm-4.7-flash",
+"at": "13:33",
+"error": "ValueError: staged: 8 calls, last: 61 words / 2 paragraphs",
+"run": 1
+},
+{
+"model": "zai:glm-4.5-flash",
+"at": "13:34",
+"error": "ValueError: staged: 8 calls, last: 102 words / 4 paragraphs",
 "run": 1
 }
 ],
-"facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت متانول کاوه.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. شرکت متانول کاوه ۳ هزار و ۶۷۵ تن متانول عرضه کرد و ۱ هزار و ۲۷۵ تن آن فروش رفت.\n5. خریداران ۱ هزار و ۲۷۵ تن تقاضا ثبت کردند؛ تقاضا فقط ۳۵ درصد عرضه بود.\n6. ۳۵ درصد عرضه فروش رفت.\n7. قیمت میانگین معامله ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم بود و قیمت پایه ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۱۳ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۷۶٫۳ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۱ آبان با قیمت ۶۰۵ هزار و ۶۳۵ ریال در هر کیلوگرم بود؛ قیمت این بار ۱٫۲ درصد پایین‌تر است.\n12. این کالا از ۲۶ مرداد تا امروز ۱۲ بار از همین عرضه‌کننده معامله شده است.",
+"facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت متانول کاوه.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. ۵۰ تن متانول شرکت متانول کاوه فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم بود و قیمت پایه ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم.\n6. قیمت با قیمت پایه برابر بود.\n7. ارزش ریالی این معامله حدود ۳ میلیارد تومان بود.\n8. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۱ آبان با قیمت ۶۰۵ هزار و ۶۳۵ ریال در هر کیلوگرم بود؛ قیمت این بار ۱٫۲ درصد پایین‌تر است.\n9. این کالا از ۲۶ مرداد تا امروز ۱۲ بار از همین عرضه‌کننده معامله شده است.",
 "tables": {
 "T1": {
 "title": "قیمت متانول در معامله‌های اخیر (ریال در هر کیلوگرم)",
@@ -1711,12 +1749,8 @@
 ],
 "rows": [
 [
-"عرضه (تن)",
-"۳ هزار و ۶۷۵"
-],
-[
 "فروش (تن)",
-"۱ هزار و ۲۷۵"
+"۵۰"
 ],
 [
 "قیمت پایه (ریال در هر کیلوگرم)",
@@ -1736,8 +1770,21 @@
 },
 "DSBESCABEX0050823": {
 "fp": "{\"base_price\": 1807431.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 502|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 990000.0, \"goods_name\": \"حلال 502\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2109999.0, \"min_price\": 2083903.0, \"offer_volume\": 300000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 502|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSBESCABEX0050823\", \"symbol_code\": \"DSBESCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 627433230000.0, \"total_value_usd\": null, \"trade_count\": 6, \"trade_date\": \"1405/08/18\", \"trade_volume\": 300000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 2091444.0}",
-"runs": 1,
-"reasons": [],
+"runs": 2,
+"reasons": [
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "12:41",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "12:49",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+}
+],
 "facts": "1. نام کالا: حلال 502؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. شرکت پالایش نفت اصفهان ۳۰۰ هزار لیتر حلال 502 عرضه کرد و ۳۰۰ هزار لیتر آن فروش رفت.\n5. خریداران ۹۹۰ هزار لیتر تقاضا ثبت کردند؛ تقاضا ۳٫۳ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۲ میلیون و ۹۱ هزار و ۴۴۴ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۸۰۷ هزار و ۴۳۱ ریال در هر لیتر.\n8. رقابت قیمت را ۱۵٫۷ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۶ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۶۲٫۷ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۰ آبان با قیمت ۲ میلیون و ۷۰ هزار و ۸۲۹ ریال در هر لیتر بود؛ قیمت این بار ۱ درصد بالاتر است.\n12. این بالاترین قیمت این کالا از ۲ شهریور (آغاز داده‌ها) است؛ بالاترین قبلی ۲ میلیون و ۷۴ هزار و ۱۰۴ در ۱۰ آبان بود.\n13. این کالا از ۲ شهریور تا امروز ۱۷ بار از همین عرضه‌کننده معامله شده است.",
 "tables": {
 "T1": {
@@ -1799,6 +1846,375 @@
 [
 "بازار",
 "رینگ داخلی"
+]
+]
+}
+}
+},
+"DMTZGFWBEX0050902": {
+"fp": "{\"base_price\": 598643.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت پتروشیمی زاگرس|داخلی\", \"contract_type\": \"سلف\", \"demand_volume\": 325.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 598643.0, \"min_price\": 598643.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشیمی زاگرس\", \"series_key\": \"متانول|شرکت پتروشیمی زاگرس|داخلی\", \"supplier\": \"شرکت پتروشیمی زاگرس\", \"symbol\": \"DMTZGFWBEX0050902\", \"symbol_code\": \"DMTZGFWBEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 194558975000.0, \"total_value_usd\": null, \"trade_count\": 4, \"trade_date\": \"1405/08/18\", \"trade_volume\": 325.0, \"volume_unit\": \"تن\", \"weighted_price\": 598643.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "12:47",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 1
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "12:50",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "12:56",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "13:15",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "13:21",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "13:30",
+"error": "ValueError: staged: 8 calls, last: 42 words / 2 paragraphs",
+"run": 2
+}
+],
+"facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت پتروشیمی زاگرس.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: سلف.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. ۳۲۵ تن متانول شرکت پتروشیمی زاگرس فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم بود و قیمت پایه ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم.\n6. قیمت با قیمت پایه برابر بود.\n7. این حجم در ۴ معامله فروخته شد.\n8. ارزش ریالی این معامله حدود ۱۹٫۵ میلیارد تومان بود.\n9. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۴ آبان با قیمت ۶۴۳ هزار و ۲۷۹ ریال در هر کیلوگرم بود؛ قیمت این بار ۶٫۹ درصد پایین‌تر است.\n10. این کالا از ۲۶ مرداد تا امروز ۱۱ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت متانول در معامله‌های اخیر (ریال در هر کیلوگرم)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۶ مهر",
+"۶۱۱ هزار و ۹۲۷"
+],
+[
+"۱۳ مهر",
+"۶۸۶ هزار و ۸۲۷"
+],
+[
+"۲۰ مهر",
+"۷۴۰ هزار و ۶۱"
+],
+[
+"۲۷ مهر",
+"۵۸۹ هزار و ۱۳۰"
+],
+[
+"۴ آبان",
+"۶۴۳ هزار و ۲۷۹"
+],
+[
+"۱۸ آبان",
+"۵۹۸ هزار و ۶۴۳"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی متانول شرکت پتروشیمی زاگرس",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"فروش (تن)",
+"۳۲۵"
+],
+[
+"قیمت پایه (ریال در هر کیلوگرم)",
+"۵۹۸ هزار و ۶۴۳"
+],
+[
+"قیمت معامله (ریال در هر کیلوگرم)",
+"۵۹۸ هزار و ۶۴۳"
+],
+[
+"بازار",
+"رینگ داخلی"
+]
+]
+}
+}
+},
+"DMTBRCABEX0050825": {
+"fp": "{\"base_price\": 598643.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت پتروشیمی بوشهر|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 100.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 598643.0, \"min_price\": 598643.0, \"offer_volume\": 1000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشیمی بوشهر\", \"series_key\": \"متانول|شرکت پتروشیمی بوشهر|داخلی\", \"supplier\": \"شرکت پتروشیمی بوشهر\", \"symbol\": \"DMTBRCABEX0050825\", \"symbol_code\": \"DMTBRCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 59864300000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/18\", \"trade_volume\": 100.0, \"volume_unit\": \"تن\", \"weighted_price\": 598643.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "openrouter:google/gemma-4-31b-it:free",
+"at": "12:37",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794268800000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "12:37",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794268800000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:google/gemma-4-26b-a4b-it:free",
+"at": "12:37",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794268800000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:liquid/lfm-3-1.7b:free",
+"at": "12:37",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794268800000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:recursive/flint-v1.0:free",
+"at": "12:37",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794268800000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+}
+],
+"facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت پتروشیمی بوشهر.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. شرکت پتروشیمی بوشهر ۱ هزار تن متانول عرضه کرد و ۱۰۰ تن آن فروش رفت.\n5. خریداران ۱۰۰ تن تقاضا ثبت کردند؛ تقاضا فقط ۱۰ درصد عرضه بود.\n6. ۱۰ درصد عرضه فروش رفت.\n7. قیمت میانگین معامله ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم بود و قیمت پایه ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۲ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۶ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۶ آبان با قیمت ۶۰۵ هزار و ۶۳۵ ریال در هر کیلوگرم بود؛ قیمت این بار ۱٫۲ درصد پایین‌تر است.\n12. این کالا از ۲۶ مرداد تا امروز ۲۳ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت متانول در معامله‌های اخیر (ریال در هر کیلوگرم)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۶ آبان",
+"۶۴۳ هزار و ۲۷۹"
+],
+[
+"۱۱ آبان",
+"۶۰۵ هزار و ۶۳۵"
+],
+[
+"۱۱ آبان",
+"۶۰۵ هزار و ۶۳۵"
+],
+[
+"۱۳ آبان",
+"۶۰۵ هزار و ۶۳۵"
+],
+[
+"۱۶ آبان",
+"۶۰۵ هزار و ۶۳۵"
+],
+[
+"۱۸ آبان",
+"۵۹۸ هزار و ۶۴۳"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی متانول شرکت پتروشیمی بوشهر",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۱ هزار"
+],
+[
+"فروش (تن)",
+"۱۰۰"
+],
+[
+"قیمت پایه (ریال در هر کیلوگرم)",
+"۵۹۸ هزار و ۶۴۳"
+],
+[
+"قیمت معامله (ریال در هر کیلوگرم)",
+"۵۹۸ هزار و ۶۴۳"
+],
+[
+"بازار",
+"رینگ داخلی"
+]
+]
+}
+}
+},
+"DMTSNCABFC0050824": {
+"fp": "{\"base_price\": 598643.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت صنایع پتروشیمی سبلان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 100.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 598643.0, \"min_price\": 598643.0, \"offer_volume\": 2000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت صنایع پتروشیمی سبلان\", \"series_key\": \"متانول|شرکت صنایع پتروشیمی سبلان|داخلی\", \"supplier\": \"شرکت صنایع پتروشیمی سبلان\", \"symbol\": \"DMTSNCABFC0050824\", \"symbol_code\": \"DMTSNCABFC0\", \"target_market\": \"داخلی\", \"total_value_rial\": 59864300000.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/18\", \"trade_volume\": 100.0, \"volume_unit\": \"تن\", \"weighted_price\": 598643.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "groq:openai/gpt-oss-120b",
+"at": "12:42",
+"error": "ValueError: staged: 8 calls, last: no JSON: ",
+"run": 1
+},
+{
+"model": "groq:openai/gpt-oss-20b",
+"at": "12:44",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 193496, Requested 7355. Please try again in 6m7.632s. Need more tokens? Upgrade to Dev Tier today at ",
+"run": 1
+},
+{
+"model": "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+"at": "12:44",
+"error": "QuotaError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (6f6ffd99-b7cb-4cce-87dd-ce47f9530549)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
+"run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "12:47",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "12:55",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 1
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "12:58",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "groq:openai/gpt-oss-120b",
+"at": "13:11",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 192693, Requested 8379. Please try again in 7m43.104s. Need more tokens? Upgrade to Dev Tier today a",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "13:23",
+"error": "ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۶۰۰",
+"run": 2
+}
+],
+"facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت صنایع پتروشیمی سبلان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. شرکت صنایع پتروشیمی سبلان ۲ هزار تن متانول عرضه کرد و ۱۰۰ تن آن فروش رفت.\n5. خریداران ۱۰۰ تن تقاضا ثبت کردند؛ تقاضا فقط ۵ درصد عرضه بود.\n6. ۵ درصد عرضه فروش رفت.\n7. قیمت میانگین معامله ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم بود و قیمت پایه ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم.\n8. قیمت با قیمت پایه برابر بود.\n9. ارزش ریالی این معامله حدود ۶ میلیارد تومان بود.\n10. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۲ آبان با قیمت ۶۰۵ هزار و ۶۳۵ ریال در هر کیلوگرم بود؛ قیمت این بار ۱٫۲ درصد پایین‌تر است.\n11. این کالا از ۲۳ شهریور تا امروز ۱۲ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت متانول در معامله‌های اخیر (ریال در هر کیلوگرم)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۲۱ مهر",
+"۷۳۶ هزار و ۲۹۳"
+],
+[
+"۲۷ مهر",
+"۵۸۹ هزار و ۱۳۰"
+],
+[
+"۴ آبان",
+"۶۴۳ هزار و ۲۷۹"
+],
+[
+"۱۱ آبان",
+"۶۰۵ هزار و ۶۳۵"
+],
+[
+"۱۲ آبان",
+"۶۰۵ هزار و ۶۳۵"
+],
+[
+"۱۸ آبان",
+"۵۹۸ هزار و ۶۴۳"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی متانول شرکت صنایع پتروشیمی سبلان",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۲ هزار"
+],
+[
+"فروش (تن)",
+"۱۰۰"
+],
+[
+"قیمت پایه (ریال در هر کیلوگرم)",
+"۵۹۸ هزار و ۶۴۳"
+],
+[
+"قیمت معامله (ریال در هر کیلوگرم)",
+"۵۹۸ هزار و ۶۴۳"
+],
+[
+"بازار",
+"رینگ داخلی"
+]
+]
+}
+}
+},
+"ILGPGPRBFC0050825": {
+"fp": "{\"base_price\": -160.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"گاز مایع|شرکت نفت ستاره خلیج فارس|بین الملل\", \"contract_type\": \"پریمیوم\", \"demand_volume\": 1000.0, \"goods_name\": \"گاز مایع\", \"is_premium\": true, \"is_usd\": false, \"max_price\": -160.0, \"min_price\": -160.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"پریمیوم دلاری(مرکز مبادله- مطابق مکانیزم مصوب هیئت مدیره بورس انرژی ایران)\", \"producer\": \"شرکت نفت ستاره خلیج فارس\", \"series_key\": \"گاز مایع|شرکت نفت ستاره خلیج فارس|بین الملل\", \"supplier\": \"شرکت نفت ستاره خلیج فارس\", \"symbol\": \"ILGPGPRBFC0050825\", \"symbol_code\": \"ILGPGPRBFC0\", \"target_market\": \"بین الملل\", \"total_value_rial\": 1137469368000.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/18\", \"trade_volume\": 1000.0, \"volume_unit\": \"تن\", \"weighted_price\": -160.0}",
+"runs": 1,
+"reasons": [
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "14:17",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 1
+},
+{
+"model": "zai:glm-4.7-flash",
+"at": "14:40",
+"error": "ValueError: staged: 8 calls, last: 80 words / 2 paragraphs",
+"run": 1
+}
+],
+"facts": "1. نام کالا: گاز مایع؛ عرضه‌کننده: شرکت نفت ستاره خلیج فارس.\n2. بازار: رینگ بین‌الملل بورس انرژی ایران؛ نوع قرارداد: پریمیوم.\n3. روز معامله: دوشنبه ۱۸ آبان.\n4. ۱ هزار تن گاز مایع شرکت نفت ستاره خلیج فارس فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. این معامله با پریمیوم انجام شد: قیمت نهایی ۱۶۰ دلار زیر قیمت مرجع جهانی است (در هر تن). پریمیوم پایه ۱۶۰ دلار زیر قیمت مرجع جهانی بود. پریمیوم اختلاف با قیمت مرجع است، نه قیمت مطلق؛ قیمت نهایی را عدد مطلق ننویس.\n6. ارزش ریالی این معامله حدود ۱۱۴ میلیارد تومان بود.\n7. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۳ مهر با پریمیوم ۵۶ دلار زیر قیمت مرجع جهانی بود.",
+"tables": {
+"T2": {
+"title": "معامله‌ی گاز مایع شرکت نفت ستاره خلیج فارس",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"فروش (تن)",
+"۱ هزار"
+],
+[
+"پریمیوم پایه (دلار در هر تن)",
+"-۱۶۰"
+],
+[
+"پریمیوم معامله (دلار در هر تن)",
+"-۱۶۰"
+],
+[
+"بازار",
+"رینگ بین‌الملل"
 ]
 ]
 }
