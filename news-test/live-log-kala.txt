@@ -44,3 +44,23 @@ style-soft: lead>35w/1num, text 11 nums
   NZCH-PPZH515MAJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
   stage6 news: kept stage-5 title after 3 calls (14 کلمه؛ ۸ تا ۱۳ | فعل ندارد)
 OK JAST-BSG017OO-00 <- zai:glm-4.7-flash (229s)
+  DAP-PPHP500KJ-00 kilo:dots-studio/dots-3-note-preview:free: 454s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 72 words / 2 paragraphs
+  HAK-TISSDLGR17-00 zai:glm-4.7-flash: 180s ValueError: staged: 8 calls, last: 72 words / 2 paragraphs
+  THOR-OAVBB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 9 nums
+  staged zai:glm-4.5-flash: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 6 calls
+  TABC-PPH-XD-045POWDERTJ-00 gemini:gemma-4-31b-it: 531s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
+OK HAK-TISSDLGR17-00 <- zai:glm-4.5-flash (47s)
