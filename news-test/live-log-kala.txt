@@ -127,3 +127,19 @@ style-soft: در حالی که, lead>35w/1num
 
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۸۵)
 OK IAC-AP13001-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (1250s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 110 words / 3 paragraphs
+  IAC-AP15351-00 zai:glm-4.7-flash: 540s ValueError: staged: 8 calls, last: 110 words / 3 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  SJS-BSG194X-00 gemini:gemma-4-31b-it: 665s JSONDecodeError: Invalid \escape: line 6 column 181 (char 486)
+style-soft: lead>35w/1num, text 14 nums
+  staged zai:glm-4.5-flash: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳)
+OK IAC-AP15351-00 <- zai:glm-4.5-flash (133s)
