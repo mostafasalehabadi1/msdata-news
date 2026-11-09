@@ -64,3 +64,19 @@ style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 9 nums
   TABC-PPH-XD-045POWDERTJ-00 gemini:gemma-4-31b-it: 531s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
 OK HAK-TISSDLGR17-00 <- zai:glm-4.5-flash (47s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 117 words / 2 paragraphs
+  SHPC-OAVAMB-00 zai:glm-4.7-flash: 158s ValueError: staged: 8 calls, last: 117 words / 2 paragraphs
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده | در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x براب)
+OK SHPC-OAVAMB-00 <- zai:glm-4.5-flash (95s)
