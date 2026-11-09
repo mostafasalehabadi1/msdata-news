@@ -742,3 +742,66 @@ kala: 0 settled rows, 59 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 0 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
 written 0/0; total in file 0
+kala: closed halls: تالار صنعتی و معدنی، تالار فرعی
+kala: 11 settled rows, 127 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+11 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
+  MKL-TISSDLGR18-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  SMO-PELL-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
+  MKL-TISSDLGR18-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
+  MKL-TISSDLGR18-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:liquid/lfm-3-1.7b:free: quota used up - skipped until tomorrow
+  MKL-TISSDLGR18-00 openrouter:liquid/lfm-3-1.7b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  openrouter:recursive/flint-v1.0:free: quota used up - skipped until tomorrow
+  MKL-TISSDLGR18-00 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  MBSI-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  GOLG-PELL-00 gemini:gemma-4-31b-it: 245s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  FZI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  FTSH-BSG00OO-00 gemini:gemma-4-26b-a4b-it: 408s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged openrouter:xingchen-agi/xing4.0-29b-a4b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:dots-studio/dots-3-note-preview:free: call 5 failed: bad response: '{"id":"gen-1794228485-6kF4ItefVWBhHA0rtsLG","error":{"message":"JSON error injected into SSE stream","cod
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged kilo:dots-studio/dots-3-note-preview:free: call 5 failed: bad response: '{"id":"gen-1794228520-C18ouupznMk34u0swOiy","error":{"message":"JSON error injected into SSE stream","cod
+  staged kilo:dots-studio/dots-3-note-preview:free: call 5 failed: bad response: '{"id":"gen-1794228556-geg34QudMRRYFSONdWdg","error":{"message":"JSON error injected into SSE stream","cod
+  staged kilo:dots-studio/dots-3-note-preview:free: call 6 failed: bad response: '{"id":"gen-1794228616-iag4Zevdjob6taqs5YDp","error":{"message":"JSON error injected into SSE stream","cod
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ALM-AP06101-00 kilo:dots-studio/dots-3-note-preview:free: 658s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 5 calls: 115 words / 3 paragraphs
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 62 words / 2 paragraphs
+  FTSH-BSG00OO-00 zai:glm-4.7-flash: 1014s ValueError: staged: 8 calls, last: 62 words / 2 paragraphs
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.5-flash: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 7 calls
+  stage6 news: title in 2 calls
+OK FTSH-BSG00OO-00 <- zai:glm-4.5-flash (120s)
