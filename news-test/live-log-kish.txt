@@ -66,3 +66,27 @@ style-soft: lead>35w/1num, text 9 nums
   PAZK-BI6070BEX-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
   stage6 news: title in 2 calls
 OK APKC-BI6070BEX-00 <- zai:glm-4.5-flash (212s)
+  requesty:nvidia/muse-glimmer-30b: quota used up - skipped until tomorrow
+  PAZK-BI6070BEX-00 requesty:nvidia/muse-glimmer-30b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  PAGH-BI6070BEX-00 kilo:kilo-auto/free: 401s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-120b: call 8 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  PAGH-BI6070BEX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  PAGH-BI6070BEX-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged groq:openai/gpt-oss-120b: call 8 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  WCO-CLINKERT2EX-00 groq:openai/gpt-oss-120b: 451s ValueError: staged: 8 calls, last: no JSON: 
+  SMPC-BI6070BEX-00 gemini:gemma-4-31b-it: 452s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged ovh:gpt-oss-120b: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | لید بی‌عدد
+  staged ovh:gpt-oss-120b: accepted after 6 calls
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  stage6 news: title in 1 calls
+OK KGJ-BI6070BEX-00 <- ovh:gpt-oss-120b (497s)
