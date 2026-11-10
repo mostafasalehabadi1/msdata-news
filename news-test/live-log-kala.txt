@@ -1,37 +1,130 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): CWD-CR08AB-00, NCI-CR08AB-00, NCI-OANMMSF-00, CHG-GS00101-00, PTC-PETTG645J-00, NCI-OAMOOX-00, PAM-LLD0209AAPP-00, PTC-PETBG785J-00, AKSC-GS00101-00, JPC-HDCRP100NPP-00, MSC-GS00101-00, MAPE-LLD22B02P-00, PPCO-OASTYB-00, JPC-HD52518PP-00, ALSU-AB6063BC-00, PAM-LLD0209AAJ-00, KEPE-HDBL3PP-00, LPC-LD2102TX00RP-00, ASPC-LDLFI2119WP-00, NFSH-BIPG6416B-00, ALM-AP06101-00, ASPC-HDHFI5110WP-00, MPC-HDBL3PP-00, ILPE-HD7000FPP-00, KRD-LD2420E02PP-00, ICII-LABLABSAB-00, SRBK-CR08AB-00, DRG-GS00101-00, IAC-AB6063BC-00, ESC-MBNEE03E-00, LOR-MD3840UAPP-00, BISP-LABLABSAB-00, JPC-HD7000FPP-00, BBAD-BIPG6422B-00, HAAL-PS10000-00, BAN-PSESE2000J-00, KABS-EA005000-00, KABS-EA003000-00, YAS-EA014000-00, NFK-PTGOOO000-00, JPC-HD52518PJ-00, JPC-HDF7000LMPJ-00, MAPE-LLD22B03PJ-00, LOR-HD6040UVPP-00, FSIC-EA003000-00, PSM-PTFOOO000-00, IPC-HDHB0035LMPJ-00, HSR-BENTSUL-00, RSS-EA013000-00, MDC-HDF7000LMPJ-00, FNT-EA007000-00, HAK-TISSDLGR17-00, ENPC-PSSEF400J-089, FSIC-EA005000-00, BSRC-EA007000-00, FPKC-EA005000-00, FNT-EA005000-00, JBC-EA009000-00
+given up for today (failed 2 runs, row unchanged): CWD-CR08AB-00, NCI-CR08AB-00, NCI-OANMMSF-00, CHG-GS00101-00, PTC-PETTG645J-00, NCI-OAMOOX-00, PAM-LLD0209AAPP-00, PTC-PETBG785J-00, AKSC-GS00101-00, JPC-HDCRP100NPP-00, MSC-GS00101-00, MAPE-LLD22B02P-00, SHPC-HDCRP100BPP-00, TABC-ABSSD0150PP-00, PAM-HDEX3J-00, PPCO-OASTYB-00, SHPC-LLD0209AAPP-00, JPC-HD52518PP-00, ALSU-AB6063BC-00, PAM-LLD0209AAJ-00, PTC-PETBG821J-00, ENPC-PSSEF205J-089, LOR-HD62N07UVPP-00, PTC-PETSBTG641J-00, KEPE-HDBL3PP-00, LPC-LD2102TX00RP-00, ASPC-LDLFI2119WP-00, NFSH-BIPG6416B-00, ALM-AP06101-00, ASPC-HDHFI5110WP-00, MPC-HDBL3PP-00, ILPE-HD7000FPP-00, KRD-LD2420E02PP-00, ESC-MBENE03E-00, ICII-LABLABSAB-00, TABC-MD3840UAPP-00, ESC-MBEEE03E-00, SRBK-CR08AB-00, DRG-GS00101-00, IPC-HDHB0035PP-00, IAC-AB6063BC-00, ESC-MBNEE03E-00, LOR-MD3840UAPP-00, BISP-LABLABSAB-00, JPC-HD7000FPP-00, BBAD-BIPG6422B-00, HAAL-PS10000-00, BAN-PSESE2000J-00, KABS-EA005000-00, KABS-EA003000-00, YAS-EA014000-00, NFK-PTGOOO000-00, JPC-HD52518PJ-00, JPC-HDF7000LMPJ-00, MAPE-LLD22B03PJ-00, LOR-HD6040UVPP-00, FSIC-EA003000-00, PSM-PTFOOO000-00, IPC-HDHB0035LMPJ-00, HSR-BENTSUL-00, RSS-EA013000-00, MDC-HDF7000LMPJ-00, FNT-EA007000-00, HAK-TISSDLGR17-00, ENPC-PSSEF400J-089, FSIC-EA005000-00, BSRC-EA007000-00, FPKC-EA005000-00, FNT-EA005000-00, JBC-EA009000-00
 40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  ESC-MBENE03E-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  PAM-HDEX3J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SHPC-LLD0209AAPP-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  SHPC-HDCRP100BPP-00 gemini:gemma-4-31b-it: 341s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  PTC-PETBG821J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  TABC-MD3840UAPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  ESC-MBEEE03E-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  IPC-HDHB0035PP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  LOR-HD62N07UVPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  RAK-GS00101-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  ENPC-PSSEF205J-089 gemini:gemma-4-31b-it: 279s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 107 words / 3 paragraphs
-  TABC-ABSSD0150PP-00 zai:glm-4.7-flash: 716s ValueError: staged: 8 calls, last: 107 words / 3 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  NFST-PTDOOO000-00 gemini:gemma-4-26b-a4b-it: 803s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 95 words / 3 paragraphs
-  TABC-ABSSD0150PP-00 zai:glm-4.5-flash: 110s ValueError: staged: 8 calls, last: 95 words / 3 paragraphs
-  PTC-PETSBTG641J-00 gemini:gemma-4-31b-it: 225s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  MAPE-LLD22B02PJ-00 zai:glm-4.7-flash: 576s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 107 words / 3 paragraphs
-  MAPE-LLD22B02PJ-00 zai:glm-4.5-flash: 159s ValueError: staged: 8 calls, last: 107 words / 3 paragraphs
-  ENPC-PSSER200J-089 zai:glm-4.7-flash: 196s TimeoutError: The read operation timed out
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
+  YSC-MBNNE03E-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
+  YSC-MBNNE03E-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  RAK-GS00101-00 llm7:deepseek-v4-flash:0731: 3s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
+  YSC-MBNNE03E-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+style-soft: lead>35w/1num, text 12 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: 43
+  ESC-MBEEN03E-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 24s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: 43
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged cf:@cf/qwen/qwen2.5-coder-32b-instruct: draft dropped after 8 calls: 106 words / 2 paragraphs
+  SSSE-EA017000-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 49s ValueError: staged: 8 calls, last: 106 words / 2 paragraphs
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 15 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 7 calls: «۱۲۰ تن» با فعل فروش آمده ولی فروش ۱۳۰ تن است
+  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
+  ANT-EA007000-00 groq:openai/gpt-oss-120b: 60s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196830, Requested 61
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 36 words / 2 paragraphs
+  TABC-EPS221HSJ-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 32s ValueError: staged: 8 calls, last: 36 words / 2 paragraphs
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  MDC-HDHB6200BPP-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 17s JSONDecodeError: Expecting value: line 6 column 11 (char 343)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+style-soft: lead>35w/1num, text 17 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 7 calls: 110 words / 4 paragraphs
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 32 words / 1 paragraphs
+  LPC-LD2100TN00RP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 40s ValueError: staged: 8 calls, last: 32 words / 1 paragraphs
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  THOR-GRSUSUB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  WANE-PETWK821J-000 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  TABC-EPS422FCJ-00 ovh:gpt-oss-120b: 181s TimeoutError: The read operation timed out
+  MAPE-LLD22B02PJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  ANT-EA007000-00 groq:openai/gpt-oss-20b: 120s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196986, Requested 615
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged kilo:kilo-auto/free: check cut 1 sentence(s)
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged llm7:minimax-m2.7: call 2 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 2 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged llm7:minimax-m2.7: call 3 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 3 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 4 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged llm7:minimax-m2.7: call 5 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 5 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+style-soft: lead>35w/1num, text 11 nums
+  staged requesty:mistral/leanstral-1-5: draft dropped after 8 calls: «۷۵ تن» با فعل فروش آمده ولی فروش ۵۰ تن است
+  BSRC-EA009000-00 requesty:mistral/leanstral-1-5: 306s ValueError: staged: 8 calls, last: «۷۵ تن» با فعل فروش آمده ولی فروش ۵۰ تن است
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"router","message":"The requested model \"novita/inclusionai/ling-3.0-tiny\" is no longer a
+  staged llm7:minimax-m2.7: call 6 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 6 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"router","message":"The requested model \"novita/inclusionai/ling-3.0-tiny\" is no longer a
+  staged llm7:minimax-m2.7: call 7 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 7 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"router","message":"The requested model \"novita/inclusionai/ling-3.0-tiny\" is no longer a
+  staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 8 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  TABC-EPS422FCJ-00 ovh:Meta-Llama-3_3-70B-Instruct: 180s TimeoutError: The read operation timed out
+  NFST-PTDOOO000-00 gemini:gemma-4-26b-a4b-it: 365s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  KRD-LD2420F8PP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  LOR-HD54B04UVPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  IKRC-GRSUSUB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"router","message":"The requested model \"novita/inclusionai/ling-3.0-tiny\" is no longer a
+  BSRC-EA005000-00 llm7:minimax-m2.7: 370s ValueError: staged: 8 calls, last: no JSON: 
+  YSC-MBNNE03E-00 openrouter:thinkingmachines/inkling-2-small:free: 364s ValueError: staged: 8 calls, last: no JSON: 
+  openrouter:liquid/lfm-3-1.7b:free: quota used up - skipped until tomorrow
+  YSC-MBNNE03E-00 openrouter:liquid/lfm-3-1.7b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
+  BSRC-EA005000-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 2387 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":2387}}
+  openrouter:recursive/flint-v1.0:free: quota used up - skipped until tomorrow
+  YSC-MBNNE03E-00 openrouter:recursive/flint-v1.0:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"headers":{"X-RateLimit-Limit":"50","X-RateLimit-Remaining":"0","
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"router","message":"The requested model \"novita/inclusionai/ling-3.0-tiny\" is no longer a
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"router","message":"The requested model \"novita/inclusionai/ling-3.0-tiny\" is no longer a
+  PAM-LD2420FPP-00 kilo:kilo-auto/free: 419s TimeoutError: The read operation timed out
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  PAM-LD2420FPP-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 1s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  PAM-LD2420FPP-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"router","message":"The requested model \"novita/inclusionai/ling-3.0-tiny\" is no longer a
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"router","message":"The requested model \"novita/inclusionai/ling-3.0-tiny\" is no longer a
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"router","message":"The requested model \"novita/inclusionai/ling-3.0-tiny\" is no longer a
+  staged llm7:minimax-m2.7: call 1 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
+  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
+  staged requesty:novita/inclusionai/ling-3.0-tiny: call 1 failed: HTTP 404: {"error":{"origin":"router","message":"The requested model \"novita/inclusionai/ling-3.0-tiny\" is no longer a
+style-soft: در حالی که, lead>35w/1num, text 19 nums
+  staged kilo:cohere/north-mini-code:free: soft: متن 17 عدد دارد؛ حداکثر ۶ عدد بماند | 4 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:cohere/north-mini-code:free: accepted after 7 calls
+  stage6 news: title in 1 calls
+OK PAM-LD2420FPP-00 <- kilo:cohere/north-mini-code:free (70s)
