@@ -213,3 +213,17 @@ style-soft: lead>35w/1num, text 15 nums
   ILPE-HDPE7700MLMPJ-00 openrouter:thinkingmachines/inkling-2-small:free: 361s ValueError: staged: 8 calls, last: no JSON: 
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۸۶.۹ | فعل «شد» امروز تکرار شده)
 OK MPC-HDCRP100NPP-603 <- kilo:cohere/north-mini-code:free (115s)
+  SHPC-MEAFG-00 llm7:minimax-m2.7: 366s ValueError: staged: 8 calls, last: no JSON: 
+  MSBS-BI6070B-00 gemini:gemma-4-26b-a4b-it: 459s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  SHPC-TEAKG-00 ovh:Qwen3.6-27B: 854s TimeoutError: The read operation timed out
+  KEPE-HDEX5PWDJ-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  staged kilo:cohere/north-mini-code:free: check cut 3 sentence(s)
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  ATSC-MBEEN03E-00 ovh:Qwen3.5-397B-A17B: 553s TimeoutError: The read operation timed out
+  FRB-PAFJ-00 gemini:gemma-4-31b-it: 714s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: text 12 nums
+  staged kilo:cohere/north-mini-code:free: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged kilo:cohere/north-mini-code:free: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۸ | فعل «شد» امروز تکرار شده)
+OK KEPE-HDEX5PWDJ-00 <- kilo:cohere/north-mini-code:free (97s)
