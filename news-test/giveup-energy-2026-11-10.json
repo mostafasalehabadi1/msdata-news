@@ -441,5 +441,617 @@
 ]
 }
 }
+},
+"INBESPRBEX0050826": {
+"fp": "{\"base_price\": -155.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"نرمال بوتان|شرکت پالایش نفت اصفهان|بین الملل\", \"contract_type\": \"پریمیوم\", \"demand_volume\": 24000.0, \"goods_name\": \"نرمال بوتان\", \"is_premium\": true, \"is_usd\": false, \"max_price\": -94.0, \"min_price\": -96.0, \"offer_volume\": 6000.0, \"offers\": 1, \"price_unit\": \"پریمیوم دلاری(مرکز مبادله- مطابق مکانیزم مصوب هیئت مدیره بورس انرژی ایران)\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"نرمال بوتان|شرکت پالایش نفت اصفهان|بین الملل\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"INBESPRBEX0050826\", \"symbol_code\": \"INBESPRBEX0\", \"target_market\": \"بین الملل\", \"total_value_rial\": 10377353155600.0, \"total_value_usd\": null, \"trade_count\": 4, \"trade_date\": \"1405/08/19\", \"trade_volume\": 8000.0, \"volume_unit\": \"تن\", \"weighted_price\": -94.85}",
+"runs": 2,
+"reasons": [
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "14:47",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "14:51",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "15:39",
+"error": "ValueError: staged: 9 calls, last: markers: عدد بیرون از حقیقت‌ها: ۶۰",
+"run": 2
+}
+],
+"facts": "1. نام کالا: نرمال بوتان؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ بین‌الملل بورس انرژی ایران؛ نوع قرارداد: پریمیوم.\n3. روز معامله: سه‌شنبه ۱۹ آبان.\n4. شرکت پالایش نفت اصفهان ۶ هزار تن نرمال بوتان عرضه کرد و ۸ هزار تن آن فروش رفت.\n5. خریداران ۲۴ هزار تن تقاضا ثبت کردند؛ تقاضا ۴ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. این معامله با پریمیوم انجام شد: قیمت نهایی ۹۵ دلار زیر قیمت مرجع جهانی است (در هر تن). پریمیوم پایه ۱۵۵ دلار زیر قیمت مرجع جهانی بود. پریمیوم اختلاف با قیمت مرجع است، نه قیمت مطلق؛ قیمت نهایی را عدد مطلق ننویس.\n8. این حجم در ۴ معامله فروخته شد.\n9. ارزش ریالی این معامله حدود ۱ هزار و ۳۸ میلیارد تومان بود.",
+"tables": {
+"T2": {
+"title": "معامله‌ی نرمال بوتان شرکت پالایش نفت اصفهان",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۶ هزار"
+],
+[
+"فروش (تن)",
+"۸ هزار"
+],
+[
+"پریمیوم پایه (دلار در هر تن)",
+"-۱۵۵"
+],
+[
+"پریمیوم معامله (دلار در هر تن)",
+"-۹۵"
+],
+[
+"بازار",
+"رینگ بین‌الملل"
+]
+]
+}
+}
+},
+"DHNPICABEX0050827": {
+"fp": "{\"base_price\": 2612000.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"برش کربنی هیدروکربور هیدروژنه شده با درجه مرغوبیت ON (PGH)|شرکت پتروشیمی ایلام|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 500.0, \"goods_name\": \"برش کربنی هیدروکربور هیدروژنه شده با درجه مرغوبیت ON (PGH)\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2612000.0, \"min_price\": 2612000.0, \"offer_volume\": 500.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشیمی ایلام\", \"series_key\": \"برش کربنی هیدروکربور هیدروژنه شده با درجه مرغوبیت ON (PGH)|شرکت پتروشیمی ایلام|داخلی\", \"supplier\": \"شرکت پتروشیمی ایلام\", \"symbol\": \"DHNPICABEX0050827\", \"symbol_code\": \"DHNPICABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 1306000000000.0, \"total_value_usd\": null, \"trade_count\": 5, \"trade_date\": \"1405/08/19\", \"trade_volume\": 500.0, \"volume_unit\": \"تن\", \"weighted_price\": 2612000.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "llm7:deepseek-v4-flash:0731",
+"at": "14:42",
+"error": "QuotaError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
+"run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "15:16",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+}
+],
+"facts": "1. نام کالا: برش کربنی هیدروکربور هیدروژنه شده با درجه مرغوبیت ON (PGH)؛ عرضه‌کننده: شرکت پتروشیمی ایلام.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۱۹ آبان.\n4. شرکت پتروشیمی ایلام ۵۰۰ تن برش کربنی هیدروکربور هیدروژنه شده با درجه مرغوبیت ON (PGH) عرضه کرد و ۵۰۰ تن آن فروش رفت.\n5. خریداران ۵۰۰ تن تقاضا ثبت کردند.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۲ میلیون و ۶۱۲ هزار ریال در هر کیلوگرم بود و قیمت پایه ۲ میلیون و ۶۱۲ هزار ریال در هر کیلوگرم.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۵ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۱۳۱ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۷ آبان با قیمت ۲ میلیون و ۴۸۸ هزار ریال در هر کیلوگرم بود؛ قیمت این بار ۵ درصد بالاتر است.\n12. این کالا از ۱۷ شهریور تا امروز ۸ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت برش کربنی هیدروکربور هیدروژنه شده با درجه مرغوبیت ON (PGH) در معامله‌های اخیر (ریال در هر کیلوگرم)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۱۴ مهر",
+"۳ میلیون و ۶۶۷ هزار و ۲۴۹"
+],
+[
+"۲۱ مهر",
+"۳ میلیون و ۵۴۰ هزار و ۸۱۷"
+],
+[
+"۲۸ مهر",
+"۳ میلیون و ۶۲۸ هزار و ۵۶۸"
+],
+[
+"۱۲ آبان",
+"۲ میلیون و ۳۷۰ هزار"
+],
+[
+"۱۷ آبان",
+"۲ میلیون و ۴۸۸ هزار"
+],
+[
+"۱۹ آبان",
+"۲ میلیون و ۶۱۲ هزار"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی برش کربنی هیدروکربور هیدروژنه شده با درجه مرغوبیت ON (PGH) شرکت پتروشیمی ایلام",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۵۰۰"
+],
+[
+"فروش (تن)",
+"۵۰۰"
+],
+[
+"قیمت پایه (ریال در هر کیلوگرم)",
+"۲ میلیون و ۶۱۲ هزار"
+],
+[
+"قیمت معامله (ریال در هر کیلوگرم)",
+"۲ میلیون و ۶۱۲ هزار"
+],
+[
+"بازار",
+"رینگ داخلی"
+]
+]
+}
+}
+},
+"DMTBRCABEX0050825": {
+"fp": "{\"base_price\": 598643.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت پتروشیمی بوشهر|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 25.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 598643.0, \"min_price\": 598643.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشیمی بوشهر\", \"series_key\": \"متانول|شرکت پتروشیمی بوشهر|داخلی\", \"supplier\": \"شرکت پتروشیمی بوشهر\", \"symbol\": \"DMTBRCABEX0050825\", \"symbol_code\": \"DMTBRCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 14966075000.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/19\", \"trade_volume\": 25.0, \"volume_unit\": \"تن\", \"weighted_price\": 598643.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "14:58",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 1
+},
+{
+"model": "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+"at": "14:58",
+"error": "QuotaError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (3b4d13b1-d5d2-471a-96d3-d52bcfd415a7)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
+"run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "15:01",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "15:08",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "15:20",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "15:23",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "15:28",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+}
+],
+"facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت پتروشیمی بوشهر.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۱۹ آبان.\n4. ۲۵ تن متانول شرکت پتروشیمی بوشهر فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم بود و قیمت پایه ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم.\n6. قیمت با قیمت پایه برابر بود.\n7. ارزش ریالی این معامله حدود ۱٫۵ میلیارد تومان بود.\n8. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۸ آبان با قیمت ۵۹۸ هزار و ۶۴۳ ریال در هر کیلوگرم بود؛ قیمت تغییری نکرد.\n9. این کالا از ۱۶ شهریور تا امروز ۲۳ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت متانول در معامله‌های اخیر (ریال در هر کیلوگرم)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۱۱ آبان",
+"۶۰۵ هزار و ۶۳۵"
+],
+[
+"۱۱ آبان",
+"۶۰۵ هزار و ۶۳۵"
+],
+[
+"۱۳ آبان",
+"۶۰۵ هزار و ۶۳۵"
+],
+[
+"۱۶ آبان",
+"۶۰۵ هزار و ۶۳۵"
+],
+[
+"۱۸ آبان",
+"۵۹۸ هزار و ۶۴۳"
+],
+[
+"۱۹ آبان",
+"۵۹۸ هزار و ۶۴۳"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی متانول شرکت پتروشیمی بوشهر",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"فروش (تن)",
+"۲۵"
+],
+[
+"قیمت پایه (ریال در هر کیلوگرم)",
+"۵۹۸ هزار و ۶۴۳"
+],
+[
+"قیمت معامله (ریال در هر کیلوگرم)",
+"۵۹۸ هزار و ۶۴۳"
+],
+[
+"بازار",
+"رینگ داخلی"
+]
+]
+}
+}
+},
+"IR2SBCABFC0050826": {
+"fp": "{\"base_price\": 554.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"رافینت2|شرکت پتروشیمی شیمی بافت|بین الملل\", \"contract_type\": \"نقدی\", \"demand_volume\": 3500.0, \"goods_name\": \"رافینت2\", \"is_premium\": false, \"is_usd\": true, \"max_price\": 554.0, \"min_price\": 554.0, \"offer_volume\": 2000.0, \"offers\": 1, \"price_unit\": \"دلار(مرکز مبادله- مطابق مکانیزم مصوب هیئت مدیره بورس انرژی ایران)\", \"producer\": \"شرکت پتروشیمی شیمی بافت\", \"series_key\": \"رافینت2|شرکت پتروشیمی شیمی بافت|بین الملل\", \"supplier\": \"شرکت شیمی بافت\", \"symbol\": \"IR2SBCABFC0050826\", \"symbol_code\": \"IR2SBCABFC0\", \"target_market\": \"بین الملل\", \"total_value_rial\": 2097735404000.0, \"total_value_usd\": 1108000.0, \"trade_count\": 4, \"trade_date\": \"1405/08/19\", \"trade_volume\": 2000.0, \"volume_unit\": \"تن\", \"weighted_price\": 554.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "14:45",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "15:23",
+"error": "ValueError: staged: 8 calls, last: 97 words / 3 paragraphs",
+"run": 2
+}
+],
+"facts": "1. نام کالا: رافینت2؛ عرضه‌کننده: شرکت پتروشیمی شیمی بافت.\n2. بازار: رینگ بین‌الملل بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۱۹ آبان.\n4. شرکت پتروشیمی شیمی بافت ۲ هزار تن رافینت2 عرضه کرد و ۲ هزار تن آن فروش رفت.\n5. خریداران ۳ هزار و ۵۰۰ تن تقاضا ثبت کردند؛ تقاضا ۱٫۸ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۵۵۴ دلار در هر تن بود و قیمت پایه ۵۵۴ دلار در هر تن.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۴ معامله فروخته شد.\n10. ارزش این معامله ۱ میلیون و ۱۰۸ هزار دلار بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲۹ مهر با قیمت ۵۸۳ دلار در هر تن بود؛ قیمت این بار ۵ درصد پایین‌تر است.",
+"tables": {
+"T2": {
+"title": "معامله‌ی رافینت2 شرکت پتروشیمی شیمی بافت",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۲ هزار"
+],
+[
+"فروش (تن)",
+"۲ هزار"
+],
+[
+"قیمت پایه (دلار در هر تن)",
+"۵۵۴"
+],
+[
+"قیمت معامله (دلار در هر تن)",
+"۵۵۴"
+],
+[
+"بازار",
+"رینگ بین‌الملل"
+]
+]
+}
+}
+},
+"IMESBCABFC0050826": {
+"fp": "{\"base_price\": 2100.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"MTBE|شرکت پتروشیمی شیمی بافت|بین الملل\", \"contract_type\": \"نقدی\", \"demand_volume\": 650.0, \"goods_name\": \"MTBE\", \"is_premium\": false, \"is_usd\": true, \"max_price\": 2189.0, \"min_price\": 2189.0, \"offer_volume\": 300.0, \"offers\": 1, \"price_unit\": \"دلار(مرکز مبادله- مطابق مکانیزم مصوب هیئت مدیره بورس انرژی ایران)\", \"producer\": \"شرکت پتروشیمی شیمی بافت\", \"series_key\": \"MTBE|شرکت پتروشیمی شیمی بافت|بین الملل\", \"supplier\": \"شرکت شیمی بافت\", \"symbol\": \"IMESBCABFC0050826\", \"symbol_code\": \"IMESBCABFC0\", \"target_market\": \"بین الملل\", \"total_value_rial\": 1243305812100.0, \"total_value_usd\": 656700.0, \"trade_count\": 6, \"trade_date\": \"1405/08/19\", \"trade_volume\": 300.0, \"volume_unit\": \"تن\", \"weighted_price\": 2189.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "14:48",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "15:26",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+}
+],
+"facts": "1. نام کالا: MTBE؛ عرضه‌کننده: شرکت پتروشیمی شیمی بافت.\n2. بازار: رینگ بین‌الملل بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۱۹ آبان.\n4. شرکت پتروشیمی شیمی بافت ۳۰۰ تن MTBE عرضه کرد و ۳۰۰ تن آن فروش رفت.\n5. خریداران ۶۵۰ تن تقاضا ثبت کردند؛ تقاضا ۲٫۲ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۲ هزار و ۱۸۹ دلار در هر تن بود و قیمت پایه ۲ هزار و ۱۰۰ دلار در هر تن.\n8. رقابت قیمت را ۴٫۲ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۶ معامله فروخته شد.\n10. ارزش این معامله ۶۵۶ هزار و ۷۰۰ دلار بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲۸ مهر با قیمت ۲ هزار و ۹۱۲ دلار در هر تن بود؛ قیمت این بار ۲۴٫۸ درصد پایین‌تر است.\n12. این پایین‌ترین قیمت این کالا از ۴ شهریور (آغاز داده‌ها) است؛ پایین‌ترین قبلی ۲ هزار و ۹۱۲ در ۲۸ مهر بود.\n13. این کالا از ۴ شهریور تا امروز ۴ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت MTBE در معامله‌های اخیر (دلار در هر تن)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۴ شهریور",
+"۳ هزار و ۲۲۳"
+],
+[
+"۲۴ شهریور",
+"۳ هزار و ۷۹۴"
+],
+[
+"۲۰ مهر",
+"۳ هزار و ۶۹۵"
+],
+[
+"۲۸ مهر",
+"۲ هزار و ۹۱۲"
+],
+[
+"۱۹ آبان",
+"۲ هزار و ۱۸۹"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی MTBE شرکت پتروشیمی شیمی بافت",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۳۰۰"
+],
+[
+"فروش (تن)",
+"۳۰۰"
+],
+[
+"قیمت پایه (دلار در هر تن)",
+"۲ هزار و ۱۰۰"
+],
+[
+"قیمت معامله (دلار در هر تن)",
+"۲ هزار و ۱۸۹"
+],
+[
+"بازار",
+"رینگ بین‌الملل"
+]
+]
+}
+}
+},
+"ICSTZCABEX0050827": {
+"fp": "{\"base_price\": 1300.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی|شرکت پتروشیمی تبریز|بین الملل\", \"contract_type\": \"نقدی\", \"demand_volume\": 600.0, \"goods_name\": \"برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی\", \"is_premium\": false, \"is_usd\": true, \"max_price\": 1150.0, \"min_price\": 1150.0, \"offer_volume\": 600.0, \"offers\": 1, \"price_unit\": \"دلار(مرکز مبادله- مطابق مکانیزم مصوب هیئت مدیره بورس انرژی ایران)\", \"producer\": \"شرکت پتروشیمی تبریز\", \"series_key\": \"برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی|شرکت پتروشیمی تبریز|بین الملل\", \"supplier\": \"شرکت پتروشیمی تبریز\", \"symbol\": \"ICSTZCABEX0050827\", \"symbol_code\": \"ICSTZCABEX0\", \"target_market\": \"بین الملل\", \"total_value_rial\": 326587867500.0, \"total_value_usd\": 172500.0, \"trade_count\": 1, \"trade_date\": \"1405/08/19\", \"trade_volume\": 150.0, \"volume_unit\": \"تن\", \"weighted_price\": 1150.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "openrouter:google/gemma-4-31b-it:free",
+"at": "14:42",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794355200000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "14:42",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794355200000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:google/gemma-4-26b-a4b-it:free",
+"at": "14:42",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794355200000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:thinkingmachines/inkling-2-small:free",
+"at": "14:48",
+"error": "ValueError: staged: 8 calls, last: no JSON: ",
+"run": 1
+},
+{
+"model": "openrouter:liquid/lfm-3-1.7b:free",
+"at": "14:48",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794355200000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "openrouter:recursive/flint-v1.0:free",
+"at": "14:48",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remaining\":\"0\",\"X-RateLimit-Reset\":\"1794355200000\"},\"limit_source\":\"openrouter_free_tier_daily\",",
+"run": 1
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "15:02",
+"error": "ValueError: staged: 8 calls, last: 111 words / 3 paragraphs",
+"run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "15:05",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "openrouter:thinkingmachines/inkling-2-small:free",
+"at": "15:19",
+"error": "ValueError: staged: 8 calls, last: no JSON: ",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "15:25",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "15:28",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+}
+],
+"facts": "1. نام کالا: برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی؛ عرضه‌کننده: شرکت پتروشیمی تبریز.\n2. بازار: رینگ بین‌الملل بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۱۹ آبان.\n4. شرکت پتروشیمی تبریز ۶۰۰ تن برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی عرضه کرد و ۱۵۰ تن آن فروش رفت.\n5. خریداران ۶۰۰ تن تقاضا ثبت کردند.\n6. ۲۵ درصد عرضه فروش رفت.\n7. قیمت میانگین معامله ۱ هزار و ۱۵۰ دلار در هر تن بود و قیمت پایه ۱ هزار و ۳۰۰ دلار در هر تن.\n8. قیمت ۱۱٫۵ درصد پایین‌تر از قیمت پایه بود.\n9. ارزش این معامله ۱۷۲ هزار و ۵۰۰ دلار بود.\n10. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲۱ مهر با قیمت ۱ هزار و ۹۷۴ دلار در هر تن بود؛ قیمت این بار ۴۱٫۷ درصد پایین‌تر است.\n11. این پایین‌ترین قیمت این کالا از ۲ شهریور (آغاز داده‌ها) است؛ پایین‌ترین قبلی ۱ هزار و ۷۳۷ در ۲ شهریور بود.\n12. این کالا از ۲ شهریور تا امروز ۶ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی در معامله‌های اخیر (دلار در هر تن)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۹ شهریور",
+"۱ هزار و ۷۵۲"
+],
+[
+"۲۴ شهریور",
+"۲ هزار و ۲۱۲"
+],
+[
+"۳۱ شهریور",
+"۲ هزار و ۲۶۴"
+],
+[
+"۱۴ مهر",
+"۲ هزار و ۱۷۴"
+],
+[
+"۲۱ مهر",
+"۱ هزار و ۹۷۴"
+],
+[
+"۱۹ آبان",
+"۱ هزار و ۱۵۰"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی شرکت پتروشیمی تبریز",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۶۰۰"
+],
+[
+"فروش (تن)",
+"۱۵۰"
+],
+[
+"قیمت پایه (دلار در هر تن)",
+"۱ هزار و ۳۰۰"
+],
+[
+"قیمت معامله (دلار در هر تن)",
+"۱ هزار و ۱۵۰"
+],
+[
+"بازار",
+"رینگ بین‌الملل"
+]
+]
+}
+}
+},
+"IMTFACABFC0050901": {
+"fp": "{\"base_price\": 400.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"متانول|شرکت پتروشيمي فن آوران|بین الملل\", \"contract_type\": \"نقدی\", \"demand_volume\": 50.0, \"goods_name\": \"متانول\", \"is_premium\": false, \"is_usd\": true, \"max_price\": 400.0, \"min_price\": 400.0, \"offer_volume\": 1000.0, \"offers\": 1, \"price_unit\": \"دلار(مرکز مبادله- مطابق مکانیزم مصوب هیئت مدیره بورس انرژی ایران)\", \"producer\": \"شرکت پتروشيمي فن آوران\", \"series_key\": \"متانول|شرکت پتروشيمي فن آوران|بین الملل\", \"supplier\": \"شرکت پتروشیمی فن آوران\", \"symbol\": \"IMTFACABFC0050901\", \"symbol_code\": \"IMTFACABFC0\", \"target_market\": \"بین الملل\", \"total_value_rial\": 37865260000.0, \"total_value_usd\": 20000.0, \"trade_count\": 1, \"trade_date\": \"1405/08/19\", \"trade_volume\": 50.0, \"volume_unit\": \"تن\", \"weighted_price\": 400.0}",
+"runs": 2,
+"reasons": [
+{
+"model": "groq:openai/gpt-oss-120b",
+"at": "14:44",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 200000, Requested 3423. Please try again in 24m38.735999999s. Need more tokens? Upgrade to Dev Tier ",
+"run": 1
+},
+{
+"model": "groq:openai/gpt-oss-20b",
+"at": "14:46",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 194370, Requested 7098. Please try again in 10m34.176s. Need more tokens? Upgrade to Dev Tier today a",
+"run": 1
+},
+{
+"model": "zai:glm-4.7-flash",
+"at": "15:01",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "zai:glm-4.5-flash",
+"at": "15:03",
+"error": "ValueError: staged: 8 calls, last: 92 words / 3 paragraphs",
+"run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "15:08",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "15:11",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "cf:@cf/qwen/qwen2.5-coder-32b-instruct",
+"at": "15:13",
+"error": "JSONDecodeError: Expecting value: line 2 column 12 (char 13)",
+"run": 2
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "15:16",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "zai:glm-4.7-flash",
+"at": "15:26",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "zai:glm-4.5-flash",
+"at": "15:32",
+"error": "ValueError: staged: 8 calls, last: 86 words / 4 paragraphs",
+"run": 2
+}
+],
+"facts": "1. نام کالا: متانول؛ عرضه‌کننده: شرکت پتروشیمی فن آوران.\n2. بازار: رینگ بین‌الملل بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۱۹ آبان.\n4. شرکت پتروشیمی فن آوران ۱ هزار تن متانول عرضه کرد و ۵۰ تن آن فروش رفت.\n5. خریداران ۵۰ تن تقاضا ثبت کردند؛ تقاضا فقط ۵ درصد عرضه بود.\n6. ۵ درصد عرضه فروش رفت.\n7. قیمت میانگین معامله ۴۰۰ دلار در هر تن بود و قیمت پایه ۴۰۰ دلار در هر تن.\n8. قیمت با قیمت پایه برابر بود.\n9. ارزش این معامله ۲۰ هزار دلار بود.",
+"tables": {
+"T2": {
+"title": "معامله‌ی متانول شرکت پتروشیمی فن آوران",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۱ هزار"
+],
+[
+"فروش (تن)",
+"۵۰"
+],
+[
+"قیمت پایه (دلار در هر تن)",
+"۴۰۰"
+],
+[
+"قیمت معامله (دلار در هر تن)",
+"۴۰۰"
+],
+[
+"بازار",
+"رینگ بین‌الملل"
+]
+]
+}
+}
 }
 }
