@@ -341,7 +341,7 @@
 },
 "DCDKHCRBEX0050825": {
 "fp": "{\"base_price\": 1650000000.0, \"board_name\": \"تابلو نفت و گاز\", \"commodity_key\": \"میعانات گازی|شرکت پالایش گاز خانگیران|داخلی\", \"contract_type\": \"نسیه\", \"demand_volume\": 3014.0, \"goods_name\": \"میعانات گازی\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 1650000000.0, \"min_price\": 1650000000.0, \"offer_volume\": 3014.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش گاز خانگیران\", \"series_key\": \"میعانات گازی|شرکت پالایش گاز خانگیران|داخلی\", \"supplier\": \"شرکت ملی نفت ایران\", \"symbol\": \"DCDKHCRBEX0050825\", \"symbol_code\": \"DCDKHCRBEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 4973100000000.0, \"total_value_usd\": null, \"trade_count\": 12, \"trade_date\": \"1405/08/20\", \"trade_volume\": 3014.0, \"volume_unit\": \"تن\", \"weighted_price\": 1650000000.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "gemini:gemma-4-31b-it",
@@ -354,6 +354,18 @@
 "at": "11:24",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "12:39",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+},
+{
+"model": "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+"at": "12:40",
+"error": "QuotaError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (9515b317-a5db-4c3d-9a19-88b585111eb6)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: میعانات گازی؛ عرضه‌کننده: شرکت پالایش گاز خانگیران.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نسیه.\n3. روز معامله: چهارشنبه ۲۰ آبان.\n4. شرکت پالایش گاز خانگیران ۳ هزار و ۱۴ تن میعانات گازی عرضه کرد و ۳ هزار و ۱۴ تن آن فروش رفت.\n5. خریداران ۳ هزار و ۱۴ تن تقاضا ثبت کردند.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۱ میلیارد و ۶۵۰ میلیون ریال در هر تن بود و قیمت پایه ۱ میلیارد و ۶۵۰ میلیون ریال در هر تن.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۱۲ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۴۹۷ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲۰ مهر با قیمت ۱ میلیارد و ۵۳۰ میلیون ریال در هر تن بود؛ قیمت این بار ۷٫۸ درصد بالاتر است.",

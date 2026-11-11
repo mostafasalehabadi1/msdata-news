@@ -1,28 +1,3 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): DTAZECABEX0050825, DMTSNCABFC0050824
-2 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  DOXAICABEX0050825 gemini:gemma-4-26b-a4b-it: 363s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  DCDKHCRBEX0050825 gemini:gemma-4-31b-it: 490s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  DCDKHCRBEX0050825 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 320s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: draft dropped after 6 calls: 119 words / 4 paragraphs
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 63 words / 2 paragraphs
-  DOXAICABEX0050825 zai:glm-4.7-flash: 899s ValueError: staged: 8 calls, last: 63 words / 2 paragraphs
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 83 words / 3 paragraphs
-  DOXAICABEX0050825 zai:glm-4.5-flash: 67s ValueError: staged: 8 calls, last: 83 words / 3 paragraphs
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+given up for today (failed 2 runs, row unchanged): DCDKHCRBEX0050825, DTAZECABEX0050825, DOXAICABEX0050825, DMTSNCABFC0050824
+0 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
