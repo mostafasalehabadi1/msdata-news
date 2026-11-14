@@ -1,68 +1,44 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): MSC-HSV00000-00, MSC-CS00001-00, AISC-BSO824X-00, CWD-CR018OO-00, FZI-BSO494X-00, ALCO-BSO384X-00, SIS-BSO494X-00, BISC-BSO494X-00, SPC-UREAGRJ-00, SHPC-PBR1220WWP-00, ESC-HBEEE03E-00, ESC-HBNNE03E-00, ESC-SBEE03E-00, ESC-SBEN03E-00, KPC-OAPOMDIB-00, HSR-LUSUACB-00, KPC-OAPOMDIG-00, ALCO-ARCK45B-00, ESC-HBNEN03E-00, LACO-UREAGRB-00, ALCO-ARCK15B-00, ESC-SBNE03E-00, ESC-HBENN03E-00, ASCO-HBNEN03E-00, JPC-HDPE5000SPP-00, ESC-MBNEN03B-00, SHPC-MEGB-00, FROJ-ARCK45B-00, KRPT-AMMONIAB-00, KHP-AMMONIAB-00, FROJ-ARCK15B-00, ASCO-SBEN03E-00, HPCC-AMMONIAB-00
-19 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  KZPC-PGPC1012URZP-603 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 4 sentence(s)
-  MSC-HSR00000-00 gemini:gemma-4-31b-it: 288s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۷۷
-  ALCO-AR10B38A-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 476s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۷۷
-  KZPC-EREPIRAN06EXCG-603 kilo:dots-studio/dots-3-note-preview:free: 308s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 23 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است | «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  MSC-CS00000-00 zai:glm-4.7-flash: 572s ValueError: staged: 8 calls, last: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است | «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 81 words / 4 paragraphs
-  MSC-CS00000-00 zai:glm-4.5-flash: 81s ValueError: staged: 8 calls, last: 81 words / 4 paragraphs
-  MSPI-UREAGRB-00 ovh:Qwen3.5-397B-A17B: 661s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  KZPC-ERE1X75LCG-603 kilo:dots-studio/dots-3-note-preview:free: 284s TimeoutError: The read operation timed out
-  PPC-UREAGRB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 108 words / 2 paragraphs
-  KHP-UREAPL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 448s ValueError: staged: 8 calls, last: 108 words / 2 paragraphs
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 83 words / 3 paragraphs
-  RPC-UREAGRB-00 zai:glm-4.7-flash: 472s ValueError: staged: 8 calls, last: 83 words / 3 paragraphs
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 112 words / 4 paragraphs
-  RPC-UREAGRB-00 zai:glm-4.5-flash: 60s ValueError: staged: 8 calls, last: 112 words / 4 paragraphs
-style-soft: در حالی که, lead>35w/1num, text 13 nums
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
+given up for today (failed 2 runs, row unchanged): MSC-HSV00000-00, MSC-CS00001-00, AISC-BSO824X-00, CWD-CR018OO-00, FZI-BSO494X-00, ALCO-BSO384X-00, SIS-BSO494X-00, BISC-BSO494X-00, SPC-UREAGRJ-00, SHPC-PBR1220WWP-00, ESC-HBEEE03E-00, ESC-HBNNE03E-00, ESC-SBEE03E-00, ESC-SBEN03E-00, KPC-OAPOMDIB-00, HSR-LUSUACB-00, KPC-OAPOMDIG-00, ALCO-ARCK45B-00, ESC-HBNEN03E-00, LACO-UREAGRB-00, ALCO-ARCK15B-00, ESC-SBNE03E-00, ALCO-AR10B38A-00, KZPC-PGPC1012URZP-603, ESC-HBENN03E-00, KZPC-EREPIRAN06EXCG-603, KRPT-UREAGRB-00, ASCO-HBNEN03E-00, JPC-HDPE5000SPP-00, ESC-MBNEN03B-00, SHPC-MEGB-00, FROJ-ARCK45B-00, PPC-UREAGRB-00, KRPT-AMMONIAB-00, KHP-AMMONIAB-00, FROJ-ARCK15B-00, ASCO-SBEN03E-00, HPCC-AMMONIAB-00
+13 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   staged zai:glm-4.7-flash: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۶۷
-  KHP-UREANONUFJ-00 ovh:Qwen3.5-397B-A17B: 576s TimeoutError: The read operation timed out
+  KZPC-ERE1X75LCG-603 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  MSC-HSR00000-00 gemini:gemma-4-31b-it: 316s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  MSC-CS00000-00 zai:glm-4.7-flash: 363s ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست
+  RPC-UREAGRB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 109 words / 3 paragraphs
+  MSC-CS00000-00 zai:glm-4.5-flash: 45s ValueError: staged: 8 calls, last: 109 words / 3 paragraphs
+style-soft: lead>35w/1num, text 11 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۸، ۹۲
+  KHP-UREAPL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 423s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۸، ۹۲
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  HSSC-LRNNEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 4 sentence(s)
+  KHP-UREANONUFJ-00 gemini:gemma-4-31b-it: 285s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  MSPI-UREAGRB-00 ovh:Qwen3.5-397B-A17B: 720s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
 style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 83 words / 3 paragraphs
-  HSSC-LRNNEA3B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 521s ValueError: staged: 8 calls, last: 83 words / 3 paragraphs
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 16 nums
-  staged zai:glm-4.7-flash: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 7 calls
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۵۶
+  MPC-HDBL3PP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 412s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۵۶
+  ALCO-ARC15CA-00 gemini:gemma-4-31b-it: 283s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: «۲۰۰ تن» با فعل فروش آمده ولی فروش ۱۰۰ تن است
+  PGIL-LUSUACB-00 zai:glm-4.7-flash: 517s ValueError: staged: 8 calls, last: «۲۰۰ تن» با فعل فروش آمده ولی فروش ۱۰۰ تن است
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 88 words / 2 paragraphs
+  PGIL-LUSUACB-00 zai:glm-4.5-flash: 109s ValueError: staged: 8 calls, last: 88 words / 2 paragraphs
+  MPC-MEGB-00 ovh:Qwen3.5-397B-A17B: 380s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 12 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
   stage6 news: title in 1 calls
-OK SPC-AMMONIAB-00 <- zai:glm-4.7-flash (471s)
+OK THOR-GRSUSUB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (420s)
