@@ -1,28 +1,33 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-6 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+5 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
-  DOXALCABEX0050826 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  DLNKOFWBEX0050923 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
   staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  DOXMHCABEX0050830 gemini:gemma-4-26b-a4b-it: 341s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged groq:openai/gpt-oss-120b: draft dropped after 8 calls: markers: «نشان داد» در text | «نشانگر» در text
+  DLNAACABEX0050827 groq:openai/gpt-oss-120b: 363s ValueError: staged: 8 calls, last: markers: «نشان داد» در text | «نشانگر» در text
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  DLNKOFWBEX0050923 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x برابر عرضه بود)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 81 words / 2 paragraphs
-  DLNAACABEX0050827 zai:glm-4.7-flash: 224s ValueError: staged: 8 calls, last: 81 words / 2 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-style-soft: lead>35w/1num
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 73 words / 3 paragraphs
-  DLNAACABEX0050827 zai:glm-4.5-flash: 48s ValueError: staged: 8 calls, last: 73 words / 3 paragraphs
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۳، ۶۰ | نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
-  DLNAACABEX0050827 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 24s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۳، ۶۰ | نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged groq:openai/gpt-oss-20b: call 5 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.7-flash: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 7 calls
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 500: [{
   "error": {
     "code": 500,
     "message": "Internal error encountered.",
@@ -30,15 +35,12 @@ style-soft: lead>35w/1num, text 10 nums
   }
 }
 
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-style-soft: text 16 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: تیتر 7 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 7 calls
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  stage6 news: title in 2 calls
-OK DOXALCABEX0050826 <- kilo:dots-studio/dots-3-note-preview:free (387s)
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged groq:openai/gpt-oss-20b: call 8 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  DLNAACABEX0050827 groq:openai/gpt-oss-20b: 382s ValueError: staged: 8 calls, last: no JSON: 
+  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  stage6 news: title in 3 calls
+OK DOXMHCABEX0050830 <- zai:glm-4.7-flash (423s)
