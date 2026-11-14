@@ -1,18 +1,43 @@
+rewrite MSPI-AMMONIAB-00: data changed after it was written (500.0|460.0|460.0|500359.0|230165140.0 -> 540.0|500.0|500.0|500359.0|250179500.0)
+rewrite ESC-MBNEN03B-00: data changed after it was written (115.0|92.0|115.0|2201500.0|202538000.0 -> 138.0|115.0|138.0|2201500.0|253172500.0)
+rewrite PZB-LRNENA1A-00: data changed after it was written (900.0|550.0|550.0|1010230.0|555626500.0 -> 1250.0|900.0|900.0|1010230.0|909207000.0)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): MSC-HSR00000-00, KSC-SSG09XROA-00, JPC-HDPE5000SPP-00, FROJ-ARCK45B-00, FROJ-ARCK15B-00, ASCO-SBEN03E-00
-10 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  KSCO-SW6591-00 gemini:gemma-4-26b-a4b-it: 478s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+given up for today (failed 2 runs, row unchanged): ALCO-BSO384X-00, BISC-BSO494X-00, JPC-HDPE5000SPP-00, FROJ-ARCK45B-00, FROJ-ARCK15B-00, ASCO-SBEN03E-00
+40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  KSCO-SW6591-00 zai:glm-4.7-flash: 293s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 100 words / 3 paragraphs
-  KSCO-SW6591-00 zai:glm-4.5-flash: 108s ValueError: staged: 8 calls, last: 100 words / 3 paragraphs
-  staged gemini:gemma-4-31b-it: draft dropped after 6 calls: markers: عدد بیرون از حقیقت‌ها: ۱۷
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  ALCO-BSO384X-00 gemini:gemma-4-31b-it: 1480s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged ovh:Qwen3.5-397B-A17B: soft: لید بی‌عدد
-  staged ovh:Qwen3.5-397B-A17B: accepted after 7 calls
-  stage6 news: title in 2 calls
-OK KSCO-SW6591-00 <- ovh:Qwen3.5-397B-A17B (779s)
+  staged ovh:gpt-oss-120b: check cut 2 sentence(s)
+  staged ovh:gpt-oss-120b: check cut 1 sentence(s)
+  ovh:gpt-oss-120b: quota used up - skipped for an hour
+  ASCO-HBNEN03E-00 ovh:gpt-oss-120b: 57s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"a3d20f0ced5ab07357408c0a8af41b40"
+}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  KSC-BSO494X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged ovh:Qwen3.5-397B-A17B: check cut 4 sentence(s)
+  staged kilo:kilo-auto/free: check cut 4 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  ASCO-HBNEN03E-00 ovh:Meta-Llama-3_3-70B-Instruct: 225s TimeoutError: The read operation timed out
+  MSC-CS00001-00 gemini:gemma-4-31b-it: 330s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  AISC-BSO824X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 100 words / 4 paragraphs
+  ESC-MBNEN03B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 437s ValueError: staged: 8 calls, last: 100 words / 4 paragraphs
+  staged kilo:kilo-auto/free: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | لید بی‌عدد
+  staged kilo:kilo-auto/free: accepted after 7 calls
+  staged ovh:Qwen3.6-27B: check cut 6 sentence(s)
+  CWD-CR018OO-00 gemini:gemma-4-31b-it: 248s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  PZB-LRNENA1A-00 gemini:gemma-4-26b-a4b-it: 653s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: ام‌اس‌دیتا!=1
+style-soft: ام‌اس‌دیتا!=1
+style-soft: lead>35w/1num, text 14 nums
+  stage6 news: title in 3 calls
+OK MSPI-AMMONIAB-00 <- kilo:kilo-auto/free (692s)
