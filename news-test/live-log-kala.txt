@@ -135,3 +135,51 @@ style-soft: lead>35w/1num, text 14 nums
   staged kilo:kilo-auto/free: check cut 1 sentence(s)
   stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۳۲ | تیتر «بی‌خریدار» نوشته ولی کالا فروش رف)
 OK KRPT-AMMONIAB-00 <- zai:glm-4.7-flash (534s)
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 6 calls: 57 words / 3 paragraphs
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  ALCO-BSO384X-00 gemini:gemma-4-31b-it: 436s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged openrouter:google/gemma-4-31b-it:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+style-soft: در حالی که, در حالی که
+  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 8 calls: 54 words / 2 paragraphs
+  PZB-LRNENA1A-00 openrouter:google/gemma-4-31b-it:free: 1111s ValueError: staged: 8 calls, last: 54 words / 2 paragraphs
+  staged groq:openai/gpt-oss-120b: check cut 2 sentence(s)
+  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
+  ESC-MBNEN03B-00 groq:openai/gpt-oss-120b: 297s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197475, Requested 35
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ASCO-SBEN03E-00 kilo:kilo-auto/free: 382s TimeoutError: The read operation timed out
+style-soft: در حالی که, در حالی که
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
+  SIS-BSO494X-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 378s ValueError: staged: 8 calls, last: markers: نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 24 nums
+style-soft: lead>35w/1num, text 23 nums
+  staged kilo:cohere/north-mini-code:free: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۰۰۰ | کد کالا یا حروف لاتین وسط متن
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: 55 words / 3 paragraphs
+  ASCO-SBEN03E-00 kilo:cohere/north-mini-code:free: 100s ValueError: staged: 8 calls, last: 55 words / 3 paragraphs
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  ASCO-HBENN03E-00 ovh:Qwen3.5-397B-A17B: 649s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-20b: call 5 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+style-soft: lead>35w/1num, text 12 nums
+  staged zai:glm-4.7-flash: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | متن 12 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 8 calls
+  staged ovh:Qwen3.6-27B: soft: لید بی‌عدد
+  staged ovh:Qwen3.6-27B: accepted after 8 calls
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  ESC-MBNEN03B-00 groq:openai/gpt-oss-20b: 234s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 193019, Requested 765
+  stage6 news: title in 2 calls
+OK MSPI-AMMONIAB-00 <- zai:glm-4.7-flash (479s)
