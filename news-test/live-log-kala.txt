@@ -42,3 +42,24 @@ style-soft: lead>35w/1num
 OK ESC-MBNEN03B-00 <- ovh:Qwen3.6-27B (690s)
   stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳ | فعل «شد» امروز تکرار شده)
 OK ASCO-HBENN03E-00 <- zai:glm-4.5-flash (67s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged ovh:Qwen3.6-27B: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  FROJ-ARCK15B-00 gemini:gemma-4-26b-a4b-it: 786s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 7 calls
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: markers: «منتظر» در text
+  HPCC-AMMONIAB-00 ovh:Qwen3.6-27B: 549s ValueError: staged: 8 calls, last: markers: «منتظر» در text
+  ASCO-SBEN03E-00 ovh:Qwen3.5-397B-A17B: 695s TimeoutError: The read operation timed out
+  KSC-SSG09XROA-00 gemini:gemma-4-31b-it: 856s JSONDecodeError: Extra data: line 3 column 5 (char 18)
+  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
+  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است)
+OK KSRC-LRENNA1A-00 <- zai:glm-4.7-flash (755s)
