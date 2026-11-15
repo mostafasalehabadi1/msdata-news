@@ -26,3 +26,25 @@ style-soft: lead>35w/1num, text 9 nums
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
   stage6 news: title in 1 calls
 OK PSH-BI6070BEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (26s)
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  KSA-BI6070BEX-00 ovh:Meta-Llama-3_3-70B-Instruct: 11s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"07ff3f397680563d0590c2738ac2926f"
+}
+  SECO-PCT2G42.5-L50EX-00-2 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 15s JSONDecodeError: Expecting value: line 5 column 11 (char 204)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+style-soft: lead>35w/1num, text 10 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (16 کلمه؛ ۸ تا ۱۳)
+OK SABD-INBPPBEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (29s)
