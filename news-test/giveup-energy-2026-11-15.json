@@ -317,23 +317,29 @@
 }
 },
 "DSCESCABEX1050827": {
-"fp": "{\"base_price\": 2387783.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 503|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 1260000.0, \"goods_name\": \"حلال 503\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2387783.0, \"min_price\": 2387783.0, \"offer_volume\": 2100000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 503|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSCESCABEX1050827\", \"symbol_code\": \"DSCESCABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 3008606580000.0, \"total_value_usd\": null, \"trade_count\": 3, \"trade_date\": \"1405/08/24\", \"trade_volume\": 1260000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 2387783.0}",
-"runs": 2,
+"fp": "{\"base_price\": 2387783.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 503|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 840000.0, \"goods_name\": \"حلال 503\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2387783.0, \"min_price\": 2387783.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 503|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSCESCABEX1050827\", \"symbol_code\": \"DSCESCABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 2005737720000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/24\", \"trade_volume\": 840000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 2387783.0}",
+"runs": 1,
 "reasons": [
 {
-"model": "llm7:deepseek-v4-flash:0731",
-"at": "10:24",
-"error": "QuotaError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "13:13",
+"error": "TimeoutError: The read operation timed out",
 "run": 1
 },
 {
-"model": "kilo:dots-studio/dots-3-note-preview:free",
-"at": "11:07",
+"model": "gemini:gemma-4-31b-it",
+"at": "13:25",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "13:37",
 "error": "TimeoutError: The read operation timed out",
-"run": 2
+"run": 1
 }
 ],
-"facts": "1. نام کالا: حلال 503؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۲۴ آبان.\n4. شرکت پالایش نفت اصفهان ۲ میلیون و ۱۰۰ هزار لیتر حلال 503 عرضه کرد و ۱ میلیون و ۲۶۰ هزار لیتر آن فروش رفت.\n5. خریداران ۱ میلیون و ۲۶۰ هزار لیتر تقاضا ثبت کردند؛ تقاضا فقط ۶۰ درصد عرضه بود.\n6. ۶۰ درصد عرضه فروش رفت.\n7. قیمت میانگین معامله ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر بود و قیمت پایه ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۳ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۳۰۱ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۸ آبان با قیمت ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر بود؛ قیمت تغییری نکرد.\n12. این کالا از ۲ شهریور تا امروز ۱۹ بار از همین عرضه‌کننده معامله شده است.",
+"facts": "1. نام کالا: حلال 503؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۲۴ آبان.\n4. ۸۴۰ هزار لیتر حلال 503 شرکت پالایش نفت اصفهان فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر بود و قیمت پایه ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر.\n6. قیمت با قیمت پایه برابر بود.\n7. این حجم در ۲ معامله فروخته شد.\n8. ارزش ریالی این معامله حدود ۲۰۱ میلیارد تومان بود.\n9. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۸ آبان با قیمت ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر بود؛ قیمت تغییری نکرد.\n10. این کالا از ۲ شهریور تا امروز ۱۹ بار از همین عرضه‌کننده معامله شده است.",
 "tables": {
 "T1": {
 "title": "قیمت حلال 503 در معامله‌های اخیر (ریال در هر لیتر)",
@@ -376,12 +382,8 @@
 ],
 "rows": [
 [
-"عرضه (لیتر)",
-"۲ میلیون و ۱۰۰ هزار"
-],
-[
 "فروش (لیتر)",
-"۱ میلیون و ۲۶۰ هزار"
+"۸۴۰ هزار"
 ],
 [
 "قیمت پایه (ریال در هر لیتر)",
@@ -781,47 +783,47 @@
 }
 },
 "DSCESCABEX0050827": {
-"fp": "{\"base_price\": 2387783.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 503|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 90000.0, \"goods_name\": \"حلال 503\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2387783.0, \"min_price\": 2387783.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 503|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSCESCABEX0050827\", \"symbol_code\": \"DSCESCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 214900470000.0, \"total_value_usd\": null, \"trade_count\": 1, \"trade_date\": \"1405/08/24\", \"trade_volume\": 90000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 2387783.0}",
+"fp": "{\"base_price\": 2387783.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 503|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 150000.0, \"goods_name\": \"حلال 503\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2387783.0, \"min_price\": 2387783.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 503|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSCESCABEX0050827\", \"symbol_code\": \"DSCESCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 358167450000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/24\", \"trade_volume\": 150000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 2387783.0}",
 "runs": 2,
 "reasons": [
 {
-"model": "groq:openai/gpt-oss-120b",
-"at": "10:31",
-"error": "ValueError: staged: 8 calls, last: no JSON: ",
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "12:46",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
 "run": 1
 },
 {
-"model": "groq:openai/gpt-oss-20b",
-"at": "10:38",
-"error": "ValueError: staged: 8 calls, last: no JSON: ",
+"model": "zai:glm-4.7-flash",
+"at": "12:55",
+"error": "ValueError: staged: 8 calls, last: 97 words / 4 paragraphs",
 "run": 1
 },
 {
-"model": "ovh:Qwen3.5-397B-A17B",
-"at": "10:50",
-"error": "TimeoutError: The read operation timed out",
+"model": "zai:glm-4.5-flash",
+"at": "13:00",
+"error": "ValueError: staged: 8 calls, last: «پایین‌ترین» در حقیقت‌ها نیست | «بالاترین» در حقیقت‌ها نیست",
 "run": 1
 },
 {
 "model": "gemini:gemma-4-26b-a4b-it",
-"at": "11:03",
+"at": "13:18",
 "error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
 "run": 2
 },
 {
-"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
-"at": "11:11",
-"error": "TimeoutError: The read operation timed out",
+"model": "zai:glm-4.7-flash",
+"at": "13:38",
+"error": "ValueError: staged: 8 calls, last: 75 words / 1 paragraphs",
 "run": 2
 },
 {
-"model": "ovh:Qwen3.5-397B-A17B",
-"at": "11:21",
-"error": "TimeoutError: The read operation timed out",
+"model": "zai:glm-4.5-flash",
+"at": "13:39",
+"error": "ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست",
 "run": 2
 }
 ],
-"facts": "1. نام کالا: حلال 503؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۲۴ آبان.\n4. ۹۰ هزار لیتر حلال 503 شرکت پالایش نفت اصفهان فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر بود و قیمت پایه ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر.\n6. قیمت با قیمت پایه برابر بود.\n7. ارزش ریالی این معامله حدود ۲۱٫۵ میلیارد تومان بود.\n8. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۸ آبان با قیمت ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر بود؛ قیمت تغییری نکرد.\n9. این کالا از ۲ شهریور تا امروز ۱۹ بار از همین عرضه‌کننده معامله شده است.",
+"facts": "1. نام کالا: حلال 503؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۲۴ آبان.\n4. ۱۵۰ هزار لیتر حلال 503 شرکت پالایش نفت اصفهان فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر بود و قیمت پایه ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر.\n6. قیمت با قیمت پایه برابر بود.\n7. این حجم در ۲ معامله فروخته شد.\n8. ارزش ریالی این معامله حدود ۳۵٫۸ میلیارد تومان بود.\n9. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۸ آبان با قیمت ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر بود؛ قیمت تغییری نکرد.\n10. این کالا از ۲ شهریور تا امروز ۱۹ بار از همین عرضه‌کننده معامله شده است.",
 "tables": {
 "T1": {
 "title": "قیمت حلال 503 در معامله‌های اخیر (ریال در هر لیتر)",
@@ -865,7 +867,7 @@
 "rows": [
 [
 "فروش (لیتر)",
-"۹۰ هزار"
+"۱۵۰ هزار"
 ],
 [
 "قیمت پایه (ریال در هر لیتر)",
@@ -1118,7 +1120,7 @@
 },
 "DSCSZCABEX1050827": {
 "fp": "{\"base_price\": 1976320.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 503|شرکت پالایش نفت امام خمینی(ره) شازند|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 42000.0, \"goods_name\": \"حلال 503\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2821369.0, \"min_price\": 2606565.0, \"offer_volume\": 10000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت امام خمینی(ره) شازند\", \"series_key\": \"حلال 503|شرکت پالایش نفت امام خمینی(ره) شازند|داخلی\", \"supplier\": \"شرکت پالایش نفت امام خمینی\", \"symbol\": \"DSCSZCABEX1050827\", \"symbol_code\": \"DSCSZCABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 27037412000000.0, \"total_value_usd\": null, \"trade_count\": 5, \"trade_date\": \"1405/08/24\", \"trade_volume\": 10000.0, \"volume_unit\": \"تن\", \"weighted_price\": 2703741.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "gemini:gemma-4-31b-it",
@@ -1162,13 +1164,19 @@
 },
 "DETRACABEX1050901": {
 "fp": "{\"base_price\": 1430000.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"اتانول (اتیل الکل)|شرکت خمیرمایه و الکل رازی|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 1398000.0, \"goods_name\": \"اتانول (اتیل الکل)\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 1750000.0, \"min_price\": 1700001.0, \"offer_volume\": 700000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت خمیرمایه و الکل رازی\", \"series_key\": \"اتانول (اتیل الکل)|شرکت خمیرمایه و الکل رازی|داخلی\", \"supplier\": \"شرکت خمیرمایه والکل رازی\", \"symbol\": \"DETRACABEX1050901\", \"symbol_code\": \"DETRACABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 1200186504000.0, \"total_value_usd\": null, \"trade_count\": 6, \"trade_date\": \"1405/08/24\", \"trade_volume\": 700000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 1714552.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "kilo:dots-studio/dots-3-note-preview:free",
 "at": "11:42",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "llm7:deepseek-v4-flash:0731",
+"at": "12:38",
+"error": "QuotaError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: اتانول (اتیل الکل)؛ عرضه‌کننده: شرکت خمیرمایه و الکل رازی.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۲۴ آبان.\n4. شرکت خمیرمایه و الکل رازی ۷۰۰ هزار لیتر اتانول (اتیل الکل) عرضه کرد و ۷۰۰ هزار لیتر آن فروش رفت.\n5. خریداران ۱ میلیون و ۳۹۸ هزار لیتر تقاضا ثبت کردند؛ تقاضا ۲ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۱ میلیون و ۷۱۴ هزار و ۵۵۲ ریال در هر لیتر بود و قیمت پایه ۱ میلیون و ۴۳۰ هزار ریال در هر لیتر.\n8. رقابت قیمت را ۱۹٫۹ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۶ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۱۲۰ میلیارد تومان بود.",
@@ -1199,6 +1207,52 @@
 [
 "بازار",
 "رینگ داخلی"
+]
+]
+}
+}
+},
+"ILGPGPRBFC0050825": {
+"fp": "{\"base_price\": -160.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"گاز مایع|شرکت نفت ستاره خلیج فارس|بین الملل\", \"contract_type\": \"پریمیوم\", \"demand_volume\": 4000.0, \"goods_name\": \"گاز مایع\", \"is_premium\": true, \"is_usd\": false, \"max_price\": -160.0, \"min_price\": -160.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"پریمیوم دلاری(مرکز مبادله- مطابق مکانیزم مصوب هیئت مدیره بورس انرژی ایران)\", \"producer\": \"شرکت نفت ستاره خلیج فارس\", \"series_key\": \"گاز مایع|شرکت نفت ستاره خلیج فارس|بین الملل\", \"supplier\": \"شرکت نفت ستاره خلیج فارس\", \"symbol\": \"ILGPGPRBFC0050825\", \"symbol_code\": \"ILGPGPRBFC0\", \"target_market\": \"بین الملل\", \"total_value_rial\": 4595559640000.0, \"total_value_usd\": null, \"trade_count\": 4, \"trade_date\": \"1405/08/24\", \"trade_volume\": 4000.0, \"volume_unit\": \"تن\", \"weighted_price\": -160.0}",
+"runs": 1,
+"reasons": [
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "13:17",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 1
+},
+{
+"model": "cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+"at": "13:25",
+"error": "QuotaError: HTTP 429: {\"errors\":[{\"message\":\"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (724f2a8f-49b3-41a1-827d-6dd794c71975)\",\"code\":4006}],\"success\":false,\"result\":{},\"messages\":[]}",
+"run": 1
+}
+],
+"facts": "1. نام کالا: گاز مایع؛ عرضه‌کننده: شرکت نفت ستاره خلیج فارس.\n2. بازار: رینگ بین‌الملل بورس انرژی ایران؛ نوع قرارداد: پریمیوم.\n3. روز معامله: یکشنبه ۲۴ آبان.\n4. ۴ هزار تن گاز مایع شرکت نفت ستاره خلیج فارس فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. این معامله با پریمیوم انجام شد: قیمت نهایی ۱۶۰ دلار زیر قیمت مرجع جهانی است (در هر تن). پریمیوم پایه ۱۶۰ دلار زیر قیمت مرجع جهانی بود. پریمیوم اختلاف با قیمت مرجع است، نه قیمت مطلق؛ قیمت نهایی را عدد مطلق ننویس.\n6. این حجم در ۴ معامله فروخته شد.\n7. ارزش ریالی این معامله حدود ۴۶۰ میلیارد تومان بود.\n8. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲۳ آبان با پریمیوم ۱۶۰ دلار زیر قیمت مرجع جهانی بود.",
+"tables": {
+"T2": {
+"title": "معامله‌ی گاز مایع شرکت نفت ستاره خلیج فارس",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"فروش (تن)",
+"۴ هزار"
+],
+[
+"پریمیوم پایه (دلار در هر تن)",
+"-۱۶۰"
+],
+[
+"پریمیوم معامله (دلار در هر تن)",
+"-۱۶۰"
+],
+[
+"بازار",
+"رینگ بین‌الملل"
 ]
 ]
 }
