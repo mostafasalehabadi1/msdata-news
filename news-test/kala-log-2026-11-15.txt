@@ -1228,3 +1228,27 @@ style-soft: lead>35w/1num, text 17 nums
     "message": "This model is currently experiencing high demand. Spikes in d
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۷۷ | فعل «شد» امروز تکرار شده)
 OK GHZ-PELL-00 <- zai:glm-4.7-flash (566s)
+  SNRZ-ZII1-000 gemini:gemma-4-26b-a4b-it: 600s TimeoutError: The read operation timed out
+  SSMI-PELL-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  FZI-PELL-00 ovh:Qwen3.5-397B-A17B: 326s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+  PPMZ-PSHIPS7055ZP-00 gemini:gemma-4-26b-a4b-it: 600s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: «روی میز» در text
+  SMO-PELL-00 zai:glm-4.7-flash: 681s ValueError: staged: 8 calls, last: markers: «روی میز» در text
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۷۶
+  SMO-PELL-00 zai:glm-4.5-flash: 47s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۷۶
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged gemini:gemma-4-31b-it: accepted after 8 calls
+timeout: give-up file saved
