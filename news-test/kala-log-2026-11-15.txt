@@ -1173,3 +1173,58 @@ style-soft: lead>35w/1num, text 11 nums
 style-soft: lead>35w/1num
   staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
 timeout: give-up file saved
+kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار پتروشیمی و فرآورده های نفتی
+kala: 257 settled rows, 37 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): ALCO-AR70CR2B-00, BISC-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, KAVE-OAIOC-00, MIIO-PELL-00, RSCC-OAIOC-00, NPAC-BI6070B-00, AHM-BI6070B-00, EPC-PAFJ-00, IMCO-ZIE1-00, IMCO-ZIF1-00, TABC-PSHIPS7240PP-00, DKPC-OAIOC-00, AHM-BIMC250B-00, RID-PAFJ-00, ALM-AP20551-00, THOR-GRSUSUB-00, SHPC-OAVAMB-00, ESC-AMSULL-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
+40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:gpt-oss-120b: check cut 2 sentence(s)
+  staged ovh:gpt-oss-120b: check cut 1 sentence(s)
+  ovh:gpt-oss-120b: quota used up - skipped for an hour
+  PPMZ-PSHIPS7055ZP-00 ovh:gpt-oss-120b: 65s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"4d102f4b14e00324d08bba7b7f4dcd0c"
+}
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  PPMZ-PSHIPS7055ZP-00 ovh:Meta-Llama-3_3-70B-Instruct: 11s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"fa45f17c2fdc977055f221703b45855f"
+}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged ovh:Qwen3.6-27B: check cut 3 sentence(s)
+  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 17 nums
+  staged zai:glm-4.7-flash: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 6 calls
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  CHMI-OAIOC-00 ovh:Qwen3.5-397B-A17B: 458s TimeoutError: The read operation timed out
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: markers: «روی میز» در text
+  PPMZ-PSHIPS7055ZP-00 ovh:Qwen3.6-27B: 379s ValueError: staged: 8 calls, last: markers: «روی میز» در text
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  PPMZ-PSHIPS7055ZP-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 8s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"ae5530427d45dd0d26286f7b785f0959"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  PPMZ-PSHIPS7055ZP-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 0s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۷۷ | فعل «شد» امروز تکرار شده)
+OK GHZ-PELL-00 <- zai:glm-4.7-flash (566s)
