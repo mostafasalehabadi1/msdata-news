@@ -1,605 +1,203 @@
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 2 settled rows, 113 wait for the next data build
+kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار پتروشیمی و فرآورده های نفتی
+kala: 294 settled rows, 0 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-2 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  SHPC-PBR1220WWP-00 gemini:gemma-4-31b-it: 287s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  SHPC-PBR1220WWP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  LACO-UREAGRB-00 gemini:gemma-4-26b-a4b-it: 600s TimeoutError: The read operation timed out
-written 0/2; total in file 0
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 13 settled rows, 131 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-13 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
-  RID-PAFJ-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
-  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
-  AHM-BI6070B-00 llm7:deepseek-v4-flash:0731: 0s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
-  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
-  RID-PAFJ-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
-  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
-  RID-PAFJ-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
-  staged groq:openai/gpt-oss-120b: call 1 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged groq:openai/gpt-oss-120b: call 1 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged groq:openai/gpt-oss-120b: call 1 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged groq:openai/gpt-oss-120b: call 1 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  EPC-PAFJ-00 kilo:dots-studio/dots-3-note-preview:free: 276s TimeoutError: The read operation timed out
-  AHM-BIMC250B-00 gemini:gemma-4-26b-a4b-it: 279s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged groq:openai/gpt-oss-120b: check cut 1 sentence(s)
-  staged groq:openai/gpt-oss-120b: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  FRB-PAFJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged groq:openai/gpt-oss-120b: draft dropped after 8 calls: 104 words / 2 paragraphs
-  LACO-UREAGRB-00 groq:openai/gpt-oss-120b: 489s ValueError: staged: 8 calls, last: 104 words / 2 paragraphs
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged groq:openai/gpt-oss-20b: call 1 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  TABC-PSHIPS7240PP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged groq:openai/gpt-oss-20b: call 2 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-style-soft: lead>35w/1num, text 16 nums
-  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 16 nums
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 16 nums
-  staged zai:glm-4.7-flash: draft dropped after 4 calls: مقدار عرضه غلط است؛ عرضه ۱۵۰ بود
-  staged groq:openai/gpt-oss-20b: call 5 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged groq:openai/gpt-oss-20b: call 8 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-  LACO-UREAGRB-00 groq:openai/gpt-oss-20b: 563s ValueError: staged: 8 calls, last: no JSON: 
-  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
-  LACO-UREAGRB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (f8c4f515-26f9-4dff-
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged ovh:Qwen3.5-397B-A17B: soft: لید بی‌عدد
-  staged ovh:Qwen3.5-397B-A17B: accepted after 8 calls
-style-soft: lead>35w/1num
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  AHM-BIMC250B-00 ovh:Qwen3.5-397B-A17B: 1116s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 70 words / 3 paragraphs
-  MBIG-PSHIPS4512L-00 zai:glm-4.7-flash: 1472s ValueError: staged: 8 calls, last: 70 words / 3 paragraphs
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-  staged zai:glm-4.5-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.5-flash: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۹۷ | تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است)
-OK MBIG-PSHIPS4512L-00 <- zai:glm-4.5-flash (69s)
-  stage6 news: title in 3 calls
-OK LACO-UREAGRB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (486s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-  staged gemini:gemma-4-31b-it: draft dropped after 5 calls: markers: عدد بیرون از حقیقت‌ها: ۴۲، ۸۷۲
-  staged gemini:gemma-4-31b-it: call 6 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-timeout: give-up file saved
-kala: closed halls: تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 13 settled rows, 131 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-11 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
-  RID-PAFJ-00 groq:openai/gpt-oss-120b: 15s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197277, Requested 57
-  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
-  RID-PAFJ-00 groq:openai/gpt-oss-20b: 3s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 200000, Requested 591
-  AHM-BI6070B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  EPC-PAFJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  AHM-BIMC250B-00 gemini:gemma-4-26b-a4b-it: 417s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  FRB-PAFJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  RID-PAFJ-00 ovh:Qwen3.5-397B-A17B: 649s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 9 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 108 words / 4 paragraphs
-style-soft: lead>35w/1num
-style-soft: در حالی که, lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۲
-  AHM-BIMC250B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 665s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۲
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 106 words / 4 paragraphs
-  RID-PAFJ-00 zai:glm-4.7-flash: 729s ValueError: staged: 8 calls, last: 106 words / 4 paragraphs
-style-soft: lead>35w/1num
-  staged gemini:gemma-4-31b-it: draft dropped after 4 calls: «۳۰۰ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۵۰۰ تن است
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 109 words / 4 paragraphs
-  RID-PAFJ-00 zai:glm-4.5-flash: 111s ValueError: staged: 8 calls, last: 109 words / 4 paragraphs
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  AHM-BIMC250B-00 ovh:Qwen3.5-397B-A17B: 549s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
-timeout: give-up file saved
-kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 70 settled rows, 74 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NPAC-BI6070B-00, AHM-BI6070B-00, EPC-PAFJ-00, FRB-PAFJ-00, AHM-BIMC250B-00, RID-PAFJ-00
-20 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged gemini:gemma-4-26b-a4b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  CHMI-OAIOC-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  GHZ-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SSMI-PELL-00 gemini:gemma-4-31b-it: 523s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged openrouter:inclusionai/ling-3.2-flash:free: call 1 failed: bad response: '\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\n         \n\
-  BISC-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  PSC-AR70CR2B-00 gemini:gemma-4-26b-a4b-it: 718s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-timeout: give-up file saved
-kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 70 settled rows, 74 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NPAC-BI6070B-00, AHM-BI6070B-00, EPC-PAFJ-00, FRB-PAFJ-00, AHM-BIMC250B-00, RID-PAFJ-00
-20 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  SSMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  CHMI-OAIOC-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SHPC-PBR1220WWP-00 zai:glm-4.7-flash: 380s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  GHZ-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 9 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۹۸
-  SHPC-PBR1220WWP-00 zai:glm-4.5-flash: 417s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۹۸
-  staged gemini:gemma-4-31b-it: soft: لید بی‌عدد
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: soft: لید بی‌عدد
-  staged gemini:gemma-4-31b-it: accepted after 5 calls
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
-OK PSC-AR70CR2B-00 <- gemini:gemma-4-31b-it (1380s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  SHPC-PBR1220WWP-00 ovh:Qwen3.5-397B-A17B: 755s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  THOR-GRSUSUB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-timeout: give-up file saved
-kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 68 settled rows, 225 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): BISC-PELL-00, NPAC-BI6070B-00, AHM-BI6070B-00, EPC-PAFJ-00, TABC-PSHIPS7240PP-00, AHM-BIMC250B-00, RID-PAFJ-00, SHPC-PBR1220WWP-00
-22 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  cf:@cf/qwen/qwen2.5-coder-32b-instruct: quota used up - skipped until tomorrow
-  KIPE-GPPSG324L-089 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (7bb6c26c-2a2d-48c3-
-  llm7:minimax-m2.7: quota used up - skipped until tomorrow
-  ESC-AMSULL-00 llm7:minimax-m2.7: 2s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 36453 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":36453}}
-  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
-  ESC-AMSULL-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
-  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write
-  staged kilo:kilo-auto/free: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged requesty:mistral/leanstral-1-5: call 1 failed: bad response: '{"choices":[{"finish_reason":"error","index":0,"message":{"reasoning_content":"The user wants me to write
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-style-soft: lead>35w/1num
-  staged kilo:kilo-auto/free: accepted after 6 calls
-  stage6 news: title in 1 calls
-OK MSCC-PAFJ-00 <- kilo:kilo-auto/free (152s)
-  CHMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged requesty:mistral/leanstral-1-5: check cut 2 sentence(s)
-  PACR-BIPG6422B-00 zai:glm-4.7-flash: 246s TimeoutError: The read operation timed out
-  EHS-OAIOC-00 gemini:gemma-4-31b-it: 267s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  THOR-GRSUSUB-00 ovh:Qwen3.5-397B-A17B: 298s TimeoutError: The read operation timed out
-style-soft: text 11 nums
-  staged kilo:kilo-auto/free: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged kilo:kilo-auto/free: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «داشت» امروز تکرار شده)
-OK KIPE-GPPSG324L-089 <- kilo:kilo-auto/free (200s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 105 words / 4 paragraphs
-  PACR-BIPG6422B-00 zai:glm-4.5-flash: 110s ValueError: staged: 8 calls, last: 105 words / 4 paragraphs
-  IMID-OAIOL-621 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  KSC-ARGAB-00 requesty:mistral/leanstral-1-5: 376s TimeoutError: The read operation timed out
-  requesty:novita/inclusionai/ling-3.0-tiny: quota used up - skipped until tomorrow
-  KSC-ARGAB-00 requesty:novita/inclusionai/ling-3.0-tiny: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  requesty:poolside/laguna-m.1: quota used up - skipped until tomorrow
-  KSC-ARGAB-00 requesty:poolside/laguna-m.1: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  requesty:nvidia/nemotron-3-nano-30b-a3b: quota used up - skipped until tomorrow
-  KSC-ARGAB-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  requesty:nvidia/muse-glimmer-30b: quota used up - skipped until tomorrow
-  KSC-ARGAB-00 requesty:nvidia/muse-glimmer-30b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-style-soft: lead>35w/1num, text 12 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 76 words / 4 paragraphs
-  ALCO-AR70CR2B-00 gemini:gemma-4-26b-a4b-it: 428s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 80 words / 3 paragraphs
-  SHPC-OAVAMB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 479s ValueError: staged: 8 calls, last: 80 words / 3 paragraphs
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  MIIO-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  THOR-GRSUSUB-00 zai:glm-4.7-flash: 226s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 104 words / 4 paragraphs
-  THOR-GRSUSUB-00 zai:glm-4.5-flash: 71s ValueError: staged: 8 calls, last: 104 words / 4 paragraphs
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  KAVE-OAIOC-00 gemini:gemma-4-31b-it: 422s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  ESC-AMSULL-00 ovh:Qwen3.5-397B-A17B: 505s TimeoutError: The read operation timed out
-  KSC-ARGAB-00 gemini:gemma-4-26b-a4b-it: 398s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged gemini:gemma-4-26b-a4b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  RSCC-OAIOC-00 gemini:gemma-4-31b-it: 185s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-style-soft: lead>35w/1num, text 14 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
-  stage6 news: title in 1 calls
-OK PACR-BIPG6422B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (490s)
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۸۵
-  SHPC-OAVAMB-00 zai:glm-4.7-flash: 494s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۸۵
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 107 words / 4 paragraphs
-  SHPC-OAVAMB-00 zai:glm-4.5-flash: 127s ValueError: staged: 8 calls, last: 107 words / 4 paragraphs
-style-soft: text 9 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۷.۰۴، ۷.۲۹
-  IMCO-ZIE1-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 642s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۷.۰۴، ۷.۲۹
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 7 calls: «۲۸ هزار تن» با فعل فروش آمده ولی فروش ۲۸ هزار و ۵۰۰ تن است
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-timeout: give-up file saved
-kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 68 settled rows, 225 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): BISC-PELL-00, IMID-OAIOL-621, MIIO-PELL-00, NPAC-BI6070B-00, AHM-BI6070B-00, EPC-PAFJ-00, TABC-PSHIPS7240PP-00, AHM-BIMC250B-00, RID-PAFJ-00, THOR-GRSUSUB-00, SHPC-PBR1220WWP-00
-16 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-style-soft: lead>35w/1num, text 15 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 8 calls
-  ESC-AMSULL-00 gemini:gemma-4-26b-a4b-it: 307s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  stage6 news: title in 2 calls
-OK EHS-OAIOC-00 <- kilo:dots-studio/dots-3-note-preview:free (326s)
-  ALCO-AR70CR2B-00 gemini:gemma-4-31b-it: 386s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  CHMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  KAVE-OAIOC-00 gemini:gemma-4-31b-it: 230s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  RSCC-OAIOC-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  IMCO-ZIF1-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x برابر عرضه بود)
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 84 words / 4 paragraphs
-  SHPC-OAVAMB-00 zai:glm-4.7-flash: 1046s ValueError: staged: 8 calls, last: 84 words / 4 paragraphs
-  ESC-AMSULL-00 ovh:Qwen3.5-397B-A17B: 747s TimeoutError: The read operation timed out
-  IMCO-ZIE1-00 gemini:gemma-4-31b-it: 436s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.5-flash: draft dropped after 9 calls: 105 words / 3 paragraphs
-  SHPC-OAVAMB-00 zai:glm-4.5-flash: 84s ValueError: staged: 9 calls, last: 105 words / 3 paragraphs
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  ESC-AMSULL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  PPMZ-PSHIPS6045PP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 412s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 22 nums
-style-soft: در حالی که
-style-soft: lead>35w/1num, text 23 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x برابر عرضه بود)
-  PTC-POY250D48FBWP-00 zai:glm-4.7-flash: 611s ValueError: staged: 8 calls, last: در تیتر «برابر» فقط با «تقاضا» بیاید (تقاضا x برابر عرضه بود)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-timeout: give-up file saved
-kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 257 settled rows, 37 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): ALCO-AR70CR2B-00, BISC-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, KAVE-OAIOC-00, MIIO-PELL-00, RSCC-OAIOC-00, NPAC-BI6070B-00, AHM-BI6070B-00, EPC-PAFJ-00, IMCO-ZIE1-00, IMCO-ZIF1-00, TABC-PSHIPS7240PP-00, AHM-BIMC250B-00, RID-PAFJ-00, ALM-AP20551-00, THOR-GRSUSUB-00, SHPC-OAVAMB-00, ESC-AMSULL-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
+given up for today (failed 2 runs, row unchanged): NCI-OACCAA-00, ALCO-AR70CR2B-00, GOLG-PELL-00, CHMI-OAIOC-00, KHSS-DRIBRI-00, SSMI-PELL-00, SJS-DRI-00, IMID-DRI-616, GISD-DRI-00, BSC-DRI-00, BISC-PELL-00, NIMI-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, SND-PELL-00, KAVE-OAIOC-00, SMO-PELL-00, MIIO-PELL-00, RSCC-OAIOC-00, FRB-PAFJ-00, NPAC-BI6070B-00, FZI-PELL-00, AHM-BI6070B-00, EPC-PAFJ-00, GHIR-PELL-00, SNRZ-ZII1-000, IMCO-ZIE1-00, IMCO-ZIF1-00, ZRB-ZIE1-00, TABC-PSHIPS7240PP-00, DKPC-OAIOC-00, HSR-LUSUACB-00, PTC-POY250D48FBWP-00, AHM-BIMC250B-00, RID-PAFJ-00, ALM-AP20551-00, THOR-GRSUSUB-00, SHPC-OAVAMB-00, ESC-AMSULL-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
 40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 15 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: 91 words / 2 paragraphs
-  SSMI-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 347s ValueError: staged: 8 calls, last: 91 words / 2 paragraphs
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  NCI-OACCAA-00 gemini:gemma-4-31b-it: 443s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  SNRZ-ZII1-000 gemini:gemma-4-26b-a4b-it: 451s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  SMO-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 463s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 12 nums
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 111 words / 4 paragraphs
-  GHZ-PELL-00 zai:glm-4.7-flash: 618s ValueError: staged: 8 calls, last: 111 words / 4 paragraphs
-  staged zai:glm-4.5-flash: check cut 3 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-style-soft: lead>35w/1num, text 16 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 108 words / 4 paragraphs
-  GHZ-PELL-00 zai:glm-4.5-flash: 117s ValueError: staged: 8 calls, last: 108 words / 4 paragraphs
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  kilo:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped for an hour
-  FZI-PELL-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 292s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
-style-soft: lead>35w/1num, text 9 nums
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۰۷، ۱۷۷
-  CHMI-OAIOC-00 ovh:Qwen3.5-397B-A17B: 823s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۰۷، ۱۷۷
-  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: 109 words / 3 paragraphs
-  SJS-DRI-00 kilo:dots-studio/dots-3-note-preview:free: 490s ValueError: staged: 8 calls, last: 109 words / 3 paragraphs
-  kilo:dots-studio/dots-3-note-preview:free: quota used up - skipped for an hour
-  BSC-DRI-00 kilo:dots-studio/dots-3-note-preview:free: 0s QuotaError: HTTP 429: {"error":{"code":"PROMOTION_MODEL_LIMIT_REACHED","message":"Sign up for free to continue and explore 500 other models. Takes 2 minutes, no credit card required. Or come back later."},"error_type":"rate_limit_ex
+  cf:@cf/qwen/qwen2.5-coder-32b-instruct: quota used up - skipped until tomorrow
+  SRJA-ZII1-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (aec3d910-7353-4095-
+  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
+  IMID-DRI-271 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (259fe532-7b61-4b05-
+  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
+  IZE-ZIE1-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  ALSU-AP06101-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
+  IZE-ZIE1-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
+  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
+  IZE-ZIE1-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
+  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 503: {"error":{"message":"Provider returned error","code":503,"metadata":{"raw":"{\"message\":\"Service temporarily
+  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 2 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 503: {"error":{"message":"Provider returned error","code":503,"metadata":{"raw":"{\"message\":\"Service temporarily
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  IAC-AP06101-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-120b: call 3 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  ALSU-AP0610A1-00 gemini:gemma-4-31b-it: 244s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  PPMZ-PSHIPS7055ZP-00 gemini:gemma-4-26b-a4b-it: 247s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  IAC-AP15351-00 kilo:dots-studio/dots-3-note-preview:free: 249s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  GHIR-DRI-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 329s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: call 7 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
+  staged groq:openai/gpt-oss-120b: draft dropped after 8 calls: 101 words / 2 paragraphs
+  TSK-ZIF1-00 groq:openai/gpt-oss-120b: 386s ValueError: staged: 8 calls, last: 101 words / 2 paragraphs
+  SIS-PELL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
   staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in d
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: draft dropped after 8 calls: «۲ هزار و ۲۰۰ تن» با فعل فروش آمده ولی فروش ۴ هزار تن است
-  DKPC-OAIOC-00 ovh:Qwen3.5-397B-A17B: 615s ValueError: staged: 8 calls, last: «۲ هزار و ۲۰۰ تن» با فعل فروش آمده ولی فروش ۴ هزار تن است
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۳۲
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 67 words / 2 paragraphs
-  GHIR-PELL-00 zai:glm-4.7-flash: 941s ValueError: staged: 8 calls, last: 67 words / 2 paragraphs
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 108 words / 4 paragraphs
-  GHIR-PELL-00 zai:glm-4.5-flash: 44s ValueError: staged: 8 calls, last: 108 words / 4 paragraphs
-style-soft: lead>35w/1num
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  IAC-AP13001-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  SSI-DRI-00 zai:glm-4.7-flash: 523s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged groq:openai/gpt-oss-20b: call 4 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 96 words / 4 paragraphs
+  SSI-DRI-00 zai:glm-4.5-flash: 29s ValueError: staged: 8 calls, last: 96 words / 4 paragraphs
+  IALC-ALOX-00 gemini:gemma-4-31b-it: 340s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ALM-AP06101-00 ovh:Qwen3.5-397B-A17B: 425s TimeoutError: The read operation timed out
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  TSK-ZIF1-00 groq:openai/gpt-oss-20b: 253s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199862, Requested 777
+  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
+  PPMZ-PSHIPS7055ZP-00 groq:openai/gpt-oss-120b: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 193836, Requested 87
+  SRJA-ZII1-00 gemini:gemma-4-26b-a4b-it: 407s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  SPSC-DRI-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  EITC-OAIOC-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: 110 words / 4 paragraphs
+  EFGZ-DRI-00 kilo:dots-studio/dots-3-note-preview:free: 376s ValueError: staged: 8 calls, last: 110 words / 4 paragraphs
+  CACO-ZIF1-00 gemini:gemma-4-31b-it: 259s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  TSK-ZIF1-00 gemini:gemma-4-26b-a4b-it: 288s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  BMIS-DRI-00 zai:glm-4.7-flash: 618s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.5-flash: draft dropped after 7 calls: 108 words / 4 paragraphs
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 69 words / 3 paragraphs
+  BMIS-DRI-00 zai:glm-4.5-flash: 39s ValueError: staged: 8 calls, last: 69 words / 3 paragraphs
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
 timeout: give-up file saved
 kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار پتروشیمی و فرآورده های نفتی
-kala: 257 settled rows, 37 wait for the next data build
+kala: 294 settled rows, 0 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): ALCO-AR70CR2B-00, BISC-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, KAVE-OAIOC-00, MIIO-PELL-00, RSCC-OAIOC-00, NPAC-BI6070B-00, AHM-BI6070B-00, EPC-PAFJ-00, IMCO-ZIE1-00, IMCO-ZIF1-00, TABC-PSHIPS7240PP-00, DKPC-OAIOC-00, AHM-BIMC250B-00, RID-PAFJ-00, ALM-AP20551-00, THOR-GRSUSUB-00, SHPC-OAVAMB-00, ESC-AMSULL-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
+given up for today (failed 2 runs, row unchanged): NCI-OACCAA-00, ALCO-AR70CR2B-00, GOLG-PELL-00, CHMI-OAIOC-00, KHSS-DRIBRI-00, SSMI-PELL-00, SJS-DRI-00, IMID-DRI-616, GISD-DRI-00, ALSU-AP0610A1-00, ALSU-AP06101-00, BSC-DRI-00, SSI-DRI-00, BISC-PELL-00, NIMI-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, SND-PELL-00, KAVE-OAIOC-00, SMO-PELL-00, MIIO-PELL-00, RSCC-OAIOC-00, FRB-PAFJ-00, NPAC-BI6070B-00, FZI-PELL-00, AHM-BI6070B-00, EPC-PAFJ-00, GHIR-PELL-00, SNRZ-ZII1-000, IMCO-ZIE1-00, IMCO-ZIF1-00, ZRB-ZIE1-00, TABC-PSHIPS7240PP-00, DKPC-OAIOC-00, HSR-LUSUACB-00, PTC-POY250D48FBWP-00, PPMZ-PSHIPS7055ZP-00, AHM-BIMC250B-00, RID-PAFJ-00, ALM-AP20551-00, THOR-GRSUSUB-00, SHPC-OAVAMB-00, ESC-AMSULL-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
 40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:minimax-m2.7: quota used up - skipped until tomorrow
+  SRJA-ZII1-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 23069 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":23069}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
+  SRJA-ZII1-00 llm7:mistral-Nemo-Instruct-2407: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 57 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":57}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged kilo:kilo-auto/free: check cut 3 sentence(s)
   staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged ovh:gpt-oss-120b: check cut 2 sentence(s)
+  IAC-AP15351-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  IAC-AP06101-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+style-soft: در حالی که, lead>35w/1num
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged kilo:kilo-auto/free: draft dropped after 6 calls: markers: عدد بیرون از حقیقت‌ها: ۴۱۶
+  staged ovh:gpt-oss-120b: check cut 5 sentence(s)
   staged ovh:gpt-oss-120b: check cut 1 sentence(s)
-  ovh:gpt-oss-120b: quota used up - skipped for an hour
-  PPMZ-PSHIPS7055ZP-00 ovh:gpt-oss-120b: 65s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"4d102f4b14e00324d08bba7b7f4dcd0c"
-}
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
-  PPMZ-PSHIPS7055ZP-00 ovh:Meta-Llama-3_3-70B-Instruct: 11s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"fa45f17c2fdc977055f221703b45855f"
-}
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: check cut 3 sentence(s)
   staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged ovh:Qwen3.6-27B: check cut 3 sentence(s)
-  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 17 nums
-  staged zai:glm-4.7-flash: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged zai:glm-4.7-flash: accepted after 6 calls
+  staged gemini:gemma-4-26b-a4b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  ovh:gpt-oss-120b: quota used up - skipped for an hour
+  BRCO-ZIF1-00 ovh:gpt-oss-120b: 299s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"77dde84767c97e15f2c6e4139ea8d04c"
+}
+  IMID-DRI-271 gemini:gemma-4-31b-it: 337s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  PPMZ-PSGPPS1028PP-00 requesty:mistral/leanstral-1-5: 346s TimeoutError: The read operation timed out
+  requesty:novita/inclusionai/ling-3.0-tiny: quota used up - skipped until tomorrow
+  PPMZ-PSGPPS1028PP-00 requesty:novita/inclusionai/ling-3.0-tiny: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  requesty:poolside/laguna-m.1: quota used up - skipped until tomorrow
+  PPMZ-PSGPPS1028PP-00 requesty:poolside/laguna-m.1: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  requesty:nvidia/nemotron-3-nano-30b-a3b: quota used up - skipped until tomorrow
+  PPMZ-PSGPPS1028PP-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  requesty:nvidia/muse-glimmer-30b: quota used up - skipped until tomorrow
+  PPMZ-PSGPPS1028PP-00 requesty:nvidia/muse-glimmer-30b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  BRCO-ZIF1-00 ovh:Meta-Llama-3_3-70B-Instruct: 61s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"b380e57df3f85a4e1bd5155671c50803"
+}
+  requesty:mistral/leanstral-1-5: quota used up - skipped until tomorrow
+  SRJA-ZII1-00 requesty:mistral/leanstral-1-5: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  IALC-ALOX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  IAC-AP13001-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  MZC-ZIE1-00 kilo:kilo-auto/free: 377s TimeoutError: The read operation timed out
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  MZC-ZIE1-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  MZC-ZIE1-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 100 words / 3 paragraphs
+  GHIR-DRI-00 zai:glm-4.7-flash: 413s ValueError: staged: 8 calls, last: 100 words / 3 paragraphs
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  IZE-ZIE1-00 gemini:gemma-4-26b-a4b-it: 447s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 100 words / 4 paragraphs
+  GHIR-DRI-00 zai:glm-4.5-flash: 54s ValueError: staged: 8 calls, last: 100 words / 4 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 84 words / 2 paragraphs
+  ALM-AP06101-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 473s ValueError: staged: 8 calls, last: 84 words / 2 paragraphs
+style-soft: در حالی که, text 9 nums
+  staged ovh:Qwen3.6-27B: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged kilo:cohere/north-mini-code:free: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged kilo:cohere/north-mini-code:free: accepted after 6 calls
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (فعل «کرد» امروز تکرار شده)
+OK MZC-ZIE1-00 <- kilo:cohere/north-mini-code:free (166s)
+  EFGZ-DRI-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SPSC-DRI-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.7-flash: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.7-flash: accepted after 8 calls
+  stage6 news: title in 2 calls
+OK BMIS-DRI-00 <- zai:glm-4.7-flash (140s)
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+style-soft: در حالی که, lead>35w/1num, text 11 nums
+style-soft: lead>35w/1num, text 13 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۶۰
+  EITC-OAIOC-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 190s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۶۰
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 72 words / 3 paragraphs
+  PTC-POY250D48FAWP-00 zai:glm-4.7-flash: 61s ValueError: staged: 8 calls, last: 72 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 110 words / 4 paragraphs
+  PTC-POY250D48FAWP-00 zai:glm-4.5-flash: 33s ValueError: staged: 8 calls, last: 110 words / 4 paragraphs
+  SRJA-ZII1-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+style-soft: lead>35w/1num
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۶۹۶۵۰۳۳
+  BRCO-ZIF1-00 ovh:Qwen3.6-27B: 485s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۶۹۶۵۰۳۳
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
   staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
   "error": {
     "code": 500,
@@ -608,62 +206,16 @@ style-soft: lead>35w/1num, text 17 nums
   }
 }
 
-  CHMI-OAIOC-00 ovh:Qwen3.5-397B-A17B: 458s TimeoutError: The read operation timed out
-  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: markers: «روی میز» در text
-  PPMZ-PSHIPS7055ZP-00 ovh:Qwen3.6-27B: 379s ValueError: staged: 8 calls, last: markers: «روی میز» در text
   staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
   ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
-  PPMZ-PSHIPS7055ZP-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 8s QuotaError: HTTP 429: {
+  BRCO-ZIF1-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 17s QuotaError: HTTP 429: {
   "message":"API rate limit exceeded",
-  "request_id":"ae5530427d45dd0d26286f7b785f0959"
+  "request_id":"2dbecc541aa1f22ee6d9a6057af44411"
 }
   ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
-  PPMZ-PSHIPS7055ZP-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 0s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۷۷ | فعل «شد» امروز تکرار شده)
-OK GHZ-PELL-00 <- zai:glm-4.7-flash (566s)
-  SNRZ-ZII1-000 gemini:gemma-4-26b-a4b-it: 600s TimeoutError: The read operation timed out
-  SSMI-PELL-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  FZI-PELL-00 ovh:Qwen3.5-397B-A17B: 326s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-  PPMZ-PSHIPS7055ZP-00 gemini:gemma-4-26b-a4b-it: 600s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: «روی میز» در text
-  SMO-PELL-00 zai:glm-4.7-flash: 681s ValueError: staged: 8 calls, last: markers: «روی میز» در text
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۷۶
-  SMO-PELL-00 zai:glm-4.5-flash: 47s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۷۶
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged gemini:gemma-4-31b-it: accepted after 8 calls
-timeout: give-up file saved
-kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار پتروشیمی و فرآورده های نفتی
-kala: 294 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OACCAA-00, ALCO-AR70CR2B-00, CHMI-OAIOC-00, SSMI-PELL-00, BISC-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, KAVE-OAIOC-00, SMO-PELL-00, MIIO-PELL-00, RSCC-OAIOC-00, NPAC-BI6070B-00, FZI-PELL-00, AHM-BI6070B-00, EPC-PAFJ-00, GHIR-PELL-00, SNRZ-ZII1-000, IMCO-ZIE1-00, IMCO-ZIF1-00, ZRB-ZIE1-00, TABC-PSHIPS7240PP-00, DKPC-OAIOC-00, AHM-BIMC250B-00, RID-PAFJ-00, ALM-AP20551-00, THOR-GRSUSUB-00, SHPC-OAVAMB-00, ESC-AMSULL-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
-40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  GOLG-PELL-00 gemini:gemma-4-31b-it: 303s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: 108 words / 3 paragraphs
+  BRCO-ZIF1-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  PPMZ-PSGPPS1028PP-00 gemini:gemma-4-26b-a4b-it: 426s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
   staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
   "error": {
     "code": 500,
@@ -672,86 +224,265 @@ style-soft: lead>35w/1num, text 14 nums
   }
 }
 
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 98 words / 3 paragraphs
-  NIMI-PELL-00 zai:glm-4.7-flash: 678s ValueError: staged: 8 calls, last: 98 words / 3 paragraphs
-  KHSS-DRIBRI-00 gemini:gemma-4-31b-it: 483s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged ovh:Qwen3.5-397B-A17B: soft: لید بی‌عدد
-  staged ovh:Qwen3.5-397B-A17B: accepted after 8 calls
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 118 words / 4 paragraphs
-  NIMI-PELL-00 zai:glm-4.5-flash: 273s ValueError: staged: 8 calls, last: 118 words / 4 paragraphs
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  SND-PELL-00 ovh:Qwen3.5-397B-A17B: 1175s TimeoutError: The read operation timed out
-  SJS-DRI-00 gemini:gemma-4-31b-it: 419s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-style-soft: lead>35w/1num
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: «۳۳ تن» با فعل فروش آمده ولی فروش ۱۸۷ تن است
-  FRB-PAFJ-00 zai:glm-4.7-flash: 761s ValueError: staged: 8 calls, last: «۳۳ تن» با فعل فروش آمده ولی فروش ۱۸۷ تن است
+  SRJA-ZII1-00 kilo:cohere/north-mini-code:free: 220s JSONDecodeError: Expecting property name enclosed in double quotes: line 4 column 3 (char 159)
+  staged ovh:Qwen3.6-27B: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 17 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 108 words / 3 paragraphs
+  PTJP-PSGPPSG1551PPP-00 zai:glm-4.7-flash: 307s ValueError: staged: 8 calls, last: 108 words / 3 paragraphs
   staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 109 words / 3 paragraphs
-  FRB-PAFJ-00 zai:glm-4.5-flash: 24s ValueError: staged: 8 calls, last: 109 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  ALM-AP10201-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 377s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 97 words / 4 paragraphs
+  PTJP-PSGPPSG1551PPP-00 zai:glm-4.5-flash: 35s ValueError: staged: 8 calls, last: 97 words / 4 paragraphs
+  staged kilo:kilo-auto/free: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  kilo:kilo-auto/free: quota used up - skipped for an hour
+  PPMZ-PSGPPS1028PP-00 kilo:kilo-auto/free: 145s QuotaError: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"baidu/ernie-5.5-flash-preview:free is temporarily rate-limited upstream. Please retry shortly, or add your own provider key to use you
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  staged kilo:cohere/north-mini-code:free: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: check cut 5 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 98 words / 2 paragraphs
+  TSK-ZIE1-00 zai:glm-4.7-flash: 223s ValueError: staged: 8 calls, last: 98 words / 2 paragraphs
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۳
+  IZE-ZIE1-00 ovh:Qwen3.6-27B: 422s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۳
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 12 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 119 words / 3 paragraphs
+  TSK-ZIE1-00 zai:glm-4.5-flash: 36s ValueError: staged: 8 calls, last: 119 words / 3 paragraphs
+  BRCO-ZIF1-00 gemini:gemma-4-26b-a4b-it: 449s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged ovh:Qwen3.6-27B: check cut 4 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 15 nums
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: 2.95، 2.96
+  PPMZ-PSGPPS1028PP-00 kilo:cohere/north-mini-code:free: 325s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: 2.95، 2.96
+  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  IZE-ZIE1-00 kilo:cohere/north-mini-code:free: 143s JSONDecodeError: Expecting property name enclosed in double quotes: line 8 column 3 (char 1117)
+style-soft: در حالی که, lead>35w/1num
+style-soft: text 11 nums
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۰۰، ۹۰۰
+  SRJA-ZII1-00 ovh:Qwen3.6-27B: 471s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۰۰، ۹۰۰
 timeout: give-up file saved
 kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار پتروشیمی و فرآورده های نفتی
 kala: 294 settled rows, 0 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OACCAA-00, ALCO-AR70CR2B-00, CHMI-OAIOC-00, SSMI-PELL-00, SJS-DRI-00, BISC-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, KAVE-OAIOC-00, SMO-PELL-00, MIIO-PELL-00, RSCC-OAIOC-00, NPAC-BI6070B-00, FZI-PELL-00, AHM-BI6070B-00, EPC-PAFJ-00, GHIR-PELL-00, SNRZ-ZII1-000, IMCO-ZIE1-00, IMCO-ZIF1-00, ZRB-ZIE1-00, TABC-PSHIPS7240PP-00, DKPC-OAIOC-00, AHM-BIMC250B-00, RID-PAFJ-00, ALM-AP20551-00, THOR-GRSUSUB-00, SHPC-OAVAMB-00, ESC-AMSULL-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
-40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: call 1 failed: HTTP 503: {"error":{"message":"Provider returned error","code":503,"metadata":{"raw":"{\"message\":\"Service temporarily
-  KHSS-DRIBRI-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged ovh:Qwen3.5-397B-A17B: check cut 4 sentence(s)
-  FRB-PAFJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 247s TimeoutError: The read operation timed out
-  GOLG-PELL-00 gemini:gemma-4-31b-it: 255s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  IMID-DRI-616 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+given up for today (failed 2 runs, row unchanged): NCI-OACCAA-00, ALCO-AR70CR2B-00, GOLG-PELL-00, CHMI-OAIOC-00, KHSS-DRIBRI-00, SSMI-PELL-00, SJS-DRI-00, IMID-DRI-616, GISD-DRI-00, ALSU-AP0610A1-00, ALSU-AP06101-00, BSC-DRI-00, SSI-DRI-00, IMID-DRI-271, BISC-PELL-00, IAC-AP06101-00, IAC-AP15351-00, GHIR-DRI-00, ALM-AP06101-00, NIMI-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, SND-PELL-00, IALC-ALOX-00, SIS-PELL-00, IAC-AP13001-00, EFGZ-DRI-00, SPSC-DRI-00, KAVE-OAIOC-00, SMO-PELL-00, MIIO-PELL-00, EITC-OAIOC-00, PTC-POY250D48FAWP-00, RSCC-OAIOC-00, FRB-PAFJ-00, NPAC-BI6070B-00, FZI-PELL-00, AHM-BI6070B-00, EPC-PAFJ-00, GHIR-PELL-00, SNRZ-ZII1-000, IMCO-ZIE1-00, IMCO-ZIF1-00, ZRB-ZIE1-00, TABC-PSHIPS7240PP-00, DKPC-OAIOC-00, HSR-LUSUACB-00, PTC-POY250D48FBWP-00, PPMZ-PSHIPS7055ZP-00, IZE-ZIE1-00, TSK-ZIF1-00, SRJA-ZII1-00, AHM-BIMC250B-00, RID-PAFJ-00, ALM-AP20551-00, THOR-GRSUSUB-00, SHPC-OAVAMB-00, ESC-AMSULL-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
+28 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged kilo:cohere/north-mini-code:free: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged kilo:cohere/north-mini-code:free: accepted after 7 calls
+  staged ovh:Qwen3.6-27B: check cut 2 sentence(s)
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK KRPT-AMMONIAB-00 <- kilo:cohere/north-mini-code:free (145s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 117 words / 4 paragraphs
+  ALM-AP10201-00 zai:glm-4.7-flash: 157s ValueError: staged: 8 calls, last: 117 words / 4 paragraphs
+  PTC-POY500D96FAWP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  PTJP-PSGPPSG1551PPP-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 99 words / 4 paragraphs
+  ALM-AP10201-00 zai:glm-4.5-flash: 31s ValueError: staged: 8 calls, last: 99 words / 4 paragraphs
+  CACO-ZIF1-00 gemini:gemma-4-31b-it: 262s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  BRCO-ZIF1-00 gemini:gemma-4-26b-a4b-it: 337s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
   staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  HSR-LUSUACB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  ALSU-AP0610A1-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  PTC-POY250D48FBWP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  GISD-DRI-00 gemini:gemma-4-31b-it: 360s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  TSK-ZIE1-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 353s TimeoutError: The read operation timed out
+  MAI-OASOSULJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  IALC-AP10151-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  ovh:Qwen3.6-27B: quota used up - skipped for an hour
+  SPC-ARGAB-00 ovh:Qwen3.6-27B: 382s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"dfb37a12a8f7e93029eaa839854dd653"
+}
+style-soft: lead>35w/1num, text 15 nums
+style-soft: lead>35w/1num, text 17 nums
+  staged zai:glm-4.7-flash: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 8 calls
+  stage6 news: title in 2 calls
+OK TSK-ZII1-00 <- zai:glm-4.7-flash (282s)
+  ZRB-ZIF1-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  SRI-ZIF1-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
   staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
+  PTJP-PSGPPSG1161PPP-00 gemini:gemma-4-31b-it: 517s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: «۲۰۰ تن» با فعل فروش آمده ولی فروش ۳۰۰ تن است
+  HAAL-PS10000-00 zai:glm-4.7-flash: 307s ValueError: staged: 8 calls, last: «۲۰۰ تن» با فعل فروش آمده ولی فروش ۳۰۰ تن است
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.5-flash: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num, text 9 nums
+  staged zai:glm-4.5-flash: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 119 words after fixes
+  HAAL-PS10000-00 zai:glm-4.5-flash: 32s ValueError: staged: 8 calls, last: 119 words after fixes
 style-soft: lead>35w/1num, text 11 nums
-style-soft: lead>35w/1num
-  staged ovh:Qwen3.5-397B-A17B: accepted after 7 calls
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: 59 words / 2 paragraphs
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 64 words / 2 paragraphs
-  NIMI-PELL-00 zai:glm-4.7-flash: 840s ValueError: staged: 8 calls, last: 64 words / 2 paragraphs
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 99 words / 3 paragraphs
-  NIMI-PELL-00 zai:glm-4.5-flash: 35s ValueError: staged: 8 calls, last: 99 words / 3 paragraphs
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
-  "error": {
-    "code": 500,
-    "message": "Internal error encountered.",
-    "status": "INTERNAL"
-  }
-}
-
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  SND-PELL-00 ovh:Qwen3.5-397B-A17B: 1216s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 15 nums
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  ALSU-AP06101-00 gemini:gemma-4-31b-it: 684s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-style-soft: lead>35w/1num, text 15 nums
-  staged zai:glm-4.7-flash: draft dropped after 7 calls: «۳۸۶ تن» با فعل فروش آمده ولی فروش ۱۸۷ تن است | «۳۸۶ تن» با فعل فروش آمده ولی فروش ۱۸۷ تن است
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 78 words / 4 paragraphs
-  FRB-PAFJ-00 zai:glm-4.7-flash: 511s ValueError: staged: 8 calls, last: 78 words / 4 paragraphs
+style-soft: text 14 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 8 calls
+  stage6 news: title in 1 calls
+OK SNRZ-ZIE1-000 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (614s)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IALC-ALHYD-00 gemini:gemma-4-31b-it: 240s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  PTZ-ZII1-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 16 nums
+  staged zai:glm-4.7-flash: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 7 calls
+  staged zai:glm-4.7-flash: call 9 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 9 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK SRJA-ZIE1-00 <- zai:glm-4.7-flash (510s)
+  PTZ-ZIE1-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IZE-ZII1-00 zai:glm-4.7-flash: 379s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
   staged zai:glm-4.5-flash: check cut 3 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 110 words / 3 paragraphs
-  FRB-PAFJ-00 zai:glm-4.5-flash: 32s ValueError: staged: 8 calls, last: 110 words / 3 paragraphs
-  HSR-LUSUACB-00 ovh:Qwen3.5-397B-A17B: 495s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 73 words / 3 paragraphs
+  IZE-ZII1-00 zai:glm-4.5-flash: 32s ValueError: staged: 8 calls, last: 73 words / 3 paragraphs
+  MPG-PSGPMP08L-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 418s TimeoutError: The read operation timed out
 timeout: give-up file saved
+kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار پتروشیمی و فرآورده های نفتی
+kala: 294 settled rows, 0 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): NCI-OACCAA-00, ALCO-AR70CR2B-00, GOLG-PELL-00, CHMI-OAIOC-00, KHSS-DRIBRI-00, SSMI-PELL-00, SJS-DRI-00, IMID-DRI-616, GISD-DRI-00, ALSU-AP0610A1-00, ALSU-AP06101-00, BSC-DRI-00, SSI-DRI-00, IMID-DRI-271, BISC-PELL-00, IAC-AP06101-00, IAC-AP15351-00, GHIR-DRI-00, ALM-AP06101-00, NIMI-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, SND-PELL-00, IALC-ALOX-00, SIS-PELL-00, IAC-AP13001-00, EFGZ-DRI-00, CACO-ZIF1-00, SPSC-DRI-00, KAVE-OAIOC-00, SMO-PELL-00, MIIO-PELL-00, EITC-OAIOC-00, PTC-POY250D48FAWP-00, ALM-AP10201-00, RSCC-OAIOC-00, PTJP-PSGPPSG1551PPP-00, FRB-PAFJ-00, TSK-ZIE1-00, NPAC-BI6070B-00, FZI-PELL-00, AHM-BI6070B-00, EPC-PAFJ-00, GHIR-PELL-00, SNRZ-ZII1-000, IMCO-ZIE1-00, IMCO-ZIF1-00, ZRB-ZIE1-00, TABC-PSHIPS7240PP-00, DKPC-OAIOC-00, HSR-LUSUACB-00, PTC-POY250D48FBWP-00, PPMZ-PSHIPS7055ZP-00, IZE-ZIE1-00, TSK-ZIF1-00, SRJA-ZII1-00, AHM-BIMC250B-00, RID-PAFJ-00, BRCO-ZIF1-00, ALM-AP20551-00, THOR-GRSUSUB-00, SHPC-OAVAMB-00, PPMZ-PSGPPS1028PP-00, ESC-AMSULL-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
+18 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  ZRB-ZIF1-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  IALC-AP10151-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  SPC-ARGAB-00 gemini:gemma-4-26b-a4b-it: 243s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  PTC-POY500D96FAWP-00 gemini:gemma-4-31b-it: 271s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  HAAL-PS10000-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  PTZ-ZII1-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  SRI-ZIF1-00 kilo:dots-studio/dots-3-note-preview:free: 369s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+style-soft: lead>35w/1num, text 10 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: «تاریخی» در text
+  PTJP-PSGPPSG1161PPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 651s ValueError: staged: 8 calls, last: markers: «تاریخی» در text
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  IALC-ALHYD-00 gemini:gemma-4-31b-it: 444s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  PTZ-ZIE1-00 kilo:dots-studio/dots-3-note-preview:free: 325s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  IZE-ZII1-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 409s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 58 words / 3 paragraphs
+  MAI-OASOSULJ-00 zai:glm-4.7-flash: 1128s ValueError: staged: 8 calls, last: 58 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۲۷۵
+  MAI-OASOSULJ-00 zai:glm-4.5-flash: 69s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۲۷۵
+  MPG-PSGPMP08L-00 gemini:gemma-4-31b-it: 489s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  PPMZ-PSGPPS1115PP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 462s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 85 words / 2 paragraphs
+  PPMZ-PSHIPS6045PP-00 zai:glm-4.7-flash: 402s ValueError: staged: 8 calls, last: 85 words / 2 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 16 nums
+  staged zai:glm-4.5-flash: soft: متن 16 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 118 words after fixes
+  PPMZ-PSHIPS6045PP-00 zai:glm-4.5-flash: 43s ValueError: staged: 8 calls, last: 118 words after fixes
+timeout: give-up file saved
+kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار پتروشیمی و فرآورده های نفتی
+kala: 294 settled rows, 0 wait for the next data build
+rewrite GHIR-PELL-00: data changed after it was written (6000.0|4000.0|4000.0|194994.0|779976000.0 -> 12000.0|4000.0|4000.0|194994.0|779976000.0)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): NCI-OACCAA-00, ALCO-AR70CR2B-00, GOLG-PELL-00, CHMI-OAIOC-00, KHSS-DRIBRI-00, SSMI-PELL-00, SJS-DRI-00, IMID-DRI-616, GISD-DRI-00, ALSU-AP0610A1-00, ALSU-AP06101-00, BSC-DRI-00, SSI-DRI-00, IMID-DRI-271, BISC-PELL-00, IAC-AP06101-00, IAC-AP15351-00, GHIR-DRI-00, ALM-AP06101-00, NIMI-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, SND-PELL-00, IALC-ALOX-00, SIS-PELL-00, IAC-AP13001-00, EFGZ-DRI-00, CACO-ZIF1-00, SPSC-DRI-00, KAVE-OAIOC-00, SMO-PELL-00, EITC-OAIOC-00, PTC-POY250D48FAWP-00, ALM-AP10201-00, PTJP-PSGPPSG1551PPP-00, FRB-PAFJ-00, TSK-ZIE1-00, PTC-POY500D96FAWP-00, FZI-PELL-00, MAI-OASOSULJ-00, IALC-AP10151-00, GHIR-PELL-00, SNRZ-ZII1-000, PTJP-PSGPPSG1161PPP-00, IMCO-ZIE1-00, ZRB-ZIF1-00, IMCO-ZIF1-00, ZRB-ZIE1-00, SRI-ZIF1-00, HAAL-PS10000-00, TABC-PSHIPS7240PP-00, HSR-LUSUACB-00, IALC-ALHYD-00, PTC-POY250D48FBWP-00, PPMZ-PSHIPS7055ZP-00, IZE-ZIE1-00, TSK-ZIF1-00, SRJA-ZII1-00, PTZ-ZII1-00, PTZ-ZIE1-00, IZE-ZII1-00, MPG-PSGPMP08L-00, PPMZ-PSGPPS1115PP-00, BRCO-ZIF1-00, PPMZ-PSHIPS6045PP-00, ALM-AP20551-00, SHPC-OAVAMB-00, PPMZ-PSGPPS1028PP-00, ESC-AMSULL-00, SPC-ARGAB-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
+3 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  KSDC-GPPSG324L-089 zai:glm-4.7-flash: 180s TimeoutError: The read operation timed out
+  SPC-UREAGRJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 114 words / 4 paragraphs
+  KSDC-GPPSG324L-089 zai:glm-4.5-flash: 77s ValueError: staged: 8 calls, last: 114 words / 4 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  KSDC-GPPSG324L-089 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  MPC-MEGB-00 gemini:gemma-4-31b-it: 519s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 115 words / 3 paragraphs
+  SPC-UREAGRJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 379s ValueError: staged: 8 calls, last: 115 words / 3 paragraphs
+  MPC-MEGB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  KSDC-GPPSG324L-089 gemini:gemma-4-31b-it: 313s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  MPC-MEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 327s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 101 words / 3 paragraphs
+  SPC-UREAGRJ-00 zai:glm-4.7-flash: 652s ValueError: staged: 8 calls, last: 101 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num, text 12 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: «نشان داد» در text
+  SPC-UREAGRJ-00 zai:glm-4.5-flash: 35s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
+  staged zai:glm-4.7-flash: check cut 4 sentence(s)
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 107 words / 4 paragraphs
+  MPC-MEGB-00 zai:glm-4.7-flash: 136s ValueError: staged: 8 calls, last: 107 words / 4 paragraphs
+style-soft: lead>35w/1num, text 12 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 74 words / 2 paragraphs
+  MPC-MEGB-00 zai:glm-4.5-flash: 43s ValueError: staged: 8 calls, last: 74 words / 2 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 114 words / 3 paragraphs
+  KSDC-GPPSG324L-089 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 593s ValueError: staged: 8 calls, last: 114 words / 3 paragraphs
+written 0/3; total in file 23
+kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار پتروشیمی و فرآورده های نفتی
+kala: 294 settled rows, 0 wait for the next data build
+rewrite GHIR-PELL-00: data changed after it was written (6000.0|4000.0|4000.0|194994.0|779976000.0 -> 12000.0|4000.0|4000.0|194994.0|779976000.0)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): NCI-OACCAA-00, ALCO-AR70CR2B-00, GOLG-PELL-00, CHMI-OAIOC-00, KHSS-DRIBRI-00, SSMI-PELL-00, SJS-DRI-00, IMID-DRI-616, GISD-DRI-00, ALSU-AP0610A1-00, ALSU-AP06101-00, BSC-DRI-00, SSI-DRI-00, IMID-DRI-271, BISC-PELL-00, IAC-AP06101-00, IAC-AP15351-00, GHIR-DRI-00, ALM-AP06101-00, NIMI-PELL-00, CHMI-PELL-00, IMID-OAIOL-621, SND-PELL-00, IALC-ALOX-00, SIS-PELL-00, IAC-AP13001-00, EFGZ-DRI-00, CACO-ZIF1-00, SPSC-DRI-00, KAVE-OAIOC-00, SMO-PELL-00, EITC-OAIOC-00, PTC-POY250D48FAWP-00, ALM-AP10201-00, PTJP-PSGPPSG1551PPP-00, FRB-PAFJ-00, TSK-ZIE1-00, PTC-POY500D96FAWP-00, FZI-PELL-00, MAI-OASOSULJ-00, IALC-AP10151-00, GHIR-PELL-00, SNRZ-ZII1-000, PTJP-PSGPPSG1161PPP-00, IMCO-ZIE1-00, ZRB-ZIF1-00, IMCO-ZIF1-00, ZRB-ZIE1-00, SRI-ZIF1-00, HAAL-PS10000-00, TABC-PSHIPS7240PP-00, HSR-LUSUACB-00, IALC-ALHYD-00, PTC-POY250D48FBWP-00, PPMZ-PSHIPS7055ZP-00, IZE-ZIE1-00, TSK-ZIF1-00, SRJA-ZII1-00, PTZ-ZII1-00, PTZ-ZIE1-00, IZE-ZII1-00, MPG-PSGPMP08L-00, PPMZ-PSGPPS1115PP-00, BRCO-ZIF1-00, PPMZ-PSHIPS6045PP-00, ALM-AP20551-00, SHPC-OAVAMB-00, PPMZ-PSGPPS1028PP-00, MPC-MEGB-00, ESC-AMSULL-00, SPC-ARGAB-00, KSC-ARGAB-00, SHPC-PBR1220WWP-00
+2 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 103 words / 2 paragraphs
+  SPC-UREAGRJ-00 zai:glm-4.7-flash: 195s ValueError: staged: 8 calls, last: 103 words / 2 paragraphs
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 98 words / 4 paragraphs
+  SPC-UREAGRJ-00 zai:glm-4.5-flash: 30s ValueError: staged: 8 calls, last: 98 words / 4 paragraphs
+  KSDC-GPPSG324L-089 gemini:gemma-4-31b-it: 407s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  SPC-UREAGRJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  KSDC-GPPSG324L-089 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: در حالی که, lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۰۰، ۳۲، ۹۶۳، ۹۹
+  SPC-UREAGRJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 682s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۰۰، ۳۲، ۹۶۳، ۹۹
+written 0/2; total in file 23
+kala: closed halls: تالار سیمان، تالار صنعتی و معدنی، تالار پتروشیمی و فرآورده های نفتی
+kala: 294 settled rows, 0 wait for the next data build
+rewrite GHIR-PELL-00: data changed after it was written (6000.0|4000.0|4000.0|194994.0|779976000.0 -> 12000.0|4000.0|4000.0|194994.0|779976000.0)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): BISC-PELL-00, IMID-OAIOL-621, KAVE-OAIOC-00, SMO-PELL-00, GHIR-PELL-00, TABC-PSHIPS7240PP-00, SHPC-OAVAMB-00, SHPC-PBR1220WWP-00
+0 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+written 0/0; total in file 90
