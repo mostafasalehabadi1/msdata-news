@@ -801,3 +801,99 @@ style-soft: در حالی که, lead>35w/1num, text 11 nums
   staged zai:glm-4.5-flash: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۹۷ | تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است)
 OK MBIG-PSHIPS4512L-00 <- zai:glm-4.5-flash (69s)
+kala: closed halls: تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 13 settled rows, 131 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+11 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
+  RID-PAFJ-00 groq:openai/gpt-oss-120b: 15s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197277, Requested 57
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  RID-PAFJ-00 groq:openai/gpt-oss-20b: 3s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 200000, Requested 591
+  AHM-BI6070B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  EPC-PAFJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  AHM-BIMC250B-00 gemini:gemma-4-26b-a4b-it: 417s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  FRB-PAFJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  RID-PAFJ-00 ovh:Qwen3.5-397B-A17B: 649s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 108 words / 4 paragraphs
+style-soft: lead>35w/1num
+style-soft: در حالی که, lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۲
+  AHM-BIMC250B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 665s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۲
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged ovh:Qwen3.5-397B-A17B: check cut 3 sentence(s)
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 106 words / 4 paragraphs
+  RID-PAFJ-00 zai:glm-4.7-flash: 729s ValueError: staged: 8 calls, last: 106 words / 4 paragraphs
+style-soft: lead>35w/1num
+  staged gemini:gemma-4-31b-it: draft dropped after 4 calls: «۳۰۰ تن» با فعل فروش آمده ولی فروش ۱ هزار و ۵۰۰ تن است
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 109 words / 4 paragraphs
+  RID-PAFJ-00 zai:glm-4.5-flash: 111s ValueError: staged: 8 calls, last: 109 words / 4 paragraphs
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  AHM-BIMC250B-00 ovh:Qwen3.5-397B-A17B: 549s TimeoutError: The read operation timed out
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+timeout: give-up file saved
