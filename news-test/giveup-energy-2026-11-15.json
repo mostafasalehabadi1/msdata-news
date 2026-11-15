@@ -318,7 +318,7 @@
 },
 "DSCESCABEX1050827": {
 "fp": "{\"base_price\": 2387783.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"حلال 503|شرکت پالایش نفت اصفهان|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 840000.0, \"goods_name\": \"حلال 503\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2387783.0, \"min_price\": 2387783.0, \"offer_volume\": 0.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت اصفهان\", \"series_key\": \"حلال 503|شرکت پالایش نفت اصفهان|داخلی\", \"supplier\": \"شرکت پالایش نفت اصفهان\", \"symbol\": \"DSCESCABEX1050827\", \"symbol_code\": \"DSCESCABEX1\", \"target_market\": \"داخلی\", \"total_value_rial\": 2005737720000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/24\", \"trade_volume\": 840000.0, \"volume_unit\": \"لیتر\", \"weighted_price\": 2387783.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "kilo:dots-studio/dots-3-note-preview:free",
@@ -337,6 +337,18 @@
 "at": "13:37",
 "error": "TimeoutError: The read operation timed out",
 "run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "13:46",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "14:10",
+"error": "JSONDecodeError: Expecting ':' delimiter: line 2 column 17 (char 85)",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: حلال 503؛ عرضه‌کننده: شرکت پالایش نفت اصفهان.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: یکشنبه ۲۴ آبان.\n4. ۸۴۰ هزار لیتر حلال 503 شرکت پالایش نفت اصفهان فروش رفت. حجم عرضه در داده نیامده؛ از حجم عرضه و نسبت به عرضه حرف نزن.\n5. قیمت میانگین معامله ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر بود و قیمت پایه ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر.\n6. قیمت با قیمت پایه برابر بود.\n7. این حجم در ۲ معامله فروخته شد.\n8. ارزش ریالی این معامله حدود ۲۰۱ میلیارد تومان بود.\n9. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۸ آبان با قیمت ۲ میلیون و ۳۸۷ هزار و ۷۸۳ ریال در هر لیتر بود؛ قیمت تغییری نکرد.\n10. این کالا از ۲ شهریور تا امروز ۱۹ بار از همین عرضه‌کننده معامله شده است.",
