@@ -48,3 +48,37 @@ style-soft: lead>35w/1num, text 19 nums
   staged kilo:dots-studio/dots-3-note-preview:free: accepted after 8 calls
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۲۰ | فعل «شد» امروز تکرار شده)
 OK PBIG-BSG194X-00 <- kilo:dots-studio/dots-3-note-preview:free (255s)
+  staged kilo:dots-studio/dots-3-note-preview:free: call 1 failed: bad response: '{"id":"gen-1794861547-akdYXeCjM0PLO1JGAFTu","error":{"message":"JSON error injected into SSE stream","cod
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 16 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۴
+  JPPC-PPRP345SPP-00 zai:glm-4.7-flash: 585s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۴
+style-soft: lead>35w/1num
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است | مقدار عرضه غلط است؛ عرضه ۵۰ بود
+  HAK-TISSDLGR14-00 ovh:Qwen3.6-27B: 466s ValueError: staged: 8 calls, last: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است | مقدار عرضه غلط است؛ عرضه ۵۰ بود
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  HAK-TISSDLGR14-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 11s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"4bdba6221825a4507bf99c7fd922343f"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  HAK-TISSDLGR14-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 97 words / 4 paragraphs
+  JPPC-PPRP345SPP-00 zai:glm-4.5-flash: 63s ValueError: staged: 8 calls, last: 97 words / 4 paragraphs
+  MKL-TISSDLGR14-00 kilo:dots-studio/dots-3-note-preview:free: 216s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num
+  staged ovh:Qwen3.6-27B: check cut 5 sentence(s)
+style-soft: lead>35w/1num, text 11 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 8 calls
+  staged kilo:dots-studio/dots-3-note-preview:free: call 5 failed: bad response: '{"id":"gen-1794861863-rPGlyx0wkMwc9rzDdCNJ","error":{"message":"JSON error injected into SSE stream","cod
+  SHPC-PPEPC40RPP-00 gemini:gemma-4-31b-it: 793s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  stage6 news: title in 1 calls
+OK DAP-PPHP500MJ-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (400s)
