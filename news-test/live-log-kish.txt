@@ -155,3 +155,24 @@ style-soft: text 9 nums
   SGPE-BI6070BEX-00 gemini:gemma-4-31b-it: 937s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK IPD-INBPPBEX-00 <- zai:glm-4.5-flash (142s)
+  staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  ATAF-BI6070BEX-00 requesty:mistral/leanstral-1-5: 343s TimeoutError: The read operation timed out
+  requesty:novita/inclusionai/ling-3.0-tiny: quota used up - skipped until tomorrow
+  ATAF-BI6070BEX-00 requesty:novita/inclusionai/ling-3.0-tiny: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  requesty:poolside/laguna-m.1: quota used up - skipped until tomorrow
+  ATAF-BI6070BEX-00 requesty:poolside/laguna-m.1: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  requesty:nvidia/nemotron-3-nano-30b-a3b: quota used up - skipped until tomorrow
+  ATAF-BI6070BEX-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  requesty:nvidia/muse-glimmer-30b: quota used up - skipped until tomorrow
+  ATAF-BI6070BEX-00 requesty:nvidia/muse-glimmer-30b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  requesty:mistral/leanstral-1-5: quota used up - skipped until tomorrow
+  KGJ-BI6070BEX-00 requesty:mistral/leanstral-1-5: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: markers: «نشان می‌دهد» در text | «نشان می‌دهد» در text
+  GOLD-BI6070BEX-00 kilo:cohere/north-mini-code:free: 237s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text | «نشان می‌دهد» در text
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged ovh:Qwen3.6-27B: draft dropped after 7 calls: markers: تالار اشتباه: «صادراتی»
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۲۲)
+OK PBDC-INBPPBEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (634s)
