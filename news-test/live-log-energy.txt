@@ -85,3 +85,35 @@ groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
   staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   stage6 news: title in 2 calls
 OK DCSTZCABEX0050903 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (347s)
+  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged ovh:Qwen3.6-27B: check cut 1 sentence(s)
+  DCDRZCABEX0050830 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged openrouter:google/gemma-4-31b-it:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:google/gemma-4-31b-it:free: call 9 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 9 calls: 44 words / 2 paragraphs
+  DLFTZCABEX0050903 openrouter:google/gemma-4-31b-it:free: 1108s ValueError: staged: 9 calls, last: 44 words / 2 paragraphs
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: در حالی که, text 11 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: draft dropped after 3 calls: 115 words / 3 paragraphs
+  stage6 news: title in 2 calls
+OK DCDRZCABEX0050830 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (286s)
