@@ -419,3 +419,95 @@ style-soft: lead>35w/1num, text 10 nums
   staged zai:glm-4.5-flash: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
   TIOC-BOSN500B-00 zai:glm-4.5-flash: 93s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
 timeout: give-up file saved
+kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
+kala: 152 settled rows, 0 wait for the next data build
+rewrite ACWI-CR08AB-00: data changed after it was written (50.0|10.0|10.0|30490205.0|304902050.0 -> 150.0|10.0|10.0|30490205.0|304902050.0)
+rewrite BBAD-BI6070B-00: data changed after it was written (300.0|200.0|200.0|860000.0|172000000.0 -> 1300.0|200.0|200.0|860000.0|172000000.0)
+rewrite HAK-TISSDLGR17-00: data changed after it was written (90.0|53.0|53.0|2929433.962264151|155260000.0 -> 110.0|53.0|53.0|2929433.962264151|155260000.0)
+rewrite SPC-UREAGRJ-00: data changed after it was written (70.0|70.0|70.0|647503.0|45325210.0 -> 160.0|160.0|160.0|647503.0|103600480.0)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): CWD-CR08AB-00, CHMI-BSG194X-00, KSC-BSG194X-00, NGHS-BSG194X-00, SKS-BSG194X-00, SHPC-PPHP552RPP-00, HSR-LUSUACB-00, SJS-BSG324X-00, SRBK-CR08AB-00, AIOC-BOSN150B-00, POCO-BOSN500B-00, TIOC-BOSN500B-00, DAP-PPHP550JJ-00, PGIL-LUSUACB-00, HAAL-PS10000-00, BOC-BOSN500B-00, SSKC-BSG00OO-00, SOC-HPW02C-605, ZNZ-BSO323X-00, NGFA-BSG194X-00
+40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged gemini:gemma-4-26b-a4b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  ALM-AP06101-00 zai:glm-4.7-flash: 293s TimeoutError: The read operation timed out
+  SJS-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 410s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 10 nums
+  staged zai:glm-4.5-flash: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  JPPC-PPRP340RJ-295 gemini:gemma-4-26b-a4b-it: 453s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  stage6 news: kept stage-5 title after 3 calls (فعل ندارد)
+OK ALM-AP06101-00 <- zai:glm-4.5-flash (182s)
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+style-soft: lead>35w/1num, text 13 nums
+  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۸۸۰، ۹۰ | کد کالا یا حروف لاتین وسط متن
+  ARCO-PVCS65J-00 kilo:dots-studio/dots-3-note-preview:free: 354s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۸۸۰، ۹۰ | کد کالا یا حروف لاتین وسط متن
+style-soft: در حالی که, text 9 nums
+  MBSI-BSG194X-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+style-soft: در حالی که, text 13 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 81 words / 3 paragraphs
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 77 words / 3 paragraphs
+  JPPC-PPRP340RJ-295 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 665s ValueError: staged: 8 calls, last: 77 words / 3 paragraphs
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+style-soft: lead>35w/1num
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  JPPC-PPRP340RJ-295 zai:glm-4.7-flash: 247s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+style-soft: lead>35w/1num
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 108 words / 4 paragraphs
+  JPPC-PPRP340RJ-295 zai:glm-4.5-flash: 121s ValueError: staged: 8 calls, last: 108 words / 4 paragraphs
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged gemini:gemma-4-31b-it: draft dropped after 5 calls: markers: عدد بیرون از حقیقت‌ها: ۷۸۵
+  JPPC-PPRP340RJ-295 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+timeout: give-up file saved
