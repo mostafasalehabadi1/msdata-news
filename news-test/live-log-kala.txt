@@ -109,3 +109,15 @@ OK POCO-SW30B-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (580s)
     "message": "This model is currently experiencing high demand. Spikes in d
   stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
 OK NFSH-BIEMCRS1B-00 <- zai:glm-4.7-flash (665s)
+  staged gemini:gemma-4-26b-a4b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  stage6 news: title in 2 calls
+OK LASC-BSG017OO-00 <- ovh:Qwen3.6-27B (582s)
