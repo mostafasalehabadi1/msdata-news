@@ -176,3 +176,51 @@ OK IPD-INBPPBEX-00 <- zai:glm-4.5-flash (142s)
   staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   stage6 news: kept stage-5 title after 3 calls (فعل ندارد | عدد بیرون از متن: ۲۲)
 OK PBDC-INBPPBEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (634s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged openrouter:google/gemma-4-31b-it:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  KGJ-BI6070BEX-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  SZCE-PCT2G32.5-L50EX-00 openrouter:google/gemma-4-31b-it:free: 1181s ValueError: staged: 8 calls, last: no JSON: 
+  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: markers: تالار اشتباه: «صادراتی»
+  ESTC-PCT2G32.5-L50EX-00 ovh:Qwen3.6-27B: 721s ValueError: staged: 8 calls, last: markers: تالار اشتباه: «صادراتی»
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged kilo:cohere/north-mini-code:free: check cut 4 sentence(s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  ESTC-PCT2G32.5-L50EX-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 62s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"03e2f2724c5caa7e3558ba47fb1efa1b"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  ESTC-PCT2G32.5-L50EX-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 3 sentence(s)
+style-soft: lead>35w/1num, text 13 nums
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 11 nums
+  staged kilo:cohere/north-mini-code:free: draft dropped after 7 calls: 52 words / 3 paragraphs
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: 99 words / 1 paragraphs
+  KGJ-BI6070BEX-00 kilo:cohere/north-mini-code:free: 159s ValueError: staged: 8 calls, last: 99 words / 1 paragraphs
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 500: [{
+  "error": {
+    "code": 500,
+    "message": "Internal error encountered.",
+    "status": "INTERNAL"
+  }
+}
+
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  stage6 news: title in 2 calls
+OK SZCE-PCT2G32.5-L50EX-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (225s)
