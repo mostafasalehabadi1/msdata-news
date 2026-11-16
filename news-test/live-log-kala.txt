@@ -1,84 +1,26 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): CWD-CR08AB-00, CHMI-BSG194X-00, NCI-CR08AB-00, KSC-BSG194X-00, NGHS-BSG194X-00, AISC-BSG194X-00, SJS-BSG194X-00, ARCO-PVCS65J-00, MBSI-BSG194X-00, SIS-BSG194X-00, GPC-PVCS65J-00, SKS-BSG194X-00, SKS-BSG324X-00, SOC-BOSN500B-00, AGIC-PPHP510LJ-00, JPPC-PPHP552RPP-00, ARCO-PVCS65PP-00, MPC-PPC30SPP-00, MPC-PPZ30SPP-00, DAP-PPHP510LJ-00, SHPC-PPHP552RPP-00, PNCO-PPSF060J-00, GPC-PVCS65PP-00, JPPC-PPHP510LPP-00, RJCO-PPRG3212ERJ-00, SIS-BSG324X-00, HSR-LUSUACB-00, GSS-BSG194X-00, ARCO-OAEPVC6834PP-00, SJS-BSG324X-00, BISC-BSG194X-00, BISC-BSG324X-00, SRBK-CR08AB-00, FZI-BSG194X-00, JPPC-PPEP548RPP-00, AIOC-BOSN150B-00, TIOC-BOSN500B-00, JPPC-PPEP440LPP-00, APCO-PVCS57RPP-00, MPC-PPEP548RPP-00, DAP-PPHP552RJ-00, POCO-BOSN500B-00, TIOC-SWPLB-00, DAP-PPHP550JJ-00, RJCO-PPRG1102XKRJ-00, PGIL-LUSUACB-00, HAAL-PS10000-00, BOC-BOSN500B-00, ANF-BSG194X-00, YBSC-BSG194X-00, IMID-BSG194X-616, MPC-PPHP552RPP-00, JPPC-PPRP340RJ-295, AGIC-PPHP550JJ-00, APCO-PVCS65RPP-00, SSKC-BSG00OO-00, SOC-HPW02C-605, ZNZ-BSO323X-00, NGFA-BSG194X-00
-29 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged ovh:gpt-oss-120b: check cut 1 sentence(s)
-  ovh:gpt-oss-120b: quota used up - skipped for an hour
-  HAK-TISSDLGR14-00 ovh:gpt-oss-120b: 106s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"c31b8670a5aa39082803fb1a35e93178"
-}
-  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 2 sentence(s)
-  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
-  HAK-TISSDLGR14-00 ovh:Meta-Llama-3_3-70B-Instruct: 12s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"c37c9f3f5c375749a3fd1037f463967e"
-}
+given up for today (failed 2 runs, row unchanged): CWD-CR08AB-00, CHMI-BSG194X-00, NCI-CR08AB-00, KSC-BSG194X-00, NGHS-BSG194X-00, AISC-BSG194X-00, SJS-BSG194X-00, ARCO-PVCS65J-00, MBSI-BSG194X-00, SIS-BSG194X-00, GPC-PVCS65J-00, SKS-BSG194X-00, SKS-BSG324X-00, SOC-BOSN500B-00, AGIC-PPHP510LJ-00, JPPC-PPHP552RPP-00, ARCO-PVCS65PP-00, MPC-PPC30SPP-00, MPC-PPZ30SPP-00, DAP-PPHP510LJ-00, SHPC-PPHP552RPP-00, PNCO-PPSF060J-00, GPC-PVCS65PP-00, JPPC-PPHP510LPP-00, RJCO-PPRG3212ERJ-00, SIS-BSG324X-00, HSR-LUSUACB-00, GSS-BSG194X-00, ARCO-OAEPVC6834PP-00, SJS-BSG324X-00, BISC-BSG194X-00, BISC-BSG324X-00, SRBK-CR08AB-00, FZI-BSG194X-00, JPPC-PPEP548RPP-00, AIOC-BOSN150B-00, TIOC-BOSN500B-00, JPPC-PPEP440LPP-00, APCO-PVCS57RPP-00, MPC-PPEP548RPP-00, DAP-PPHP552RJ-00, POCO-BOSN500B-00, TIOC-SWPLB-00, DAP-PPHP550JJ-00, RJCO-PPRG1102XKRJ-00, PGIL-LUSUACB-00, HAAL-PS10000-00, BOC-BOSN500B-00, ANF-BSG194X-00, YBSC-BSG194X-00, IMID-BSG194X-616, MPC-PPHP552RPP-00, JPPC-PPRP340RJ-295, AGIC-PPHP550JJ-00, APCO-PVCS65RPP-00, SHPC-PPEPC40RPP-00, JPPC-PPRP345SPP-00, AGIC-PPHP500KJ-00, JPPC-PPEP6540GJ-295, SOC-HPW05B-00, MKL-TISSDLGR14-00, SSKC-BSG00OO-00, ATSC-BSG194X-00, FTSH-BSG194X-00, SOC-HPW02C-605, ZNZ-BSO323X-00, HAK-TISSDLGR14-00, PBSC-BSO1720X-00, NGFA-BSG194X-00
+17 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  SOC-HPW05B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  PBSC-BSO1720X-00 requesty:mistral/leanstral-1-5: 180s TimeoutError: The read operation timed out
-  AGIC-PPHP500KJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  requesty:novita/inclusionai/ling-3.0-tiny: quota used up - skipped until tomorrow
-  PBSC-BSO1720X-00 requesty:novita/inclusionai/ling-3.0-tiny: 1s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  requesty:poolside/laguna-m.1: quota used up - skipped until tomorrow
-  PBSC-BSO1720X-00 requesty:poolside/laguna-m.1: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  requesty:nvidia/nemotron-3-nano-30b-a3b: quota used up - skipped until tomorrow
-  PBSC-BSO1720X-00 requesty:nvidia/nemotron-3-nano-30b-a3b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  requesty:nvidia/muse-glimmer-30b: quota used up - skipped until tomorrow
-  PBSC-BSO1720X-00 requesty:nvidia/muse-glimmer-30b: 0s QuotaError: HTTP 429: {"error":{"origin":"router","message":"Your organization reached its limit of concurrent requests. The limit scales with your organization's balance, top up at https://app.requesty.ai/settings/billing or contac
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  staged kilo:dots-studio/dots-3-note-preview:free: check cut 2 sentence(s)
+  NZCH-PPZH550JJ-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged kilo:dots-studio/dots-3-note-preview:free: call 6 failed: bad response: '{"id":"gen-1794863184-mykWu0hcWcoqIcXFKepZ","error":{"message":"JSON error injected into SSE stream","cod
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in d
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+style-soft: text 13 nums
+  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 7 calls
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 81 words / 2 paragraphs
+  MPC-PPRP340RP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 328s ValueError: staged: 8 calls, last: 81 words / 2 paragraphs
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in d
-  staged ovh:Qwen3.6-27B: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: lead>35w/1num, text 18 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 111 words / 3 paragraphs
-  JPPC-PPEP6540GJ-295 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 403s ValueError: staged: 8 calls, last: 111 words / 3 paragraphs
-style-soft: lead>35w/1num, text 19 nums
-  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 16 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۲۰ | فعل «شد» امروز تکرار شده)
-OK PBIG-BSG194X-00 <- kilo:dots-studio/dots-3-note-preview:free (255s)
-  staged kilo:dots-studio/dots-3-note-preview:free: call 1 failed: bad response: '{"id":"gen-1794861547-akdYXeCjM0PLO1JGAFTu","error":{"message":"JSON error injected into SSE stream","cod
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 16 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۴
-  JPPC-PPRP345SPP-00 zai:glm-4.7-flash: 585s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۴
-style-soft: lead>35w/1num
-  staged ovh:Qwen3.6-27B: draft dropped after 8 calls: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است | مقدار عرضه غلط است؛ عرضه ۵۰ بود
-  HAK-TISSDLGR14-00 ovh:Qwen3.6-27B: 466s ValueError: staged: 8 calls, last: تیتر «بی‌خریدار» نوشته ولی کالا فروش رفته است | مقدار عرضه غلط است؛ عرضه ۵۰ بود
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
-  HAK-TISSDLGR14-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 11s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"4bdba6221825a4507bf99c7fd922343f"
-}
-  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
-  HAK-TISSDLGR14-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 97 words / 4 paragraphs
-  JPPC-PPRP345SPP-00 zai:glm-4.5-flash: 63s ValueError: staged: 8 calls, last: 97 words / 4 paragraphs
-  MKL-TISSDLGR14-00 kilo:dots-studio/dots-3-note-preview:free: 216s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num
-  staged ovh:Qwen3.6-27B: check cut 5 sentence(s)
-style-soft: lead>35w/1num, text 11 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 8 calls
-  staged kilo:dots-studio/dots-3-note-preview:free: call 5 failed: bad response: '{"id":"gen-1794861863-rPGlyx0wkMwc9rzDdCNJ","error":{"message":"JSON error injected into SSE stream","cod
-  SHPC-PPEPC40RPP-00 gemini:gemma-4-31b-it: 793s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  stage6 news: title in 1 calls
-OK DAP-PPHP500MJ-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (400s)
+  staged kilo:dots-studio/dots-3-note-preview:free: call 10 failed: bad response: '{"id":"gen-1794863307-DTh2cxw8TOyVebh95UgM","error":{"message":"JSON error injected into SSE stream","cod
+  NZCH-PPZH510LJ-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK DAP-PPHP500KJ-00 <- kilo:dots-studio/dots-3-note-preview:free (380s)
