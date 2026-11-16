@@ -93,3 +93,24 @@ style-soft: text 22 nums
   ANF-BSG194X-00 ovh:Qwen3.5-397B-A17B: 733s TimeoutError: The read operation timed out
   stage6 news: title in 1 calls
 OK LASC-BSG017OO-00 <- kilo:cohere/north-mini-code:free (89s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged groq:openai/gpt-oss-20b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w
+  staged groq:openai/gpt-oss-20b: call 7 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w
+  HAK-TISSDLGR14-00 gemini:gemma-4-26b-a4b-it: 335s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num, text 15 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۹، ۴۵، ۵۳، ۵۶۰، ۸۸۰
+  APCO-PVCS65RPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 286s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۹، ۴۵، ۵۳، ۵۶۰، ۸۸۰
+  FTSH-BSG194X-00 groq:openai/gpt-oss-20b: 366s ValueError: staged: 8 calls, last: no JSON: 
+  staged groq:openai/gpt-oss-20b: call 1 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  JPPC-PPEP548TJ-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged groq:openai/gpt-oss-20b: call 2 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged ovh:Qwen3.5-397B-A17B: check cut 1 sentence(s)
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  HAK-TISSDLGR14-00 groq:openai/gpt-oss-20b: 136s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199419, Requested 621
+  staged kilo:cohere/north-mini-code:free: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:cohere/north-mini-code:free: accepted after 5 calls
+  staged ovh:Qwen3.5-397B-A17B: check cut 2 sentence(s)
+  stage6 news: title in 2 calls
+OK JPPC-PPEP548TJ-00 <- kilo:cohere/north-mini-code:free (100s)
