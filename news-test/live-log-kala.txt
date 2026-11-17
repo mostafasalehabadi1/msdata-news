@@ -46,3 +46,35 @@ style-soft: lead>35w/1num, text 13 nums
 style-soft: text 11 nums
   stage6 news: title in 2 calls
 OK ILPE-HD7000FPP-00 <- zai:glm-4.7-flash (502s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 73 words / 4 paragraphs
+  JPC-HD7000FPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 505s ValueError: staged: 8 calls, last: 73 words / 4 paragraphs
+  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: 101 words / 3 paragraphs
+  FNT-EA007000-00 kilo:cohere/north-mini-code:free: 120s ValueError: staged: 8 calls, last: 101 words / 3 paragraphs
+  IPC-HDHB0035PP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  MDC-HD52B18UVPP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  ILPE-HD7000FJ-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged zai:glm-4.7-flash: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 103 words / 2 paragraphs
+  ASPC-HDHBM5510WP-00 zai:glm-4.7-flash: 170s ValueError: staged: 8 calls, last: 103 words / 2 paragraphs
+  KEPE-HDEX5PWDJ-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 108 words / 3 paragraphs
+  THOR-GRSUSUB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 307s ValueError: staged: 8 calls, last: 108 words / 3 paragraphs
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.5-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 7 calls
+style-soft: text 16 nums
+  staged kilo:cohere/north-mini-code:free: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged kilo:cohere/north-mini-code:free: accepted after 6 calls
+  stage6 news: title in 1 calls
+OK ASPC-HDHBM5510WP-00 <- zai:glm-4.5-flash (153s)
