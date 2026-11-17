@@ -48,3 +48,29 @@ style-soft: lead>35w/1num, text 10 nums
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
 OK HJC-BI6070BEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (31s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  KHCE-PCT2G32.5-L50EX-00 ovh:Meta-Llama-3_3-70B-Instruct: 28s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"d0923c66855a120af0a3a2529e31f56e"
+}
+style-soft: lead>35w/1num, text 10 nums
+style-soft: lead>35w/1num, text 18 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۵۱۷
+  SZCE-PCT2G42.5-BEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 24s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۵۱۷
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  FCH-BI6070BEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  WCO-PCT2G42.5-L50EX-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 20 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 79 words / 2 paragraphs
+  WCO-PCT2G42.5-L50EX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 28s ValueError: staged: 8 calls, last: 79 words / 2 paragraphs
+style-soft: lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
+  ADG-BI6070BEX-00 kilo:kilo-auto/free: 220s TimeoutError: The read operation timed out
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  ADG-BI6070BEX-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  ADG-BI6070BEX-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
+  stage6 news: title in 1 calls
+OK CMK-PCT2G42.5-L50EX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (237s)
