@@ -1,76 +1,40 @@
+rewrite SSSE-PTHOOO000-00: data changed after it was written (200.0|200.0|325.0|1033422.625|206684525.0 -> 200.0|200.0|325.0|1033422.5|206684500.0)
+rewrite BSRC-EA003000-00: data changed after it was written (75.0|50.0|75.0|1099863.0|54993150.0 -> 100.0|75.0|100.0|1099863.0|82489725.0)
+rewrite SSSE-PTJOOO000-00: data changed after it was written (275.0|275.0|450.0|1040317.1818181818|286087225.0 -> 275.0|275.0|450.0|1040317.3636363636|286087275.0)
+rewrite PSM-PTFOOO000-00: data changed after it was written (500.0|500.0|800.0|1070999.5|535499750.0 -> 500.0|500.0|800.0|1071000.0|535500000.0)
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMMSB-00, NCI-OAMOOX-00, NCI-OANMMSA-00, NCI-OANMMSC-00, ALSU-AB6063BC-00, IAC-AB6063BC-00, HAAL-PS10000-00, SSSE-EA017000-00, BSRC-EA005000-00, IMID-BARILUMP-00, BSRC-EA007000-00, ATSC-MBNEN03E-00, PSM-PTIOOO000-00, BSRC-EA009000-00, JBC-EA009000-00, ATSC-MBENN03E-00
-34 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged ovh:gpt-oss-120b: check cut 2 sentence(s)
-  PPCO-OASTYB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  MDC-HDHB6200BPP-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  IORC-GRSUSUB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
-  MDC-HDHB6200BPP-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
-  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
-  MDC-HDHB6200BPP-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
-  ovh:gpt-oss-120b: quota used up - skipped for an hour
-  PAM-LD2420FPP-00 ovh:gpt-oss-120b: 312s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"7469c7689241cf662b01e07e1d85a909"
-}
-  JPC-HDF7000LMPJ-00 gemini:gemma-4-26b-a4b-it: 325s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-style-soft: در حالی که, lead>35w/1num, text 17 nums
-  staged kilo:cohere/north-mini-code:free: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:cohere/north-mini-code:free: accepted after 7 calls
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  JPC-HDCRP100NPP-00 gemini:gemma-4-31b-it: 363s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  KEPE-HDBL3PP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  JPC-HDBL3PP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  stage6 news: title in 2 calls
-OK MDC-HDHB6200BPP-00 <- kilo:cohere/north-mini-code:free (183s)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲.۱
-  MDC-HD52B18PJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 462s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲.۱
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  PAM-LD2420FPP-00 ovh:Meta-Llama-3_3-70B-Instruct: 180s TimeoutError: The read operation timed out
-  TABC-MD3840UAPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  ENPC-PSSEF400J-089 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  ILPE-HD7000FJ-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 14 nums
-  ILPE-HD5200BPP-00 gemini:gemma-4-26b-a4b-it: 260s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  ILPE-HD7000FJ-00 kilo:cohere/north-mini-code:free: 39s JSONDecodeError: Expecting property name enclosed in double quotes: line 4 column 2 (char 128)
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 14 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  PAM-LD2420FPP-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+given up for today (failed 2 runs, row unchanged): NCI-OANMMSB-00, NCI-OAMOOX-00, NCI-OANMMSA-00, PPCO-OASTYB-00, KEPE-HDBL3PP-00, NCI-OANMMSC-00, HSR-LUSUACB-00, ZNKM-CR018OO-00, ALSU-AB6063BC-00, IAC-AB6063BC-00, HAAL-PS10000-00, SSSE-EA017000-00, BSRC-EA005000-00, IMID-BARILUMP-00, BSRC-EA007000-00, ATSC-MBNEN03E-00, PSM-PTIOOO000-00, SPSG-MBENN03E-00, LAE-EA015000-00, BSRC-EA009000-00, JBC-EA009000-00, ATSC-MBENN03E-00
+40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  PSM-PTFOOO000-00 ovh:Qwen3.6-27B: 27s RemoteDisconnected: Remote end closed connection without response
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  ESC-MBEEN03E-00 ovh:Qwen3.5-397B-A17B: 60s RemoteDisconnected: Remote end closed connection without response
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  SSSE-PTJOOO000-00 ovh:Qwen3.6-27B: 109s RemoteDisconnected: Remote end closed connection without response
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  JPC-HDCRP100NPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  CHG-GS00101-00 gemini:gemma-4-31b-it: 235s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  YAS-PTGOOO000-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  JPC-HDF7000LMPJ-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+  LOR-LLD22B02P-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  DRG-GS00101-00 gemini:gemma-4-26b-a4b-it: 374s JSONDecodeError: Extra data: line 1 column 12 (char 11)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  NMFC-EA005000-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  SHPC-HDCRP100BPP-00 gemini:gemma-4-31b-it: 271s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  TJPC-LSBR1502RWP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 19 nums
+  staged zai:glm-4.7-flash: soft: متن 17 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 5 calls
+  MPC-HDCRP100NPP-603 gemini:gemma-4-26b-a4b-it: 349s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: call 4 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 2 sentence(s)
-  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
-  PAM-LD2420FPP-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 32s QuotaError: HTTP 429: {
-  "message":"API rate limit exceeded",
-  "request_id":"058747315f222e4d76b3d13f42e11021"
-}
-  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
-  PAM-LD2420FPP-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: draft dropped after 4 calls: markers: «روی میز» در text
-  ILPE-HD7000FPP-00 gemini:gemma-4-31b-it: 447s JSONDecodeError: Extra data: line 1 column 12 (char 11)
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  LAE-EA015000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 452s TimeoutError: The read operation timed out
-  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
-  KEPE-HDEX5PWDJ-00 gemini:gemma-4-26b-a4b-it: 336s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-style-soft: lead>35w/1num, text 14 nums
-  staged kilo:kilo-auto/free: draft dropped after 8 calls: markers: «این در حالی است» در text
-  PPMZ-PSGPPS1028PP-00 kilo:kilo-auto/free: 366s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text
-  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-  staged kilo:cohere/north-mini-code:free: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged kilo:cohere/north-mini-code:free: accepted after 6 calls
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  stage6 news: title in 3 calls
-OK PPMZ-PSGPPS1028PP-00 <- kilo:cohere/north-mini-code:free (58s)
+  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
+OK AKSC-GS00101-00 <- zai:glm-4.7-flash (973s)
