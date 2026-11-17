@@ -20,6 +20,7 @@ permissions:
   contents: write
 jobs:
   report:
+    if: false  # owner 1405-08-26: no report is written by free/auto models any more; the content agent writes reports
     runs-on: ubuntu-latest
     timeout-minutes: 110  # gemma alone may take 2x600s; 40 min killed every report of 1405-07-15
     steps:

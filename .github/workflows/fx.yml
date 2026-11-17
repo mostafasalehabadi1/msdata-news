@@ -17,6 +17,7 @@ permissions:
   contents: write
 jobs:
   fx:
+    if: false  # owner 1405-08-26: no report is written by free/auto models any more; the content agent writes reports
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
