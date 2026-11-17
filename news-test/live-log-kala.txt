@@ -48,3 +48,26 @@ style-soft: lead>35w/1num
   NFK-PTGOOO000-00 gemini:gemma-4-26b-a4b-it: 344s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
   stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۶۰)
 OK FNT-EA005000-00 <- requesty:mistral/leanstral-1-5 (364s)
+  AKSC-GS00101-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  BSRC-EA007000-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+style-soft: lead>35w/1num, text 9 nums
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: markers: کد کالا یا حروف لاتین وسط متن
+  FNT-EA007000-00 kilo:kilo-auto/free: 384s ValueError: staged: 8 calls, last: markers: کد کالا یا حروف لاتین وسط متن
+  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
+  FNT-EA007000-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
+  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
+  FNT-EA007000-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  SSSE-PTHOOO000-00 zai:glm-4.7-flash: 438s TimeoutError: The read operation timed out
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  NCI-OANMMSB-00 gemini:gemma-4-31b-it: 446s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+style-soft: ام‌اس‌دیتا!=1, lead>35w/1num, text 12 nums
+  staged zai:glm-4.5-flash: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged zai:glm-4.5-flash: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+OK SSSE-PTHOOO000-00 <- zai:glm-4.5-flash (99s)
