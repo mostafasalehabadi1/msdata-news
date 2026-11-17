@@ -1,123 +1,31 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMMSB-00, CHG-GS00101-00, NCI-OAMOOX-00, JPC-HDCRP100NPP-00, LOR-LLD22B02P-00, NCI-OANMMSA-00, PPCO-OASTYB-00, SHPC-HDCRP100BPP-00, KEPE-HDBL3PP-00, TJPC-LSBR1502RWP-00, NCI-OANMMSC-00, MPC-HDBL3PP-00, HSR-LUSUACB-00, ZNKM-CR018OO-00, ESC-MBEEN03E-00, ALSU-AB6063BC-00, IAC-AB6063BC-00, DRG-GS00101-00, NFK-PTGOOO000-00, PSM-PTFOOO000-00, YAS-PTGOOO000-00, SSSE-PTJOOO000-00, JPC-HDF7000LMPJ-00, MPC-HDCRP100NPP-603, JPC-HD60507UVPP-00, NMFC-EA005000-00, HAAL-PS10000-00, YAS-EA013000-00, KABS-EA003000-00, IORC-GRSUSUB-00, SSSE-EA017000-00, PAM-LD2420FPP-00, JPC-HDBL3PP-00, ILPE-HD5200BPP-00, BSRC-EA005000-00, IMID-BARILUMP-00, BSRC-EA007000-00, ATSC-MBNEN03E-00, PSM-PTIOOO000-00, SPSG-MBENN03E-00, LAE-EA015000-00, BSRC-EA009000-00, JBC-EA009000-00, ATSC-MBENN03E-00
-35 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  BSRC-EA003000-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  ESC-MBEEE03E-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  TABC-MD3840UAPP-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  SSSE-PTIOOO000-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+given up for today (failed 2 runs, row unchanged): NCI-OANMMSB-00, CHG-GS00101-00, NCI-OAMOOX-00, JPC-HDCRP100NPP-00, LOR-LLD22B02P-00, NCI-OANMMSA-00, PPCO-OASTYB-00, KEPE-HDBL3PP-00, TJPC-LSBR1502RWP-00, NCI-OANMMSC-00, MPC-HDBL3PP-00, CWD-CR018OO-00, TABC-MD3840UAPP-00, ESC-MBEEE03E-00, ZNKM-CR018OO-00, ESC-MBEEN03E-00, ALSU-AB6063BC-00, IAC-AB6063BC-00, DRG-GS00101-00, NFK-PTGOOO000-00, PSM-PTFOOO000-00, YAS-PTGOOO000-00, SSSE-PTJOOO000-00, JPC-HDF7000LMPJ-00, MPC-HDCRP100NPP-603, JPC-HD60507UVPP-00, NMFC-EA005000-00, HAAL-PS10000-00, YAS-EA013000-00, KABS-EA003000-00, LOR-HD6040UVPP-00, IORC-GRSUSUB-00, NFST-PTDOOO000-00, SSSE-EA017000-00, PAM-LD2420FPP-00, SSSE-PTIOOO000-00, JPC-HDBL3PP-00, ILPE-HD5200BPP-00, BSRC-EA003000-00, BSRC-EA005000-00, TABC-EPS422FCJ-00, IMID-BARILUMP-00, FNT-EA007000-00, BSRC-EA007000-00, ATSC-MBNEN03E-00, PSM-PTIOOO000-00, SPSG-MBENN03E-00, ILPE-HD7000FJ-00, LAE-EA015000-00, BSRC-EA009000-00, JBC-EA009000-00, ATSC-MBENN03E-00
+40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged gemini:gemma-4-26b-a4b-it: call 1 failed: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in d
-  BSRC-EA003000-00 kilo:cohere/north-mini-code:free: 16s JSONDecodeError: Expecting ',' delimiter: line 6 column 464 (char 823)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  PTC-PETTG645J-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in d
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.7-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 5 calls
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  ESC-MBENE03E-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  ICII-LABLABSAB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  TABC-EPS422FCJ-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
-  LOR-HD6040UVPP-00 gemini:gemma-4-26b-a4b-it: 379s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  FNT-EA007000-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: text 11 nums
-  stage6 news: title in 2 calls
-OK ILPE-HD7000FPP-00 <- zai:glm-4.7-flash (502s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 73 words / 4 paragraphs
-  JPC-HD7000FPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 505s ValueError: staged: 8 calls, last: 73 words / 4 paragraphs
-  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: 101 words / 3 paragraphs
-  FNT-EA007000-00 kilo:cohere/north-mini-code:free: 120s ValueError: staged: 8 calls, last: 101 words / 3 paragraphs
-  IPC-HDHB0035PP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  MDC-HD52B18UVPP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  ILPE-HD7000FJ-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 103 words / 2 paragraphs
-  ASPC-HDHBM5510WP-00 zai:glm-4.7-flash: 170s ValueError: staged: 8 calls, last: 103 words / 2 paragraphs
-  KEPE-HDEX5PWDJ-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 108 words / 3 paragraphs
-  THOR-GRSUSUB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 307s ValueError: staged: 8 calls, last: 108 words / 3 paragraphs
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.5-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged zai:glm-4.5-flash: accepted after 7 calls
-style-soft: text 16 nums
-  staged kilo:cohere/north-mini-code:free: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged kilo:cohere/north-mini-code:free: accepted after 6 calls
-  stage6 news: title in 1 calls
-OK ASPC-HDHBM5510WP-00 <- zai:glm-4.5-flash (153s)
-  stage6 news: title in 2 calls
-OK KEPE-HDEX5PWDJ-00 <- kilo:cohere/north-mini-code:free (152s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
+style-soft: lead>35w/1num, text 10 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: «این در حالی است» در text | عدد بیرون از حقیقت‌ها: ۱۳۰۰، ۱۶۱۰، ۳۰۰
+  ESC-MBNEE03E-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 393s ValueError: staged: 8 calls, last: markers: «این در حالی است» در text | عدد بیرون از حقیقت‌ها: ۱۳۰۰، ۱۶۱۰، ۳۰۰
+  ESC-MBENE03E-00 ovh:Qwen3.5-397B-A17B: 398s TimeoutError: The read operation timed out
+  PTC-PETBG845J-00 ovh:Qwen3.6-27B: 398s TimeoutError: The read operation timed out
+  PAM-LLD0209AAPP-00 gemini:gemma-4-31b-it: 457s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  PTC-PETBG785J-00 kilo:dots-studio/dots-3-note-preview:free: 274s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 9 nums
+  staged zai:glm-4.7-flash: soft: تیتر 7 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | نام کالا در تیتر باید «گوگرد کلوخه» باشد | متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
   staged zai:glm-4.7-flash: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK PGIL-LUSUACB-00 <- zai:glm-4.7-flash (136s)
-  CWD-CR018OO-00 gemini:gemma-4-31b-it: 982s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  SSSE-PTIOOO000-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:cohere/north-mini-code:free: check cut 4 sentence(s)
-  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
-style-soft: text 14 nums
+  PTC-PETBG781J-00 gemini:gemma-4-26b-a4b-it: 528s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
   staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.7-flash: soft: تیتر 6 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | نام کالا در تیتر باید «گوگرد گرانوله» باشد | متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکث
-style-soft: text 15 nums
-style-soft: text 13 nums
-  staged kilo:cohere/north-mini-code:free: draft dropped after 7 calls: markers: لید عیناً در متن تکرار شده
-  staged kilo:cohere/north-mini-code:free: draft dropped after 8 calls: 104 words / 2 paragraphs
-  SSSE-PTIOOO000-00 kilo:cohere/north-mini-code:free: 172s ValueError: staged: 8 calls, last: 104 words / 2 paragraphs
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 96 words / 3 paragraphs
-  IPC-XYLENEMIXB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 398s ValueError: staged: 8 calls, last: 96 words / 3 paragraphs
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.7-flash: soft: تیتر 6 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | نام کالا در تیتر باید «گوگرد گرانوله» باشد | متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکث
-  staged zai:glm-4.7-flash: accepted after 8 calls
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  JPC-HD52518PJ-00 gemini:gemma-4-26b-a4b-it: 900s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 11 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  stage6 news: kept stage-5 title after 3 calls (JSON درست نبود)
-OK TORC-GRSUSUJ-00 <- zai:glm-4.7-flash (342s)
+  KRD-LD2420F8PP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۱۰۰ | فعل «شد» امروز تکرار شده)
+OK HSR-LUSUACB-00 <- zai:glm-4.7-flash (582s)
