@@ -1,2 +1,50 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-0 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+34 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
+  SSSE-PTJOOO000-00 groq:openai/gpt-oss-120b: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196307, Requested 59
+  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
+  KABS-EA003000-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (458434cc-9310-4572-
+  cf:@cf/qwen/qwen2.5-coder-32b-instruct: quota used up - skipped until tomorrow
+  ANT-EA007000-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (0c313f8b-271e-4195-
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  CHG-GS00101-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  SSSE-PTJOOO000-00 groq:openai/gpt-oss-20b: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196427, Requested 617
+  staged llm7:minimax-m2.7: check cut 2 sentence(s)
+  staged kilo:kilo-auto/free: check cut 2 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged llm7:minimax-m2.7: check cut 1 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged requesty:mistral/leanstral-1-5: check cut 1 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged ovh:gpt-oss-120b: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  NCI-OAMOOX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged llm7:minimax-m2.7: call 4 failed: HTTP 524: error code: 524
+
+  SSSE-EA017000-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 13 nums
+style-soft: lead>35w/1num, text 13 nums
+  staged requesty:mistral/leanstral-1-5: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  llm7:minimax-m2.7: quota used up - skipped until tomorrow
+  NFST-PTDOOO000-00 llm7:minimax-m2.7: 245s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 14554 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":14554}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
+  NFST-PTDOOO000-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+style-soft: lead>35w/1num, text 11 nums
+  staged requesty:mistral/leanstral-1-5: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged requesty:mistral/leanstral-1-5: accepted after 7 calls
+  ovh:gpt-oss-120b: quota used up - skipped for an hour
+  SSSE-PTIOOO000-00 ovh:gpt-oss-120b: 275s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"daadf601cf985a2e0563581e592da15e"
+}
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+style-soft: lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۳۰
+  BSRC-EA005000-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 338s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۳۰
+  NFK-PTGOOO000-00 gemini:gemma-4-26b-a4b-it: 344s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۶۰)
+OK FNT-EA005000-00 <- requesty:mistral/leanstral-1-5 (364s)
