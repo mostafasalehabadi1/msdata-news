@@ -154,3 +154,31 @@ style-soft: در حالی که, lead>35w/1num, text 19 nums
   staged zai:glm-4.7-flash: check cut 1 sentence(s)
   stage6 news: title in 2 calls
 OK SSSE-PTJOOO000-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (627s)
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged ovh:Mistral-Small-3.2-24B-Instruct-2506: check cut 1 sentence(s)
+  ovh:Mistral-Small-3.2-24B-Instruct-2506: quota used up - skipped for an hour
+  SSSE-PTIOOO000-00 ovh:Mistral-Small-3.2-24B-Instruct-2506: 156s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"96858f505c8ecc083f2ba449e99ce960"
+}
+  ovh:Qwen3-Coder-30B-A3B-Instruct: quota used up - skipped for an hour
+  SSSE-PTIOOO000-00 ovh:Qwen3-Coder-30B-A3B-Instruct: 1s QuotaError: HTTP 404: {"error":{"code":"model_not_found","message":"The model `Qwen3-Coder-30B-A3B-Instruct` does not exist.","param":null,"type":"invalid_request_error"}}
+  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 36 words / 3 paragraphs
+  ATSC-MBENN03E-00 zai:glm-4.7-flash: 1001s ValueError: staged: 8 calls, last: 36 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged ovh:Meta-Llama-3_3-70B-Instruct: check cut 1 sentence(s)
+  ovh:Meta-Llama-3_3-70B-Instruct: quota used up - skipped for an hour
+  BSRC-EA005000-00 ovh:Meta-Llama-3_3-70B-Instruct: 60s QuotaError: HTTP 429: {
+  "message":"API rate limit exceeded",
+  "request_id":"b33e5c582242e155256c3372efef8f2d"
+}
+style-soft: lead>35w/1num, text 11 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۹۷
+  ATSC-MBENN03E-00 zai:glm-4.5-flash: 41s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۹۷
+style-soft: در حالی که, lead>35w/1num, text 13 nums
+style-soft: در حالی که, lead>35w/1num, text 13 nums
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 8 calls
+  stage6 news: title in 1 calls
+OK PSM-PTFOOO000-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (506s)
