@@ -1,22 +1,48 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-OANMMSB-00, CHG-GS00101-00, NCI-OAMOOX-00, LOR-LLD22B02P-00, NCI-OANMMSA-00, PPCO-OASTYB-00, KEPE-HDBL3PP-00, TJPC-LSBR1502RWP-00, NCI-OANMMSC-00, HSR-LUSUACB-00, ZNKM-CR018OO-00, ESC-MBEEN03E-00, ALSU-AB6063BC-00, IAC-AB6063BC-00, DRG-GS00101-00, NFK-PTGOOO000-00, PSM-PTFOOO000-00, YAS-PTGOOO000-00, SSSE-PTJOOO000-00, MPC-HDCRP100NPP-603, JPC-HD60507UVPP-00, NMFC-EA005000-00, HAAL-PS10000-00, YAS-EA013000-00, SSSE-EA017000-00, BSRC-EA005000-00, IMID-BARILUMP-00, BSRC-EA007000-00, ATSC-MBNEN03E-00, PSM-PTIOOO000-00, SPSG-MBENN03E-00, LAE-EA015000-00, BSRC-EA009000-00, JBC-EA009000-00, ATSC-MBENN03E-00
-40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  kilo:nvidia/nemotron-3-super-120b-a12b:free: quota used up - skipped for an hour
-  NFST-PTDOOO000-00 kilo:nvidia/nemotron-3-super-120b-a12b:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'nvidia/nemotron-3-super-120b-a12b:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few
-  kilo:poolside/laguna-s-2.1:free: quota used up - skipped for an hour
-  NFST-PTDOOO000-00 kilo:poolside/laguna-s-2.1:free: 0s QuotaError: HTTP 404: {"error":"The requested model 'poolside/laguna-s-2.1:free' does not exist. Please use an exact model id as listed on /api/gateway/models. If this is a newly released model, please try again in a few minutes.","
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+given up for today (failed 2 runs, row unchanged): NCI-OANMMSB-00, CHG-GS00101-00, NCI-OAMOOX-00, JPC-HDCRP100NPP-00, LOR-LLD22B02P-00, NCI-OANMMSA-00, PPCO-OASTYB-00, SHPC-HDCRP100BPP-00, KEPE-HDBL3PP-00, TJPC-LSBR1502RWP-00, NCI-OANMMSC-00, MPC-HDBL3PP-00, HSR-LUSUACB-00, ZNKM-CR018OO-00, ESC-MBEEN03E-00, ALSU-AB6063BC-00, IAC-AB6063BC-00, DRG-GS00101-00, NFK-PTGOOO000-00, PSM-PTFOOO000-00, YAS-PTGOOO000-00, SSSE-PTJOOO000-00, JPC-HDF7000LMPJ-00, MPC-HDCRP100NPP-603, JPC-HD60507UVPP-00, NMFC-EA005000-00, HAAL-PS10000-00, YAS-EA013000-00, KABS-EA003000-00, IORC-GRSUSUB-00, SSSE-EA017000-00, PAM-LD2420FPP-00, JPC-HDBL3PP-00, ILPE-HD5200BPP-00, BSRC-EA005000-00, IMID-BARILUMP-00, BSRC-EA007000-00, ATSC-MBNEN03E-00, PSM-PTIOOO000-00, SPSG-MBENN03E-00, LAE-EA015000-00, BSRC-EA009000-00, JBC-EA009000-00, ATSC-MBENN03E-00
+35 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  BSRC-EA003000-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  ESC-MBEEE03E-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  TABC-MD3840UAPP-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  SSSE-PTIOOO000-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
   staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
   "error": {
     "code": 503,
     "message": "This model is currently experiencing high demand. Spikes in d
-  staged ovh:gpt-oss-120b: check cut 4 sentence(s)
-  LOR-HD6040UVPP-00 ovh:Qwen3.5-397B-A17B: 151s RemoteDisconnected: Remote end closed connection without response
-  SHPC-HDCRP100BPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  JPC-HDF7000LMPJ-00 gemini:gemma-4-26b-a4b-it: 237s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  SSSE-PTHOOO000-00 zai:glm-4.7-flash: 262s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.5-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged zai:glm-4.5-flash: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (6 کلمه؛ ۸ تا ۱۳ | فعل «فروخت» امروز تکرار شده)
-OK SSSE-PTHOOO000-00 <- zai:glm-4.5-flash (56s)
+  BSRC-EA003000-00 kilo:cohere/north-mini-code:free: 16s JSONDecodeError: Expecting ',' delimiter: line 6 column 464 (char 823)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 5 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.7-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 5 calls
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  ESC-MBENE03E-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  ICII-LABLABSAB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  TABC-EPS422FCJ-00 ovh:Qwen3.6-27B: 181s TimeoutError: The read operation timed out
+  LOR-HD6040UVPP-00 gemini:gemma-4-26b-a4b-it: 379s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  FNT-EA007000-00 kilo:kilo-auto/free: 180s TimeoutError: The read operation timed out
+  staged kilo:cohere/north-mini-code:free: check cut 1 sentence(s)
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+style-soft: text 11 nums
+  stage6 news: title in 2 calls
+OK ILPE-HD7000FPP-00 <- zai:glm-4.7-flash (502s)
