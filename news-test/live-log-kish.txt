@@ -1,3 +1,17 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): SGPE-BI6070BEX-00, NFAC-BI6070BEX-00, PPBC-BI6070BEX-00, PQK-BI6070BEX-00, SHCO-PCT1G52.5-JEX-00, AAC-PCT2G42.5-JEX-00, PSP-BI6070BEX-00, WCO-CLINKERT2EX-00, MAJD-PCT2G42.5-L50EX-00, SRFZ-BI6070BEX-00, ATAF-BI6070BEX-00, ESTC-PCT2G32.5-L50EX-00, KGJ-BI6070BEX-00
-0 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+28 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:minimax-m2.7: quota used up - skipped until tomorrow
+  CTM-PCT2G42.5-L50EX-00 llm7:minimax-m2.7: 1s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 423 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":423}}
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  SHCO-PCT1G52.5-JEX-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
+  CTM-PCT2G42.5-L50EX-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Daily token quota exceeded. Retry after 58 seconds.","type":"insufficient_quota","param":null,"code":"quota_exceeded","retry_after":58}}
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  SHCO-PCT1G42.5-JEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 17s JSONDecodeError: Expecting value: line 5 column 11 (char 191)
+style-soft: lead>35w/1num
+  HJC-BI6070BEX-00 cf:@cf/qwen/qwen2.5-coder-32b-instruct: 15s JSONDecodeError: Expecting value: line 6 column 11 (char 340)
+style-soft: lead>35w/1num
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
+  stage6 news: title in 1 calls
+OK FPCO-ACTACGEX-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (40s)
