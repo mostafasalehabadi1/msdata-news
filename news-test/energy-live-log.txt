@@ -19,3 +19,39 @@ given up for today (failed 2 runs, row unchanged): DMTMJCABFC0050903
   DHCPICABEX0050901 gemini:gemma-4-31b-it: 722s JSONDecodeError: Extra data: line 1 column 14 (char 13)
   DHCPICABEX0050901 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
 written 0/1; total in file 0
+energy: 5 settled rows, 3 still changing (wait 20 min unchanged)
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+given up for today (failed 2 runs, row unchanged): DHCPICABEX0050901, DMTMJCABFC0050903
+3 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  DBEZSCABEX0050901 llm7:deepseek-v4-flash:0731: 3s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and b
+  DNBBBCABEX0050904 gemini:gemma-4-26b-a4b-it: 414s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  DBPBBCABEX0050904 gemini:gemma-4-31b-it: 450s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  stage6 news: title in 1 calls
+OK DNBBBCABEX0050904 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (341s)
+  DBEZSCABEX0050901 gemini:gemma-4-31b-it: 378s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  DBEZSCABEX0050901 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: لید بی‌عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
+  stage6 news: title in 1 calls
+OK DBPBBCABEX0050904 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (352s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  DBEZSCABEX0050901 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 267s TimeoutError: The read operation timed out
+written 2/3; total in file 2
