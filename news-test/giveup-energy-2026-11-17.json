@@ -175,13 +175,25 @@
 },
 "DMESBCABEX0050901": {
 "fp": "{\"base_price\": 4082411.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"MTBE|شرکت پتروشیمی شیمی بافت|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 1240.0, \"goods_name\": \"MTBE\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 4900223.0, \"min_price\": 4601369.0, \"offer_volume\": 300.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پتروشیمی شیمی بافت\", \"series_key\": \"MTBE|شرکت پتروشیمی شیمی بافت|داخلی\", \"supplier\": \"شرکت شیمی بافت\", \"symbol\": \"DMESBCABEX0050901\", \"symbol_code\": \"DMESBCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 1389650980000.0, \"total_value_usd\": null, \"trade_count\": 7, \"trade_date\": \"1405/08/26\", \"trade_volume\": 300.0, \"volume_unit\": \"تن\", \"weighted_price\": 4632170.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "gemini:gemma-4-31b-it",
 "at": "12:03",
 "error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
 "run": 1
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "12:41",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "12:58",
+"error": "ValueError: staged: 8 calls, last: 95 words / 2 paragraphs",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: MTBE؛ عرضه‌کننده: شرکت پتروشیمی شیمی بافت.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۲۶ آبان.\n4. شرکت پتروشیمی شیمی بافت ۳۰۰ تن MTBE عرضه کرد و ۳۰۰ تن آن فروش رفت.\n5. خریداران ۱ هزار و ۲۴۰ تن تقاضا ثبت کردند؛ تقاضا ۴٫۱ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۴ میلیون و ۶۳۲ هزار و ۱۷۰ ریال در هر کیلوگرم بود و قیمت پایه ۴ میلیون و ۸۲ هزار و ۴۱۱ ریال در هر کیلوگرم.\n8. رقابت قیمت را ۱۳٫۵ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۷ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۱۳۹ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲۰ آبان با قیمت ۴ میلیون و ۳۴۴ هزار و ۵۵۳ ریال در هر کیلوگرم بود؛ قیمت این بار ۶٫۶ درصد بالاتر است.\n12. این کالا از ۴ شهریور تا امروز ۷ بار از همین عرضه‌کننده معامله شده است.",
@@ -252,13 +264,37 @@
 },
 "DBEZSCABEX0050901": {
 "fp": "{\"base_price\": 2183836.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"بایواتانول|شرکت گسترش سوخت سبز زاگرس|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 576.0, \"goods_name\": \"بایواتانول\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2185000.0, \"min_price\": 2183836.0, \"offer_volume\": 480.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت گسترش سوخت سبز زاگرس\", \"series_key\": \"بایواتانول|شرکت گسترش سوخت سبز زاگرس|داخلی\", \"supplier\": \"شرکت گسترش سوخت سبز زاگرس\", \"symbol\": \"DBEZSCABEX0050901\", \"symbol_code\": \"DBEZSCABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 1048297968000.0, \"total_value_usd\": null, \"trade_count\": 5, \"trade_date\": \"1405/08/26\", \"trade_volume\": 480.0, \"volume_unit\": \"تن\", \"weighted_price\": 2183954.0}",
-"runs": 1,
+"runs": 2,
 "reasons": [
 {
 "model": "llm7:deepseek-v4-flash:0731",
 "at": "11:56",
 "error": "QuotaError: HTTP 402: {\"error\":{\"message\":\"Insufficient balance. Please top up your balance to continue.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_balance\"}}",
 "run": 1
+},
+{
+"model": "kilo:dots-studio/dots-3-note-preview:free",
+"at": "12:37",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "12:50",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+},
+{
+"model": "zai:glm-4.7-flash",
+"at": "12:54",
+"error": "TimeoutError: The read operation timed out",
+"run": 2
+},
+{
+"model": "zai:glm-4.5-flash",
+"at": "12:55",
+"error": "ValueError: staged: 8 calls, last: 107 words / 4 paragraphs",
+"run": 2
 }
 ],
 "facts": "1. نام کالا: بایواتانول؛ عرضه‌کننده: شرکت گسترش سوخت سبز زاگرس.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۲۶ آبان.\n4. شرکت گسترش سوخت سبز زاگرس ۴۸۰ تن بایواتانول عرضه کرد و ۴۸۰ تن آن فروش رفت.\n5. خریداران ۵۷۶ تن تقاضا ثبت کردند.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۲ میلیون و ۱۸۳ هزار و ۹۵۴ ریال در هر کیلوگرم بود و قیمت پایه ۲ میلیون و ۱۸۳ هزار و ۸۳۶ ریال در هر کیلوگرم.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۵ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۱۰۵ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲۰ آبان با قیمت ۲ میلیون و ۱۸۳ هزار و ۸۳۶ ریال در هر کیلوگرم بود؛ قیمت تغییری نکرد.\n12. این کالا از ۱۰ شهریور تا امروز ۱۲ بار از همین عرضه‌کننده معامله شده است.",
@@ -403,6 +439,208 @@
 [
 "قیمت معامله (ریال در هر کیلوگرم)",
 "۵۸۴ هزار و ۱۶۱"
+],
+[
+"بازار",
+"رینگ داخلی"
+]
+]
+}
+}
+},
+"ICSTZCABEX0050904": {
+"fp": "{\"base_price\": 1150.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی|شرکت پتروشیمی تبریز|بین الملل\", \"contract_type\": \"نقدی\", \"demand_volume\": 900.0, \"goods_name\": \"برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی\", \"is_premium\": false, \"is_usd\": true, \"max_price\": 1173.0, \"min_price\": 1171.26, \"offer_volume\": 300.0, \"offers\": 1, \"price_unit\": \"دلار(مرکز مبادله- مطابق مکانیزم مصوب هیئت مدیره بورس انرژی ایران)\", \"producer\": \"شرکت پتروشیمی تبریز\", \"series_key\": \"برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی|شرکت پتروشیمی تبریز|بین الملل\", \"supplier\": \"شرکت پتروشیمی تبریز\", \"symbol\": \"ICSTZCABEX0050904\", \"symbol_code\": \"ICSTZCABEX0\", \"target_market\": \"بین الملل\", \"total_value_rial\": 673774257163.5, \"total_value_usd\": 351639.00000000006, \"trade_count\": 2, \"trade_date\": \"1405/08/26\", \"trade_volume\": 300.0, \"volume_unit\": \"تن\", \"weighted_price\": 1172.13}",
+"runs": 2,
+"reasons": [
+{
+"model": "groq:openai/gpt-oss-120b",
+"at": "12:35",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198913, Requested 5576. Please try again in 32m19.248s. Need more tokens? Upgrade to Dev Tier today ",
+"run": 1
+},
+{
+"model": "groq:openai/gpt-oss-20b",
+"at": "12:35",
+"error": "QuotaError: HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196863, Requested 5605. Please try again in 17m46.175999999s. Need more tokens? Upgrade to Dev Tier t",
+"run": 1
+},
+{
+"model": "zai:glm-4.7-flash",
+"at": "12:40",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "zai:glm-4.5-flash",
+"at": "12:41",
+"error": "ValueError: staged: 8 calls, last: 99 words / 4 paragraphs",
+"run": 1
+},
+{
+"model": "kilo:nvidia/nemotron-3-ultra-550b-a55b:free",
+"at": "12:49",
+"error": "ValueError: staged: 8 calls, last: 109 words / 3 paragraphs",
+"run": 1
+},
+{
+"model": "ovh:Qwen3.5-397B-A17B",
+"at": "12:52",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "gemini:gemma-4-26b-a4b-it",
+"at": "13:17",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 2
+}
+],
+"facts": "1. نام کالا: برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی؛ عرضه‌کننده: شرکت پتروشیمی تبریز.\n2. بازار: رینگ بین‌الملل بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۲۶ آبان.\n4. شرکت پتروشیمی تبریز ۳۰۰ تن برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی عرضه کرد و ۳۰۰ تن آن فروش رفت.\n5. خریداران ۹۰۰ تن تقاضا ثبت کردند؛ تقاضا ۳ برابر عرضه بود.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۱ هزار و ۱۷۲ دلار در هر تن بود و قیمت پایه ۱ هزار و ۱۵۰ دلار در هر تن.\n8. رقابت قیمت را ۱٫۹ درصد بالاتر از قیمت پایه برد.\n9. این حجم در ۲ معامله فروخته شد.\n10. ارزش این معامله ۳۵۱ هزار و ۶۳۹ دلار بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۲۰ آبان با قیمت ۱ هزار و ۱۵۰ دلار در هر تن بود؛ قیمت این بار ۱٫۹ درصد بالاتر است.\n12. این کالا از ۹ شهریور تا امروز ۷ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی در معامله‌های اخیر (دلار در هر تن)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۳۱ شهریور",
+"۲ هزار و ۲۶۴"
+],
+[
+"۱۴ مهر",
+"۲ هزار و ۱۷۴"
+],
+[
+"۲۱ مهر",
+"۱ هزار و ۹۷۴"
+],
+[
+"۱۹ آبان",
+"۱ هزار و ۱۵۰"
+],
+[
+"۲۰ آبان",
+"۱ هزار و ۱۵۰"
+],
+[
+"۲۶ آبان",
+"۱ هزار و ۱۷۲"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی برش هیدروکربنی C7-C9 حاصل از پالایشگاه نفت، گاز و پتروشیمی شرکت پتروشیمی تبریز",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۳۰۰"
+],
+[
+"فروش (تن)",
+"۳۰۰"
+],
+[
+"قیمت پایه (دلار در هر تن)",
+"۱ هزار و ۱۵۰"
+],
+[
+"قیمت معامله (دلار در هر تن)",
+"۱ هزار و ۱۷۲"
+],
+[
+"بازار",
+"رینگ بین‌الملل"
+]
+]
+}
+}
+},
+"DBLBACABEX0050901": {
+"fp": "{\"base_price\": 2064220.0, \"board_name\": \"سایر حامل های انرژی\", \"commodity_key\": \"بلندینگ نفتا|شرکت پالایش نفت بندرعباس|داخلی\", \"contract_type\": \"نقدی\", \"demand_volume\": 5550.0, \"goods_name\": \"بلندینگ نفتا\", \"is_premium\": false, \"is_usd\": false, \"max_price\": 2064220.0, \"min_price\": 2064220.0, \"offer_volume\": 5000.0, \"offers\": 1, \"price_unit\": \"ریال\", \"producer\": \"شرکت پالایش نفت بندرعباس\", \"series_key\": \"بلندینگ نفتا|شرکت پالایش نفت بندرعباس|داخلی\", \"supplier\": \"شرکت پالایش نفت بندرعباس\", \"symbol\": \"DBLBACABEX0050901\", \"symbol_code\": \"DBLBACABEX0\", \"target_market\": \"داخلی\", \"total_value_rial\": 10321100000000.0, \"total_value_usd\": null, \"trade_count\": 2, \"trade_date\": \"1405/08/26\", \"trade_volume\": 5000.0, \"volume_unit\": \"تن\", \"weighted_price\": 2064220.0}",
+"runs": 1,
+"reasons": [
+{
+"model": "gemini:gemma-4-31b-it",
+"at": "13:42",
+"error": "JSONDecodeError: Expecting value: line 1 column 10 (char 9)",
+"run": 1
+},
+{
+"model": "zai:glm-4.7-flash",
+"at": "14:04",
+"error": "TimeoutError: The read operation timed out",
+"run": 1
+},
+{
+"model": "zai:glm-4.5-flash",
+"at": "14:05",
+"error": "JSONDecodeError: Expecting value: line 6 column 10 (char 301)",
+"run": 1
+}
+],
+"facts": "1. نام کالا: بلندینگ نفتا؛ عرضه‌کننده: شرکت پالایش نفت بندرعباس.\n2. بازار: رینگ داخلی بورس انرژی ایران؛ نوع قرارداد: نقدی.\n3. روز معامله: سه‌شنبه ۲۶ آبان.\n4. شرکت پالایش نفت بندرعباس ۵ هزار تن بلندینگ نفتا عرضه کرد و ۵ هزار تن آن فروش رفت.\n5. خریداران ۵ هزار و ۵۵۰ تن تقاضا ثبت کردند.\n6. همه‌ی عرضه فروش رفت.\n7. قیمت میانگین معامله ۲ میلیون و ۶۴ هزار و ۲۲۰ ریال در هر کیلوگرم بود و قیمت پایه ۲ میلیون و ۶۴ هزار و ۲۲۰ ریال در هر کیلوگرم.\n8. قیمت با قیمت پایه برابر بود.\n9. این حجم در ۲ معامله فروخته شد.\n10. ارزش ریالی این معامله حدود ۱ هزار و ۳۲ میلیارد تومان بود.\n11. معامله‌ی قبلی همین کالا از همین عرضه‌کننده ۱۷ آبان با قیمت ۲ میلیون و ۶۴ هزار و ۲۲۰ ریال در هر کیلوگرم بود؛ قیمت تغییری نکرد.\n12. این کالا از ۲۱ شهریور تا امروز ۵ بار از همین عرضه‌کننده معامله شده است.",
+"tables": {
+"T1": {
+"title": "قیمت بلندینگ نفتا در معامله‌های اخیر (ریال در هر کیلوگرم)",
+"columns": [
+"تاریخ",
+"قیمت"
+],
+"rows": [
+[
+"۲۱ شهریور",
+"۱ میلیون و ۶۸۳ هزار و ۳۷"
+],
+[
+"۲۳ شهریور",
+"۱ میلیون و ۶۸۳ هزار و ۳۷"
+],
+[
+"۳۱ شهریور",
+"۱ میلیون و ۸۸۱ هزار و ۹۰۸"
+],
+[
+"۲۷ مهر",
+"۲ میلیون و ۷۳ هزار و ۴۵۴"
+],
+[
+"۱۷ آبان",
+"۲ میلیون و ۶۴ هزار و ۲۲۰"
+],
+[
+"۲۶ آبان",
+"۲ میلیون و ۶۴ هزار و ۲۲۰"
+]
+]
+},
+"T2": {
+"title": "معامله‌ی بلندینگ نفتا شرکت پالایش نفت بندرعباس",
+"columns": [
+"شاخص",
+"مقدار"
+],
+"rows": [
+[
+"عرضه (تن)",
+"۵ هزار"
+],
+[
+"فروش (تن)",
+"۵ هزار"
+],
+[
+"قیمت پایه (ریال در هر کیلوگرم)",
+"۲ میلیون و ۶۴ هزار و ۲۲۰"
+],
+[
+"قیمت معامله (ریال در هر کیلوگرم)",
+"۲ میلیون و ۶۴ هزار و ۲۲۰"
 ],
 [
 "بازار",
