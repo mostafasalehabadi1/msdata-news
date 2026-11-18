@@ -61,6 +61,11 @@ def main():
         # a news rewritten after its data changed (write_free row_fp) replaces the released one
         cands += [(name, i) for i in q["items"] if (i["symbol"] not in out or (i.get("row_fp") and out[i["symbol"]].get("row_fp") != i["row_fp"]))
                   and fits(name, i, q)]
+    # 1405/08/28 (owner): every news goes through the newsroom panel; while data/panel_gate exists the panel's
+    # publish pace writes news/ itself, so this drip (and the kish/energy one-shot) stays off. Reports and edits still run here.
+    gate = os.path.exists(os.path.join(ROOT, "data", "panel_gate"))
+    if gate:
+        cands = []
     cands.sort(key=lambda c: (imp.get(c[1]["symbol"], {}).get("tier", 1), -imp.get(c[1]["symbol"], {}).get("value", 0)))
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     touched = set()
@@ -77,8 +82,9 @@ def main():
         npath, n = days[name]
         json.dump(n, open(npath, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"released {len(released)}: {', '.join(released)}")
-    release_kish()
-    release_kish("energy")  # Iran Energy Exchange (owner 1405-07-16): same one-shot release as Kish
+    if not gate:
+        release_kish()
+        release_kish("energy")  # Iran Energy Exchange (owner 1405-07-16): same one-shot release as Kish
     apply_edits()
     apply_edits(os.path.join(ROOT, "edits", "kish"), os.path.join(N, "kish"))
     apply_edits(os.path.join(ROOT, "edits", "energy"), os.path.join(N, "energy"))
