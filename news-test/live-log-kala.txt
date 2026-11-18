@@ -1,36 +1,19 @@
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-SUACB-00, SPC-UREAGRL-00, ICII-LABB-00, SHPC-OAEHB-00, KHP-UREAPL-00, ARCO-CASOALB-00, PPCO-OASTYB-00, KHP-MCJ-00, KRPT-UREAGRL-00, JPC-HDCRP100NPP-00, SHPC-HDCRP100BPP-00, ILPE-HD7000FPP-00, HSR-LUSUACB-00, SHPC-TEAKG-00, JPC-HD7000FPP-00, PAGL-MEGB-00, TIOC-SW40B-00
+given up for today (failed 2 runs, row unchanged): NCI-SUACB-00, NCI-CR08AB-00, SPC-UREAGRL-00, HSTC-SSG09XROA-00, SSC-MREEEEA3B-00, OSC-HS00000-00, KSCO-MREEEEA3B-00, ICII-LABB-00, SJS-MREEEEA3B-00, AJSC-SSG09XROA-00, SHPC-OAEHB-00, KHP-UREAPL-00, ARCO-CASOALB-00, PPCO-OASTYB-00, KHP-MCJ-00, DAP-PPHP520HJ-00, KRPT-UREAGRL-00, IPC-XYLENEMIXB-00, JPC-HDCRP100NPP-00, EPC-XYLENEMIXB-00, TJPC-LSBR1502RWP-00, MPC-PPHP525JPP-00, SHPC-HDCRP100BPP-00, ILPE-HD7000FPP-00, HSR-LUSUACB-00, SHPC-TEAKG-00, JPC-HD7000FPP-00, PAGL-MEGB-00, TIOC-SW40B-00
 40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  HSTC-SSG09XROA-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  DAP-PPHP520HJ-00 zai:glm-4.7-flash: 180s TimeoutError: The read operation timed out
-  JPPC-PPRP120LPP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۶۰
-  DAP-PPHP520HJ-00 zai:glm-4.5-flash: 43s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۶۰
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  EPC-XYLENEMIXB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  NCI-CR08AB-00 gemini:gemma-4-31b-it: 416s JSONDecodeError: Extra data: line 1 column 12 (char 11)
-  TJPC-LSBR1502RWP-00 zai:glm-4.7-flash: 196s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.5-flash: draft dropped after 9 calls: 113 words / 4 paragraphs
-  TJPC-LSBR1502RWP-00 zai:glm-4.5-flash: 55s ValueError: staged: 9 calls, last: 113 words / 4 paragraphs
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 95 words / 3 paragraphs
-  IPC-XYLENEMIXB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 488s ValueError: staged: 8 calls, last: 95 words / 3 paragraphs
-  SSC-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 354s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+style-soft: lead>35w/1num, text 15 nums
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  MPC-PPHP525JPP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  JPPC-PPRP120LPP-00 zai:glm-4.7-flash: 180s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 15 nums
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: «۳۰۰ تن» با فعل فروش آمده ولی فروش ۴۰۰ تن است
+  MPC-DEGB-00 zai:glm-4.7-flash: 142s ValueError: staged: 8 calls, last: «۳۰۰ تن» با فعل فروش آمده ولی فروش ۴۰۰ تن است
   staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.5-flash: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.5-flash: accepted after 6 calls
-  stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳ | عدد بیرون از متن: ۱۱ | فعل «فروخت» امروز تکرار شده)
-OK JPPC-PPRP120LPP-00 <- zai:glm-4.5-flash (46s)
+style-soft: lead>35w/1num, text 16 nums
+  staged kilo:dots-studio/dots-3-note-preview:free: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 4 calls
+  PAGL-DEGB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+style-soft: lead>35w/1num, text 12 nums
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۳، ۳۶۸
+  MPC-DEGB-00 zai:glm-4.5-flash: 45s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۳، ۳۶۸
+  stage6 news: kept stage-5 title after 3 calls (فعل «کرد» امروز تکرار شده)
+OK KAS-HS00000-00 <- kilo:dots-studio/dots-3-note-preview:free (229s)
