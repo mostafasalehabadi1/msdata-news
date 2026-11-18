@@ -118,3 +118,28 @@ style-soft: lead>35w/1num, text 9 nums
   staged zai:glm-4.5-flash: accepted after 7 calls
   stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳)
 OK SHPC-OAVAMB-00 <- zai:glm-4.5-flash (293s)
+style-soft: lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۳۶، ۳۶۸، ۴۶۶
+  PAGL-DEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 535s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۳۶، ۳۶۸، ۴۶۶
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 2 sentence(s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+style-soft: در حالی که, text 10 nums
+  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+style-soft: در حالی که, text 24 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: نام کالا در تیتر باید «پلی اتیلن» باشد | متن 19 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 8 calls
+style-soft: lead>35w/1num, text 13 nums
+  staged zai:glm-4.7-flash: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.7-flash: accepted after 7 calls
+  stage6 news: title in 2 calls
+OK JPC-HD52518PP-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (502s)
