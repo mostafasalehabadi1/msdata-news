@@ -54,3 +54,20 @@ style-soft: lead>35w/1num
   staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
   stage6 news: title in 1 calls
 OK KSA-BI6070BEX-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (510s)
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  BEHD-DSMLABSAEX-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
+  HGC-PCT1G32.5-JEX-00 groq:openai/gpt-oss-20b: 134s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 193765, Requested 728
+  SGPE-BI6070BEX-00 gemini:gemma-4-31b-it: 613s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num
+  staged kilo:kilo-auto/free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۲۲۰۰
+  LCC-PCT1G42.5-BEX-00 kilo:kilo-auto/free: 616s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۲۲۰۰
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  staged kilo:cohere/north-mini-code:free: check cut 2 sentence(s)
+  stage6 news: title in 2 calls
+OK KGJ-BI6070BEX-00 <- ovh:Qwen3.6-27B (627s)
