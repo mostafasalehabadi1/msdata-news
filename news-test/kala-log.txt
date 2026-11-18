@@ -1,736 +1,84 @@
 kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 24 settled rows, 60 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-24 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
-  ICII-LABB-00 llm7:deepseek-v4-flash:0731: 2s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged gemini:gemma-4-26b-a4b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  SHPC-OAEHB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  SPC-UREAGRL-00 gemini:gemma-4-31b-it: 354s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  MPC-MEGB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  NFAC-BIPG6422B-00 gemini:gemma-4-26b-a4b-it: 429s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  SHPC-OAVAMB-00 kilo:dots-studio/dots-3-note-preview:free: 369s TimeoutError: The read operation timed out
-  staged openrouter:google/gemma-4-31b-it:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 8 calls: 85 words / 3 paragraphs
-  RGAD-BIMC250B-00 openrouter:google/gemma-4-31b-it:free: 1073s ValueError: staged: 8 calls, last: 85 words / 3 paragraphs
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 8 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 83 words / 3 paragraphs
-  NFAC-BIPG6422B-00 zai:glm-4.7-flash: 944s ValueError: staged: 8 calls, last: 83 words / 3 paragraphs
-style-soft: ام‌اس‌دیتا!=1
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: ام‌اس‌دیتا!=1
-  staged gemini:gemma-4-31b-it: draft dropped after 7 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 92 words / 3 paragraphs
-  NFAC-BIPG6422B-00 zai:glm-4.5-flash: 84s ValueError: staged: 8 calls, last: 92 words / 3 paragraphs
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: soft: 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
-  staged gemini:gemma-4-31b-it: draft dropped after 8 calls: markers: «نشان می‌دهد» در text
-  KHP-UREAPL-00 gemini:gemma-4-31b-it: 1284s ValueError: staged: 8 calls, last: markers: «نشان می‌دهد» در text
-  NFAC-BIPG6422B-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۲۶ | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
-OK RGAD-BIMC250B-00 <- openrouter:nvidia/nemotron-3-ultra-550b-a55b:free (609s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 22 settled rows, 113 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-21 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  ICII-LABB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  NFAC-BIPG6422B-00 gemini:gemma-4-26b-a4b-it: 314s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  SHPC-OAEHB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  NFAC-BIPG6422B-00 zai:glm-4.7-flash: 180s TimeoutError: The read operation timed out
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  KHP-UREAPL-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: «۵۰۰ تن» با فعل فروش آمده ولی فروش ۴۰۰ تن است | «۵۰۰ تن» با فعل فروش آمده ولی فروش ۴۰۰ تن است
-  NFAC-BIPG6422B-00 zai:glm-4.5-flash: 78s ValueError: staged: 8 calls, last: «۵۰۰ تن» با فعل فروش آمده ولی فروش ۴۰۰ تن است | «۵۰۰ تن» با فعل فروش آمده ولی فروش ۴۰۰ تن است
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged openrouter:google/gemma-4-31b-it:free: call 2 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged openrouter:google/gemma-4-31b-it:free: call 3 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: draft dropped after 3 calls: 66 words / 3 paragraphs
-  staged openrouter:google/gemma-4-31b-it:free: call 4 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 5 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  NFAC-BIPG6422B-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 347s TimeoutError: The read operation timed out
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 18 nums
-  staged openrouter:google/gemma-4-31b-it:free: call 6 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-style-soft: lead>35w/1num, text 15 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
-  stage6 news: title in 3 calls
-OK NFAC-BIPG6422B-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (53s)
-  staged openrouter:google/gemma-4-31b-it:free: call 7 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  staged openrouter:google/gemma-4-31b-it:free: call 8 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
-  SHPC-MEAFG-00 openrouter:google/gemma-4-31b-it:free: 1120s ValueError: staged: 8 calls, last: no JSON: 
-  staged openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-style-soft: text 9 nums
-  staged gemini:gemma-4-31b-it: call 8 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged gemini:gemma-4-31b-it: call 8 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: quota used up - skipped until tomorrow
-  SHPC-MEAFG-00 openrouter:nvidia/nemotron-3-ultra-550b-a55b:free: 281s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
-  openrouter:google/gemma-4-26b-a4b-it:free: quota used up - skipped until tomorrow
-  SHPC-MEAFG-00 openrouter:google/gemma-4-26b-a4b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
-  openrouter:inclusionai/ling-3.2-flash:free: quota used up - skipped until tomorrow
-  SHPC-MEAFG-00 openrouter:inclusionai/ling-3.2-flash:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
-  openrouter:baidu/ernie-5.5-flash-preview:free: quota used up - skipped until tomorrow
-  SHPC-MEAFG-00 openrouter:baidu/ernie-5.5-flash-preview:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged gemini:gemma-4-31b-it: draft dropped after 7 calls: 114 words / 4 paragraphs
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged gemini:gemma-4-31b-it: draft dropped after 8 calls: 87 words / 3 paragraphs
-  SPC-UREAGRL-00 gemini:gemma-4-31b-it: 1590s ValueError: staged: 8 calls, last: 87 words / 3 paragraphs
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 2 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 3 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 4 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 5 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 6 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 7 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 8 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  SHPC-MEAFG-00 openrouter:thinkingmachines/inkling-2-small:free: 361s ValueError: staged: 8 calls, last: no JSON: 
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 22 settled rows, 113 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): SPC-UREAGRL-00, ICII-LABB-00, SHPC-OAEHB-00, KHP-UREAPL-00, KRPT-UREAGRL-00
-15 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  PAGL-DEGB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SHPC-MEAFG-00 gemini:gemma-4-26b-a4b-it: 223s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  JPC-HDCRP100NPP-00 gemini:gemma-4-31b-it: 248s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  SHPC-HDCRP100BPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 2 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 3 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: soft: متن 12 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: lead>35w/1num, text 11 nums
-  staged zai:glm-4.7-flash: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 6 calls
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 2 sentence(s)
-  stage6 news: title in 1 calls
-OK SHPC-MEAFG-00 <- zai:glm-4.7-flash (391s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  HSR-LUSUACB-00 kilo:dots-studio/dots-3-note-preview:free: 606s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged gemini:gemma-4-31b-it: call 5 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 26 settled rows, 109 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): SPC-UREAGRL-00, ICII-LABB-00, SHPC-OAEHB-00, KHP-UREAPL-00, KRPT-UREAGRL-00
-18 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  openrouter:google/gemma-4-31b-it:free: quota used up - skipped until tomorrow
-  TIOC-SW40B-00 openrouter:google/gemma-4-31b-it:free: 0s QuotaError: HTTP 429: {"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day: https://openrouter.ai/settings/credits?utm_source=api&utm_campaign=free_daily_limit","co
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  JPC-HDCRP100NPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 2 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  SHPC-OAVAMB-00 gemini:gemma-4-31b-it: 234s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 3 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 4 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 5 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 6 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 7 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 8 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  TIOC-SW40B-00 openrouter:thinkingmachines/inkling-2-small:free: 361s ValueError: staged: 8 calls, last: no JSON: 
-  KPC-OAPMDIB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  SHPC-HDCRP100BPP-00 gemini:gemma-4-31b-it: 215s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  SHPC-TEAKG-00 gemini:gemma-4-26b-a4b-it: 470s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  ILPE-HD7000FPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SHPC-TEAKG-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 7 calls: 102 words / 3 paragraphs
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 49 words / 2 paragraphs
-  SHPC-TEAKG-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 65s ValueError: staged: 8 calls, last: 49 words / 2 paragraphs
-  HSR-LUSUACB-00 gemini:gemma-4-31b-it: 337s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-style-soft: lead>35w/1num
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
-  stage6 news: title in 2 calls
-OK MRV-MEGB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (27s)
-  TIOC-SW40B-00 zai:glm-4.7-flash: 470s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 10 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 9 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 9 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK SHPC-DEAB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (28s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 17 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: نام تولیدکننده («پتروشیمی جم») در خبر نیست؛ خبر باید درباره‌ی همین کالا و همین تولیدکننده باشد
-  JPC-HD52518PP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 19s ValueError: staged: 8 calls, last: نام تولیدکننده («پتروشیمی جم») در خبر نیست؛ خبر باید درباره‌ی همین کالا و همین تولیدکننده باشد
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 10 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: markers: نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
-  HSR-LUSUFEB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 21s ValueError: staged: 8 calls, last: markers: نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
-style-soft: lead>35w/1num, text 15 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 14 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «رساند» امروز تکرار شده)
-OK SHPC-TEAB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (42s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 119 words / 4 paragraphs
-  TIOC-SW40B-00 zai:glm-4.5-flash: 129s ValueError: staged: 8 calls, last: 119 words / 4 paragraphs
-  PGIL-LUSUACB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-style-soft: text 11 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-  ASPC-HDHFI5110WP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 23s ValueError: repeated subtitle
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-style-soft: lead>35w/1num
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK TIOC-PDATARB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (32s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 110 words / 3 paragraphs
-  JPC-HDCRP100NPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 18s ValueError: staged: 8 calls, last: 110 words / 3 paragraphs
-style-soft: lead>35w/1num, text 9 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 9 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۹ | فعل «فروخت» امروز تکرار شده)
-  SHPC-OAVAMB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 28s ValueError: repeated subtitle
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-style-soft: text 11 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۷۸، ۴۹
-  SHPC-TEAKG-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 387s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۷۸، ۴۹
-style-soft: lead>35w/1num, text 11 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۳۲ | فعل «شد» امروز تکرار شده)
-OK KPC-OAPMDIB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (38s)
-  ILPE-HD7000FPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 5s JSONDecodeError: Expecting value: line 7 column 1 (char 304)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 109 words / 4 paragraphs
-  HSR-LUSUACB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 19s ValueError: staged: 8 calls, last: 109 words / 4 paragraphs
-  PAGL-MEGB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-style-soft: lead>35w/1num
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK PGIL-LUSUACB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (28s)
-  PAGL-MEGB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 5s JSONDecodeError: Invalid \escape: line 7 column 40 (char 347)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 17 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 15 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 16 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 14 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-style-soft: lead>35w/1num, text 15 nums
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 13 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 9 calls: 119 words after fixes
-  TIOC-SW40B-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 35s ValueError: staged: 9 calls, last: 119 words after fixes
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  JPC-HD7000FPP-00 zai:glm-4.7-flash: 612s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 109 words / 4 paragraphs
-  SHPC-HDCRP100BPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 529s ValueError: staged: 8 calls, last: 109 words / 4 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 43 settled rows, 92 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): SPC-UREAGRL-00, ICII-LABB-00, SHPC-OAEHB-00, KHP-UREAPL-00, KRPT-UREAGRL-00, JPC-HDCRP100NPP-00, SHPC-HDCRP100BPP-00, ILPE-HD7000FPP-00, HSR-LUSUACB-00
-25 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
-  SHPC-OAVAMB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (75b7e091-2f1e-4241-
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged kilo:dots-studio/dots-3-note-preview:free: call 1 failed: bad response: '{"id":"gen-1795011619-6aARAZCPM30bxllptXis","error":{"message":"JSON error injected into SSE stream","cod
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged kilo:dots-studio/dots-3-note-preview:free: call 1 failed: bad response: '{"id":"gen-1795011654-ynhyQRDxbT9KUtqcignm","error":{"message":"JSON error injected into SSE stream","cod
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged kilo:dots-studio/dots-3-note-preview:free: call 1 failed: bad response: '{"id":"gen-1795011690-OZmc6827ts5nJn67AJks","error":{"message":"JSON error injected into SSE stream","cod
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged groq:openai/gpt-oss-120b: call 4 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  JPC-HD52518PP-00 zai:glm-4.7-flash: 180s TimeoutError: The read operation timed out
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  PAGL-DEGB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 2 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 3 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 102 words / 3 paragraphs
-  JPC-HD52518PP-00 zai:glm-4.5-flash: 64s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 4 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 5 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  NCI-SUACB-00 gemini:gemma-4-31b-it: 300s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 6 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 7 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 8 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged groq:openai/gpt-oss-120b: call 5 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  HWI-PTACJ-000 gemini:gemma-4-26b-a4b-it: 360s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  SHPC-TEAKG-00 openrouter:thinkingmachines/inkling-2-small:free: 361s ValueError: staged: 8 calls, last: no JSON: 
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged groq:openai/gpt-oss-120b: call 6 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  FPCO-ACTACB-00 kilo:dots-studio/dots-3-note-preview:free: 379s TimeoutError: The read operation timed out
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged groq:openai/gpt-oss-120b: call 7 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  ASPC-HDHFI5110WP-00 ovh:Qwen3.5-397B-A17B: 212s TimeoutError: The read operation timed out
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged zai:glm-4.7-flash: check cut 5 sentence(s)
-  staged groq:openai/gpt-oss-120b: call 8 failed: HTTP 413: {"error":{"message":"Request too large for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  TIOC-SW40B-00 groq:openai/gpt-oss-120b: 436s ValueError: staged: 8 calls, last: no JSON: 
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 117 words / 3 paragraphs
-  JPC-HD7000FPP-00 zai:glm-4.7-flash: 198s ValueError: staged: 8 calls, last: 117 words / 3 paragraphs
-style-soft: ام‌اس‌دیتا!=1, text 11 nums
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged groq:openai/gpt-oss-20b: call 3 failed: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28
-style-soft: lead>35w/1num
-style-soft: text 10 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: لید بی‌عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 7 calls
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-style-soft: lead>35w/1num
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست | «۵۷۲ تن» با فعل فروش آمده ولی فروش ۴۴ تن است
-  JPC-HD7000FPP-00 zai:glm-4.5-flash: 106s ValueError: staged: 8 calls, last: «بالاترین» در حقیقت‌ها نیست | «پایین‌ترین» در حقیقت‌ها نیست | «۵۷۲ تن» با فعل فروش آمده ولی فروش ۴۴ تن است
-  PPCO-OASTYB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 1 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  PAGL-MEGB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 2 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 3 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  stage6 news: title in 1 calls
-OK HSR-LUSUFEB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (622s)
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 4 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 5 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 6 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 7 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  staged openrouter:thinkingmachines/inkling-2-small:free: call 8 failed: HTTP 403: {"error":{"message":"thinkingmachines/inkling-2-small:free is only available on agentic harnesses. Try pluggin
-  SHPC-TEAKG-00 gemini:gemma-4-26b-a4b-it: 361s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  HWI-PTACJ-000 openrouter:thinkingmachines/inkling-2-small:free: 361s ValueError: staged: 8 calls, last: no JSON: 
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  KHP-MCJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  TIOC-SW40B-00 groq:openai/gpt-oss-20b: 332s ValueError: staged: 8 calls, last: no JSON: 
-  groq:openai/gpt-oss-120b: quota used up - skipped until tomorrow
-  SHPC-TEAKG-00 groq:openai/gpt-oss-120b: 30s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 196292, Requested 60
-  groq:openai/gpt-oss-20b: quota used up - skipped until tomorrow
-  SHPC-TEAKG-00 groq:openai/gpt-oss-20b: 3s QuotaError: HTTP 429: {"error":{"message":"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m3qj2vrvebtbyp28w6bbnkqn` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199838, Requested 618
-style-soft: lead>35w/1num, text 9 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: markers: «نشان داد» در text
-  SHPC-OAVAMB-00 zai:glm-4.7-flash: 261s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: lead>35w/1num, text 9 nums
-  staged zai:glm-4.5-flash: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.5-flash: accepted after 7 calls
-  stage6 news: kept stage-5 title after 3 calls (7 کلمه؛ ۸ تا ۱۳)
-OK SHPC-OAVAMB-00 <- zai:glm-4.5-flash (293s)
-style-soft: lead>35w/1num
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۳۶، ۳۶۸، ۴۶۶
-  PAGL-DEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 535s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۳۶، ۳۶۸، ۴۶۶
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: در حالی که, text 10 nums
-  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: در حالی که, text 24 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: نام کالا در تیتر باید «پلی اتیلن» باشد | متن 19 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد | لید بی‌عدد
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 8 calls
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.7-flash: soft: تیتر 14 کلمه است؛ ۸ تا ۱۳ کلمه بنویس | متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 7 calls
-  stage6 news: title in 2 calls
-OK JPC-HD52518PP-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (502s)
-  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK ASPC-HDHFI5110WP-00 <- zai:glm-4.7-flash (610s)
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 45 settled rows, 90 wait for the next data build
+kala: 135 settled rows, 0 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 given up for today (failed 2 runs, row unchanged): SPC-UREAGRL-00, ICII-LABB-00, SHPC-OAEHB-00, KHP-UREAPL-00, KRPT-UREAGRL-00, JPC-HDCRP100NPP-00, SHPC-HDCRP100BPP-00, ILPE-HD7000FPP-00, HSR-LUSUACB-00, SHPC-TEAKG-00, JPC-HD7000FPP-00, PAGL-MEGB-00, TIOC-SW40B-00
-19 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged gemini:gemma-4-26b-a4b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  PAGL-DEGB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged kilo:dots-studio/dots-3-note-preview:free: call 3 failed: bad response: '{"id":"gen-1795013652-71SoAk64YYJ1WaeavkCa","error":{"message":"JSON error injected into SSE stream","cod
-  staged kilo:dots-studio/dots-3-note-preview:free: call 3 failed: bad response: '{"id":"gen-1795013688-F7eJxLxqQOJXjDwDAziu","error":{"message":"JSON error injected into SSE stream","cod
-  staged kilo:dots-studio/dots-3-note-preview:free: call 3 failed: bad response: '{"id":"gen-1795013723-4yLfom2sG8OIj3QhVfga","error":{"message":"JSON error injected into SSE stream","cod
-  staged kilo:dots-studio/dots-3-note-preview:free: accepted after 3 calls
-  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
-OK FPCO-ACTACB-00 <- kilo:dots-studio/dots-3-note-preview:free (347s)
-  PAGL-DEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  NCI-SUACB-00 gemini:gemma-4-31b-it: 400s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-style-soft: lead>35w/1num
-  staged zai:glm-4.7-flash: soft: متن 7 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: accepted after 6 calls
-  ARCO-CASOALB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.7-flash: call 7 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  HWI-PTACJ-000 gemini:gemma-4-26b-a4b-it: 649s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  KHP-MCJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده)
-OK MPC-MEGB-00 <- zai:glm-4.7-flash (805s)
-  HWI-PTACJ-000 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  PPCO-OASTYB-00 gemini:gemma-4-31b-it: 462s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  DAP-PPHP520HJ-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  JPPC-PPRP120LPP-00 gemini:gemma-4-31b-it: 196s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  IPC-XYLENEMIXB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-style-soft: lead>35w/1num, text 13 nums
-  staged zai:glm-4.7-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
-  staged zai:glm-4.7-flash: accepted after 6 calls
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 102 words / 3 paragraphs
-  HWI-PTACJ-000 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 534s ValueError: staged: 8 calls, last: 102 words / 3 paragraphs
-  SHPC-MEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  PAGL-DEGB-00 zai:glm-4.7-flash: 845s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 45 settled rows, 90 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-SUACB-00, SPC-UREAGRL-00, ICII-LABB-00, SHPC-OAEHB-00, KHP-UREAPL-00, ARCO-CASOALB-00, PPCO-OASTYB-00, KHP-MCJ-00, KRPT-UREAGRL-00, JPC-HDCRP100NPP-00, PAGL-DEGB-00, SHPC-HDCRP100BPP-00, ILPE-HD7000FPP-00, HSR-LUSUACB-00, HWI-PTACJ-000, SHPC-TEAKG-00, JPC-HD7000FPP-00, PAGL-MEGB-00, TIOC-SW40B-00
-11 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  JPPC-PPRP120LPP-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  IPC-XYLENEMIXB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  SHPC-MEGB-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-style-soft: lead>35w/1num
-  staged gemini:gemma-4-31b-it: accepted after 5 calls
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 135 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-SUACB-00, SPC-UREAGRL-00, ICII-LABB-00, SHPC-OAEHB-00, KHP-UREAPL-00, ARCO-CASOALB-00, PPCO-OASTYB-00, KHP-MCJ-00, DAP-PPHP520HJ-00, JPPC-PPRP120LPP-00, KRPT-UREAGRL-00, IPC-XYLENEMIXB-00, JPC-HDCRP100NPP-00, SHPC-MEGB-00, PAGL-DEGB-00, SHPC-HDCRP100BPP-00, ILPE-HD7000FPP-00, HSR-LUSUACB-00, HWI-PTACJ-000, SHPC-TEAKG-00, JPC-HD7000FPP-00, PAGL-MEGB-00, TIOC-SW40B-00
 40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
+  cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: quota used up - skipped until tomorrow
+  ARCO-CASOALB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 0s QuotaError: HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b1d1541d-0d93-4320-
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  SSC-MREEEEA3B-00 llm7:deepseek-v4-flash:0731: 8s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
   HSTC-SSG09XROA-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SSC-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  NCI-CR08AB-00 gemini:gemma-4-31b-it: 385s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  OSC-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 21 nums
-  staged zai:glm-4.7-flash: soft: متن 17 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 117 words after fixes
-  NCI-CR08AB-00 zai:glm-4.7-flash: 388s ValueError: staged: 8 calls, last: 117 words after fixes
+  PPCO-OASTYB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  NCI-CR08AB-00 zai:glm-4.7-flash: 212s TimeoutError: The read operation timed out
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
   staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-style-soft: lead>35w/1num, text 12 nums
-  staged zai:glm-4.5-flash: soft: متن 10 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 119 words after fixes
-  NCI-CR08AB-00 zai:glm-4.5-flash: 194s ValueError: staged: 8 calls, last: 119 words after fixes
-  KSCO-MREEEEA3B-00 gemini:gemma-4-31b-it: 686s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  NCI-CR08AB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  NCI-CR08AB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  SJS-MREEEEA3B-00 gemini:gemma-4-31b-it: 687s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  MPC-PPHP525JPP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 135 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-SUACB-00, SPC-UREAGRL-00, ICII-LABB-00, SHPC-OAEHB-00, KHP-UREAPL-00, ARCO-CASOALB-00, PPCO-OASTYB-00, KHP-MCJ-00, DAP-PPHP520HJ-00, JPPC-PPRP120LPP-00, KRPT-UREAGRL-00, IPC-XYLENEMIXB-00, JPC-HDCRP100NPP-00, SHPC-MEGB-00, PAGL-DEGB-00, SHPC-HDCRP100BPP-00, ILPE-HD7000FPP-00, HSR-LUSUACB-00, HWI-PTACJ-000, SHPC-TEAKG-00, JPC-HD7000FPP-00, PAGL-MEGB-00, TIOC-SW40B-00
-40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  HSTC-SSG09XROA-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  TJPC-LSBR1502RWP-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  EPC-XYLENEMIXB-00 zai:glm-4.7-flash: 226s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 3 sentence(s)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: lead>35w/1num, text 10 nums
-  SSC-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  MPC-DEGB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 115 words / 4 paragraphs
-  EPC-XYLENEMIXB-00 zai:glm-4.5-flash: 156s ValueError: staged: 8 calls, last: 115 words / 4 paragraphs
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 113 words / 4 paragraphs
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 83 words / 3 paragraphs
-  MPC-PPHP525JPP-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 485s ValueError: staged: 8 calls, last: 83 words / 3 paragraphs
-  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  EPC-XYLENEMIXB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 429: [{
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and b
-  OSC-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 322s TimeoutError: The read operation timed out
-  TJPC-LSBR1502RWP-00 zai:glm-4.7-flash: 314s TimeoutError: The read operation timed out
-style-soft: text 15 nums
-  staged gemini:gemma-4-31b-it: draft dropped after 3 calls: 110 words / 4 paragraphs
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 110 words / 3 paragraphs
-  TJPC-LSBR1502RWP-00 zai:glm-4.5-flash: 107s ValueError: staged: 8 calls, last: 110 words / 3 paragraphs
-style-soft: در حالی که, text 9 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: مقدار عرضه غلط است؛ عرضه ۴۰۰ بود | «۲۶۴ تن» با فعل فروش آمده ولی فروش ۴۰۰ تن است
-  MPC-DEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 401s ValueError: staged: 8 calls, last: مقدار عرضه غلط است؛ عرضه ۴۰۰ بود | «۲۶۴ تن» با فعل فروش آمده ولی فروش ۴۰۰ تن است
-  staged gemini:gemma-4-31b-it: call 4 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  MPC-PPHP525JPP-00 zai:glm-4.7-flash: 196s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 109 words / 4 paragraphs
-  MPC-PPHP525JPP-00 zai:glm-4.5-flash: 55s ValueError: staged: 8 calls, last: 109 words / 4 paragraphs
-  EPC-XYLENEMIXB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 180s TimeoutError: The read operation timed out
-  NCI-CR08AB-00 gemini:gemma-4-31b-it: 1419s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged gemini:gemma-4-31b-it: call 1 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-timeout: give-up file saved
-kala: closed halls: تالار صادراتی کیش، تالار فرعی، تالار پتروشیمی و فرآورده های نفتی
-kala: 135 settled rows, 0 wait for the next data build
-groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
-given up for today (failed 2 runs, row unchanged): NCI-SUACB-00, NCI-CR08AB-00, SPC-UREAGRL-00, HSTC-SSG09XROA-00, SSC-MREEEEA3B-00, OSC-HS00000-00, KSCO-MREEEEA3B-00, ICII-LABB-00, SHPC-OAEHB-00, KHP-UREAPL-00, ARCO-CASOALB-00, PPCO-OASTYB-00, KHP-MCJ-00, DAP-PPHP520HJ-00, JPPC-PPRP120LPP-00, KRPT-UREAGRL-00, IPC-XYLENEMIXB-00, JPC-HDCRP100NPP-00, SHPC-MEGB-00, EPC-XYLENEMIXB-00, TJPC-LSBR1502RWP-00, MPC-PPHP525JPP-00, PAGL-DEGB-00, SHPC-HDCRP100BPP-00, ILPE-HD7000FPP-00, HSR-LUSUACB-00, HWI-PTACJ-000, SHPC-TEAKG-00, JPC-HD7000FPP-00, PAGL-MEGB-00, TIOC-SW40B-00
-40 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 91 words / 3 paragraphs
-  MPC-DEGB-00 zai:glm-4.7-flash: 101s ValueError: staged: 8 calls, last: 91 words / 3 paragraphs
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-style-soft: lead>35w/1num, text 9 nums
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: markers: «نشان داد» در text
-  MPC-DEGB-00 zai:glm-4.5-flash: 57s ValueError: staged: 8 calls, last: markers: «نشان داد» در text
-  AJSC-SSG09XROA-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  SHPC-DEGB-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-  staged zai:glm-4.7-flash: check cut 2 sentence(s)
-  staged kilo:dots-studio/dots-3-note-preview:free: check cut 1 sentence(s)
-  SJS-MREEEEA3B-00 gemini:gemma-4-31b-it: 337s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  MPC-DEGB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  staged kilo:dots-studio/dots-3-note-preview:free: draft dropped after 8 calls: 74 words / 3 paragraphs
-  ASC-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 333s ValueError: staged: 8 calls, last: 74 words / 3 paragraphs
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 104 words / 3 paragraphs
-  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
-  "error": {
-    "code": 503,
-    "message": "This model is currently experiencing high demand. Spikes in d
-style-soft: در حالی که, lead>35w/1num, text 11 nums
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۳۶۲، ۴۹۲ | نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
-  BSPC-OAXYLENEB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 681s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۳۶۲، ۴۹۲ | نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 111 words / 2 paragraphs
-  SHPC-DEGB-00 zai:glm-4.7-flash: 497s ValueError: staged: 8 calls, last: 111 words / 2 paragraphs
-  BMIS-MRENEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
-  staged zai:glm-4.5-flash: check cut 1 sentence(s)
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 87 words / 3 paragraphs
-  SHPC-DEGB-00 zai:glm-4.5-flash: 81s ValueError: staged: 8 calls, last: 87 words / 3 paragraphs
-  BSPC-OAXYLENEB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
-  KAS-HS00000-00 gemini:gemma-4-31b-it: 558s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged zai:glm-4.7-flash: check cut 1 sentence(s)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 109 words / 4 paragraphs
-  MPC-DEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 404s ValueError: staged: 8 calls, last: 109 words / 4 paragraphs
 style-soft: lead>35w/1num, text 14 nums
-  staged zai:glm-4.7-flash: draft dropped after 8 calls: 63 words / 2 paragraphs
-  BSPC-OAXYLENEB-00 zai:glm-4.7-flash: 341s ValueError: staged: 8 calls, last: 63 words / 2 paragraphs
-  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند | 3 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 6 calls
+  stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
+  NCI-CR08AB-00 zai:glm-4.5-flash: 41s ValueError: repeated subtitle
   staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 2 sentence(s)
-  staged zai:glm-4.5-flash: draft dropped after 8 calls: 103 words / 4 paragraphs
-  BSPC-OAXYLENEB-00 zai:glm-4.5-flash: 90s ValueError: staged: 8 calls, last: 103 words / 4 paragraphs
-  TAA-TS11112-00 gemini:gemma-4-31b-it: 553s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
-  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۶۶، ۵۲۰
-  SHPC-DEGB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 551s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۶۶، ۵۲۰
-written 0/40; total in file 16
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  OSC-HS00000-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  DAP-PPHP520HJ-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: در حالی که
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+style-soft: در حالی که
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: markers: نویسه‌ی غیرفارسی (چینی/سیریلیک/…)
+  KSCO-MREEEEA3B-00 kilo:dots-studio/dots-3-note-preview:free: 180s TimeoutError: The read operation timed out
+  IPC-XYLENEMIXB-00 ovh:Qwen3.5-397B-A17B: 180s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: 47 words / 2 paragraphs
+  KHP-MCJ-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 625s ValueError: staged: 8 calls, last: 47 words / 2 paragraphs
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 4 sentence(s)
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1302","message":"Rate limit reached for requests"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num, text 18 nums
+  staged zai:glm-4.7-flash: draft dropped after 7 calls: 106 words / 4 paragraphs
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 78 words / 3 paragraphs
+  JPPC-PPRP120LPP-00 zai:glm-4.7-flash: 745s ValueError: staged: 8 calls, last: 78 words / 3 paragraphs
+style-soft: در حالی که, lead>35w/1num, text 10 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 8 calls
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 103 words / 3 paragraphs
+  JPPC-PPRP120LPP-00 zai:glm-4.5-flash: 38s ValueError: staged: 8 calls, last: 103 words / 3 paragraphs
+  stage6 news: title in 1 calls
+OK SHPC-MEGB-00 <- kilo:nvidia/nemotron-3-ultra-550b-a55b:free (415s)
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: check cut 1 sentence(s)
+style-soft: lead>35w/1num
+  staged gemini:gemma-4-31b-it: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۱۹، ۵۰
+style-soft: lead>35w/1num, text 16 nums
+style-soft: lead>35w/1num
+  staged gemini:gemma-4-31b-it: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۱۸۳۴، ۴۰۸، ۵۳
+  NCI-SUACB-00 gemini:gemma-4-31b-it: 1315s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۱۸۳۴، ۴۰۸، ۵۳
+style-soft: در حالی که, lead>35w/1num, text 14 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 7 calls: 100 words / 4 paragraphs
+  TJPC-LSBR1502RWP-00 zai:glm-4.7-flash: 364s TimeoutError: The read operation timed out
+  staged zai:glm-4.5-flash: check cut 2 sentence(s)
+  staged zai:glm-4.5-flash: draft dropped after 8 calls: 77 words / 3 paragraphs
+  TJPC-LSBR1502RWP-00 zai:glm-4.5-flash: 48s ValueError: staged: 8 calls, last: 77 words / 3 paragraphs
+style-soft: lead>35w/1num, text 13 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۱، ۵۴۰، ۸۶۰
+  EPC-XYLENEMIXB-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 427s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۱، ۵۴۰، ۸۶۰
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  SJS-MREEEEA3B-00 gemini:gemma-4-31b-it: 449s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+style-soft: lead>35w/1num, text 17 nums
+timeout: give-up file saved
