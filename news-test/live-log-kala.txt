@@ -88,3 +88,23 @@ style-soft: lead>35w/1num
   staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
   stage6 news: kept stage-5 title after 3 calls (فعل «شد» امروز تکرار شده)
 OK TIOC-PDATARB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (32s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: draft dropped after 8 calls: 110 words / 3 paragraphs
+  JPC-HDCRP100NPP-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 18s ValueError: staged: 8 calls, last: 110 words / 3 paragraphs
+style-soft: lead>35w/1num, text 9 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+style-soft: lead>35w/1num, text 9 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: 2 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 8 calls
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۹ | فعل «فروخت» امروز تکرار شده)
+  SHPC-OAVAMB-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 28s ValueError: repeated subtitle
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: check cut 1 sentence(s)
+style-soft: text 11 nums
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: draft dropped after 8 calls: markers: عدد بیرون از حقیقت‌ها: ۴۷۸، ۴۹
+  SHPC-TEAKG-00 kilo:nvidia/nemotron-3-ultra-550b-a55b:free: 387s ValueError: staged: 8 calls, last: markers: عدد بیرون از حقیقت‌ها: ۴۷۸، ۴۹
+style-soft: lead>35w/1num, text 11 nums
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: soft: متن 11 عدد دارد؛ حداکثر ۶ عدد بماند
+  staged cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: accepted after 7 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۳۲ | فعل «شد» امروز تکرار شده)
+OK KPC-OAPMDIB-00 <- cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast (38s)
