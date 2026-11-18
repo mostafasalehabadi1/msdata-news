@@ -688,3 +688,45 @@ kala: 0 settled rows, 83 wait for the next data build
 groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
 0 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
 written 0/0; total in file 0
+kala: closed halls: تالار صادراتی کیش، تالار صنعتی و معدنی
+kala: 3 settled rows, 80 wait for the next data build
+groq models: openai/gpt-oss-120b, openai/gpt-oss-20b
+3 symbols to write; 15 parallel workers: gemini, gemini/strong, openrouter, groq, zai/backup, cf/backup, cf, llm7/strong, llm7, ovh/backup, ovh, kilo/strong, kilo/backup, kilo, requesty
+  llm7:deepseek-v4-flash:0731: quota used up - skipped until tomorrow
+  IALC-ALHYD-00 llm7:deepseek-v4-flash:0731: 1s QuotaError: HTTP 402: {"error":{"message":"Insufficient balance. Please top up your balance to continue.","type":"insufficient_quota","param":null,"code":"insufficient_balance"}}
+  FPKC-EA005000-00 gemini:gemma-4-26b-a4b-it: 412s JSONDecodeError: Expecting value: line 1 column 10 (char 9)
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged gemini:gemma-4-31b-it: call 3 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  FPKC-EA005000-00 ovh:Qwen3.5-397B-A17B: 181s TimeoutError: The read operation timed out
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 1 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: check cut 3 sentence(s)
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+style-soft: ام‌اس‌دیتا!=1, text 14 nums
+style-soft: text 11 nums
+  staged gemini:gemma-4-31b-it: draft dropped after 7 calls: markers: عدد بیرون از حقیقت‌ها: ۷۱
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged zai:glm-4.7-flash: call 6 failed: HTTP 429: {"error":{"code":"1305","message":"The service may be temporarily overloaded, please try again later"}}
+  staged gemini:gemma-4-31b-it: draft dropped after 8 calls: 114 words / 3 paragraphs
+  NCI-CR08AB-00 gemini:gemma-4-31b-it: 1402s ValueError: staged: 8 calls, last: 114 words / 3 paragraphs
+style-soft: lead>35w/1num
+  staged zai:glm-4.7-flash: draft dropped after 8 calls: 114 words / 3 paragraphs
+  FPKC-EA005000-00 zai:glm-4.7-flash: 944s ValueError: staged: 8 calls, last: 114 words / 3 paragraphs
+  staged zai:glm-4.5-flash: check cut 1 sentence(s)
+style-soft: lead>35w/1num, text 9 nums
+style-soft: lead>35w/1num, text 9 nums
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+style-soft: lead>35w/1num, text 9 nums
+  staged zai:glm-4.5-flash: soft: متن 8 عدد دارد؛ حداکثر ۶ عدد بماند | 1 جمله بیش از ۲ عدد دارد؛ هر جمله حداکثر ۲ عدد
+  staged zai:glm-4.5-flash: accepted after 8 calls
+  stage6 news: kept stage-5 title after 3 calls (عدد بیرون از متن: ۶۳)
+OK FPKC-EA005000-00 <- zai:glm-4.5-flash (79s)
