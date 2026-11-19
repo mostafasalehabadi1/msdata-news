@@ -43,7 +43,8 @@ def main():
     os.makedirs(N, exist_ok=True)
     released = []
     # a daily report goes out in the very first run after it enters the queue (it does not use the budget)
-    for rep in sorted(glob.glob(os.path.join(Q, "report-*.json"))):
+    gate = os.path.exists(os.path.join(ROOT, "data", "panel_gate"))  # 1405/08/28: reports also go through the panel now
+    for rep in ([] if gate else sorted(glob.glob(os.path.join(Q, "report-*.json")))):
         dst = os.path.join(N, os.path.basename(rep))
         if not os.path.exists(dst):
             shutil.copy(rep, dst)
@@ -63,7 +64,6 @@ def main():
                   and fits(name, i, q)]
     # 1405/08/28 (owner): every news goes through the newsroom panel; while data/panel_gate exists the panel's
     # publish pace writes news/ itself, so this drip (and the kish/energy one-shot) stays off. Reports and edits still run here.
-    gate = os.path.exists(os.path.join(ROOT, "data", "panel_gate"))
     if gate:
         cands = []
     cands.sort(key=lambda c: (imp.get(c[1]["symbol"], {}).get("tier", 1), -imp.get(c[1]["symbol"], {}).get("value", 0)))
