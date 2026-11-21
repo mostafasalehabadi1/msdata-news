@@ -57,3 +57,17 @@ style-soft: lead>35w/1num
   staged llm7:minimax-m2.7: call 8 failed: HTTP 400: {"error":{"message":"Model 'minimax-m2.7' is currently unavailable.","type":"invalid_request_error","param":nu
   stage6 news: kept stage-5 title after 3 calls (فعل «فروخت» امروز تکرار شده | تیتر «تمام/کامل» نوشته ولی همه‌ی عرضه فروش نرفت)
 OK PIM-BI160220BEX-00 <- groq:openai/gpt-oss-120b (357s)
+  SHGA-INBOFBEX-00 llm7:minimax-m2.7: 366s ValueError: staged: 8 calls, last: no JSON: 
+  llm7:mistral-Nemo-Instruct-2407: quota used up - skipped until tomorrow
+  SHGA-INBOFBEX-00 llm7:mistral-Nemo-Instruct-2407: 0s QuotaError: HTTP 429: {"error":{"message":"Your free token allowance has been reached. Please retry in 3600 seconds. To continue with pay-as-you-go, add funds to your account and use your API key: https://dash.llm7.io/#/billing","ty
+  staged gemini:gemma-4-31b-it: call 2 failed: HTTP 503: [{
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in d
+  staged openrouter:google/gemma-4-31b-it:free: call 1 failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temp
+  SHGA-INBOFBEX-00 cf:@cf/meta/llama-3.3-70b-instruct-fp8-fast: 5s JSONDecodeError: Expecting ',' delimiter: line 8 column 9 (char 505)
+style-soft: lead>35w/1num
+style-soft: lead>35w/1num
+  staged kilo:nvidia/nemotron-3-ultra-550b-a55b:free: accepted after 6 calls
+  stage6 news: title in 1 calls
+OK BPCO-BI6070GEX-00 <- zai:glm-4.7-flash (417s)
